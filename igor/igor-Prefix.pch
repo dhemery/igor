@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the 'igor' target in the 'igor' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+
+#endif
