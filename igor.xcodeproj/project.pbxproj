@@ -59,6 +59,7 @@
 		E621659DB794A5D612DCD458 /* AnInheritsClassSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnInheritsClassSelector.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD459 /* InheritsClassSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InheritsClassSelector.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD45B /* InheritsClassSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InheritsClassSelector.h; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD45E /* syntax.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = syntax.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +92,7 @@
 				E621659DB794A5D612DCD424 /* Frameworks */,
 				E621659DB794A5D612DCD427 /* igor */,
 				E621659DB794A5D612DCD43E /* igorTests */,
+				E621659DB794A5D612DCD45D /* notes */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,6 +160,14 @@
 				E621659DB794A5D612DCD440 /* igorTests-Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E621659DB794A5D612DCD45D /* notes */ = {
+			isa = PBXGroup;
+			children = (
+				E621659DB794A5D612DCD45E /* syntax.txt */,
+			);
+			path = notes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
