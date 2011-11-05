@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AUniversalClassSelector.h"
-#import "../igor/ViewSelector.h"
+#import "ViewSelector.h"
 
 
 @implementation AUniversalClassSelector {
