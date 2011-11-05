@@ -13,17 +13,9 @@
 		E621659DB794A5D612DCD43A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD439 /* UIKit.framework */; };
 		E621659DB794A5D612DCD43B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD425 /* Foundation.framework */; };
 		E621659DB794A5D612DCD443 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD442 /* InfoPlist.strings */; };
-		E621659DB794A5D612DCD445 /* AUniversalClassSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD444 /* AUniversalClassSelector.m */; };
-		E621659DB794A5D612DCD448 /* UniversalClassSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD447 /* UniversalClassSelector.m */; };
-		E621659DB794A5D612DCD44A /* UniversalClassSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD449 /* UniversalClassSelector.h */; };
-		E621659DB794A5D612DCD44C /* AnExactClassSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD44B /* AnExactClassSelector.m */; };
-		E621659DB794A5D612DCD44F /* ExactClassSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD44E /* ExactClassSelector.m */; };
-		E621659DB794A5D612DCD451 /* ExactClassSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD450 /* ExactClassSelector.h */; };
-		E621659DB794A5D612DCD453 /* Selector.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD452 /* Selector.m */; };
-		E621659DB794A5D612DCD455 /* Selector.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD454 /* Selector.h */; };
-		E621659DB794A5D612DCD457 /* AnInheritsClassSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD456 /* AnInheritsClassSelector.m */; };
-		E621659DB794A5D612DCD45A /* InheritsClassSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD459 /* InheritsClassSelector.m */; };
-		E621659DB794A5D612DCD45C /* InheritsClassSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD45B /* InheritsClassSelector.h */; };
+		E621659DB794A5D612DCD453 /* ViewSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD452 /* ViewSelector.m */; };
+		E621659DB794A5D612DCD455 /* ViewSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD454 /* ViewSelector.h */; };
+		E621659DB794A5D612DCD45E /* AUniversalClassSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD45D /* AUniversalClassSelector.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,20 +37,10 @@
 		E621659DB794A5D612DCD439 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E621659DB794A5D612DCD440 /* igorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "igorTests-Info.plist"; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD441 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD444 /* AUniversalClassSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUniversalClassSelector.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD446 /* AUniversalClassSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUniversalClassSelector.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD447 /* UniversalClassSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UniversalClassSelector.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD449 /* UniversalClassSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniversalClassSelector.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD44B /* AnExactClassSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnExactClassSelector.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD44D /* AnExactClassSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnExactClassSelector.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD44E /* ExactClassSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExactClassSelector.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD450 /* ExactClassSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExactClassSelector.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD452 /* Selector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Selector.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD454 /* Selector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Selector.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD456 /* AnInheritsClassSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnInheritsClassSelector.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD458 /* AnInheritsClassSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnInheritsClassSelector.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD459 /* InheritsClassSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InheritsClassSelector.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD45B /* InheritsClassSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InheritsClassSelector.h; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD452 /* ViewSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewSelector.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD454 /* ViewSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewSelector.h; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD45D /* AUniversalClassSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUniversalClassSelector.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD45F /* AUniversalClassSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUniversalClassSelector.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,14 +98,8 @@
 		E621659DB794A5D612DCD427 /* igor */ = {
 			isa = PBXGroup;
 			children = (
-				E621659DB794A5D612DCD45B /* InheritsClassSelector.h */,
-				E621659DB794A5D612DCD459 /* InheritsClassSelector.m */,
-				E621659DB794A5D612DCD454 /* Selector.h */,
-				E621659DB794A5D612DCD452 /* Selector.m */,
-				E621659DB794A5D612DCD450 /* ExactClassSelector.h */,
-				E621659DB794A5D612DCD44E /* ExactClassSelector.m */,
-				E621659DB794A5D612DCD449 /* UniversalClassSelector.h */,
-				E621659DB794A5D612DCD447 /* UniversalClassSelector.m */,
+				E621659DB794A5D612DCD454 /* ViewSelector.h */,
+				E621659DB794A5D612DCD452 /* ViewSelector.m */,
 				E621659DB794A5D612DCD428 /* Supporting Files */,
 			);
 			path = igor;
@@ -140,12 +116,8 @@
 		E621659DB794A5D612DCD43E /* igorTests */ = {
 			isa = PBXGroup;
 			children = (
-				E621659DB794A5D612DCD458 /* AnInheritsClassSelector.h */,
-				E621659DB794A5D612DCD456 /* AnInheritsClassSelector.m */,
-				E621659DB794A5D612DCD44D /* AnExactClassSelector.h */,
-				E621659DB794A5D612DCD44B /* AnExactClassSelector.m */,
-				E621659DB794A5D612DCD446 /* AUniversalClassSelector.h */,
-				E621659DB794A5D612DCD444 /* AUniversalClassSelector.m */,
+				E621659DB794A5D612DCD45F /* AUniversalClassSelector.h */,
+				E621659DB794A5D612DCD45D /* AUniversalClassSelector.m */,
 				E621659DB794A5D612DCD43F /* Supporting Files */,
 			);
 			path = igorTests;
@@ -167,10 +139,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E621659DB794A5D612DCD44A /* UniversalClassSelector.h in Headers */,
-				E621659DB794A5D612DCD451 /* ExactClassSelector.h in Headers */,
-				E621659DB794A5D612DCD455 /* Selector.h in Headers */,
-				E621659DB794A5D612DCD45C /* InheritsClassSelector.h in Headers */,
+				E621659DB794A5D612DCD455 /* ViewSelector.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,10 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E621659DB794A5D612DCD448 /* UniversalClassSelector.m in Sources */,
-				E621659DB794A5D612DCD44F /* ExactClassSelector.m in Sources */,
-				E621659DB794A5D612DCD453 /* Selector.m in Sources */,
-				E621659DB794A5D612DCD45A /* InheritsClassSelector.m in Sources */,
+				E621659DB794A5D612DCD453 /* ViewSelector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,9 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E621659DB794A5D612DCD445 /* AUniversalClassSelector.m in Sources */,
-				E621659DB794A5D612DCD44C /* AnExactClassSelector.m in Sources */,
-				E621659DB794A5D612DCD457 /* AnInheritsClassSelector.m in Sources */,
+				E621659DB794A5D612DCD45E /* AUniversalClassSelector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

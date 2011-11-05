@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface Selector : NSObject
-- (BOOL)matches:(UIView *)view;
+@interface ViewSelector : NSObject
+- (NSMutableSet *)selectViewsFromRoot:(UIView *)root;
++ (ViewSelector *)selectorFor:(NSString *)selectorString;
 @end
