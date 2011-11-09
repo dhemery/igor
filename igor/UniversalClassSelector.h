@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 #import "Selector.h"
 
-@interface UniversalClassSelector : Selector
+@interface UniversalClassSelector : NSObject <Selector>
 @end

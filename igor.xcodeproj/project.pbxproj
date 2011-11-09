@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2D199D91146B28880024CA41 /* Selector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D199D8F146B28880024CA41 /* Selector.h */; };
-		2D199D92146B28880024CA41 /* Selector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D199D90146B28880024CA41 /* Selector.m */; };
 		2D199D96146B28E80024CA41 /* UniversalClassSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D199D94146B28E80024CA41 /* UniversalClassSelector.h */; };
 		2D199D97146B28E80024CA41 /* UniversalClassSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D199D95146B28E80024CA41 /* UniversalClassSelector.m */; };
 		2D199D9A146B29540024CA41 /* ClassEqualsSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D199D98146B29540024CA41 /* ClassEqualsSelector.h */; };
@@ -84,7 +83,6 @@
 /* Begin PBXFileReference section */
 		2D1421341469ECB100862643 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		2D199D8F146B28880024CA41 /* Selector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Selector.h; sourceTree = "<group>"; };
-		2D199D90146B28880024CA41 /* Selector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Selector.m; sourceTree = "<group>"; };
 		2D199D94146B28E80024CA41 /* UniversalClassSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniversalClassSelector.h; sourceTree = "<group>"; };
 		2D199D95146B28E80024CA41 /* UniversalClassSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UniversalClassSelector.m; sourceTree = "<group>"; };
 		2D199D98146B29540024CA41 /* ClassEqualsSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassEqualsSelector.h; sourceTree = "<group>"; };
@@ -335,7 +333,6 @@
 				2D199D98146B29540024CA41 /* ClassEqualsSelector.h */,
 				2D199D99146B29540024CA41 /* ClassEqualsSelector.m */,
 				2D199D8F146B28880024CA41 /* Selector.h */,
-				2D199D90146B28880024CA41 /* Selector.m */,
 				2D199D94146B28E80024CA41 /* UniversalClassSelector.h */,
 				2D199D95146B28E80024CA41 /* UniversalClassSelector.m */,
 				E621659DB794A5D612DCD454 /* Igor.h */,
@@ -563,7 +560,6 @@
 			files = (
 				E621659DB794A5D612DCD453 /* Igor.m in Sources */,
 				E621659DB794A5D612DCD463 /* MapOperationCommand+IgorAdditions.m in Sources */,
-				2D199D92146B28880024CA41 /* Selector.m in Sources */,
 				2D199D97146B28E80024CA41 /* UniversalClassSelector.m in Sources */,
 				2D199D9B146B29540024CA41 /* ClassEqualsSelector.m in Sources */,
 			);

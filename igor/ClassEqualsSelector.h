@@ -8,6 +8,6 @@
 
 #import "Selector.h"
 
-@interface ClassEqualsSelector : Selector
+@interface ClassEqualsSelector : NSObject <Selector>
 -(ClassEqualsSelector*) initWithClass:(Class)matchClass;
 @end

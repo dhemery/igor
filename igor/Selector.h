@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Selector : NSObject
+@protocol Selector
 - (BOOL)matchesView:(UIView *)view;
 @end

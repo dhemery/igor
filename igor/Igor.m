@@ -10,7 +10,7 @@
 
 @implementation Igor {
     @private
-    Selector *selector;
+    id<Selector> selector;
 }
 
 - (Igor *)initWithSelectorString:(NSString *)selectorString {
