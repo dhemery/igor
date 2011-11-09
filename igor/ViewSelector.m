@@ -16,17 +16,10 @@
     [set addObject:view];
 }
 
-- (void)gatherSubviewsOf:(UIView *)root intoSet:(NSMutableSet *)selectedViews {
-    for(id view in [root subviews]) {
-        [self gatherView:view intoSet:selectedViews];
-    }
-}
-
 - (void)selectFromRoot:(UIView *)root intoSet:(NSMutableSet *)selectedViews {
     [self gatherView:root intoSet:selectedViews];
-    for(id view in [root subviews]) {
-        [self gatherView:view intoSet:selectedViews];
-        [self gatherSubviewsOf:view intoSet:selectedViews];
+    for(id subview in [root subviews]) {
+        [self selectFromRoot:subview intoSet:selectedViews];
     }
 }
 

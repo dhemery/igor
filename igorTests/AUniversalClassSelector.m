@@ -27,6 +27,9 @@
     UIView *view12 = [[UIView alloc] initWithFrame:frame];
     UIView *view2 = [[UIView alloc] initWithFrame: frame];
     UIView *view21 = [[UIView alloc] initWithFrame:frame];
+    UIView *view211 = [[UIView alloc] initWithFrame:frame];
+    UIView *view212 = [[UIView alloc] initWithFrame:frame];
+    UIView *view213 = [[UIView alloc] initWithFrame:frame];
     UIView *view22 = [[UIView alloc] initWithFrame:frame];
     UIView *view23 = [[UIView alloc] initWithFrame:frame];
 
@@ -35,6 +38,9 @@
         [view1 addSubview:view12];
     [root addSubview:view2];
         [view2 addSubview:view21];
+            [view2 addSubview:view211];
+            [view2 addSubview:view212];
+            [view2 addSubview:view213];
         [view2 addSubview:view22];
         [view2 addSubview:view23];
 
@@ -46,6 +52,9 @@
     STAssertNotNil([selectedViews member:view12], @"view12");
     STAssertNotNil([selectedViews member:view2], @"view2");
     STAssertNotNil([selectedViews member:view21], @"view21");
+    STAssertNotNil([selectedViews member:view211], @"view211");
+    STAssertNotNil([selectedViews member:view212], @"view212");
+    STAssertNotNil([selectedViews member:view213], @"view213");
     STAssertNotNil([selectedViews member:view22], @"view22");
     STAssertNotNil([selectedViews member:view23], @"view23");
 }
