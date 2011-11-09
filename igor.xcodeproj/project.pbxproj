@@ -141,9 +141,8 @@
 		E621659DB794A5D612DCD454 /* Igor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Igor.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD45D /* AUniversalClassSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUniversalClassSelector.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD45F /* AUniversalClassSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUniversalClassSelector.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD461 /* syntax.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = syntax.txt; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD462 /* MapOperationCommand+IgorAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MapOperationCommand+IgorAdditions.m"; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD464 /* MapOperationCommand+IgorAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MapOperationCommand+IgorAdditions.h"; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD462 /* MapOperationCommand+IgorAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MapOperationCommand+IgorAdditions.m"; path = "igor/MapOperationCommand+IgorAdditions.m"; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD464 /* MapOperationCommand+IgorAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MapOperationCommand+IgorAdditions.h"; path = "igor/MapOperationCommand+IgorAdditions.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +168,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D199DA3146B32460024CA41 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				E621659DB794A5D612DCD464 /* MapOperationCommand+IgorAdditions.h */,
+				E621659DB794A5D612DCD462 /* MapOperationCommand+IgorAdditions.m */,
+			);
+			name = extension;
+			sourceTree = "<group>";
+		};
 		2D2F320D146A08ED0046E8CC /* uispec */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +242,7 @@
 		E621659DB794A5D612DCD418 = {
 			isa = PBXGroup;
 			children = (
+				2D199DA3146B32460024CA41 /* extension */,
 				E621659DB794A5D612DCD427 /* igor */,
 				E621659DB794A5D612DCD43E /* igorTests */,
 				2D2F3259146A09BC0046E8CC /* frank */,
@@ -241,7 +250,6 @@
 				2D2F320D146A08ED0046E8CC /* uispec */,
 				E621659DB794A5D612DCD419 /* Products */,
 				E621659DB794A5D612DCD424 /* Frameworks */,
-				E621659DB794A5D612DCD460 /* notes */,
 			);
 			sourceTree = "<group>";
 		};
@@ -270,8 +278,6 @@
 			children = (
 				2D199D98146B29540024CA41 /* ClassEqualsSelector.h */,
 				2D199D99146B29540024CA41 /* ClassEqualsSelector.m */,
-				E621659DB794A5D612DCD464 /* MapOperationCommand+IgorAdditions.h */,
-				E621659DB794A5D612DCD462 /* MapOperationCommand+IgorAdditions.m */,
 				2D199D8F146B28880024CA41 /* Selector.h */,
 				2D199D90146B28880024CA41 /* Selector.m */,
 				2D199D94146B28E80024CA41 /* UniversalClassSelector.h */,
@@ -310,14 +316,6 @@
 				E621659DB794A5D612DCD440 /* igorTests-Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		E621659DB794A5D612DCD460 /* notes */ = {
-			isa = PBXGroup;
-			children = (
-				E621659DB794A5D612DCD461 /* syntax.txt */,
-			);
-			path = notes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

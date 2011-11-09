@@ -44,4 +44,11 @@
     return selectedViews;
 }
 
++ (NSMutableSet*) selectViewsThatMatchQuery:(NSString*)queryString {
+    Igor* igor = [Igor igorFor:queryString];
+    UIView *root = [[UIApplication sharedApplication] keyWindow] ;
+    return [igor selectViewsFromRoot:root];
+}
+
+
 @end

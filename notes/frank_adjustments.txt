@@ -1,0 +1,13 @@
+Injecting Igor by overriding handleCommandWithRequest body requires re-implementing all of MapOperationCommand. This in turn requires including lots of uispec, frank, and json headers, even though Igor itself doesn't need those.
+
+To inject a query engine without having to override handleCommandWithRequestBody:
+- Add a public method to MapOperationCommand like selectViewsThatMatchQueryString that Igor can override.
+
+Perhaps better:
+- Find some other mechanism for injecting a query engine into the Frank server?
+
+Fantasy future:
+- Allow registering multiple query engines, and (somehow) dispatch per map request.
+
+At the moment, sooner is more important to me than better.
+

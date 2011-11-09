@@ -61,7 +61,6 @@
 		return [operation applyToObject:wrappedView];
 	
 	return nil; 
-    
 }
 
 - (NSString *)handleCommandWithRequestBody:(NSString *)requestBody {
@@ -74,10 +73,8 @@
     NSMutableSet *selectedViews;
     
 	@try {
-        UIView *root = [[UIApplication sharedApplication] keyWindow] ;
-        Igor* igor = [Igor igorFor:queryString];
-        selectedViews = [igor selectViewsFromRoot:root];
-		NSLog( @"Query '%@' found views: %@", queryString, selectedViews );
+        selectedViews = [Igor selectViewsThatMatchQuery:queryString];
+        NSLog( @"Query '%@' found views: %@", queryString, selectedViews );
 	}
 	@catch (NSException * e) {
 		NSLog( @"Exception while executing query '%@':\n%@", queryString, e );
