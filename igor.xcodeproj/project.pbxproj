@@ -13,6 +13,16 @@
 		2D199D97146B28E80024CA41 /* UniversalClassSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D199D95146B28E80024CA41 /* UniversalClassSelector.m */; };
 		2D199D9A146B29540024CA41 /* ClassEqualsSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D199D98146B29540024CA41 /* ClassEqualsSelector.h */; };
 		2D199D9B146B29540024CA41 /* ClassEqualsSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D199D99146B29540024CA41 /* ClassEqualsSelector.m */; };
+		2D199DAC146B397B0024CA41 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD437 /* SenTestingKit.framework */; };
+		2D199DAD146B397B0024CA41 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD439 /* UIKit.framework */; };
+		2D199DAE146B397B0024CA41 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD425 /* Foundation.framework */; };
+		2D199DB4146B397B0024CA41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D199DB2146B397B0024CA41 /* InfoPlist.strings */; };
+		2D199DC2146B399A0024CA41 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD437 /* SenTestingKit.framework */; };
+		2D199DC3146B399A0024CA41 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD439 /* UIKit.framework */; };
+		2D199DC4146B399A0024CA41 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD425 /* Foundation.framework */; };
+		2D199DCA146B399A0024CA41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D199DC8146B399A0024CA41 /* InfoPlist.strings */; };
+		2D199DD2146B3A790024CA41 /* IgorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD45D /* IgorTests.m */; };
+		2D199DD5146B3C070024CA41 /* libigor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD41C /* libigor.a */; };
 		2D2F322C146A08ED0046E8CC /* CallCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F320E146A08ED0046E8CC /* CallCache.h */; };
 		2D2F322D146A08ED0046E8CC /* NSNumberCreator.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F320F146A08ED0046E8CC /* NSNumberCreator.h */; };
 		2D2F322E146A08ED0046E8CC /* Recordable.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F3210146A08ED0046E8CC /* Recordable.h */; };
@@ -54,22 +64,15 @@
 		2D2F3261146A0A9B0046E8CC /* DumpCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F3260146A0A9B0046E8CC /* DumpCommand.h */; };
 		2D2F3264146A0AFA0046E8CC /* FrankCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F3262146A0AFA0046E8CC /* FrankCommand.h */; };
 		2D8ED70C1469F5F600580FB6 /* MapOperationCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D8ED70A1469F5F600580FB6 /* MapOperationCommand.h */; };
-		2DCF2BA61463ABDD00A3202C /* libigor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD41C /* libigor.a */; };
-		2DDE1050146A4A5500503163 /* AClassEqualsSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DDE104F146A4A5500503163 /* AClassEqualsSelector.m */; };
 		E621659DB794A5D612DCD426 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD425 /* Foundation.framework */; };
-		E621659DB794A5D612DCD438 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD437 /* SenTestingKit.framework */; };
-		E621659DB794A5D612DCD43A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD439 /* UIKit.framework */; };
-		E621659DB794A5D612DCD43B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD425 /* Foundation.framework */; };
-		E621659DB794A5D612DCD443 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD442 /* InfoPlist.strings */; };
 		E621659DB794A5D612DCD453 /* Igor.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD452 /* Igor.m */; };
 		E621659DB794A5D612DCD455 /* Igor.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD454 /* Igor.h */; };
-		E621659DB794A5D612DCD45E /* AUniversalClassSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD45D /* AUniversalClassSelector.m */; };
 		E621659DB794A5D612DCD463 /* MapOperationCommand+IgorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD462 /* MapOperationCommand+IgorAdditions.m */; };
 		E621659DB794A5D612DCD465 /* MapOperationCommand+IgorAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD464 /* MapOperationCommand+IgorAdditions.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E621659DB794A5D612DCD43C /* PBXContainerItemProxy */ = {
+		2D199DD3146B3BEC0024CA41 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E621659DB794A5D612DCD416 /* Project object */;
 			proxyType = 1;
@@ -86,6 +89,14 @@
 		2D199D95146B28E80024CA41 /* UniversalClassSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UniversalClassSelector.m; sourceTree = "<group>"; };
 		2D199D98146B29540024CA41 /* ClassEqualsSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassEqualsSelector.h; sourceTree = "<group>"; };
 		2D199D99146B29540024CA41 /* ClassEqualsSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassEqualsSelector.m; sourceTree = "<group>"; };
+		2D199DAB146B397B0024CA41 /* igorUnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = igorUnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D199DB1146B397B0024CA41 /* igorUnitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "igorUnitTests-Info.plist"; sourceTree = "<group>"; };
+		2D199DB3146B397B0024CA41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2D199DB8146B397B0024CA41 /* igorUnitTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "igorUnitTests-Prefix.pch"; sourceTree = "<group>"; };
+		2D199DC1146B399A0024CA41 /* igorAcceptanceTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = igorAcceptanceTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D199DC7146B399A0024CA41 /* igorAcceptanceTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "igorAcceptanceTests-Info.plist"; sourceTree = "<group>"; };
+		2D199DC9146B399A0024CA41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2D199DCE146B399A0024CA41 /* igorAcceptanceTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "igorAcceptanceTests-Prefix.pch"; sourceTree = "<group>"; };
 		2D2F320E146A08ED0046E8CC /* CallCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallCache.h; sourceTree = "<group>"; };
 		2D2F320F146A08ED0046E8CC /* NSNumberCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSNumberCreator.h; sourceTree = "<group>"; };
 		2D2F3210146A08ED0046E8CC /* Recordable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recordable.h; sourceTree = "<group>"; };
@@ -127,41 +138,46 @@
 		2D2F3260146A0A9B0046E8CC /* DumpCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DumpCommand.h; sourceTree = "<group>"; };
 		2D2F3262146A0AFA0046E8CC /* FrankCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrankCommand.h; sourceTree = "<group>"; };
 		2D8ED70A1469F5F600580FB6 /* MapOperationCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapOperationCommand.h; path = ../igor/MapOperationCommand.h; sourceTree = "<group>"; };
-		2DDE104E146A4A5500503163 /* AClassEqualsSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AClassEqualsSelector.h; sourceTree = "<group>"; };
-		2DDE104F146A4A5500503163 /* AClassEqualsSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AClassEqualsSelector.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD41C /* libigor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libigor.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E621659DB794A5D612DCD425 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E621659DB794A5D612DCD429 /* igor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "igor-Prefix.pch"; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD42E /* igorTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = igorTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E621659DB794A5D612DCD437 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		E621659DB794A5D612DCD439 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		E621659DB794A5D612DCD440 /* igorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "igorTests-Info.plist"; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD441 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD452 /* Igor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Igor.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD454 /* Igor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Igor.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD45D /* AUniversalClassSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUniversalClassSelector.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD45F /* AUniversalClassSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUniversalClassSelector.h; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD45D /* IgorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IgorTests.m; path = ../igorTests/IgorTests.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD45F /* IgorTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IgorTests.h; path = ../igorTests/IgorTests.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD462 /* MapOperationCommand+IgorAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MapOperationCommand+IgorAdditions.m"; path = "igor/MapOperationCommand+IgorAdditions.m"; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD464 /* MapOperationCommand+IgorAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MapOperationCommand+IgorAdditions.h"; path = "igor/MapOperationCommand+IgorAdditions.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2D199DA7146B397B0024CA41 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D199DAC146B397B0024CA41 /* SenTestingKit.framework in Frameworks */,
+				2D199DAD146B397B0024CA41 /* UIKit.framework in Frameworks */,
+				2D199DAE146B397B0024CA41 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D199DBD146B399A0024CA41 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D199DD5146B3C070024CA41 /* libigor.a in Frameworks */,
+				2D199DC2146B399A0024CA41 /* SenTestingKit.framework in Frameworks */,
+				2D199DC3146B399A0024CA41 /* UIKit.framework in Frameworks */,
+				2D199DC4146B399A0024CA41 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E621659DB794A5D612DCD423 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E621659DB794A5D612DCD426 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E621659DB794A5D612DCD434 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2DCF2BA61463ABDD00A3202C /* libigor.a in Frameworks */,
-				E621659DB794A5D612DCD438 /* SenTestingKit.framework in Frameworks */,
-				E621659DB794A5D612DCD43A /* UIKit.framework in Frameworks */,
-				E621659DB794A5D612DCD43B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +191,44 @@
 				E621659DB794A5D612DCD462 /* MapOperationCommand+IgorAdditions.m */,
 			);
 			name = extension;
+			sourceTree = "<group>";
+		};
+		2D199DAF146B397B0024CA41 /* igorUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				2D199DB0146B397B0024CA41 /* Supporting Files */,
+			);
+			path = igorUnitTests;
+			sourceTree = "<group>";
+		};
+		2D199DB0146B397B0024CA41 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2D199DB1146B397B0024CA41 /* igorUnitTests-Info.plist */,
+				2D199DB2146B397B0024CA41 /* InfoPlist.strings */,
+				2D199DB8146B397B0024CA41 /* igorUnitTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2D199DC5146B399A0024CA41 /* igorAcceptanceTests */ = {
+			isa = PBXGroup;
+			children = (
+				E621659DB794A5D612DCD45F /* IgorTests.h */,
+				E621659DB794A5D612DCD45D /* IgorTests.m */,
+				2D199DC6146B399A0024CA41 /* Supporting Files */,
+			);
+			path = igorAcceptanceTests;
+			sourceTree = "<group>";
+		};
+		2D199DC6146B399A0024CA41 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2D199DC7146B399A0024CA41 /* igorAcceptanceTests-Info.plist */,
+				2D199DC8146B399A0024CA41 /* InfoPlist.strings */,
+				2D199DCE146B399A0024CA41 /* igorAcceptanceTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		2D2F320D146A08ED0046E8CC /* uispec */ = {
@@ -244,7 +298,8 @@
 			children = (
 				2D199DA3146B32460024CA41 /* extension */,
 				E621659DB794A5D612DCD427 /* igor */,
-				E621659DB794A5D612DCD43E /* igorTests */,
+				2D199DAF146B397B0024CA41 /* igorUnitTests */,
+				2D199DC5146B399A0024CA41 /* igorAcceptanceTests */,
 				2D2F3259146A09BC0046E8CC /* frank */,
 				2D2F324A146A09720046E8CC /* json */,
 				2D2F320D146A08ED0046E8CC /* uispec */,
@@ -257,7 +312,8 @@
 			isa = PBXGroup;
 			children = (
 				E621659DB794A5D612DCD41C /* libigor.a */,
-				E621659DB794A5D612DCD42E /* igorTests.octest */,
+				2D199DAB146B397B0024CA41 /* igorUnitTests.octest */,
+				2D199DC1146B399A0024CA41 /* igorAcceptanceTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -293,27 +349,6 @@
 			isa = PBXGroup;
 			children = (
 				E621659DB794A5D612DCD429 /* igor-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		E621659DB794A5D612DCD43E /* igorTests */ = {
-			isa = PBXGroup;
-			children = (
-				2DDE104E146A4A5500503163 /* AClassEqualsSelector.h */,
-				2DDE104F146A4A5500503163 /* AClassEqualsSelector.m */,
-				E621659DB794A5D612DCD45F /* AUniversalClassSelector.h */,
-				E621659DB794A5D612DCD45D /* AUniversalClassSelector.m */,
-				E621659DB794A5D612DCD43F /* Supporting Files */,
-			);
-			path = igorTests;
-			sourceTree = "<group>";
-		};
-		E621659DB794A5D612DCD43F /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				E621659DB794A5D612DCD442 /* InfoPlist.strings */,
-				E621659DB794A5D612DCD440 /* igorTests-Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -377,6 +412,43 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		2D199DAA146B397B0024CA41 /* igorUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D199DB9146B397B0024CA41 /* Build configuration list for PBXNativeTarget "igorUnitTests" */;
+			buildPhases = (
+				2D199DA6146B397B0024CA41 /* Sources */,
+				2D199DA7146B397B0024CA41 /* Frameworks */,
+				2D199DA8146B397B0024CA41 /* Resources */,
+				2D199DA9146B397B0024CA41 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = igorUnitTests;
+			productName = igorUnitTests;
+			productReference = 2D199DAB146B397B0024CA41 /* igorUnitTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+		2D199DC0146B399A0024CA41 /* igorAcceptanceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D199DCF146B399A0024CA41 /* Build configuration list for PBXNativeTarget "igorAcceptanceTests" */;
+			buildPhases = (
+				2D199DBC146B399A0024CA41 /* Sources */,
+				2D199DBD146B399A0024CA41 /* Frameworks */,
+				2D199DBE146B399A0024CA41 /* Resources */,
+				2D199DBF146B399A0024CA41 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2D199DD4146B3BEC0024CA41 /* PBXTargetDependency */,
+			);
+			name = igorAcceptanceTests;
+			productName = igorAcceptanceTests;
+			productReference = 2D199DC1146B399A0024CA41 /* igorAcceptanceTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 		E621659DB794A5D612DCD41D /* igor */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E621659DB794A5D612DCD41E /* Build configuration list for PBXNativeTarget "igor" */;
@@ -393,25 +465,6 @@
 			productName = igor;
 			productReference = E621659DB794A5D612DCD41C /* libigor.a */;
 			productType = "com.apple.product-type.library.static";
-		};
-		E621659DB794A5D612DCD42F /* igorTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E621659DB794A5D612DCD430 /* Build configuration list for PBXNativeTarget "igorTests" */;
-			buildPhases = (
-				E621659DB794A5D612DCD433 /* Sources */,
-				E621659DB794A5D612DCD434 /* Frameworks */,
-				E621659DB794A5D612DCD435 /* Resources */,
-				E621659DB794A5D612DCD436 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E621659DB794A5D612DCD43D /* PBXTargetDependency */,
-			);
-			name = igorTests;
-			productName = igorTests;
-			productReference = E621659DB794A5D612DCD42E /* igorTests.octest */;
-			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -434,24 +487,46 @@
 			projectRoot = "";
 			targets = (
 				E621659DB794A5D612DCD41D /* igor */,
-				E621659DB794A5D612DCD42F /* igorTests */,
+				2D199DAA146B397B0024CA41 /* igorUnitTests */,
+				2D199DC0146B399A0024CA41 /* igorAcceptanceTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		E621659DB794A5D612DCD435 /* Resources */ = {
+		2D199DA8146B397B0024CA41 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E621659DB794A5D612DCD443 /* InfoPlist.strings in Resources */,
+				2D199DB4146B397B0024CA41 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D199DBE146B399A0024CA41 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D199DCA146B399A0024CA41 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		E621659DB794A5D612DCD436 /* ShellScript */ = {
+		2D199DA9146B397B0024CA41 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		2D199DBF146B399A0024CA41 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -467,6 +542,21 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2D199DA6146B397B0024CA41 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D199DBC146B399A0024CA41 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D199DD2146B3A790024CA41 /* IgorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E621659DB794A5D612DCD422 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -479,30 +569,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E621659DB794A5D612DCD433 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E621659DB794A5D612DCD45E /* AUniversalClassSelector.m in Sources */,
-				2DDE1050146A4A5500503163 /* AClassEqualsSelector.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E621659DB794A5D612DCD43D /* PBXTargetDependency */ = {
+		2D199DD4146B3BEC0024CA41 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E621659DB794A5D612DCD41D /* igor */;
-			targetProxy = E621659DB794A5D612DCD43C /* PBXContainerItemProxy */;
+			targetProxy = 2D199DD3146B3BEC0024CA41 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E621659DB794A5D612DCD442 /* InfoPlist.strings */ = {
+		2D199DB2146B397B0024CA41 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E621659DB794A5D612DCD441 /* en */,
+				2D199DB3146B397B0024CA41 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2D199DC8146B399A0024CA41 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2D199DC9146B399A0024CA41 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -510,6 +599,66 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2D199DBA146B397B0024CA41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "igorUnitTests/igorUnitTests-Prefix.pch";
+				INFOPLIST_FILE = "igorUnitTests/igorUnitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		2D199DBB146B397B0024CA41 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "igorUnitTests/igorUnitTests-Prefix.pch";
+				INFOPLIST_FILE = "igorUnitTests/igorUnitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		2D199DD0146B399A0024CA41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "igorAcceptanceTests/igorAcceptanceTests-Prefix.pch";
+				INFOPLIST_FILE = "igorAcceptanceTests/igorAcceptanceTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		2D199DD1146B399A0024CA41 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "igorAcceptanceTests/igorAcceptanceTests-Prefix.pch";
+				INFOPLIST_FILE = "igorAcceptanceTests/igorAcceptanceTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
 		E621659DB794A5D612DCD41A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -586,39 +735,25 @@
 			};
 			name = Debug;
 		};
-		E621659DB794A5D612DCD431 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "igor/igor-Prefix.pch";
-				INFOPLIST_FILE = "igorTests/igorTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Release;
-		};
-		E621659DB794A5D612DCD432 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "igor/igor-Prefix.pch";
-				INFOPLIST_FILE = "igorTests/igorTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2D199DB9146B397B0024CA41 /* Build configuration list for PBXNativeTarget "igorUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D199DBA146B397B0024CA41 /* Release */,
+				2D199DBB146B397B0024CA41 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2D199DCF146B399A0024CA41 /* Build configuration list for PBXNativeTarget "igorAcceptanceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D199DD0146B399A0024CA41 /* Release */,
+				2D199DD1146B399A0024CA41 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		E621659DB794A5D612DCD417 /* Build configuration list for PBXProject "igor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -633,15 +768,6 @@
 			buildConfigurations = (
 				E621659DB794A5D612DCD41F /* Release */,
 				E621659DB794A5D612DCD420 /* Debug */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E621659DB794A5D612DCD430 /* Build configuration list for PBXNativeTarget "igorTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E621659DB794A5D612DCD431 /* Release */,
-				E621659DB794A5D612DCD432 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
