@@ -49,6 +49,7 @@
 		2D2F3264146A0AFA0046E8CC /* FrankCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F3262146A0AFA0046E8CC /* FrankCommand.h */; };
 		2D8ED70C1469F5F600580FB6 /* MapOperationCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D8ED70A1469F5F600580FB6 /* MapOperationCommand.h */; };
 		2DCF2BA61463ABDD00A3202C /* libigor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD41C /* libigor.a */; };
+		2DDE1050146A4A5500503163 /* AClassEqualsSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DDE104F146A4A5500503163 /* AClassEqualsSelector.m */; };
 		E621659DB794A5D612DCD426 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD425 /* Foundation.framework */; };
 		E621659DB794A5D612DCD438 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD437 /* SenTestingKit.framework */; };
 		E621659DB794A5D612DCD43A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD439 /* UIKit.framework */; };
@@ -114,6 +115,8 @@
 		2D2F3260146A0A9B0046E8CC /* DumpCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DumpCommand.h; sourceTree = "<group>"; };
 		2D2F3262146A0AFA0046E8CC /* FrankCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrankCommand.h; sourceTree = "<group>"; };
 		2D8ED70A1469F5F600580FB6 /* MapOperationCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapOperationCommand.h; path = ../igor/MapOperationCommand.h; sourceTree = "<group>"; };
+		2DDE104E146A4A5500503163 /* AClassEqualsSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AClassEqualsSelector.h; sourceTree = "<group>"; };
+		2DDE104F146A4A5500503163 /* AClassEqualsSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AClassEqualsSelector.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD41C /* libigor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libigor.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E621659DB794A5D612DCD425 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E621659DB794A5D612DCD429 /* igor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "igor-Prefix.pch"; sourceTree = "<group>"; };
@@ -273,6 +276,8 @@
 		E621659DB794A5D612DCD43E /* igorTests */ = {
 			isa = PBXGroup;
 			children = (
+				2DDE104E146A4A5500503163 /* AClassEqualsSelector.h */,
+				2DDE104F146A4A5500503163 /* AClassEqualsSelector.m */,
 				E621659DB794A5D612DCD45F /* AUniversalClassSelector.h */,
 				E621659DB794A5D612DCD45D /* AUniversalClassSelector.m */,
 				E621659DB794A5D612DCD43F /* Supporting Files */,
@@ -457,6 +462,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E621659DB794A5D612DCD45E /* AUniversalClassSelector.m in Sources */,
+				2DDE1050146A4A5500503163 /* AClassEqualsSelector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
