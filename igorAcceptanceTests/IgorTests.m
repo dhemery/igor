@@ -6,8 +6,8 @@
 
 
 #import <UIKit/UIKit.h>
-#import "IgorTests.h"
 #import "Igor.h"
+#import "IgorTests.h"
 
 
 @implementation IgorTests {
@@ -58,7 +58,7 @@
     STAssertNotNil([selectedViews member:view23], @"view23");
 }
 
-- (void) testAClassEqualsSelectorSelectsOnlyViewsOfTheSpecifiedClass {
+- (void) testAClassEqualsSelectorSelectsViewsOfTheSpecifiedClass {
     UIView *root = [[UIView alloc] initWithFrame:frame];
     UIView *button = [[UIButton alloc] initWithFrame: frame];
     UIView *imageView = [[UIImageView alloc] initWithFrame:frame];
@@ -73,4 +73,5 @@
     STAssertNil([selectedViews member:imageView], @"imageView");
     
 }
+
 @end
