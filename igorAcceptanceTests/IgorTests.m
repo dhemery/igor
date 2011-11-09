@@ -36,9 +36,9 @@
         [view1 addSubview:view12];
     [root addSubview:view2];
         [view2 addSubview:view21];
-            [view2 addSubview:view211];
-            [view2 addSubview:view212];
-            [view2 addSubview:view213];
+            [view21 addSubview:view211];
+            [view21 addSubview:view212];
+            [view21 addSubview:view213];
         [view2 addSubview:view22];
         [view2 addSubview:view23];
 
