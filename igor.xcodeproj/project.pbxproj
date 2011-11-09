@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D199D91146B28880024CA41 /* Selector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D199D8F146B28880024CA41 /* Selector.h */; };
+		2D199D92146B28880024CA41 /* Selector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D199D90146B28880024CA41 /* Selector.m */; };
+		2D199D96146B28E80024CA41 /* UniversalClassSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D199D94146B28E80024CA41 /* UniversalClassSelector.h */; };
+		2D199D97146B28E80024CA41 /* UniversalClassSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D199D95146B28E80024CA41 /* UniversalClassSelector.m */; };
+		2D199D9A146B29540024CA41 /* ClassEqualsSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D199D98146B29540024CA41 /* ClassEqualsSelector.h */; };
+		2D199D9B146B29540024CA41 /* ClassEqualsSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D199D99146B29540024CA41 /* ClassEqualsSelector.m */; };
 		2D2F322C146A08ED0046E8CC /* CallCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F320E146A08ED0046E8CC /* CallCache.h */; };
 		2D2F322D146A08ED0046E8CC /* NSNumberCreator.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F320F146A08ED0046E8CC /* NSNumberCreator.h */; };
 		2D2F322E146A08ED0046E8CC /* Recordable.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F3210146A08ED0046E8CC /* Recordable.h */; };
@@ -55,8 +61,8 @@
 		E621659DB794A5D612DCD43A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD439 /* UIKit.framework */; };
 		E621659DB794A5D612DCD43B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD425 /* Foundation.framework */; };
 		E621659DB794A5D612DCD443 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD442 /* InfoPlist.strings */; };
-		E621659DB794A5D612DCD453 /* ViewSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD452 /* ViewSelector.m */; };
-		E621659DB794A5D612DCD455 /* ViewSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD454 /* ViewSelector.h */; };
+		E621659DB794A5D612DCD453 /* Igor.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD452 /* Igor.m */; };
+		E621659DB794A5D612DCD455 /* Igor.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD454 /* Igor.h */; };
 		E621659DB794A5D612DCD45E /* AUniversalClassSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD45D /* AUniversalClassSelector.m */; };
 		E621659DB794A5D612DCD463 /* MapOperationCommand+IgorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD462 /* MapOperationCommand+IgorAdditions.m */; };
 		E621659DB794A5D612DCD465 /* MapOperationCommand+IgorAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD464 /* MapOperationCommand+IgorAdditions.h */; };
@@ -74,6 +80,12 @@
 
 /* Begin PBXFileReference section */
 		2D1421341469ECB100862643 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		2D199D8F146B28880024CA41 /* Selector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Selector.h; sourceTree = "<group>"; };
+		2D199D90146B28880024CA41 /* Selector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Selector.m; sourceTree = "<group>"; };
+		2D199D94146B28E80024CA41 /* UniversalClassSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniversalClassSelector.h; sourceTree = "<group>"; };
+		2D199D95146B28E80024CA41 /* UniversalClassSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UniversalClassSelector.m; sourceTree = "<group>"; };
+		2D199D98146B29540024CA41 /* ClassEqualsSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassEqualsSelector.h; sourceTree = "<group>"; };
+		2D199D99146B29540024CA41 /* ClassEqualsSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassEqualsSelector.m; sourceTree = "<group>"; };
 		2D2F320E146A08ED0046E8CC /* CallCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallCache.h; sourceTree = "<group>"; };
 		2D2F320F146A08ED0046E8CC /* NSNumberCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSNumberCreator.h; sourceTree = "<group>"; };
 		2D2F3210146A08ED0046E8CC /* Recordable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recordable.h; sourceTree = "<group>"; };
@@ -125,8 +137,8 @@
 		E621659DB794A5D612DCD439 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E621659DB794A5D612DCD440 /* igorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "igorTests-Info.plist"; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD441 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD452 /* ViewSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewSelector.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD454 /* ViewSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewSelector.h; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD452 /* Igor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Igor.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD454 /* Igor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Igor.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD45D /* AUniversalClassSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUniversalClassSelector.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD45F /* AUniversalClassSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUniversalClassSelector.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD461 /* syntax.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = syntax.txt; sourceTree = "<group>"; };
@@ -256,10 +268,16 @@
 		E621659DB794A5D612DCD427 /* igor */ = {
 			isa = PBXGroup;
 			children = (
+				2D199D98146B29540024CA41 /* ClassEqualsSelector.h */,
+				2D199D99146B29540024CA41 /* ClassEqualsSelector.m */,
 				E621659DB794A5D612DCD464 /* MapOperationCommand+IgorAdditions.h */,
 				E621659DB794A5D612DCD462 /* MapOperationCommand+IgorAdditions.m */,
-				E621659DB794A5D612DCD454 /* ViewSelector.h */,
-				E621659DB794A5D612DCD452 /* ViewSelector.m */,
+				2D199D8F146B28880024CA41 /* Selector.h */,
+				2D199D90146B28880024CA41 /* Selector.m */,
+				2D199D94146B28E80024CA41 /* UniversalClassSelector.h */,
+				2D199D95146B28E80024CA41 /* UniversalClassSelector.m */,
+				E621659DB794A5D612DCD454 /* Igor.h */,
+				E621659DB794A5D612DCD452 /* Igor.m */,
 				E621659DB794A5D612DCD428 /* Supporting Files */,
 			);
 			path = igor;
@@ -309,7 +327,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E621659DB794A5D612DCD455 /* ViewSelector.h in Headers */,
+				E621659DB794A5D612DCD455 /* Igor.h in Headers */,
 				E621659DB794A5D612DCD465 /* MapOperationCommand+IgorAdditions.h in Headers */,
 				2D8ED70C1469F5F600580FB6 /* MapOperationCommand.h in Headers */,
 				2D2F322C146A08ED0046E8CC /* CallCache.h in Headers */,
@@ -352,6 +370,9 @@
 				2D2F325B146A09BC0046E8CC /* Operation.h in Headers */,
 				2D2F3261146A0A9B0046E8CC /* DumpCommand.h in Headers */,
 				2D2F3264146A0AFA0046E8CC /* FrankCommand.h in Headers */,
+				2D199D91146B28880024CA41 /* Selector.h in Headers */,
+				2D199D96146B28E80024CA41 /* UniversalClassSelector.h in Headers */,
+				2D199D9A146B29540024CA41 /* ClassEqualsSelector.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,8 +473,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E621659DB794A5D612DCD453 /* ViewSelector.m in Sources */,
+				E621659DB794A5D612DCD453 /* Igor.m in Sources */,
 				E621659DB794A5D612DCD463 /* MapOperationCommand+IgorAdditions.m in Sources */,
+				2D199D92146B28880024CA41 /* Selector.m in Sources */,
+				2D199D97146B28E80024CA41 /* UniversalClassSelector.m in Sources */,
+				2D199D9B146B29540024CA41 /* ClassEqualsSelector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

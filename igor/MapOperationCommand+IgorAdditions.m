@@ -13,7 +13,7 @@
 #import "UIQueryWebView.h"
 #import <UIKit/UIView.h>
 #import "DumpCommand.h"
-#import "ViewSelector.h"
+#import "Igor.h"
 
 
 @implementation MapOperationCommand (IgorAdditions)
@@ -75,7 +75,7 @@
     
 	@try {
         UIView *root = [[UIApplication sharedApplication] keyWindow] ;
-        ViewSelector* igor = [ViewSelector selectorFor:queryString];
+        Igor* igor = [Igor igorFor:queryString];
         selectedViews = [igor selectViewsFromRoot:root];
 		NSLog( @"Query '%@' found views: %@", queryString, selectedViews );
 	}

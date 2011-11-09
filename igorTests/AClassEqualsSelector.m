@@ -7,16 +7,14 @@
 //
 
 #import "AClassEqualsSelector.h"
-#import "ViewSelector.h"
+#import "Igor.h"
 
 @implementation AClassEqualsSelector {
     CGRect frame;
-    ViewSelector *buttonClassSelector;
 }
 
 -(void) setUp {
     frame = CGRectMake(0, 0, 100, 100);
-    buttonClassSelector = [ViewSelector selectorFor:@"UIButton"];
 }
 
 
@@ -27,8 +25,8 @@
     [root addSubview:button];
     [button addSubview:imageView];
     
-    NSMutableSet *selectedViews = [buttonClassSelector
-                                   selectViewsFromRoot:root];
+    Igor *igor = [Igor igorFor:@"UIButton"];
+    NSMutableSet *selectedViews = [igor selectViewsFromRoot:root];
     
     STAssertNil([selectedViews member:root], @"root");
     STAssertNotNil([selectedViews member:button], @"button");

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface ViewSelector : NSObject
+@interface Igor : NSObject
 - (NSMutableSet *)selectViewsFromRoot:(UIView *)root;
-+ (ViewSelector *)selectorFor:(NSString *)selectorString;
++ (Igor *)igorFor:(NSString *)selectorString;
 @end

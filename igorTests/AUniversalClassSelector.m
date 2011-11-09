@@ -7,17 +7,15 @@
 
 #import <UIKit/UIKit.h>
 #import "AUniversalClassSelector.h"
-#import "ViewSelector.h"
+#import "Igor.h"
 
 
 @implementation AUniversalClassSelector {
     CGRect frame;
-    ViewSelector *universalClassSelector;
 }
 
 -(void) setUp {
     frame = CGRectMake(0, 0, 100, 100);
-    universalClassSelector = [ViewSelector selectorFor:@"*"];
 }
 
 - (void) testAUniversalClassSelectorSelectsTheRootViewAndAllSubviews {
@@ -44,7 +42,8 @@
         [view2 addSubview:view22];
         [view2 addSubview:view23];
 
-    NSMutableSet *selectedViews = [universalClassSelector selectViewsFromRoot:root];
+    Igor *igor = [Igor igorFor:@"*"];
+    NSMutableSet *selectedViews = [igor selectViewsFromRoot:root];
 
     STAssertNotNil([selectedViews member:root], @"root");
     STAssertNotNil([selectedViews member:view1], @"view1");
