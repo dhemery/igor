@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2D199D91146B28880024CA41 /* Selector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D199D8F146B28880024CA41 /* Selector.h */; };
-		2D199D96146B28E80024CA41 /* UniversalClassSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D199D94146B28E80024CA41 /* UniversalClassSelector.h */; };
-		2D199D97146B28E80024CA41 /* UniversalClassSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D199D95146B28E80024CA41 /* UniversalClassSelector.m */; };
+		2D199D96146B28E80024CA41 /* UniversalSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D199D94146B28E80024CA41 /* UniversalSelector.h */; };
+		2D199D97146B28E80024CA41 /* UniversalSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D199D95146B28E80024CA41 /* UniversalSelector.m */; };
 		2D199D9A146B29540024CA41 /* ClassEqualsSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D199D98146B29540024CA41 /* ClassEqualsSelector.h */; };
 		2D199D9B146B29540024CA41 /* ClassEqualsSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D199D99146B29540024CA41 /* ClassEqualsSelector.m */; };
 		2D199DAC146B397B0024CA41 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD437 /* SenTestingKit.framework */; };
@@ -20,54 +20,14 @@
 		2D199DC3146B399A0024CA41 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD439 /* UIKit.framework */; };
 		2D199DC4146B399A0024CA41 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD425 /* Foundation.framework */; };
 		2D199DCA146B399A0024CA41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D199DC8146B399A0024CA41 /* InfoPlist.strings */; };
-		2D199DD5146B3C070024CA41 /* libigor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD41C /* libigor.a */; };
 		2D199DDE146B3FCE0024CA41 /* IgorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D199DDB146B3FBF0024CA41 /* IgorTests.m */; };
-		2D2F322C146A08ED0046E8CC /* CallCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F320E146A08ED0046E8CC /* CallCache.h */; };
-		2D2F322D146A08ED0046E8CC /* NSNumberCreator.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F320F146A08ED0046E8CC /* NSNumberCreator.h */; };
-		2D2F322E146A08ED0046E8CC /* Recordable.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F3210146A08ED0046E8CC /* Recordable.h */; };
-		2D2F322F146A08ED0046E8CC /* ReturnCacher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F3211146A08ED0046E8CC /* ReturnCacher.h */; };
-		2D2F3230146A08ED0046E8CC /* UIBug.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F3212146A08ED0046E8CC /* UIBug.h */; };
-		2D2F3231146A08ED0046E8CC /* UIChildren.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F3213146A08ED0046E8CC /* UIChildren.h */; };
-		2D2F3232146A08ED0046E8CC /* UIConsole.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F3214146A08ED0046E8CC /* UIConsole.h */; };
-		2D2F3233146A08ED0046E8CC /* UIConsoleLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F3215146A08ED0046E8CC /* UIConsoleLog.h */; };
-		2D2F3234146A08ED0046E8CC /* UIDescendants.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F3216146A08ED0046E8CC /* UIDescendants.h */; };
-		2D2F3235146A08ED0046E8CC /* UIExpectation.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F3217146A08ED0046E8CC /* UIExpectation.h */; };
-		2D2F3236146A08ED0046E8CC /* UIFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F3218146A08ED0046E8CC /* UIFilter.h */; };
-		2D2F3237146A08ED0046E8CC /* UIInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F3219146A08ED0046E8CC /* UIInspector.h */; };
-		2D2F3238146A08ED0046E8CC /* UILog.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F321A146A08ED0046E8CC /* UILog.h */; };
-		2D2F3239146A08ED0046E8CC /* UIMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F321B146A08ED0046E8CC /* UIMatcher.h */; };
-		2D2F323A146A08ED0046E8CC /* UIParents.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F321C146A08ED0046E8CC /* UIParents.h */; };
-		2D2F323B146A08ED0046E8CC /* UIProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F321D146A08ED0046E8CC /* UIProxy.h */; };
-		2D2F323C146A08ED0046E8CC /* UIQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F321E146A08ED0046E8CC /* UIQuery.h */; };
-		2D2F323D146A08ED0046E8CC /* UIQueryAll.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F321F146A08ED0046E8CC /* UIQueryAll.h */; };
-		2D2F323E146A08ED0046E8CC /* UIQueryExpectation.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F3220146A08ED0046E8CC /* UIQueryExpectation.h */; };
-		2D2F323F146A08ED0046E8CC /* UIQuerySearchBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F3221146A08ED0046E8CC /* UIQuerySearchBar.h */; };
-		2D2F3240146A08ED0046E8CC /* UIQuerySegmentedControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F3222146A08ED0046E8CC /* UIQuerySegmentedControl.h */; };
-		2D2F3241146A08ED0046E8CC /* UIQueryTabBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F3223146A08ED0046E8CC /* UIQueryTabBar.h */; };
-		2D2F3242146A08ED0046E8CC /* UIQueryTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F3224146A08ED0046E8CC /* UIQueryTableView.h */; };
-		2D2F3243146A08ED0046E8CC /* UIQueryTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F3225146A08ED0046E8CC /* UIQueryTableViewCell.h */; };
-		2D2F3244146A08ED0046E8CC /* UIQueryWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F3226146A08ED0046E8CC /* UIQueryWebView.h */; };
-		2D2F3245146A08ED0046E8CC /* UIRedoer.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F3227146A08ED0046E8CC /* UIRedoer.h */; };
-		2D2F3246146A08ED0046E8CC /* UISpec.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F3228146A08ED0046E8CC /* UISpec.h */; };
-		2D2F3247146A08ED0046E8CC /* UISpec_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F3229146A08ED0046E8CC /* UISpec_Prefix.pch */; };
-		2D2F3248146A08ED0046E8CC /* ViewFilterSwizzler.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F322A146A08ED0046E8CC /* ViewFilterSwizzler.h */; };
-		2D2F3249146A08ED0046E8CC /* WaitUntilIdle.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F322B146A08ED0046E8CC /* WaitUntilIdle.h */; };
-		2D2F3252146A09720046E8CC /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F324B146A09720046E8CC /* JSON.h */; };
-		2D2F3253146A09720046E8CC /* NSObject+SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F324C146A09720046E8CC /* NSObject+SBJSON.h */; };
-		2D2F3254146A09720046E8CC /* NSString+SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F324D146A09720046E8CC /* NSString+SBJSON.h */; };
-		2D2F3255146A09720046E8CC /* SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F324E146A09720046E8CC /* SBJSON.h */; };
-		2D2F3256146A09720046E8CC /* SBJsonBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F324F146A09720046E8CC /* SBJsonBase.h */; };
-		2D2F3257146A09720046E8CC /* SBJsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F3250146A09720046E8CC /* SBJsonParser.h */; };
-		2D2F3258146A09720046E8CC /* SBJsonWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F3251146A09720046E8CC /* SBJsonWriter.h */; };
-		2D2F325B146A09BC0046E8CC /* Operation.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F325A146A09BC0046E8CC /* Operation.h */; };
-		2D2F3261146A0A9B0046E8CC /* DumpCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F3260146A0A9B0046E8CC /* DumpCommand.h */; };
-		2D2F3264146A0AFA0046E8CC /* FrankCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2F3262146A0AFA0046E8CC /* FrankCommand.h */; };
-		2D8ED70C1469F5F600580FB6 /* MapOperationCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D8ED70A1469F5F600580FB6 /* MapOperationCommand.h */; };
+		2DC2B4D8146BBD6100D2D314 /* MapOperationCommand+IgorAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DC2B4D4146BBD6100D2D314 /* MapOperationCommand+IgorAdditions.h */; };
+		2DC2B4D9146BBD6100D2D314 /* MapOperationCommand+IgorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC2B4D5146BBD6100D2D314 /* MapOperationCommand+IgorAdditions.m */; };
+		2DC2B4E8146BC5F300D2D314 /* libigor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD41C /* libigor.a */; };
+		2DC2B4E9146BC61800D2D314 /* libigor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD41C /* libigor.a */; };
 		E621659DB794A5D612DCD426 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD425 /* Foundation.framework */; };
 		E621659DB794A5D612DCD453 /* Igor.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD452 /* Igor.m */; };
 		E621659DB794A5D612DCD455 /* Igor.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD454 /* Igor.h */; };
-		E621659DB794A5D612DCD463 /* MapOperationCommand+IgorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD462 /* MapOperationCommand+IgorAdditions.m */; };
-		E621659DB794A5D612DCD465 /* MapOperationCommand+IgorAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD464 /* MapOperationCommand+IgorAdditions.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,8 +43,8 @@
 /* Begin PBXFileReference section */
 		2D1421341469ECB100862643 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		2D199D8F146B28880024CA41 /* Selector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Selector.h; sourceTree = "<group>"; };
-		2D199D94146B28E80024CA41 /* UniversalClassSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniversalClassSelector.h; sourceTree = "<group>"; };
-		2D199D95146B28E80024CA41 /* UniversalClassSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UniversalClassSelector.m; sourceTree = "<group>"; };
+		2D199D94146B28E80024CA41 /* UniversalSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniversalSelector.h; sourceTree = "<group>"; };
+		2D199D95146B28E80024CA41 /* UniversalSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UniversalSelector.m; sourceTree = "<group>"; };
 		2D199D98146B29540024CA41 /* ClassEqualsSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassEqualsSelector.h; sourceTree = "<group>"; };
 		2D199D99146B29540024CA41 /* ClassEqualsSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassEqualsSelector.m; sourceTree = "<group>"; };
 		2D199DAB146B397B0024CA41 /* igorUnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = igorUnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,47 +57,8 @@
 		2D199DCE146B399A0024CA41 /* igorAcceptanceTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "igorAcceptanceTests-Prefix.pch"; sourceTree = "<group>"; };
 		2D199DDA146B3FBF0024CA41 /* IgorTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IgorTests.h; sourceTree = "<group>"; };
 		2D199DDB146B3FBF0024CA41 /* IgorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IgorTests.m; sourceTree = "<group>"; };
-		2D2F320E146A08ED0046E8CC /* CallCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallCache.h; sourceTree = "<group>"; };
-		2D2F320F146A08ED0046E8CC /* NSNumberCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSNumberCreator.h; sourceTree = "<group>"; };
-		2D2F3210146A08ED0046E8CC /* Recordable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recordable.h; sourceTree = "<group>"; };
-		2D2F3211146A08ED0046E8CC /* ReturnCacher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReturnCacher.h; sourceTree = "<group>"; };
-		2D2F3212146A08ED0046E8CC /* UIBug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBug.h; sourceTree = "<group>"; };
-		2D2F3213146A08ED0046E8CC /* UIChildren.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIChildren.h; sourceTree = "<group>"; };
-		2D2F3214146A08ED0046E8CC /* UIConsole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIConsole.h; sourceTree = "<group>"; };
-		2D2F3215146A08ED0046E8CC /* UIConsoleLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIConsoleLog.h; sourceTree = "<group>"; };
-		2D2F3216146A08ED0046E8CC /* UIDescendants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDescendants.h; sourceTree = "<group>"; };
-		2D2F3217146A08ED0046E8CC /* UIExpectation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIExpectation.h; sourceTree = "<group>"; };
-		2D2F3218146A08ED0046E8CC /* UIFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIFilter.h; sourceTree = "<group>"; };
-		2D2F3219146A08ED0046E8CC /* UIInspector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIInspector.h; sourceTree = "<group>"; };
-		2D2F321A146A08ED0046E8CC /* UILog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILog.h; sourceTree = "<group>"; };
-		2D2F321B146A08ED0046E8CC /* UIMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIMatcher.h; sourceTree = "<group>"; };
-		2D2F321C146A08ED0046E8CC /* UIParents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIParents.h; sourceTree = "<group>"; };
-		2D2F321D146A08ED0046E8CC /* UIProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIProxy.h; sourceTree = "<group>"; };
-		2D2F321E146A08ED0046E8CC /* UIQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIQuery.h; sourceTree = "<group>"; };
-		2D2F321F146A08ED0046E8CC /* UIQueryAll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIQueryAll.h; sourceTree = "<group>"; };
-		2D2F3220146A08ED0046E8CC /* UIQueryExpectation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIQueryExpectation.h; sourceTree = "<group>"; };
-		2D2F3221146A08ED0046E8CC /* UIQuerySearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIQuerySearchBar.h; sourceTree = "<group>"; };
-		2D2F3222146A08ED0046E8CC /* UIQuerySegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIQuerySegmentedControl.h; sourceTree = "<group>"; };
-		2D2F3223146A08ED0046E8CC /* UIQueryTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIQueryTabBar.h; sourceTree = "<group>"; };
-		2D2F3224146A08ED0046E8CC /* UIQueryTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIQueryTableView.h; sourceTree = "<group>"; };
-		2D2F3225146A08ED0046E8CC /* UIQueryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIQueryTableViewCell.h; sourceTree = "<group>"; };
-		2D2F3226146A08ED0046E8CC /* UIQueryWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIQueryWebView.h; sourceTree = "<group>"; };
-		2D2F3227146A08ED0046E8CC /* UIRedoer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIRedoer.h; sourceTree = "<group>"; };
-		2D2F3228146A08ED0046E8CC /* UISpec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UISpec.h; sourceTree = "<group>"; };
-		2D2F3229146A08ED0046E8CC /* UISpec_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UISpec_Prefix.pch; sourceTree = "<group>"; };
-		2D2F322A146A08ED0046E8CC /* ViewFilterSwizzler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewFilterSwizzler.h; sourceTree = "<group>"; };
-		2D2F322B146A08ED0046E8CC /* WaitUntilIdle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaitUntilIdle.h; sourceTree = "<group>"; };
-		2D2F324B146A09720046E8CC /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
-		2D2F324C146A09720046E8CC /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
-		2D2F324D146A09720046E8CC /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
-		2D2F324E146A09720046E8CC /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
-		2D2F324F146A09720046E8CC /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
-		2D2F3250146A09720046E8CC /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
-		2D2F3251146A09720046E8CC /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
-		2D2F325A146A09BC0046E8CC /* Operation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Operation.h; sourceTree = "<group>"; };
-		2D2F3260146A0A9B0046E8CC /* DumpCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DumpCommand.h; sourceTree = "<group>"; };
-		2D2F3262146A0AFA0046E8CC /* FrankCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrankCommand.h; sourceTree = "<group>"; };
-		2D8ED70A1469F5F600580FB6 /* MapOperationCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapOperationCommand.h; path = ../igor/MapOperationCommand.h; sourceTree = "<group>"; };
+		2DC2B4D4146BBD6100D2D314 /* MapOperationCommand+IgorAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MapOperationCommand+IgorAdditions.h"; sourceTree = "<group>"; };
+		2DC2B4D5146BBD6100D2D314 /* MapOperationCommand+IgorAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MapOperationCommand+IgorAdditions.m"; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD41C /* libigor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libigor.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E621659DB794A5D612DCD425 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E621659DB794A5D612DCD429 /* igor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "igor-Prefix.pch"; sourceTree = "<group>"; };
@@ -145,8 +66,6 @@
 		E621659DB794A5D612DCD439 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E621659DB794A5D612DCD452 /* Igor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Igor.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD454 /* Igor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Igor.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD462 /* MapOperationCommand+IgorAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MapOperationCommand+IgorAdditions.m"; path = "igor/MapOperationCommand+IgorAdditions.m"; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD464 /* MapOperationCommand+IgorAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MapOperationCommand+IgorAdditions.h"; path = "igor/MapOperationCommand+IgorAdditions.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +76,7 @@
 				2D199DAC146B397B0024CA41 /* SenTestingKit.framework in Frameworks */,
 				2D199DAD146B397B0024CA41 /* UIKit.framework in Frameworks */,
 				2D199DAE146B397B0024CA41 /* Foundation.framework in Frameworks */,
+				2DC2B4E9146BC61800D2D314 /* libigor.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,10 +84,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D199DD5146B3C070024CA41 /* libigor.a in Frameworks */,
 				2D199DC2146B399A0024CA41 /* SenTestingKit.framework in Frameworks */,
 				2D199DC3146B399A0024CA41 /* UIKit.framework in Frameworks */,
 				2D199DC4146B399A0024CA41 /* Foundation.framework in Frameworks */,
+				2DC2B4E8146BC5F300D2D314 /* libigor.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,15 +102,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2D199DA3146B32460024CA41 /* extension */ = {
-			isa = PBXGroup;
-			children = (
-				E621659DB794A5D612DCD464 /* MapOperationCommand+IgorAdditions.h */,
-				E621659DB794A5D612DCD462 /* MapOperationCommand+IgorAdditions.m */,
-			);
-			name = extension;
-			sourceTree = "<group>";
-		};
 		2D199DAF146B397B0024CA41 /* igorUnitTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,78 +140,22 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		2D2F320D146A08ED0046E8CC /* uispec */ = {
+		2DC2B4D2146BBD6100D2D314 /* extension */ = {
 			isa = PBXGroup;
 			children = (
-				2D2F320E146A08ED0046E8CC /* CallCache.h */,
-				2D2F320F146A08ED0046E8CC /* NSNumberCreator.h */,
-				2D2F3210146A08ED0046E8CC /* Recordable.h */,
-				2D2F3211146A08ED0046E8CC /* ReturnCacher.h */,
-				2D2F3212146A08ED0046E8CC /* UIBug.h */,
-				2D2F3213146A08ED0046E8CC /* UIChildren.h */,
-				2D2F3214146A08ED0046E8CC /* UIConsole.h */,
-				2D2F3215146A08ED0046E8CC /* UIConsoleLog.h */,
-				2D2F3216146A08ED0046E8CC /* UIDescendants.h */,
-				2D2F3217146A08ED0046E8CC /* UIExpectation.h */,
-				2D2F3218146A08ED0046E8CC /* UIFilter.h */,
-				2D2F3219146A08ED0046E8CC /* UIInspector.h */,
-				2D2F321A146A08ED0046E8CC /* UILog.h */,
-				2D2F321B146A08ED0046E8CC /* UIMatcher.h */,
-				2D2F321C146A08ED0046E8CC /* UIParents.h */,
-				2D2F321D146A08ED0046E8CC /* UIProxy.h */,
-				2D2F321E146A08ED0046E8CC /* UIQuery.h */,
-				2D2F321F146A08ED0046E8CC /* UIQueryAll.h */,
-				2D2F3220146A08ED0046E8CC /* UIQueryExpectation.h */,
-				2D2F3221146A08ED0046E8CC /* UIQuerySearchBar.h */,
-				2D2F3222146A08ED0046E8CC /* UIQuerySegmentedControl.h */,
-				2D2F3223146A08ED0046E8CC /* UIQueryTabBar.h */,
-				2D2F3224146A08ED0046E8CC /* UIQueryTableView.h */,
-				2D2F3225146A08ED0046E8CC /* UIQueryTableViewCell.h */,
-				2D2F3226146A08ED0046E8CC /* UIQueryWebView.h */,
-				2D2F3227146A08ED0046E8CC /* UIRedoer.h */,
-				2D2F3228146A08ED0046E8CC /* UISpec.h */,
-				2D2F3229146A08ED0046E8CC /* UISpec_Prefix.pch */,
-				2D2F322A146A08ED0046E8CC /* ViewFilterSwizzler.h */,
-				2D2F322B146A08ED0046E8CC /* WaitUntilIdle.h */,
+				2DC2B4D4146BBD6100D2D314 /* MapOperationCommand+IgorAdditions.h */,
+				2DC2B4D5146BBD6100D2D314 /* MapOperationCommand+IgorAdditions.m */,
 			);
-			path = uispec;
-			sourceTree = "<group>";
-		};
-		2D2F324A146A09720046E8CC /* json */ = {
-			isa = PBXGroup;
-			children = (
-				2D2F324B146A09720046E8CC /* JSON.h */,
-				2D2F324C146A09720046E8CC /* NSObject+SBJSON.h */,
-				2D2F324D146A09720046E8CC /* NSString+SBJSON.h */,
-				2D2F324E146A09720046E8CC /* SBJSON.h */,
-				2D2F324F146A09720046E8CC /* SBJsonBase.h */,
-				2D2F3250146A09720046E8CC /* SBJsonParser.h */,
-				2D2F3251146A09720046E8CC /* SBJsonWriter.h */,
-			);
-			path = json;
-			sourceTree = "<group>";
-		};
-		2D2F3259146A09BC0046E8CC /* frank */ = {
-			isa = PBXGroup;
-			children = (
-				2D8ED70A1469F5F600580FB6 /* MapOperationCommand.h */,
-				2D2F3260146A0A9B0046E8CC /* DumpCommand.h */,
-				2D2F325A146A09BC0046E8CC /* Operation.h */,
-				2D2F3262146A0AFA0046E8CC /* FrankCommand.h */,
-			);
-			path = frank;
+			path = extension;
 			sourceTree = "<group>";
 		};
 		E621659DB794A5D612DCD418 = {
 			isa = PBXGroup;
 			children = (
-				2D199DA3146B32460024CA41 /* extension */,
+				2DC2B4D2146BBD6100D2D314 /* extension */,
 				E621659DB794A5D612DCD427 /* igor */,
 				2D199DAF146B397B0024CA41 /* igorUnitTests */,
 				2D199DC5146B399A0024CA41 /* igorAcceptanceTests */,
-				2D2F3259146A09BC0046E8CC /* frank */,
-				2D2F324A146A09720046E8CC /* json */,
-				2D2F320D146A08ED0046E8CC /* uispec */,
 				E621659DB794A5D612DCD419 /* Products */,
 				E621659DB794A5D612DCD424 /* Frameworks */,
 			);
@@ -333,8 +188,8 @@
 				2D199D98146B29540024CA41 /* ClassEqualsSelector.h */,
 				2D199D99146B29540024CA41 /* ClassEqualsSelector.m */,
 				2D199D8F146B28880024CA41 /* Selector.h */,
-				2D199D94146B28E80024CA41 /* UniversalClassSelector.h */,
-				2D199D95146B28E80024CA41 /* UniversalClassSelector.m */,
+				2D199D94146B28E80024CA41 /* UniversalSelector.h */,
+				2D199D95146B28E80024CA41 /* UniversalSelector.m */,
 				E621659DB794A5D612DCD454 /* Igor.h */,
 				E621659DB794A5D612DCD452 /* Igor.m */,
 				E621659DB794A5D612DCD428 /* Supporting Files */,
@@ -358,51 +213,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E621659DB794A5D612DCD455 /* Igor.h in Headers */,
-				E621659DB794A5D612DCD465 /* MapOperationCommand+IgorAdditions.h in Headers */,
-				2D8ED70C1469F5F600580FB6 /* MapOperationCommand.h in Headers */,
-				2D2F322C146A08ED0046E8CC /* CallCache.h in Headers */,
-				2D2F322D146A08ED0046E8CC /* NSNumberCreator.h in Headers */,
-				2D2F322E146A08ED0046E8CC /* Recordable.h in Headers */,
-				2D2F322F146A08ED0046E8CC /* ReturnCacher.h in Headers */,
-				2D2F3230146A08ED0046E8CC /* UIBug.h in Headers */,
-				2D2F3231146A08ED0046E8CC /* UIChildren.h in Headers */,
-				2D2F3232146A08ED0046E8CC /* UIConsole.h in Headers */,
-				2D2F3233146A08ED0046E8CC /* UIConsoleLog.h in Headers */,
-				2D2F3234146A08ED0046E8CC /* UIDescendants.h in Headers */,
-				2D2F3235146A08ED0046E8CC /* UIExpectation.h in Headers */,
-				2D2F3236146A08ED0046E8CC /* UIFilter.h in Headers */,
-				2D2F3237146A08ED0046E8CC /* UIInspector.h in Headers */,
-				2D2F3238146A08ED0046E8CC /* UILog.h in Headers */,
-				2D2F3239146A08ED0046E8CC /* UIMatcher.h in Headers */,
-				2D2F323A146A08ED0046E8CC /* UIParents.h in Headers */,
-				2D2F323B146A08ED0046E8CC /* UIProxy.h in Headers */,
-				2D2F323C146A08ED0046E8CC /* UIQuery.h in Headers */,
-				2D2F323D146A08ED0046E8CC /* UIQueryAll.h in Headers */,
-				2D2F323E146A08ED0046E8CC /* UIQueryExpectation.h in Headers */,
-				2D2F323F146A08ED0046E8CC /* UIQuerySearchBar.h in Headers */,
-				2D2F3240146A08ED0046E8CC /* UIQuerySegmentedControl.h in Headers */,
-				2D2F3241146A08ED0046E8CC /* UIQueryTabBar.h in Headers */,
-				2D2F3242146A08ED0046E8CC /* UIQueryTableView.h in Headers */,
-				2D2F3243146A08ED0046E8CC /* UIQueryTableViewCell.h in Headers */,
-				2D2F3244146A08ED0046E8CC /* UIQueryWebView.h in Headers */,
-				2D2F3245146A08ED0046E8CC /* UIRedoer.h in Headers */,
-				2D2F3246146A08ED0046E8CC /* UISpec.h in Headers */,
-				2D2F3247146A08ED0046E8CC /* UISpec_Prefix.pch in Headers */,
-				2D2F3248146A08ED0046E8CC /* ViewFilterSwizzler.h in Headers */,
-				2D2F3249146A08ED0046E8CC /* WaitUntilIdle.h in Headers */,
-				2D2F3252146A09720046E8CC /* JSON.h in Headers */,
-				2D2F3253146A09720046E8CC /* NSObject+SBJSON.h in Headers */,
-				2D2F3254146A09720046E8CC /* NSString+SBJSON.h in Headers */,
-				2D2F3255146A09720046E8CC /* SBJSON.h in Headers */,
-				2D2F3256146A09720046E8CC /* SBJsonBase.h in Headers */,
-				2D2F3257146A09720046E8CC /* SBJsonParser.h in Headers */,
-				2D2F3258146A09720046E8CC /* SBJsonWriter.h in Headers */,
-				2D2F325B146A09BC0046E8CC /* Operation.h in Headers */,
-				2D2F3261146A0A9B0046E8CC /* DumpCommand.h in Headers */,
-				2D2F3264146A0AFA0046E8CC /* FrankCommand.h in Headers */,
 				2D199D91146B28880024CA41 /* Selector.h in Headers */,
-				2D199D96146B28E80024CA41 /* UniversalClassSelector.h in Headers */,
+				2D199D96146B28E80024CA41 /* UniversalSelector.h in Headers */,
 				2D199D9A146B29540024CA41 /* ClassEqualsSelector.h in Headers */,
+				2DC2B4D8146BBD6100D2D314 /* MapOperationCommand+IgorAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,9 +373,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E621659DB794A5D612DCD453 /* Igor.m in Sources */,
-				E621659DB794A5D612DCD463 /* MapOperationCommand+IgorAdditions.m in Sources */,
-				2D199D97146B28E80024CA41 /* UniversalClassSelector.m in Sources */,
+				2D199D97146B28E80024CA41 /* UniversalSelector.m in Sources */,
 				2D199D9B146B29540024CA41 /* ClassEqualsSelector.m in Sources */,
+				2DC2B4D9146BBD6100D2D314 /* MapOperationCommand+IgorAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

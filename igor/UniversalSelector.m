@@ -6,9 +6,9 @@
 //  Copyright (c) 2011 Dale H. Emery. All rights reserved.
 //
 
-#import "UniversalClassSelector.h"
+#import "UniversalSelector.h"
 
-@implementation UniversalClassSelector
+@implementation UniversalSelector
 - (BOOL)matchesView:(UIView *)view {
     return YES;
 }

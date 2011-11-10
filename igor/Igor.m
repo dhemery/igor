@@ -6,7 +6,7 @@
 #import "ClassEqualsSelector.h"
 #import "Igor.h"
 #import "Selector.h"
-#import "UniversalClassSelector.h"
+#import "UniversalSelector.h"
 
 @implementation Igor {
     @private
@@ -16,7 +16,7 @@
 - (Igor *)initWithSelectorString:(NSString *)selectorString {
     if (self = [super init]) {
         if([selectorString isEqualToString:@"*"]) {
-            selector = [UniversalClassSelector new];
+            selector = [UniversalSelector new];
         } else {
             Class matchClass = NSClassFromString(selectorString);
             selector = [[ClassEqualsSelector alloc] initWithClass:matchClass];

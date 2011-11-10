@@ -18,7 +18,7 @@
     frame = CGRectMake(0, 0, 100, 100);
 }
 
-- (void) testAUniversalClassSelectorSelectsTheRootViewAndAllSubviews {
+- (void) testAUniversalSelectorSelectsAllViews {
     UIView *root = [[UIView alloc] initWithFrame:frame];
     UIView *view1 = [[UIView alloc] initWithFrame: frame];
     UIView *view11 = [[UIView alloc] initWithFrame:frame];
