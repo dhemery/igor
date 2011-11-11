@@ -21,8 +21,8 @@
 		2D199DC4146B399A0024CA41 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD425 /* Foundation.framework */; };
 		2D199DCA146B399A0024CA41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D199DC8146B399A0024CA41 /* InfoPlist.strings */; };
 		2D199DDE146B3FCE0024CA41 /* IgorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D199DDB146B3FBF0024CA41 /* IgorTests.m */; };
-		2DC2B4D8146BBD6100D2D314 /* MapOperationCommand+IgorAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DC2B4D4146BBD6100D2D314 /* MapOperationCommand+IgorAdditions.h */; };
-		2DC2B4D9146BBD6100D2D314 /* MapOperationCommand+IgorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC2B4D5146BBD6100D2D314 /* MapOperationCommand+IgorAdditions.m */; };
+		2D4FDDFC146D0A2A0094946B /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D4FDDFB146D0A2A0094946B /* OCHamcrestIOS.framework */; };
+		2D4FDDFD146D0A2A0094946B /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D4FDDFB146D0A2A0094946B /* OCHamcrestIOS.framework */; };
 		2DC2B4E8146BC5F300D2D314 /* libigor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD41C /* libigor.a */; };
 		2DC2B4E9146BC61800D2D314 /* libigor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD41C /* libigor.a */; };
 		E621659DB794A5D612DCD426 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD425 /* Foundation.framework */; };
@@ -55,8 +55,8 @@
 		2D199DC7146B399A0024CA41 /* igorAcceptanceTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "igorAcceptanceTests-Info.plist"; sourceTree = "<group>"; };
 		2D199DC9146B399A0024CA41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2D199DCE146B399A0024CA41 /* igorAcceptanceTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "igorAcceptanceTests-Prefix.pch"; sourceTree = "<group>"; };
-		2D199DDA146B3FBF0024CA41 /* IgorTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IgorTests.h; sourceTree = "<group>"; };
 		2D199DDB146B3FBF0024CA41 /* IgorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IgorTests.m; sourceTree = "<group>"; };
+		2D4FDDFB146D0A2A0094946B /* OCHamcrestIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCHamcrestIOS.framework; sourceTree = "<group>"; };
 		2DC2B4D4146BBD6100D2D314 /* MapOperationCommand+IgorAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MapOperationCommand+IgorAdditions.h"; sourceTree = "<group>"; };
 		2DC2B4D5146BBD6100D2D314 /* MapOperationCommand+IgorAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MapOperationCommand+IgorAdditions.m"; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD41C /* libigor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libigor.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +74,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D199DAC146B397B0024CA41 /* SenTestingKit.framework in Frameworks */,
+				2D4FDDFC146D0A2A0094946B /* OCHamcrestIOS.framework in Frameworks */,
 				2D199DAD146B397B0024CA41 /* UIKit.framework in Frameworks */,
 				2D199DAE146B397B0024CA41 /* Foundation.framework in Frameworks */,
 				2DC2B4E9146BC61800D2D314 /* libigor.a in Frameworks */,
@@ -85,6 +86,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D199DC2146B399A0024CA41 /* SenTestingKit.framework in Frameworks */,
+				2D4FDDFD146D0A2A0094946B /* OCHamcrestIOS.framework in Frameworks */,
 				2D199DC3146B399A0024CA41 /* UIKit.framework in Frameworks */,
 				2D199DC4146B399A0024CA41 /* Foundation.framework in Frameworks */,
 				2DC2B4E8146BC5F300D2D314 /* libigor.a in Frameworks */,
@@ -123,7 +125,6 @@
 		2D199DC5146B399A0024CA41 /* igorAcceptanceTests */ = {
 			isa = PBXGroup;
 			children = (
-				2D199DDA146B3FBF0024CA41 /* IgorTests.h */,
 				2D199DDB146B3FBF0024CA41 /* IgorTests.m */,
 				2D199DC6146B399A0024CA41 /* Supporting Files */,
 			);
@@ -138,6 +139,14 @@
 				2D199DCE146B399A0024CA41 /* igorAcceptanceTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2D4FDDFA146D0A2A0094946B /* hamcrest */ = {
+			isa = PBXGroup;
+			children = (
+				2D4FDDFB146D0A2A0094946B /* OCHamcrestIOS.framework */,
+			);
+			path = hamcrest;
 			sourceTree = "<group>";
 		};
 		2DC2B4D2146BBD6100D2D314 /* extension */ = {
@@ -156,6 +165,7 @@
 				E621659DB794A5D612DCD427 /* igor */,
 				2D199DAF146B397B0024CA41 /* igorUnitTests */,
 				2D199DC5146B399A0024CA41 /* igorAcceptanceTests */,
+				2D4FDDFA146D0A2A0094946B /* hamcrest */,
 				E621659DB794A5D612DCD419 /* Products */,
 				E621659DB794A5D612DCD424 /* Frameworks */,
 			);
@@ -216,7 +226,6 @@
 				2D199D91146B28880024CA41 /* Selector.h in Headers */,
 				2D199D96146B28E80024CA41 /* UniversalSelector.h in Headers */,
 				2D199D9A146B29540024CA41 /* ClassEqualsSelector.h in Headers */,
-				2DC2B4D8146BBD6100D2D314 /* MapOperationCommand+IgorAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,7 +384,6 @@
 				E621659DB794A5D612DCD453 /* Igor.m in Sources */,
 				2D199D97146B28E80024CA41 /* UniversalSelector.m in Sources */,
 				2D199D9B146B29540024CA41 /* ClassEqualsSelector.m in Sources */,
-				2DC2B4D9146BBD6100D2D314 /* MapOperationCommand+IgorAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,10 +423,17 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"\"$(SRCROOT)/igorAcceptanceTests\"",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/hamcrest\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "igorUnitTests/igorUnitTests-Prefix.pch";
 				INFOPLIST_FILE = "igorUnitTests/igorUnitTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lstdc++",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -430,10 +445,17 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"\"$(SRCROOT)/igorAcceptanceTests\"",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/hamcrest\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "igorUnitTests/igorUnitTests-Prefix.pch";
 				INFOPLIST_FILE = "igorUnitTests/igorUnitTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lstdc++",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -443,12 +465,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
+					"${SRCROOT}/hamcrest",
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"\"$(SRCROOT)/igorAcceptanceTests\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "igorAcceptanceTests/igorAcceptanceTests-Prefix.pch";
 				INFOPLIST_FILE = "igorAcceptanceTests/igorAcceptanceTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lstdc++",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -458,12 +487,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
+					"${SRCROOT}/hamcrest",
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"\"$(SRCROOT)/igorAcceptanceTests\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "igorAcceptanceTests/igorAcceptanceTests-Prefix.pch";
 				INFOPLIST_FILE = "igorAcceptanceTests/igorAcceptanceTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lstdc++",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};

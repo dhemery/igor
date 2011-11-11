@@ -5,10 +5,18 @@
 //
 
 
+#define HC_SHORTHAND
+#import <OCHamcrestIOS/OCHamcrestIOS.h>
+
+#import <Foundation/Foundation.h>
+#import <SenTestingKit/SenTestingKit.h>
+
 #import <UIKit/UIKit.h>
 #import "Igor.h"
-#import "IgorTests.h"
 
+
+@interface IgorTests : SenTestCase
+@end
 
 @implementation IgorTests {
     CGRect frame;
@@ -45,17 +53,17 @@
     Igor *igor = [Igor igorFor:@"*"];
     NSMutableSet *selectedViews = [igor selectViewsFromRoot:root];
 
-    STAssertNotNil([selectedViews member:root], @"root");
-    STAssertNotNil([selectedViews member:view1], @"view1");
-    STAssertNotNil([selectedViews member:view11], @"view11");
-    STAssertNotNil([selectedViews member:view12], @"view12");
-    STAssertNotNil([selectedViews member:view2], @"view2");
-    STAssertNotNil([selectedViews member:view21], @"view21");
-    STAssertNotNil([selectedViews member:view211], @"view211");
-    STAssertNotNil([selectedViews member:view212], @"view212");
-    STAssertNotNil([selectedViews member:view213], @"view213");
-    STAssertNotNil([selectedViews member:view22], @"view22");
-    STAssertNotNil([selectedViews member:view23], @"view23");
+    assertThat(selectedViews, hasItem(root));
+    assertThat(selectedViews, hasItem(view1));
+    assertThat(selectedViews, hasItem(view11));
+    assertThat(selectedViews, hasItem(view12));
+    assertThat(selectedViews, hasItem(view2));
+    assertThat(selectedViews, hasItem(view21));
+    assertThat(selectedViews, hasItem(view211));
+    assertThat(selectedViews, hasItem(view212));
+    assertThat(selectedViews, hasItem(view213));
+    assertThat(selectedViews, hasItem(view22));
+    assertThat(selectedViews, hasItem(view23));
 }
 
 - (void) testAClassEqualsSelectorSelectsViewsOfTheSpecifiedClass {
@@ -68,10 +76,9 @@
     Igor *igor = [Igor igorFor:@"UIButton"];
     NSMutableSet *selectedViews = [igor selectViewsFromRoot:root];
     
-    STAssertNil([selectedViews member:root], @"root");
-    STAssertNotNil([selectedViews member:button], @"button");
-    STAssertNil([selectedViews member:imageView], @"imageView");
-    
+    assertThat(selectedViews, hasItem(button));
+    assertThat(selectedViews, isNot(hasItem(root)));
+    assertThat(selectedViews, isNot(hasItem(imageView)));
 }
 
 @end
