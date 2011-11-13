@@ -29,22 +29,22 @@
     return [[Igor alloc] initWithSelectorString:selectorString];
 }
 
-- (void)selectFromRoot:(UIView *)root intoSet:(NSMutableSet *)selectedViews {
+- (void)selectFromRoot:(UIView *)root intoArray:(NSMutableArray *)selectedViews {
     if ([selector matchesView:root]) {
         [selectedViews addObject:root];
     }
     for(id subview in [root subviews]) {
-        [self selectFromRoot:subview intoSet:selectedViews];
+        [self selectFromRoot:subview intoArray:selectedViews];
     }
 }
 
-- (NSMutableSet *)selectViewsFromRoot:(UIView *)root {
-    NSMutableSet *selectedViews = [NSMutableSet set];
-    [self selectFromRoot:root intoSet:selectedViews];
+- (NSArray *)selectViewsFromRoot:(UIView *)root {
+    NSMutableArray *selectedViews = [NSMutableSet set];
+    [self selectFromRoot:root intoArray:selectedViews];
     return selectedViews;
 }
 
-+ (NSMutableSet*) selectViewsThatMatchQuery:(NSString*)queryString {
++ (NSArray*) selectViewsThatMatchQuery:(NSString*)queryString {
     Igor* igor = [Igor igorFor:queryString];
     UIView *root = [[UIApplication sharedApplication] keyWindow] ;
     return [igor selectViewsFromRoot:root];

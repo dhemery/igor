@@ -10,7 +10,7 @@
 
 
 @interface Igor : NSObject
-+ (NSMutableSet*) selectViewsThatMatchQuery:(NSString*)queryString;
++ (NSArray*) selectViewsThatMatchQuery:(NSString*)queryString;
 + (Igor *)igorFor:(NSString *)selectorString;
-- (NSMutableSet *)selectViewsFromRoot:(UIView *)root;
+- (NSArray *)selectViewsFromRoot:(UIView *)root;
 @end

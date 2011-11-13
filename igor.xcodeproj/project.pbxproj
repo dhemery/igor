@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D148080146DA724006AFBCE /* IgorSelectorEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D14807E146DA724006AFBCE /* IgorSelectorEngine.h */; };
+		2D148081146DA724006AFBCE /* IgorSelectorEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D14807F146DA724006AFBCE /* IgorSelectorEngine.m */; };
 		2D199D91146B28880024CA41 /* Selector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D199D8F146B28880024CA41 /* Selector.h */; };
 		2D199D96146B28E80024CA41 /* UniversalSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D199D94146B28E80024CA41 /* UniversalSelector.h */; };
 		2D199D97146B28E80024CA41 /* UniversalSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D199D95146B28E80024CA41 /* UniversalSelector.m */; };
@@ -23,8 +25,7 @@
 		2D199DDE146B3FCE0024CA41 /* IgorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D199DDB146B3FBF0024CA41 /* IgorTests.m */; };
 		2D4FDDFC146D0A2A0094946B /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D4FDDFB146D0A2A0094946B /* OCHamcrestIOS.framework */; };
 		2D4FDDFD146D0A2A0094946B /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D4FDDFB146D0A2A0094946B /* OCHamcrestIOS.framework */; };
-		2D4FDE04146D0ECD0094946B /* MapOperationCommand+IgorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC2B4D5146BBD6100D2D314 /* MapOperationCommand+IgorAdditions.m */; };
-		2D4FDE06146D0ED40094946B /* MapOperationCommand+IgorAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DC2B4D4146BBD6100D2D314 /* MapOperationCommand+IgorAdditions.h */; };
+		2D724F31147084BD0010ED12 /* SelectorEngineRegistry.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D724F30147084BD0010ED12 /* SelectorEngineRegistry.h */; };
 		2DC2B4E8146BC5F300D2D314 /* libigor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD41C /* libigor.a */; };
 		2DC2B4E9146BC61800D2D314 /* libigor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD41C /* libigor.a */; };
 		E621659DB794A5D612DCD426 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD425 /* Foundation.framework */; };
@@ -43,7 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2D1421341469ECB100862643 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		2D14807E146DA724006AFBCE /* IgorSelectorEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IgorSelectorEngine.h; sourceTree = "<group>"; };
+		2D14807F146DA724006AFBCE /* IgorSelectorEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IgorSelectorEngine.m; sourceTree = "<group>"; };
 		2D199D8F146B28880024CA41 /* Selector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Selector.h; sourceTree = "<group>"; };
 		2D199D94146B28E80024CA41 /* UniversalSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniversalSelector.h; sourceTree = "<group>"; };
 		2D199D95146B28E80024CA41 /* UniversalSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UniversalSelector.m; sourceTree = "<group>"; };
@@ -59,8 +61,7 @@
 		2D199DCE146B399A0024CA41 /* igorAcceptanceTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "igorAcceptanceTests-Prefix.pch"; sourceTree = "<group>"; };
 		2D199DDB146B3FBF0024CA41 /* IgorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IgorTests.m; sourceTree = "<group>"; };
 		2D4FDDFB146D0A2A0094946B /* OCHamcrestIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCHamcrestIOS.framework; sourceTree = "<group>"; };
-		2DC2B4D4146BBD6100D2D314 /* MapOperationCommand+IgorAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MapOperationCommand+IgorAdditions.h"; sourceTree = "<group>"; };
-		2DC2B4D5146BBD6100D2D314 /* MapOperationCommand+IgorAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MapOperationCommand+IgorAdditions.m"; sourceTree = "<group>"; };
+		2D724F30147084BD0010ED12 /* SelectorEngineRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectorEngineRegistry.h; path = ../../../Frank/src/SelectorEngineRegistry.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD41C /* libigor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libigor.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E621659DB794A5D612DCD425 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E621659DB794A5D612DCD429 /* igor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "igor-Prefix.pch"; sourceTree = "<group>"; };
@@ -154,8 +155,9 @@
 		2DC2B4D2146BBD6100D2D314 /* extension */ = {
 			isa = PBXGroup;
 			children = (
-				2DC2B4D4146BBD6100D2D314 /* MapOperationCommand+IgorAdditions.h */,
-				2DC2B4D5146BBD6100D2D314 /* MapOperationCommand+IgorAdditions.m */,
+				2D724F30147084BD0010ED12 /* SelectorEngineRegistry.h */,
+				2D14807E146DA724006AFBCE /* IgorSelectorEngine.h */,
+				2D14807F146DA724006AFBCE /* IgorSelectorEngine.m */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -186,7 +188,6 @@
 		E621659DB794A5D612DCD424 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2D1421341469ECB100862643 /* CFNetwork.framework */,
 				E621659DB794A5D612DCD439 /* UIKit.framework */,
 				E621659DB794A5D612DCD437 /* SenTestingKit.framework */,
 				E621659DB794A5D612DCD425 /* Foundation.framework */,
@@ -228,7 +229,8 @@
 				2D199D91146B28880024CA41 /* Selector.h in Headers */,
 				2D199D96146B28E80024CA41 /* UniversalSelector.h in Headers */,
 				2D199D9A146B29540024CA41 /* ClassEqualsSelector.h in Headers */,
-				2D4FDE06146D0ED40094946B /* MapOperationCommand+IgorAdditions.h in Headers */,
+				2D148080146DA724006AFBCE /* IgorSelectorEngine.h in Headers */,
+				2D724F31147084BD0010ED12 /* SelectorEngineRegistry.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,7 +389,7 @@
 				E621659DB794A5D612DCD453 /* Igor.m in Sources */,
 				2D199D97146B28E80024CA41 /* UniversalSelector.m in Sources */,
 				2D199D9B146B29540024CA41 /* ClassEqualsSelector.m in Sources */,
-				2D4FDE04146D0ECD0094946B /* MapOperationCommand+IgorAdditions.m in Sources */,
+				2D148081146DA724006AFBCE /* IgorSelectorEngine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,10 +547,7 @@
 				DSTROOT = /tmp/igor.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "igor/igor-Prefix.pch";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../vigor/Frank\"",
-				);
+				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -562,10 +561,7 @@
 				DSTROOT = /tmp/igor.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "igor/igor-Prefix.pch";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../vigor/Frank\"",
-				);
+				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
