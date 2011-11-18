@@ -7,21 +7,26 @@
 //
 
 #import "IgorParser.h"
-#import "UniversalSelector.h"
 #import "ClassEqualsSelector.h"
 #import "KindOfClassSelector.h"
 
 @implementation IgorParser
 -(id<Selector>) parse:(NSString*)selectorString {
     NSCharacterSet* asterisk = [NSCharacterSet characterSetWithCharactersInString:@"*"];
+    NSCharacterSet* letters = [NSCharacterSet letterCharacterSet];
+    NSCharacterSet* whitespace = [NSCharacterSet whitespaceAndNewlineCharacterSet];
     NSScanner* scanner = [NSScanner scannerWithString:selectorString];
-    [scanner scanCharactersFromSet:[NSCharacterSet whitespaceAndNewlineCharacterSet] intoString:nil];
-    if([scanner scanCharactersFromSet:asterisk intoString:nil]) {
-        return [UniversalSelector new];
-    }
+
+    [scanner scanCharactersFromSet:whitespace intoString:nil];
+
+    Class targetClass;
     NSString* className = [NSString string];
-    [scanner scanCharactersFromSet:[NSCharacterSet letterCharacterSet] intoString:&className];
-    Class targetClass = NSClassFromString(className);
+    if([scanner scanCharactersFromSet:letters intoString:&className]) {
+        targetClass = NSClassFromString(className);
+    } else {
+        targetClass = [UIView class];
+    }
+
     if([scanner scanCharactersFromSet:asterisk intoString:nil]) {
         return [[KindOfClassSelector alloc] initWithTargetClass:targetClass];
     }

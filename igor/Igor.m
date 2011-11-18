@@ -7,7 +7,6 @@
 #import "Igor.h"
 #import "IgorParser.h"
 #import "Selector.h"
-#import "UniversalSelector.h"
 
 @implementation Igor {
     IgorParser* parser;

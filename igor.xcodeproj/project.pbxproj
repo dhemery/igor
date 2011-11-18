@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		2D148081146DA724006AFBCE /* IgorLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D14807F146DA724006AFBCE /* IgorLoader.m */; };
 		2D199D91146B28880024CA41 /* Selector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D199D8F146B28880024CA41 /* Selector.h */; };
-		2D199D96146B28E80024CA41 /* UniversalSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D199D94146B28E80024CA41 /* UniversalSelector.h */; };
-		2D199D97146B28E80024CA41 /* UniversalSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D199D95146B28E80024CA41 /* UniversalSelector.m */; };
 		2D199D9A146B29540024CA41 /* ClassEqualsSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D199D98146B29540024CA41 /* ClassEqualsSelector.h */; };
 		2D199D9B146B29540024CA41 /* ClassEqualsSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D199D99146B29540024CA41 /* ClassEqualsSelector.m */; };
 		2D199DAC146B397B0024CA41 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD437 /* SenTestingKit.framework */; };
@@ -59,8 +57,6 @@
 /* Begin PBXFileReference section */
 		2D14807F146DA724006AFBCE /* IgorLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IgorLoader.m; sourceTree = "<group>"; };
 		2D199D8F146B28880024CA41 /* Selector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Selector.h; sourceTree = "<group>"; };
-		2D199D94146B28E80024CA41 /* UniversalSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniversalSelector.h; sourceTree = "<group>"; };
-		2D199D95146B28E80024CA41 /* UniversalSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UniversalSelector.m; sourceTree = "<group>"; };
 		2D199D98146B29540024CA41 /* ClassEqualsSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassEqualsSelector.h; sourceTree = "<group>"; };
 		2D199D99146B29540024CA41 /* ClassEqualsSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassEqualsSelector.m; sourceTree = "<group>"; };
 		2D199DAB146B397B0024CA41 /* igorUnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = igorUnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -229,8 +225,6 @@
 				2D82ED38147641D900E0C6E2 /* KindOfClassSelector.m */,
 				2D199D8F146B28880024CA41 /* Selector.h */,
 				E621659DB794A5D612DCD428 /* Supporting Files */,
-				2D199D94146B28E80024CA41 /* UniversalSelector.h */,
-				2D199D95146B28E80024CA41 /* UniversalSelector.m */,
 			);
 			path = igor;
 			sourceTree = "<group>";
@@ -252,7 +246,6 @@
 			files = (
 				E621659DB794A5D612DCD455 /* Igor.h in Headers */,
 				2D199D91146B28880024CA41 /* Selector.h in Headers */,
-				2D199D96146B28E80024CA41 /* UniversalSelector.h in Headers */,
 				2D199D9A146B29540024CA41 /* ClassEqualsSelector.h in Headers */,
 				2D8FF92C1470A2EA0027760D /* SelectorEngineRegistry.h in Headers */,
 				2DAE686D14761AFA00041FB4 /* IgorParser.h in Headers */,
@@ -417,7 +410,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E621659DB794A5D612DCD453 /* Igor.m in Sources */,
-				2D199D97146B28E80024CA41 /* UniversalSelector.m in Sources */,
 				2D199D9B146B29540024CA41 /* ClassEqualsSelector.m in Sources */,
 				2D148081146DA724006AFBCE /* IgorLoader.m in Sources */,
 				2DAE686E14761AFA00041FB4 /* IgorParser.m in Sources */,

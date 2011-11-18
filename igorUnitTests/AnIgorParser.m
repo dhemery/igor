@@ -7,7 +7,6 @@
 //
 
 #import "IgorParser.h"
-#import "UniversalSelector.h"
 #import "ClassEqualsSelector.h"
 #import "KindOfClassSelector.h"
 
@@ -22,19 +21,21 @@
     parser = [IgorParser new];
 }
 
--(void) testParsesAnAsteristAsAUniversalSelector {
+-(void) testParsesAsteriskAsUniversalClassSelector {
     id<Selector> selector = [parser parse:@"*"];
-    assertThat(selector, instanceOf([UniversalSelector class]));
+    assertThat(selector, instanceOf([KindOfClassSelector class]));
+    KindOfClassSelector* kindOfClassSelector = (KindOfClassSelector*)selector;
+    assertThat(kindOfClassSelector.targetClass, equalTo([UIView class]));
 }
 
--(void) testParsesANameAsAClassEqualsSelector {
+-(void) testParsesNameAsClassEqualsSelector {
     id<Selector> selector = [parser parse:@"UIButton"];
     assertThat(selector, instanceOf([ClassEqualsSelector class]));
     ClassEqualsSelector* classEqualsSelector = (ClassEqualsSelector*)selector;
     assertThat(classEqualsSelector.targetClass, equalTo([UIButton class]));
 }
 
--(void) testParsesANameAsteriskAsAKindOfClassSelector {
+-(void) testParsesNameAsteriskAsKindOfClassSelector {
     id<Selector> selector = [parser parse:@"UILabel*"];
     assertThat(selector, instanceOf([KindOfClassSelector class]));           
     KindOfClassSelector* kindOfClassSelector = (KindOfClassSelector*)selector;
