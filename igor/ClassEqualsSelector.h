@@ -10,4 +10,5 @@
 
 @interface ClassEqualsSelector : NSObject <Selector>
 -(ClassEqualsSelector*) initWithTargetClass:(Class)targetClass;
+@property(retain,readonly) Class targetClass;
 @end

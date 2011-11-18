@@ -26,7 +26,7 @@
     frame = CGRectMake(0, 0, 100, 100);
 }
 
-- (void) testAUniversalSelectorSelectsAllViews {
+- (void) testUniversalSelector {
     UIView *root = [[UIView alloc] initWithFrame:frame];
     UIView *view1 = [[UIView alloc] initWithFrame: frame];
     UIView *view11 = [[UIView alloc] initWithFrame:frame];
@@ -65,7 +65,7 @@
     assertThat(selectedViews, hasItem(view23));
 }
 
-- (void) testAClassEqualsSelectorSelectsViewsOfTheSpecifiedClass {
+- (void) testClassEqualsSelector {
     UIView *root = [[UIView alloc] initWithFrame:frame];
     UIView *button = [[UIButton alloc] initWithFrame: frame];
     UIView *imageView = [[UIImageView alloc] initWithFrame:frame];

@@ -8,20 +8,18 @@
 
 #import "ClassEqualsSelector.h"
 
-@implementation ClassEqualsSelector {
-@private
-    Class matchClass;
-}
-
--(ClassEqualsSelector*) initWithTargetClass:(Class)targetClass {
+@implementation ClassEqualsSelector
+@synthesize targetClass;
+    
+-(ClassEqualsSelector*) initWithTargetClass:(Class)aTargetClass {
     if(self = [super init]) {
-        matchClass = targetClass;
+        targetClass = aTargetClass;
     }
     return self;
 }
 
 -(BOOL)matchesView:(UIView *)view {
-    return matchClass == [view class];
+    return targetClass == [view class];
 }
 @end
 
