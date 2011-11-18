@@ -9,14 +9,22 @@
 #import "IgorParser.h"
 #import "UniversalSelector.h"
 #import "ClassEqualsSelector.h"
+#import "KindOfClassSelector.h"
 
 @implementation IgorParser
 -(id<Selector>) parse:(NSString*)selectorString {
-    if([selectorString isEqualToString:@"*"]) {
+    NSCharacterSet* asterisk = [NSCharacterSet characterSetWithCharactersInString:@"*"];
+    NSScanner* scanner = [NSScanner scannerWithString:selectorString];
+    [scanner scanCharactersFromSet:[NSCharacterSet whitespaceAndNewlineCharacterSet] intoString:nil];
+    if([scanner scanCharactersFromSet:asterisk intoString:nil]) {
         return [UniversalSelector new];
-    } else {
-        Class targetClass = NSClassFromString(selectorString);
-        return [[ClassEqualsSelector alloc] initWithTargetClass:targetClass];
     }
+    NSString* className = [NSString string];
+    [scanner scanCharactersFromSet:[NSCharacterSet letterCharacterSet] intoString:&className];
+    Class targetClass = NSClassFromString(className);
+    if([scanner scanCharactersFromSet:asterisk intoString:nil]) {
+        return [[KindOfClassSelector alloc] initWithTargetClass:targetClass];
+    }
+    return [[ClassEqualsSelector alloc] initWithTargetClass:targetClass];
 }
 @end

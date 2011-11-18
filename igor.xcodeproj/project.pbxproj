@@ -25,6 +25,9 @@
 		2D4FDDFC146D0A2A0094946B /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D4FDDFB146D0A2A0094946B /* OCHamcrestIOS.framework */; };
 		2D4FDDFD146D0A2A0094946B /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D4FDDFB146D0A2A0094946B /* OCHamcrestIOS.framework */; };
 		2D82ED351476390B00E0C6E2 /* AnIgorParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D82ED341476390B00E0C6E2 /* AnIgorParser.m */; };
+		2D82ED39147641D900E0C6E2 /* KindOfClassSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D82ED37147641D900E0C6E2 /* KindOfClassSelector.h */; };
+		2D82ED3A147641D900E0C6E2 /* KindOfClassSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D82ED38147641D900E0C6E2 /* KindOfClassSelector.m */; };
+		2D82ED3D1476430200E0C6E2 /* AKindOfClassSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D82ED3C1476430200E0C6E2 /* AKindOfClassSelector.m */; };
 		2D8FF92C1470A2EA0027760D /* SelectorEngineRegistry.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D8FF92B1470A2EA0027760D /* SelectorEngineRegistry.h */; };
 		2DAE686D14761AFA00041FB4 /* IgorParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DAE686B14761AFA00041FB4 /* IgorParser.h */; };
 		2DAE686E14761AFA00041FB4 /* IgorParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DAE686C14761AFA00041FB4 /* IgorParser.m */; };
@@ -71,6 +74,9 @@
 		2D199DDB146B3FBF0024CA41 /* IgorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IgorTests.m; sourceTree = "<group>"; };
 		2D4FDDFB146D0A2A0094946B /* OCHamcrestIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCHamcrestIOS.framework; sourceTree = "<group>"; };
 		2D82ED341476390B00E0C6E2 /* AnIgorParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnIgorParser.m; sourceTree = "<group>"; };
+		2D82ED37147641D900E0C6E2 /* KindOfClassSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KindOfClassSelector.h; sourceTree = "<group>"; };
+		2D82ED38147641D900E0C6E2 /* KindOfClassSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KindOfClassSelector.m; sourceTree = "<group>"; };
+		2D82ED3C1476430200E0C6E2 /* AKindOfClassSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKindOfClassSelector.m; sourceTree = "<group>"; };
 		2D8FF92B1470A2EA0027760D /* SelectorEngineRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectorEngineRegistry.h; sourceTree = "<group>"; };
 		2DAE686B14761AFA00041FB4 /* IgorParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IgorParser.h; sourceTree = "<group>"; };
 		2DAE686C14761AFA00041FB4 /* IgorParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IgorParser.m; sourceTree = "<group>"; };
@@ -123,9 +129,10 @@
 		2D199DAF146B397B0024CA41 /* igorUnitTests */ = {
 			isa = PBXGroup;
 			children = (
-				2D199DB0146B397B0024CA41 /* Supporting Files */,
 				2DAE68791476203200041FB4 /* AClassEqualsSelector.m */,
+				2D82ED3C1476430200E0C6E2 /* AKindOfClassSelector.m */,
 				2D82ED341476390B00E0C6E2 /* AnIgorParser.m */,
+				2D199DB0146B397B0024CA41 /* Supporting Files */,
 			);
 			path = igorUnitTests;
 			sourceTree = "<group>";
@@ -214,14 +221,16 @@
 			children = (
 				2D199D98146B29540024CA41 /* ClassEqualsSelector.h */,
 				2D199D99146B29540024CA41 /* ClassEqualsSelector.m */,
-				2D199D8F146B28880024CA41 /* Selector.h */,
-				2D199D94146B28E80024CA41 /* UniversalSelector.h */,
-				2D199D95146B28E80024CA41 /* UniversalSelector.m */,
 				E621659DB794A5D612DCD454 /* Igor.h */,
 				E621659DB794A5D612DCD452 /* Igor.m */,
 				2DAE686B14761AFA00041FB4 /* IgorParser.h */,
 				2DAE686C14761AFA00041FB4 /* IgorParser.m */,
+				2D82ED37147641D900E0C6E2 /* KindOfClassSelector.h */,
+				2D82ED38147641D900E0C6E2 /* KindOfClassSelector.m */,
+				2D199D8F146B28880024CA41 /* Selector.h */,
 				E621659DB794A5D612DCD428 /* Supporting Files */,
+				2D199D94146B28E80024CA41 /* UniversalSelector.h */,
+				2D199D95146B28E80024CA41 /* UniversalSelector.m */,
 			);
 			path = igor;
 			sourceTree = "<group>";
@@ -247,6 +256,7 @@
 				2D199D9A146B29540024CA41 /* ClassEqualsSelector.h in Headers */,
 				2D8FF92C1470A2EA0027760D /* SelectorEngineRegistry.h in Headers */,
 				2DAE686D14761AFA00041FB4 /* IgorParser.h in Headers */,
+				2D82ED39147641D900E0C6E2 /* KindOfClassSelector.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +400,7 @@
 			files = (
 				2DAE687A1476203200041FB4 /* AClassEqualsSelector.m in Sources */,
 				2D82ED351476390B00E0C6E2 /* AnIgorParser.m in Sources */,
+				2D82ED3D1476430200E0C6E2 /* AKindOfClassSelector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +421,7 @@
 				2D199D9B146B29540024CA41 /* ClassEqualsSelector.m in Sources */,
 				2D148081146DA724006AFBCE /* IgorLoader.m in Sources */,
 				2DAE686E14761AFA00041FB4 /* IgorParser.m in Sources */,
+				2D82ED3A147641D900E0C6E2 /* KindOfClassSelector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

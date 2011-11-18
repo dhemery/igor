@@ -9,6 +9,7 @@
 #import "IgorParser.h"
 #import "UniversalSelector.h"
 #import "ClassEqualsSelector.h"
+#import "KindOfClassSelector.h"
 
 @interface AnIgorParser : SenTestCase
 @end
@@ -31,5 +32,12 @@
     assertThat(selector, instanceOf([ClassEqualsSelector class]));
     ClassEqualsSelector* classEqualsSelector = (ClassEqualsSelector*)selector;
     assertThat(classEqualsSelector.targetClass, equalTo([UIButton class]));
+}
+
+-(void) testParsesANameAsteriskAsAKindOfClassSelector {
+    id<Selector> selector = [parser parse:@"UILabel*"];
+    assertThat(selector, instanceOf([KindOfClassSelector class]));           
+    KindOfClassSelector* kindOfClassSelector = (KindOfClassSelector*)selector;
+    assertThat(kindOfClassSelector.targetClass, equalTo([UILabel class]));
 }
 @end

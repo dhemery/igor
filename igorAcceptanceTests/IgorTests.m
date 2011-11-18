@@ -79,4 +79,21 @@
     assertThat(selectedViews, isNot(hasItem(imageView)));
 }
 
+- (void) testKindOfClassSelector {
+    UIView *viewOfBaseClassOfTargetClass = [[UIView alloc] initWithFrame:frame];
+    UIView *viewOfTargetClass = [[UINavigationItemView alloc] initWithFrame: frame];
+    UIView *viewOfClassDerivedFromTargetClass = [[UINavigationItemButtonView alloc] initWithFrame:frame];
+    UIView *viewOfUnrelatedClass = [[UIButton alloc] initWithFrame:frame];
+    [viewOfBaseClassOfTargetClass addSubview:viewOfTargetClass];
+    [viewOfBaseClassOfTargetClass addSubview:viewOfClassDerivedFromTargetClass];
+    [viewOfBaseClassOfTargetClass addSubview:viewOfUnrelatedClass];
+    
+    NSArray *selectedViews = [[Igor new] selectViewsWithSelector:@"NavigationItemView*" fromRoot:root];
+    
+    assertThat(selectedViews, isNot(hasItem(viewOfBaseClassOfTargetClass)));
+    assertThat(selectedViews, hasItem(viewOfTargetClass));
+    assertThat(selectedViews, hasItem(viewOfClassDerivedFromTargetClass));
+    assertThat(selectedViews, isNot(hasItem(viewOfUnrelatedClass)));
+}
+
 @end

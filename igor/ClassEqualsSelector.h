@@ -9,6 +9,6 @@
 #import "Selector.h"
 
 @interface ClassEqualsSelector : NSObject <Selector>
--(ClassEqualsSelector*) initWithTargetClass:(Class)targetClass;
 @property(retain,readonly) Class targetClass;
+-(ClassEqualsSelector*) initWithTargetClass:(Class)targetClass;
 @end
