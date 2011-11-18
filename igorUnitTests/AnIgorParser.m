@@ -9,6 +9,7 @@
 #import "IgorParser.h"
 #import "ClassEqualsSelector.h"
 #import "KindOfClassSelector.h"
+#import "CompoundSelector.h"
 
 @interface AnIgorParser : SenTestCase
 @end
@@ -42,7 +43,14 @@
     assertThat(kindOfClassSelector.targetClass, equalTo([UILabel class]));
 }
 
--(void) testParses {
-    
+-(void) testParsesCompoundSelectorWithOne {
+    id<Selector> selector = [parser parse:@"*[myAttributeName]"];
+
+    assertThat(selector, instanceOf([CompoundSelector class]));
+    CompoundSelector* compoundSelector = (CompoundSelector*)selector;
+
+    assertThat(compoundSelector.simpleSelectors, hasCountOf(2));
 }
+
 @end
+

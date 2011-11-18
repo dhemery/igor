@@ -9,27 +9,56 @@
 #import "IgorParser.h"
 #import "ClassEqualsSelector.h"
 #import "KindOfClassSelector.h"
+#import "CompoundSelector.h"
 
-@implementation IgorParser
--(id<Selector>) parse:(NSString*)selectorString {
-    NSCharacterSet* asterisk = [NSCharacterSet characterSetWithCharactersInString:@"*"];
-    NSCharacterSet* letters = [NSCharacterSet letterCharacterSet];
-    NSCharacterSet* whitespace = [NSCharacterSet whitespaceAndNewlineCharacterSet];
-    NSScanner* scanner = [NSScanner scannerWithString:selectorString];
+@implementation IgorParser {
+    NSCharacterSet* asterisk;
+    NSCharacterSet* letters;
+}
 
-    [scanner scanCharactersFromSet:whitespace intoString:nil];
+-(IgorParser*)init {
+    if(self = [super init]) {
+        asterisk = [NSCharacterSet characterSetWithCharactersInString:@"*"];
+        letters = [NSCharacterSet letterCharacterSet];
+    }
+    return self;
+}
 
-    Class targetClass;
+-(Class) parseTargetClass:(NSScanner*)scanner {
     NSString* className = [NSString string];
     if([scanner scanCharactersFromSet:letters intoString:&className]) {
-        targetClass = NSClassFromString(className);
+        return NSClassFromString(className);
     } else {
-        targetClass = [UIView class];
+        return [UIView class];
     }
+}
 
+-(ClassSelector*) parseClassSelector:(NSScanner*)scanner {
+    Class targetClass = [self parseTargetClass:scanner];
+        
     if([scanner scanCharactersFromSet:asterisk intoString:nil]) {
         return [[KindOfClassSelector alloc] initWithTargetClass:targetClass];
+    } else {
+        return [[ClassEqualsSelector alloc] initWithTargetClass:targetClass];
     }
-    return [[ClassEqualsSelector alloc] initWithTargetClass:targetClass];
 }
+
+-(id<Selector>) parseAttributeSelector:(NSScanner*)scanner {
+    return nil;
+}
+
+-(id<Selector>) parse:(NSString*)selectorString {
+    NSScanner* scanner = [NSScanner scannerWithString:selectorString];
+
+    ClassSelector* classSelector = [self parseClassSelector:scanner];
+    id<Selector> attributeSelector = [self parseAttributeSelector:scanner];
+    if(!attributeSelector) {
+        return classSelector;
+    }
+    CompoundSelector* compoundSelector = [CompoundSelector new];
+    [compoundSelector addSelector:classSelector];
+    [compoundSelector addSelector:attributeSelector];
+    return compoundSelector;
+}
+
 @end

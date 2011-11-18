@@ -27,6 +27,8 @@
 }
 
 - (void) testUniversalSelector {
+    NSString* selector = @"*";
+
     UIView *root = [[UIView alloc] initWithFrame:frame];
     UIView *view1 = [[UIView alloc] initWithFrame: frame];
     UIView *view11 = [[UIView alloc] initWithFrame:frame];
@@ -50,7 +52,7 @@
         [view2 addSubview:view22];
         [view2 addSubview:view23];
 
-    NSArray *selectedViews = [[Igor new] selectViewsWithSelector:@"*" fromRoot:root];
+    NSArray *selectedViews = [[Igor new] selectViewsWithSelector:selector fromRoot:root];
 
     assertThat(selectedViews, hasItem(root));
     assertThat(selectedViews, hasItem(view1));
@@ -66,6 +68,8 @@
 }
 
 - (void) testClassEqualsSelector {
+    NSString* selector = @"UIButton";
+
     UIView* view = [[UIView alloc] initWithFrame:frame];
     UIView* button = [[UIButton alloc] initWithFrame: frame];
     UIView* imageView = [[UIImageView alloc] initWithFrame:frame];
@@ -73,7 +77,7 @@
     [root addSubview:button];
     [button addSubview:imageView];
 
-    NSArray *selectedViews = [[Igor new] selectViewsWithSelector:@"UIButton" fromRoot:root];
+    NSArray *selectedViews = [[Igor new] selectViewsWithSelector:selector fromRoot:root];
     
     assertThat(selectedViews, hasItem(button));
     assertThat(selectedViews, isNot(hasItem(view)));
@@ -81,6 +85,8 @@
 }
 
 - (void) testKindOfClassSelector {
+    NSString* selector = @"UIControl*";
+
     UIView *viewOfBaseClassOfTargetClass = [[UIView alloc] initWithFrame:frame];
     UIView *viewOfTargetClass = [[UIControl alloc] initWithFrame: frame];
     UIView *viewOfClassDerivedFromTargetClass = [[UIButton alloc] initWithFrame:frame];
@@ -91,8 +97,7 @@
     [root addSubview:viewOfClassDerivedFromTargetClass];
     [root addSubview:viewOfUnrelatedClass];
     
-    NSArray *selectedViews = [[Igor new] selectViewsWithSelector:@"UIControl*"
-                                                        fromRoot:root];
+    NSArray *selectedViews = [[Igor new] selectViewsWithSelector:selector fromRoot:root];
     
     assertThat(selectedViews, isNot(hasItem(viewOfBaseClassOfTargetClass)));
     assertThat(selectedViews, hasItem(viewOfTargetClass));
@@ -100,4 +105,13 @@
     assertThat(selectedViews, isNot(hasItem(viewOfUnrelatedClass)));
 }
 
+- (void) testHasAttributeSelector {
+    UIView* view = [[UIView alloc] initWithFrame:frame];
+    
+    NSArray* selectedViews = [[Igor new] selectViewsWithSelector:@"[hidden]" fromRoot:view];
+    assertThat(selectedViews, hasItem(view));
+
+    selectedViews = [[Igor new] selectViewsWithSelector:@"[nonExistentAttribute]" fromRoot:view];
+    assertThat(selectedViews, isNot(hasItem(view)));
+}
 @end
