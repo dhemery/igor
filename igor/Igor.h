@@ -7,10 +7,8 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "SelectorEngineRegistry.h"
 
-
-@interface Igor : NSObject
-+ (NSArray*) selectViewsThatMatchQuery:(NSString*)queryString;
-+ (Igor *)igorFor:(NSString *)selectorString;
-- (NSArray *)selectViewsFromRoot:(UIView *)root;
+@interface Igor : NSObject<SelectorEngine>
+-(NSArray*) selectViewsWithSelector:(NSString*)selectorString fromRoot:(UIView*)root;
 @end

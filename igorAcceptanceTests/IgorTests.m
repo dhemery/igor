@@ -50,8 +50,7 @@
         [view2 addSubview:view22];
         [view2 addSubview:view23];
 
-    Igor *igor = [Igor igorFor:@"*"];
-    NSArray *selectedViews = [igor selectViewsFromRoot:root];
+    NSArray *selectedViews = [[Igor new] selectViewsWithSelector:@"*" fromRoot:root];
 
     assertThat(selectedViews, hasItem(root));
     assertThat(selectedViews, hasItem(view1));
@@ -73,8 +72,7 @@
     [root addSubview:button];
     [button addSubview:imageView];
     
-    Igor *igor = [Igor igorFor:@"UIButton"];
-    NSArray *selectedViews = [igor selectViewsFromRoot:root];
+    NSArray *selectedViews = [[Igor new] selectViewsWithSelector:@"UIButton" fromRoot:root];
     
     assertThat(selectedViews, hasItem(button));
     assertThat(selectedViews, isNot(hasItem(root)));

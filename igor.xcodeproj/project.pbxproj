@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D148080146DA724006AFBCE /* IgorSelectorEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D14807E146DA724006AFBCE /* IgorSelectorEngine.h */; };
-		2D148081146DA724006AFBCE /* IgorSelectorEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D14807F146DA724006AFBCE /* IgorSelectorEngine.m */; };
+		2D148081146DA724006AFBCE /* IgorLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D14807F146DA724006AFBCE /* IgorLoader.m */; };
 		2D199D91146B28880024CA41 /* Selector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D199D8F146B28880024CA41 /* Selector.h */; };
 		2D199D96146B28E80024CA41 /* UniversalSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D199D94146B28E80024CA41 /* UniversalSelector.h */; };
 		2D199D97146B28E80024CA41 /* UniversalSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D199D95146B28E80024CA41 /* UniversalSelector.m */; };
@@ -44,8 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2D14807E146DA724006AFBCE /* IgorSelectorEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IgorSelectorEngine.h; sourceTree = "<group>"; };
-		2D14807F146DA724006AFBCE /* IgorSelectorEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IgorSelectorEngine.m; sourceTree = "<group>"; };
+		2D14807F146DA724006AFBCE /* IgorLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IgorLoader.m; sourceTree = "<group>"; };
 		2D199D8F146B28880024CA41 /* Selector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Selector.h; sourceTree = "<group>"; };
 		2D199D94146B28E80024CA41 /* UniversalSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniversalSelector.h; sourceTree = "<group>"; };
 		2D199D95146B28E80024CA41 /* UniversalSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UniversalSelector.m; sourceTree = "<group>"; };
@@ -156,8 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				2D8FF92B1470A2EA0027760D /* SelectorEngineRegistry.h */,
-				2D14807E146DA724006AFBCE /* IgorSelectorEngine.h */,
-				2D14807F146DA724006AFBCE /* IgorSelectorEngine.m */,
+				2D14807F146DA724006AFBCE /* IgorLoader.m */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -229,7 +226,6 @@
 				2D199D91146B28880024CA41 /* Selector.h in Headers */,
 				2D199D96146B28E80024CA41 /* UniversalSelector.h in Headers */,
 				2D199D9A146B29540024CA41 /* ClassEqualsSelector.h in Headers */,
-				2D148080146DA724006AFBCE /* IgorSelectorEngine.h in Headers */,
 				2D8FF92C1470A2EA0027760D /* SelectorEngineRegistry.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,7 +385,7 @@
 				E621659DB794A5D612DCD453 /* Igor.m in Sources */,
 				2D199D97146B28E80024CA41 /* UniversalSelector.m in Sources */,
 				2D199D9B146B29540024CA41 /* ClassEqualsSelector.m in Sources */,
-				2D148081146DA724006AFBCE /* IgorSelectorEngine.m in Sources */,
+				2D148081146DA724006AFBCE /* IgorLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
