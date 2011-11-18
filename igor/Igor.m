@@ -5,10 +5,19 @@
 
 #import "ClassEqualsSelector.h"
 #import "Igor.h"
+#import "IgorParser.h"
 #import "Selector.h"
 #import "UniversalSelector.h"
 
-@implementation Igor
+@implementation Igor {
+    IgorParser* parser;
+}
+-(Igor*) init {
+    if(self = [super init]) {
+        parser = [IgorParser new];
+    }
+    return self;
+}
 
 - (void)selectViewsWithSelector:(id<Selector>)selector fromRoot:(UIView *)root intoSet:(NSMutableSet*)selectedViews {
     if ([selector matchesView:root]) {
@@ -19,17 +28,8 @@
     }
 }
 
--(id<Selector>) selectorForSelectorString:(NSString*)selectorString {
-    if([selectorString isEqualToString:@"*"]) {
-        return [UniversalSelector new];
-    } else {
-        Class matchClass = NSClassFromString(selectorString);
-        return [[ClassEqualsSelector alloc] initWithClass:matchClass];
-    }
-}
-
 -(NSArray*) selectViewsWithSelector:(NSString*)selectorString fromRoot:(UIView *)root {
-    id<Selector> selector = [self selectorForSelectorString:selectorString];
+    id<Selector> selector = [parser parse:selectorString];
     NSMutableSet* selectedViews = [NSMutableSet set];
     [self selectViewsWithSelector:selector fromRoot:root intoSet:selectedViews];
     return [selectedViews allObjects];

@@ -10,5 +10,6 @@
 #import "SelectorEngineRegistry.h"
 
 @interface Igor : NSObject<SelectorEngine>
+-(Igor*) init;
 -(NSArray*) selectViewsWithSelector:(NSString*)selectorString fromRoot:(UIView*)root;
 @end
