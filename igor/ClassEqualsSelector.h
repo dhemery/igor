@@ -9,5 +9,5 @@
 #import "Selector.h"
 
 @interface ClassEqualsSelector : NSObject <Selector>
--(ClassEqualsSelector*) initWithClass:(Class)matchClass;
+-(ClassEqualsSelector*) initWithTargetClass:(Class)targetClass;
 @end

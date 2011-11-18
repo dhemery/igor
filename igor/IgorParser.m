@@ -15,8 +15,8 @@
     if([selectorString isEqualToString:@"*"]) {
         return [UniversalSelector new];
     } else {
-        Class matchClass = NSClassFromString(selectorString);
-        return [[ClassEqualsSelector alloc] initWithClass:matchClass];
+        Class targetClass = NSClassFromString(selectorString);
+        return [[ClassEqualsSelector alloc] initWithTargetClass:targetClass];
     }
 }
 @end

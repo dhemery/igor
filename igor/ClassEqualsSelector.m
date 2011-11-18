@@ -13,9 +13,9 @@
     Class matchClass;
 }
 
--(ClassEqualsSelector*) initWithClass:(Class)aClass {
+-(ClassEqualsSelector*) initWithTargetClass:(Class)targetClass {
     if(self = [super init]) {
-        matchClass = aClass;
+        matchClass = targetClass;
     }
     return self;
 }
