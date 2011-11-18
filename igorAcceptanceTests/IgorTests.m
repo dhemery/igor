@@ -66,29 +66,33 @@
 }
 
 - (void) testClassEqualsSelector {
-    UIView *root = [[UIView alloc] initWithFrame:frame];
-    UIView *button = [[UIButton alloc] initWithFrame: frame];
-    UIView *imageView = [[UIImageView alloc] initWithFrame:frame];
+    UIView* view = [[UIView alloc] initWithFrame:frame];
+    UIView* button = [[UIButton alloc] initWithFrame: frame];
+    UIView* imageView = [[UIImageView alloc] initWithFrame:frame];
+    UIView* root = view;
     [root addSubview:button];
     [button addSubview:imageView];
-    
+
     NSArray *selectedViews = [[Igor new] selectViewsWithSelector:@"UIButton" fromRoot:root];
     
     assertThat(selectedViews, hasItem(button));
-    assertThat(selectedViews, isNot(hasItem(root)));
+    assertThat(selectedViews, isNot(hasItem(view)));
     assertThat(selectedViews, isNot(hasItem(imageView)));
 }
 
 - (void) testKindOfClassSelector {
     UIView *viewOfBaseClassOfTargetClass = [[UIView alloc] initWithFrame:frame];
-    UIView *viewOfTargetClass = [[UINavigationItemView alloc] initWithFrame: frame];
-    UIView *viewOfClassDerivedFromTargetClass = [[UINavigationItemButtonView alloc] initWithFrame:frame];
-    UIView *viewOfUnrelatedClass = [[UIButton alloc] initWithFrame:frame];
-    [viewOfBaseClassOfTargetClass addSubview:viewOfTargetClass];
-    [viewOfBaseClassOfTargetClass addSubview:viewOfClassDerivedFromTargetClass];
-    [viewOfBaseClassOfTargetClass addSubview:viewOfUnrelatedClass];
+    UIView *viewOfTargetClass = [[UIControl alloc] initWithFrame: frame];
+    UIView *viewOfClassDerivedFromTargetClass = [[UIButton alloc] initWithFrame:frame];
+    UIView *viewOfUnrelatedClass = [[UIWindow alloc] initWithFrame:frame];
     
-    NSArray *selectedViews = [[Igor new] selectViewsWithSelector:@"NavigationItemView*" fromRoot:root];
+    UIView* root = viewOfBaseClassOfTargetClass;
+    [root addSubview:viewOfTargetClass];
+    [root addSubview:viewOfClassDerivedFromTargetClass];
+    [root addSubview:viewOfUnrelatedClass];
+    
+    NSArray *selectedViews = [[Igor new] selectViewsWithSelector:@"UIControl*"
+                                                        fromRoot:root];
     
     assertThat(selectedViews, isNot(hasItem(viewOfBaseClassOfTargetClass)));
     assertThat(selectedViews, hasItem(viewOfTargetClass));

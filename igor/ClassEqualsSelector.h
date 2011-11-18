@@ -6,9 +6,7 @@
 //  Copyright (c) 2011 Dale H. Emery. All rights reserved.
 //
 
-#import "Selector.h"
+#import "ClassSelector.h"
 
-@interface ClassEqualsSelector : NSObject <Selector>
-@property(retain,readonly) Class targetClass;
--(ClassEqualsSelector*) initWithTargetClass:(Class)targetClass;
+@interface ClassEqualsSelector : ClassSelector
 @end

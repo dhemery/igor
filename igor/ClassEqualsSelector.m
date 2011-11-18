@@ -9,17 +9,8 @@
 #import "ClassEqualsSelector.h"
 
 @implementation ClassEqualsSelector
-@synthesize targetClass;
     
--(ClassEqualsSelector*) initWithTargetClass:(Class)aTargetClass {
-    if(self = [super init]) {
-        targetClass = aTargetClass;
-    }
-    return self;
-}
-
 -(BOOL)matchesView:(UIView *)view {
-    return targetClass == [view class];
+    return self.targetClass == [view class];
 }
 @end
-

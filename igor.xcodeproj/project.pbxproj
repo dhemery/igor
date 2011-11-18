@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D04A0741476E4360056D6CE /* ClassSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D04A0721476E4360056D6CE /* ClassSelector.h */; };
+		2D04A0751476E4360056D6CE /* ClassSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D04A0731476E4360056D6CE /* ClassSelector.m */; };
 		2D148081146DA724006AFBCE /* IgorLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D14807F146DA724006AFBCE /* IgorLoader.m */; };
 		2D199D91146B28880024CA41 /* Selector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D199D8F146B28880024CA41 /* Selector.h */; };
 		2D199D9A146B29540024CA41 /* ClassEqualsSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D199D98146B29540024CA41 /* ClassEqualsSelector.h */; };
@@ -55,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D04A0721476E4360056D6CE /* ClassSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.h; path = ClassSelector.h; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; wrapsLines = 1; };
+		2D04A0731476E4360056D6CE /* ClassSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.objc; path = ClassSelector.m; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; wrapsLines = 1; };
 		2D14807F146DA724006AFBCE /* IgorLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IgorLoader.m; sourceTree = "<group>"; };
 		2D199D8F146B28880024CA41 /* Selector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Selector.h; sourceTree = "<group>"; };
 		2D199D98146B29540024CA41 /* ClassEqualsSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassEqualsSelector.h; sourceTree = "<group>"; };
@@ -215,6 +219,8 @@
 		E621659DB794A5D612DCD427 /* igor */ = {
 			isa = PBXGroup;
 			children = (
+				2D04A0721476E4360056D6CE /* ClassSelector.h */,
+				2D04A0731476E4360056D6CE /* ClassSelector.m */,
 				2D199D98146B29540024CA41 /* ClassEqualsSelector.h */,
 				2D199D99146B29540024CA41 /* ClassEqualsSelector.m */,
 				E621659DB794A5D612DCD454 /* Igor.h */,
@@ -250,6 +256,7 @@
 				2D8FF92C1470A2EA0027760D /* SelectorEngineRegistry.h in Headers */,
 				2DAE686D14761AFA00041FB4 /* IgorParser.h in Headers */,
 				2D82ED39147641D900E0C6E2 /* KindOfClassSelector.h in Headers */,
+				2D04A0741476E4360056D6CE /* ClassSelector.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +421,7 @@
 				2D148081146DA724006AFBCE /* IgorLoader.m in Sources */,
 				2DAE686E14761AFA00041FB4 /* IgorParser.m in Sources */,
 				2D82ED3A147641D900E0C6E2 /* KindOfClassSelector.m in Sources */,
+				2D04A0751476E4360056D6CE /* ClassSelector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

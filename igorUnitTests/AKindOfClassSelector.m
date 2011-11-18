@@ -34,7 +34,7 @@
 - (void)testMatchesAViewOfAClassThatInheritsFromTheTargetClass {
     id<Selector> viewSelector = [[KindOfClassSelector alloc] initWithTargetClass:[UIView class]];
     UIButton* button = [[UIButton alloc] initWithFrame:frame];
-    STAssertTrue([viewSelector matchesView:button], @"Mismatches a derived class");
+    STAssertTrue([viewSelector matchesView:button], @"Matches a derived class");
 }
 
 @end

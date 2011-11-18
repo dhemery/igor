@@ -9,17 +9,9 @@
 #import "KindOfClassSelector.h"
 
 @implementation KindOfClassSelector
-@synthesize targetClass;
-
--(KindOfClassSelector*) initWithTargetClass:(Class)aTargetClass {
-    if(self = [super init]) {
-        targetClass = aTargetClass;
-    }
-    return self;
-}
 
 -(BOOL) matchesView:(UIView *)view {
-    return [view isKindOfClass:targetClass];
+    return [view isKindOfClass:self.targetClass];
 }
 
 @end

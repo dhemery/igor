@@ -6,10 +6,7 @@
 //  Copyright (c) 2011 Dale H. Emery. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "Selector.h"
+#import "ClassSelector.h"
 
-@interface KindOfClassSelector : NSObject<Selector>
-@property(readonly,retain) Class targetClass;
--(KindOfClassSelector*) initWithTargetClass:(Class)targetClass;
+@interface KindOfClassSelector : ClassSelector
 @end

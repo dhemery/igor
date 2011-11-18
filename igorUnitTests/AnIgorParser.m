@@ -21,7 +21,7 @@
     parser = [IgorParser new];
 }
 
--(void) testParsesAsteriskAsUniversalClassSelector {
+-(void) testParsesAsteriskAsKindOfClassSelectorForUIViewClass {
     id<Selector> selector = [parser parse:@"*"];
     assertThat(selector, instanceOf([KindOfClassSelector class]));
     KindOfClassSelector* kindOfClassSelector = (KindOfClassSelector*)selector;
@@ -40,5 +40,9 @@
     assertThat(selector, instanceOf([KindOfClassSelector class]));           
     KindOfClassSelector* kindOfClassSelector = (KindOfClassSelector*)selector;
     assertThat(kindOfClassSelector.targetClass, equalTo([UILabel class]));
+}
+
+-(void) testParses {
+    
 }
 @end
