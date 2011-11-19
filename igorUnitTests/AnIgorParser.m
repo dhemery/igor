@@ -10,6 +10,7 @@
 #import "ClassEqualsSelector.h"
 #import "KindOfClassSelector.h"
 #import "CompoundSelector.h"
+#import "PropertyExistsSelector.h"
 
 @interface AnIgorParser : SenTestCase
 @end
@@ -43,13 +44,22 @@
     assertThat(kindOfClassSelector.targetClass, equalTo([UILabel class]));
 }
 
--(void) testParsesCompoundSelectorWithOne {
-    id<Selector> selector = [parser parse:@"*[myAttributeName]"];
+-(void) testParsesCompoundSelectorWithOneAttributeSelector {
+    id<Selector> selector = [parser parse:@"*[myPropertyName]"];
 
     assertThat(selector, instanceOf([CompoundSelector class]));
     CompoundSelector* compoundSelector = (CompoundSelector*)selector;
 
+    NSArray* simpleSelectors = compoundSelector.simpleSelectors;
     assertThat(compoundSelector.simpleSelectors, hasCountOf(2));
+
+    ClassSelector* classSelector = [simpleSelectors objectAtIndex:0];
+    assertThat(classSelector, instanceOf([KindOfClassSelector class]));
+    assertThat([classSelector targetClass], equalTo([UIView class]));
+
+    PropertyExistsSelector* attributeSelector = [simpleSelectors objectAtIndex:1];
+    assertThat(attributeSelector, instanceOf([PropertyExistsSelector class]));
+    assertThat(attributeSelector.propertyName, equalTo(@"myPropertyName"));
 }
 
 @end

@@ -23,7 +23,10 @@
 }
   
 -(BOOL) matchesView:(UIView *)view {
-    return NO;
+    for(id<Selector> selector in self.simpleSelectors) {
+        if(![selector matchesView:view]) return NO;
+    }
+    return YES;
 }
 
 @end

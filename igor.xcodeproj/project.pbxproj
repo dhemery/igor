@@ -24,6 +24,10 @@
 		2D199DDE146B3FCE0024CA41 /* IgorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D199DDB146B3FBF0024CA41 /* IgorTests.m */; };
 		2D4FDDFC146D0A2A0094946B /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D4FDDFB146D0A2A0094946B /* OCHamcrestIOS.framework */; };
 		2D4FDDFD146D0A2A0094946B /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D4FDDFB146D0A2A0094946B /* OCHamcrestIOS.framework */; };
+		2D6C7EE8147711E8009DDD3F /* PropertyExistsSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D6C7EE6147711E8009DDD3F /* PropertyExistsSelector.h */; };
+		2D6C7EE9147711E8009DDD3F /* PropertyExistsSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6C7EE7147711E8009DDD3F /* PropertyExistsSelector.m */; };
+		2D6C7EED14771660009DDD3F /* APropertyExistsSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6C7EEC14771660009DDD3F /* APropertyExistsSelector.m */; };
+		2D6C7EF7147726DD009DDD3F /* libobjc.A.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D6C7EF6147726DD009DDD3F /* libobjc.A.dylib */; };
 		2D82ED351476390B00E0C6E2 /* AnIgorParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D82ED341476390B00E0C6E2 /* AnIgorParser.m */; };
 		2D82ED39147641D900E0C6E2 /* KindOfClassSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D82ED37147641D900E0C6E2 /* KindOfClassSelector.h */; };
 		2D82ED3A147641D900E0C6E2 /* KindOfClassSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D82ED38147641D900E0C6E2 /* KindOfClassSelector.m */; };
@@ -75,6 +79,10 @@
 		2D199DCE146B399A0024CA41 /* igorAcceptanceTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "igorAcceptanceTests-Prefix.pch"; sourceTree = "<group>"; };
 		2D199DDB146B3FBF0024CA41 /* IgorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IgorTests.m; sourceTree = "<group>"; };
 		2D4FDDFB146D0A2A0094946B /* OCHamcrestIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCHamcrestIOS.framework; sourceTree = "<group>"; };
+		2D6C7EE6147711E8009DDD3F /* PropertyExistsSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyExistsSelector.h; sourceTree = "<group>"; };
+		2D6C7EE7147711E8009DDD3F /* PropertyExistsSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyExistsSelector.m; sourceTree = "<group>"; };
+		2D6C7EEC14771660009DDD3F /* APropertyExistsSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APropertyExistsSelector.m; sourceTree = "<group>"; };
+		2D6C7EF6147726DD009DDD3F /* libobjc.A.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libobjc.A.dylib; path = usr/lib/libobjc.A.dylib; sourceTree = SDKROOT; };
 		2D82ED341476390B00E0C6E2 /* AnIgorParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnIgorParser.m; sourceTree = "<group>"; };
 		2D82ED37147641D900E0C6E2 /* KindOfClassSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KindOfClassSelector.h; sourceTree = "<group>"; };
 		2D82ED38147641D900E0C6E2 /* KindOfClassSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KindOfClassSelector.m; sourceTree = "<group>"; };
@@ -99,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D6C7EF7147726DD009DDD3F /* libobjc.A.dylib in Frameworks */,
 				2D199DAC146B397B0024CA41 /* SenTestingKit.framework in Frameworks */,
 				2D4FDDFC146D0A2A0094946B /* OCHamcrestIOS.framework in Frameworks */,
 				2D199DAD146B397B0024CA41 /* UIKit.framework in Frameworks */,
@@ -136,6 +145,7 @@
 				2DAE68791476203200041FB4 /* AClassEqualsSelector.m */,
 				2D82ED3C1476430200E0C6E2 /* AKindOfClassSelector.m */,
 				2D82ED341476390B00E0C6E2 /* AnIgorParser.m */,
+				2D6C7EEC14771660009DDD3F /* APropertyExistsSelector.m */,
 				2D199DB0146B397B0024CA41 /* Supporting Files */,
 			);
 			path = igorUnitTests;
@@ -181,8 +191,8 @@
 		2DC2B4D2146BBD6100D2D314 /* extension */ = {
 			isa = PBXGroup;
 			children = (
-				2D8FF92B1470A2EA0027760D /* SelectorEngineRegistry.h */,
 				2D14807F146DA724006AFBCE /* IgorLoader.m */,
+				2D8FF92B1470A2EA0027760D /* SelectorEngineRegistry.h */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -190,6 +200,7 @@
 		E621659DB794A5D612DCD418 = {
 			isa = PBXGroup;
 			children = (
+				2D6C7EF6147726DD009DDD3F /* libobjc.A.dylib */,
 				2DC2B4D2146BBD6100D2D314 /* extension */,
 				E621659DB794A5D612DCD427 /* igor */,
 				2D199DAF146B397B0024CA41 /* igorUnitTests */,
@@ -223,20 +234,22 @@
 		E621659DB794A5D612DCD427 /* igor */ = {
 			isa = PBXGroup;
 			children = (
-				2D04A0721476E4360056D6CE /* ClassSelector.h */,
-				2D04A0731476E4360056D6CE /* ClassSelector.m */,
 				2D199D98146B29540024CA41 /* ClassEqualsSelector.h */,
 				2D199D99146B29540024CA41 /* ClassEqualsSelector.m */,
+				2D04A0721476E4360056D6CE /* ClassSelector.h */,
+				2D04A0731476E4360056D6CE /* ClassSelector.m */,
+				2D9CEC231476F844006444DE /* CompoundSelector.h */,
+				2D9CEC241476F844006444DE /* CompoundSelector.m */,
 				E621659DB794A5D612DCD454 /* Igor.h */,
 				E621659DB794A5D612DCD452 /* Igor.m */,
 				2DAE686B14761AFA00041FB4 /* IgorParser.h */,
 				2DAE686C14761AFA00041FB4 /* IgorParser.m */,
 				2D82ED37147641D900E0C6E2 /* KindOfClassSelector.h */,
 				2D82ED38147641D900E0C6E2 /* KindOfClassSelector.m */,
+				2D6C7EE6147711E8009DDD3F /* PropertyExistsSelector.h */,
+				2D6C7EE7147711E8009DDD3F /* PropertyExistsSelector.m */,
 				2D199D8F146B28880024CA41 /* Selector.h */,
 				E621659DB794A5D612DCD428 /* Supporting Files */,
-				2D9CEC231476F844006444DE /* CompoundSelector.h */,
-				2D9CEC241476F844006444DE /* CompoundSelector.m */,
 			);
 			path = igor;
 			sourceTree = "<group>";
@@ -264,6 +277,7 @@
 				2D82ED39147641D900E0C6E2 /* KindOfClassSelector.h in Headers */,
 				2D04A0741476E4360056D6CE /* ClassSelector.h in Headers */,
 				2D9CEC251476F844006444DE /* CompoundSelector.h in Headers */,
+				2D6C7EE8147711E8009DDD3F /* PropertyExistsSelector.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +422,7 @@
 				2DAE687A1476203200041FB4 /* AClassEqualsSelector.m in Sources */,
 				2D82ED351476390B00E0C6E2 /* AnIgorParser.m in Sources */,
 				2D82ED3D1476430200E0C6E2 /* AKindOfClassSelector.m in Sources */,
+				2D6C7EED14771660009DDD3F /* APropertyExistsSelector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +445,7 @@
 				2D82ED3A147641D900E0C6E2 /* KindOfClassSelector.m in Sources */,
 				2D04A0751476E4360056D6CE /* ClassSelector.m in Sources */,
 				2D9CEC261476F844006444DE /* CompoundSelector.m in Sources */,
+				2D6C7EE9147711E8009DDD3F /* PropertyExistsSelector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

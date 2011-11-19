@@ -10,6 +10,7 @@
 #import "ClassEqualsSelector.h"
 #import "KindOfClassSelector.h"
 #import "CompoundSelector.h"
+#import "PropertyExistsSelector.h"
 
 @implementation IgorParser {
     NSCharacterSet* asterisk;
@@ -43,21 +44,36 @@
     }
 }
 
--(id<Selector>) parseAttributeSelector:(NSScanner*)scanner {
-    return nil;
+-(id<Selector>) parsePropertySelector:(NSScanner*)scanner {
+    NSCharacterSet* leftBracket = [NSCharacterSet characterSetWithCharactersInString:@"["];
+    NSCharacterSet* rightBracket = [NSCharacterSet characterSetWithCharactersInString:@"]"];
+
+    if(![scanner scanCharactersFromSet:leftBracket intoString:nil]) {
+        return nil;
+    }
+
+    NSString* propertyName = [NSString string];
+    PropertyExistsSelector* selector = nil;
+    if([scanner scanCharactersFromSet:letters intoString:&propertyName]) {
+        selector = [PropertyExistsSelector selectorWithPropertyName:propertyName];
+    }
+    if(![scanner scanCharactersFromSet:rightBracket intoString:nil]) {
+        selector = nil;
+    }
+    return selector;
 }
 
 -(id<Selector>) parse:(NSString*)selectorString {
     NSScanner* scanner = [NSScanner scannerWithString:selectorString];
 
     ClassSelector* classSelector = [self parseClassSelector:scanner];
-    id<Selector> attributeSelector = [self parseAttributeSelector:scanner];
-    if(!attributeSelector) {
+    id<Selector> propertySelector = [self parsePropertySelector:scanner];
+    if(!propertySelector) {
         return classSelector;
     }
     CompoundSelector* compoundSelector = [CompoundSelector new];
     [compoundSelector addSelector:classSelector];
-    [compoundSelector addSelector:attributeSelector];
+    [compoundSelector addSelector:propertySelector];
     return compoundSelector;
 }
 
