@@ -27,7 +27,6 @@
 		2D6C7EE8147711E8009DDD3F /* PropertyExistsSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D6C7EE6147711E8009DDD3F /* PropertyExistsSelector.h */; };
 		2D6C7EE9147711E8009DDD3F /* PropertyExistsSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6C7EE7147711E8009DDD3F /* PropertyExistsSelector.m */; };
 		2D6C7EED14771660009DDD3F /* APropertyExistsSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6C7EEC14771660009DDD3F /* APropertyExistsSelector.m */; };
-		2D6C7EF7147726DD009DDD3F /* libobjc.A.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D6C7EF6147726DD009DDD3F /* libobjc.A.dylib */; };
 		2D82ED351476390B00E0C6E2 /* AnIgorParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D82ED341476390B00E0C6E2 /* AnIgorParser.m */; };
 		2D82ED39147641D900E0C6E2 /* KindOfClassSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D82ED37147641D900E0C6E2 /* KindOfClassSelector.h */; };
 		2D82ED3A147641D900E0C6E2 /* KindOfClassSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D82ED38147641D900E0C6E2 /* KindOfClassSelector.m */; };
@@ -82,7 +81,6 @@
 		2D6C7EE6147711E8009DDD3F /* PropertyExistsSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyExistsSelector.h; sourceTree = "<group>"; };
 		2D6C7EE7147711E8009DDD3F /* PropertyExistsSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyExistsSelector.m; sourceTree = "<group>"; };
 		2D6C7EEC14771660009DDD3F /* APropertyExistsSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APropertyExistsSelector.m; sourceTree = "<group>"; };
-		2D6C7EF6147726DD009DDD3F /* libobjc.A.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libobjc.A.dylib; path = usr/lib/libobjc.A.dylib; sourceTree = SDKROOT; };
 		2D82ED341476390B00E0C6E2 /* AnIgorParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnIgorParser.m; sourceTree = "<group>"; };
 		2D82ED37147641D900E0C6E2 /* KindOfClassSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KindOfClassSelector.h; sourceTree = "<group>"; };
 		2D82ED38147641D900E0C6E2 /* KindOfClassSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KindOfClassSelector.m; sourceTree = "<group>"; };
@@ -107,7 +105,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D6C7EF7147726DD009DDD3F /* libobjc.A.dylib in Frameworks */,
 				2D199DAC146B397B0024CA41 /* SenTestingKit.framework in Frameworks */,
 				2D4FDDFC146D0A2A0094946B /* OCHamcrestIOS.framework in Frameworks */,
 				2D199DAD146B397B0024CA41 /* UIKit.framework in Frameworks */,
@@ -200,7 +197,6 @@
 		E621659DB794A5D612DCD418 = {
 			isa = PBXGroup;
 			children = (
-				2D6C7EF6147726DD009DDD3F /* libobjc.A.dylib */,
 				2DC2B4D2146BBD6100D2D314 /* extension */,
 				E621659DB794A5D612DCD427 /* igor */,
 				2D199DAF146B397B0024CA41 /* igorUnitTests */,

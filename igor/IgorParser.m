@@ -25,48 +25,38 @@
     return self;
 }
 
--(Class) parseTargetClass:(NSScanner*)scanner {
-    NSString* className = [NSString string];
-    if([scanner scanCharactersFromSet:letters intoString:&className]) {
-        return NSClassFromString(className);
-    } else {
-        return [UIView class];
-    }
-}
-
 -(ClassSelector*) parseClassSelector:(NSScanner*)scanner {
-    Class targetClass = [self parseTargetClass:scanner];
-        
-    if([scanner scanCharactersFromSet:asterisk intoString:nil]) {
-        return [[KindOfClassSelector alloc] initWithTargetClass:targetClass];
-    } else {
-        return [[ClassEqualsSelector alloc] initWithTargetClass:targetClass];
+    Class targetClass = [UIView class];
+    Class selectorClass = [KindOfClassSelector class];
+    
+    NSString* className;
+    if([scanner scanCharactersFromSet:letters intoString:&className]) {
+        targetClass = NSClassFromString(className);
+        selectorClass = [ClassEqualsSelector class];
     }
+    if([scanner scanCharactersFromSet:asterisk intoString:nil]) {
+        selectorClass = [KindOfClassSelector class];
+    }
+    return [[selectorClass alloc] initWithTargetClass:targetClass];
 }
 
 -(id<Selector>) parsePropertySelector:(NSScanner*)scanner {
     NSCharacterSet* leftBracket = [NSCharacterSet characterSetWithCharactersInString:@"["];
     NSCharacterSet* rightBracket = [NSCharacterSet characterSetWithCharactersInString:@"]"];
 
-    if(![scanner scanCharactersFromSet:leftBracket intoString:nil]) {
-        return nil;
-    }
-
     NSString* propertyName = [NSString string];
-    PropertyExistsSelector* selector = nil;
-    if([scanner scanCharactersFromSet:letters intoString:&propertyName]) {
-        selector = [PropertyExistsSelector selectorWithPropertyName:propertyName];
+    if([scanner scanCharactersFromSet:leftBracket intoString:nil] &&
+       [scanner scanCharactersFromSet:letters intoString:&propertyName] &&
+       [scanner scanCharactersFromSet:rightBracket intoString:nil]) {
+        return [PropertyExistsSelector selectorWithPropertyName:propertyName];
     }
-    if(![scanner scanCharactersFromSet:rightBracket intoString:nil]) {
-        selector = nil;
-    }
-    return selector;
+    return nil;
 }
 
 -(id<Selector>) parse:(NSString*)selectorString {
     NSScanner* scanner = [NSScanner scannerWithString:selectorString];
 
-    ClassSelector* classSelector = [self parseClassSelector:scanner];
+    id<Selector> classSelector = [self parseClassSelector:scanner];
     id<Selector> propertySelector = [self parsePropertySelector:scanner];
     if(!propertySelector) {
         return classSelector;

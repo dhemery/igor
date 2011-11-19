@@ -105,13 +105,15 @@
     assertThat(selectedViews, isNot(hasItem(viewOfUnrelatedClass)));
 }
 
-- (void) testPropertyExistsSelector {
-    UIView* view = [[UIView alloc] initWithFrame:frame];
-    
-    NSArray* selectedViews = [[Igor new] selectViewsWithSelector:@"*[accessibilityHint]" fromRoot:view];
-    assertThat(selectedViews, hasItem(view));
 
+- (void) testNakedPropertyExistsSelector {
+    UIView* view = [[UIButton alloc] initWithFrame:frame];
+    
+    NSArray* selectedViews = [[Igor new] selectViewsWithSelector:@"[accessibilityHint]" fromRoot:view];
+    assertThat(selectedViews, hasItem(view));
+    
     selectedViews = [[Igor new] selectViewsWithSelector:@"[nonExistentProperty]" fromRoot:view];
     assertThat(selectedViews, isNot(hasItem(view)));
 }
+
 @end
