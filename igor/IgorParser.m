@@ -13,13 +13,11 @@
 #import "PropertyExistsSelector.h"
 
 @implementation IgorParser {
-    NSCharacterSet* asterisk;
     NSCharacterSet* letters;
 }
 
 -(IgorParser*)init {
     if(self = [super init]) {
-        asterisk = [NSCharacterSet characterSetWithCharactersInString:@"*"];
         letters = [NSCharacterSet letterCharacterSet];
     }
     return self;
@@ -34,20 +32,17 @@
         targetClass = NSClassFromString(className);
         selectorClass = [ClassEqualsSelector class];
     }
-    if([scanner scanCharactersFromSet:asterisk intoString:nil]) {
+    if([scanner scanString:@"*" intoString:nil]) {
         selectorClass = [KindOfClassSelector class];
     }
     return [[selectorClass alloc] initWithTargetClass:targetClass];
 }
 
 -(id<Selector>) parsePropertySelector:(NSScanner*)scanner {
-    NSCharacterSet* leftBracket = [NSCharacterSet characterSetWithCharactersInString:@"["];
-    NSCharacterSet* rightBracket = [NSCharacterSet characterSetWithCharactersInString:@"]"];
-
     NSString* propertyName = [NSString string];
-    if([scanner scanCharactersFromSet:leftBracket intoString:nil] &&
+    if([scanner scanString:@"[" intoString:nil] &&
        [scanner scanCharactersFromSet:letters intoString:&propertyName] &&
-       [scanner scanCharactersFromSet:rightBracket intoString:nil]) {
+       [scanner scanString:@"]" intoString:nil]) {
         return [PropertyExistsSelector selectorWithPropertyName:propertyName];
     }
     return nil;
