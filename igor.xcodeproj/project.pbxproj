@@ -22,6 +22,10 @@
 		2D199DC4146B399A0024CA41 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD425 /* Foundation.framework */; };
 		2D199DCA146B399A0024CA41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D199DC8146B399A0024CA41 /* InfoPlist.strings */; };
 		2D199DDE146B3FCE0024CA41 /* IgorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D199DDB146B3FBF0024CA41 /* IgorTests.m */; };
+		2D2D4CFE1478752100FF3D88 /* ClassParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2D4CFC1478752100FF3D88 /* ClassParser.h */; };
+		2D2D4CFF1478752100FF3D88 /* ClassParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D2D4CFD1478752100FF3D88 /* ClassParser.m */; };
+		2D2D4D031478770900FF3D88 /* PropertyParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2D4D011478770900FF3D88 /* PropertyParser.h */; };
+		2D2D4D041478770900FF3D88 /* PropertyParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D2D4D021478770900FF3D88 /* PropertyParser.m */; };
 		2D4FDDFC146D0A2A0094946B /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D4FDDFB146D0A2A0094946B /* OCHamcrestIOS.framework */; };
 		2D4FDDFD146D0A2A0094946B /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D4FDDFB146D0A2A0094946B /* OCHamcrestIOS.framework */; };
 		2D6C7EE8147711E8009DDD3F /* PropertyExistsSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D6C7EE6147711E8009DDD3F /* PropertyExistsSelector.h */; };
@@ -77,6 +81,10 @@
 		2D199DC9146B399A0024CA41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2D199DCE146B399A0024CA41 /* igorAcceptanceTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "igorAcceptanceTests-Prefix.pch"; sourceTree = "<group>"; };
 		2D199DDB146B3FBF0024CA41 /* IgorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IgorTests.m; sourceTree = "<group>"; };
+		2D2D4CFC1478752100FF3D88 /* ClassParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassParser.h; sourceTree = "<group>"; };
+		2D2D4CFD1478752100FF3D88 /* ClassParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassParser.m; sourceTree = "<group>"; };
+		2D2D4D011478770900FF3D88 /* PropertyParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyParser.h; sourceTree = "<group>"; };
+		2D2D4D021478770900FF3D88 /* PropertyParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyParser.m; sourceTree = "<group>"; };
 		2D4FDDFB146D0A2A0094946B /* OCHamcrestIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCHamcrestIOS.framework; sourceTree = "<group>"; };
 		2D6C7EE6147711E8009DDD3F /* PropertyExistsSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyExistsSelector.h; sourceTree = "<group>"; };
 		2D6C7EE7147711E8009DDD3F /* PropertyExistsSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyExistsSelector.m; sourceTree = "<group>"; };
@@ -246,6 +254,10 @@
 				2D6C7EE7147711E8009DDD3F /* PropertyExistsSelector.m */,
 				2D199D8F146B28880024CA41 /* Selector.h */,
 				E621659DB794A5D612DCD428 /* Supporting Files */,
+				2D2D4CFC1478752100FF3D88 /* ClassParser.h */,
+				2D2D4CFD1478752100FF3D88 /* ClassParser.m */,
+				2D2D4D011478770900FF3D88 /* PropertyParser.h */,
+				2D2D4D021478770900FF3D88 /* PropertyParser.m */,
 			);
 			path = igor;
 			sourceTree = "<group>";
@@ -274,6 +286,8 @@
 				2D04A0741476E4360056D6CE /* ClassSelector.h in Headers */,
 				2D9CEC251476F844006444DE /* CompoundSelector.h in Headers */,
 				2D6C7EE8147711E8009DDD3F /* PropertyExistsSelector.h in Headers */,
+				2D2D4CFE1478752100FF3D88 /* ClassParser.h in Headers */,
+				2D2D4D031478770900FF3D88 /* PropertyParser.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +456,8 @@
 				2D04A0751476E4360056D6CE /* ClassSelector.m in Sources */,
 				2D9CEC261476F844006444DE /* CompoundSelector.m in Sources */,
 				2D6C7EE9147711E8009DDD3F /* PropertyExistsSelector.m in Sources */,
+				2D2D4CFF1478752100FF3D88 /* ClassParser.m in Sources */,
+				2D2D4D041478770900FF3D88 /* PropertyParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

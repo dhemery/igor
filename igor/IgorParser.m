@@ -7,52 +7,17 @@
 //
 
 #import "IgorParser.h"
-#import "ClassEqualsSelector.h"
-#import "KindOfClassSelector.h"
 #import "CompoundSelector.h"
-#import "PropertyExistsSelector.h"
+#import "ClassParser.h"
+#import "PropertyParser.h"
 
-@implementation IgorParser {
-    NSCharacterSet* letters;
-}
-
--(IgorParser*)init {
-    if(self = [super init]) {
-        letters = [NSCharacterSet letterCharacterSet];
-    }
-    return self;
-}
-
--(ClassSelector*) parseClassSelector:(NSScanner*)scanner {
-    Class targetClass = [UIView class];
-    Class selectorClass = [KindOfClassSelector class];
-    
-    NSString* className;
-    if([scanner scanCharactersFromSet:letters intoString:&className]) {
-        targetClass = NSClassFromString(className);
-        selectorClass = [ClassEqualsSelector class];
-    }
-    if([scanner scanString:@"*" intoString:nil]) {
-        selectorClass = [KindOfClassSelector class];
-    }
-    return [[selectorClass alloc] initWithTargetClass:targetClass];
-}
-
--(id<Selector>) parsePropertySelector:(NSScanner*)scanner {
-    NSString* propertyName = [NSString string];
-    if([scanner scanString:@"[" intoString:nil] &&
-       [scanner scanCharactersFromSet:letters intoString:&propertyName] &&
-       [scanner scanString:@"]" intoString:nil]) {
-        return [PropertyExistsSelector selectorWithPropertyName:propertyName];
-    }
-    return nil;
-}
+@implementation IgorParser
 
 -(id<Selector>) parse:(NSString*)selectorString {
     NSScanner* scanner = [NSScanner scannerWithString:selectorString];
 
-    id<Selector> classSelector = [self parseClassSelector:scanner];
-    id<Selector> propertySelector = [self parsePropertySelector:scanner];
+    id<Selector> classSelector = [[ClassParser new] parse:scanner];
+    id<Selector> propertySelector = [[PropertyParser new] parse:scanner];
     if(!propertySelector) {
         return classSelector;
     }
