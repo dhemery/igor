@@ -1,17 +1,8 @@
 //
 //  Created by Dale on 11/4/11.
 //
-// To change the template use AppCode | Preferences | File Templates.
-//
 
 
-#define HC_SHORTHAND
-#import <OCHamcrestIOS/OCHamcrestIOS.h>
-
-#import <Foundation/Foundation.h>
-#import <SenTestingKit/SenTestingKit.h>
-
-#import <UIKit/UIKit.h>
 #import "Igor.h"
 
 

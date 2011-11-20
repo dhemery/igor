@@ -1,15 +1,8 @@
-//
-//  Created by Dale on 11/3/11.
-//
-// To change the template use AppCode | Preferences | File Templates.
-//
-
-
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
 #import "SelectorEngineRegistry.h"
 
 @interface Igor : NSObject<SelectorEngine>
--(Igor*) init;
+
+-(NSArray*) selectViewsWithSelector:(NSString*)selectorString;
 -(NSArray*) selectViewsWithSelector:(NSString*)selectorString fromRoot:(UIView*)root;
+
 @end

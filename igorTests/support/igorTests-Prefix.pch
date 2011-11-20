@@ -1,5 +1,5 @@
 //
-// Prefix header for all source files of the 'igorTests' target in the 'igorTests' project
+// Prefix header for all source files of the 'igorTests' target in the 'igor' project
 //
 
 #ifdef __OBJC__
