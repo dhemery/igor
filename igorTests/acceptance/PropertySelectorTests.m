@@ -30,10 +30,12 @@
     UIView* view = [[UIButton alloc] initWithFrame:frame];
     view.accessibilityHint = @"monkeymonkey";
     
-    NSArray* selectedViews = [[Igor new] selectViewsWithSelector:@"[accessibilityHint='monkeymonkey']" fromRoot:view];
+    NSArray* selectedViews = [[Igor new] selectViewsWithSelector:@"[accessibilityHint='monkeymonkey']"
+                                                        fromRoot:view];
     assertThat(selectedViews, hasItem(view));
     
-    selectedViews = [[Igor new] selectViewsWithSelector:@"[nonExistentProperty='fiddlefaddle']" fromRoot:view];
+    selectedViews = [[Igor new] selectViewsWithSelector:@"[nonExistentProperty='fiddlefaddle']"
+                                               fromRoot:view];
     assertThat(selectedViews, isNot(hasItem(view)));
 }
 
