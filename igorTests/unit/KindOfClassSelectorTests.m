@@ -6,12 +6,13 @@
 //  Copyright (c) 2011 Dale H. Emery. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import "KindOfClassSelector.h"
 
-@interface AKindOfClassSelector : SenTestCase
+@interface KindOfClassSelectorTests : SenTestCase
 @end
 
-@implementation AKindOfClassSelector {
+@implementation KindOfClassSelectorTests {
     CGRect frame;
 }
 

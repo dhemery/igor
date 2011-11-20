@@ -8,17 +8,20 @@
 
 #import "PropertyParser.h"
 #import "PropertyExistsSelector.h"
+#import "IgorParserException.h"
 
 @implementation PropertyParser
 
 -(id<Selector>) parse:(NSScanner*)scanner {
     NSString* propertyName = [NSString string];
-    if([scanner scanString:@"[" intoString:nil] &&
-       [scanner scanCharactersFromSet:[NSCharacterSet letterCharacterSet] intoString:&propertyName] &&
-       [scanner scanString:@"]" intoString:nil]) {
-        return [PropertyExistsSelector selectorWithPropertyName:propertyName];
+    if(![scanner scanString:@"[" intoString:nil]) return nil;
+    if(![scanner scanCharactersFromSet:[NSCharacterSet letterCharacterSet] intoString:&propertyName]) {
+        @throw [IgorParserException exceptionWithReason:@"Missing property name" scanner:scanner];
     }
-    return nil;
+    if(![scanner scanString:@"]" intoString:nil]) {
+        @throw [IgorParserException exceptionWithReason:@"Missing ]" scanner:scanner];
+    }
+    return [PropertyExistsSelector selectorWithPropertyName:propertyName];
 }
 
 @end

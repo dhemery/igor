@@ -6,16 +6,17 @@
 //  Copyright (c) 2011 Dale H. Emery. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import "IgorParser.h"
 #import "ClassEqualsSelector.h"
 #import "KindOfClassSelector.h"
 #import "CompoundSelector.h"
 #import "PropertyExistsSelector.h"
 
-@interface AnIgorParser : SenTestCase
+@interface IgorParserTests : SenTestCase
 @end
 
-@implementation AnIgorParser {
+@implementation IgorParserTests {
     IgorParser* parser;
 }
 

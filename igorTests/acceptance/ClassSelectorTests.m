@@ -2,14 +2,13 @@
 //  Created by Dale on 11/4/11.
 //
 
-
+#import <UIKit/UIKit.h>
 #import "Igor.h"
 
-
-@interface IgorTests : SenTestCase
+@interface ClassSelectorTests : SenTestCase
 @end
 
-@implementation IgorTests {
+@implementation ClassSelectorTests {
     CGRect frame;
 }
 
@@ -94,17 +93,6 @@
     assertThat(selectedViews, hasItem(viewOfTargetClass));
     assertThat(selectedViews, hasItem(viewOfClassDerivedFromTargetClass));
     assertThat(selectedViews, isNot(hasItem(viewOfUnrelatedClass)));
-}
-
-
-- (void) testNakedPropertyExistsSelector {
-    UIView* view = [[UIButton alloc] initWithFrame:frame];
-    
-    NSArray* selectedViews = [[Igor new] selectViewsWithSelector:@"[accessibilityHint]" fromRoot:view];
-    assertThat(selectedViews, hasItem(view));
-    
-    selectedViews = [[Igor new] selectViewsWithSelector:@"[nonExistentProperty]" fromRoot:view];
-    assertThat(selectedViews, isNot(hasItem(view)));
 }
 
 @end

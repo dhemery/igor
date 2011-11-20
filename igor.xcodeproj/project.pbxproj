@@ -10,12 +10,12 @@
 		2D2D4D0B1478787F00FF3D88 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD437 /* SenTestingKit.framework */; };
 		2D2D4D0C1478787F00FF3D88 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD439 /* UIKit.framework */; };
 		2D2D4D0D1478787F00FF3D88 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD425 /* Foundation.framework */; };
-		2D2D4D29147879B200FF3D88 /* IgorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D2D4D1E147879B200FF3D88 /* IgorTests.m */; };
+		2D2D4D29147879B200FF3D88 /* PropertySelectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D2D4D1E147879B200FF3D88 /* PropertySelectorTests.m */; };
 		2D2D4D2A147879B200FF3D88 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D2D4D20147879B200FF3D88 /* InfoPlist.strings */; };
-		2D2D4D2C147879B200FF3D88 /* AClassEqualsSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D2D4D25147879B200FF3D88 /* AClassEqualsSelector.m */; };
-		2D2D4D2D147879B200FF3D88 /* AKindOfClassSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D2D4D26147879B200FF3D88 /* AKindOfClassSelector.m */; };
-		2D2D4D2E147879B200FF3D88 /* AnIgorParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D2D4D27147879B200FF3D88 /* AnIgorParser.m */; };
-		2D2D4D2F147879B200FF3D88 /* APropertyExistsSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D2D4D28147879B200FF3D88 /* APropertyExistsSelector.m */; };
+		2D2D4D2C147879B200FF3D88 /* ClassEqualsSelectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D2D4D25147879B200FF3D88 /* ClassEqualsSelectorTests.m */; };
+		2D2D4D2D147879B200FF3D88 /* KindOfClassSelectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D2D4D26147879B200FF3D88 /* KindOfClassSelectorTests.m */; };
+		2D2D4D2E147879B200FF3D88 /* IgorParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D2D4D27147879B200FF3D88 /* IgorParserTests.m */; };
+		2D2D4D2F147879B200FF3D88 /* PropertyExistsSelectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D2D4D28147879B200FF3D88 /* PropertyExistsSelectorTests.m */; };
 		2D2D4D3214787A5500FF3D88 /* libigor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD41C /* libigor.a */; };
 		2D2D4D3314787ACE00FF3D88 /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D4FDDFB146D0A2A0094946B /* OCHamcrestIOS.framework */; };
 		2D2D4D4F14787C5E00FF3D88 /* Igor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D2D4D3614787C5E00FF3D88 /* Igor.m */; };
@@ -40,6 +40,10 @@
 		2D2D4D6314787C5E00FF3D88 /* igor-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 2D2D4D4D14787C5E00FF3D88 /* igor-Prefix.pch */; };
 		2D2D4D651478822F00FF3D88 /* Igor.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2D4D641478822F00FF3D88 /* Igor.h */; };
 		2D2D4D671478846400FF3D88 /* IgorLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D2D4D661478846400FF3D88 /* IgorLoader.m */; };
+		2D2D4D6A1478880100FF3D88 /* ClassSelectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D2D4D681478872100FF3D88 /* ClassSelectorTests.m */; };
+		2D2D4D6C1478907F00FF3D88 /* PropertyParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D2D4D6B1478907F00FF3D88 /* PropertyParserTests.m */; };
+		2D2D4D721478916700FF3D88 /* IgorParserException.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2D4D701478916700FF3D88 /* IgorParserException.h */; };
+		2D2D4D731478916700FF3D88 /* IgorParserException.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D2D4D711478916700FF3D88 /* IgorParserException.m */; };
 		E621659DB794A5D612DCD426 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD425 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,14 +59,14 @@
 
 /* Begin PBXFileReference section */
 		2D2D4D0A1478787F00FF3D88 /* igorTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = igorTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D2D4D1E147879B200FF3D88 /* IgorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IgorTests.m; sourceTree = "<group>"; };
+		2D2D4D1E147879B200FF3D88 /* PropertySelectorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertySelectorTests.m; sourceTree = "<group>"; };
 		2D2D4D21147879B200FF3D88 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2D2D4D22147879B200FF3D88 /* igorTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "igorTests-Info.plist"; sourceTree = "<group>"; };
 		2D2D4D23147879B200FF3D88 /* igorTests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "igorTests-Prefix.pch"; sourceTree = "<group>"; };
-		2D2D4D25147879B200FF3D88 /* AClassEqualsSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AClassEqualsSelector.m; sourceTree = "<group>"; };
-		2D2D4D26147879B200FF3D88 /* AKindOfClassSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKindOfClassSelector.m; sourceTree = "<group>"; };
-		2D2D4D27147879B200FF3D88 /* AnIgorParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnIgorParser.m; sourceTree = "<group>"; };
-		2D2D4D28147879B200FF3D88 /* APropertyExistsSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APropertyExistsSelector.m; sourceTree = "<group>"; };
+		2D2D4D25147879B200FF3D88 /* ClassEqualsSelectorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassEqualsSelectorTests.m; sourceTree = "<group>"; };
+		2D2D4D26147879B200FF3D88 /* KindOfClassSelectorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KindOfClassSelectorTests.m; sourceTree = "<group>"; };
+		2D2D4D27147879B200FF3D88 /* IgorParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IgorParserTests.m; sourceTree = "<group>"; };
+		2D2D4D28147879B200FF3D88 /* PropertyExistsSelectorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyExistsSelectorTests.m; sourceTree = "<group>"; };
 		2D2D4D3614787C5E00FF3D88 /* Igor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Igor.m; sourceTree = "<group>"; };
 		2D2D4D3814787C5E00FF3D88 /* SelectorEngineRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectorEngineRegistry.h; sourceTree = "<group>"; };
 		2D2D4D3A14787C5E00FF3D88 /* ClassParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassParser.h; sourceTree = "<group>"; };
@@ -85,6 +89,10 @@
 		2D2D4D4D14787C5E00FF3D88 /* igor-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "igor-Prefix.pch"; sourceTree = "<group>"; };
 		2D2D4D641478822F00FF3D88 /* Igor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Igor.h; sourceTree = "<group>"; };
 		2D2D4D661478846400FF3D88 /* IgorLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IgorLoader.m; sourceTree = "<group>"; };
+		2D2D4D681478872100FF3D88 /* ClassSelectorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassSelectorTests.m; sourceTree = "<group>"; };
+		2D2D4D6B1478907F00FF3D88 /* PropertyParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyParserTests.m; sourceTree = "<group>"; };
+		2D2D4D701478916700FF3D88 /* IgorParserException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IgorParserException.h; sourceTree = "<group>"; };
+		2D2D4D711478916700FF3D88 /* IgorParserException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IgorParserException.m; sourceTree = "<group>"; };
 		2D4FDDFB146D0A2A0094946B /* OCHamcrestIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCHamcrestIOS.framework; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD41C /* libigor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libigor.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E621659DB794A5D612DCD425 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -129,7 +137,8 @@
 		2D2D4D1D147879B200FF3D88 /* acceptance */ = {
 			isa = PBXGroup;
 			children = (
-				2D2D4D1E147879B200FF3D88 /* IgorTests.m */,
+				2D2D4D681478872100FF3D88 /* ClassSelectorTests.m */,
+				2D2D4D1E147879B200FF3D88 /* PropertySelectorTests.m */,
 			);
 			path = acceptance;
 			sourceTree = "<group>";
@@ -147,10 +156,11 @@
 		2D2D4D24147879B200FF3D88 /* unit */ = {
 			isa = PBXGroup;
 			children = (
-				2D2D4D25147879B200FF3D88 /* AClassEqualsSelector.m */,
-				2D2D4D26147879B200FF3D88 /* AKindOfClassSelector.m */,
-				2D2D4D27147879B200FF3D88 /* AnIgorParser.m */,
-				2D2D4D28147879B200FF3D88 /* APropertyExistsSelector.m */,
+				2D2D4D25147879B200FF3D88 /* ClassEqualsSelectorTests.m */,
+				2D2D4D26147879B200FF3D88 /* KindOfClassSelectorTests.m */,
+				2D2D4D27147879B200FF3D88 /* IgorParserTests.m */,
+				2D2D4D28147879B200FF3D88 /* PropertyExistsSelectorTests.m */,
+				2D2D4D6B1478907F00FF3D88 /* PropertyParserTests.m */,
 			);
 			path = unit;
 			sourceTree = "<group>";
@@ -175,6 +185,8 @@
 				2D2D4D3D14787C5E00FF3D88 /* IgorParser.m */,
 				2D2D4D3E14787C5E00FF3D88 /* PropertyParser.h */,
 				2D2D4D3F14787C5E00FF3D88 /* PropertyParser.m */,
+				2D2D4D701478916700FF3D88 /* IgorParserException.h */,
+				2D2D4D711478916700FF3D88 /* IgorParserException.m */,
 			);
 			path = parser;
 			sourceTree = "<group>";
@@ -273,6 +285,7 @@
 				2D2D4D6214787C5E00FF3D88 /* Selector.h in Headers */,
 				2D2D4D6314787C5E00FF3D88 /* igor-Prefix.pch in Headers */,
 				2D2D4D651478822F00FF3D88 /* Igor.h in Headers */,
+				2D2D4D721478916700FF3D88 /* IgorParserException.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,11 +386,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D2D4D29147879B200FF3D88 /* IgorTests.m in Sources */,
-				2D2D4D2C147879B200FF3D88 /* AClassEqualsSelector.m in Sources */,
-				2D2D4D2D147879B200FF3D88 /* AKindOfClassSelector.m in Sources */,
-				2D2D4D2E147879B200FF3D88 /* AnIgorParser.m in Sources */,
-				2D2D4D2F147879B200FF3D88 /* APropertyExistsSelector.m in Sources */,
+				2D2D4D29147879B200FF3D88 /* PropertySelectorTests.m in Sources */,
+				2D2D4D2C147879B200FF3D88 /* ClassEqualsSelectorTests.m in Sources */,
+				2D2D4D2D147879B200FF3D88 /* KindOfClassSelectorTests.m in Sources */,
+				2D2D4D2E147879B200FF3D88 /* IgorParserTests.m in Sources */,
+				2D2D4D2F147879B200FF3D88 /* PropertyExistsSelectorTests.m in Sources */,
+				2D2D4D6A1478880100FF3D88 /* ClassSelectorTests.m in Sources */,
+				2D2D4D6C1478907F00FF3D88 /* PropertyParserTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +410,7 @@
 				2D2D4D5F14787C5E00FF3D88 /* KindOfClassSelector.m in Sources */,
 				2D2D4D6114787C5E00FF3D88 /* PropertyExistsSelector.m in Sources */,
 				2D2D4D671478846400FF3D88 /* IgorLoader.m in Sources */,
+				2D2D4D731478916700FF3D88 /* IgorParserException.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,6 +552,7 @@
 				2D2D4D1A1478788000FF3D88 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E621659DB794A5D612DCD417 /* Build configuration list for PBXProject "igor" */ = {
 			isa = XCConfigurationList;

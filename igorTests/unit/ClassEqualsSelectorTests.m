@@ -6,13 +6,14 @@
 //  Copyright (c) 2011 Dale H. Emery. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import "Selector.h"
 #import "ClassEqualsSelector.h"
 
-@interface AClassEqualsSelector : SenTestCase
+@interface ClassEqualsSelectorTests : SenTestCase
 @end
 
-@implementation AClassEqualsSelector {
+@implementation ClassEqualsSelectorTests {
     CGRect frame;
 }
 
