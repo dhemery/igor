@@ -6,7 +6,7 @@
 //  Copyright (c) 2011 Dale H. Emery. All rights reserved.
 //
 
-#import "PropertyInspector.h"
+#import "NSObject+PropertyInspector.h"
 #import "PropertyExistsSelector.h"
 
 @implementation PropertyExistsSelector
@@ -25,7 +25,7 @@
 }
 
 -(BOOL) matchesView:(UIView *)view {
-    return [[PropertyInspector new] object:view hasProperty:propertyName];
+    return [view hasProperty:propertyName];
 }
 
 @end

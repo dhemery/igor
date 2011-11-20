@@ -6,12 +6,12 @@
 //  Copyright (c) 2011 Dale H. Emery. All rights reserved.
 //
 
-#import "PropertyInspector.h"
+#import "NSObject+PropertyInspector.h"
 #import "PropertyDescription.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
 
-@implementation PropertyInspector
+@implementation NSObject (PropertyInspector)
 
 -(void) gatherProtocolsAdoptedByProtocol:(Protocol*)protocol into:(NSMutableSet*)set {
     unsigned int protocolCount;
@@ -70,9 +70,9 @@
     free(properties);
 }
 
--(NSSet*) propertyDescriptionsForClass:(Class) c {
-    NSMutableArray* classes = [NSMutableArray arrayWithObject:c];
-    Class theClass = c;
+-(NSSet*) propertyDescriptions {
+    Class theClass = [self class];
+    NSMutableArray* classes = [NSMutableArray arrayWithObject:theClass];
     Class superClass;
     while((superClass = [theClass superclass])) {
         [classes addObject:superClass];
@@ -95,16 +95,6 @@
     return properties;
 }
 
--(void) logPropertyDescriptionsForClass:(Class)c {
-    NSDictionary* dictionary = [NSMutableDictionary dictionary];
-    for(PropertyDescription* description in [self propertyDescriptionsForClass:c]) {
-        [dictionary setValue:description forKey:description.propertyName];
-    }
-    for(NSString* propertyName in [self sortedPropertyNamesForClass:c]) {
-        NSLog(@"%@", [dictionary valueForKey:propertyName]);
-    }
-}
-
 -(NSSet*) propertyNamesFromDescriptions:(NSSet*)descriptions {
     NSMutableSet* propertyNames = [NSMutableSet set];
     for(PropertyDescription* property in descriptions) {
@@ -113,25 +103,35 @@
     return propertyNames;
 }
 
--(NSSet*) propertyNamesForClass:(Class) c {
-    return [self propertyNamesFromDescriptions:[self propertyDescriptionsForClass:c]];
+-(NSSet*) propertyNames {
+    return [self propertyNamesFromDescriptions:[self propertyDescriptions]];
 }
 
 -(NSArray*) sortedStringsFromSet:(NSSet*)set {
     return [[set allObjects] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
 }
 
--(NSArray*) sortedPropertyNamesForClass:(Class)c {
-    return [self sortedStringsFromSet:[self propertyNamesForClass:c]];
+-(NSArray*) sortedPropertyNames {
+    return [self sortedStringsFromSet:[self propertyNames]];
 }
 
--(BOOL) object:(id)object hasProperty:(NSString*)propertyName {
-    NSSet* properties = [self propertyNamesForClass:[object class]];
+-(BOOL) hasProperty:(NSString*)propertyName {
+    NSSet* properties = [self propertyNames];
     return [properties containsObject:propertyName];
 }
 
--(id) valueOfProperty:(NSString*)propertyName forObject:(id)object {
-    return objc_msgSend(object, NSSelectorFromString(propertyName));
+-(id) valueOfProperty:(NSString*)propertyName {
+    return objc_msgSend(self, NSSelectorFromString(propertyName));
+}
+
+-(void) logPropertyDescriptions {
+    NSDictionary* dictionary = [NSMutableDictionary dictionary];
+    for(PropertyDescription* description in [self propertyDescriptions]) {
+        [dictionary setValue:description forKey:description.propertyName];
+    }
+    for(NSString* propertyName in [self sortedPropertyNames]) {
+        NSLog(@"%@", [dictionary valueForKey:propertyName]);
+    }
 }
 
 @end

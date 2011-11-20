@@ -16,7 +16,6 @@
 		2D2D4D2D147879B200FF3D88 /* KindOfClassSelectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D2D4D26147879B200FF3D88 /* KindOfClassSelectorTests.m */; };
 		2D2D4D2E147879B200FF3D88 /* IgorParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D2D4D27147879B200FF3D88 /* IgorParserTests.m */; };
 		2D2D4D2F147879B200FF3D88 /* PropertyExistsSelectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D2D4D28147879B200FF3D88 /* PropertyExistsSelectorTests.m */; };
-		2D2D4D3214787A5500FF3D88 /* libigor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD41C /* libigor.a */; };
 		2D2D4D3314787ACE00FF3D88 /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D4FDDFB146D0A2A0094946B /* OCHamcrestIOS.framework */; };
 		2D2D4D4F14787C5E00FF3D88 /* Igor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D2D4D3614787C5E00FF3D88 /* Igor.m */; };
 		2D2D4D5114787C5E00FF3D88 /* SelectorEngineRegistry.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2D4D3814787C5E00FF3D88 /* SelectorEngineRegistry.h */; };
@@ -39,22 +38,32 @@
 		2D2D4D6214787C5E00FF3D88 /* Selector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2D4D4B14787C5E00FF3D88 /* Selector.h */; };
 		2D2D4D6314787C5E00FF3D88 /* igor-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 2D2D4D4D14787C5E00FF3D88 /* igor-Prefix.pch */; };
 		2D2D4D651478822F00FF3D88 /* Igor.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2D4D641478822F00FF3D88 /* Igor.h */; };
-		2D2D4D671478846400FF3D88 /* IgorLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D2D4D661478846400FF3D88 /* IgorLoader.m */; };
 		2D2D4D6A1478880100FF3D88 /* ClassSelectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D2D4D681478872100FF3D88 /* ClassSelectorTests.m */; };
 		2D2D4D6C1478907F00FF3D88 /* PropertyParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D2D4D6B1478907F00FF3D88 /* PropertyParserTests.m */; };
 		2D2D4D721478916700FF3D88 /* IgorParserException.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2D4D701478916700FF3D88 /* IgorParserException.h */; };
 		2D2D4D731478916700FF3D88 /* IgorParserException.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D2D4D711478916700FF3D88 /* IgorParserException.m */; };
 		2DA8B0D91478D23500269F9B /* PropertyValueEqualsSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DA8B0D71478D23500269F9B /* PropertyValueEqualsSelector.h */; };
 		2DA8B0DA1478D23500269F9B /* PropertyValueEqualsSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8B0D81478D23500269F9B /* PropertyValueEqualsSelector.m */; };
-		2DA8B0DE1478EACC00269F9B /* PropertyInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DA8B0DC1478EACC00269F9B /* PropertyInspector.h */; };
-		2DA8B0DF1478EACC00269F9B /* PropertyInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8B0DD1478EACC00269F9B /* PropertyInspector.m */; };
+		2DA8B0DF1478EACC00269F9B /* NSObject+PropertyInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8B0DD1478EACC00269F9B /* NSObject+PropertyInspector.m */; };
 		2DA8B0E21478FD1300269F9B /* PropertyDescription.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DA8B0E01478FD1300269F9B /* PropertyDescription.h */; };
 		2DA8B0E31478FD1300269F9B /* PropertyDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8B0E11478FD1300269F9B /* PropertyDescription.m */; };
+		2DA8B0E714791FFE00269F9B /* NSObject+PropertyInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DA8B0E614791FFE00269F9B /* NSObject+PropertyInspector.h */; };
+		2DA8B0EC1479237E00269F9B /* libigor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD41C /* libigor.a */; };
+		2DA8B0F2147923A900269F9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD425 /* Foundation.framework */; };
+		2DA8B0FE147923CF00269F9B /* libigor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD41C /* libigor.a */; };
+		2DA8B0FF147925A000269F9B /* IgorLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D2D4D661478846400FF3D88 /* IgorLoader.m */; };
 		E621659DB794A5D612DCD426 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD425 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2D2D4D3014787A4400FF3D88 /* PBXContainerItemProxy */ = {
+		2DA8B0EA1479237800269F9B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E621659DB794A5D612DCD416 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E621659DB794A5D612DCD41D;
+			remoteInfo = igor;
+		};
+		2DA8B0FC147923C500269F9B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E621659DB794A5D612DCD416 /* Project object */;
 			proxyType = 1;
@@ -102,10 +111,11 @@
 		2D4FDDFB146D0A2A0094946B /* OCHamcrestIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCHamcrestIOS.framework; sourceTree = "<group>"; };
 		2DA8B0D71478D23500269F9B /* PropertyValueEqualsSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyValueEqualsSelector.h; sourceTree = "<group>"; };
 		2DA8B0D81478D23500269F9B /* PropertyValueEqualsSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyValueEqualsSelector.m; sourceTree = "<group>"; };
-		2DA8B0DC1478EACC00269F9B /* PropertyInspector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyInspector.h; sourceTree = "<group>"; };
-		2DA8B0DD1478EACC00269F9B /* PropertyInspector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyInspector.m; sourceTree = "<group>"; };
+		2DA8B0DD1478EACC00269F9B /* NSObject+PropertyInspector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PropertyInspector.m"; sourceTree = "<group>"; };
 		2DA8B0E01478FD1300269F9B /* PropertyDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyDescription.h; sourceTree = "<group>"; };
 		2DA8B0E11478FD1300269F9B /* PropertyDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyDescription.m; sourceTree = "<group>"; };
+		2DA8B0E614791FFE00269F9B /* NSObject+PropertyInspector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PropertyInspector.h"; sourceTree = "<group>"; };
+		2DA8B0F1147923A900269F9B /* libigor-0.1.3.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libigor-0.1.3.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E621659DB794A5D612DCD41C /* libigor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libigor.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E621659DB794A5D612DCD425 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E621659DB794A5D612DCD437 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -117,11 +127,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DA8B0EC1479237E00269F9B /* libigor.a in Frameworks */,
 				2D2D4D3314787ACE00FF3D88 /* OCHamcrestIOS.framework in Frameworks */,
-				2D2D4D3214787A5500FF3D88 /* libigor.a in Frameworks */,
 				2D2D4D0B1478787F00FF3D88 /* SenTestingKit.framework in Frameworks */,
 				2D2D4D0C1478787F00FF3D88 /* UIKit.framework in Frameworks */,
 				2D2D4D0D1478787F00FF3D88 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DA8B0EE147923A900269F9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DA8B0FE147923CF00269F9B /* libigor.a in Frameworks */,
+				2DA8B0F2147923A900269F9B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,15 +233,15 @@
 				2D2D4D4614787C5E00FF3D88 /* CompoundSelector.m */,
 				2D2D4D4714787C5E00FF3D88 /* KindOfClassSelector.h */,
 				2D2D4D4814787C5E00FF3D88 /* KindOfClassSelector.m */,
-				2D2D4D4914787C5E00FF3D88 /* PropertyExistsSelector.h */,
-				2D2D4D4A14787C5E00FF3D88 /* PropertyExistsSelector.m */,
-				2D2D4D4B14787C5E00FF3D88 /* Selector.h */,
-				2DA8B0D71478D23500269F9B /* PropertyValueEqualsSelector.h */,
-				2DA8B0D81478D23500269F9B /* PropertyValueEqualsSelector.m */,
-				2DA8B0DC1478EACC00269F9B /* PropertyInspector.h */,
-				2DA8B0DD1478EACC00269F9B /* PropertyInspector.m */,
+				2DA8B0E614791FFE00269F9B /* NSObject+PropertyInspector.h */,
+				2DA8B0DD1478EACC00269F9B /* NSObject+PropertyInspector.m */,
 				2DA8B0E01478FD1300269F9B /* PropertyDescription.h */,
 				2DA8B0E11478FD1300269F9B /* PropertyDescription.m */,
+				2D2D4D4914787C5E00FF3D88 /* PropertyExistsSelector.h */,
+				2D2D4D4A14787C5E00FF3D88 /* PropertyExistsSelector.m */,
+				2DA8B0D71478D23500269F9B /* PropertyValueEqualsSelector.h */,
+				2DA8B0D81478D23500269F9B /* PropertyValueEqualsSelector.m */,
+				2D2D4D4B14787C5E00FF3D88 /* Selector.h */,
 			);
 			path = selectors;
 			sourceTree = "<group>";
@@ -259,6 +278,7 @@
 			children = (
 				E621659DB794A5D612DCD41C /* libigor.a */,
 				2D2D4D0A1478787F00FF3D88 /* igorTests.octest */,
+				2DA8B0F1147923A900269F9B /* libigor-0.1.3.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -287,6 +307,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		2DA8B0EF147923A900269F9B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E621659DB794A5D612DCD421 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -305,8 +332,8 @@
 				2D2D4D651478822F00FF3D88 /* Igor.h in Headers */,
 				2D2D4D721478916700FF3D88 /* IgorParserException.h in Headers */,
 				2DA8B0D91478D23500269F9B /* PropertyValueEqualsSelector.h in Headers */,
-				2DA8B0DE1478EACC00269F9B /* PropertyInspector.h in Headers */,
 				2DA8B0E21478FD1300269F9B /* PropertyDescription.h in Headers */,
+				2DA8B0E714791FFE00269F9B /* NSObject+PropertyInspector.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,12 +352,30 @@
 			buildRules = (
 			);
 			dependencies = (
-				2D2D4D3114787A4400FF3D88 /* PBXTargetDependency */,
+				2DA8B0EB1479237800269F9B /* PBXTargetDependency */,
 			);
 			name = igorTests;
 			productName = igorTests;
 			productReference = 2D2D4D0A1478787F00FF3D88 /* igorTests.octest */;
 			productType = "com.apple.product-type.bundle";
+		};
+		2DA8B0F0147923A900269F9B /* igor-0.1.3 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2DA8B0F9147923AA00269F9B /* Build configuration list for PBXNativeTarget "igor-0.1.3" */;
+			buildPhases = (
+				2DA8B0ED147923A900269F9B /* Sources */,
+				2DA8B0EE147923A900269F9B /* Frameworks */,
+				2DA8B0EF147923A900269F9B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2DA8B0FD147923C500269F9B /* PBXTargetDependency */,
+			);
+			name = "igor-0.1.3";
+			productName = "igor-0.1.3";
+			productReference = 2DA8B0F1147923A900269F9B /* libigor-0.1.3.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 		E621659DB794A5D612DCD41D /* igor */ = {
 			isa = PBXNativeTarget;
@@ -371,6 +416,7 @@
 			targets = (
 				E621659DB794A5D612DCD41D /* igor */,
 				2D2D4D091478787F00FF3D88 /* igorTests */,
+				2DA8B0F0147923A900269F9B /* igor-0.1.3 */,
 			);
 		};
 /* End PBXProject section */
@@ -417,6 +463,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2DA8B0ED147923A900269F9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DA8B0FF147925A000269F9B /* IgorLoader.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E621659DB794A5D612DCD422 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -430,10 +484,9 @@
 				2D2D4D5D14787C5E00FF3D88 /* CompoundSelector.m in Sources */,
 				2D2D4D5F14787C5E00FF3D88 /* KindOfClassSelector.m in Sources */,
 				2D2D4D6114787C5E00FF3D88 /* PropertyExistsSelector.m in Sources */,
-				2D2D4D671478846400FF3D88 /* IgorLoader.m in Sources */,
 				2D2D4D731478916700FF3D88 /* IgorParserException.m in Sources */,
 				2DA8B0DA1478D23500269F9B /* PropertyValueEqualsSelector.m in Sources */,
-				2DA8B0DF1478EACC00269F9B /* PropertyInspector.m in Sources */,
+				2DA8B0DF1478EACC00269F9B /* NSObject+PropertyInspector.m in Sources */,
 				2DA8B0E31478FD1300269F9B /* PropertyDescription.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,10 +494,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2D2D4D3114787A4400FF3D88 /* PBXTargetDependency */ = {
+		2DA8B0EB1479237800269F9B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E621659DB794A5D612DCD41D /* igor */;
-			targetProxy = 2D2D4D3014787A4400FF3D88 /* PBXContainerItemProxy */;
+			targetProxy = 2DA8B0EA1479237800269F9B /* PBXContainerItemProxy */;
+		};
+		2DA8B0FD147923C500269F9B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E621659DB794A5D612DCD41D /* igor */;
+			targetProxy = 2DA8B0FC147923C500269F9B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -472,7 +530,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "igorTests/support/igorTests-Prefix.pch";
 				INFOPLIST_FILE = "igorTests/support/igorTests-Info.plist";
-				OTHER_LDFLAGS = "-lstdc++";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lstdc++",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -490,9 +551,38 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "igorTests/support/igorTests-Prefix.pch";
 				INFOPLIST_FILE = "igorTests/support/igorTests-Info.plist";
-				OTHER_LDFLAGS = "-lstdc++";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lstdc++",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		2DA8B0FA147923AA00269F9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/igor_0_1_3.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "igor/support/igor-Prefix.pch";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		2DA8B0FB147923AA00269F9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/igor_0_1_3.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "igor/support/igor-Prefix.pch";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
@@ -574,6 +664,15 @@
 			buildConfigurations = (
 				2D2D4D191478788000FF3D88 /* Release */,
 				2D2D4D1A1478788000FF3D88 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2DA8B0F9147923AA00269F9B /* Build configuration list for PBXNativeTarget "igor-0.1.3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2DA8B0FA147923AA00269F9B /* Release */,
+				2DA8B0FB147923AA00269F9B /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

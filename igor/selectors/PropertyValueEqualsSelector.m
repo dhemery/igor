@@ -6,7 +6,7 @@
 //  Copyright (c) 2011 Dale H. Emery. All rights reserved.
 //
 
-#import "PropertyInspector.h"
+#import "NSObject+PropertyInspector.h"
 #import "PropertyValueEqualsSelector.h"
 
 @implementation PropertyValueEqualsSelector
@@ -26,7 +26,7 @@
 
 -(BOOL) matchesView:(UIView *)view {
     if(![super matchesView:view]) return NO;
-    id actualValue = [[PropertyInspector new] valueOfProperty:self.propertyName forObject:view];
+    id actualValue = [view valueOfProperty:self.propertyName];
     return [actualValue isEqual:desiredValue];
 }
 
