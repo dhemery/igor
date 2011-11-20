@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface PropertyInspector : NSObject
--(BOOL) class:(Class)c hasProperty:(NSString*)propertyName;
+-(void) logPropertyDescriptionsForClass:(Class)c;
+-(BOOL) object:(id)object hasProperty:(NSString*)propertyName;
 -(NSSet*) propertyNamesForClass:(Class)c;
--(void) logSortedPropertyNamesForClass:(Class)c;
 -(NSArray*) sortedPropertyNamesForClass:(Class)c;
+-(id) valueOfProperty:(NSString*)propertyName forObject:(id)object;
 @end

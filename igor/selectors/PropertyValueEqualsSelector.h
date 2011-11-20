@@ -7,12 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Selector.h"
+#import "PropertyExistsSelector.h"
 
-@interface PropertyValueEqualsSelector : NSObject<Selector>
+@interface PropertyValueEqualsSelector : PropertyExistsSelector
 
 @property(readonly,retain) NSObject* desiredValue;
-@property(readonly,retain) NSString* propertyName;
 
 +(PropertyValueEqualsSelector*) selectorWithPropertyName:(NSString*)propertyName value:(NSObject*)value;
 

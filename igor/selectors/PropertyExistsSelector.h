@@ -13,5 +13,6 @@
 @property(retain) NSString* propertyName;
 
 +(PropertyExistsSelector*) selectorWithPropertyName:(NSString*)propertyName;
+-(PropertyExistsSelector*) initWithPropertyName:(NSString*)propertyName;
 
 @end

@@ -9,6 +9,7 @@
 #import "PropertyInspector.h"
 #import "PropertyDescription.h"
 #import <objc/runtime.h>
+#import <objc/message.h>
 
 @implementation PropertyInspector
 
@@ -94,7 +95,7 @@
     return properties;
 }
 
--(void) logSortedPropertyNamesForClass:(Class)c {
+-(void) logPropertyDescriptionsForClass:(Class)c {
     NSDictionary* dictionary = [NSMutableDictionary dictionary];
     for(PropertyDescription* description in [self propertyDescriptionsForClass:c]) {
         [dictionary setValue:description forKey:description.propertyName];
@@ -124,9 +125,13 @@
     return [self sortedStringsFromSet:[self propertyNamesForClass:c]];
 }
 
--(BOOL) class:(Class)c hasProperty:(NSString*)propertyName {
-    NSSet* properties = [self propertyNamesForClass:c];
+-(BOOL) object:(id)object hasProperty:(NSString*)propertyName {
+    NSSet* properties = [self propertyNamesForClass:[object class]];
     return [properties containsObject:propertyName];
+}
+
+-(id) valueOfProperty:(NSString*)propertyName forObject:(id)object {
+    return objc_msgSend(object, NSSelectorFromString(propertyName));
 }
 
 @end

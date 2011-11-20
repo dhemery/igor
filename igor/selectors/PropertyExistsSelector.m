@@ -8,7 +8,6 @@
 
 #import "PropertyInspector.h"
 #import "PropertyExistsSelector.h"
-#import "objc/runtime.h"
 
 @implementation PropertyExistsSelector
 
@@ -26,7 +25,7 @@
 }
 
 -(BOOL) matchesView:(UIView *)view {
-    return [[PropertyInspector new] class:[view class] hasProperty:propertyName];
+    return [[PropertyInspector new] object:view hasProperty:propertyName];
 }
 
 @end

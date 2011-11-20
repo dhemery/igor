@@ -8,16 +8,14 @@
 
 #import "PropertyInspector.h"
 #import "PropertyValueEqualsSelector.h"
-#import <objc/message.h>
 
 @implementation PropertyValueEqualsSelector
 
-@synthesize desiredValue, propertyName;
+@synthesize desiredValue;
 
 -(PropertyValueEqualsSelector*) initWithPropertyName:(NSString*)thePropertyName value:(NSObject*)theValue {
-    if(self = [super init]) {
+    if(self = [super initWithPropertyName:thePropertyName]) {
         desiredValue = theValue;
-        propertyName = thePropertyName;
     }
     return self;
 }
@@ -27,10 +25,8 @@
 }
 
 -(BOOL) matchesView:(UIView *)view {
-    if(![[PropertyInspector new] class:[view class] hasProperty:propertyName]) {
-        return NO;
-    }
-    id actualValue = objc_msgSend(view, NSSelectorFromString(propertyName));
+    if(![super matchesView:view]) return NO;
+    id actualValue = [[PropertyInspector new] valueOfProperty:self.propertyName forObject:view];
     return [actualValue isEqual:desiredValue];
 }
 
