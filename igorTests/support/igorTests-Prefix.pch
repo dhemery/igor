@@ -1,0 +1,11 @@
+//
+// Prefix header for all source files of the 'igorTests' target in the 'igorTests' project
+//
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <SenTestingKit/SenTestCase.h>
+#define HC_SHORTHAND
+#import <OCHamcrestIOS/OCHamcrestIOS.h>
+#endif
