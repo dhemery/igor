@@ -21,19 +21,19 @@
 }
 
 -(void) testMatchesAViewOfTheTargetClass {
-    id<Matcher> buttonSelector = [[KindOfClassMatcher alloc] initWithTargetClass:[UIButton class]];
+    id buttonSelector = [KindOfClassMatcher forClass:[UIButton class]];
     UIButton* button = [[UIButton alloc] initWithFrame:frame];
     STAssertTrue([buttonSelector matchesView:button], @"Matches the target class");
 }
 
 - (void)testMismatchesAViewOfANonTargetClass {
-    id<Matcher> buttonSelector = [[KindOfClassMatcher alloc] initWithTargetClass:[UIButton class]];
+    id buttonSelector = [KindOfClassMatcher forClass:[UIButton class]];
     UIView* view = [[UIView alloc] initWithFrame:frame];
     STAssertFalse([buttonSelector matchesView:view], @"Mismatches a non-target class");
 }
 
 - (void)testMatchesAViewOfAClassThatInheritsFromTheTargetClass {
-    id<Matcher> viewSelector = [[KindOfClassMatcher alloc] initWithTargetClass:[UIView class]];
+    id viewSelector = [KindOfClassMatcher forClass:[UIView class]];
     UIButton* button = [[UIButton alloc] initWithFrame:frame];
     STAssertTrue([viewSelector matchesView:button], @"Matches a derived class");
 }

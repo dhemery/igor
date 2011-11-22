@@ -6,14 +6,10 @@
 //  Copyright (c) 2011 Dale H. Emery. All rights reserved.
 //
 
-#import "Matcher.h"
+#import "PropertyValueMatcher.h"
 
-@interface PropertyExistsMatcher : NSObject <Matcher>
+@interface PropertyExistsMatcher : NSObject <PropertyMatcher>
 
-@property(retain) NSString* propertyName;
-
-+(PropertyExistsMatcher*) forProperty:(NSString*)propertyName;
-
--(PropertyExistsMatcher*) initWithPropertyName:(NSString*)propertyName;
++(id) forProperty:(NSString*)propertyName;
 
 @end

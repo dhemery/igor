@@ -39,7 +39,7 @@
     for(int i = 0; i < count; i++)
     {
         NSString* propertyName = [NSString stringWithUTF8String:property_getName(properties[i])];
-        PropertyDescription* description = [PropertyDescription descriptionWithPropertyName:propertyName
+        PropertyDescription* description = [PropertyDescription forProperty:propertyName
                                                                                  sourceName:sourceName
                                                                                  sourceType:sourceType];
         [set addObject:description];

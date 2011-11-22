@@ -11,23 +11,24 @@
 
 @implementation PropertyValueEqualsMatcher
 
-@synthesize desiredValue;
+@synthesize matchProperty, matchValue;
 
-+(PropertyValueEqualsMatcher*) forProperty:(NSString*)propertyName value:(NSObject*)value {
-    return [[PropertyValueEqualsMatcher alloc] initWithPropertyName:propertyName value:value];
-}
-
--(PropertyValueEqualsMatcher*) initWithPropertyName:(NSString*)propertyName value:(NSObject*)value {
-    if(self = [super initWithPropertyName:propertyName]) {
-        desiredValue = value;
+-(id) initForProperty:(NSString*)propertyName value:(NSObject*)value {
+    if(self = [super init]) {
+        matchProperty = propertyName;
+        matchValue = value;
     }
     return self;
 }
 
++(id) forProperty:(NSString*)propertyName value:(NSObject*)value {
+    return [[PropertyValueEqualsMatcher alloc] initForProperty:propertyName value:value];
+}
+
 -(BOOL) matchesView:(UIView *)view {
     if(![super matchesView:view]) return NO;
-    id actualValue = [view valueOfProperty:self.propertyName];
-    return [actualValue isEqual:desiredValue];
+    id actualValue = [view valueOfProperty:self.matchProperty];
+    return [actualValue isEqual:self.matchValue];
 }
 
 @end

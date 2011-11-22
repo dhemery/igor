@@ -7,10 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ClassMatcher.h"
+#import "Parser.h"
 
-@interface ClassPattern : NSObject
-
--(ClassMatcher*) parse:(NSScanner*)scanner;
-
+@interface ClassPattern : NSObject<Parser>
 @end

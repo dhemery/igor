@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D0E1483147C2C3100FC940B /* PropertyMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D0E1482147C2C3100FC940B /* PropertyMatcher.h */; };
+		2D0E1486147C2CCB00FC940B /* PropertyValueMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D0E1485147C2CCB00FC940B /* PropertyValueMatcher.h */; };
+		2D0E1492147C356000FC940B /* Parser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D0E1491147C356000FC940B /* Parser.h */; };
 		2D2D4D0B1478787F00FF3D88 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD437 /* SenTestingKit.framework */; };
 		2D2D4D0C1478787F00FF3D88 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD439 /* UIKit.framework */; };
 		2D2D4D0D1478787F00FF3D88 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD425 /* Foundation.framework */; };
@@ -27,7 +30,6 @@
 		2D2D4D5814787C5E00FF3D88 /* MemberOfClassMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2D4D4114787C5E00FF3D88 /* MemberOfClassMatcher.h */; };
 		2D2D4D5914787C5E00FF3D88 /* MemberOfClassMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D2D4D4214787C5E00FF3D88 /* MemberOfClassMatcher.m */; };
 		2D2D4D5A14787C5E00FF3D88 /* ClassMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2D4D4314787C5E00FF3D88 /* ClassMatcher.h */; };
-		2D2D4D5B14787C5E00FF3D88 /* ClassMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D2D4D4414787C5E00FF3D88 /* ClassMatcher.m */; };
 		2D2D4D5C14787C5E00FF3D88 /* CompoundMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2D4D4514787C5E00FF3D88 /* CompoundMatcher.h */; };
 		2D2D4D5D14787C5E00FF3D88 /* CompoundMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D2D4D4614787C5E00FF3D88 /* CompoundMatcher.m */; };
 		2D2D4D5E14787C5E00FF3D88 /* KindOfClassMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2D4D4714787C5E00FF3D88 /* KindOfClassMatcher.h */; };
@@ -73,6 +75,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D0E1482147C2C3100FC940B /* PropertyMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyMatcher.h; sourceTree = "<group>"; };
+		2D0E1485147C2CCB00FC940B /* PropertyValueMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyValueMatcher.h; sourceTree = "<group>"; };
+		2D0E1491147C356000FC940B /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
 		2D2D4D0A1478787F00FF3D88 /* igorTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = igorTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D2D4D1E147879B200FF3D88 /* PropertyPatternTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyPatternTests.m; sourceTree = "<group>"; };
 		2D2D4D21147879B200FF3D88 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -93,7 +98,6 @@
 		2D2D4D4114787C5E00FF3D88 /* MemberOfClassMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberOfClassMatcher.h; sourceTree = "<group>"; };
 		2D2D4D4214787C5E00FF3D88 /* MemberOfClassMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberOfClassMatcher.m; sourceTree = "<group>"; };
 		2D2D4D4314787C5E00FF3D88 /* ClassMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassMatcher.h; sourceTree = "<group>"; };
-		2D2D4D4414787C5E00FF3D88 /* ClassMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassMatcher.m; sourceTree = "<group>"; };
 		2D2D4D4514787C5E00FF3D88 /* CompoundMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompoundMatcher.h; sourceTree = "<group>"; };
 		2D2D4D4614787C5E00FF3D88 /* CompoundMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompoundMatcher.m; sourceTree = "<group>"; };
 		2D2D4D4714787C5E00FF3D88 /* KindOfClassMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KindOfClassMatcher.h; sourceTree = "<group>"; };
@@ -210,6 +214,7 @@
 		2D2D4D3914787C5E00FF3D88 /* parser */ = {
 			isa = PBXGroup;
 			children = (
+				2D0E1491147C356000FC940B /* Parser.h */,
 				2D2D4D3A14787C5E00FF3D88 /* ClassPattern.h */,
 				2D2D4D3B14787C5E00FF3D88 /* ClassPattern.m */,
 				2D2D4D3C14787C5E00FF3D88 /* IgorParser.h */,
@@ -225,8 +230,9 @@
 		2D2D4D4014787C5E00FF3D88 /* matchers */ = {
 			isa = PBXGroup;
 			children = (
+				2D0E1485147C2CCB00FC940B /* PropertyValueMatcher.h */,
+				2D0E1482147C2C3100FC940B /* PropertyMatcher.h */,
 				2D2D4D4314787C5E00FF3D88 /* ClassMatcher.h */,
-				2D2D4D4414787C5E00FF3D88 /* ClassMatcher.m */,
 				2D2D4D4514787C5E00FF3D88 /* CompoundMatcher.h */,
 				2D2D4D4614787C5E00FF3D88 /* CompoundMatcher.m */,
 				2D2D4D4714787C5E00FF3D88 /* KindOfClassMatcher.h */,
@@ -342,6 +348,9 @@
 				2DA8B0D91478D23500269F9B /* PropertyValueEqualsMatcher.h in Headers */,
 				2D48BDCF147B72EC00027084 /* NSObject+PropertyInspector.h in Headers */,
 				2D48BDD1147B72EC00027084 /* PropertyDescription.h in Headers */,
+				2D0E1483147C2C3100FC940B /* PropertyMatcher.h in Headers */,
+				2D0E1486147C2CCB00FC940B /* PropertyValueMatcher.h in Headers */,
+				2D0E1492147C356000FC940B /* Parser.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,7 +497,6 @@
 				2D2D4D5514787C5E00FF3D88 /* IgorParser.m in Sources */,
 				2D2D4D5714787C5E00FF3D88 /* PropertyPattern.m in Sources */,
 				2D2D4D5914787C5E00FF3D88 /* MemberOfClassMatcher.m in Sources */,
-				2D2D4D5B14787C5E00FF3D88 /* ClassMatcher.m in Sources */,
 				2D2D4D5D14787C5E00FF3D88 /* CompoundMatcher.m in Sources */,
 				2D2D4D5F14787C5E00FF3D88 /* KindOfClassMatcher.m in Sources */,
 				2D2D4D6114787C5E00FF3D88 /* PropertyExistsMatcher.m in Sources */,

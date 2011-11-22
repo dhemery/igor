@@ -13,18 +13,18 @@
 
 @implementation IgorParser
 
--(id<Matcher>) parse:(NSString*)selectorString {
-    NSScanner* scanner = [NSScanner scannerWithString:selectorString];
+-(id) parse:(NSString*)pattern {
+    NSScanner* scanner = [NSScanner scannerWithString:pattern];
 
-    id<Matcher> classSelector = [[ClassPattern new] parse:scanner];
-    id<Matcher> propertySelector = [[PropertyPattern new] parse:scanner];
-    if(!propertySelector) {
-        return classSelector;
+    id classMatcher = [[ClassPattern new] parse:scanner];
+    id propertyMatcher = [[PropertyPattern new] parse:scanner];
+    if(!propertyMatcher) {
+        return classMatcher;
     }
-    CompoundMatcher* compoundSelector = [CompoundMatcher new];
-    [compoundSelector addMatcher:classSelector];
-    [compoundSelector addMatcher:propertySelector];
-    return compoundSelector;
+    id compoundMatcher = [CompoundMatcher new];
+    [compoundMatcher addMatcher:classMatcher];
+    [compoundMatcher addMatcher:propertyMatcher];
+    return compoundMatcher;
 }
 
 @end

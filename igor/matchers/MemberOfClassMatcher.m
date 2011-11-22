@@ -9,12 +9,21 @@
 #import "MemberOfClassMatcher.h"
 
 @implementation MemberOfClassMatcher
-    
-+(MemberOfClassMatcher*) forClass:(Class)targetClass {
-    return [[MemberOfClassMatcher alloc] initWithTargetClass:targetClass];
+
+@synthesize matchClass;
+
+-(id) initForClass:(Class)aClass {
+    if(self = [super init]) {
+        matchClass = aClass;
+    }
+    return self;
+}
+
++(id) forClass:(Class)aClass {
+    return [[MemberOfClassMatcher alloc] initForClass:aClass];
 }
 
 -(BOOL)matchesView:(UIView *)view {
-    return [view isMemberOfClass:self.targetClass];
+    return [view isMemberOfClass:self.matchClass];
 }
 @end

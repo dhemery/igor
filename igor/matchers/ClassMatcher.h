@@ -8,10 +8,8 @@
 
 #import "Matcher.h"
 
-@interface ClassMatcher : NSObject<Matcher>
+@protocol ClassMatcher <Matcher>
 
-@property(retain,readonly) Class targetClass;
-
--(ClassMatcher*) initWithTargetClass:(Class)targetClass;
+@property(retain,readonly) Class matchClass;
 
 @end

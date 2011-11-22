@@ -6,11 +6,7 @@
 //  Copyright (c) 2011 Dale H. Emery. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "Matcher.h"
+#import "Parser.h"
 
-@interface PropertyPattern : NSObject
-
--(id<Matcher>) parse:(NSScanner*)scanner;
-
+@interface PropertyPattern : NSObject<Parser>
 @end

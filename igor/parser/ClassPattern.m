@@ -13,7 +13,7 @@
 
 @implementation ClassPattern
 
--(ClassMatcher*) parse:(NSScanner*)scanner {
+-(id) parse:(NSScanner*)scanner {
     Class targetClass = [UIView class];
     Class selectorClass = [KindOfClassMatcher class];
     
@@ -25,7 +25,7 @@
     if([scanner scanString:@"*" intoString:nil]) {
         selectorClass = [KindOfClassMatcher class];
     }
-    return [[selectorClass alloc] initWithTargetClass:targetClass];
+    return [selectorClass forClass:targetClass];
 }
 
 @end

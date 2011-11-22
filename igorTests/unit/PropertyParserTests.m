@@ -26,22 +26,20 @@
 }
 
 -(void) testParsesAPropertyExistsSelector {
-    NSString* propertyExistsSelectorString = @"[freddieFender]";
-    NSScanner* scanner = [NSScanner scannerWithString:propertyExistsSelectorString];
-    id<Matcher> result = [parser parse:scanner];
-    assertThat(result, instanceOf([PropertyExistsMatcher class]));
-    PropertyExistsMatcher* matcher = (PropertyExistsMatcher*)result;
-    assertThat([matcher propertyName], equalTo(@"freddieFender"));
+    NSString* propertyExistsPattern = @"[freddieFender]";
+    NSScanner* scanner = [NSScanner scannerWithString:propertyExistsPattern];
+    id<PropertyMatcher> matcher = [parser parse:scanner];
+    assertThat(matcher, instanceOf([PropertyExistsMatcher class]));
+    assertThat(matcher.matchProperty, equalTo(@"freddieFender"));
 }
 
 -(void) testParsesAPropertyValueEqualsSelector {
-    NSString* propertyEqualsSelectorString = @"[pearlBailey='opreylady']";
-    NSScanner* scanner = [NSScanner scannerWithString:propertyEqualsSelectorString];
-    id<Matcher> result = [parser parse:scanner];
-    assertThat(result, instanceOf([PropertyValueEqualsMatcher class]));
-    PropertyValueEqualsMatcher* matcher = (PropertyValueEqualsMatcher*)result;
-    assertThat([matcher propertyName], equalTo(@"pearlBailey"));
-    assertThat([matcher desiredValue], equalTo(@"opreylady"));
+    NSString* propertyEqualsPattern = @"[pearlBailey='opreylady']";
+    NSScanner* scanner = [NSScanner scannerWithString:propertyEqualsPattern];
+    id<PropertyValueMatcher> matcher = [parser parse:scanner];
+    assertThat(matcher, instanceOf([PropertyValueEqualsMatcher class]));
+    assertThat(matcher.matchProperty, equalTo(@"pearlBailey"));
+    assertThat(matcher.matchValue, equalTo(@"opreylady"));
 }
 
 -(void) testThrowsIfNoRightBracket {

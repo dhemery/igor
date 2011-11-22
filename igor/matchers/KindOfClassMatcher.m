@@ -10,12 +10,21 @@
 
 @implementation KindOfClassMatcher
 
-+(KindOfClassMatcher*) forClass:(Class)targetClass {
-    return [[KindOfClassMatcher alloc] initWithTargetClass:targetClass];
+@synthesize matchClass;
+
+-(id) initForClass:(Class)targetClass {
+    if(self = [super init]) {
+        matchClass = targetClass;
+    }
+    return self;
+}
+
++(id) forClass:(Class)targetClass {
+    return [[KindOfClassMatcher alloc] initForClass:targetClass];
 }
 
 -(BOOL) matchesView:(UIView *)view {
-    return [view isKindOfClass:self.targetClass];
+    return [view isKindOfClass:self.matchClass];
 }
 
 @end

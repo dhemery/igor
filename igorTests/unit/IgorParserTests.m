@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "IgorParser.h"
+#import "ClassMatcher.h"
 #import "MemberOfClassMatcher.h"
 #import "KindOfClassMatcher.h"
 #import "CompoundMatcher.h"
@@ -25,24 +26,21 @@
 }
 
 -(void) testParsesAsteriskAsKindOfClassMatcherForUIViewClass {
-    id<Matcher> matcher = [parser parse:@"*"];
+    id<ClassMatcher> matcher = [parser parse:@"*"];
     assertThat(matcher, instanceOf([KindOfClassMatcher class]));
-    KindOfClassMatcher* kindOfClassMatcher = (KindOfClassMatcher*)matcher;
-    assertThat(kindOfClassMatcher.targetClass, equalTo([UIView class]));
+    assertThat(matcher.matchClass, equalTo([UIView class]));
 }
 
 -(void) testParsesNameAsMemberOfClassMatcher {
-    id<Matcher> matcher = [parser parse:@"UIButton"];
+    id<ClassMatcher> matcher = [parser parse:@"UIButton"];
     assertThat(matcher, instanceOf([MemberOfClassMatcher class]));
-    MemberOfClassMatcher* memberOfClassMatcher = (MemberOfClassMatcher*)matcher;
-    assertThat(memberOfClassMatcher.targetClass, equalTo([UIButton class]));
+    assertThat(matcher.matchClass, equalTo([UIButton class]));
 }
 
 -(void) testParsesNameAsteriskAsKindOfClassMatcher {
-    id<Matcher> matcher = [parser parse:@"UILabel*"];
+    id<ClassMatcher> matcher = [parser parse:@"UILabel*"];
     assertThat(matcher, instanceOf([KindOfClassMatcher class]));           
-    KindOfClassMatcher* kindOfClassMatcher = (KindOfClassMatcher*)matcher;
-    assertThat(kindOfClassMatcher.targetClass, equalTo([UILabel class]));
+    assertThat(matcher.matchClass, equalTo([UILabel class]));
 }
 
 -(void) testParsesCompoundMatcherWithOneAttributeMatcher {
@@ -54,13 +52,13 @@
     NSArray* simpleMatchers = compoundMatcher.simpleMatchers;
     assertThat(compoundMatcher.simpleMatchers, hasCountOf(2));
 
-    ClassMatcher* classMatcher = [simpleMatchers objectAtIndex:0];
+    id<ClassMatcher> classMatcher = [simpleMatchers objectAtIndex:0];
     assertThat(classMatcher, instanceOf([KindOfClassMatcher class]));
-    assertThat([classMatcher targetClass], equalTo([UIView class]));
+    assertThat(classMatcher.matchClass, equalTo([UIView class]));
 
-    PropertyExistsMatcher* propertyMatcher = [simpleMatchers objectAtIndex:1];
+    id<PropertyMatcher> propertyMatcher = [simpleMatchers objectAtIndex:1];
     assertThat(propertyMatcher, instanceOf([PropertyExistsMatcher class]));
-    assertThat(propertyMatcher.propertyName, equalTo(@"myPropertyName"));
+    assertThat(propertyMatcher.matchProperty, equalTo(@"myPropertyName"));
 }
 
 @end

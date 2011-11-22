@@ -9,9 +9,14 @@
 #import "PropertyDescription.h"
 
 @implementation PropertyDescription
+
 @synthesize sourceType, sourceName, propertyName;
 
--(PropertyDescription*) initWithPropertyName:(NSString*)thePropertyName sourceName:(NSString*)theSourceName sourceType:(NSString*)theSourceType {
++(id) forProperty:(NSString*)propertyName sourceName:(NSString*)sourceName sourceType:(NSString*)sourceType {
+    return [[PropertyDescription alloc] initWithPropertyName:propertyName sourceName:sourceName sourceType:sourceType];
+}
+
+-(id) initWithPropertyName:(NSString*)thePropertyName sourceName:(NSString*)theSourceName sourceType:(NSString*)theSourceType {
     if(self = [super init]) {
         propertyName = thePropertyName;
         sourceName = theSourceName;
@@ -33,10 +38,6 @@
 
 -(NSString*) description {
     return [NSString stringWithFormat:@"Property %@ declared on %@ %@", propertyName, sourceType, sourceName];
-}
-
-+(PropertyDescription*) descriptionWithPropertyName:(NSString*)propertyName sourceName:(NSString*)sourceName sourceType:(NSString*)sourceType {
-    return [[PropertyDescription alloc] initWithPropertyName:propertyName sourceName:sourceName sourceType:sourceType];
 }
 
 @end

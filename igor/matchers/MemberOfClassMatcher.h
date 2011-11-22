@@ -8,8 +8,8 @@
 
 #import "ClassMatcher.h"
 
-@interface MemberOfClassMatcher : ClassMatcher
+@interface MemberOfClassMatcher : NSObject<ClassMatcher>
 
-+(MemberOfClassMatcher*) forClass:(Class)targetClass;
++(id) forClass:(Class)targetClass;
 
 @end

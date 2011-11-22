@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Matcher.h"
+#import "Parser.h"
 
 @interface IgorParser : NSObject
 
--(id<Matcher>) parse:(NSString*)selectorString;
+-(id) parse:(NSString*) pattern;
 
 @end

@@ -11,21 +11,21 @@
 
 @implementation PropertyExistsMatcher
 
-@synthesize propertyName;
+@synthesize matchProperty;
 
-+(PropertyExistsMatcher*) forProperty:(NSString*)propertyName {
-    return [[PropertyExistsMatcher alloc] initWithPropertyName:(NSString*)propertyName];
-}
-
--(PropertyExistsMatcher*) initWithPropertyName:(NSString*)thePropertyName {
+-(id) initForProperty:(NSString*)thePropertyName {
     if(self = [super init]) {
-        self.propertyName = thePropertyName;
+        matchProperty = thePropertyName;
     }
     return self;
 }
 
++(id) forProperty:(NSString*)propertyName {
+    return [[PropertyExistsMatcher alloc] initForProperty:(NSString*)propertyName];
+}
+
 -(BOOL) matchesView:(UIView *)view {
-    return [view hasProperty:propertyName];
+    return [view hasProperty:self.matchProperty];
 }
 
 @end

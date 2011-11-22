@@ -10,11 +10,13 @@
 
 @interface PropertyDescription : NSObject
 
-@property(readonly,retain) NSString* sourceType;
-@property(readonly,retain) NSString* sourceName;
 @property(readonly,retain) NSString* propertyName;
+@property(readonly,retain) NSString* sourceName;
+@property(readonly,retain) NSString* sourceType;
 
-+(PropertyDescription*) descriptionWithPropertyName:(NSString*)propertyName sourceName:(NSString*)sourceName sourceType:(NSString*)sourcetype;
++(id) forProperty:(NSString*)propertyName sourceName:(NSString*)sourceName sourceType:(NSString*)sourcetype;
+
+-(id) initWithPropertyName:(NSString*)thePropertyName sourceName:(NSString*)theSourceName sourceType:(NSString*)theSourceType;
 
 @end
 

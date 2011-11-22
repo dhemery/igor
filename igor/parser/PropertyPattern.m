@@ -13,7 +13,7 @@
 
 @implementation PropertyPattern
 
--(NSObject*) parseValue:(NSScanner*)scanner {
+-(id) parseValue:(NSScanner*)scanner {
     [scanner scanString:@"'" intoString:nil];
     NSString* value;
     [scanner scanCharactersFromSet:[NSCharacterSet letterCharacterSet] intoString:&value];
@@ -21,7 +21,7 @@
     return value;
 }
 
--(id<Matcher>) parse:(NSScanner*)scanner {
+-(id) parse:(NSScanner*)scanner {
     NSString* propertyName = [NSString string];
     id<Matcher> selector = nil;
     if(![scanner scanString:@"[" intoString:nil]) return nil;
