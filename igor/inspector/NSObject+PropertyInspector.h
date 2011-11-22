@@ -7,7 +7,7 @@
 //
 
 
-@interface NSObject (PropertyInspector)
+@interface UIView (PropertyInspector)
 
 -(BOOL) hasProperty:(NSString*)propertyName;
 -(void) logPropertyDescriptions;

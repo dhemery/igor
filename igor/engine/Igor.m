@@ -4,11 +4,11 @@
 
 #import "Igor.h"
 #import "IgorParser.h"
-#import "Selector.h"
+#import "Matcher.h"
 
 @implementation Igor
 
-- (void)selectViewsWithSelector:(id<Selector>)selector fromRoot:(UIView *)root intoSet:(NSMutableSet*)selectedViews {
+- (void)selectViewsWithSelector:(id<Matcher>)selector fromRoot:(UIView *)root intoSet:(NSMutableSet*)selectedViews {
     if ([selector matchesView:root]) {
         [selectedViews addObject:root];
     }
@@ -23,7 +23,7 @@
 }
 
 -(NSArray*) selectViewsWithSelector:(NSString*)selectorString fromRoot:(UIView *)root {
-    id<Selector> selector = [[IgorParser new] parse:selectorString];
+    id<Matcher> selector = [[IgorParser new] parse:selectorString];
     NSMutableSet* selectedViews = [NSMutableSet set];
     [self selectViewsWithSelector:selector fromRoot:root intoSet:selectedViews];
     return [selectedViews allObjects];

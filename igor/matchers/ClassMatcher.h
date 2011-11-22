@@ -6,11 +6,12 @@
 //  Copyright (c) 2011 Dale H. Emery. All rights reserved.
 //
 
-#import "Selector.h"
+#import "Matcher.h"
 
-@interface ClassSelector : NSObject<Selector>
+@interface ClassMatcher : NSObject<Matcher>
 
 @property(retain,readonly) Class targetClass;
--(ClassSelector*) initWithTargetClass:(Class)targetClass;
+
+-(ClassMatcher*) initWithTargetClass:(Class)targetClass;
 
 @end

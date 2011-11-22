@@ -5,10 +5,10 @@
 #import <UIKit/UIKit.h>
 #import "Igor.h"
 
-@interface PropertySelectorTests : SenTestCase
+@interface PropertyPatternTests : SenTestCase
 @end
 
-@implementation PropertySelectorTests {
+@implementation PropertyPatternTests {
     CGRect frame;
 }
 
@@ -16,7 +16,7 @@
     frame = CGRectMake(0, 0, 100, 100);
 }
 
-- (void) testPropertyExistsSelector {
+- (void) testPropertyExistsPattern {
     UIView* view = [[UIButton alloc] initWithFrame:frame];
     
     NSArray* selectedViews = [[Igor new] selectViewsWithSelector:@"[accessibilityHint]" fromRoot:view];
@@ -26,7 +26,7 @@
     assertThat(selectedViews, isNot(hasItem(view)));
 }
 
--(void) testPropertyValueEqualsSelector {
+-(void) testPropertyValueEqualsPattern {
     UIView* view = [[UIButton alloc] initWithFrame:frame];
     view.accessibilityHint = @"monkeymonkey";
     

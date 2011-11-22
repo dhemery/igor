@@ -11,7 +11,7 @@
 #import <objc/runtime.h>
 #import <objc/message.h>
 
-@implementation NSObject (PropertyInspector)
+@implementation UIView (PropertyInspector)
 
 -(void) gatherProtocolsAdoptedByProtocol:(Protocol*)protocol into:(NSMutableSet*)set {
     unsigned int protocolCount;

@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@protocol Selector
+@protocol Matcher
+
 - (BOOL)matchesView:(UIView *)view;
+
 @end

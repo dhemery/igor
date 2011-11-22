@@ -6,7 +6,10 @@
 //  Copyright (c) 2011 Dale H. Emery. All rights reserved.
 //
 
-#import "ClassSelector.h"
+#import "ClassMatcher.h"
 
-@interface KindOfClassSelector : ClassSelector
+@interface KindOfClassMatcher : ClassMatcher
+
++(KindOfClassMatcher*) forClass:(Class)targetClass;
+
 @end

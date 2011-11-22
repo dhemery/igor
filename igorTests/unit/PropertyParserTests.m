@@ -1,16 +1,16 @@
-#import "PropertyParser.h"
-#import "PropertyExistsSelector.h"
-#import "PropertyValueEqualsSelector.h"
+#import "PropertyPattern.h"
+#import "PropertyExistsMatcher.h"
+#import "PropertyValueEqualsMatcher.h"
 
 @interface PropertyParserTests : SenTestCase
 @end
 
 @implementation PropertyParserTests {
-    PropertyParser* parser;
+    PropertyPattern* parser;
 }
 
 -(void)setUp {
-    parser = [PropertyParser new];
+    parser = [PropertyPattern new];
 }    
 
 -(void) testReturnsNilIfNoLeftBracket {
@@ -28,20 +28,20 @@
 -(void) testParsesAPropertyExistsSelector {
     NSString* propertyExistsSelectorString = @"[freddieFender]";
     NSScanner* scanner = [NSScanner scannerWithString:propertyExistsSelectorString];
-    id<Selector> result = [parser parse:scanner];
-    assertThat(result, instanceOf([PropertyExistsSelector class]));
-    PropertyExistsSelector* selector = (PropertyExistsSelector*)result;
-    assertThat([selector propertyName], equalTo(@"freddieFender"));
+    id<Matcher> result = [parser parse:scanner];
+    assertThat(result, instanceOf([PropertyExistsMatcher class]));
+    PropertyExistsMatcher* matcher = (PropertyExistsMatcher*)result;
+    assertThat([matcher propertyName], equalTo(@"freddieFender"));
 }
 
 -(void) testParsesAPropertyValueEqualsSelector {
     NSString* propertyEqualsSelectorString = @"[pearlBailey='opreylady']";
     NSScanner* scanner = [NSScanner scannerWithString:propertyEqualsSelectorString];
-    id<Selector> result = [parser parse:scanner];
-    assertThat(result, instanceOf([PropertyValueEqualsSelector class]));
-    PropertyValueEqualsSelector* selector = (PropertyValueEqualsSelector*)result;
-    assertThat([selector propertyName], equalTo(@"pearlBailey"));
-    assertThat([selector desiredValue], equalTo(@"opreylady"));
+    id<Matcher> result = [parser parse:scanner];
+    assertThat(result, instanceOf([PropertyValueEqualsMatcher class]));
+    PropertyValueEqualsMatcher* matcher = (PropertyValueEqualsMatcher*)result;
+    assertThat([matcher propertyName], equalTo(@"pearlBailey"));
+    assertThat([matcher desiredValue], equalTo(@"opreylady"));
 }
 
 -(void) testThrowsIfNoRightBracket {

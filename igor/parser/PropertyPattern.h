@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Selector.h"
+#import "Matcher.h"
 
-@interface PropertyParser : NSObject
+@interface PropertyPattern : NSObject
 
--(id<Selector>) parse:(NSScanner*)scanner;
+-(id<Matcher>) parse:(NSScanner*)scanner;
 
 @end

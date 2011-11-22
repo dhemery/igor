@@ -6,12 +6,12 @@
 //  Copyright (c) 2011 Dale H. Emery. All rights reserved.
 //
 
-#import "ClassSelector.h"
+#import "ClassMatcher.h"
 
-@implementation ClassSelector
+@implementation ClassMatcher
 @synthesize targetClass;
 
--(ClassSelector*) initWithTargetClass:(Class)aTargetClass {
+-(ClassMatcher*) initWithTargetClass:(Class)aTargetClass {
     if(self = [super init]) {
         targetClass = aTargetClass;
     }

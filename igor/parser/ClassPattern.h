@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ClassSelector.h"
+#import "ClassMatcher.h"
 
-@interface ClassParser : NSObject
+@interface ClassPattern : NSObject
 
--(ClassSelector*) parse:(NSScanner*)scanner;
+-(ClassMatcher*) parse:(NSScanner*)scanner;
 
 @end

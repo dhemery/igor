@@ -6,24 +6,24 @@
 //  Copyright (c) 2011 Dale H. Emery. All rights reserved.
 //
 
-#import "ClassSelector.h"
-#import "ClassParser.h"
-#import "KindOfClassSelector.h"
-#import "ClassEqualsSelector.h"
+#import "ClassMatcher.h"
+#import "ClassPattern.h"
+#import "KindOfClassMatcher.h"
+#import "MemberOfClassMatcher.h"
 
-@implementation ClassParser
+@implementation ClassPattern
 
--(ClassSelector*) parse:(NSScanner*)scanner {
+-(ClassMatcher*) parse:(NSScanner*)scanner {
     Class targetClass = [UIView class];
-    Class selectorClass = [KindOfClassSelector class];
+    Class selectorClass = [KindOfClassMatcher class];
     
     NSString* className;
     if([scanner scanCharactersFromSet:[NSCharacterSet letterCharacterSet] intoString:&className]) {
         targetClass = NSClassFromString(className);
-        selectorClass = [ClassEqualsSelector class];
+        selectorClass = [MemberOfClassMatcher class];
     }
     if([scanner scanString:@"*" intoString:nil]) {
-        selectorClass = [KindOfClassSelector class];
+        selectorClass = [KindOfClassMatcher class];
     }
     return [[selectorClass alloc] initWithTargetClass:targetClass];
 }

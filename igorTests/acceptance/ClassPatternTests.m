@@ -5,10 +5,10 @@
 #import <UIKit/UIKit.h>
 #import "Igor.h"
 
-@interface ClassSelectorTests : SenTestCase
+@interface ClassPatternTests : SenTestCase
 @end
 
-@implementation ClassSelectorTests {
+@implementation ClassPatternTests {
     CGRect frame;
 }
 
@@ -16,7 +16,7 @@
     frame = CGRectMake(0, 0, 100, 100);
 }
 
-- (void) testUniversalSelector {
+- (void) testAnyClassPattern {
     NSString* selector = @"*";
 
     UIView *root = [[UIView alloc] initWithFrame:frame];
@@ -57,8 +57,8 @@
     assertThat(selectedViews, hasItem(view23));
 }
 
-- (void) testClassEqualsSelector {
-    NSString* selector = @"UIButton";
+- (void) testMemberOfClassPattern {
+    NSString* pattern = @"UIButton";
 
     UIView* view = [[UIView alloc] initWithFrame:frame];
     UIView* button = [[UIButton alloc] initWithFrame: frame];
@@ -67,15 +67,15 @@
     [root addSubview:button];
     [button addSubview:imageView];
 
-    NSArray *selectedViews = [[Igor new] selectViewsWithSelector:selector fromRoot:root];
+    NSArray *selectedViews = [[Igor new] selectViewsWithSelector:pattern fromRoot:root];
     
     assertThat(selectedViews, hasItem(button));
     assertThat(selectedViews, isNot(hasItem(view)));
     assertThat(selectedViews, isNot(hasItem(imageView)));
 }
 
-- (void) testKindOfClassSelector {
-    NSString* selector = @"UIControl*";
+- (void) testKindOfClassPattern {
+    NSString* pattern = @"UIControl*";
 
     UIView *viewOfBaseClassOfTargetClass = [[UIView alloc] initWithFrame:frame];
     UIView *viewOfTargetClass = [[UIControl alloc] initWithFrame: frame];
@@ -87,7 +87,7 @@
     [root addSubview:viewOfClassDerivedFromTargetClass];
     [root addSubview:viewOfUnrelatedClass];
     
-    NSArray *selectedViews = [[Igor new] selectViewsWithSelector:selector fromRoot:root];
+    NSArray *selectedViews = [[Igor new] selectViewsWithSelector:pattern fromRoot:root];
     
     assertThat(selectedViews, isNot(hasItem(viewOfBaseClassOfTargetClass)));
     assertThat(selectedViews, hasItem(viewOfTargetClass));

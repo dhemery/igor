@@ -7,23 +7,23 @@
 //
 
 #import "IgorParser.h"
-#import "CompoundSelector.h"
-#import "ClassParser.h"
-#import "PropertyParser.h"
+#import "CompoundMatcher.h"
+#import "ClassPattern.h"
+#import "PropertyPattern.h"
 
 @implementation IgorParser
 
--(id<Selector>) parse:(NSString*)selectorString {
+-(id<Matcher>) parse:(NSString*)selectorString {
     NSScanner* scanner = [NSScanner scannerWithString:selectorString];
 
-    id<Selector> classSelector = [[ClassParser new] parse:scanner];
-    id<Selector> propertySelector = [[PropertyParser new] parse:scanner];
+    id<Matcher> classSelector = [[ClassPattern new] parse:scanner];
+    id<Matcher> propertySelector = [[PropertyPattern new] parse:scanner];
     if(!propertySelector) {
         return classSelector;
     }
-    CompoundSelector* compoundSelector = [CompoundSelector new];
-    [compoundSelector addSelector:classSelector];
-    [compoundSelector addSelector:propertySelector];
+    CompoundMatcher* compoundSelector = [CompoundMatcher new];
+    [compoundSelector addMatcher:classSelector];
+    [compoundSelector addMatcher:propertySelector];
     return compoundSelector;
 }
 

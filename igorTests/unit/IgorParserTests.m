@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "IgorParser.h"
-#import "ClassEqualsSelector.h"
-#import "KindOfClassSelector.h"
-#import "CompoundSelector.h"
-#import "PropertyExistsSelector.h"
+#import "MemberOfClassMatcher.h"
+#import "KindOfClassMatcher.h"
+#import "CompoundMatcher.h"
+#import "PropertyExistsMatcher.h"
 
 @interface IgorParserTests : SenTestCase
 @end
@@ -24,43 +24,43 @@
     parser = [IgorParser new];
 }
 
--(void) testParsesAsteriskAsKindOfClassSelectorForUIViewClass {
-    id<Selector> selector = [parser parse:@"*"];
-    assertThat(selector, instanceOf([KindOfClassSelector class]));
-    KindOfClassSelector* kindOfClassSelector = (KindOfClassSelector*)selector;
-    assertThat(kindOfClassSelector.targetClass, equalTo([UIView class]));
+-(void) testParsesAsteriskAsKindOfClassMatcherForUIViewClass {
+    id<Matcher> matcher = [parser parse:@"*"];
+    assertThat(matcher, instanceOf([KindOfClassMatcher class]));
+    KindOfClassMatcher* kindOfClassMatcher = (KindOfClassMatcher*)matcher;
+    assertThat(kindOfClassMatcher.targetClass, equalTo([UIView class]));
 }
 
--(void) testParsesNameAsClassEqualsSelector {
-    id<Selector> selector = [parser parse:@"UIButton"];
-    assertThat(selector, instanceOf([ClassEqualsSelector class]));
-    ClassEqualsSelector* classEqualsSelector = (ClassEqualsSelector*)selector;
-    assertThat(classEqualsSelector.targetClass, equalTo([UIButton class]));
+-(void) testParsesNameAsMemberOfClassMatcher {
+    id<Matcher> matcher = [parser parse:@"UIButton"];
+    assertThat(matcher, instanceOf([MemberOfClassMatcher class]));
+    MemberOfClassMatcher* memberOfClassMatcher = (MemberOfClassMatcher*)matcher;
+    assertThat(memberOfClassMatcher.targetClass, equalTo([UIButton class]));
 }
 
--(void) testParsesNameAsteriskAsKindOfClassSelector {
-    id<Selector> selector = [parser parse:@"UILabel*"];
-    assertThat(selector, instanceOf([KindOfClassSelector class]));           
-    KindOfClassSelector* kindOfClassSelector = (KindOfClassSelector*)selector;
-    assertThat(kindOfClassSelector.targetClass, equalTo([UILabel class]));
+-(void) testParsesNameAsteriskAsKindOfClassMatcher {
+    id<Matcher> matcher = [parser parse:@"UILabel*"];
+    assertThat(matcher, instanceOf([KindOfClassMatcher class]));           
+    KindOfClassMatcher* kindOfClassMatcher = (KindOfClassMatcher*)matcher;
+    assertThat(kindOfClassMatcher.targetClass, equalTo([UILabel class]));
 }
 
--(void) testParsesCompoundSelectorWithOneAttributeSelector {
-    id<Selector> selector = [parser parse:@"*[myPropertyName]"];
+-(void) testParsesCompoundMatcherWithOneAttributeMatcher {
+    id<Matcher> matcher = [parser parse:@"*[myPropertyName]"];
 
-    assertThat(selector, instanceOf([CompoundSelector class]));
-    CompoundSelector* compoundSelector = (CompoundSelector*)selector;
+    assertThat(matcher, instanceOf([CompoundMatcher class]));
+    CompoundMatcher* compoundMatcher = (CompoundMatcher*)matcher;
 
-    NSArray* simpleSelectors = compoundSelector.simpleSelectors;
-    assertThat(compoundSelector.simpleSelectors, hasCountOf(2));
+    NSArray* simpleMatchers = compoundMatcher.simpleMatchers;
+    assertThat(compoundMatcher.simpleMatchers, hasCountOf(2));
 
-    ClassSelector* classSelector = [simpleSelectors objectAtIndex:0];
-    assertThat(classSelector, instanceOf([KindOfClassSelector class]));
-    assertThat([classSelector targetClass], equalTo([UIView class]));
+    ClassMatcher* classMatcher = [simpleMatchers objectAtIndex:0];
+    assertThat(classMatcher, instanceOf([KindOfClassMatcher class]));
+    assertThat([classMatcher targetClass], equalTo([UIView class]));
 
-    PropertyExistsSelector* attributeSelector = [simpleSelectors objectAtIndex:1];
-    assertThat(attributeSelector, instanceOf([PropertyExistsSelector class]));
-    assertThat(attributeSelector.propertyName, equalTo(@"myPropertyName"));
+    PropertyExistsMatcher* propertyMatcher = [simpleMatchers objectAtIndex:1];
+    assertThat(propertyMatcher, instanceOf([PropertyExistsMatcher class]));
+    assertThat(propertyMatcher.propertyName, equalTo(@"myPropertyName"));
 }
 
 @end

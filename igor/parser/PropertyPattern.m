@@ -7,11 +7,11 @@
 //
 
 #import "IgorParserException.h"
-#import "PropertyParser.h"
-#import "PropertyExistsSelector.h"
-#import "PropertyValueEqualsSelector.h"
+#import "PropertyPattern.h"
+#import "PropertyExistsMatcher.h"
+#import "PropertyValueEqualsMatcher.h"
 
-@implementation PropertyParser
+@implementation PropertyPattern
 
 -(NSObject*) parseValue:(NSScanner*)scanner {
     [scanner scanString:@"'" intoString:nil];
@@ -21,19 +21,19 @@
     return value;
 }
 
--(id<Selector>) parse:(NSScanner*)scanner {
+-(id<Matcher>) parse:(NSScanner*)scanner {
     NSString* propertyName = [NSString string];
-    id<Selector> selector = nil;
+    id<Matcher> selector = nil;
     if(![scanner scanString:@"[" intoString:nil]) return nil;
     if(![scanner scanCharactersFromSet:[NSCharacterSet letterCharacterSet] intoString:&propertyName]) {
         @throw [IgorParserException exceptionWithReason:@"Missing property name" scanner:scanner];
     }
     if([scanner scanString:@"]" intoString:nil]) {
-        return [PropertyExistsSelector selectorWithPropertyName:propertyName];
+        return [PropertyExistsMatcher forProperty:propertyName];
     }
     if([scanner scanString:@"=" intoString:nil]) {
         NSObject* desiredValue = [self parseValue:scanner];
-        selector = [PropertyValueEqualsSelector selectorWithPropertyName:propertyName value:desiredValue];
+        selector = [PropertyValueEqualsMatcher forProperty:propertyName value:desiredValue];
     }
     if(![scanner scanString:@"]" intoString:nil]) {
         @throw [IgorParserException exceptionWithReason:@"Missing ]" scanner:scanner];
