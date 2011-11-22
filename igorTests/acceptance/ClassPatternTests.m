@@ -10,10 +10,12 @@
 
 @implementation ClassPatternTests {
     CGRect frame;
+    Igor* igor;
 }
 
 -(void) setUp {
     frame = CGRectMake(0, 0, 100, 100);
+    igor = [Igor new];
 }
 
 - (void) testAnyClassPattern {
@@ -42,7 +44,7 @@
         [view2 addSubview:view22];
         [view2 addSubview:view23];
 
-    NSArray *selectedViews = [[Igor new] selectViewsWithSelector:selector fromRoot:root];
+    NSArray *selectedViews = [igor selectViewsWithSelector:selector fromRoot:root];
 
     assertThat(selectedViews, hasItem(root));
     assertThat(selectedViews, hasItem(view1));
@@ -67,7 +69,7 @@
     [root addSubview:button];
     [button addSubview:imageView];
 
-    NSArray *selectedViews = [[Igor new] selectViewsWithSelector:pattern fromRoot:root];
+    NSArray *selectedViews = [igor selectViewsWithSelector:pattern fromRoot:root];
     
     assertThat(selectedViews, hasItem(button));
     assertThat(selectedViews, isNot(hasItem(view)));
@@ -87,7 +89,7 @@
     [root addSubview:viewOfClassDerivedFromTargetClass];
     [root addSubview:viewOfUnrelatedClass];
     
-    NSArray *selectedViews = [[Igor new] selectViewsWithSelector:pattern fromRoot:root];
+    NSArray *selectedViews = [igor selectViewsWithSelector:pattern fromRoot:root];
     
     assertThat(selectedViews, isNot(hasItem(viewOfBaseClassOfTargetClass)));
     assertThat(selectedViews, hasItem(viewOfTargetClass));

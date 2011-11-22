@@ -22,21 +22,21 @@
 }
 
 - (void)testMatchesAViewOfTheTargetClass {
-    id<Matcher> matcher = [MemberOfClassMatcher forClass:[UIButton class]];
+    id memberOfUIButtonClassMatcher = [MemberOfClassMatcher forClass:[UIButton class]];
     UIButton* button = [[UIButton alloc] initWithFrame:frame];
-    STAssertTrue([matcher matchesView:button], @"Matches the target class");
+    STAssertTrue([memberOfUIButtonClassMatcher matchesView:button], @"Matches the target class");
 }
 
 - (void)testMismatchesAViewOfANonTargetClass {
-    id<Matcher> matcher = [MemberOfClassMatcher forClass:[UIButton class]];
+    id memberOfUIButtonClassMatcher = [MemberOfClassMatcher forClass:[UIButton class]];
     UIView* view = [[UIView alloc] initWithFrame:frame];
-    STAssertFalse([matcher matchesView:view], @"Mismatches a non-target class");
+    STAssertFalse([memberOfUIButtonClassMatcher matchesView:view], @"Mismatches a non-target class");
 }
 
 - (void)testMismatchesAViewOfAClassThatInheritsFromTheTargetClass {
-    id<Matcher> matcher = [MemberOfClassMatcher forClass:[UIView class]];
+    id memberOfUIViewClassMatcher = [MemberOfClassMatcher forClass:[UIView class]];
     UIButton* button = [[UIButton alloc] initWithFrame:frame];
-    STAssertFalse([matcher matchesView:button], @"Mismatches a derived class");
+    STAssertFalse([memberOfUIViewClassMatcher matchesView:button], @"Mismatches a derived class");
 }
 
 @end
