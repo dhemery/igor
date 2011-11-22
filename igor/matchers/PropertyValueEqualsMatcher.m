@@ -9,13 +9,15 @@
 #import "NSObject+PropertyInspector.h"
 #import "PropertyValueEqualsMatcher.h"
 
-@implementation PropertyValueEqualsMatcher
+@implementation PropertyValueEqualsMatcher {
+    PropertyExistsMatcher* propertyExistsMatcher;
+}
 
 @synthesize matchProperty, matchValue;
 
 -(id) initForProperty:(NSString*)propertyName value:(NSObject*)value {
     if(self = [super init]) {
-        matchProperty = propertyName;
+        propertyExistsMatcher = [PropertyExistsMatcher forProperty:propertyName];
         matchValue = value;
     }
     return self;
@@ -26,9 +28,13 @@
 }
 
 -(BOOL) matchesView:(UIView *)view {
-    if(![super matchesView:view]) return NO;
+    if(![propertyExistsMatcher matchesView:view]) return NO;
     id actualValue = [view valueOfProperty:self.matchProperty];
     return [actualValue isEqual:self.matchValue];
+}
+
+-(NSString*) matchProperty {
+    return propertyExistsMatcher.matchProperty;
 }
 
 @end

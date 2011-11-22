@@ -8,7 +8,9 @@
 
 #import "PropertyExistsMatcher.h"
 
-@interface PropertyValueEqualsMatcher : PropertyExistsMatcher <PropertyValueMatcher>
+@interface PropertyValueEqualsMatcher : NSObject <PropertyValueMatcher>
+
+@property(readonly,retain) NSString* matchProperty;
 
 +(id) forProperty:(NSString*)propertyName value:(NSObject*)value;
 

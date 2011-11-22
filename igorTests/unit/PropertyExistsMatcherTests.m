@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Matcher.h"
 #import "PropertyExistsMatcher.h"
 
 @interface PropertyExistsMatcherTests : SenTestCase
@@ -23,13 +22,13 @@
 
 -(void) testMatchesAViewThatHasTheTargetProperty {
     UIView* view = [[UIView alloc] initWithFrame:frame];
-    id<Matcher> matcher = [PropertyExistsMatcher forProperty:@"accessibilityHint"];
+    id matcher = [PropertyExistsMatcher forProperty:@"accessibilityHint"];
     STAssertTrue([matcher matchesView:view], @"Matches a view that has the property");
 }
 
 -(void) testMismatchesAViewThatDoesNotHaveTheTargetProperty {
     UIView* view = [[UIView alloc] initWithFrame:frame];
-    id<Matcher> matcher = [PropertyExistsMatcher forProperty:@"aNonExistentProperty"];
+    id matcher = [PropertyExistsMatcher forProperty:@"aNonExistentProperty"];
     STAssertFalse([matcher matchesView:view], @"Matches a view that does not have the property");
 }
 @end

@@ -10,6 +10,7 @@
 		2D0E1483147C2C3100FC940B /* PropertyMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D0E1482147C2C3100FC940B /* PropertyMatcher.h */; };
 		2D0E1486147C2CCB00FC940B /* PropertyValueMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D0E1485147C2CCB00FC940B /* PropertyValueMatcher.h */; };
 		2D0E1492147C356000FC940B /* Parser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D0E1491147C356000FC940B /* Parser.h */; };
+		2D0E1495147C3F7800FC940B /* PropertyValueEqualsMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0E1493147C3F6C00FC940B /* PropertyValueEqualsMatcherTests.m */; };
 		2D2D4D0B1478787F00FF3D88 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD437 /* SenTestingKit.framework */; };
 		2D2D4D0C1478787F00FF3D88 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD439 /* UIKit.framework */; };
 		2D2D4D0D1478787F00FF3D88 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD425 /* Foundation.framework */; };
@@ -78,6 +79,7 @@
 		2D0E1482147C2C3100FC940B /* PropertyMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyMatcher.h; sourceTree = "<group>"; };
 		2D0E1485147C2CCB00FC940B /* PropertyValueMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyValueMatcher.h; sourceTree = "<group>"; };
 		2D0E1491147C356000FC940B /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
+		2D0E1493147C3F6C00FC940B /* PropertyValueEqualsMatcherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyValueEqualsMatcherTests.m; sourceTree = "<group>"; };
 		2D2D4D0A1478787F00FF3D88 /* igorTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = igorTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D2D4D1E147879B200FF3D88 /* PropertyPatternTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyPatternTests.m; sourceTree = "<group>"; };
 		2D2D4D21147879B200FF3D88 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				2D2D4D26147879B200FF3D88 /* KindOfClassMatcherTests.m */,
 				2D2D4D27147879B200FF3D88 /* IgorParserTests.m */,
 				2D2D4D28147879B200FF3D88 /* PropertyExistsMatcherTests.m */,
+				2D0E1493147C3F6C00FC940B /* PropertyValueEqualsMatcherTests.m */,
 				2D2D4D6B1478907F00FF3D88 /* PropertyParserTests.m */,
 			);
 			path = unit;
@@ -477,6 +480,7 @@
 				2D2D4D2F147879B200FF3D88 /* PropertyExistsMatcherTests.m in Sources */,
 				2D2D4D6A1478880100FF3D88 /* ClassPatternTests.m in Sources */,
 				2D2D4D6C1478907F00FF3D88 /* PropertyParserTests.m in Sources */,
+				2D0E1495147C3F7800FC940B /* PropertyValueEqualsMatcherTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
