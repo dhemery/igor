@@ -1,8 +1,6 @@
 #import "Igor.h"
 #import "SelectorEngineRegistry.h"
 
-#define DEBUG 1
-
 @interface IgorLoader
 
 +(void)load;
@@ -12,8 +10,12 @@
 @implementation IgorLoader
 
 +(void)load {
+#ifdef DEBUG
+    NSLog(@"IgorLoader loaded");
+#else
     [SelectorEngineRegistry registerSelectorEngine:[Igor new] WithName:@"igor"];
     NSLog(@"Igor registered with Frank as selector engine named 'igor'");
+#endif
 }
 @end
 
