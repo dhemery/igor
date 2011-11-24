@@ -133,7 +133,7 @@
 			path = Headers;
 			sourceTree = "<group>";
 		};
-		2D695C88147CD1BA00AF4115 /* igor */ = {
+		2D695C88147CD1BA00AF4115 /* src */ = {
 			isa = PBXGroup;
 			children = (
 				2D695CE3147CD27F00AF4115 /* engine */,
@@ -142,7 +142,6 @@
 				2D695CE2147CD27100AF4115 /* parser */,
 				2D695CE0147CD23800AF4115 /* Supporting Files */,
 			);
-			name = igor;
 			path = src;
 			sourceTree = "<group>";
 		};
@@ -290,7 +289,7 @@
 		E621659DB794A5D612DCD418 = {
 			isa = PBXGroup;
 			children = (
-				2D695C88147CD1BA00AF4115 /* igor */,
+				2D695C88147CD1BA00AF4115 /* src */,
 				2D695CC9147CD1D200AF4115 /* test */,
 				2D9649F4147DA75600C40219 /* lib */,
 				E621659DB794A5D612DCD419 /* Products */,
