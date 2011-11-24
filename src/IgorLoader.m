@@ -13,7 +13,7 @@
 
 +(void)load {
     [SelectorEngineRegistry registerSelectorEngine:[Igor new] WithName:@"igor"];
-    NSLog(@"Igor selector engine registered with Frank as 'igor'. Woo hoo!");
+    NSLog(@"Igor registered with Frank as selector engine named 'igor'");
 }
 @end
 

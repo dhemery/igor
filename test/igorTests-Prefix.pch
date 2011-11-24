@@ -4,7 +4,8 @@
 
 #ifdef __OBJC__
 #import <Foundation/Foundation.h>
-#import <SenTestingKit/SenTestCase.h>
+#import <UIKit/UIKit.h>
 #define HC_SHORTHAND
 #import <OCHamcrestIOS/OCHamcrestIOS.h>
+#import <SenTestingKit/SenTestCase.h>
 #endif

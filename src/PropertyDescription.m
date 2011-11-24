@@ -30,7 +30,7 @@
 }
 
 -(BOOL) isEqual:(id)object {
-    PropertyDescription* other = (PropertyDescription*)other;
+    PropertyDescription* other = (PropertyDescription*)object;
     return [propertyName isEqual:other.propertyName]
     && [sourceName isEqual:other.sourceName]
     && [sourceType isEqual:other.sourceType];
