@@ -7,25 +7,29 @@
 //
 
 #import "PropertyExistsMatcher.h"
-#import <objc/runtime.h>
+#import "PropertyInspector.h"
 
 @implementation PropertyExistsMatcher
 
-@synthesize matchProperty;
+@synthesize matchProperty, property;
 
--(id) initForProperty:(NSString*)thePropertyName {
++(id) forProperty:(NSString*)propertyName {
+    return [[self alloc] initForProperty:(NSString*)propertyName];
+}
+
+-(id) initForProperty:(NSString*)propertyName {
     if(self = [super init]) {
-        matchProperty = thePropertyName;
+        property = [PropertyInspector forProperty:propertyName];
     }
     return self;
 }
 
-+(id) forProperty:(NSString*)propertyName {
-    return [[PropertyExistsMatcher alloc] initForProperty:(NSString*)propertyName];
+-(NSString*) matchProperty {
+    return property.propertyName;
 }
 
 -(BOOL) matchesView:(UIView *)view {
-    return class_getProperty([view class], [matchProperty UTF8String]) != nil;
+    return [property existsOn:view];
 }
 
 @end

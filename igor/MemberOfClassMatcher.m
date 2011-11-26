@@ -20,7 +20,7 @@
 }
 
 +(id) forClass:(Class)aClass {
-    return [[MemberOfClassMatcher alloc] initForClass:aClass];
+    return [[self alloc] initForClass:aClass];
 }
 
 -(BOOL)matchesView:(UIView *)view {
