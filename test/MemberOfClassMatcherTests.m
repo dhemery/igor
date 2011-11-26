@@ -6,7 +6,6 @@
 //  Copyright (c) 2011 Dale H. Emery. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "Matcher.h"
 #import "MemberOfClassMatcher.h"
 
@@ -24,19 +23,19 @@
 - (void)testMatchesAViewOfTheTargetClass {
     id memberOfUIButtonClassMatcher = [MemberOfClassMatcher forClass:[UIButton class]];
     UIButton* button = [[UIButton alloc] initWithFrame:frame];
-    STAssertTrue([memberOfUIButtonClassMatcher matchesView:button], @"Matches the target class");
+    expect([memberOfUIButtonClassMatcher matchesView:button]).toBeTruthy();
 }
 
 - (void)testMismatchesAViewOfANonTargetClass {
     id memberOfUIButtonClassMatcher = [MemberOfClassMatcher forClass:[UIButton class]];
     UIView* view = [[UIView alloc] initWithFrame:frame];
-    STAssertFalse([memberOfUIButtonClassMatcher matchesView:view], @"Mismatches a non-target class");
+    expect([memberOfUIButtonClassMatcher matchesView:view]).toBeFalsy();
 }
 
 - (void)testMismatchesAViewOfAClassThatInheritsFromTheTargetClass {
     id memberOfUIViewClassMatcher = [MemberOfClassMatcher forClass:[UIView class]];
     UIButton* button = [[UIButton alloc] initWithFrame:frame];
-    STAssertFalse([memberOfUIViewClassMatcher matchesView:button], @"Mismatches a derived class");
+    expect([memberOfUIViewClassMatcher matchesView:button]).toBeFalsy();
 }
 
 @end

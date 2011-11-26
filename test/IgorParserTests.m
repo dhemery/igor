@@ -6,7 +6,6 @@
 //  Copyright (c) 2011 Dale H. Emery. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "IgorParser.h"
 #import "ClassMatcher.h"
 #import "MemberOfClassMatcher.h"
@@ -27,38 +26,38 @@
 
 -(void) testParsesAsteriskAsKindOfClassMatcherForUIViewClass {
     id<ClassMatcher> matcher = [parser parse:@"*"];
-    assertThat(matcher, instanceOf([KindOfClassMatcher class]));
-    assertThat(matcher.matchClass, equalTo([UIView class]));
+    expect(matcher).toBeInstanceOf([KindOfClassMatcher class]);
+    expect(matcher.matchClass).toEqual([UIView class]);
 }
 
 -(void) testParsesNameAsMemberOfClassMatcher {
     id<ClassMatcher> matcher = [parser parse:@"UIButton"];
-    assertThat(matcher, instanceOf([MemberOfClassMatcher class]));
-    assertThat(matcher.matchClass, equalTo([UIButton class]));
+    expect(matcher).toBeInstanceOf([MemberOfClassMatcher class]);
+    expect(matcher.matchClass).toEqual([UIButton class]);
 }
 
 -(void) testParsesNameAsteriskAsKindOfClassMatcher {
     id<ClassMatcher> matcher = [parser parse:@"UILabel*"];
-    assertThat(matcher, instanceOf([KindOfClassMatcher class]));           
-    assertThat(matcher.matchClass, equalTo([UILabel class]));
+    expect(matcher).toBeInstanceOf([KindOfClassMatcher class]);
+    expect(matcher.matchClass).toEqual([UILabel class]);
 }
 
 -(void) testParsesCompoundMatcherWithOneAttributeMatcher {
     id<Matcher> matcher = [parser parse:@"*[myPropertyName]"];
 
-    assertThat(matcher, instanceOf([CompoundMatcher class]));
+    expect(matcher).toBeInstanceOf([CompoundMatcher class]);
     CompoundMatcher* compoundMatcher = (CompoundMatcher*)matcher;
 
     NSArray* simpleMatchers = compoundMatcher.simpleMatchers;
-    assertThat(compoundMatcher.simpleMatchers, hasCountOf(2));
+    expect([compoundMatcher.simpleMatchers count]).toEqual(2);
 
     id<ClassMatcher> classMatcher = [simpleMatchers objectAtIndex:0];
-    assertThat(classMatcher, instanceOf([KindOfClassMatcher class]));
-    assertThat(classMatcher.matchClass, equalTo([UIView class]));
+    expect(classMatcher).toBeInstanceOf([KindOfClassMatcher class]);
+    expect(classMatcher.matchClass).toEqual([UIView class]);
 
     id<PropertyMatcher> propertyMatcher = [simpleMatchers objectAtIndex:1];
-    assertThat(propertyMatcher, instanceOf([PropertyExistsMatcher class]));
-    assertThat(propertyMatcher.matchProperty, equalTo(@"myPropertyName"));
+    expect(propertyMatcher).toBeInstanceOf([PropertyExistsMatcher class]);
+    expect(propertyMatcher.matchProperty).toEqual(@"myPropertyName");
 }
 
 @end

@@ -2,7 +2,6 @@
 //  Created by Dale on 11/4/11.
 //
 
-#import <UIKit/UIKit.h>
 #import "Igor.h"
 
 @interface PropertyPatternTests : SenTestCase
@@ -22,10 +21,10 @@
     UIView* view = [[UIButton alloc] initWithFrame:frame];
     
     NSArray* matchingViews = [igor findViewsThatMatchPattern:@"[accessibilityHint]" fromRoot:view];
-    assertThat(matchingViews, hasItem(view));
+    expect(matchingViews).toContain(view);
     
     matchingViews = [igor findViewsThatMatchPattern:@"[nonExistentProperty]" fromRoot:view];
-    assertThat(matchingViews, isNot(hasItem(view)));
+    expect(matchingViews).Not.toContain(view);
 }
 
 -(void) testPropertyValueEqualsPattern {
@@ -33,13 +32,13 @@
     view.accessibilityHint = @"monkeymonkey";
     
     NSArray* matchingViews = [igor findViewsThatMatchPattern:@"[accessibilityHint='monkeymonkey']" fromRoot:view];
-    assertThat(matchingViews, hasItem(view));
+    expect(matchingViews).toContain(view);
     
     matchingViews = [igor findViewsThatMatchPattern:@"[accessibilityHint='fiddlefaddle']" fromRoot:view];
-    assertThat(matchingViews, isNot(hasItem(view)));
+    expect(matchingViews).Not.toContain(view);
 
     matchingViews = [igor findViewsThatMatchPattern:@"[nonExistentProperty='monkeymonkey']" fromRoot:view];
-    assertThat(matchingViews, isNot(hasItem(view)));
+    expect(matchingViews).Not.toContain(view);
 }
 
 @end

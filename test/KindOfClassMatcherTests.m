@@ -6,7 +6,6 @@
 //  Copyright (c) 2011 Dale H. Emery. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "KindOfClassMatcher.h"
 
 @interface KindOfClassMatcherTests : SenTestCase
@@ -23,19 +22,19 @@
 -(void) testMatchesAViewOfTheTargetClass {
     id kindOfUIButtonClassMatcher = [KindOfClassMatcher forClass:[UIButton class]];
     UIButton* button = [[UIButton alloc] initWithFrame:frame];
-    STAssertTrue([kindOfUIButtonClassMatcher matchesView:button], @"Matches the target class");
+    expect([kindOfUIButtonClassMatcher matchesView:button]).toBeTruthy();
 }
 
 - (void)testMismatchesAViewOfANonTargetClass {
     id kindOfUIButtonClassMatcher = [KindOfClassMatcher forClass:[UIButton class]];
     UIView* view = [[UIView alloc] initWithFrame:frame];
-    STAssertFalse([kindOfUIButtonClassMatcher matchesView:view], @"Mismatches a non-target class");
+    expect([kindOfUIButtonClassMatcher matchesView:view]).toBeFalsy();
 }
 
 - (void)testMatchesAViewOfAClassThatInheritsFromTheTargetClass {
     id kindOfUIViewClassMatcher = [KindOfClassMatcher forClass:[UIView class]];
     UIButton* button = [[UIButton alloc] initWithFrame:frame];
-    STAssertTrue([kindOfUIViewClassMatcher matchesView:button], @"Matches a derived class");
+    expect([kindOfUIViewClassMatcher matchesView:button]).toBeTruthy();
 }
 
 @end

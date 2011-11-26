@@ -16,7 +16,7 @@
 -(void) testReturnsNilIfNoLeftBracket {
     NSString* noLeadingLeftBracket = @"+notAPropertySelector+";
     NSScanner* scanner = [NSScanner scannerWithString:noLeadingLeftBracket];
-    assertThat([parser parse:scanner], nilValue());
+    expect([parser parse:scanner]).toBeNil();
 }
 
 -(void) testThrowsIfNoPropertyName {
@@ -29,17 +29,17 @@
     NSString* propertyExistsPattern = @"[freddieFender]";
     NSScanner* scanner = [NSScanner scannerWithString:propertyExistsPattern];
     id<PropertyMatcher> matcher = [parser parse:scanner];
-    assertThat(matcher, instanceOf([PropertyExistsMatcher class]));
-    assertThat(matcher.matchProperty, equalTo(@"freddieFender"));
+    expect(matcher).toBeInstanceOf([PropertyExistsMatcher class]);
+    expect(matcher.matchProperty).toEqual(@"freddieFender");
 }
 
 -(void) testParsesAPropertyValueEqualsSelector {
     NSString* propertyEqualsPattern = @"[pearlBailey='opreylady']";
     NSScanner* scanner = [NSScanner scannerWithString:propertyEqualsPattern];
     id<PropertyValueMatcher> matcher = [parser parse:scanner];
-    assertThat(matcher, instanceOf([PropertyValueEqualsMatcher class]));
-    assertThat(matcher.matchProperty, equalTo(@"pearlBailey"));
-    assertThat(matcher.matchValue, equalTo(@"opreylady"));
+    expect(matcher).toBeInstanceOf([PropertyValueEqualsMatcher class]);
+    expect(matcher.matchProperty).toEqual(@"pearlBailey");
+    expect(matcher.matchValue).toEqual(@"opreylady");
 }
 
 -(void) testThrowsIfNoRightBracket {

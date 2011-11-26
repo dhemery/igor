@@ -6,7 +6,6 @@
 //  Copyright (c) 2011 Dale H. Emery. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "PropertyValueEqualsMatcher.h"
 
 @interface MyUIButton : UIButton
@@ -34,26 +33,26 @@
     id view = [[MyUIButton alloc] initWithFrame:frame];
     [view setThePropertyWithTheDefaultGetter:@"the target value"];
     id matcher = [PropertyValueEqualsMatcher forProperty:@"thePropertyWithTheDefaultGetter" value:@"the target value"];
-    STAssertTrue([matcher matchesView:view], @"");
+    expect([matcher matchesView:view]).toBeTruthy();
 }
 
 -(void) testMismatchesAViewThatDoesNotHaveTheTargetProperty {
     id view = [[MyUIButton alloc] initWithFrame:frame];
     id matcher = [PropertyValueEqualsMatcher forProperty:@"aNonExistentProperty" value:@"doesn't matter"];
-    STAssertFalse([matcher matchesView:view], @"");
+    expect([matcher matchesView:view]).toBeFalsy();
 }
 
 -(void) testMismatchesAViewThatDoesNotHaveTheTargetPropertyValue {
     id view = [[MyUIButton alloc] initWithFrame:frame];
     [view setThePropertyWithTheDefaultGetter:@"NOT the target value"];
     id matcher = [PropertyValueEqualsMatcher forProperty:@"thePropertyWithTheDefaultGetter" value:@"the target value"];
-    STAssertFalse([matcher matchesView:view], @"");
+    expect([matcher matchesView:view]).toBeFalsy();
 }
 
 -(void) testMatchesUsingACustomGetterIfOneIsDefined {
     id view = [[MyUIButton alloc] initWithFrame:frame];
     [view setThePropertyWithTheCustomGetter:@"the target value"];
     id matcher = [PropertyValueEqualsMatcher forProperty:@"thePropertyWithTheCustomGetter" value:@"the target value"];
-    STAssertTrue([matcher matchesView:view], @"");
+    expect([matcher matchesView:view]).toBeTruthy();
 }
 @end

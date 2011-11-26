@@ -8,7 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		2D080CFC147DAC36002A09E2 /* SelectorEngineRegistry.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D080CFB147DAC36002A09E2 /* SelectorEngineRegistry.h */; };
-		2D080CFD147DAC36002A09E2 /* SelectorEngineRegistry.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D080CFB147DAC36002A09E2 /* SelectorEngineRegistry.h */; };
+		2D12D9AA14819EFC00FD7BDD /* Expecta.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D12D99314819EFC00FD7BDD /* Expecta.h */; };
+		2D12D9AB14819EFC00FD7BDD /* ExpectaSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D12D99414819EFC00FD7BDD /* ExpectaSupport.h */; };
+		2D12D9AC14819EFC00FD7BDD /* EXPExpect.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D12D99514819EFC00FD7BDD /* EXPExpect.h */; };
+		2D12D9AD14819EFC00FD7BDD /* EXPMatcherHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D12D99614819EFC00FD7BDD /* EXPMatcherHelpers.h */; };
+		2D12D9AE14819EFC00FD7BDD /* EXPMatchers+toBeFalsy.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D12D99714819EFC00FD7BDD /* EXPMatchers+toBeFalsy.h */; };
+		2D12D9AF14819EFC00FD7BDD /* EXPMatchers+toBeGreaterThan.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D12D99814819EFC00FD7BDD /* EXPMatchers+toBeGreaterThan.h */; };
+		2D12D9B014819EFC00FD7BDD /* EXPMatchers+toBeGreaterThanOrEqualTo.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D12D99914819EFC00FD7BDD /* EXPMatchers+toBeGreaterThanOrEqualTo.h */; };
+		2D12D9B114819EFC00FD7BDD /* EXPMatchers+toBeIdenticalTo.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D12D99A14819EFC00FD7BDD /* EXPMatchers+toBeIdenticalTo.h */; };
+		2D12D9B214819EFC00FD7BDD /* EXPMatchers+toBeInstanceOf.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D12D99B14819EFC00FD7BDD /* EXPMatchers+toBeInstanceOf.h */; };
+		2D12D9B314819EFC00FD7BDD /* EXPMatchers+toBeInTheRangeOf.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D12D99C14819EFC00FD7BDD /* EXPMatchers+toBeInTheRangeOf.h */; };
+		2D12D9B414819EFC00FD7BDD /* EXPMatchers+toBeKindOf.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D12D99D14819EFC00FD7BDD /* EXPMatchers+toBeKindOf.h */; };
+		2D12D9B514819EFC00FD7BDD /* EXPMatchers+toBeLessThan.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D12D99E14819EFC00FD7BDD /* EXPMatchers+toBeLessThan.h */; };
+		2D12D9B614819EFC00FD7BDD /* EXPMatchers+toBeLessThanOrEqualTo.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D12D99F14819EFC00FD7BDD /* EXPMatchers+toBeLessThanOrEqualTo.h */; };
+		2D12D9B714819EFC00FD7BDD /* EXPMatchers+toBeNil.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D12D9A014819EFC00FD7BDD /* EXPMatchers+toBeNil.h */; };
+		2D12D9B814819EFC00FD7BDD /* EXPMatchers+toBeSubclassOf.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D12D9A114819EFC00FD7BDD /* EXPMatchers+toBeSubclassOf.h */; };
+		2D12D9B914819EFC00FD7BDD /* EXPMatchers+toBeTruthy.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D12D9A214819EFC00FD7BDD /* EXPMatchers+toBeTruthy.h */; };
+		2D12D9BA14819EFC00FD7BDD /* EXPMatchers+toContain.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D12D9A314819EFC00FD7BDD /* EXPMatchers+toContain.h */; };
+		2D12D9BB14819EFC00FD7BDD /* EXPMatchers+toEqual.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D12D9A414819EFC00FD7BDD /* EXPMatchers+toEqual.h */; };
+		2D12D9BC14819EFC00FD7BDD /* EXPMatchers.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D12D9A514819EFC00FD7BDD /* EXPMatchers.h */; };
+		2D12D9BD14819EFC00FD7BDD /* EXPUnsupportedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D12D9A614819EFC00FD7BDD /* EXPUnsupportedObject.h */; };
+		2D12D9BE14819EFC00FD7BDD /* NSObject+Expecta.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D12D9A714819EFC00FD7BDD /* NSObject+Expecta.h */; };
+		2D12D9BF14819EFC00FD7BDD /* NSValue+Expecta.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D12D9A814819EFC00FD7BDD /* NSValue+Expecta.h */; };
+		2D12D9C014819EFC00FD7BDD /* libExpecta-ios-universal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D12D9A914819EFC00FD7BDD /* libExpecta-ios-universal.a */; };
 		2D2D4D0B1478787F00FF3D88 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD437 /* SenTestingKit.framework */; };
 		2D2D4D0C1478787F00FF3D88 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD439 /* UIKit.framework */; };
 		2D2D4D0D1478787F00FF3D88 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD425 /* Foundation.framework */; };
@@ -36,7 +58,6 @@
 		2D9649DF147DA19C00C40219 /* igorTests-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 2D695CCF147CD1D200AF4115 /* igorTests-Prefix.pch */; };
 		2D9649E0147DA1A700C40219 /* igor-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C8E147CD1BA00AF4115 /* igor-Prefix.pch */; };
 		2D9649E2147DA21400C40219 /* igor-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C8E147CD1BA00AF4115 /* igor-Prefix.pch */; };
-		2D9649FA147DA77800C40219 /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D9649F8147DA75600C40219 /* OCHamcrestIOS.framework */; };
 		2DCF9764147ED3FD003B0F38 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD439 /* UIKit.framework */; };
 		2DCF9765147ED3FD003B0F38 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD425 /* Foundation.framework */; };
 		2DCF9767147ED3FD003B0F38 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCF9766147ED3FD003B0F38 /* CoreGraphics.framework */; };
@@ -73,6 +94,29 @@
 
 /* Begin PBXFileReference section */
 		2D080CFB147DAC36002A09E2 /* SelectorEngineRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectorEngineRegistry.h; sourceTree = "<group>"; };
+		2D12D99314819EFC00FD7BDD /* Expecta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expecta.h; sourceTree = "<group>"; };
+		2D12D99414819EFC00FD7BDD /* ExpectaSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpectaSupport.h; sourceTree = "<group>"; };
+		2D12D99514819EFC00FD7BDD /* EXPExpect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXPExpect.h; sourceTree = "<group>"; };
+		2D12D99614819EFC00FD7BDD /* EXPMatcherHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXPMatcherHelpers.h; sourceTree = "<group>"; };
+		2D12D99714819EFC00FD7BDD /* EXPMatchers+toBeFalsy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPMatchers+toBeFalsy.h"; sourceTree = "<group>"; };
+		2D12D99814819EFC00FD7BDD /* EXPMatchers+toBeGreaterThan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPMatchers+toBeGreaterThan.h"; sourceTree = "<group>"; };
+		2D12D99914819EFC00FD7BDD /* EXPMatchers+toBeGreaterThanOrEqualTo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPMatchers+toBeGreaterThanOrEqualTo.h"; sourceTree = "<group>"; };
+		2D12D99A14819EFC00FD7BDD /* EXPMatchers+toBeIdenticalTo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPMatchers+toBeIdenticalTo.h"; sourceTree = "<group>"; };
+		2D12D99B14819EFC00FD7BDD /* EXPMatchers+toBeInstanceOf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPMatchers+toBeInstanceOf.h"; sourceTree = "<group>"; };
+		2D12D99C14819EFC00FD7BDD /* EXPMatchers+toBeInTheRangeOf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPMatchers+toBeInTheRangeOf.h"; sourceTree = "<group>"; };
+		2D12D99D14819EFC00FD7BDD /* EXPMatchers+toBeKindOf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPMatchers+toBeKindOf.h"; sourceTree = "<group>"; };
+		2D12D99E14819EFC00FD7BDD /* EXPMatchers+toBeLessThan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPMatchers+toBeLessThan.h"; sourceTree = "<group>"; };
+		2D12D99F14819EFC00FD7BDD /* EXPMatchers+toBeLessThanOrEqualTo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPMatchers+toBeLessThanOrEqualTo.h"; sourceTree = "<group>"; };
+		2D12D9A014819EFC00FD7BDD /* EXPMatchers+toBeNil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPMatchers+toBeNil.h"; sourceTree = "<group>"; };
+		2D12D9A114819EFC00FD7BDD /* EXPMatchers+toBeSubclassOf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPMatchers+toBeSubclassOf.h"; sourceTree = "<group>"; };
+		2D12D9A214819EFC00FD7BDD /* EXPMatchers+toBeTruthy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPMatchers+toBeTruthy.h"; sourceTree = "<group>"; };
+		2D12D9A314819EFC00FD7BDD /* EXPMatchers+toContain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPMatchers+toContain.h"; sourceTree = "<group>"; };
+		2D12D9A414819EFC00FD7BDD /* EXPMatchers+toEqual.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPMatchers+toEqual.h"; sourceTree = "<group>"; };
+		2D12D9A514819EFC00FD7BDD /* EXPMatchers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXPMatchers.h; sourceTree = "<group>"; };
+		2D12D9A614819EFC00FD7BDD /* EXPUnsupportedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXPUnsupportedObject.h; sourceTree = "<group>"; };
+		2D12D9A714819EFC00FD7BDD /* NSObject+Expecta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Expecta.h"; sourceTree = "<group>"; };
+		2D12D9A814819EFC00FD7BDD /* NSValue+Expecta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+Expecta.h"; sourceTree = "<group>"; };
+		2D12D9A914819EFC00FD7BDD /* libExpecta-ios-universal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libExpecta-ios-universal.a"; sourceTree = "<group>"; };
 		2D2D4D0A1478787F00FF3D88 /* igorTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = igorTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D695C89147CD1BA00AF4115 /* ClassMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassMatcher.h; sourceTree = "<group>"; };
 		2D695C8A147CD1BA00AF4115 /* ClassPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassPattern.h; sourceTree = "<group>"; };
@@ -114,7 +158,6 @@
 		2D695CD5147CD1D200AF4115 /* PropertyValueEqualsMatcherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyValueEqualsMatcherTests.m; sourceTree = "<group>"; };
 		2D82748A1480CB3F00E934F1 /* PropertyInspector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyInspector.m; sourceTree = "<group>"; };
 		2D82748C1480CB5400E934F1 /* PropertyInspector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyInspector.h; sourceTree = "<group>"; };
-		2D9649F8147DA75600C40219 /* OCHamcrestIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCHamcrestIOS.framework; sourceTree = "<group>"; };
 		2DCF9762147ED3FD003B0F38 /* vigor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vigor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DCF9766147ED3FD003B0F38 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2DCF976A147ED3FD003B0F38 /* vigor-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "vigor-Info.plist"; sourceTree = "<group>"; };
@@ -146,8 +189,8 @@
 				2D2D4D0B1478787F00FF3D88 /* SenTestingKit.framework in Frameworks */,
 				2D2D4D0C1478787F00FF3D88 /* UIKit.framework in Frameworks */,
 				2D2D4D0D1478787F00FF3D88 /* Foundation.framework in Frameworks */,
-				2D9649FA147DA77800C40219 /* OCHamcrestIOS.framework in Frameworks */,
 				2DCF978C147ED575003B0F38 /* libigor-0.1.5.a in Frameworks */,
+				2D12D9C014819EFC00FD7BDD /* libExpecta-ios-universal.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +221,44 @@
 			isa = PBXGroup;
 			children = (
 				2D080CFB147DAC36002A09E2 /* SelectorEngineRegistry.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		2D12D99114819EFC00FD7BDD /* expecta */ = {
+			isa = PBXGroup;
+			children = (
+				2D12D99214819EFC00FD7BDD /* Headers */,
+				2D12D9A914819EFC00FD7BDD /* libExpecta-ios-universal.a */,
+			);
+			path = expecta;
+			sourceTree = "<group>";
+		};
+		2D12D99214819EFC00FD7BDD /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				2D12D99314819EFC00FD7BDD /* Expecta.h */,
+				2D12D99414819EFC00FD7BDD /* ExpectaSupport.h */,
+				2D12D99514819EFC00FD7BDD /* EXPExpect.h */,
+				2D12D99614819EFC00FD7BDD /* EXPMatcherHelpers.h */,
+				2D12D99714819EFC00FD7BDD /* EXPMatchers+toBeFalsy.h */,
+				2D12D99814819EFC00FD7BDD /* EXPMatchers+toBeGreaterThan.h */,
+				2D12D99914819EFC00FD7BDD /* EXPMatchers+toBeGreaterThanOrEqualTo.h */,
+				2D12D99A14819EFC00FD7BDD /* EXPMatchers+toBeIdenticalTo.h */,
+				2D12D99B14819EFC00FD7BDD /* EXPMatchers+toBeInstanceOf.h */,
+				2D12D99C14819EFC00FD7BDD /* EXPMatchers+toBeInTheRangeOf.h */,
+				2D12D99D14819EFC00FD7BDD /* EXPMatchers+toBeKindOf.h */,
+				2D12D99E14819EFC00FD7BDD /* EXPMatchers+toBeLessThan.h */,
+				2D12D99F14819EFC00FD7BDD /* EXPMatchers+toBeLessThanOrEqualTo.h */,
+				2D12D9A014819EFC00FD7BDD /* EXPMatchers+toBeNil.h */,
+				2D12D9A114819EFC00FD7BDD /* EXPMatchers+toBeSubclassOf.h */,
+				2D12D9A214819EFC00FD7BDD /* EXPMatchers+toBeTruthy.h */,
+				2D12D9A314819EFC00FD7BDD /* EXPMatchers+toContain.h */,
+				2D12D9A414819EFC00FD7BDD /* EXPMatchers+toEqual.h */,
+				2D12D9A514819EFC00FD7BDD /* EXPMatchers.h */,
+				2D12D9A614819EFC00FD7BDD /* EXPUnsupportedObject.h */,
+				2D12D9A714819EFC00FD7BDD /* NSObject+Expecta.h */,
+				2D12D9A814819EFC00FD7BDD /* NSValue+Expecta.h */,
 			);
 			path = Headers;
 			sourceTree = "<group>";
@@ -303,8 +384,8 @@
 		2D9649F4147DA75600C40219 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				2D12D99114819EFC00FD7BDD /* expecta */,
 				2D9649F5147DA75600C40219 /* Frank */,
-				2D9649F7147DA75600C40219 /* hamcrest */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -317,14 +398,6 @@
 				2D080CFA147DAC36002A09E2 /* Headers */,
 			);
 			path = Frank;
-			sourceTree = "<group>";
-		};
-		2D9649F7147DA75600C40219 /* hamcrest */ = {
-			isa = PBXGroup;
-			children = (
-				2D9649F8147DA75600C40219 /* OCHamcrestIOS.framework */,
-			);
-			path = hamcrest;
 			sourceTree = "<group>";
 		};
 		2DCF9768147ED3FD003B0F38 /* vigor */ = {
@@ -397,7 +470,28 @@
 			files = (
 				2D9649E0147DA1A700C40219 /* igor-Prefix.pch in Headers */,
 				2D9649DF147DA19C00C40219 /* igorTests-Prefix.pch in Headers */,
-				2D080CFD147DAC36002A09E2 /* SelectorEngineRegistry.h in Headers */,
+				2D12D9AA14819EFC00FD7BDD /* Expecta.h in Headers */,
+				2D12D9AB14819EFC00FD7BDD /* ExpectaSupport.h in Headers */,
+				2D12D9AC14819EFC00FD7BDD /* EXPExpect.h in Headers */,
+				2D12D9AD14819EFC00FD7BDD /* EXPMatcherHelpers.h in Headers */,
+				2D12D9AE14819EFC00FD7BDD /* EXPMatchers+toBeFalsy.h in Headers */,
+				2D12D9AF14819EFC00FD7BDD /* EXPMatchers+toBeGreaterThan.h in Headers */,
+				2D12D9B014819EFC00FD7BDD /* EXPMatchers+toBeGreaterThanOrEqualTo.h in Headers */,
+				2D12D9B114819EFC00FD7BDD /* EXPMatchers+toBeIdenticalTo.h in Headers */,
+				2D12D9B214819EFC00FD7BDD /* EXPMatchers+toBeInstanceOf.h in Headers */,
+				2D12D9B314819EFC00FD7BDD /* EXPMatchers+toBeInTheRangeOf.h in Headers */,
+				2D12D9B414819EFC00FD7BDD /* EXPMatchers+toBeKindOf.h in Headers */,
+				2D12D9B514819EFC00FD7BDD /* EXPMatchers+toBeLessThan.h in Headers */,
+				2D12D9B614819EFC00FD7BDD /* EXPMatchers+toBeLessThanOrEqualTo.h in Headers */,
+				2D12D9B714819EFC00FD7BDD /* EXPMatchers+toBeNil.h in Headers */,
+				2D12D9B814819EFC00FD7BDD /* EXPMatchers+toBeSubclassOf.h in Headers */,
+				2D12D9B914819EFC00FD7BDD /* EXPMatchers+toBeTruthy.h in Headers */,
+				2D12D9BA14819EFC00FD7BDD /* EXPMatchers+toContain.h in Headers */,
+				2D12D9BB14819EFC00FD7BDD /* EXPMatchers+toEqual.h in Headers */,
+				2D12D9BC14819EFC00FD7BDD /* EXPMatchers.h in Headers */,
+				2D12D9BD14819EFC00FD7BDD /* EXPUnsupportedObject.h in Headers */,
+				2D12D9BE14819EFC00FD7BDD /* NSObject+Expecta.h in Headers */,
+				2D12D9BF14819EFC00FD7BDD /* NSValue+Expecta.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,12 +723,15 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-					"\"$(SRCROOT)/lib/hamcrest\"",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "test/igorTests-Prefix.pch";
 				INFOPLIST_FILE = "test/igorTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/lib/expecta\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lstdc++",
@@ -653,12 +750,15 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-					"\"$(SRCROOT)/lib/hamcrest\"",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "test/igorTests-Prefix.pch";
 				INFOPLIST_FILE = "test/igorTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/lib/expecta\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lstdc++",

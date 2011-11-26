@@ -2,7 +2,6 @@
 //  Created by Dale on 11/4/11.
 //
 
-#import <UIKit/UIKit.h>
 #import "Igor.h"
 
 @interface ClassPatternTests : SenTestCase
@@ -46,17 +45,17 @@
 
     NSArray *matchingViews = [igor findViewsThatMatchPattern:pattern fromRoot:root];
 
-    assertThat(matchingViews, hasItem(root));
-    assertThat(matchingViews, hasItem(view1));
-    assertThat(matchingViews, hasItem(view11));
-    assertThat(matchingViews, hasItem(view12));
-    assertThat(matchingViews, hasItem(view2));
-    assertThat(matchingViews, hasItem(view21));
-    assertThat(matchingViews, hasItem(view211));
-    assertThat(matchingViews, hasItem(view212));
-    assertThat(matchingViews, hasItem(view213));
-    assertThat(matchingViews, hasItem(view22));
-    assertThat(matchingViews, hasItem(view23));
+    expect(matchingViews).toContain(root);
+    expect(matchingViews).toContain(view1);
+    expect(matchingViews).toContain(view11);
+    expect(matchingViews).toContain(view12);
+    expect(matchingViews).toContain(view2);
+    expect(matchingViews).toContain(view21);
+    expect(matchingViews).toContain(view211);
+    expect(matchingViews).toContain(view212);
+    expect(matchingViews).toContain(view213);
+    expect(matchingViews).toContain(view22);
+    expect(matchingViews).toContain(view23);
 }
 
 - (void) testMemberOfClassPattern {
@@ -71,9 +70,9 @@
 
     NSArray *matchingViews = [igor findViewsThatMatchPattern:pattern fromRoot:root];
     
-    assertThat(matchingViews, hasItem(button));
-    assertThat(matchingViews, isNot(hasItem(view)));
-    assertThat(matchingViews, isNot(hasItem(imageView)));
+    expect(matchingViews).toContain(button);
+    expect(matchingViews).Not.toContain(view);
+    expect(matchingViews).Not.toContain(imageView);
 }
 
 - (void) testKindOfClassPattern {
@@ -91,10 +90,10 @@
     
     NSArray *matchingViews = [igor findViewsThatMatchPattern:pattern fromRoot:root];
     
-    assertThat(matchingViews, isNot(hasItem(viewOfBaseClassOfTargetClass)));
-    assertThat(matchingViews, hasItem(viewOfTargetClass));
-    assertThat(matchingViews, hasItem(viewOfClassDerivedFromTargetClass));
-    assertThat(matchingViews, isNot(hasItem(viewOfUnrelatedClass)));
+    expect(matchingViews).Not.toContain(viewOfBaseClassOfTargetClass);
+    expect(matchingViews).toContain(viewOfTargetClass);
+    expect(matchingViews).toContain(viewOfClassDerivedFromTargetClass);
+    expect(matchingViews).Not.toContain(viewOfUnrelatedClass);
 }
 
 @end
