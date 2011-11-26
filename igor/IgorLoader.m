@@ -2,20 +2,23 @@
 #import "SelectorEngineRegistry.h"
 
 @interface IgorLoader
-
-+(void)load;
-
 @end
 
 @implementation IgorLoader
 
-+(void)load {
-#ifdef DEBUG
-    NSLog(@"IgorLoader loaded");
-#else
++ (void)applicationDidBecomeActive:(NSNotification *)notification{
+#ifndef DEBUG
     [SelectorEngineRegistry registerSelectorEngine:[Igor new] WithName:@"igor"];
     NSLog(@"Igor registered with Frank as selector engine named 'igor'");
 #endif
 }
-@end
 
++ (void)load{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(applicationDidBecomeActive:) 
+                                                 name:@"UIApplicationDidBecomeActiveNotification" 
+                                               object:nil];
+    NSLog(@"Igor registered to be notified when the application becomes active.");
+}
+
+@end
