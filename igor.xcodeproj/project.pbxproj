@@ -776,14 +776,11 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "vigor/vigor-Prefix.pch";
 				INFOPLIST_FILE = "vigor/vigor-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/lib/Frank\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -798,14 +795,11 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "vigor/vigor-Prefix.pch";
 				INFOPLIST_FILE = "vigor/vigor-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/lib/Frank\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -827,7 +821,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
-				USER_HEADER_SEARCH_PATHS = lib/Frank/Headers;
+				SYMROOT = "$(PROJECT_DIR)/build";
+				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -853,7 +848,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
-				USER_HEADER_SEARCH_PATHS = lib/Frank/Headers;
+				SYMROOT = "$(PROJECT_DIR)/build";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -899,7 +895,7 @@
 				2D2D4D1A1478788000FF3D88 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		2DCF9780147ED3FD003B0F38 /* Build configuration list for PBXNativeTarget "vigor" */ = {
 			isa = XCConfigurationList;
@@ -908,7 +904,7 @@
 				2DCF9782147ED3FD003B0F38 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		E621659DB794A5D612DCD417 /* Build configuration list for PBXProject "igor" */ = {
 			isa = XCConfigurationList;
@@ -917,7 +913,7 @@
 				E621659DB794A5D612DCD41B /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		E621659DB794A5D612DCD41E /* Build configuration list for PBXNativeTarget "igor" */ = {
 			isa = XCConfigurationList;
@@ -926,7 +922,7 @@
 				E621659DB794A5D612DCD420 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
