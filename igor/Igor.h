@@ -2,7 +2,6 @@
 
 @interface Igor : NSObject<SelectorEngine>
 
--(NSArray*) selectViewsWithSelector:(NSString*)selectorString;
--(NSArray*) selectViewsWithSelector:(NSString*)selectorString fromRoot:(UIView*)root;
+-(NSArray*) findViewsThatMatchPattern:(NSString*)pattern fromRoot:(UIView*)root;
 
 @end

@@ -8,25 +8,25 @@
 
 @implementation Igor
 
-- (void)selectViewsWithSelector:(id<Matcher>)selector fromRoot:(UIView *)root intoSet:(NSMutableSet*)selectedViews {
-    if ([selector matchesView:root]) {
-        [selectedViews addObject:root];
+- (void)findViewsThatMatch:(id<Matcher>)matcher fromRoot:(UIView *)root intoSet:(NSMutableSet*)matchingViews {
+    if ([matcher matchesView:root]) {
+        [matchingViews addObject:root];
     }
     for(id subview in [root subviews]) {
-        [self selectViewsWithSelector:selector fromRoot:subview intoSet:selectedViews];
+        [self findViewsThatMatch:matcher fromRoot:subview intoSet:matchingViews];
     }
 }
 
--(NSArray*) selectViewsWithSelector:(NSString*)selectorString {
-    return [self selectViewsWithSelector:selectorString
-                                fromRoot:[[UIApplication sharedApplication] keyWindow]];
+-(NSArray*) findViewsThatMatchPattern:(NSString*)pattern fromRoot:(UIView *)root {
+    id<Matcher> matcher = [[IgorParser new] parse:pattern];
+    NSMutableSet* matchingViews = [NSMutableSet set];
+    [self findViewsThatMatch:matcher fromRoot:root intoSet:matchingViews];
+    return [matchingViews allObjects];
 }
 
--(NSArray*) selectViewsWithSelector:(NSString*)selectorString fromRoot:(UIView *)root {
-    id<Matcher> selector = [[IgorParser new] parse:selectorString];
-    NSMutableSet* selectedViews = [NSMutableSet set];
-    [self selectViewsWithSelector:selector fromRoot:root intoSet:selectedViews];
-    return [selectedViews allObjects];
+-(NSArray*) selectViewsWithSelector:(NSString*)pattern {
+    return [self findViewsThatMatchPattern:pattern
+                                  fromRoot:[[UIApplication sharedApplication] keyWindow]];
 }
 
 @end

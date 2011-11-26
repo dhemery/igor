@@ -19,7 +19,7 @@
 }
 
 - (void) testAnyClassPattern {
-    NSString* selector = @"*";
+    NSString* pattern = @"*";
 
     UIView *root = [[UIView alloc] initWithFrame:frame];
     UIView *view1 = [[UIView alloc] initWithFrame: frame];
@@ -44,19 +44,19 @@
         [view2 addSubview:view22];
         [view2 addSubview:view23];
 
-    NSArray *selectedViews = [igor selectViewsWithSelector:selector fromRoot:root];
+    NSArray *matchingViews = [igor findViewsThatMatchPattern:pattern fromRoot:root];
 
-    assertThat(selectedViews, hasItem(root));
-    assertThat(selectedViews, hasItem(view1));
-    assertThat(selectedViews, hasItem(view11));
-    assertThat(selectedViews, hasItem(view12));
-    assertThat(selectedViews, hasItem(view2));
-    assertThat(selectedViews, hasItem(view21));
-    assertThat(selectedViews, hasItem(view211));
-    assertThat(selectedViews, hasItem(view212));
-    assertThat(selectedViews, hasItem(view213));
-    assertThat(selectedViews, hasItem(view22));
-    assertThat(selectedViews, hasItem(view23));
+    assertThat(matchingViews, hasItem(root));
+    assertThat(matchingViews, hasItem(view1));
+    assertThat(matchingViews, hasItem(view11));
+    assertThat(matchingViews, hasItem(view12));
+    assertThat(matchingViews, hasItem(view2));
+    assertThat(matchingViews, hasItem(view21));
+    assertThat(matchingViews, hasItem(view211));
+    assertThat(matchingViews, hasItem(view212));
+    assertThat(matchingViews, hasItem(view213));
+    assertThat(matchingViews, hasItem(view22));
+    assertThat(matchingViews, hasItem(view23));
 }
 
 - (void) testMemberOfClassPattern {
@@ -69,11 +69,11 @@
     [root addSubview:button];
     [button addSubview:imageView];
 
-    NSArray *selectedViews = [igor selectViewsWithSelector:pattern fromRoot:root];
+    NSArray *matchingViews = [igor findViewsThatMatchPattern:pattern fromRoot:root];
     
-    assertThat(selectedViews, hasItem(button));
-    assertThat(selectedViews, isNot(hasItem(view)));
-    assertThat(selectedViews, isNot(hasItem(imageView)));
+    assertThat(matchingViews, hasItem(button));
+    assertThat(matchingViews, isNot(hasItem(view)));
+    assertThat(matchingViews, isNot(hasItem(imageView)));
 }
 
 - (void) testKindOfClassPattern {
@@ -89,12 +89,12 @@
     [root addSubview:viewOfClassDerivedFromTargetClass];
     [root addSubview:viewOfUnrelatedClass];
     
-    NSArray *selectedViews = [igor selectViewsWithSelector:pattern fromRoot:root];
+    NSArray *matchingViews = [igor findViewsThatMatchPattern:pattern fromRoot:root];
     
-    assertThat(selectedViews, isNot(hasItem(viewOfBaseClassOfTargetClass)));
-    assertThat(selectedViews, hasItem(viewOfTargetClass));
-    assertThat(selectedViews, hasItem(viewOfClassDerivedFromTargetClass));
-    assertThat(selectedViews, isNot(hasItem(viewOfUnrelatedClass)));
+    assertThat(matchingViews, isNot(hasItem(viewOfBaseClassOfTargetClass)));
+    assertThat(matchingViews, hasItem(viewOfTargetClass));
+    assertThat(matchingViews, hasItem(viewOfClassDerivedFromTargetClass));
+    assertThat(matchingViews, isNot(hasItem(viewOfUnrelatedClass)));
 }
 
 @end
