@@ -2,26 +2,23 @@
 #import "PropertyInspector.h"
 #import <objc/runtime.h>
 
-@implementation PropertyInspector  {
-    const char* propertyNameAsUTF8String;
-}
+@implementation PropertyInspector
 
 @synthesize propertyName;
 
--(id) initForProperty:(NSString*) thePropertyName {
+-(id) initForProperty:(NSString*)thePropertyName {
     if(self = [super init]) {
         propertyName = thePropertyName;
-        propertyNameAsUTF8String = [propertyName UTF8String];
     }
     return self;
 }
 
-+(id) forProperty:(NSString*) propertyName {
++(id) forProperty:(NSString*)propertyName {
     return [[self alloc] initForProperty:propertyName];
 }
 
--(id) valueFromGetter:(NSString*) getterName forObject:(id) object {
-    return [object performSelector:NSSelectorFromString(getterName)];
+-(id) valueReturnedFrom:(NSString*)selectorString forObject:(id) object {
+    return [object performSelector:NSSelectorFromString(selectorString)];
 }
 
 -(NSString*) getterNameFor:(objc_property_t)property {
@@ -38,7 +35,7 @@
 }
 
 -(objc_property_t) propertyFor:(id)object {
-    return class_getProperty([object class], propertyNameAsUTF8String);
+    return class_getProperty([object class], [propertyName UTF8String]);
 }
 
 -(BOOL) existsOn:(id)object {
@@ -48,7 +45,7 @@
 -(id) valueFor:(id)object {
     objc_property_t property = [self propertyFor:object];
     NSString* getterName = [self getterNameFor:property];
-    return [self valueFromGetter:getterName forObject:object];
+    return [self valueReturnedFrom:getterName forObject:object];
 }
 
 @end
