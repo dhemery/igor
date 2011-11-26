@@ -6,8 +6,8 @@
 //  Copyright (c) 2011 Dale H. Emery. All rights reserved.
 //
 
-#import "NSObject+PropertyInspector.h"
 #import "PropertyExistsMatcher.h"
+#import <objc/runtime.h>
 
 @implementation PropertyExistsMatcher
 
@@ -25,7 +25,7 @@
 }
 
 -(BOOL) matchesView:(UIView *)view {
-    return [view hasProperty:self.matchProperty];
+    return class_getProperty([view class], [matchProperty UTF8String]) != nil;
 }
 
 @end

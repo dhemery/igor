@@ -19,8 +19,6 @@
 		2D695CB5147CD1BA00AF4115 /* IgorParserException.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C95147CD1BA00AF4115 /* IgorParserException.m */; };
 		2D695CB7147CD1BA00AF4115 /* KindOfClassMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C97147CD1BA00AF4115 /* KindOfClassMatcher.m */; };
 		2D695CBA147CD1BA00AF4115 /* MemberOfClassMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C9A147CD1BA00AF4115 /* MemberOfClassMatcher.m */; };
-		2D695CBC147CD1BA00AF4115 /* NSObject+PropertyInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C9C147CD1BA00AF4115 /* NSObject+PropertyInspector.m */; };
-		2D695CBF147CD1BA00AF4115 /* PropertyDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C9F147CD1BA00AF4115 /* PropertyDescription.m */; };
 		2D695CC1147CD1BA00AF4115 /* PropertyExistsMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695CA1147CD1BA00AF4115 /* PropertyExistsMatcher.m */; };
 		2D695CC4147CD1BA00AF4115 /* PropertyPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695CA4147CD1BA00AF4115 /* PropertyPattern.m */; };
 		2D695CC6147CD1BA00AF4115 /* PropertyValueEqualsMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695CA6147CD1BA00AF4115 /* PropertyValueEqualsMatcher.m */; };
@@ -92,11 +90,7 @@
 		2D695C98147CD1BA00AF4115 /* Matcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matcher.h; sourceTree = "<group>"; };
 		2D695C99147CD1BA00AF4115 /* MemberOfClassMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberOfClassMatcher.h; sourceTree = "<group>"; };
 		2D695C9A147CD1BA00AF4115 /* MemberOfClassMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberOfClassMatcher.m; sourceTree = "<group>"; };
-		2D695C9B147CD1BA00AF4115 /* NSObject+PropertyInspector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PropertyInspector.h"; sourceTree = "<group>"; };
-		2D695C9C147CD1BA00AF4115 /* NSObject+PropertyInspector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PropertyInspector.m"; sourceTree = "<group>"; };
 		2D695C9D147CD1BA00AF4115 /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
-		2D695C9E147CD1BA00AF4115 /* PropertyDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyDescription.h; sourceTree = "<group>"; };
-		2D695C9F147CD1BA00AF4115 /* PropertyDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyDescription.m; sourceTree = "<group>"; };
 		2D695CA0147CD1BA00AF4115 /* PropertyExistsMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyExistsMatcher.h; sourceTree = "<group>"; };
 		2D695CA1147CD1BA00AF4115 /* PropertyExistsMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyExistsMatcher.m; sourceTree = "<group>"; };
 		2D695CA2147CD1BA00AF4115 /* PropertyMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyMatcher.h; sourceTree = "<group>"; };
@@ -188,7 +182,6 @@
 			isa = PBXGroup;
 			children = (
 				2D695CE3147CD27F00AF4115 /* engine */,
-				2D695CE4147CD29500AF4115 /* inspector */,
 				2D695CE1147CD26700AF4115 /* matchers */,
 				2D695CE2147CD27100AF4115 /* parser */,
 				2D695CE0147CD23800AF4115 /* Supporting Files */,
@@ -260,17 +253,6 @@
 				2D695C91147CD1BA00AF4115 /* IgorLoader.m */,
 			);
 			name = engine;
-			sourceTree = "<group>";
-		};
-		2D695CE4147CD29500AF4115 /* inspector */ = {
-			isa = PBXGroup;
-			children = (
-				2D695C9B147CD1BA00AF4115 /* NSObject+PropertyInspector.h */,
-				2D695C9C147CD1BA00AF4115 /* NSObject+PropertyInspector.m */,
-				2D695C9E147CD1BA00AF4115 /* PropertyDescription.h */,
-				2D695C9F147CD1BA00AF4115 /* PropertyDescription.m */,
-			);
-			name = inspector;
 			sourceTree = "<group>";
 		};
 		2D695CE5147CD31300AF4115 /* Supporting Files */ = {
@@ -574,8 +556,6 @@
 				2D695CB5147CD1BA00AF4115 /* IgorParserException.m in Sources */,
 				2D695CB7147CD1BA00AF4115 /* KindOfClassMatcher.m in Sources */,
 				2D695CBA147CD1BA00AF4115 /* MemberOfClassMatcher.m in Sources */,
-				2D695CBC147CD1BA00AF4115 /* NSObject+PropertyInspector.m in Sources */,
-				2D695CBF147CD1BA00AF4115 /* PropertyDescription.m in Sources */,
 				2D695CC1147CD1BA00AF4115 /* PropertyExistsMatcher.m in Sources */,
 				2D695CC4147CD1BA00AF4115 /* PropertyPattern.m in Sources */,
 				2D695CC6147CD1BA00AF4115 /* PropertyValueEqualsMatcher.m in Sources */,
@@ -653,6 +633,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VERSIONING_SYSTEM = "apple-generic";
+				WARNING_CFLAGS = "";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
@@ -676,6 +657,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VERSIONING_SYSTEM = "apple-generic";
+				WARNING_CFLAGS = "";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -779,6 +761,7 @@
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "";
 				VERSION_INFO_PREFIX = "-0.";
+				WARNING_CFLAGS = "-Wno-arc-performSelector-leaks";
 			};
 			name = Release;
 		};
@@ -794,6 +777,7 @@
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "";
 				VERSION_INFO_PREFIX = "-0.";
+				WARNING_CFLAGS = "-Wno-arc-performSelector-leaks";
 			};
 			name = Debug;
 		};

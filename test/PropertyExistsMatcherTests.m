@@ -21,14 +21,15 @@
 }
 
 -(void) testMatchesAViewThatHasTheTargetProperty {
-    UIView* view = [[UIView alloc] initWithFrame:frame];
+    UIView* view = [[UIButton alloc] initWithFrame:frame];
     id matcher = [PropertyExistsMatcher forProperty:@"accessibilityHint"];
     STAssertTrue([matcher matchesView:view], @"Matches a view that has the property");
 }
 
 -(void) testMismatchesAViewThatDoesNotHaveTheTargetProperty {
-    UIView* view = [[UIView alloc] initWithFrame:frame];
+    UIView* view = [[UIButton alloc] initWithFrame:frame];
     id matcher = [PropertyExistsMatcher forProperty:@"aNonExistentProperty"];
     STAssertFalse([matcher matchesView:view], @"Matches a view that does not have the property");
 }
+
 @end
