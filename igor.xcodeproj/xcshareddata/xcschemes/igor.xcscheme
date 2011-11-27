@@ -14,7 +14,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E621659DB794A5D612DCD41D"
-               BuildableName = "libigor-0.1.5.a"
+               BuildableName = "libigor-0.2.0.a"
                BlueprintName = "igor"
                ReferencedContainer = "container:igor.xcodeproj">
             </BuildableReference>
