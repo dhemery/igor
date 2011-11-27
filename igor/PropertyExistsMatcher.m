@@ -6,12 +6,12 @@
 //  Copyright (c) 2011 Dale H. Emery. All rights reserved.
 //
 
+#import <Foundation/NSKeyValueCoding.h>
 #import "PropertyExistsMatcher.h"
-#import "PropertyInspector.h"
 
 @implementation PropertyExistsMatcher
 
-@synthesize matchProperty, property;
+@synthesize matchProperty;
 
 +(id) forProperty:(NSString*)propertyName {
     return [[self alloc] initForProperty:(NSString*)propertyName];
@@ -19,17 +19,23 @@
 
 -(id) initForProperty:(NSString*)propertyName {
     if(self = [super init]) {
-        property = [PropertyInspector forProperty:propertyName];
+        matchProperty = propertyName;
     }
     return self;
 }
 
--(NSString*) matchProperty {
-    return property.propertyName;
-}
-
 -(BOOL) matchesView:(UIView *)view {
-    return [property existsOn:view];
+    @try {
+        [view valueForKey:self.matchProperty];
+        return YES;
+    }
+    @catch (NSException* e) {
+        if([[e name] isEqual:NSUndefinedKeyException]) {
+            return NO;
+        } else {
+            @throw(e);
+        }
+    }
 }
 
 @end

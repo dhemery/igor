@@ -7,7 +7,6 @@
 //
 
 #import "PropertyValueEqualsMatcher.h"
-#import "PropertyInspector.h"
 
 @implementation PropertyValueEqualsMatcher
 
@@ -25,7 +24,7 @@
 }
 
 -(BOOL) matchesView:(UIView *)view {
-    return [super matchesView:view] && [[self.property valueFor:view] isEqual:matchValue];
+    return [super matchesView:view] && [[view valueForKey:self.matchProperty] isEqual:matchValue];
 }
 
 @end

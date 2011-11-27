@@ -11,7 +11,7 @@
 
 @interface PropertyExistsMatcher : NSObject <PropertyMatcher>
 
-@property(readonly,retain) PropertyInspector* property;
+@property(readonly,retain) NSString* matchProperty;
 
 +(id) forProperty:(NSString*)propertyName;
 -(id) initForProperty:(NSString*)propertyName;

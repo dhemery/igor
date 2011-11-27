@@ -28,7 +28,7 @@
 -(void) testMismatchesAViewThatDoesNotHaveTheTargetProperty {
     UIView* view = [[UIButton alloc] initWithFrame:frame];
     id matcher = [PropertyExistsMatcher forProperty:@"aNonExistentProperty"];
-    STAssertFalse([matcher matchesView:view], @"Matches a view that does not have the property");
+    expect([matcher matchesView:view]).toBeFalsy();
 }
 
 @end
