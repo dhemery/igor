@@ -7,7 +7,6 @@
 //
 
 #import "PropertyMatcher.h"
-#import "PropertyInspector.h"
 
 @interface PropertyExistsMatcher : NSObject <PropertyMatcher>
 

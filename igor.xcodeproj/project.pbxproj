@@ -820,7 +820,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OBJROOT = "$(SYMROOT)";
 				SDKROOT = iphoneos;
-				SYMROOT = "";
+				SYMROOT = "$(PROJECT_DIR)/build";
 				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -848,7 +848,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OBJROOT = "$(SYMROOT)";
 				SDKROOT = iphoneos;
-				SYMROOT = "";
+				SYMROOT = "$(PROJECT_DIR)/build";
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
