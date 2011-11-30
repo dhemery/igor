@@ -3,11 +3,12 @@
 //
 
 #import "Igor.h"
+#import <Foundation/NSException.h>
 
-@interface PropertyPatternTests : SenTestCase
+@interface PredicatePatternTests : SenTestCase
 @end
 
-@implementation PropertyPatternTests {
+@implementation PredicatePatternTests {
     CGRect frame;
     Igor* igor;
 }
@@ -17,17 +18,7 @@
     igor = [Igor new];
 }
 
-- (void) testPropertyExistsPattern {
-    UIView* view = [[UIButton alloc] initWithFrame:frame];
-    
-    NSArray* matchingViews = [igor findViewsThatMatchPattern:@"[accessibilityHint]" fromRoot:view];
-    expect(matchingViews).toContain(view);
-    
-    matchingViews = [igor findViewsThatMatchPattern:@"[nonExistentProperty]" fromRoot:view];
-    expect(matchingViews).Not.toContain(view);
-}
-
--(void) testPropertyValueEqualsPattern {
+-(void) testPredicatePattern {
     UIView* view = [[UIButton alloc] initWithFrame:frame];
     view.accessibilityHint = @"monkeymonkey";
     
@@ -41,4 +32,8 @@
     expect(matchingViews).Not.toContain(view);
 }
 
+-(void) testPredicatePatternThrowsIfPatternIsUnparseable {
+    id notUsed = nil;
+    STAssertThrows([igor findViewsThatMatchPattern:@"[this is not a valid predicate]" fromRoot:notUsed], @"Expected predicate parsing exception");
+}
 @end

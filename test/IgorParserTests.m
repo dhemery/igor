@@ -11,7 +11,7 @@
 #import "MemberOfClassMatcher.h"
 #import "KindOfClassMatcher.h"
 #import "CompoundMatcher.h"
-#import "PropertyExistsMatcher.h"
+#import "PredicateMatcher.h"
 
 @interface IgorParserTests : SenTestCase
 @end
@@ -42,8 +42,8 @@
     expect(matcher.matchClass).toEqual([UILabel class]);
 }
 
--(void) testParsesCompoundMatcherWithOneAttributeMatcher {
-    id<Matcher> matcher = [parser parse:@"*[myPropertyName]"];
+-(void) testParsesCompoundMatcherWithOnePredicateMatcher {
+    id<Matcher> matcher = [parser parse:@"*[myPropertyName='somevalue']"];
 
     expect(matcher).toBeInstanceOf([CompoundMatcher class]);
     CompoundMatcher* compoundMatcher = (CompoundMatcher*)matcher;
@@ -55,9 +55,9 @@
     expect(classMatcher).toBeInstanceOf([KindOfClassMatcher class]);
     expect(classMatcher.matchClass).toEqual([UIView class]);
 
-    id<PropertyMatcher> propertyMatcher = [simpleMatchers objectAtIndex:1];
-    expect(propertyMatcher).toBeInstanceOf([PropertyExistsMatcher class]);
-    expect(propertyMatcher.matchProperty).toEqual(@"myPropertyName");
+    id predicateMatcher = [simpleMatchers objectAtIndex:1];
+    expect(predicateMatcher).toBeInstanceOf([PredicateMatcher class]);
+//    expect(propertyMatcher.matchProperty).toEqual(@"myPropertyName");
 }
 
 @end

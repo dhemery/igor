@@ -9,7 +9,7 @@
 #import "IgorParser.h"
 #import "CompoundMatcher.h"
 #import "ClassPattern.h"
-#import "PropertyPattern.h"
+#import "PredicatePattern.h"
 
 @implementation IgorParser
 
@@ -17,7 +17,7 @@
     NSScanner* scanner = [NSScanner scannerWithString:pattern];
 
     id classMatcher = [[ClassPattern new] parse:scanner];
-    id propertyMatcher = [[PropertyPattern new] parse:scanner];
+    id propertyMatcher = [[PredicatePattern new] parse:scanner];
     if(!propertyMatcher) {
         return classMatcher;
     }

@@ -8,5 +8,5 @@
 
 #import "Parser.h"
 
-@interface PropertyPattern : NSObject<Parser>
+@interface PredicatePattern : NSObject<Parser>
 @end
