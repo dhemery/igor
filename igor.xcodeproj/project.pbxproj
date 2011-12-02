@@ -64,10 +64,10 @@
 		2DCF9779147ED3FD003B0F38 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DCF9777147ED3FD003B0F38 /* MainStoryboard_iPad.storyboard */; };
 		2DCF977C147ED3FD003B0F38 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCF977B147ED3FD003B0F38 /* MasterViewController.m */; };
 		2DCF977F147ED3FD003B0F38 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCF977E147ED3FD003B0F38 /* DetailViewController.m */; };
-		2DCF9785147ED43B003B0F38 /* libigor-0.2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD41C /* libigor-0.2.0.a */; };
+		2DCF9785147ED43B003B0F38 /* libigor-0.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD41C /* libigor-0.3.0.a */; };
 		2DCF9788147ED492003B0F38 /* frank_static_resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2DCF9786147ED492003B0F38 /* frank_static_resources.bundle */; };
 		2DCF9789147ED492003B0F38 /* libFrank.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCF9787147ED492003B0F38 /* libFrank.a */; };
-		2DCF978C147ED575003B0F38 /* libigor-0.2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD41C /* libigor-0.2.0.a */; };
+		2DCF978C147ED575003B0F38 /* libigor-0.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD41C /* libigor-0.3.0.a */; };
 		2DCF978E147EDACA003B0F38 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCF978D147EDACA003B0F38 /* CFNetwork.framework */; };
 /* End PBXBuildFile section */
 
@@ -163,7 +163,7 @@
 		2DCF9786147ED492003B0F38 /* frank_static_resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = frank_static_resources.bundle; sourceTree = "<group>"; };
 		2DCF9787147ED492003B0F38 /* libFrank.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFrank.a; sourceTree = "<group>"; };
 		2DCF978D147EDACA003B0F38 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		E621659DB794A5D612DCD41C /* libigor-0.2.0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libigor-0.2.0.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E621659DB794A5D612DCD41C /* libigor-0.3.0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libigor-0.3.0.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E621659DB794A5D612DCD425 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E621659DB794A5D612DCD437 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		E621659DB794A5D612DCD439 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -177,7 +177,7 @@
 				2D2D4D0B1478787F00FF3D88 /* SenTestingKit.framework in Frameworks */,
 				2D2D4D0C1478787F00FF3D88 /* UIKit.framework in Frameworks */,
 				2D2D4D0D1478787F00FF3D88 /* Foundation.framework in Frameworks */,
-				2DCF978C147ED575003B0F38 /* libigor-0.2.0.a in Frameworks */,
+				2DCF978C147ED575003B0F38 /* libigor-0.3.0.a in Frameworks */,
 				2D12D9C014819EFC00FD7BDD /* libExpecta-ios-universal.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,7 +191,7 @@
 				2DCF9765147ED3FD003B0F38 /* Foundation.framework in Frameworks */,
 				2DCF9767147ED3FD003B0F38 /* CoreGraphics.framework in Frameworks */,
 				2DCF9789147ED492003B0F38 /* libFrank.a in Frameworks */,
-				2DCF9785147ED43B003B0F38 /* libigor-0.2.0.a in Frameworks */,
+				2DCF9785147ED43B003B0F38 /* libigor-0.3.0.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,7 +422,7 @@
 		E621659DB794A5D612DCD419 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E621659DB794A5D612DCD41C /* libigor-0.2.0.a */,
+				E621659DB794A5D612DCD41C /* libigor-0.3.0.a */,
 				2D2D4D0A1478787F00FF3D88 /* igorTests.octest */,
 				2DCF9762147ED3FD003B0F38 /* vigor.app */,
 			);
@@ -539,7 +539,7 @@
 			);
 			name = igor;
 			productName = igor;
-			productReference = E621659DB794A5D612DCD41C /* libigor-0.2.0.a */;
+			productReference = E621659DB794A5D612DCD41C /* libigor-0.3.0.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -840,7 +840,7 @@
 		E621659DB794A5D612DCD41F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 2.0;
+				CURRENT_PROJECT_VERSION = 3.0;
 				DSTROOT = /tmp/igor.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "igor/igor-Prefix.pch";
@@ -856,7 +856,7 @@
 		E621659DB794A5D612DCD420 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 2.0;
+				CURRENT_PROJECT_VERSION = 3.0;
 				DSTROOT = /tmp/igor.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "igor/igor-Prefix.pch";
