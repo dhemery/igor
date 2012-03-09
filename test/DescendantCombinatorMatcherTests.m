@@ -45,6 +45,20 @@
     expect([descendantCombinatorMatcher matchesView:mismatchingChild]).toBeFalsy();
 }
 
+- (void)testMatchesIfAncestorAndDescendantMatch {
+    UIButton* top = [self buttonWithAccessibilityHint:@"does not match"];
+    UIButton* matchingAncestor = [self buttonWithAccessibilityHint:@"ancestor"];
+    UIButton* interveningAncestor = [self buttonWithAccessibilityHint:@"does not match"];
+    UIButton* matchingDescendant = [self buttonWithAccessibilityHint:@"descendant"];
+    [top addSubview:matchingAncestor];
+    [matchingAncestor addSubview:interveningAncestor];
+    [interveningAncestor addSubview:matchingDescendant];
+    expect([descendantCombinatorMatcher matchesView:top]).toBeFalsy();
+    expect([descendantCombinatorMatcher matchesView:matchingAncestor]).toBeFalsy();
+    expect([descendantCombinatorMatcher matchesView:interveningAncestor]).toBeFalsy();
+    expect([descendantCombinatorMatcher matchesView:matchingDescendant]).toBeTruthy();
+}
+
 - (void)testMismatchesIfChildMatchesButParentDoesNot {
     UIButton* parent = [self buttonWithAccessibilityHint:@"does not match"];
     UIButton* child = [self buttonWithAccessibilityHint:@"descendant"];
