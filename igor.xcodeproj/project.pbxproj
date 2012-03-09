@@ -71,9 +71,9 @@
 		2DCF9779147ED3FD003B0F38 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DCF9777147ED3FD003B0F38 /* MainStoryboard_iPad.storyboard */; };
 		2DCF977C147ED3FD003B0F38 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCF977B147ED3FD003B0F38 /* MasterViewController.m */; };
 		2DCF977F147ED3FD003B0F38 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCF977E147ED3FD003B0F38 /* DetailViewController.m */; };
-		2DCF9785147ED43B003B0F38 /* libigor-0.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD41C /* libigor-0.3.0.a */; };
-		2DCF978C147ED575003B0F38 /* libigor-0.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD41C /* libigor-0.3.0.a */; };
 		2DCF978E147EDACA003B0F38 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCF978D147EDACA003B0F38 /* CFNetwork.framework */; };
+		2DE232041509EBAA00C0D74D /* libigor-0.4.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD41C /* libigor-0.4.0.a */; };
+		2DE232061509EBB700C0D74D /* libigor-0.4.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD41C /* libigor-0.4.0.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,7 +173,7 @@
 		2DCF977D147ED3FD003B0F38 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		2DCF977E147ED3FD003B0F38 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		2DCF978D147EDACA003B0F38 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		E621659DB794A5D612DCD41C /* libigor-0.3.0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libigor-0.3.0.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E621659DB794A5D612DCD41C /* libigor-0.4.0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libigor-0.4.0.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E621659DB794A5D612DCD425 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E621659DB794A5D612DCD437 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		E621659DB794A5D612DCD439 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -184,10 +184,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DE232061509EBB700C0D74D /* libigor-0.4.0.a in Frameworks */,
 				2D2D4D0B1478787F00FF3D88 /* SenTestingKit.framework in Frameworks */,
 				2D2D4D0C1478787F00FF3D88 /* UIKit.framework in Frameworks */,
 				2D2D4D0D1478787F00FF3D88 /* Foundation.framework in Frameworks */,
-				2DCF978C147ED575003B0F38 /* libigor-0.3.0.a in Frameworks */,
 				2D12D9C014819EFC00FD7BDD /* libExpecta-ios-universal.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,11 +196,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DE232041509EBAA00C0D74D /* libigor-0.4.0.a in Frameworks */,
 				2DCF978E147EDACA003B0F38 /* CFNetwork.framework in Frameworks */,
 				2DCF9764147ED3FD003B0F38 /* UIKit.framework in Frameworks */,
 				2DCF9765147ED3FD003B0F38 /* Foundation.framework in Frameworks */,
 				2DCF9767147ED3FD003B0F38 /* CoreGraphics.framework in Frameworks */,
-				2DCF9785147ED43B003B0F38 /* libigor-0.3.0.a in Frameworks */,
 				2D3E1F4E1509DE8700D62300 /* libFrank.a in Frameworks */,
 				2D3E1F4F1509DE8700D62300 /* libShelley.a in Frameworks */,
 			);
@@ -438,7 +438,7 @@
 		E621659DB794A5D612DCD419 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E621659DB794A5D612DCD41C /* libigor-0.3.0.a */,
+				E621659DB794A5D612DCD41C /* libigor-0.4.0.a */,
 				2D2D4D0A1478787F00FF3D88 /* igorTests.octest */,
 				2DCF9762147ED3FD003B0F38 /* vigor.app */,
 			);
@@ -556,7 +556,7 @@
 			);
 			name = igor;
 			productName = igor;
-			productReference = E621659DB794A5D612DCD41C /* libigor-0.3.0.a */;
+			productReference = E621659DB794A5D612DCD41C /* libigor-0.4.0.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
