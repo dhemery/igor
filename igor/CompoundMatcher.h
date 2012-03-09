@@ -6,7 +6,7 @@
 //  Copyright (c) 2011 Dale H. Emery. All rights reserved.
 //
 
-#import "matcher.h"
+#import "Matcher.h"
 
 @interface CompoundMatcher : NSObject<Matcher>
 
