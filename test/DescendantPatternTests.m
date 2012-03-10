@@ -21,20 +21,34 @@ Igor* igor;
     igor = [Igor new];
 }
 
+- (id) buttonWithAccessibilityHint:(NSString*)hint {
+    UIButton* button = [[UIButton alloc] initWithFrame:frame];
+    button.accessibilityHint = hint;
+    return button;
+}
+
 -(void) testFindsMatchingChildren {
-    UIView* top = [[UIButton alloc] initWithFrame:frame];
-    top.accessibilityHint = @"top";
-    UIView* matchingSubview = [[UIButton alloc] initWithFrame:frame];
-    matchingSubview.accessibilityHint = @"matches";
-    UIView* nonMatchingSubview = [[UIButton alloc] initWithFrame:frame];
-    nonMatchingSubview.accessibilityHint = @"does not match";
+    UIView* top = [self buttonWithAccessibilityHint:@"top"];
+    UIView* matchingSubview = [self buttonWithAccessibilityHint:@"matches"];
+    UIView* nonMatchingSubview = [self buttonWithAccessibilityHint:@"does not match"];
     [top addSubview:matchingSubview];
     [top addSubview:nonMatchingSubview];
     
-//    NSArray* matchingViews = [igor findViewsThatMatchPattern:@"[accessibilityHint='top'] [accessibilityLabelHint='matches']" fromRoot:top];
-//    expect(matchingViews).toContain(matchingSubview);
-//    expect(matchingViews).Not.toContain(nonMatchingSubview);
+    NSArray* matchingViews = [igor findViewsThatMatchPattern:@"[accessibilityHint='top'] [accessibilityHint='matches']" fromRoot:top];
+    expect(matchingViews).toContain(matchingSubview);
+    expect(matchingViews).Not.toContain(nonMatchingSubview);
 }
 
+-(void) testFindsMatchingDescendants {
+    UIView* top = [self buttonWithAccessibilityHint:@"top"];
+    UIView* interveningView = [self buttonWithAccessibilityHint:@"does not match"];
+    UIView* matchingDescendant = [self buttonWithAccessibilityHint:@"matches"];
+    [top addSubview:interveningView];
+    [interveningView addSubview:matchingDescendant];
+    
+    NSArray* matchingViews = [igor findViewsThatMatchPattern:@"[accessibilityHint='top'] [accessibilityHint='matches']" fromRoot:top];
+    expect(matchingViews).toContain(matchingDescendant);
+    expect(matchingViews).Not.toContain(interveningView);
+}
 
 @end
