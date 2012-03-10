@@ -29,9 +29,11 @@
 -(id) parse:(NSString*)pattern {
     NSString* stripped = [pattern stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     NSScanner* scanner = [NSScanner scannerWithString:stripped];
+    [scanner setCharactersToBeSkipped:nil];
 
     id<Matcher> matcher = [self parseNode:scanner];
     while(![scanner isAtEnd]) {
+        [scanner scanCharactersFromSet:[NSCharacterSet whitespaceCharacterSet] intoString:nil];
         id<Matcher> ancestorMatcher = matcher;
         id<Matcher> descendantMatcher = [self parseNode:scanner];
         matcher = [DescendantCombinatorMatcher forAncestorMatcher:ancestorMatcher descendantMatcher:descendantMatcher];

@@ -30,4 +30,8 @@
     return YES;
 }
 
+-(NSString*) description {
+    return [NSString stringWithFormat:@"[CompoundMatcher:%@]", simpleMatchers];
+}
+
 @end

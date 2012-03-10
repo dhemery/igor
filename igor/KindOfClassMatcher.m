@@ -27,4 +27,7 @@
     return [view isKindOfClass:self.matchClass];
 }
 
+-(NSString*) description {
+    return [NSString stringWithFormat:@"[KindOfClassMatcher:[matchClass:%@]]", matchClass];
+}
 @end

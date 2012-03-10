@@ -12,14 +12,6 @@
 
 @implementation PredicatePattern
 
--(id) parseValue:(NSScanner*)scanner {
-    [scanner scanString:@"'" intoString:nil];
-    NSString* value;
-    [scanner scanCharactersFromSet:[NSCharacterSet letterCharacterSet] intoString:&value];
-    [scanner scanString:@"'" intoString:nil];
-    return value;
-}
-
 -(id) parse:(NSScanner*)scanner {
     NSString* expression = [NSString string];
     if(![scanner scanString:@"[" intoString:nil]) return nil;

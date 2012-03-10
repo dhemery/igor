@@ -47,4 +47,8 @@
     return self;
 }
 
+-(NSString*) description {
+    return [NSString stringWithFormat:@"[DescendantCombinatorMatcher:[descendantMatcher:%@][ancestorMatcher:%@]]", descendantMatcher, ancestorMatcher];
+}
+
 @end

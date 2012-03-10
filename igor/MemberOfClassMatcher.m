@@ -26,4 +26,9 @@
 -(BOOL)matchesView:(UIView *)view {
     return [view isMemberOfClass:self.matchClass];
 }
+
+-(NSString*) description {
+    return [NSString stringWithFormat:@"[MemberOfClassMatcher:[matchClass:%@]]", matchClass];
+}
+
 @end

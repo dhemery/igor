@@ -36,4 +36,8 @@
     }
 }
 
+-(NSString*) description {
+    return [NSString stringWithFormat:@"[PredicateMatcher:[predicate:%@]]", predicate];
+}
+
 @end

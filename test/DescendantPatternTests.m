@@ -51,4 +51,27 @@ Igor* igor;
     expect(matchingViews).Not.toContain(interveningView);
 }
 
+-(void) testFindsAcrossUniversalClassMatcher {
+    UIView* top = [self buttonWithAccessibilityHint:@"top"];
+    UIView* interveningView = [self buttonWithAccessibilityHint:@"does not match"];
+    UIView* matchingDescendant = [self buttonWithAccessibilityHint:@"matches"];
+    [top addSubview:interveningView];
+    [interveningView addSubview:matchingDescendant];
+    
+    NSArray* matchingViews = [igor findViewsThatMatchPattern:@"[accessibilityHint='top'] * [accessibilityHint='matches']" fromRoot:top];
+    expect(matchingViews).toContain(matchingDescendant);
+    expect(matchingViews).Not.toContain(interveningView);
+}
+
+-(void) testRequiresMatchForEachUniversalClassMatcher {
+    UIView* top = [self buttonWithAccessibilityHint:@"top"];
+    UIView* interveningView = [self buttonWithAccessibilityHint:@"does not match"];
+    UIView* matchingDescendant = [self buttonWithAccessibilityHint:@"matches"];
+    [top addSubview:interveningView];
+    [interveningView addSubview:matchingDescendant];
+    
+    NSArray* matchingViews = [igor findViewsThatMatchPattern:@"[accessibilityHint='top'] * * [accessibilityHint='matches']" fromRoot:top];
+    expect(matchingViews.count).toEqual(0);
+}
+
 @end

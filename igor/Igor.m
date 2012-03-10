@@ -24,7 +24,6 @@
     return [matchingViews allObjects];
 }
 
-
 -(NSArray*) selectViewsUsingShelleyWithSelector:(NSString*)pattern {
     return [self selectViewsWithSelector:pattern];
 }
