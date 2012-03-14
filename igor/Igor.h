@@ -2,7 +2,9 @@
 
 @interface Igor : NSObject<SelectorEngine>
 
--(NSArray*) selectViewsUsingShelleyWithSelector:(NSString*)pattern;
 -(NSArray*) findViewsThatMatchPattern:(NSString*)pattern fromRoot:(UIView*)root;
+
+- (NSArray *)selectViewsWithSelector:(NSString *)pattern;
+
 
 @end

@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="tests" type="OCUnitRunConfiguration" factoryName="OCUnit" PROJECT_NAME="igor" TARGET_NAME="igorTests" CONFIG_NAME="Debug" SDK_NAME="iphonesimulator5.0" ARCH_ID="Standard" DEVICE="IPHONE" DEBUGGER="GDB" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+  <configuration default="false" name="tests" type="OCUnitRunConfiguration" factoryName="OCUnit" SCHEME_NAME="tests" PROJECT_NAME="igor" TARGET_NAME="igorTests" CONFIG_NAME="Debug" DESTINATION_ID="iphonesimulator_5.1_1" DEBUGGER="LLDB" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
     <envs />
     <RunnerSettings RunnerId="AppRunner" />
     <ConfigurationWrapper RunnerId="AppRunner" />

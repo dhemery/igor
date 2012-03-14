@@ -12,8 +12,8 @@
 @end
 
 @implementation DescendantPatternTests {
-CGRect frame;
-Igor* igor;
+    CGRect frame;
+    Igor* igor;
 }
 
 -(void) setUp {

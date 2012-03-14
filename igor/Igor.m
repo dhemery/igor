@@ -24,10 +24,6 @@
     return [matchingViews allObjects];
 }
 
--(NSArray*) selectViewsUsingShelleyWithSelector:(NSString*)pattern {
-    return [self selectViewsWithSelector:pattern];
-}
-
 -(NSArray*) selectViewsWithSelector:(NSString*)pattern {
     return [self findViewsThatMatchPattern:pattern
                                   fromRoot:[[UIApplication sharedApplication] keyWindow]];
