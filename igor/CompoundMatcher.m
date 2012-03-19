@@ -12,9 +12,9 @@
 
 @synthesize simpleMatchers;
 
--(CompoundMatcher*) init {
+-(CompoundMatcher*) initForClassMatcher:(id)classMatcher predicateMatcher:(id)predicateMatcher {
     if(self = [super init]) {
-        simpleMatchers = [NSMutableArray new];
+        simpleMatchers = [NSArray arrayWithObjects:classMatcher, predicateMatcher, nil];
     }
     return self;
 }
@@ -32,6 +32,11 @@
 
 -(NSString*) description {
     return [NSString stringWithFormat:@"[CompoundMatcher:%@]", simpleMatchers];
+}
+
+
++(id) forClassMatcher:(id)classMatcher predicateMatcher:(id)predicateMatcher {
+    return [[self alloc] initForClassMatcher:classMatcher predicateMatcher:predicateMatcher];
 }
 
 @end
