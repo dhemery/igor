@@ -35,10 +35,6 @@
     return [NSString stringWithFormat:@"[DescendantCombinatorMatcher:[descendantMatcher:%@][ancestorMatcher:%@]]", descendantMatcher, ancestorMatcher];
 }
 
-+(DescendantCombinatorMatcher*) forAncestorMatcher:(id<Matcher>)ancestorMatcher descendantMatcher:(id<Matcher>)descendantMatcher {
-    return [[self alloc] initWithAncestorMatcher:ancestorMatcher descendantMatcher:descendantMatcher];
-}
-
 -(DescendantCombinatorMatcher*) initWithAncestorMatcher:(id<Matcher>)anAncestorMatcher descendantMatcher:(id<Matcher>)aDescendantMatcher {
     if(self = [super init]) {
         self.ancestorMatcher = anAncestorMatcher;
@@ -49,6 +45,10 @@
 
 -(BOOL) matchesView:(UIView*)view {
     return [descendantMatcher matchesView:view] && [self ancestorMatcherMatchesAnAncestorOfView:view];
+}
+
++(DescendantCombinatorMatcher*) withAncestorMatcher:(id<Matcher>)ancestorMatcher descendantMatcher:(id<Matcher>)descendantMatcher {
+    return [[self alloc] initWithAncestorMatcher:ancestorMatcher descendantMatcher:descendantMatcher];
 }
 
 @end

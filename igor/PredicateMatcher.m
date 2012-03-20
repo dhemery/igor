@@ -16,10 +16,6 @@
     return [NSString stringWithFormat:@"[PredicateMatcher:[predicate:%@]]", predicate];
 }
 
-+(PredicateMatcher*) forPredicateExpression:(NSString*)expression {
-    return [[PredicateMatcher alloc] initWithPredicateExpression:expression];
-}
-
 -(PredicateMatcher*) initWithPredicateExpression:(NSString*)expression {
     if(self = [super init]) {        
         predicate = [NSPredicate predicateWithFormat:expression];
@@ -38,6 +34,10 @@
 
 -(NSString*) matchExpression {
     return [predicate predicateFormat];
+}
+
++(PredicateMatcher*) withPredicateExpression:(NSString*)expression {
+    return [[PredicateMatcher alloc] initWithPredicateExpression:expression];
 }
 
 @end

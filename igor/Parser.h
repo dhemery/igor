@@ -6,10 +6,10 @@
 //  Copyright (c) 2011 Dale H. Emery. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "Matcher.h"
 
 @protocol Parser <NSObject>
 
--(id) parse:(NSScanner*)scanner;
+-(id<Matcher>) parse:(NSScanner*)scanner;
 
 @end

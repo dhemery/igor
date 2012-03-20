@@ -11,10 +11,6 @@
 
 @interface IgorParser : NSObject
 
-@property(retain,readonly) Igor* igor;
-
-+(IgorParser*) forIgor:(Igor*) igor;
-
 -(id<Matcher>) parse:(NSString*) pattern;
 
 @end

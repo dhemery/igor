@@ -7,10 +7,10 @@
 //
 
 #import "ClassMatcher.h"
-#import "CompoundMatcher.h"
+#import "NodeMatcher.h"
 #import "PredicateMatcher.h"
 
-@implementation CompoundMatcher
+@implementation NodeMatcher
 
 @synthesize simpleMatchers;
 
@@ -18,11 +18,7 @@
     return [NSString stringWithFormat:@"[CompoundMatcher:%@]", simpleMatchers];
 }
 
-+(CompoundMatcher*) forClassMatcher:(id<ClassMatcher>)classMatcher predicateMatcher:(PredicateMatcher*)predicateMatcher {
-    return [[self alloc] initForClassMatcher:classMatcher predicateMatcher:predicateMatcher];
-}
-
--(CompoundMatcher*) initForClassMatcher:(id<ClassMatcher>)classMatcher predicateMatcher:(PredicateMatcher*)predicateMatcher {
+-(NodeMatcher*) initWithClassMatcher:(id<ClassMatcher>)classMatcher predicateMatcher:(PredicateMatcher*)predicateMatcher {
     if(self = [super init]) {
         simpleMatchers = [NSArray arrayWithObjects:classMatcher, predicateMatcher, nil];
     }
@@ -34,6 +30,10 @@
         if(![matcher matchesView:view]) return NO;
     }
     return YES;
+}
+
++(NodeMatcher*) withClassMatcher:(id<ClassMatcher>)classMatcher predicateMatcher:(PredicateMatcher*)predicateMatcher {
+    return [[self alloc] initWithClassMatcher:classMatcher predicateMatcher:predicateMatcher];
 }
 
 @end

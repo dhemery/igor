@@ -8,10 +8,10 @@
 
 #import "Matcher.h"
 
-@interface CompoundMatcher : NSObject<Matcher>
+@interface NodeMatcher : NSObject<Matcher>
 
 @property(retain) NSMutableArray* simpleMatchers;
 
-+(CompoundMatcher*) forClassMatcher:(id<Matcher>)classmatcher predicateMatcher:(id<Matcher>)predicateMatcher;
++(NodeMatcher*) withClassMatcher:(id<Matcher>)classmatcher predicateMatcher:(id<Matcher>)predicateMatcher;
 
 @end

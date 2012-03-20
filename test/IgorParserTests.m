@@ -10,7 +10,7 @@
 #import "ClassMatcher.h"
 #import "MemberOfClassMatcher.h"
 #import "KindOfClassMatcher.h"
-#import "CompoundMatcher.h"
+#import "NodeMatcher.h"
 #import "PredicateMatcher.h"
 #import "DescendantCombinatorMatcher.h"
 
@@ -46,8 +46,8 @@
 -(void) testParsesCompoundMatcherWithOnePredicateMatcher {
     id<Matcher> matcher = [parser parse:@"*[myPropertyName='somevalue']"];
 
-    expect(matcher).toBeInstanceOf([CompoundMatcher class]);
-    CompoundMatcher* compoundMatcher = (CompoundMatcher*)matcher;
+    expect(matcher).toBeInstanceOf([NodeMatcher class]);
+    NodeMatcher* compoundMatcher = (NodeMatcher*)matcher;
 
     NSArray* simpleMatchers = compoundMatcher.simpleMatchers;
     expect([compoundMatcher.simpleMatchers count]).toEqual(2);

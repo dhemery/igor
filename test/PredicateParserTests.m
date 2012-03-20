@@ -27,7 +27,7 @@
 -(void) testParsesAPredicate {
     NSString* propertyEqualsPattern = @"[pearlBailey='opreylady']";
     NSScanner* scanner = [NSScanner scannerWithString:propertyEqualsPattern];
-    PredicateMatcher* matcher = [parser parse:scanner];
+    PredicateMatcher* matcher = (id)[parser parse:scanner];
     expect(matcher).toBeInstanceOf([PredicateMatcher class]);
     expect(matcher.matchExpression).toEqual(@"pearlBailey == \"opreylady\"");
 }

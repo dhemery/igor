@@ -10,7 +10,7 @@
 @implementation Igor
 
 -(NSArray*) findViewsThatMatchPattern:(NSString*)pattern fromRoot:(UIView*)root {
-    id<Matcher> matcher = [[IgorParser forIgor:self] parse:pattern];
+    id<Matcher> matcher = [[IgorParser new] parse:pattern];
     NSMutableSet* matchingViews = [NSMutableSet set];
     [[TreeWalker alloc] findViewsThatMatch:matcher fromRoot:root intoSet:matchingViews];
     return [matchingViews allObjects];

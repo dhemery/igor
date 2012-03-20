@@ -42,4 +42,10 @@
     expect(matchingViews).Not.toContain(leaf);
 }
 
+-(void) testSubtreeMatchesOnlyWithinSubjectSubviews {
+    NSArray* matchingViews = [igor findViewsThatMatchPattern:@"[accessibilityHint='middle']! [accessibilityHint='root'] [accessibilityHint='leaf']" fromRoot:root];
+    expect(matchingViews).Not.toContain(middle);
+    expect(matchingViews.count).toEqual(0);
+}
+
 @end

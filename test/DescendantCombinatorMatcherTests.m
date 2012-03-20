@@ -22,7 +22,7 @@
     [top addSubview:matchingChild];
     [top addSubview:mismatchingChild];
 
-    DescendantCombinatorMatcher* matcher = [DescendantCombinatorMatcher forAncestorMatcher:[IdentityMatcher forView:top]  descendantMatcher:[IdentityMatcher forView:matchingChild]];
+    DescendantCombinatorMatcher* matcher = [DescendantCombinatorMatcher withAncestorMatcher:[IdentityMatcher forView:top]  descendantMatcher:[IdentityMatcher forView:matchingChild]];
 
     expect([matcher matchesView:matchingChild]).toBeTruthy();
     expect([matcher matchesView:mismatchingChild]).toBeFalsy();
@@ -35,7 +35,7 @@
     [top addSubview:interveningView];
     [interveningView addSubview:matchingDescendant];
     
-    DescendantCombinatorMatcher* matcher = [DescendantCombinatorMatcher forAncestorMatcher:[IdentityMatcher forView:top]  descendantMatcher:[IdentityMatcher forView:matchingDescendant]];
+    DescendantCombinatorMatcher* matcher = [DescendantCombinatorMatcher withAncestorMatcher:[IdentityMatcher forView:top]  descendantMatcher:[IdentityMatcher forView:matchingDescendant]];
     
     expect([matcher matchesView:top]).toBeFalsy();
     expect([matcher matchesView:interveningView]).toBeFalsy();
@@ -47,7 +47,7 @@
     UIButton* child = [ViewFactory button];
     [parent addSubview:child];
 
-    DescendantCombinatorMatcher* matcher = [DescendantCombinatorMatcher forAncestorMatcher:[IdentityMatcher forView:child]  descendantMatcher:[IdentityMatcher forView:child]];
+    DescendantCombinatorMatcher* matcher = [DescendantCombinatorMatcher withAncestorMatcher:[IdentityMatcher forView:child]  descendantMatcher:[IdentityMatcher forView:child]];
     
     expect([matcher matchesView:child]).toBeFalsy();
 }
