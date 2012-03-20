@@ -6,37 +6,34 @@
 //  Copyright (c) 2011 Dale H. Emery. All rights reserved.
 //
 
+#import "ClassMatcher.h"
 #import "CompoundMatcher.h"
+#import "PredicateMatcher.h"
 
 @implementation CompoundMatcher
 
 @synthesize simpleMatchers;
 
--(CompoundMatcher*) initForClassMatcher:(id)classMatcher predicateMatcher:(id)predicateMatcher {
+-(NSString*) description {
+    return [NSString stringWithFormat:@"[CompoundMatcher:%@]", simpleMatchers];
+}
+
++(CompoundMatcher*) forClassMatcher:(id<ClassMatcher>)classMatcher predicateMatcher:(PredicateMatcher*)predicateMatcher {
+    return [[self alloc] initForClassMatcher:classMatcher predicateMatcher:predicateMatcher];
+}
+
+-(CompoundMatcher*) initForClassMatcher:(id<ClassMatcher>)classMatcher predicateMatcher:(PredicateMatcher*)predicateMatcher {
     if(self = [super init]) {
         simpleMatchers = [NSArray arrayWithObjects:classMatcher, predicateMatcher, nil];
     }
     return self;
 }
 
--(void) addMatcher:(id<Matcher>)matcher {
-    [self.simpleMatchers addObject:matcher];
-}
-  
 -(BOOL) matchesView:(UIView *)view {
     for(id<Matcher> matcher in self.simpleMatchers) {
         if(![matcher matchesView:view]) return NO;
     }
     return YES;
-}
-
--(NSString*) description {
-    return [NSString stringWithFormat:@"[CompoundMatcher:%@]", simpleMatchers];
-}
-
-
-+(id) forClassMatcher:(id)classMatcher predicateMatcher:(id)predicateMatcher {
-    return [[self alloc] initForClassMatcher:classMatcher predicateMatcher:predicateMatcher];
 }
 
 @end

@@ -11,6 +11,6 @@
 
 @protocol Matcher
 
-- (BOOL)matchesView:(UIView *)view;
+-(BOOL) matchesView:(UIView*)view;
 
 @end

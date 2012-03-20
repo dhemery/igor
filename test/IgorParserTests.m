@@ -26,19 +26,19 @@
 }
 
 -(void) testParsesAsteriskAsKindOfClassMatcherForUIViewClass {
-    id<ClassMatcher> matcher = [parser parse:@"*"];
+    id<ClassMatcher> matcher = (id)[parser parse:@"*"];
     expect(matcher).toBeInstanceOf([KindOfClassMatcher class]);
     expect(matcher.matchClass).toEqual([UIView class]);
 }
 
 -(void) testParsesNameAsMemberOfClassMatcher {
-    id<ClassMatcher> matcher = [parser parse:@"UIButton"];
+    id<ClassMatcher> matcher = (id)[parser parse:@"UIButton"];
     expect(matcher).toBeInstanceOf([MemberOfClassMatcher class]);
     expect(matcher.matchClass).toEqual([UIButton class]);
 }
 
 -(void) testParsesNameAsteriskAsKindOfClassMatcher {
-    id<ClassMatcher> matcher = [parser parse:@"UILabel*"];
+    id<ClassMatcher> matcher = (id)[parser parse:@"UILabel*"];
     expect(matcher).toBeInstanceOf([KindOfClassMatcher class]);
     expect(matcher.matchClass).toEqual([UILabel class]);
 }

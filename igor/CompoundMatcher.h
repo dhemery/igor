@@ -12,6 +12,6 @@
 
 @property(retain) NSMutableArray* simpleMatchers;
 
-+(id) forClassMatcher:(id<Matcher>)classmatcher predicateMatcher:(id<Matcher>)predicateMatcher;
++(CompoundMatcher*) forClassMatcher:(id<Matcher>)classmatcher predicateMatcher:(id<Matcher>)predicateMatcher;
 
 @end

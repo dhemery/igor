@@ -10,6 +10,6 @@
 
 @interface MemberOfClassMatcher : NSObject<ClassMatcher>
 
-+(id) forClass:(Class)targetClass;
++(MemberOfClassMatcher*) forClass:(Class)targetClass;
 
 @end

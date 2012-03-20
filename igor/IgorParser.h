@@ -6,15 +6,15 @@
 //  Copyright (c) 2011 Dale H. Emery. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "Parser.h"
 #import "Igor.h"
+#import "Parser.h"
 
 @interface IgorParser : NSObject
 
 @property(retain,readonly) Igor* igor;
 
--(id) parse:(NSString*) pattern;
 +(IgorParser*) forIgor:(Igor*) igor;
+
+-(id<Matcher>) parse:(NSString*) pattern;
 
 @end

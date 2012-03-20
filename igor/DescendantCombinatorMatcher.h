@@ -13,7 +13,6 @@
 @property(retain) id<Matcher> ancestorMatcher;
 @property(retain) id<Matcher> descendantMatcher;
 
-+(id) forAncestorMatcher:(id<Matcher>) ancestorMatcher descendantMatcher:(id<Matcher>) descendantMatcher;
--(id) initWithAncestorMatcher:(id<Matcher>) ancestorMatcher descendantMatcher:(id<Matcher>) descendantMatcher;
++(DescendantCombinatorMatcher*) forAncestorMatcher:(id<Matcher>)ancestorMatcher descendantMatcher:(id<Matcher>) descendantMatcher;
 
 @end

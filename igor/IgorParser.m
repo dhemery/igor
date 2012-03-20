@@ -18,18 +18,37 @@
 
 @synthesize igor;
 
--(id) initWithIgor:(Igor*)theIgor {
++(IgorParser*) forIgor:(Igor*)igor {
+    return [[IgorParser alloc] initWithIgor:igor];
+}
+
+-(IgorParser*) initWithIgor:(Igor*)theIgor {
     if(self = [super init]) {
         igor = theIgor;
     }
     return self;
 }
 
-+(IgorParser*) forIgor:(Igor*)igor {
-    return [[IgorParser alloc] initWithIgor:igor];
+-(id<Matcher>) parse:(NSString*)pattern {
+    NSScanner *scanner = [self scannerForPattern:pattern];
+    id<Matcher> matcher = [self parseNode:scanner];
+    matcher = [self parseDescendantCombinatorPatternWithAncestor:matcher scanner:scanner];
+    if([scanner scanString:@"!" intoString:nil]) {
+        matcher = [self parseSubjectTestMatcherForSubject:matcher scanner:scanner];
+    }
+    [self throwIfNotAtEndOfScanner:scanner];
+    return matcher;
 }
 
--(id) parseNode:(NSScanner*) scanner {
+-(id<Matcher>) parseDescendantCombinatorPatternWithAncestor:(id<Matcher>)ancestor scanner:(NSScanner *)scanner {
+    while([scanner scanCharactersFromSet:[NSCharacterSet whitespaceCharacterSet] intoString:nil]) {
+        id<Matcher> descendantMatcher = [self parseNode:scanner];
+        ancestor = [DescendantCombinatorMatcher forAncestorMatcher:ancestor descendantMatcher:descendantMatcher];
+    }
+    return ancestor;
+}
+
+-(id<Matcher>) parseNode:(NSScanner*) scanner {
     id classMatcher = [[ClassPattern new] parse:scanner];
     id predicateMatcher = [[PredicatePattern new] parse:scanner];
     if(predicateMatcher) {
@@ -38,31 +57,7 @@
     return classMatcher;
 }
 
-- (void)throwIfNotAtEndOfScanner:(NSScanner *)scanner {
-    if(![scanner isAtEnd]) {
-        NSString* badCharacters;
-        [scanner scanUpToCharactersFromSet:[NSCharacterSet whitespaceCharacterSet] intoString:&badCharacters];
-        NSString* reason = [NSString stringWithFormat:@"Unexpected characters %@", badCharacters];
-        @throw [IgorParserException exceptionWithReason:reason scanner:scanner];
-    }
-}
-
-- (NSScanner *)scannerForPattern:(NSString *)pattern {
-    NSString* stripped = [pattern stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-    NSScanner* scanner = [NSScanner scannerWithString:stripped];
-    [scanner setCharactersToBeSkipped:nil];
-    return scanner;
-}
-
-- (id)parseDescendantCombinatorPatternWithAncestor:(id<Matcher>)ancestor scanner:(NSScanner *)scanner {
-    while([scanner scanCharactersFromSet:[NSCharacterSet whitespaceCharacterSet] intoString:nil]) {
-        id<Matcher> descendantMatcher = [self parseNode:scanner];
-        ancestor = [DescendantCombinatorMatcher forAncestorMatcher:ancestor descendantMatcher:descendantMatcher];
-    }
-    return ancestor;
-}
-
--(id)parseSubjectTestMatcherForSubject:(id)subjectMatcher scanner:(NSScanner*)scanner {
+-(id<Matcher>) parseSubjectTestMatcherForSubject:(id)subjectMatcher scanner:(NSScanner*)scanner {
     id<Matcher> testMatcher = [self parseNode:scanner];
     testMatcher = [self parseDescendantCombinatorPatternWithAncestor:testMatcher scanner:scanner];
     if([scanner scanString:@"!" intoString:nil]) {
@@ -72,15 +67,20 @@
     return [SubjectTestMatcher forSubject:subjectMatcher test:testMatcher];
 }
 
--(id) parse:(NSString*)pattern {
-    NSScanner *scanner = [self scannerForPattern:pattern];
-    id<Matcher> matcher = [self parseNode:scanner];
-    matcher = [self parseDescendantCombinatorPatternWithAncestor:matcher scanner:scanner];
-    if([scanner scanString:@"!" intoString:nil]) {
-        matcher = [self parseSubjectTestMatcherForSubject:matcher scanner:scanner];
+-(NSScanner*) scannerForPattern:(NSString*)pattern {
+    NSString* stripped = [pattern stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    NSScanner* scanner = [NSScanner scannerWithString:stripped];
+    [scanner setCharactersToBeSkipped:nil];
+    return scanner;
+}
+
+-(void) throwIfNotAtEndOfScanner:(NSScanner*)scanner {
+    if(![scanner isAtEnd]) {
+        NSString* badCharacters;
+        [scanner scanUpToCharactersFromSet:[NSCharacterSet whitespaceCharacterSet] intoString:&badCharacters];
+        NSString* reason = [NSString stringWithFormat:@"Unexpected characters %@", badCharacters];
+        @throw [IgorParserException exceptionWithReason:reason scanner:scanner];
     }
-    [self throwIfNotAtEndOfScanner:scanner];
-    return matcher;
 }
 
 @end

@@ -12,7 +12,7 @@
 
 @synthesize ancestorMatcher, descendantMatcher;
 
-- (NSMutableSet*)ancestorsOfView:(UIView *)view {
+-(NSMutableSet*) ancestorsOfView:(UIView *)view {
     NSMutableSet* ancestors = [NSMutableSet set];
     id ancestor = [view superview];
     while(ancestor) {
@@ -22,7 +22,7 @@
     return ancestors;
 }
 
-- (BOOL)ancestorMatcherMatchesAnAncestorOfView:(UIView *)view {
+-(BOOL) ancestorMatcherMatchesAnAncestorOfView:(UIView *)view {
     for(id ancestor in [self ancestorsOfView:view]) {
         if([ancestorMatcher matchesView:ancestor]) {
             return true;
@@ -31,15 +31,15 @@
     return false;
 }
 
-- (BOOL)matchesView:(UIView *)view {
-    return [descendantMatcher matchesView:view] && [self ancestorMatcherMatchesAnAncestorOfView:view];
+-(NSString*) description {
+    return [NSString stringWithFormat:@"[DescendantCombinatorMatcher:[descendantMatcher:%@][ancestorMatcher:%@]]", descendantMatcher, ancestorMatcher];
 }
 
-+(id) forAncestorMatcher:(id<Matcher>) ancestorMatcher descendantMatcher:(id<Matcher>) descendantMatcher {
++(DescendantCombinatorMatcher*) forAncestorMatcher:(id<Matcher>)ancestorMatcher descendantMatcher:(id<Matcher>)descendantMatcher {
     return [[self alloc] initWithAncestorMatcher:ancestorMatcher descendantMatcher:descendantMatcher];
 }
 
--(id) initWithAncestorMatcher:(id<Matcher>) anAncestorMatcher descendantMatcher:(id<Matcher>) aDescendantMatcher {
+-(DescendantCombinatorMatcher*) initWithAncestorMatcher:(id<Matcher>)anAncestorMatcher descendantMatcher:(id<Matcher>)aDescendantMatcher {
     if(self = [super init]) {
         self.ancestorMatcher = anAncestorMatcher;
         self.descendantMatcher = aDescendantMatcher;
@@ -47,8 +47,8 @@
     return self;
 }
 
--(NSString*) description {
-    return [NSString stringWithFormat:@"[DescendantCombinatorMatcher:[descendantMatcher:%@][ancestorMatcher:%@]]", descendantMatcher, ancestorMatcher];
+-(BOOL) matchesView:(UIView*)view {
+    return [descendantMatcher matchesView:view] && [self ancestorMatcherMatchesAnAncestorOfView:view];
 }
 
 @end

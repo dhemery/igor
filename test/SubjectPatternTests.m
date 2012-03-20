@@ -29,12 +29,6 @@
     [middle addSubview:leaf];
 }
 
-- (id) buttonWithAccessibilityHint:(NSString*)hint {
-    UIButton* button = [[UIButton alloc] initWithFrame:frame];
-    button.accessibilityHint = hint;
-    return button;
-}
-
 -(void) testAllowsSubjectMarker {
     NSArray* matchingViews = [igor findViewsThatMatchPattern:@"*! *" fromRoot:root];
     expect(matchingViews).toContain(root);
@@ -47,6 +41,12 @@
     expect(matchingViews).toContain(root);
     expect(matchingViews).Not.toContain(middle);
     expect(matchingViews).Not.toContain(leaf);
+}
+
+- (id) buttonWithAccessibilityHint:(NSString*)hint {
+    UIButton* button = [[UIButton alloc] initWithFrame:frame];
+    button.accessibilityHint = hint;
+    return button;
 }
 
 @end

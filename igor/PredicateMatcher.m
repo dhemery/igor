@@ -12,22 +12,22 @@
     NSPredicate* predicate;
 }
 
-+(id) forPredicateExpression:(NSString*)expression {
+-(NSString*) description {
+    return [NSString stringWithFormat:@"[PredicateMatcher:[predicate:%@]]", predicate];
+}
+
++(PredicateMatcher*) forPredicateExpression:(NSString*)expression {
     return [[PredicateMatcher alloc] initWithPredicateExpression:expression];
 }
 
--(id) initWithPredicateExpression:(NSString*)expression {
+-(PredicateMatcher*) initWithPredicateExpression:(NSString*)expression {
     if(self = [super init]) {        
         predicate = [NSPredicate predicateWithFormat:expression];
     }
     return self;
 }
 
--(NSString*) matchExpression {
-    return [predicate predicateFormat];
-}
-
--(BOOL) matchesView:(UIView *)view {
+-(BOOL) matchesView:(UIView*)view {
     @try {
         return [predicate evaluateWithObject:view];
     }
@@ -36,8 +36,8 @@
     }
 }
 
--(NSString*) description {
-    return [NSString stringWithFormat:@"[PredicateMatcher:[predicate:%@]]", predicate];
+-(NSString*) matchExpression {
+    return [predicate predicateFormat];
 }
 
 @end

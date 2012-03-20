@@ -13,6 +13,5 @@
 @property(readonly,retain) NSString* matchExpression;
 
 +(id) forPredicateExpression:(NSString*)expression;
--(id) initWithPredicateExpression:(NSString*)expression;
 
 @end

@@ -12,22 +12,23 @@
 
 @synthesize matchClass;
 
--(id) initForClass:(Class)targetClass {
+-(NSString*) description {
+    return [NSString stringWithFormat:@"[KindOfClassMatcher:[matchClass:%@]]", matchClass];
+}
+
++(KindOfClassMatcher*) forClass:(Class)targetClass {
+    return [[self alloc] initForClass:targetClass];
+}
+
+-(KindOfClassMatcher*) initForClass:(Class)targetClass {
     if(self = [super init]) {
         matchClass = targetClass;
     }
     return self;
 }
 
-+(id) forClass:(Class)targetClass {
-    return [[self alloc] initForClass:targetClass];
-}
-
--(BOOL) matchesView:(UIView *)view {
+-(BOOL) matchesView:(UIView*)view {
     return [view isKindOfClass:self.matchClass];
 }
 
--(NSString*) description {
-    return [NSString stringWithFormat:@"[KindOfClassMatcher:[matchClass:%@]]", matchClass];
-}
 @end
