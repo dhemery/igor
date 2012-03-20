@@ -65,6 +65,8 @@
 		2D99DB351517E9C900244226 /* SubjectPatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D99DB321517E94B00244226 /* SubjectPatternTests.m */; };
 		2D99DB381518273100244226 /* SubjectTestMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D99DB361518273100244226 /* SubjectTestMatcher.h */; };
 		2D99DB391518273100244226 /* SubjectTestMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D99DB371518273100244226 /* SubjectTestMatcher.m */; };
+		2D9CC80B15185B6500B51A8D /* TreeWalker.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D9CC80915185B6500B51A8D /* TreeWalker.h */; };
+		2D9CC80C15185B6500B51A8D /* TreeWalker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D9CC80A15185B6500B51A8D /* TreeWalker.m */; };
 		2DCF9764147ED3FD003B0F38 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD439 /* UIKit.framework */; };
 		2DCF9765147ED3FD003B0F38 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD425 /* Foundation.framework */; };
 		2DCF9767147ED3FD003B0F38 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCF9766147ED3FD003B0F38 /* CoreGraphics.framework */; };
@@ -166,6 +168,8 @@
 		2D99DB321517E94B00244226 /* SubjectPatternTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectPatternTests.m; sourceTree = "<group>"; };
 		2D99DB361518273100244226 /* SubjectTestMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubjectTestMatcher.h; sourceTree = "<group>"; };
 		2D99DB371518273100244226 /* SubjectTestMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectTestMatcher.m; sourceTree = "<group>"; };
+		2D9CC80915185B6500B51A8D /* TreeWalker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeWalker.h; sourceTree = "<group>"; };
+		2D9CC80A15185B6500B51A8D /* TreeWalker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreeWalker.m; sourceTree = "<group>"; };
 		2DCF9762147ED3FD003B0F38 /* vigor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vigor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DCF9766147ED3FD003B0F38 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2DCF976A147ED3FD003B0F38 /* vigor-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "vigor-Info.plist"; sourceTree = "<group>"; };
@@ -306,6 +310,8 @@
 				2D695C89147CD1BA00AF4115 /* ClassMatcher.h */,
 				2D695C8C147CD1BA00AF4115 /* CompoundMatcher.h */,
 				2D695C8D147CD1BA00AF4115 /* CompoundMatcher.m */,
+				2D3E1F441509C64C00D62300 /* DescendantCombinatorMatcher.h */,
+				2D3E1F451509C64C00D62300 /* DescendantCombinatorMatcher.m */,
 				2D695C96147CD1BA00AF4115 /* KindOfClassMatcher.h */,
 				2D695C97147CD1BA00AF4115 /* KindOfClassMatcher.m */,
 				2D695C98147CD1BA00AF4115 /* Matcher.h */,
@@ -313,10 +319,10 @@
 				2D695C9A147CD1BA00AF4115 /* MemberOfClassMatcher.m */,
 				2D496EA31486A513007E1FDE /* PredicateMatcher.h */,
 				2D496EA41486A513007E1FDE /* PredicateMatcher.m */,
-				2D3E1F441509C64C00D62300 /* DescendantCombinatorMatcher.h */,
-				2D3E1F451509C64C00D62300 /* DescendantCombinatorMatcher.m */,
 				2D99DB361518273100244226 /* SubjectTestMatcher.h */,
 				2D99DB371518273100244226 /* SubjectTestMatcher.m */,
+				2D9CC80915185B6500B51A8D /* TreeWalker.h */,
+				2D9CC80A15185B6500B51A8D /* TreeWalker.m */,
 			);
 			name = matchers;
 			sourceTree = "<group>";
@@ -512,6 +518,7 @@
 				2D496EA51486A513007E1FDE /* PredicateMatcher.h in Headers */,
 				2D3E1F461509C64C00D62300 /* DescendantCombinatorMatcher.h in Headers */,
 				2D99DB381518273100244226 /* SubjectTestMatcher.h in Headers */,
+				2D9CC80B15185B6500B51A8D /* TreeWalker.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -674,6 +681,7 @@
 				2D496EA61486A513007E1FDE /* PredicateMatcher.m in Sources */,
 				2D3E1F471509C64C00D62300 /* DescendantCombinatorMatcher.m in Sources */,
 				2D99DB391518273100244226 /* SubjectTestMatcher.m in Sources */,
+				2D9CC80C15185B6500B51A8D /* TreeWalker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

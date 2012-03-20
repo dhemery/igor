@@ -69,7 +69,7 @@
         testMatcher = [self parseSubjectTestMatcherForSubject:testMatcher scanner:scanner];
     }
     [self throwIfNotAtEndOfScanner:scanner];
-    return [SubjectTestMatcher forSubject:subjectMatcher test:testMatcher igor:igor];
+    return [SubjectTestMatcher forSubject:subjectMatcher test:testMatcher];
 }
 
 -(id) parse:(NSString*)pattern {

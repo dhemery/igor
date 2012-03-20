@@ -7,14 +7,15 @@
 //
 
 #import "SubjectTestMatcher.h"
+#import "TreeWalker.h"
 
 @implementation SubjectTestMatcher
-    @synthesize subject, test, igor;
+    @synthesize subject, test;
 
 - (BOOL)theTestMatcherMatchesASubviewOf:(UIView*)view {
     for(id subview in [view subviews]) {
         NSMutableSet* matchingDescendants = [NSMutableSet set];
-        [igor findViewsThatMatch:test fromRoot:subview intoSet:matchingDescendants];
+        [[TreeWalker alloc] findViewsThatMatch:test fromRoot:subview intoSet:matchingDescendants];
         if([matchingDescendants count] > 0) {
             return YES;
         }
@@ -26,17 +27,16 @@
     return [subject matchesView:view] && [self theTestMatcherMatchesASubviewOf:view];
 }
 
--(id) initForSubject:(id<Matcher>)subjectMatcher test:(id<Matcher>)testMatcher igor:(Igor*)theIgor {
+-(id) initForSubject:(id<Matcher>)subjectMatcher test:(id<Matcher>)testMatcher {
     if(self = [super init]) {
         subject = subjectMatcher;
         test = testMatcher;
-        igor = theIgor;
     }
     return self;
 }
 
-+(id) forSubject:(id<Matcher>)subjectMatcher test:(id<Matcher>)testMatcher igor:(Igor*)igor {
-    return [[SubjectTestMatcher alloc] initForSubject:subjectMatcher test:testMatcher igor:igor];
++(id) forSubject:(id<Matcher>)subjectMatcher test:(id<Matcher>)testMatcher {
+    return [[SubjectTestMatcher alloc] initForSubject:subjectMatcher test:testMatcher];
 }
 
 @end
