@@ -12,13 +12,26 @@
 #import "ClassPattern.h"
 #import "PredicatePattern.h"
 #import "DescendantCombinatorMatcher.h"
+#import "SubjectTestMatcher.h"
 
 @implementation IgorParser
+
+@synthesize igor;
+
+-(id) initWithIgor:(Igor*)theIgor {
+    if(self = [super init]) {
+        igor = theIgor;
+    }
+    return self;
+}
+
++(IgorParser*) forIgor:(Igor*)igor {
+    return [[IgorParser alloc] initWithIgor:igor];
+}
 
 -(id) parseNode:(NSScanner*) scanner {
     id classMatcher = [[ClassPattern new] parse:scanner];
     id predicateMatcher = [[PredicatePattern new] parse:scanner];
-    [scanner scanString:@"!" intoString:nil];
     if(predicateMatcher) {
         return [CompoundMatcher forClassMatcher:classMatcher predicateMatcher:predicateMatcher];
     }
@@ -41,13 +54,30 @@
     return scanner;
 }
 
--(id) parse:(NSString*)pattern {
-    NSScanner *scanner = [self scannerForPattern:pattern];
-
-    id<Matcher> matcher = [self parseNode:scanner];
+- (id)parseDescendantCombinatorPatternWithAncestor:(id<Matcher>)ancestor scanner:(NSScanner *)scanner {
     while([scanner scanCharactersFromSet:[NSCharacterSet whitespaceCharacterSet] intoString:nil]) {
         id<Matcher> descendantMatcher = [self parseNode:scanner];
-        matcher = [DescendantCombinatorMatcher forAncestorMatcher:matcher descendantMatcher:descendantMatcher];
+        ancestor = [DescendantCombinatorMatcher forAncestorMatcher:ancestor descendantMatcher:descendantMatcher];
+    }
+    return ancestor;
+}
+
+-(id)parseSubjectTestMatcherForSubject:(id)subjectMatcher scanner:(NSScanner*)scanner {
+    id<Matcher> testMatcher = [self parseNode:scanner];
+    testMatcher = [self parseDescendantCombinatorPatternWithAncestor:testMatcher scanner:scanner];
+    if([scanner scanString:@"!" intoString:nil]) {
+        testMatcher = [self parseSubjectTestMatcherForSubject:testMatcher scanner:scanner];
+    }
+    [self throwIfNotAtEndOfScanner:scanner];
+    return [SubjectTestMatcher forSubject:subjectMatcher test:testMatcher igor:igor];
+}
+
+-(id) parse:(NSString*)pattern {
+    NSScanner *scanner = [self scannerForPattern:pattern];
+    id<Matcher> matcher = [self parseNode:scanner];
+    matcher = [self parseDescendantCombinatorPatternWithAncestor:matcher scanner:scanner];
+    if([scanner scanString:@"!" intoString:nil]) {
+        matcher = [self parseSubjectTestMatcherForSubject:matcher scanner:scanner];
     }
     [self throwIfNotAtEndOfScanner:scanner];
     return matcher;

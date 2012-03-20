@@ -14,11 +14,19 @@
 @implementation SubjectPatternTests {
     CGRect frame;
     Igor* igor;
+    UIView* root;
+    UIView* middle;
+    UIView* leaf;
 }
 
 -(void) setUp {
     frame = CGRectMake(0, 0, 100, 100);
     igor = [Igor new];
+    root = [self buttonWithAccessibilityHint:@"root"];
+    middle = [self buttonWithAccessibilityHint:@"middle"];
+    leaf = [self buttonWithAccessibilityHint:@"leaf"];
+    [root addSubview:middle];
+    [middle addSubview:leaf];
 }
 
 - (id) buttonWithAccessibilityHint:(NSString*)hint {
@@ -28,17 +36,17 @@
 }
 
 -(void) testAllowsSubjectMarker {
-    UIView* top = [self buttonWithAccessibilityHint:@"top"];
-    UIView* viewA = [self buttonWithAccessibilityHint:@"A"];
-    UIView* viewB = [self buttonWithAccessibilityHint:@"B"];
+    NSArray* matchingViews = [igor findViewsThatMatchPattern:@"*! *" fromRoot:root];
+    expect(matchingViews).toContain(root);
+    expect(matchingViews).toContain(middle);
+    expect(matchingViews).Not.toContain(leaf);
+}
 
-    [top addSubview:viewA];
-    [viewA addSubview:viewB];
-
-    NSArray* matchingViews = [igor findViewsThatMatchPattern:@"*!" fromRoot:top];
-    expect(matchingViews).toContain(top);
-    expect(matchingViews).toContain(viewA);
-    expect(matchingViews).toContain(viewB);
+-(void) testMatchesMarkedSubject {
+    NSArray* matchingViews = [igor findViewsThatMatchPattern:@"*! [accessibilityHint='middle']" fromRoot:root];
+    expect(matchingViews).toContain(root);
+    expect(matchingViews).Not.toContain(middle);
+    expect(matchingViews).Not.toContain(leaf);
 }
 
 @end
