@@ -7,12 +7,12 @@
 //
 
 #import "Igor.h"
+#import "ViewFactory.h"
 
 @interface SubjectPatternTests : SenTestCase
 @end
 
 @implementation SubjectPatternTests {
-    CGRect frame;
     Igor* igor;
     UIView* root;
     UIView* middle;
@@ -20,33 +20,26 @@
 }
 
 -(void) setUp {
-    frame = CGRectMake(0, 0, 100, 100);
     igor = [Igor new];
-    root = [self buttonWithAccessibilityHint:@"root"];
-    middle = [self buttonWithAccessibilityHint:@"middle"];
-    leaf = [self buttonWithAccessibilityHint:@"leaf"];
+    root = [ViewFactory buttonWithAccessibilityHint:@"root"];
+    middle = [ViewFactory buttonWithAccessibilityHint:@"middle"];
+    leaf = [ViewFactory buttonWithAccessibilityHint:@"leaf"];
     [root addSubview:middle];
     [middle addSubview:leaf];
 }
 
--(void) testAllowsSubjectMarker {
-    NSArray* matchingViews = [igor findViewsThatMatchPattern:@"*! *" fromRoot:root];
-    expect(matchingViews).toContain(root);
-    expect(matchingViews).toContain(middle);
-    expect(matchingViews).Not.toContain(leaf);
-}
-
--(void) testMatchesMarkedSubject {
+-(void) testMatchesIfTheViewMatchesTheSubjectPatternAndHasASubviewThatMatchesTheSubtreePattern {
     NSArray* matchingViews = [igor findViewsThatMatchPattern:@"*! [accessibilityHint='middle']" fromRoot:root];
     expect(matchingViews).toContain(root);
     expect(matchingViews).Not.toContain(middle);
     expect(matchingViews).Not.toContain(leaf);
 }
 
-- (id) buttonWithAccessibilityHint:(NSString*)hint {
-    UIButton* button = [[UIButton alloc] initWithFrame:frame];
-    button.accessibilityHint = hint;
-    return button;
+-(void) testMatchesEachViewThatMatchesTheSubjectPatternAndHasASubviewThatMatchesTheSubtreePattern {
+    NSArray* matchingViews = [igor findViewsThatMatchPattern:@"*! [accessibilityHint='leaf']" fromRoot:root];
+    expect(matchingViews).toContain(root);
+    expect(matchingViews).toContain(middle);
+    expect(matchingViews).Not.toContain(leaf);
 }
 
 @end

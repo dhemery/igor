@@ -26,10 +26,10 @@
 }
 
 -(BOOL) matchesView:(UIView*)view {
-    return [subject matchesView:view] && [self theTestMatcherMatchesASubviewOf:view];
+    return [subject matchesView:view] && [self testMatcherMatchesASubviewOf:view];
 }
 
--(BOOL) theTestMatcherMatchesASubviewOf:(UIView*)view {
+-(BOOL) testMatcherMatchesASubviewOf:(UIView*)view {
     for(id subview in [view subviews]) {
         NSMutableSet* matchingDescendants = [NSMutableSet set];
         [[TreeWalker alloc] findViewsThatMatch:test fromRoot:subview intoSet:matchingDescendants];

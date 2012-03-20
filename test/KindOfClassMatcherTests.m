@@ -7,6 +7,7 @@
 //
 
 #import "KindOfClassMatcher.h"
+#import "ViewFactory.h"
 
 @interface KindOfClassMatcherTests : SenTestCase
 @end
@@ -21,19 +22,19 @@
 
 -(void) testMatchesAViewOfTheTargetClass {
     id kindOfUIButtonClassMatcher = [KindOfClassMatcher forClass:[UIButton class]];
-    UIButton* button = [[UIButton alloc] initWithFrame:frame];
+    UIButton* button = [ViewFactory button];
     expect([kindOfUIButtonClassMatcher matchesView:button]).toBeTruthy();
 }
 
 - (void)testMismatchesAViewOfANonTargetClass {
     id kindOfUIButtonClassMatcher = [KindOfClassMatcher forClass:[UIButton class]];
-    UIView* view = [[UIView alloc] initWithFrame:frame];
+    UIView* view = [ViewFactory view];
     expect([kindOfUIButtonClassMatcher matchesView:view]).toBeFalsy();
 }
 
 - (void)testMatchesAViewOfAClassThatInheritsFromTheTargetClass {
     id kindOfUIViewClassMatcher = [KindOfClassMatcher forClass:[UIView class]];
-    UIButton* button = [[UIButton alloc] initWithFrame:frame];
+    UIButton* button = [ViewFactory button];
     expect([kindOfUIViewClassMatcher matchesView:button]).toBeTruthy();
 }
 

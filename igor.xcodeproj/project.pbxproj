@@ -42,6 +42,10 @@
 		2D3E1F4E1509DE8700D62300 /* libFrank.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D3E1F371509B6C000D62300 /* libFrank.a */; };
 		2D3E1F4F1509DE8700D62300 /* libShelley.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D3E1F381509B6C000D62300 /* libShelley.a */; };
 		2D3E8E10150C40D7001D408F /* SubtreePatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3E8E0E150C40D7001D408F /* SubtreePatternTests.m */; };
+		2D436E211518F9C300071950 /* IdentityMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D436E1F1518F9C300071950 /* IdentityMatcher.h */; };
+		2D436E221518F9C300071950 /* IdentityMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D436E201518F9C300071950 /* IdentityMatcher.m */; };
+		2D436E271518FF6D00071950 /* ViewFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D436E251518FF6D00071950 /* ViewFactory.h */; };
+		2D436E281518FF6D00071950 /* ViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D436E261518FF6D00071950 /* ViewFactory.m */; };
 		2D496EA51486A513007E1FDE /* PredicateMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D496EA31486A513007E1FDE /* PredicateMatcher.h */; };
 		2D496EA61486A513007E1FDE /* PredicateMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D496EA41486A513007E1FDE /* PredicateMatcher.m */; };
 		2D695CAB147CD1BA00AF4115 /* ClassPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C8B147CD1BA00AF4115 /* ClassPattern.m */; };
@@ -133,6 +137,10 @@
 		2D3E1F451509C64C00D62300 /* DescendantCombinatorMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescendantCombinatorMatcher.m; sourceTree = "<group>"; };
 		2D3E1F491509D29800D62300 /* DescendantCombinatorMatcherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescendantCombinatorMatcherTests.m; sourceTree = "<group>"; };
 		2D3E8E0E150C40D7001D408F /* SubtreePatternTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubtreePatternTests.m; sourceTree = "<group>"; };
+		2D436E1F1518F9C300071950 /* IdentityMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdentityMatcher.h; sourceTree = "<group>"; };
+		2D436E201518F9C300071950 /* IdentityMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdentityMatcher.m; sourceTree = "<group>"; };
+		2D436E251518FF6D00071950 /* ViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewFactory.h; sourceTree = "<group>"; };
+		2D436E261518FF6D00071950 /* ViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewFactory.m; sourceTree = "<group>"; };
 		2D496EA31486A513007E1FDE /* PredicateMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PredicateMatcher.h; sourceTree = "<group>"; };
 		2D496EA41486A513007E1FDE /* PredicateMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredicateMatcher.m; sourceTree = "<group>"; };
 		2D695C89147CD1BA00AF4115 /* ClassMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassMatcher.h; sourceTree = "<group>"; };
@@ -274,6 +282,17 @@
 			path = Headers;
 			sourceTree = "<group>";
 		};
+		2D436E241518FF2B00071950 /* fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				2D436E1F1518F9C300071950 /* IdentityMatcher.h */,
+				2D436E201518F9C300071950 /* IdentityMatcher.m */,
+				2D436E251518FF6D00071950 /* ViewFactory.h */,
+				2D436E261518FF6D00071950 /* ViewFactory.m */,
+			);
+			name = fixtures;
+			sourceTree = "<group>";
+		};
 		2D695C88147CD1BA00AF4115 /* igor */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,6 +307,7 @@
 		2D695CC9147CD1D200AF4115 /* test */ = {
 			isa = PBXGroup;
 			children = (
+				2D436E241518FF2B00071950 /* fixtures */,
 				2D695CE8147CD3CA00AF4115 /* acceptance */,
 				2D695CE7147CD38000AF4115 /* matchers */,
 				2D695CE6147CD35100AF4115 /* parser */,
@@ -506,6 +526,8 @@
 				2D12D9BD14819EFC00FD7BDD /* EXPUnsupportedObject.h in Headers */,
 				2D12D9BE14819EFC00FD7BDD /* NSObject+Expecta.h in Headers */,
 				2D12D9BF14819EFC00FD7BDD /* NSValue+Expecta.h in Headers */,
+				2D436E211518F9C300071950 /* IdentityMatcher.h in Headers */,
+				2D436E271518FF6D00071950 /* ViewFactory.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -651,6 +673,8 @@
 				2D3E1F4B1509D29800D62300 /* DescendantCombinatorMatcherTests.m in Sources */,
 				2D3E8E10150C40D7001D408F /* SubtreePatternTests.m in Sources */,
 				2D99DB351517E9C900244226 /* SubjectPatternTests.m in Sources */,
+				2D436E221518F9C300071950 /* IdentityMatcher.m in Sources */,
+				2D436E281518FF6D00071950 /* ViewFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,30 +7,23 @@
 //
 
 #import "Igor.h"
+#import "ViewFactory.h"
 
 @interface DescendantPatternTests : SenTestCase
 @end
 
 @implementation DescendantPatternTests {
-    CGRect frame;
     Igor* igor;
 }
 
 -(void) setUp {
-    frame = CGRectMake(0, 0, 100, 100);
     igor = [Igor new];
 }
 
-- (id) buttonWithAccessibilityHint:(NSString*)hint {
-    UIButton* button = [[UIButton alloc] initWithFrame:frame];
-    button.accessibilityHint = hint;
-    return button;
-}
-
 -(void) testFindsMatchingChildren {
-    UIView* top = [self buttonWithAccessibilityHint:@"top"];
-    UIView* matchingSubview = [self buttonWithAccessibilityHint:@"matches"];
-    UIView* nonMatchingSubview = [self buttonWithAccessibilityHint:@"does not match"];
+    UIView* top = [ViewFactory buttonWithAccessibilityHint:@"top"];
+    UIView* matchingSubview = [ViewFactory buttonWithAccessibilityHint:@"matches"];
+    UIView* nonMatchingSubview = [ViewFactory buttonWithAccessibilityHint:@"does not match"];
     [top addSubview:matchingSubview];
     [top addSubview:nonMatchingSubview];
     
@@ -40,9 +33,9 @@
 }
 
 -(void) testFindsMatchingDescendants {
-    UIView* top = [self buttonWithAccessibilityHint:@"top"];
-    UIView* interveningView = [self buttonWithAccessibilityHint:@"does not match"];
-    UIView* matchingDescendant = [self buttonWithAccessibilityHint:@"matches"];
+    UIView* top = [ViewFactory buttonWithAccessibilityHint:@"top"];
+    UIView* interveningView = [ViewFactory buttonWithAccessibilityHint:@"does not match"];
+    UIView* matchingDescendant = [ViewFactory buttonWithAccessibilityHint:@"matches"];
     [top addSubview:interveningView];
     [interveningView addSubview:matchingDescendant];
     
@@ -52,9 +45,9 @@
 }
 
 -(void) testFindsAcrossUniversalClassMatcher {
-    UIView* top = [self buttonWithAccessibilityHint:@"top"];
-    UIView* interveningView = [self buttonWithAccessibilityHint:@"does not match"];
-    UIView* matchingDescendant = [self buttonWithAccessibilityHint:@"matches"];
+    UIView* top = [ViewFactory buttonWithAccessibilityHint:@"top"];
+    UIView* interveningView = [ViewFactory buttonWithAccessibilityHint:@"does not match"];
+    UIView* matchingDescendant = [ViewFactory buttonWithAccessibilityHint:@"matches"];
     [top addSubview:interveningView];
     [interveningView addSubview:matchingDescendant];
     
@@ -64,9 +57,9 @@
 }
 
 -(void) testRequiresMatchForEachUniversalClassMatcher {
-    UIView* top = [self buttonWithAccessibilityHint:@"top"];
-    UIView* interveningView = [self buttonWithAccessibilityHint:@"does not match"];
-    UIView* matchingDescendant = [self buttonWithAccessibilityHint:@"matches"];
+    UIView* top = [ViewFactory buttonWithAccessibilityHint:@"top"];
+    UIView* interveningView = [ViewFactory buttonWithAccessibilityHint:@"does not match"];
+    UIView* matchingDescendant = [ViewFactory buttonWithAccessibilityHint:@"matches"];
     [top addSubview:interveningView];
     [interveningView addSubview:matchingDescendant];
     

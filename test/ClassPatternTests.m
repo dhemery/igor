@@ -3,6 +3,7 @@
 //
 
 #import "Igor.h"
+#import "ViewFactory.h"
 
 @interface ClassPatternTests : SenTestCase
 @end
@@ -20,17 +21,17 @@
 - (void) testAnyClassPattern {
     NSString* pattern = @"*";
 
-    UIView *root = [[UIView alloc] initWithFrame:frame];
-    UIView *view1 = [[UIView alloc] initWithFrame: frame];
-    UIView *view11 = [[UIView alloc] initWithFrame:frame];
-    UIView *view12 = [[UIView alloc] initWithFrame:frame];
-    UIView *view2 = [[UIView alloc] initWithFrame: frame];
-    UIView *view21 = [[UIView alloc] initWithFrame:frame];
-    UIView *view211 = [[UIView alloc] initWithFrame:frame];
-    UIView *view212 = [[UIView alloc] initWithFrame:frame];
-    UIView *view213 = [[UIView alloc] initWithFrame:frame];
-    UIView *view22 = [[UIView alloc] initWithFrame:frame];
-    UIView *view23 = [[UIView alloc] initWithFrame:frame];
+    UIView *root = [ViewFactory view];
+    UIView *view1 = [ViewFactory view];
+    UIView *view11 = [ViewFactory view];
+    UIView *view12 = [ViewFactory view];
+    UIView *view2 = [ViewFactory view];
+    UIView *view21 = [ViewFactory view];
+    UIView *view211 = [ViewFactory view];
+    UIView *view212 = [ViewFactory view];
+    UIView *view213 = [ViewFactory view];
+    UIView *view22 = [ViewFactory view];
+    UIView *view23 = [ViewFactory view];
 
     [root addSubview:view1];
         [view1 addSubview:view11];
@@ -61,9 +62,9 @@
 - (void) testMemberOfClassPattern {
     NSString* pattern = @"UIButton";
 
-    UIView* view = [[UIView alloc] initWithFrame:frame];
-    UIView* button = [[UIButton alloc] initWithFrame: frame];
-    UIView* imageView = [[UIImageView alloc] initWithFrame:frame];
+    UIView* view = [ViewFactory view];
+    UIView* button = [ViewFactory button];
+    UIView* imageView = [ViewFactory view];
     UIView* root = view;
     [root addSubview:button];
     [button addSubview:imageView];
@@ -78,10 +79,10 @@
 - (void) testKindOfClassPattern {
     NSString* pattern = @"UIControl*";
 
-    UIView *viewOfBaseClassOfTargetClass = [[UIView alloc] initWithFrame:frame];
-    UIView *viewOfTargetClass = [[UIControl alloc] initWithFrame: frame];
-    UIView *viewOfClassDerivedFromTargetClass = [[UIButton alloc] initWithFrame:frame];
-    UIView *viewOfUnrelatedClass = [[UIWindow alloc] initWithFrame:frame];
+    UIView* viewOfBaseClassOfTargetClass = [ViewFactory view];
+    UIControl* viewOfTargetClass = [ViewFactory control];
+    UIView* viewOfClassDerivedFromTargetClass = [ViewFactory button];
+    UIView* viewOfUnrelatedClass = [ViewFactory window];
     
     UIView* root = viewOfBaseClassOfTargetClass;
     [root addSubview:viewOfTargetClass];

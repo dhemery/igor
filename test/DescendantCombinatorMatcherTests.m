@@ -6,64 +6,50 @@
 //  Copyright (c) 2012 Dale H. Emery. All rights reserved.
 //
 
-#include "PredicateMatcher.h"
+#include "IdentityMatcher.h"
 #include "DescendantCombinatorMatcher.h"
+#include "ViewFactory.h"
 
 @interface DescendantCombinatorMatcherTests : SenTestCase
 @end
 
-@implementation DescendantCombinatorMatcherTests {
-    CGRect frame;
-    id ancestorMatcher;
-    id descendantMatcher;
-    id descendantCombinatorMatcher;
-}
-
--(void) setUp {
-    frame = CGRectMake(0, 0, 100, 100);
-    ancestorMatcher = [PredicateMatcher forPredicateExpression:@"accessibilityHint='ancestor'"];
-    descendantMatcher = [PredicateMatcher forPredicateExpression:@"accessibilityHint='descendant'"];
-    descendantCombinatorMatcher = [DescendantCombinatorMatcher forAncestorMatcher:ancestorMatcher descendantMatcher:descendantMatcher];
-}
-
-- (id) buttonWithAccessibilityHint:(NSString*)hint {
-    UIButton* button = [[UIButton alloc] initWithFrame:frame];
-    button.accessibilityHint = hint;
-    return button;
-}
+@implementation DescendantCombinatorMatcherTests
 
 - (void)testMatchesIfParentAndChildMatch {
-    UIButton* top = [self buttonWithAccessibilityHint:@"ancestor"];
-    UIButton* matchingChild1 = [self buttonWithAccessibilityHint:@"descendant"];
-    UIButton* matchingChild2 = [self buttonWithAccessibilityHint:@"descendant"];
-    UIButton* mismatchingChild = [self buttonWithAccessibilityHint:@"does not match"];
-    [top addSubview:matchingChild1];
-    [top addSubview:matchingChild2];
+    UIButton* top = [ViewFactory button];
+    UIButton* matchingChild = [ViewFactory button];
+    UIButton* mismatchingChild = [ViewFactory button];
+    [top addSubview:matchingChild];
     [top addSubview:mismatchingChild];
-    expect([descendantCombinatorMatcher matchesView:matchingChild1]).toBeTruthy();
-    expect([descendantCombinatorMatcher matchesView:matchingChild2]).toBeTruthy();
-    expect([descendantCombinatorMatcher matchesView:mismatchingChild]).toBeFalsy();
+
+    DescendantCombinatorMatcher* matcher = [DescendantCombinatorMatcher forAncestorMatcher:[IdentityMatcher forView:top]  descendantMatcher:[IdentityMatcher forView:matchingChild]];
+
+    expect([matcher matchesView:matchingChild]).toBeTruthy();
+    expect([matcher matchesView:mismatchingChild]).toBeFalsy();
 }
 
 - (void)testMatchesIfAncestorAndDescendantMatch {
-    UIButton* top = [self buttonWithAccessibilityHint:@"does not match"];
-    UIButton* matchingAncestor = [self buttonWithAccessibilityHint:@"ancestor"];
-    UIButton* interveningAncestor = [self buttonWithAccessibilityHint:@"does not match"];
-    UIButton* matchingDescendant = [self buttonWithAccessibilityHint:@"descendant"];
-    [top addSubview:matchingAncestor];
-    [matchingAncestor addSubview:interveningAncestor];
-    [interveningAncestor addSubview:matchingDescendant];
-    expect([descendantCombinatorMatcher matchesView:top]).toBeFalsy();
-    expect([descendantCombinatorMatcher matchesView:matchingAncestor]).toBeFalsy();
-    expect([descendantCombinatorMatcher matchesView:interveningAncestor]).toBeFalsy();
-    expect([descendantCombinatorMatcher matchesView:matchingDescendant]).toBeTruthy();
+    UIButton* top = [ViewFactory button];
+    UIButton* interveningView = [ViewFactory button];
+    UIButton* matchingDescendant = [ViewFactory button];
+    [top addSubview:interveningView];
+    [interveningView addSubview:matchingDescendant];
+    
+    DescendantCombinatorMatcher* matcher = [DescendantCombinatorMatcher forAncestorMatcher:[IdentityMatcher forView:top]  descendantMatcher:[IdentityMatcher forView:matchingDescendant]];
+    
+    expect([matcher matchesView:top]).toBeFalsy();
+    expect([matcher matchesView:interveningView]).toBeFalsy();
+    expect([matcher matchesView:matchingDescendant]).toBeTruthy();
 }
 
 - (void)testMismatchesIfChildMatchesButParentDoesNot {
-    UIButton* parent = [self buttonWithAccessibilityHint:@"does not match"];
-    UIButton* child = [self buttonWithAccessibilityHint:@"descendant"];
+    UIButton* parent = [ViewFactory button];
+    UIButton* child = [ViewFactory button];
     [parent addSubview:child];
-    expect([descendantCombinatorMatcher matchesView:child]).toBeFalsy();
+
+    DescendantCombinatorMatcher* matcher = [DescendantCombinatorMatcher forAncestorMatcher:[IdentityMatcher forView:child]  descendantMatcher:[IdentityMatcher forView:child]];
+    
+    expect([matcher matchesView:child]).toBeFalsy();
 }
 
 @end

@@ -4,6 +4,7 @@
 
 #import "Igor.h"
 #import <Foundation/NSException.h>
+#import "ViewFactory.h"
 
 @interface PredicatePatternTests : SenTestCase
 @end
@@ -19,8 +20,7 @@
 }
 
 -(void) testPredicatePattern {
-    UIView* view = [[UIButton alloc] initWithFrame:frame];
-    view.accessibilityHint = @"monkeymonkey";
+    UIView* view = [ViewFactory buttonWithAccessibilityHint:@"monkeymonkey"];
     
     NSArray* matchingViews = [igor findViewsThatMatchPattern:@"[accessibilityHint='monkeymonkey']" fromRoot:view];
     expect(matchingViews).toContain(view);
