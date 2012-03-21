@@ -30,14 +30,16 @@
 }
 
 -(BOOL) testMatcherMatchesASubviewOf:(UIView*)view {
-    for(id subview in [view subviews]) {
-        NSMutableSet* matchingDescendants = [NSMutableSet set];
-        [[TreeWalker alloc] findViewsThatMatch:subtreeMatcher fromRoot:subview intoSet:matchingDescendants];
-        if([matchingDescendants count] > 0) {
-            return YES;
+    __block BOOL subtreeHasAMatch = NO;
+    void (^noteMatch)(UIView*view) = ^(UIView*view){
+        if([subtreeMatcher matchesView:view]) {
+            subtreeHasAMatch = YES;
         }
+    };
+    for(id subview in [view subviews]) {
+        [TreeWalker walkTree:subview withVisitor:noteMatch];
     }
-    return NO;
+    return subtreeHasAMatch;
 }
 
 +(SubjectSubtreeMatcher*) withSubjectMatcher:(id<Matcher>)subjectMatcher subtreeMatcher:(id<Matcher>)subtreeMatcher {

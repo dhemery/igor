@@ -12,7 +12,12 @@
 -(NSArray*) findViewsThatMatchPattern:(NSString*)pattern fromRoot:(UIView*)root {
     id<Matcher> matcher = [[IgorParser new] parse:pattern];
     NSMutableSet* matchingViews = [NSMutableSet set];
-    [[TreeWalker alloc] findViewsThatMatch:matcher fromRoot:root intoSet:matchingViews];
+    void (^collectMatches)(UIView*) = ^(UIView* view) {
+        if([matcher matchesView:view]) {
+            [matchingViews addObject:view];
+        }
+    };
+    [TreeWalker walkTree:root withVisitor:collectMatches];
     return [matchingViews allObjects];
 }
 

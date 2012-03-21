@@ -10,6 +10,6 @@
 
 @interface TreeWalker : NSObject
 
--(void) findViewsThatMatch:(id<Matcher>)matcher fromRoot:(UIView *)root intoSet:(NSMutableSet*)matchingViews;
++(void) walkTree:(UIView*)root withVisitor:(void(^)(UIView*))visitor;
 
 @end
