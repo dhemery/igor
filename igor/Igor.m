@@ -1,6 +1,3 @@
-//
-//  Created by Dale Emery on 11/3/11.
-//
 
 #import "Igor.h"
 #import "IgorParser.h"

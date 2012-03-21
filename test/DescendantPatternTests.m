@@ -1,10 +1,3 @@
-//
-//  DescendantPatternTests.m
-//  igor
-//
-//  Created by Dale Emery on 3/8/12.
-//  Copyright (c) 2012 Dale H. Emery. All rights reserved.
-//
 
 #import "Igor.h"
 #import "ViewFactory.h"

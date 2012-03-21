@@ -1,6 +1,3 @@
-//
-//  Created by Dale on 11/4/11.
-//
 
 #import "Igor.h"
 #import <Foundation/NSException.h>

@@ -1,10 +1,3 @@
-//
-//  IdentityMatcher.m
-//  igor
-//
-//  Created by Dale Emery on 3/20/12.
-//  Copyright (c) 2012 Dale H. Emery. All rights reserved.
-//
 
 #import "IdentityMatcher.h"
 #import "Matcher.h"

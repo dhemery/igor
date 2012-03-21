@@ -1,10 +1,3 @@
-//
-//  CompoundSelector.m
-//  igor
-//
-//  Created by Dale Emery on 11/18/11.
-//  Copyright (c) 2011 Dale H. Emery. All rights reserved.
-//
 
 #import "ClassMatcher.h"
 #import "NodeMatcher.h"

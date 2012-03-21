@@ -1,13 +1,6 @@
-//
-//  DescendantCombinatorMatcherTests.m
-//  igor
-//
-//  Created by Dale Emery on 3/8/12.
-//  Copyright (c) 2012 Dale H. Emery. All rights reserved.
-//
 
-#include "IdentityMatcher.h"
 #include "DescendantCombinatorMatcher.h"
+#include "IdentityMatcher.h"
 #include "ViewFactory.h"
 
 @interface DescendantCombinatorMatcherTests : SenTestCase
