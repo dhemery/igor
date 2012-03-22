@@ -5,6 +5,6 @@
 
 @property(retain) NSMutableArray* simpleMatchers;
 
-+(NodeMatcher*) withClassMatcher:(id<Matcher>)classmatcher predicateMatcher:(id<Matcher>)predicateMatcher;
++(NodeMatcher*) withClassMatcher:(id<Matcher>)classMatcher predicateMatcher:(id<Matcher>)predicateMatcher;
 
 @end

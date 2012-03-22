@@ -14,7 +14,8 @@
 }
 
 -(MemberOfClassMatcher*) initForClass:(Class)aClass {
-    if(self = [super init]) {
+    self = [super init];
+    if(self) {
         matchClass = aClass;
     }
     return self;

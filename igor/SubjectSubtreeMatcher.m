@@ -11,7 +11,8 @@
 }
 
 -(SubjectSubtreeMatcher*) initWithSubjectMatcher:(id<Matcher>)theSubjectMatcher subtreeMatcher:(id<Matcher>)theSubtreeMatcher {
-    if(self = [super init]) {
+    self = [super init];
+    if(self) {
         subjectMatcher = theSubjectMatcher;
         subtreeMatcher = theSubtreeMatcher;
     }
@@ -24,8 +25,8 @@
 
 -(BOOL) testMatcherMatchesASubviewOf:(UIView*)view {
     __block BOOL subtreeHasAMatch = NO;
-    void (^noteMatch)(UIView*view) = ^(UIView*view){
-        if([subtreeMatcher matchesView:view]) {
+    void (^noteMatch)(UIView*) = ^(UIView*target){
+        if([subtreeMatcher matchesView:target]) {
             subtreeHasAMatch = YES;
         }
     };

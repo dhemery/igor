@@ -1,7 +1,6 @@
 
 #import "Igor.h"
 #import "IgorParser.h"
-#import "Matcher.h"
 #import "TreeWalker.h"
 
 @implementation Igor

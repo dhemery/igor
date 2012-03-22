@@ -14,7 +14,8 @@
 }
 
 -(KindOfClassMatcher*) initForClass:(Class)targetClass {
-    if(self = [super init]) {
+    self = [super init];
+    if(self) {
         matchClass = targetClass;
     }
     return self;

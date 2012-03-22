@@ -1,6 +1,5 @@
 
 #import "DescendantCombinatorMatcher.h"
-#import "Matcher.h"
 #import "NodePattern.h"
 #import "SubjectPattern.h"
 

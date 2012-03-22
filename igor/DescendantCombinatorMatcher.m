@@ -29,7 +29,8 @@
 }
 
 -(DescendantCombinatorMatcher*) initWithAncestorMatcher:(id<Matcher>)anAncestorMatcher descendantMatcher:(id<Matcher>)aDescendantMatcher {
-    if(self = [super init]) {
+    self = [super init];
+    if(self) {
         self.ancestorMatcher = anAncestorMatcher;
         self.descendantMatcher = aDescendantMatcher;
     }

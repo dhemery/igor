@@ -10,7 +10,8 @@
 }
 
 -(PredicateMatcher*) initWithPredicateExpression:(NSString*)expression {
-    if(self = [super init]) {        
+    self = [super init];
+    if(self) {
         predicate = [NSPredicate predicateWithFormat:expression];
     }
     return self;

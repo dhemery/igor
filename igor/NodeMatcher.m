@@ -12,7 +12,8 @@
 }
 
 -(NodeMatcher*) initWithClassMatcher:(id<ClassMatcher>)classMatcher predicateMatcher:(PredicateMatcher*)predicateMatcher {
-    if(self = [super init]) {
+    self = [super init];
+    if(self) {
         simpleMatchers = [NSArray arrayWithObjects:classMatcher, predicateMatcher, nil];
     }
     return self;

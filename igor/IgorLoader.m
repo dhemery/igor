@@ -1,7 +1,3 @@
-
-#import "Igor.h"
-#import "SelectorEngineRegistry.h"
-
 @interface IgorLoader
 @end
 
