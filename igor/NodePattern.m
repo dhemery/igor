@@ -4,25 +4,15 @@
 #import "PredicatePattern.h"
 #import "PredicateMatcher.h"
 
-@implementation NodePattern {
-    NSScanner *_scanner;
-}
-
-- (NodePattern *)initWithScanner:(NSScanner *)scanner {
-    self = [super init];
-    if (self) {
-        _scanner = scanner;
-    }
-    return self;
-}
+@implementation NodePattern
 
 + (NodePattern *)forScanner:(NSScanner *)scanner {
-    return [[self alloc] initWithScanner:scanner];
+    return (NodePattern *)[[self alloc] initWithScanner:scanner];
 }
 
 - (NodeMatcher *)parse {
-    ClassMatcher *classMatcher = [[ClassPattern new] parse:_scanner];
-    PredicateMatcher *predicateMatcher = [[PredicatePattern new] parse:_scanner];
+    ClassMatcher *classMatcher = [[ClassPattern new] parse:self.scanner];
+    PredicateMatcher *predicateMatcher = [[PredicatePattern new] parse:self.scanner];
     return [NodeMatcher withClassMatcher:classMatcher predicateMatcher:predicateMatcher];
 }
 

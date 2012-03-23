@@ -1,6 +1,8 @@
+#import "Pattern.h"
+
 @class NodeMatcher;
 
-@interface NodePattern : NSObject
+@interface NodePattern : Pattern
 
 + (NodePattern *)forScanner:(NSScanner *)scanner;
 - (NodeMatcher *)parse;

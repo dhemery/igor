@@ -51,7 +51,7 @@
 		2D695CAB147CD1BA00AF4115 /* ClassPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C8B147CD1BA00AF4115 /* ClassPattern.m */; };
 		2D695CAD147CD1BA00AF4115 /* NodeMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C8D147CD1BA00AF4115 /* NodeMatcher.m */; };
 		2D695CB0147CD1BA00AF4115 /* Igor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C90147CD1BA00AF4115 /* Igor.m */; };
-		2D695CB3147CD1BA00AF4115 /* IgorParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C93147CD1BA00AF4115 /* IgorParser.m */; };
+		2D695CB3147CD1BA00AF4115 /* IgorPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C93147CD1BA00AF4115 /* IgorPattern.m */; };
 		2D695CB5147CD1BA00AF4115 /* IgorParserException.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C95147CD1BA00AF4115 /* IgorParserException.m */; };
 		2D695CB7147CD1BA00AF4115 /* KindOfClassMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C97147CD1BA00AF4115 /* KindOfClassMatcher.m */; };
 		2D695CBA147CD1BA00AF4115 /* MemberOfClassMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C9A147CD1BA00AF4115 /* MemberOfClassMatcher.m */; };
@@ -90,6 +90,8 @@
 		2DE232061509EBB700C0D74D /* libigor-0.4.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD41C /* libigor-0.4.0.a */; };
 		E621659DB794A5D612DCD43B /* ClassMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD43A /* ClassMatcher.m */; };
 		E621659DB794A5D612DCD43D /* Matcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD43C /* Matcher.m */; };
+		E621659DB794A5D612DCD43F /* Pattern.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD43E /* Pattern.m */; };
+		E621659DB794A5D612DCD441 /* Pattern.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD440 /* Pattern.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,8 +160,8 @@
 		2D695C8F147CD1BA00AF4115 /* Igor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Igor.h; sourceTree = "<group>"; };
 		2D695C90147CD1BA00AF4115 /* Igor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Igor.m; sourceTree = "<group>"; };
 		2D695C91147CD1BA00AF4115 /* IgorLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IgorLoader.m; sourceTree = "<group>"; };
-		2D695C92147CD1BA00AF4115 /* IgorParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IgorParser.h; sourceTree = "<group>"; };
-		2D695C93147CD1BA00AF4115 /* IgorParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IgorParser.m; sourceTree = "<group>"; };
+		2D695C92147CD1BA00AF4115 /* IgorPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IgorPattern.h; sourceTree = "<group>"; };
+		2D695C93147CD1BA00AF4115 /* IgorPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IgorPattern.m; sourceTree = "<group>"; };
 		2D695C94147CD1BA00AF4115 /* IgorParserException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IgorParserException.h; sourceTree = "<group>"; };
 		2D695C95147CD1BA00AF4115 /* IgorParserException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IgorParserException.m; sourceTree = "<group>"; };
 		2D695C96147CD1BA00AF4115 /* KindOfClassMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KindOfClassMatcher.h; sourceTree = "<group>"; };
@@ -208,6 +210,8 @@
 		E621659DB794A5D612DCD439 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E621659DB794A5D612DCD43A /* ClassMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassMatcher.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD43C /* Matcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Matcher.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD43E /* Pattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pattern.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD440 /* Pattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pattern.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -363,10 +367,12 @@
 		2D695CE2147CD27100AF4115 /* parser */ = {
 			isa = PBXGroup;
 			children = (
+				E621659DB794A5D612DCD43E /* Pattern.m */,
+				E621659DB794A5D612DCD440 /* Pattern.h */,
 				2D695C8A147CD1BA00AF4115 /* ClassPattern.h */,
 				2D695C8B147CD1BA00AF4115 /* ClassPattern.m */,
-				2D695C92147CD1BA00AF4115 /* IgorParser.h */,
-				2D695C93147CD1BA00AF4115 /* IgorParser.m */,
+				2D695C92147CD1BA00AF4115 /* IgorPattern.h */,
+				2D695C93147CD1BA00AF4115 /* IgorPattern.m */,
 				2D695C94147CD1BA00AF4115 /* IgorParserException.h */,
 				2D695C95147CD1BA00AF4115 /* IgorParserException.m */,
 				2DCE893915193F6100B975EE /* NodePattern.h */,
@@ -559,6 +565,7 @@
 				2D9CC80B15185B6500B51A8D /* TreeWalker.h in Headers */,
 				2DCE893615193E8900B975EE /* SubjectPattern.h in Headers */,
 				2DCE893B15193F6100B975EE /* NodePattern.h in Headers */,
+				E621659DB794A5D612DCD441 /* Pattern.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -714,7 +721,7 @@
 				2D695CAB147CD1BA00AF4115 /* ClassPattern.m in Sources */,
 				2D695CAD147CD1BA00AF4115 /* NodeMatcher.m in Sources */,
 				2D695CB0147CD1BA00AF4115 /* Igor.m in Sources */,
-				2D695CB3147CD1BA00AF4115 /* IgorParser.m in Sources */,
+				2D695CB3147CD1BA00AF4115 /* IgorPattern.m in Sources */,
 				2D695CB5147CD1BA00AF4115 /* IgorParserException.m in Sources */,
 				2D695CB7147CD1BA00AF4115 /* KindOfClassMatcher.m in Sources */,
 				2D695CBA147CD1BA00AF4115 /* MemberOfClassMatcher.m in Sources */,
@@ -728,6 +735,7 @@
 				2DCE893C15193F6100B975EE /* NodePattern.m in Sources */,
 				E621659DB794A5D612DCD43B /* ClassMatcher.m in Sources */,
 				E621659DB794A5D612DCD43D /* Matcher.m in Sources */,
+				E621659DB794A5D612DCD43F /* Pattern.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
