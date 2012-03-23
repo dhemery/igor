@@ -1,6 +1,5 @@
 #import "Pattern.h"
 
-@class Matcher;
 @protocol RelationshipMatcher;
 
 @interface SubjectPattern : Pattern

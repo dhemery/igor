@@ -1,7 +1,6 @@
 
 #import "Pattern.h"
 
-@class Matcher;
 @protocol RelationshipMatcher;
 
 @interface IgorPattern : Pattern

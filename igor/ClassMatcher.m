@@ -12,4 +12,8 @@
     return self;
 }
 
+-(BOOL)matchesView:(UIView *)view {
+    return NO;
+}
+
 @end

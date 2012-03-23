@@ -1,4 +1,4 @@
-@interface Matcher : NSObject
+@protocol Matcher <NSObject>
 
 - (BOOL)matchesView:(UIView *)view;
 
