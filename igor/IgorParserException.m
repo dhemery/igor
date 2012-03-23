@@ -3,7 +3,10 @@
 @implementation IgorParserException
 
 + (NSException *)exceptionWithReason:(NSString *)reason scanner:(NSScanner *)scanner {
-    NSString *description = [NSString stringWithFormat:@"%@ at position %u", reason, [scanner scanLocation]];
+    NSString *remainingCharacters;
+    [scanner scanCharactersFromSet:[NSCharacterSet newlineCharacterSet] intoString:&remainingCharacters];
+
+    NSString *description = [NSString stringWithFormat:@"%@ at position %u starting with %@", reason, [scanner scanLocation], remainingCharacters];
     return [NSException exceptionWithName:@"IgorParserException" reason:description userInfo:nil];
 }
 

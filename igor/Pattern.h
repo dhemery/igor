@@ -1,8 +1,9 @@
+@class PatternScanner;
 
 @interface Pattern : NSObject
 
-@property(retain, readonly) NSScanner *scanner;
+@property(retain, readonly) PatternScanner *scanner;
 
-- (Pattern *)initWithScanner:(NSScanner *)scanner;
+- (Pattern *)initWithScanner:(PatternScanner *)scanner;
 
 @end

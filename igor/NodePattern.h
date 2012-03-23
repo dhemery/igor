@@ -4,7 +4,7 @@
 
 @interface NodePattern : Pattern
 
-+ (NodePattern *)forScanner:(NSScanner *)scanner;
++ (NodePattern *)forScanner:(PatternScanner *)scanner;
 - (NodeMatcher *)parse;
 
 @end

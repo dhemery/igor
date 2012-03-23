@@ -2,10 +2,11 @@
 #import "ClassPattern.h"
 #import "KindOfClassMatcher.h"
 #import "MemberOfClassMatcher.h"
+#import "PatternScanner.h"
 
 @implementation ClassPattern
 
-+ (ClassPattern *)forScanner:(NSScanner *)scanner {
++ (ClassPattern *)forScanner:(PatternScanner *)scanner {
     return (ClassPattern *) [[self alloc] initWithScanner:scanner];
 }
 
@@ -14,11 +15,11 @@
     Class selectorClass = [KindOfClassMatcher class];
 
     NSString *className;
-    if ([self.scanner scanCharactersFromSet:[NSCharacterSet letterCharacterSet] intoString:&className]) {
+    if ([self.scanner scanNameIntoString:&className]) {
         targetClass = NSClassFromString(className);
         selectorClass = [MemberOfClassMatcher class];
     }
-    if ([self.scanner scanString:@"*" intoString:nil]) {
+    if ([self.scanner skipString:@"*"]) {
         selectorClass = [KindOfClassMatcher class];
     }
     return [selectorClass forClass:targetClass];

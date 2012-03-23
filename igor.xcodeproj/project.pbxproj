@@ -92,6 +92,8 @@
 		E621659DB794A5D612DCD43D /* Matcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD43C /* Matcher.m */; };
 		E621659DB794A5D612DCD43F /* Pattern.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD43E /* Pattern.m */; };
 		E621659DB794A5D612DCD441 /* Pattern.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD440 /* Pattern.h */; };
+		E621659DB794A5D612DCD443 /* PatternScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD442 /* PatternScanner.m */; };
+		E621659DB794A5D612DCD445 /* PatternScanner.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD444 /* PatternScanner.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -212,6 +214,8 @@
 		E621659DB794A5D612DCD43C /* Matcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Matcher.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD43E /* Pattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pattern.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD440 /* Pattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pattern.h; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD442 /* PatternScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatternScanner.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD444 /* PatternScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatternScanner.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -367,6 +371,8 @@
 		2D695CE2147CD27100AF4115 /* parser */ = {
 			isa = PBXGroup;
 			children = (
+				E621659DB794A5D612DCD444 /* PatternScanner.h */,
+				E621659DB794A5D612DCD442 /* PatternScanner.m */,
 				E621659DB794A5D612DCD43E /* Pattern.m */,
 				E621659DB794A5D612DCD440 /* Pattern.h */,
 				2D695C8A147CD1BA00AF4115 /* ClassPattern.h */,
@@ -566,6 +572,7 @@
 				2DCE893615193E8900B975EE /* SubjectPattern.h in Headers */,
 				2DCE893B15193F6100B975EE /* NodePattern.h in Headers */,
 				E621659DB794A5D612DCD441 /* Pattern.h in Headers */,
+				E621659DB794A5D612DCD445 /* PatternScanner.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -736,6 +743,7 @@
 				E621659DB794A5D612DCD43B /* ClassMatcher.m in Sources */,
 				E621659DB794A5D612DCD43D /* Matcher.m in Sources */,
 				E621659DB794A5D612DCD43F /* Pattern.m in Sources */,
+				E621659DB794A5D612DCD443 /* PatternScanner.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

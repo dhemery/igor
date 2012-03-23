@@ -4,7 +4,7 @@
 
 @interface SubjectPattern : Pattern
 
-+ (SubjectPattern *)forScanner:(NSScanner *)scanner;
++ (SubjectPattern *)forScanner:(PatternScanner *)scanner;
 - (Matcher *)parse;
 
 @end

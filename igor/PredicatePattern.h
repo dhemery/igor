@@ -4,7 +4,7 @@
 
 @interface PredicatePattern : Pattern
 
-+ (PredicatePattern *)forScanner:(NSScanner *)scanner;
++ (PredicatePattern *)forScanner:(PatternScanner *)scanner;
 - (PredicateMatcher *)parse;
 
 @end

@@ -6,7 +6,7 @@
 
 @implementation NodePattern
 
-+ (NodePattern *)forScanner:(NSScanner *)scanner {
++ (NodePattern *)forScanner:(PatternScanner *)scanner {
     return (NodePattern *)[[self alloc] initWithScanner:scanner];
 }
 
