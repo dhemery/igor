@@ -5,8 +5,8 @@
 
 @synthesize ancestorMatcher = _ancestorMatcher, descendantMatcher = _descendantMatcher;
 
-- (NSMutableSet *)ancestorsOfView:(UIView *)view {
-    NSMutableSet *ancestors = [NSMutableSet set];
+- (NSMutableArray *)ancestorsOfView:(UIView *)view withinTree:(UIView *)root {
+    NSMutableArray *ancestors = [NSMutableArray array];
     id ancestor = [view superview];
     while (ancestor) {
         [ancestors addObject:ancestor];
@@ -15,9 +15,9 @@
     return ancestors;
 }
 
-- (BOOL)ancestorMatcherMatchesAnAncestorOfView:(UIView *)view {
-    for (id ancestor in [self ancestorsOfView:view]) {
-        if ([_ancestorMatcher matchesView:ancestor]) {
+- (BOOL)ancestorMatcherMatchesAnAncestorOfView:(UIView *)view withinTree:(UIView *)root {
+    for (id ancestor in [self ancestorsOfView:view withinTree:root]) {
+        if ([_ancestorMatcher matchesView:ancestor withinTree:root]) {
             return true;
         }
     }
@@ -28,7 +28,7 @@
     return [NSString stringWithFormat:@"[DescendantCombinatorMatcher:[descendantMatcher:%@][ancestorMatcher:%@]]", _descendantMatcher, _ancestorMatcher];
 }
 
-- (DescendantCombinatorMatcher *)initWithAncestorMatcher:(Matcher *)anAncestorMatcher descendantMatcher:(NodeMatcher *)aDescendantMatcher {
+- (DescendantCombinatorMatcher *)initWithAncestorMatcher:(id<RelationshipMatcher>)anAncestorMatcher descendantMatcher:(NodeMatcher *)aDescendantMatcher {
     self = [super init];
     if (self) {
         _ancestorMatcher = anAncestorMatcher;
@@ -37,11 +37,11 @@
     return self;
 }
 
-- (BOOL)matchesView:(UIView *)view {
-    return [_descendantMatcher matchesView:view] && [self ancestorMatcherMatchesAnAncestorOfView:view];
+-(BOOL)matchesView:(UIView *)view withinTree:(UIView *)root {
+    return [_descendantMatcher matchesView:view withinTree:root] && [self ancestorMatcherMatchesAnAncestorOfView:view withinTree:root];
 }
 
-+ (DescendantCombinatorMatcher *)withAncestorMatcher:(Matcher *)ancestorMatcher descendantMatcher:(NodeMatcher *)descendantMatcher {
++ (DescendantCombinatorMatcher *)withAncestorMatcher:(id<RelationshipMatcher>)ancestorMatcher descendantMatcher:(NodeMatcher *)descendantMatcher {
     return [[self alloc] initWithAncestorMatcher:ancestorMatcher descendantMatcher:descendantMatcher];
 }
 

@@ -94,6 +94,7 @@
 		E621659DB794A5D612DCD441 /* Pattern.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD440 /* Pattern.h */; };
 		E621659DB794A5D612DCD443 /* PatternScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD442 /* PatternScanner.m */; };
 		E621659DB794A5D612DCD445 /* PatternScanner.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD444 /* PatternScanner.h */; };
+		E621659DB794A5D612DCD449 /* RelationshipMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD448 /* RelationshipMatcher.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -216,6 +217,7 @@
 		E621659DB794A5D612DCD440 /* Pattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pattern.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD442 /* PatternScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatternScanner.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD444 /* PatternScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatternScanner.h; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD448 /* RelationshipMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RelationshipMatcher.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -346,6 +348,7 @@
 		2D695CE1147CD26700AF4115 /* matchers */ = {
 			isa = PBXGroup;
 			children = (
+				E621659DB794A5D612DCD448 /* RelationshipMatcher.h */,
 				E621659DB794A5D612DCD43C /* Matcher.m */,
 				E621659DB794A5D612DCD43A /* ClassMatcher.m */,
 				2D695C89147CD1BA00AF4115 /* ClassMatcher.h */,
@@ -573,6 +576,7 @@
 				2DCE893B15193F6100B975EE /* NodePattern.h in Headers */,
 				E621659DB794A5D612DCD441 /* Pattern.h in Headers */,
 				E621659DB794A5D612DCD445 /* PatternScanner.h in Headers */,
+				E621659DB794A5D612DCD449 /* RelationshipMatcher.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

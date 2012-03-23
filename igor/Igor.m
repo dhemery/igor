@@ -1,14 +1,15 @@
 #import "Igor.h"
 #import "IgorPattern.h"
+#import "RelationshipMatcher.h"
 #import "TreeWalker.h"
 
 @implementation Igor
 
 - (NSArray *)findViewsThatMatchPattern:(NSString *)pattern fromRoot:(UIView *)root {
-    Matcher *matcher = [[IgorPattern forPattern:pattern] parse];
+    id<RelationshipMatcher> matcher = [[IgorPattern forPattern:pattern] parse];
     NSMutableSet *matchingViews = [NSMutableSet set];
     void (^collectMatches)(UIView *) = ^(UIView *view) {
-        if ([matcher matchesView:view]) {
+        if ([matcher matchesView:view withinTree:nil]) {
             [matchingViews addObject:view];
         }
     };

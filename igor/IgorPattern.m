@@ -1,5 +1,4 @@
 #import "IgorPattern.h"
-#import "Matcher.h"
 #import "SubjectPattern.h"
 #import "SubjectSubtreeMatcher.h"
 #import "PatternScanner.h"
@@ -10,11 +9,11 @@
     return (IgorPattern *)[[self alloc] initWithScanner:[PatternScanner withPattern:pattern]];
 }
 
-- (Matcher *)parse {
+- (id<RelationshipMatcher>)parse {
     SubjectPattern *subjectParser = [SubjectPattern forScanner:self.scanner];
-    Matcher *matcher = [subjectParser parse];
+    id<RelationshipMatcher> matcher = [subjectParser parse];
     if ([self.scanner skipString:@"!"]) {
-        Matcher *subtreeMatcher = [subjectParser parse];
+        id<RelationshipMatcher> subtreeMatcher = [subjectParser parse];
         matcher = [SubjectSubtreeMatcher withSubjectMatcher:matcher subtreeMatcher:subtreeMatcher];
     }
     [self.scanner failIfNotAtEnd];

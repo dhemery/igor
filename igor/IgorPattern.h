@@ -2,11 +2,12 @@
 #import "Pattern.h"
 
 @class Matcher;
+@protocol RelationshipMatcher;
 
 @interface IgorPattern : Pattern
 
 + (IgorPattern *)forPattern:(NSString *)pattern;
-- (Matcher *)parse;
+- (id<RelationshipMatcher>)parse;
 
 
 @end

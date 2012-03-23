@@ -16,8 +16,8 @@
 
     DescendantCombinatorMatcher *matcher = [DescendantCombinatorMatcher withAncestorMatcher:[IdentityMatcher forView:top] descendantMatcher:[IdentityMatcher forView:matchingChild]];
 
-    expect([matcher matchesView:matchingChild]).toBeTruthy();
-    expect([matcher matchesView:mismatchingChild]).toBeFalsy();
+    expect([matcher matchesView:matchingChild withinTree:top]).toBeTruthy();
+    expect([matcher matchesView:mismatchingChild withinTree:top]).toBeFalsy();
 }
 
 - (void)testMatchesIfAncestorAndDescendantMatch {
@@ -29,9 +29,9 @@
 
     DescendantCombinatorMatcher *matcher = [DescendantCombinatorMatcher withAncestorMatcher:[IdentityMatcher forView:top] descendantMatcher:[IdentityMatcher forView:matchingDescendant]];
 
-    expect([matcher matchesView:top]).toBeFalsy();
-    expect([matcher matchesView:interveningView]).toBeFalsy();
-    expect([matcher matchesView:matchingDescendant]).toBeTruthy();
+    expect([matcher matchesView:top withinTree:top]).toBeFalsy();
+    expect([matcher matchesView:interveningView withinTree:top]).toBeFalsy();
+    expect([matcher matchesView:matchingDescendant withinTree:top]).toBeTruthy();
 }
 
 - (void)testMismatchesIfChildMatchesButParentDoesNot {
@@ -41,7 +41,7 @@
 
     DescendantCombinatorMatcher *matcher = [DescendantCombinatorMatcher withAncestorMatcher:[IdentityMatcher forView:child] descendantMatcher:[IdentityMatcher forView:child]];
 
-    expect([matcher matchesView:child]).toBeFalsy();
+    expect([matcher matchesView:child withinTree:parent]).toBeFalsy();
 }
 
 @end

@@ -1,12 +1,13 @@
 #import "Matcher.h"
+#import "RelationshipMatcher.h"
 
 @class NodeMatcher;
 
-@interface DescendantCombinatorMatcher : Matcher
+@interface DescendantCombinatorMatcher : NSObject<RelationshipMatcher>
 
-@property(retain) Matcher *ancestorMatcher;
+@property(retain) id<RelationshipMatcher> ancestorMatcher;
 @property(retain) NodeMatcher *descendantMatcher;
 
-+ (DescendantCombinatorMatcher *)withAncestorMatcher:(Matcher *)ancestorMatcher descendantMatcher:(NodeMatcher *)descendantMatcher;
++ (DescendantCombinatorMatcher *)withAncestorMatcher:(id<RelationshipMatcher>)ancestorMatcher descendantMatcher:(NodeMatcher *)descendantMatcher;
 
 @end

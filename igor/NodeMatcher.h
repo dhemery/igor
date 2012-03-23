@@ -1,9 +1,10 @@
 #import "Matcher.h"
+#import "RelationshipMatcher.h"
 
 @class ClassMatcher;
 @class PredicateMatcher;
 
-@interface NodeMatcher : Matcher
+@interface NodeMatcher : NSObject<RelationshipMatcher>
 
 @property(retain, readonly) ClassMatcher *classMatcher;
 @property(retain, readonly) PredicateMatcher *predicateMatcher;

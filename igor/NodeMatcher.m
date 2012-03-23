@@ -21,7 +21,7 @@
     return self;
 }
 
-- (BOOL)matchesView:(UIView *)view {
+- (BOOL)matchesView:(UIView *)view withinTree:(UIView *)ignored {
     return [_classMatcher matchesView:view] && [_predicateMatcher matchesView:view];
 }
 
