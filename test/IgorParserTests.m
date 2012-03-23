@@ -44,7 +44,7 @@
     DescendantCombinatorMatcher *matcher = (DescendantCombinatorMatcher *) [[IgorParser forPattern:@"UIButton UILabel"] parse];
     expect(matcher).toBeInstanceOf([DescendantCombinatorMatcher class]);
 
-    NodeMatcher *ancestorMatcher = matcher.ancestorMatcher;
+    NodeMatcher *ancestorMatcher = (NodeMatcher*)matcher.ancestorMatcher;
     expect(ancestorMatcher.classMatcher).toBeInstanceOf([MemberOfClassMatcher class]);
     expect(ancestorMatcher.classMatcher.matchClass).toEqual([UIButton class]);
 

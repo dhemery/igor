@@ -2,6 +2,7 @@
 
 @interface NodePattern : NSObject
 
-- (NodeMatcher *)parse:(NSScanner *)scanner;
++ (NodePattern *)forScanner:(NSScanner *)scanner;
+- (NodeMatcher *)parse;
 
 @end
