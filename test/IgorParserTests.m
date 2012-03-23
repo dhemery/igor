@@ -9,35 +9,29 @@
 @interface IgorParserTests : SenTestCase
 @end
 
-@implementation IgorParserTests {
-    IgorParser *parser;
-}
-
-- (void)setUp {
-    parser = [IgorParser new];
-}
+@implementation IgorParserTests
 
 - (void)testParsesAsteriskAsKindOfClassMatcherForUIViewClass {
-    ClassMatcher *matcher = ((NodeMatcher *) [parser parse:@"*"]).classMatcher;
+    ClassMatcher *matcher = ((NodeMatcher *) [[IgorParser forPattern:@"*"] parse]).classMatcher;
     expect(matcher).toBeInstanceOf([KindOfClassMatcher class]);
     expect(matcher.matchClass).toEqual([UIView class]);
 }
 
 - (void)testParsesNameAsMemberOfClassMatcher {
-    NodeMatcher *matcher = (NodeMatcher *) [parser parse:@"UIButton"];
+    NodeMatcher *matcher = (NodeMatcher *) [[IgorParser forPattern:@"UIButton"] parse];
     expect(matcher.classMatcher).toBeInstanceOf([MemberOfClassMatcher class]);
     expect(matcher.classMatcher.matchClass).toEqual([UIButton class]);
 }
 
 - (void)testParsesNameAsteriskAsKindOfClassMatcher {
-    NodeMatcher *matcher = (NodeMatcher *) [parser parse:@"UILabel*"];
+    NodeMatcher *matcher = (NodeMatcher *) [[IgorParser forPattern:@"UILabel*"] parse];
     expect(matcher.classMatcher).toBeInstanceOf([KindOfClassMatcher class]);
     expect(matcher.classMatcher.matchClass).toEqual([UILabel class]);
 }
 
 - (void)testParsesNodeMatcherWithPredicateMatcher {
     NSString *predicateExpression = [[NSPredicate predicateWithFormat:@"myPropertyName='somevalue'"] predicateFormat];
-    NodeMatcher *matcher = (NodeMatcher *) [parser parse:@"*[myPropertyName='somevalue']"];
+    NodeMatcher *matcher = (NodeMatcher *) [[IgorParser forPattern:@"*[myPropertyName='somevalue']"] parse];
 
     expect(matcher.classMatcher).toBeInstanceOf([KindOfClassMatcher class]);
     expect(matcher.classMatcher.matchClass).toEqual([UIView class]);
@@ -47,7 +41,7 @@
 }
 
 - (void)testParsesDescendantCombinatorMatcher {
-    DescendantCombinatorMatcher *matcher = (DescendantCombinatorMatcher *) [parser parse:@"UIButton UILabel"];
+    DescendantCombinatorMatcher *matcher = (DescendantCombinatorMatcher *) [[IgorParser forPattern:@"UIButton UILabel"] parse];
     expect(matcher).toBeInstanceOf([DescendantCombinatorMatcher class]);
 
     NodeMatcher *ancestorMatcher = matcher.ancestorMatcher;
@@ -60,7 +54,7 @@
 }
 
 - (void)testParsesMultipleDescendantCombinatorMatchers {
-    DescendantCombinatorMatcher *matcher = (DescendantCombinatorMatcher *) [parser parse:@"UIButton UILabel UIView UITextField"];
+    DescendantCombinatorMatcher *matcher = (DescendantCombinatorMatcher *) [[IgorParser forPattern:@"UIButton UILabel UIView UITextField"] parse];
     expect(matcher).toBeInstanceOf([DescendantCombinatorMatcher class]);
 
     NodeMatcher *descendantMatcher = matcher.descendantMatcher;
