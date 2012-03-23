@@ -1,7 +1,10 @@
+#import "Pattern.h"
+
 @class ClassMatcher;
 
-@interface ClassPattern : NSObject
+@interface ClassPattern : Pattern
 
-- (ClassMatcher *)parse:(NSScanner *)scanner;
++ (ClassPattern *)forScanner:(NSScanner *)scanner;
+- (ClassMatcher *)parse;
 
 @end

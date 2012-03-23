@@ -5,16 +5,20 @@
 
 @implementation ClassPattern
 
-- (ClassMatcher *)parse:(NSScanner *)scanner {
++ (ClassPattern *)forScanner:(NSScanner *)scanner {
+    return (ClassPattern *) [[self alloc] initWithScanner:scanner];
+}
+
+- (ClassMatcher *)parse {
     Class targetClass = [UIView class];
     Class selectorClass = [KindOfClassMatcher class];
 
     NSString *className;
-    if ([scanner scanCharactersFromSet:[NSCharacterSet letterCharacterSet] intoString:&className]) {
+    if ([self.scanner scanCharactersFromSet:[NSCharacterSet letterCharacterSet] intoString:&className]) {
         targetClass = NSClassFromString(className);
         selectorClass = [MemberOfClassMatcher class];
     }
-    if ([scanner scanString:@"*" intoString:nil]) {
+    if ([self.scanner scanString:@"*" intoString:nil]) {
         selectorClass = [KindOfClassMatcher class];
     }
     return [selectorClass forClass:targetClass];
