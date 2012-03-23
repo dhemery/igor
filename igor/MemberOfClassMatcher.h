@@ -1,8 +1,7 @@
-
 #import "ClassMatcher.h"
 
 @interface MemberOfClassMatcher : ClassMatcher
 
-+(MemberOfClassMatcher*) forClass:(Class)targetClass;
++ (MemberOfClassMatcher *)forClass:(Class)targetClass;
 
 @end

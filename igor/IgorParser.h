@@ -2,6 +2,6 @@
 
 @interface IgorParser : NSObject
 
--(Matcher*) parse:(NSString*) pattern;
+- (Matcher *)parse:(NSString *)pattern;
 
 @end

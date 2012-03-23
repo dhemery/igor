@@ -13,24 +13,24 @@
 
 @synthesize matchProperty;
 
-+(id) forProperty:(NSString*)propertyName {
-    return [[self alloc] initForProperty:(NSString*)propertyName];
++ (id)forProperty:(NSString *)propertyName {
+    return [[self alloc] initForProperty:(NSString *) propertyName];
 }
 
--(id) initForProperty:(NSString*)propertyName {
-    if(self = [super init]) {
+- (id)initForProperty:(NSString *)propertyName {
+    if (self = [super init]) {
         matchProperty = propertyName;
     }
     return self;
 }
 
--(BOOL) matchesView:(UIView *)view {
+- (BOOL)matchesView:(UIView *)view {
     @try {
         [view valueForKey:self.matchProperty];
         return YES;
     }
-    @catch (NSException* e) {
-        if([[e name] isEqual:NSUndefinedKeyException]) {
+    @catch (NSException *e) {
+        if ([[e name] isEqual:NSUndefinedKeyException]) {
             return NO;
         } else {
             @throw(e);

@@ -1,17 +1,16 @@
-
 #import "KindOfClassMatcher.h"
 
 @implementation KindOfClassMatcher
 
--(NSString*) description {
+- (NSString *)description {
     return [NSString stringWithFormat:@"[KindOfClassMatcher:[matchClass:%@]]", self.matchClass];
 }
 
-+(KindOfClassMatcher*) forClass:(Class)targetClass {
-    return (KindOfClassMatcher *)[[self alloc] initForClass:targetClass];
++ (KindOfClassMatcher *)forClass:(Class)targetClass {
+    return (KindOfClassMatcher *) [[self alloc] initForClass:targetClass];
 }
 
--(BOOL) matchesView:(UIView*)view {
+- (BOOL)matchesView:(UIView *)view {
     return [view isKindOfClass:self.matchClass];
 }
 

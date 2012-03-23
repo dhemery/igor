@@ -2,6 +2,6 @@
 
 @interface PredicatePattern : NSObject
 
--(PredicateMatcher*)parse:(NSScanner*)scanner;
+- (PredicateMatcher *)parse:(NSScanner *)scanner;
 
 @end

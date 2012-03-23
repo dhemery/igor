@@ -1,6 +1,5 @@
-
 @interface SubjectPattern : NSObject
 
--(id)parse:(NSScanner*)scanner;
+- (id)parse:(NSScanner *)scanner;
 
 @end

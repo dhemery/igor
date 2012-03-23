@@ -1,4 +1,3 @@
-
 #import "Matcher.h"
 
 @class ClassMatcher;
@@ -6,9 +5,9 @@
 
 @interface NodeMatcher : Matcher
 
-@property(retain,readonly) ClassMatcher *classMatcher;
-@property(retain,readonly) PredicateMatcher *predicateMatcher;
+@property(retain, readonly) ClassMatcher *classMatcher;
+@property(retain, readonly) PredicateMatcher *predicateMatcher;
 
-+(NodeMatcher*) withClassMatcher:(ClassMatcher *)classMatcher predicateMatcher:(PredicateMatcher *)predicateMatcher;
++ (NodeMatcher *)withClassMatcher:(ClassMatcher *)classMatcher predicateMatcher:(PredicateMatcher *)predicateMatcher;
 
 @end

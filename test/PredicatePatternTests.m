@@ -26,7 +26,7 @@
 
     matchingViews = [igor findViewsThatMatchPattern:@"[nonExistentProperty='monkeymonkey']" fromRoot:view];
     expect(matchingViews).Not.toContain(view);
-}
+    }
 
 -(void) testPredicatePatternThrowsIfPatternIsUnparseable {
     id notUsed = nil;
