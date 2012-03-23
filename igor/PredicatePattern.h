@@ -1,7 +1,10 @@
+#import "Pattern.h"
+
 @class PredicateMatcher;
 
-@interface PredicatePattern : NSObject
+@interface PredicatePattern : Pattern
 
-- (PredicateMatcher *)parse:(NSScanner *)scanner;
++ (PredicatePattern *)forScanner:(NSScanner *)scanner;
+- (PredicateMatcher *)parse;
 
 @end

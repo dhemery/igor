@@ -4,10 +4,14 @@
 
 @implementation SubjectPattern
 
-- (Matcher *)parse:(NSScanner *)scanner {
-    Matcher *matcher = [[NodePattern forScanner:scanner] parse];
-    while ([scanner scanCharactersFromSet:[NSCharacterSet whitespaceCharacterSet] intoString:nil]) {
-        NodeMatcher *descendantMatcher = [[NodePattern forScanner:scanner] parse];
++ (SubjectPattern *)forScanner:(NSScanner *)scanner {
+    return (SubjectPattern *)[[self alloc] initWithScanner:scanner];
+}
+
+- (Matcher *)parse {
+    Matcher *matcher = [[NodePattern forScanner:self.scanner] parse];
+    while ([self.scanner scanCharactersFromSet:[NSCharacterSet whitespaceCharacterSet] intoString:nil]) {
+        NodeMatcher *descendantMatcher = [[NodePattern forScanner:self.scanner] parse];
         matcher = [DescendantCombinatorMatcher withAncestorMatcher:matcher descendantMatcher:descendantMatcher];
     }
     return matcher;

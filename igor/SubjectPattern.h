@@ -1,5 +1,10 @@
-@interface SubjectPattern : NSObject
+#import "Pattern.h"
 
-- (id)parse:(NSScanner *)scanner;
+@class Matcher;
+
+@interface SubjectPattern : Pattern
+
++ (SubjectPattern *)forScanner:(NSScanner *)scanner;
+- (Matcher *)parse;
 
 @end

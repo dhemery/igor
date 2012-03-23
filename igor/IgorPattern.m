@@ -14,21 +14,14 @@
 }
 
 - (Matcher *)parse {
-    SubjectPattern *subjectParser = [SubjectPattern new];
-    Matcher *matcher = [subjectParser parse:self.scanner];
+    SubjectPattern *subjectParser = [SubjectPattern forScanner:self.scanner];
+    Matcher *matcher = [subjectParser parse];
     if ([self.scanner scanString:@"!" intoString:nil]) {
-        Matcher *subtreeMatcher = [subjectParser parse:self.scanner];
+        Matcher *subtreeMatcher = [subjectParser parse];
         matcher = [SubjectSubtreeMatcher withSubjectMatcher:matcher subtreeMatcher:subtreeMatcher];
     }
     [self throwIfNotAtEndOfScanner];
     return matcher;
-}
-
-+ (NSScanner *)scannerForPattern:(NSString *)pattern {
-    NSString *stripped = [pattern stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-    NSScanner *scanner = [NSScanner scannerWithString:stripped];
-    [scanner setCharactersToBeSkipped:nil];
-    return scanner;
 }
 
 - (void)throwIfNotAtEndOfScanner {

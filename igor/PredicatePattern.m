@@ -4,16 +4,20 @@
 
 @implementation PredicatePattern
 
-- (PredicateMatcher *)parse:(NSScanner *)scanner {
-    if (![scanner scanString:@"[" intoString:nil]) {
++ (PredicatePattern *)forScanner:(NSScanner *)scanner {
+    return (PredicatePattern *)[[self alloc] initWithScanner:scanner];
+}
+
+- (PredicateMatcher *)parse {
+    if (![self.scanner scanString:@"[" intoString:nil]) {
         return [PredicateMatcher withPredicateExpression:@"TRUEPREDICATE"];
     }
     NSString *expression = [NSString string];
-    if (![scanner scanUpToString:@"]" intoString:&expression]) {
-        @throw [IgorParserException exceptionWithReason:@"Expected predicate" scanner:scanner];
+    if (![self.scanner scanUpToString:@"]" intoString:&expression]) {
+        @throw [IgorParserException exceptionWithReason:@"Expected predicate" scanner:self.scanner];
     }
-    if (![scanner scanString:@"]" intoString:nil]) {
-        @throw [IgorParserException exceptionWithReason:@"Expected ]" scanner:scanner];
+    if (![self.scanner scanString:@"]" intoString:nil]) {
+        @throw [IgorParserException exceptionWithReason:@"Expected ]" scanner:self.scanner];
     }
     return [PredicateMatcher withPredicateExpression:expression];
 }

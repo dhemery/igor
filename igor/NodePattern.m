@@ -12,7 +12,7 @@
 
 - (NodeMatcher *)parse {
     ClassMatcher *classMatcher = [[ClassPattern forScanner:self.scanner] parse];
-    PredicateMatcher *predicateMatcher = [[PredicatePattern new] parse:self.scanner];
+    PredicateMatcher *predicateMatcher = [[PredicatePattern forScanner:self.scanner] parse];
     return [NodeMatcher withClassMatcher:classMatcher predicateMatcher:predicateMatcher];
 }
 
