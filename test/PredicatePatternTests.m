@@ -1,4 +1,3 @@
-
 #import "Igor.h"
 #import "ViewFactory.h"
 
@@ -6,29 +5,27 @@
 @end
 
 @implementation PredicatePatternTests {
-    CGRect frame;
-    Igor* igor;
+    Igor *igor;
 }
 
--(void) setUp {
-    frame = CGRectMake(0, 0, 100, 100);
+- (void)setUp {
     igor = [Igor new];
 }
 
--(void) testPredicatePattern {
-    UIView* view = [ViewFactory buttonWithAccessibilityHint:@"monkeymonkey"];
-    
-    NSArray* matchingViews = [igor findViewsThatMatchPattern:@"[accessibilityHint='monkeymonkey']" fromRoot:view];
+- (void)testPredicatePattern {
+    UIView *view = [ViewFactory buttonWithAccessibilityHint:@"monkeymonkey"];
+
+    NSArray *matchingViews = [igor findViewsThatMatchPattern:@"[accessibilityHint='monkeymonkey']" fromRoot:view];
     expect(matchingViews).toContain(view);
-    
+
     matchingViews = [igor findViewsThatMatchPattern:@"[accessibilityHint='fiddlefaddle']" fromRoot:view];
     expect(matchingViews).Not.toContain(view);
 
     matchingViews = [igor findViewsThatMatchPattern:@"[nonExistentProperty='monkeymonkey']" fromRoot:view];
     expect(matchingViews).Not.toContain(view);
-    }
+}
 
--(void) testPredicatePatternThrowsIfPatternIsUnparseable {
+- (void)testPredicatePatternThrowsIfPatternIsUnparseable {
     id notUsed = nil;
     STAssertThrows([igor findViewsThatMatchPattern:@"[this is not a valid predicate]" fromRoot:notUsed], @"Expected predicate parsing exception");
 }

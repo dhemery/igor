@@ -34,7 +34,7 @@
     // This matcher matches if it examines ancestors above middle.
     // If it is limited to only subviews of middle, it does not match,
     // because root is above middle.
-    Matcher* subtreeMatcher = [DescendantCombinatorMatcher
+    Matcher *subtreeMatcher = [DescendantCombinatorMatcher
             withAncestorMatcher:[IdentityMatcher forView:middle]
               descendantMatcher:[IdentityMatcher forView:leaf]];
 

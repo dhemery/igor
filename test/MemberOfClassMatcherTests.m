@@ -1,4 +1,3 @@
-
 #import "Matcher.h"
 #import "MemberOfClassMatcher.h"
 #import "ViewFactory.h"
@@ -10,25 +9,25 @@
     CGRect frame;
 }
 
--(void) setUp {
+- (void)setUp {
     frame = CGRectMake(0, 0, 100, 100);
 }
 
 - (void)testMatchesAViewOfTheTargetClass {
     id memberOfUIButtonClassMatcher = [MemberOfClassMatcher forClass:[UIButton class]];
-    UIButton* button = [ViewFactory button];
+    UIButton *button = [ViewFactory button];
     expect([memberOfUIButtonClassMatcher matchesView:button]).toBeTruthy();
 }
 
 - (void)testMismatchesAViewOfANonTargetClass {
     id memberOfUIButtonClassMatcher = [MemberOfClassMatcher forClass:[UIButton class]];
-    UIView* view = [ViewFactory view];
+    UIView *view = [ViewFactory view];
     expect([memberOfUIButtonClassMatcher matchesView:view]).toBeFalsy();
 }
 
 - (void)testMismatchesAViewOfAClassThatInheritsFromTheTargetClass {
     id memberOfUIViewClassMatcher = [MemberOfClassMatcher forClass:[UIView class]];
-    UIButton* button = [ViewFactory button];
+    UIButton *button = [ViewFactory button];
     expect([memberOfUIViewClassMatcher matchesView:button]).toBeFalsy();
 }
 

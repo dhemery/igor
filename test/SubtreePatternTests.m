@@ -1,18 +1,17 @@
-
 #import "Igor.h"
 
 @interface SubtreePatternTests : SenTestCase
 @end
 
 @implementation SubtreePatternTests {
-    Igor* igor;
+    Igor *igor;
 }
 
--(void) setUp {
+- (void)setUp {
     igor = [Igor new];
 }
 
--(void) testSubtree {
+- (void)testSubtree {
 //    UIView* top = [ViewFactory buttonWithAccessibilityHint:@"top"];
 //
 //    NSArray* matchingViews = [igor findViewsThatMatchPattern:@"([accessibilityHint='A'] [accessibilityHint='B'])" fromRoot:top];

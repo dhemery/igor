@@ -1,7 +1,11 @@
 #ifdef __OBJC__
+
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+
 #define EXP_SHORTHAND
+
 #import "Expecta.h"
 #import <SenTestingKit/SenTestCase.h>
+
 #endif

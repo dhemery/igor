@@ -2,6 +2,6 @@
 
 @interface IdentityMatcher : NodeMatcher
 
-+(IdentityMatcher*) forView:(UIView*)view;
++ (IdentityMatcher *)forView:(UIView *)view;
 
 @end

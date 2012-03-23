@@ -1,4 +1,3 @@
-
 #import "Igor.h"
 #import "ViewFactory.h"
 
@@ -7,16 +6,16 @@
 
 @implementation ClassPatternTests {
     CGRect frame;
-    Igor* igor;
+    Igor *igor;
 }
 
--(void) setUp {
+- (void)setUp {
     frame = CGRectMake(0, 0, 100, 100);
     igor = [Igor new];
 }
 
-- (void) testAnyClassPattern {
-    NSString* pattern = @"*";
+- (void)testAnyClassPattern {
+    NSString *pattern = @"*";
 
     UIView *root = [ViewFactory view];
     UIView *view1 = [ViewFactory view];
@@ -31,15 +30,15 @@
     UIView *view23 = [ViewFactory view];
 
     [root addSubview:view1];
-        [view1 addSubview:view11];
-        [view1 addSubview:view12];
+    [view1 addSubview:view11];
+    [view1 addSubview:view12];
     [root addSubview:view2];
-        [view2 addSubview:view21];
-            [view21 addSubview:view211];
-            [view21 addSubview:view212];
-            [view21 addSubview:view213];
-        [view2 addSubview:view22];
-        [view2 addSubview:view23];
+    [view2 addSubview:view21];
+    [view21 addSubview:view211];
+    [view21 addSubview:view212];
+    [view21 addSubview:view213];
+    [view2 addSubview:view22];
+    [view2 addSubview:view23];
 
     NSArray *matchingViews = [igor findViewsThatMatchPattern:pattern fromRoot:root];
 
@@ -56,38 +55,38 @@
     expect(matchingViews).toContain(view23);
 }
 
-- (void) testMemberOfClassPattern {
-    NSString* pattern = @"UIButton";
+- (void)testMemberOfClassPattern {
+    NSString *pattern = @"UIButton";
 
-    UIView* view = [ViewFactory view];
-    UIView* button = [ViewFactory button];
-    UIView* imageView = [ViewFactory view];
-    UIView* root = view;
+    UIView *view = [ViewFactory view];
+    UIView *button = [ViewFactory button];
+    UIView *imageView = [ViewFactory view];
+    UIView *root = view;
     [root addSubview:button];
     [button addSubview:imageView];
 
     NSArray *matchingViews = [igor findViewsThatMatchPattern:pattern fromRoot:root];
-    
+
     expect(matchingViews).toContain(button);
     expect(matchingViews).Not.toContain(view);
     expect(matchingViews).Not.toContain(imageView);
 }
 
-- (void) testKindOfClassPattern {
-    NSString* pattern = @"UIControl*";
+- (void)testKindOfClassPattern {
+    NSString *pattern = @"UIControl*";
 
-    UIView* viewOfBaseClassOfTargetClass = [ViewFactory view];
-    UIControl* viewOfTargetClass = [ViewFactory control];
-    UIView* viewOfClassDerivedFromTargetClass = [ViewFactory button];
-    UIView* viewOfUnrelatedClass = [ViewFactory window];
-    
-    UIView* root = viewOfBaseClassOfTargetClass;
+    UIView *viewOfBaseClassOfTargetClass = [ViewFactory view];
+    UIControl *viewOfTargetClass = [ViewFactory control];
+    UIView *viewOfClassDerivedFromTargetClass = [ViewFactory button];
+    UIView *viewOfUnrelatedClass = [ViewFactory window];
+
+    UIView *root = viewOfBaseClassOfTargetClass;
     [root addSubview:viewOfTargetClass];
     [root addSubview:viewOfClassDerivedFromTargetClass];
     [root addSubview:viewOfUnrelatedClass];
-    
+
     NSArray *matchingViews = [igor findViewsThatMatchPattern:pattern fromRoot:root];
-    
+
     expect(matchingViews).Not.toContain(viewOfBaseClassOfTargetClass);
     expect(matchingViews).toContain(viewOfTargetClass);
     expect(matchingViews).toContain(viewOfClassDerivedFromTargetClass);

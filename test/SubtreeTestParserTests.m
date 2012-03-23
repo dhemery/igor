@@ -1,14 +1,13 @@
-
 @interface SubtreeTestParserTests : SenTestCase
 @end
 
 @implementation SubtreeTestParserTests {
 }
 
--(void)setUp {
-}    
+- (void)setUp {
+}
 
--(void) testReturnsNilIfNoLeftBracket {
+- (void)testReturnsNilIfNoLeftBracket {
 }
 
 @end
