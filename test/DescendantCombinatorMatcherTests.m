@@ -44,4 +44,27 @@
     expect([matcher matchesView:child withinTree:parent]).toBeFalsy();
 }
 
+- (void)testExaminesAncestorsUpToGivenRoot {
+    UIButton *root = [ViewFactory button];
+    UIButton *middle = [ViewFactory button];
+    UIButton *leaf = [ViewFactory button];
+    [root addSubview:middle];
+    [middle addSubview:leaf];
+
+    DescendantCombinatorMatcher *matcher = [DescendantCombinatorMatcher withAncestorMatcher:[IdentityMatcher forView:middle] descendantMatcher:[IdentityMatcher forView:leaf]];
+
+    expect([matcher matchesView:leaf withinTree:middle]).toBeTruthy();
+}
+
+- (void)testExaminesAncestorsOnlyUpToGivenRoot {
+    UIButton *root = [ViewFactory button];
+    UIButton *middle = [ViewFactory button];
+    UIButton *leaf = [ViewFactory button];
+    [root addSubview:middle];
+    [middle addSubview:leaf];
+
+    DescendantCombinatorMatcher *matcher = [DescendantCombinatorMatcher withAncestorMatcher:[IdentityMatcher forView:root] descendantMatcher:[IdentityMatcher forView:leaf]];
+
+    expect([matcher matchesView:leaf withinTree:middle]).toBeFalsy();
+}
 @end

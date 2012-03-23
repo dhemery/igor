@@ -6,43 +6,40 @@
 @interface SubjectSubtreeMatcherTests : SenTestCase
 @end
 
-@implementation SubjectSubtreeMatcherTests
+@implementation SubjectSubtreeMatcherTests {
+    UIButton *root;
+    UIButton *middle;
+    UIButton *leaf;
+}
 
-- (void)testMatchesIfViewMatchesSubjectMatcherAndSubviewMatchesSubtreeMatcher {
-    UIButton *root = [ViewFactory button];
-    UIButton *middle = [ViewFactory button];
-    UIButton *leaf = [ViewFactory button];
+- (void)setUp {
+    root = [ViewFactory button];
+    middle = [ViewFactory button];
+    leaf = [ViewFactory button];
     [root addSubview:middle];
     [middle addSubview:leaf];
+}
 
-    SubjectSubtreeMatcher *matcher = [SubjectSubtreeMatcher
+- (void)testMatchesIfViewMatchesSubjectMatcherAndSubviewMatchesSubtreeMatcher {
+    SubjectSubtreeMatcher *rootWithLeafDescendant = [SubjectSubtreeMatcher
             withSubjectMatcher:[IdentityMatcher forView:root]
                 subtreeMatcher:[IdentityMatcher forView:leaf]];
 
-    expect([matcher matchesView:root]).toBeTruthy();
-    expect([matcher matchesView:middle]).toBeFalsy();
-    expect([matcher matchesView:leaf]).toBeFalsy();
+    expect([rootWithLeafDescendant matchesView:root withinTree:root]).toBeTruthy();
+    expect([rootWithLeafDescendant matchesView:middle withinTree:root]).toBeFalsy();
+    expect([rootWithLeafDescendant matchesView:leaf withinTree:root]).toBeFalsy();
 }
 
 - (void)testSubtreeMatcherExaminesOnlySubviewsOfTheSubject {
-    UIButton *root = [ViewFactory button];
-    UIButton *middle = [ViewFactory button];
-    UIButton *leaf = [ViewFactory button];
-    [root addSubview:middle];
-    [middle addSubview:leaf];
-
-    // This matcher matches if it examines ancestors above middle.
-    // If it is limited to only subviews of middle, it does not match,
-    // because root is above middle.
-    Matcher *subtreeMatcher = [DescendantCombinatorMatcher
+    id<RelationshipMatcher> leafWithMiddleAncestor = [DescendantCombinatorMatcher
             withAncestorMatcher:[IdentityMatcher forView:middle]
               descendantMatcher:[IdentityMatcher forView:leaf]];
 
-    SubjectSubtreeMatcher *matcher = [SubjectSubtreeMatcher
+    SubjectSubtreeMatcher *middleWithLeafInsideMiddleDescendant = [SubjectSubtreeMatcher
             withSubjectMatcher:[IdentityMatcher forView:middle]
-                subtreeMatcher:subtreeMatcher];
+                subtreeMatcher:leafWithMiddleAncestor];
 
-    expect([matcher matchesView:middle]).toBeFalsy();
+    expect([middleWithLeafInsideMiddleDescendant matchesView:middle withinTree:root]).toBeFalsy();
 }
 
 @end

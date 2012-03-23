@@ -7,9 +7,10 @@
 
 - (NSArray *)findViewsThatMatchPattern:(NSString *)pattern fromRoot:(UIView *)root {
     id<RelationshipMatcher> matcher = [[IgorPattern forPattern:pattern] parse];
+//    NSLog(@"Parsed pattern {{%@}} into matcher %@", pattern, matcher);
     NSMutableSet *matchingViews = [NSMutableSet set];
     void (^collectMatches)(UIView *) = ^(UIView *view) {
-        if ([matcher matchesView:view withinTree:nil]) {
+        if ([matcher matchesView:view withinTree:root]) {
             [matchingViews addObject:view];
         }
     };

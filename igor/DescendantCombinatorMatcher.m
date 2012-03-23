@@ -5,7 +5,7 @@
 
 @synthesize ancestorMatcher = _ancestorMatcher, descendantMatcher = _descendantMatcher;
 
-- (NSMutableArray *)ancestorsOfView:(UIView *)view withinTree:(UIView *)root {
+- (NSMutableArray *)ancestorsOfView:(UIView *)view {
     NSMutableArray *ancestors = [NSMutableArray array];
     id ancestor = [view superview];
     while (ancestor) {
@@ -13,6 +13,12 @@
         ancestor = [ancestor superview];
     }
     return ancestors;
+}
+
+- (NSMutableArray *)ancestorsOfView:(UIView *)view withinTree:(UIView *)root {
+    NSMutableArray *ancestorsOfView = [self ancestorsOfView:view];
+    [ancestorsOfView removeObjectsInArray:[self ancestorsOfView:root]];
+    return ancestorsOfView;
 }
 
 - (BOOL)ancestorMatcherMatchesAnAncestorOfView:(UIView *)view withinTree:(UIView *)root {

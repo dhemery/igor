@@ -13,6 +13,7 @@
     SubjectPattern *subjectParser = [SubjectPattern forScanner:self.scanner];
     id<RelationshipMatcher> matcher = [subjectParser parse];
     if ([self.scanner skipString:@"!"]) {
+        [self.scanner skipWhiteSpace];
         id<RelationshipMatcher> subtreeMatcher = [subjectParser parse];
         matcher = [SubjectSubtreeMatcher withSubjectMatcher:matcher subtreeMatcher:subtreeMatcher];
     }

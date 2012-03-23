@@ -6,7 +6,7 @@
 @synthesize subjectMatcher = _subjectMatcher, subtreeMatcher = _subtreeMatcher;
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"[SubjectTestMatcher:[subject:%@][subtree:%@]]", _subjectMatcher, _subtreeMatcher];
+    return [NSString stringWithFormat:@"[SubjectSubtreeMatcher:[subject:%@][subtree:%@]]", _subjectMatcher, _subtreeMatcher];
 }
 
 - (SubjectSubtreeMatcher *)initWithSubjectMatcher:(id<RelationshipMatcher>)subjectMatcher subtreeMatcher:(id<RelationshipMatcher>)subtreeMatcher {
@@ -19,17 +19,17 @@
 }
 
 - (BOOL)matchesView:(UIView *)view withinTree:(UIView *)root {
-    return [_subjectMatcher matchesView:view withinTree:root] && [self testMatcherMatchesASubviewOf:view withinTree:root];
+    return [_subjectMatcher matchesView:view withinTree:root] && [self testMatcherMatchesASubviewOf:view];
 }
 
-- (BOOL)testMatcherMatchesASubviewOf:(UIView *)view withinTree:(UIView *)root {
+- (BOOL)testMatcherMatchesASubviewOf:(UIView *)view {
     __block BOOL subtreeHasAMatch = NO;
-    void (^noteMatch)(UIView *) = ^(UIView *target) {
-        if ([_subtreeMatcher matchesView:target withinTree:root]) {
-            subtreeHasAMatch = YES;
-        }
-    };
     for (id subview in [view subviews]) {
+        void (^noteMatch)(UIView *) = ^(UIView *target) {
+            if ([_subtreeMatcher matchesView:target withinTree:subview]) {
+                subtreeHasAMatch = YES;
+            }
+        };
         [TreeWalker walkTree:subview withVisitor:noteMatch];
     }
     return subtreeHasAMatch;

@@ -21,23 +21,23 @@
 }
 
 - (void)testMatchesIfTheViewMatchesTheSubjectPatternAndHasASubviewThatMatchesTheSubtreePattern {
-    NSArray *matchingViews = [igor findViewsThatMatchPattern:@"*! [accessibilityHint='middle']" fromRoot:root];
-    expect(matchingViews).toContain(root);
-    expect(matchingViews).Not.toContain(middle);
-    expect(matchingViews).Not.toContain(leaf);
+    NSArray *nodeWithMiddleDescendant = [igor findViewsThatMatchPattern:@"*! [accessibilityHint='middle']" fromRoot:root];
+    expect(nodeWithMiddleDescendant).toContain(root);
+    expect(nodeWithMiddleDescendant).Not.toContain(middle);
+    expect(nodeWithMiddleDescendant).Not.toContain(leaf);
 }
 
 - (void)testMatchesEachViewThatMatchesTheSubjectPatternAndHasASubviewThatMatchesTheSubtreePattern {
-    NSArray *matchingViews = [igor findViewsThatMatchPattern:@"*! [accessibilityHint='leaf']" fromRoot:root];
-    expect(matchingViews).toContain(root);
-    expect(matchingViews).toContain(middle);
-    expect(matchingViews).Not.toContain(leaf);
+    NSArray *nodeWithLeafDescendant = [igor findViewsThatMatchPattern:@"*! [accessibilityHint='leaf']" fromRoot:root];
+    expect(nodeWithLeafDescendant).toContain(root);
+    expect(nodeWithLeafDescendant).toContain(middle);
+    expect(nodeWithLeafDescendant).Not.toContain(leaf);
 }
 
 - (void)testSubtreeMatchesOnlyWithinSubjectSubviews {
-    NSArray *matchingViews = [igor findViewsThatMatchPattern:@"[accessibilityHint='middle']! [accessibilityHint='root'] [accessibilityHint='leaf']" fromRoot:root];
-    expect(matchingViews).Not.toContain(middle);
-    expect(matchingViews.count).toEqual(0);
+    NSArray *middleWithLeafInsideMiddleDescendant = [igor findViewsThatMatchPattern:@"[accessibilityHint='middle']! [accessibilityHint='middle'] [accessibilityHint='leaf']" fromRoot:root];
+    expect(middleWithLeafInsideMiddleDescendant).Not.toContain(middle);
+    expect(middleWithLeafInsideMiddleDescendant.count).toEqual(0);
 }
 
 @end
