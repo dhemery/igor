@@ -1,8 +1,7 @@
-
-#import "Parser.h"
+@class Matcher;
 
 @interface IgorParser : NSObject
 
--(id<Matcher>) parse:(NSString*) pattern;
+-(Matcher*) parse:(NSString*) pattern;
 
 @end

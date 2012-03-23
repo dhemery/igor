@@ -1,7 +1,7 @@
 
 #import "Matcher.h"
 
-@interface PredicateMatcher : NSObject<Matcher>
+@interface PredicateMatcher : Matcher
 
 @property(readonly,retain) NSString* matchExpression;
 

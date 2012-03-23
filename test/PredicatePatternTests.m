@@ -1,6 +1,5 @@
 
 #import "Igor.h"
-#import <Foundation/NSException.h>
 #import "ViewFactory.h"
 
 @interface PredicatePatternTests : SenTestCase

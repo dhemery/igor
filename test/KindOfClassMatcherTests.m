@@ -14,7 +14,7 @@
 }
 
 -(void) testMatchesAViewOfTheTargetClass {
-    id kindOfUIButtonClassMatcher = [KindOfClassMatcher forClass:[UIButton class]];
+    KindOfClassMatcher* kindOfUIButtonClassMatcher = [KindOfClassMatcher forClass:[UIButton class]];
     UIButton* button = [ViewFactory button];
     expect([kindOfUIButtonClassMatcher matchesView:button]).toBeTruthy();
 }

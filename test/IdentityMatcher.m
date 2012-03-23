@@ -1,6 +1,5 @@
 
 #import "IdentityMatcher.h"
-#import "Matcher.h"
 
 @implementation IdentityMatcher {
     UIView* matchView;
@@ -11,7 +10,7 @@
 }
 
 -(IdentityMatcher*) initForView:(UIView*)view {
-    if(self = [super init]) {
+    if((self = [super init])) {
         matchView = view;
     }
     return self;

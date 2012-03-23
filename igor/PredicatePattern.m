@@ -5,9 +5,11 @@
 
 @implementation PredicatePattern
 
--(id<Matcher>) parse:(NSScanner*)scanner {
+-(PredicateMatcher*) parse:(NSScanner*)scanner {
+    if(![scanner scanString:@"[" intoString:nil]) {
+        return [PredicateMatcher withPredicateExpression:@"TRUEPREDICATE"];
+    }
     NSString* expression = [NSString string];
-    if(![scanner scanString:@"[" intoString:nil]) return nil;
     if(![scanner scanUpToString:@"]" intoString:&expression]) {
         @throw [IgorParserException exceptionWithReason:@"Expected predicate" scanner:scanner];
     }

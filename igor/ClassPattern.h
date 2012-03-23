@@ -1,5 +1,7 @@
+@class ClassMatcher;
 
-#import "Parser.h"
+@interface ClassPattern : NSObject
 
-@interface ClassPattern : NSObject<Parser>
+-(ClassMatcher*)parse:(NSScanner*)scanner;
+
 @end

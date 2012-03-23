@@ -1,5 +1,5 @@
 
-@protocol Matcher
+@interface Matcher : NSObject
 
 -(BOOL) matchesView:(UIView*)view;
 

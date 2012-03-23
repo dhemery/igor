@@ -1,6 +1,5 @@
 
 #import "Igor.h"
-#import "ViewFactory.h"
 
 @interface SubtreePatternTests : SenTestCase
 @end

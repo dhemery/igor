@@ -1,6 +1,6 @@
 
-#import "Parser.h"
+@interface SubjectPattern : NSObject
 
-@interface SubjectPattern : NSObject<Parser>
+-(id)parse:(NSScanner*)scanner;
 
 @end

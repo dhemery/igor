@@ -13,10 +13,11 @@
     parser = [PredicatePattern new];
 }    
 
--(void) testReturnsNilIfNoLeftBracket {
+-(void) testReturnsTruePredicateIfNoLeftBracket {
     NSString* noLeadingLeftBracket = @"+notAPropertySelector+";
     NSScanner* scanner = [NSScanner scannerWithString:noLeadingLeftBracket];
-    expect([parser parse:scanner]).toBeNil();
+    PredicateMatcher* matcher = [parser parse:scanner];
+    expect([matcher matchExpression]).toEqual(@"TRUEPREDICATE");
 }
 
 -(void) testThrowsIfNoPredicate {

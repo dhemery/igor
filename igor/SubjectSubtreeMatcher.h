@@ -1,11 +1,11 @@
 
 #import "Matcher.h"
 
-@interface SubjectSubtreeMatcher : NSObject<Matcher>
+@interface SubjectSubtreeMatcher : Matcher
 
-@property(retain,readonly) id<Matcher> subjectMatcher;
-@property(retain,readonly) id<Matcher> subtreeMatcher;
+@property(retain,readonly) Matcher* subjectMatcher;
+@property(retain,readonly) Matcher* subtreeMatcher;
 
-+(id<Matcher>) withSubjectMatcher:(id<Matcher>)subjectMatcher subtreeMatcher:(id<Matcher>)subtreeMatcher;
++(SubjectSubtreeMatcher*) withSubjectMatcher:(Matcher*)subjectMatcher subtreeMatcher:(Matcher*)subtreeMatcher;
 
 @end

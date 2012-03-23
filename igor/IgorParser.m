@@ -1,23 +1,24 @@
 
 #import "IgorParser.h"
 #import "IgorParserException.h"
+#import "Matcher.h"
 #import "SubjectPattern.h"
 #import "SubjectSubtreeMatcher.h"
 
 @implementation IgorParser
 
--(id<Matcher>) parse:(NSString*)pattern {
+-(Matcher*) parse:(NSString*)pattern {
     NSScanner *scanner = [self scannerForPattern:pattern];
-    id<Matcher> matcher = [self parseScanner:scanner];
+    Matcher* matcher = [self parseScanner:scanner];
     [self throwIfNotAtEndOfScanner:scanner];
     return matcher;
 }
 
--(id<Matcher>) parseScanner:(NSScanner*)scanner {
+-(Matcher*) parseScanner:(NSScanner*)scanner {
     SubjectPattern* subjectParser = [SubjectPattern new];
-    id<Matcher> matcher = [subjectParser parse:scanner];
+    Matcher* matcher = [subjectParser parse:scanner];
     if([scanner scanString:@"!" intoString:nil]) {
-        id<Matcher> subtreeMatcher = [subjectParser parse:scanner];
+        Matcher* subtreeMatcher = [subjectParser parse:scanner];
         matcher = [SubjectSubtreeMatcher withSubjectMatcher:matcher subtreeMatcher:subtreeMatcher];
     }
     return matcher;

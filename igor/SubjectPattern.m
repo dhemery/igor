@@ -5,10 +5,10 @@
 
 @implementation SubjectPattern
 
--(id<Matcher>) parse:(NSScanner *)scanner {
-    id<Matcher> matcher = [[NodePattern alloc] parse:scanner];
+-(Matcher*) parse:(NSScanner *)scanner {
+    Matcher* matcher = [[NodePattern alloc] parse:scanner];
     while([scanner scanCharactersFromSet:[NSCharacterSet whitespaceCharacterSet] intoString:nil]) {
-        id<Matcher> descendantMatcher = [[NodePattern alloc] parse:scanner];
+        NodeMatcher* descendantMatcher = [[NodePattern alloc] parse:scanner];
         matcher = [DescendantCombinatorMatcher withAncestorMatcher:matcher descendantMatcher:descendantMatcher];
     }
     return matcher;

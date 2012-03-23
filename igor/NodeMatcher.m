@@ -5,28 +5,28 @@
 
 @implementation NodeMatcher
 
-@synthesize simpleMatchers;
+@synthesize classMatcher = _classMatcher;
+@synthesize predicateMatcher = _predicateMatcher;
+
 
 -(NSString*) description {
-    return [NSString stringWithFormat:@"[CompoundMatcher:%@]", simpleMatchers];
+    return [NSString stringWithFormat:@"[NodeMatcher:%@%@]", _classMatcher, _predicateMatcher];
 }
 
--(NodeMatcher*) initWithClassMatcher:(id<ClassMatcher>)classMatcher predicateMatcher:(PredicateMatcher*)predicateMatcher {
+-(NodeMatcher*) initWithClassMatcher:(ClassMatcher*)classMatcher predicateMatcher:(PredicateMatcher*)predicateMatcher {
     self = [super init];
     if(self) {
-        simpleMatchers = [NSArray arrayWithObjects:classMatcher, predicateMatcher, nil];
+        _classMatcher = classMatcher;
+        _predicateMatcher = predicateMatcher;
     }
     return self;
 }
 
 -(BOOL) matchesView:(UIView *)view {
-    for(id<Matcher> matcher in self.simpleMatchers) {
-        if(![matcher matchesView:view]) return NO;
-    }
-    return YES;
+    return [_classMatcher matchesView:view] && [_predicateMatcher matchesView:view];
 }
 
-+(NodeMatcher*) withClassMatcher:(id<ClassMatcher>)classMatcher predicateMatcher:(PredicateMatcher*)predicateMatcher {
++(NodeMatcher*) withClassMatcher:(ClassMatcher*)classMatcher predicateMatcher:(PredicateMatcher*)predicateMatcher {
     return [[self alloc] initWithClassMatcher:classMatcher predicateMatcher:predicateMatcher];
 }
 

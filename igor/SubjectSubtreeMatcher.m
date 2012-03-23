@@ -4,29 +4,29 @@
 
 @implementation SubjectSubtreeMatcher
 
-@synthesize subjectMatcher, subtreeMatcher;
+@synthesize subjectMatcher = _subjectMatcher, subtreeMatcher = _subtreeMatcher;
 
 -(NSString*) description {
-    return [NSString stringWithFormat:@"[SubjectTestMatcher:[subject:%@][subtree:%@]]", subjectMatcher, subtreeMatcher];
+    return [NSString stringWithFormat:@"[SubjectTestMatcher:[subject:%@][subtree:%@]]", _subjectMatcher, _subtreeMatcher];
 }
 
--(SubjectSubtreeMatcher*) initWithSubjectMatcher:(id<Matcher>)theSubjectMatcher subtreeMatcher:(id<Matcher>)theSubtreeMatcher {
+-(SubjectSubtreeMatcher*) initWithSubjectMatcher:(Matcher*)subjectMatcher subtreeMatcher:(Matcher*)subtreeMatcher {
     self = [super init];
     if(self) {
-        subjectMatcher = theSubjectMatcher;
-        subtreeMatcher = theSubtreeMatcher;
+        _subjectMatcher = subjectMatcher;
+        _subtreeMatcher = subtreeMatcher;
     }
     return self;
 }
 
 -(BOOL) matchesView:(UIView*)view {
-    return [subjectMatcher matchesView:view] && [self testMatcherMatchesASubviewOf:view];
+    return [_subjectMatcher matchesView:view] && [self testMatcherMatchesASubviewOf:view];
 }
 
 -(BOOL) testMatcherMatchesASubviewOf:(UIView*)view {
     __block BOOL subtreeHasAMatch = NO;
     void (^noteMatch)(UIView*) = ^(UIView*target){
-        if([subtreeMatcher matchesView:target]) {
+        if([_subtreeMatcher matchesView:target]) {
             subtreeHasAMatch = YES;
         }
     };
@@ -36,7 +36,7 @@
     return subtreeHasAMatch;
 }
 
-+(SubjectSubtreeMatcher*) withSubjectMatcher:(id<Matcher>)subjectMatcher subtreeMatcher:(id<Matcher>)subtreeMatcher {
++(SubjectSubtreeMatcher*) withSubjectMatcher:(Matcher*)subjectMatcher subtreeMatcher:(Matcher*)subtreeMatcher {
     return [[SubjectSubtreeMatcher alloc] initWithSubjectMatcher:subjectMatcher subtreeMatcher:subtreeMatcher];
 }
 

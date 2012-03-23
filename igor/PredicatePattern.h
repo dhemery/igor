@@ -1,5 +1,7 @@
+@class PredicateMatcher;
 
-#import "Parser.h"
+@interface PredicatePattern : NSObject
 
-@interface PredicatePattern : NSObject<Parser>
+-(PredicateMatcher*)parse:(NSScanner*)scanner;
+
 @end

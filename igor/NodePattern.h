@@ -1,6 +1,8 @@
 
-#import "Parser.h"
+@class NodeMatcher;
 
-@interface NodePattern : NSObject<Parser>
+@interface NodePattern : NSObject
+
+-(NodeMatcher*) parse:(NSScanner*)scanner;
 
 @end

@@ -1,7 +1,6 @@
+#import "NodeMatcher.h"
 
-#import "Matcher.h"
-
-@interface IdentityMatcher : NSObject<Matcher>
+@interface IdentityMatcher : NodeMatcher
 
 +(IdentityMatcher*) forView:(UIView*)view;
 

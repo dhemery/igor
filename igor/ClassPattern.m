@@ -1,10 +1,3 @@
-//
-//  ClassParser.m
-//  igor
-//
-//  Created by Dale Emery on 11/19/11.
-//  Copyright (c) 2011 Dale H. Emery. All rights reserved.
-//
 
 #import "ClassMatcher.h"
 #import "ClassPattern.h"
@@ -13,7 +6,7 @@
 
 @implementation ClassPattern
 
--(id) parse:(NSScanner*)scanner {
+-(ClassMatcher*) parse:(NSScanner*)scanner {
     Class targetClass = [UIView class];
     Class selectorClass = [KindOfClassMatcher class];
     

@@ -3,22 +3,12 @@
 
 @implementation MemberOfClassMatcher
 
-@synthesize matchClass;
-
 -(NSString*) description {
-    return [NSString stringWithFormat:@"[MemberOfClassMatcher:[matchClass:%@]]", matchClass];
+    return [NSString stringWithFormat:@"[MemberOfClassMatcher:[matchClass:%@]]", self.matchClass];
 }
 
-+(MemberOfClassMatcher*) forClass:(Class)aClass {
-    return [[self alloc] initForClass:aClass];
-}
-
--(MemberOfClassMatcher*) initForClass:(Class)aClass {
-    self = [super init];
-    if(self) {
-        matchClass = aClass;
-    }
-    return self;
++(MemberOfClassMatcher*) forClass:(Class)matchClass {
+    return (MemberOfClassMatcher *)[[self alloc] initForClass:matchClass];
 }
 
 -(BOOL) matchesView:(UIView*)view {

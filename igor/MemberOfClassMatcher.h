@@ -1,7 +1,7 @@
 
 #import "ClassMatcher.h"
 
-@interface MemberOfClassMatcher : NSObject<ClassMatcher>
+@interface MemberOfClassMatcher : ClassMatcher
 
 +(MemberOfClassMatcher*) forClass:(Class)targetClass;
 
