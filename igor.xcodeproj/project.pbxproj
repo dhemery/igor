@@ -156,6 +156,7 @@
 		2D436E2915191B3400071950 /* SubtreeTestParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubtreeTestParserTests.m; sourceTree = "<group>"; };
 		2D496EA31486A513007E1FDE /* PredicateMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PredicateMatcher.h; sourceTree = "<group>"; };
 		2D496EA41486A513007E1FDE /* PredicateMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredicateMatcher.m; sourceTree = "<group>"; };
+		2D674477151E58C600B9BC52 /* vigor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = vigor.entitlements; sourceTree = "<group>"; };
 		2D695C89147CD1BA00AF4115 /* ClassMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassMatcher.h; sourceTree = "<group>"; };
 		2D695C8A147CD1BA00AF4115 /* ClassPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassPattern.h; sourceTree = "<group>"; };
 		2D695C8B147CD1BA00AF4115 /* ClassPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassPattern.m; sourceTree = "<group>"; };
@@ -474,6 +475,7 @@
 		2DCF9768147ED3FD003B0F38 /* vigor */ = {
 			isa = PBXGroup;
 			children = (
+				2D674477151E58C600B9BC52 /* vigor.entitlements */,
 				2DCF9771147ED3FD003B0F38 /* AppDelegate.h */,
 				2DCF9772147ED3FD003B0F38 /* AppDelegate.m */,
 				2DCF9774147ED3FD003B0F38 /* MainStoryboard_iPhone.storyboard */,
@@ -650,7 +652,7 @@
 		E621659DB794A5D612DCD416 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0440;
 			};
 			buildConfigurationList = E621659DB794A5D612DCD417 /* Build configuration list for PBXProject "igor" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -890,6 +892,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = vigor/vigor.entitlements;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
@@ -919,7 +922,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OBJROOT = "$(SYMROOT)";
 				SDKROOT = iphoneos;
 				SYMROOT = "$(PROJECT_DIR)/build";
@@ -947,7 +950,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OBJROOT = "$(SYMROOT)";
 				SDKROOT = iphoneos;
 				SYMROOT = "$(PROJECT_DIR)/build";

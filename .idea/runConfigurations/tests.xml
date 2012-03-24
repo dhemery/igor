@@ -1,6 +1,8 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="tests" type="OCUnitRunConfiguration" factoryName="OCUnit" SCHEME_NAME="tests" PROJECT_NAME="igor" TARGET_NAME="igorTests" CONFIG_NAME="Debug" DESTINATION_ID="iphonesimulator_5.1_1" DEBUGGER="LLDB" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
-    <envs />
+    <envs>
+      <env name="CFFIXED_USER_HOME" value="$USER_HOME$/Library/Application Support/iPhone Simulator/5.1" />
+    </envs>
     <RunnerSettings RunnerId="AppRunner" />
     <ConfigurationWrapper RunnerId="AppRunner" />
     <method />
