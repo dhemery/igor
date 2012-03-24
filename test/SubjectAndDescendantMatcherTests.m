@@ -1,12 +1,12 @@
-#import "DescendantCombinatorMatcher.h"
+#import "SubjectAndAncestorMatcher.h"
 #import "IdentityMatcher.h"
-#import "SubjectSubtreeMatcher.h"
+#import "SubjectAndDescendantMatcher.h"
 #import "ViewFactory.h"
 
-@interface SubjectSubtreeMatcherTests : SenTestCase
+@interface SubjectAndDescendantMatcherTests : SenTestCase
 @end
 
-@implementation SubjectSubtreeMatcherTests {
+@implementation SubjectAndDescendantMatcherTests {
     UIButton *root;
     UIButton *middle;
     UIButton *leaf;
@@ -21,9 +21,9 @@
 }
 
 - (void)testMatchesIfViewMatchesSubjectMatcherAndSubviewMatchesSubtreeMatcher {
-    SubjectSubtreeMatcher *rootWithLeafDescendant = [SubjectSubtreeMatcher
+    SubjectAndDescendantMatcher *rootWithLeafDescendant = [SubjectAndDescendantMatcher
             withSubjectMatcher:[IdentityMatcher forView:root]
-                subtreeMatcher:[IdentityMatcher forView:leaf]];
+             descendantMatcher:[IdentityMatcher forView:leaf]];
 
     expect([rootWithLeafDescendant matchesView:root withinTree:root]).toBeTruthy();
     expect([rootWithLeafDescendant matchesView:middle withinTree:root]).toBeFalsy();
@@ -31,13 +31,11 @@
 }
 
 - (void)testSubtreeMatcherExaminesOnlySubviewsOfTheSubject {
-    id<RelationshipMatcher> leafWithMiddleAncestor = [DescendantCombinatorMatcher
-            withAncestorMatcher:[IdentityMatcher forView:middle]
-              descendantMatcher:[IdentityMatcher forView:leaf]];
+    id <RelationshipMatcher> leafWithMiddleAncestor = [SubjectAndAncestorMatcher withSubjectMatcher:[IdentityMatcher forView:leaf] ancestorMatcher:[IdentityMatcher forView:middle]];
 
-    SubjectSubtreeMatcher *middleWithLeafInsideMiddleDescendant = [SubjectSubtreeMatcher
+    SubjectAndDescendantMatcher *middleWithLeafInsideMiddleDescendant = [SubjectAndDescendantMatcher
             withSubjectMatcher:[IdentityMatcher forView:middle]
-                subtreeMatcher:leafWithMiddleAncestor];
+             descendantMatcher:leafWithMiddleAncestor];
 
     expect([middleWithLeafInsideMiddleDescendant matchesView:middle withinTree:root]).toBeFalsy();
 }

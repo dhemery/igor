@@ -6,6 +6,7 @@
 @interface ClassPattern : Pattern
 
 + (ClassPattern *)forScanner:(PatternScanner *)scanner;
+
 - (ClassMatcher *)parse;
 
 @end

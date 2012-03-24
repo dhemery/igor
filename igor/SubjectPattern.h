@@ -5,6 +5,7 @@
 @interface SubjectPattern : Pattern
 
 + (SubjectPattern *)forScanner:(PatternScanner *)scanner;
-- (id<RelationshipMatcher>)parse;
+
+- (id <RelationshipMatcher>)parse;
 
 @end

@@ -5,6 +5,7 @@
 @interface NodePattern : Pattern
 
 + (NodePattern *)forScanner:(PatternScanner *)scanner;
+
 - (NodeMatcher *)parse;
 
 @end

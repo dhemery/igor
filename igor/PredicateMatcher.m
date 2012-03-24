@@ -5,7 +5,7 @@
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"[PredicateMatcher:[predicate:%@]]", predicate];
+    return [NSString stringWithFormat:@"[PredicateMatcher:%@]", predicate];
 }
 
 - (PredicateMatcher *)initWithPredicateExpression:(NSString *)expression {

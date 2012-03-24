@@ -3,7 +3,7 @@
 @implementation KindOfClassMatcher
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"[KindOfClassMatcher:[matchClass:%@]]", self.matchClass];
+    return [NSString stringWithFormat:@"[KindOfClassMatcher:%@]", self.matchClass];
 }
 
 + (KindOfClassMatcher *)forClass:(Class)targetClass {

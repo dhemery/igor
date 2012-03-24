@@ -4,7 +4,7 @@
 @class ClassMatcher;
 @class PredicateMatcher;
 
-@interface NodeMatcher : NSObject<RelationshipMatcher>
+@interface NodeMatcher : NSObject <RelationshipMatcher>
 
 @property(retain, readonly) ClassMatcher *classMatcher;
 @property(retain, readonly) PredicateMatcher *predicateMatcher;

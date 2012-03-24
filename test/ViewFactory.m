@@ -1,9 +1,10 @@
 #import "ViewFactory.h"
 
+
 @implementation ViewFactory
 
 + (UIButton *)button {
-    return [[UIButton alloc] initWithFrame:[ViewFactory frame]];
+    return [[UIButton alloc] initWithFrame:[self frame]];
 }
 
 + (UIButton *)buttonWithAccessibilityHint:(NSString *)hint {
@@ -13,7 +14,7 @@
 }
 
 + (UIControl *)control {
-    return [[UIControl alloc] initWithFrame:[ViewFactory frame]];
+    return [[UIControl alloc] initWithFrame:[self frame]];
 }
 
 + (CGRect)frame {
@@ -21,11 +22,11 @@
 }
 
 + (UIView *)view {
-    return [[UIView alloc] initWithFrame:[ViewFactory frame]];
+    return [[UIView alloc] initWithFrame:[self frame]];
 }
 
 + (UIWindow *)window {
-    return [[UIWindow alloc] initWithFrame:[ViewFactory frame]];
+    return [[UIWindow alloc] initWithFrame:[self frame]];
 }
 
 @end

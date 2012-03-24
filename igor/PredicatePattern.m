@@ -1,4 +1,3 @@
-
 #import "PredicatePattern.h"
 #import "PredicateMatcher.h"
 #import "PatternScanner.h"
@@ -6,7 +5,7 @@
 @implementation PredicatePattern
 
 + (PredicatePattern *)forScanner:(PatternScanner *)scanner {
-    return (PredicatePattern *)[[self alloc] initWithScanner:scanner];
+    return (PredicatePattern *) [[self alloc] initWithScanner:scanner];
 }
 
 - (PredicateMatcher *)parse {

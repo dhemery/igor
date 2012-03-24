@@ -5,7 +5,7 @@
 
 @synthesize scanner = _scanner;
 
-- (Pattern *)initWithScanner:(PatternScanner *)scanner{
+- (Pattern *)initWithScanner:(PatternScanner *)scanner {
     self = [super init];
     if (self) {
         _scanner = scanner;

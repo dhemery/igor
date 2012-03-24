@@ -7,7 +7,7 @@
 @implementation NodePattern
 
 + (NodePattern *)forScanner:(PatternScanner *)scanner {
-    return (NodePattern *)[[self alloc] initWithScanner:scanner];
+    return (NodePattern *) [[self alloc] initWithScanner:scanner];
 }
 
 - (NodeMatcher *)parse {

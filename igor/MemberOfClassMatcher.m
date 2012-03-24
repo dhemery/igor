@@ -3,7 +3,7 @@
 @implementation MemberOfClassMatcher
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"[MemberOfClassMatcher:[matchClass:%@]]", self.matchClass];
+    return [NSString stringWithFormat:@"[MemberOfClassMatcher:%@]", self.matchClass];
 }
 
 + (MemberOfClassMatcher *)forClass:(Class)matchClass {
