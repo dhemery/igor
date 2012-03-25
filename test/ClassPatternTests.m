@@ -42,17 +42,7 @@
 
     NSArray *matchingViews = [igor findViewsThatMatchPattern:pattern fromRoot:root];
 
-    expect(matchingViews).toContain(root);
-    expect(matchingViews).toContain(view1);
-    expect(matchingViews).toContain(view11);
-    expect(matchingViews).toContain(view12);
-    expect(matchingViews).toContain(view2);
-    expect(matchingViews).toContain(view21);
-    expect(matchingViews).toContain(view211);
-    expect(matchingViews).toContain(view212);
-    expect(matchingViews).toContain(view213);
-    expect(matchingViews).toContain(view22);
-    expect(matchingViews).toContain(view23);
+    assertThat(matchingViews, containsInAnyOrder(root, view1, view11, view12, view2, view21, view211, view212, view213, view22, view23, nil));
 }
 
 - (void)testMemberOfClassPattern {
@@ -67,9 +57,8 @@
 
     NSArray *matchingViews = [igor findViewsThatMatchPattern:pattern fromRoot:root];
 
-    expect(matchingViews).toContain(button);
-    expect(matchingViews).Not.toContain(view);
-    expect(matchingViews).Not.toContain(imageView);
+    assertThat(matchingViews, hasItem(button));
+    assertThat(matchingViews, hasCountOf(1));
 }
 
 - (void)testKindOfClassPattern {
@@ -87,10 +76,7 @@
 
     NSArray *matchingViews = [igor findViewsThatMatchPattern:pattern fromRoot:root];
 
-    expect(matchingViews).Not.toContain(viewOfBaseClassOfTargetClass);
-    expect(matchingViews).toContain(viewOfTargetClass);
-    expect(matchingViews).toContain(viewOfClassDerivedFromTargetClass);
-    expect(matchingViews).Not.toContain(viewOfUnrelatedClass);
+    assertThat(matchingViews, onlyContains(viewOfTargetClass, viewOfClassDerivedFromTargetClass, nil));
 }
 
 @end

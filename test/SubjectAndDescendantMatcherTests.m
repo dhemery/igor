@@ -25,9 +25,9 @@
             withSubjectMatcher:[IdentityMatcher forView:root]
              descendantMatcher:[IdentityMatcher forView:leaf]];
 
-    expect([rootWithLeafDescendant matchesView:root withinTree:root]).toBeTruthy();
-    expect([rootWithLeafDescendant matchesView:middle withinTree:root]).toBeFalsy();
-    expect([rootWithLeafDescendant matchesView:leaf withinTree:root]).toBeFalsy();
+    assertThatBool([rootWithLeafDescendant matchesView:root withinTree:root], equalToBool(YES));
+    assertThatBool([rootWithLeafDescendant matchesView:middle withinTree:root], equalToBool(NO));
+    assertThatBool([rootWithLeafDescendant matchesView:leaf withinTree:root], equalToBool(NO));
 }
 
 - (void)testSubtreeMatcherExaminesOnlySubviewsOfTheSubject {
@@ -37,7 +37,7 @@
             withSubjectMatcher:[IdentityMatcher forView:middle]
              descendantMatcher:leafWithMiddleAncestor];
 
-    expect([middleWithLeafInsideMiddleDescendant matchesView:middle withinTree:root]).toBeFalsy();
+    assertThatBool([middleWithLeafInsideMiddleDescendant matchesView:middle withinTree:root], equalToBool(NO));
 }
 
 @end

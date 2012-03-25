@@ -13,71 +13,71 @@
 
 - (void)testParsesAsteriskAsKindOfClassMatcherForUIViewClass {
     ClassMatcher *matcher = ((NodeMatcher *) [[IgorPattern forPattern:@"*"] parse]).classMatcher;
-    expect(matcher).toBeInstanceOf([KindOfClassMatcher class]);
-    expect(matcher.matchClass).toEqual([UIView class]);
+    assertThat(matcher, instanceOf([KindOfClassMatcher class]));
+    assertThat(matcher.matchClass, equalTo([UIView class]));
 }
 
 - (void)testParsesNameAsMemberOfClassMatcher {
     NodeMatcher *matcher = (NodeMatcher *) [[IgorPattern forPattern:@"UIButton"] parse];
-    expect(matcher.classMatcher).toBeInstanceOf([MemberOfClassMatcher class]);
-    expect(matcher.classMatcher.matchClass).toEqual([UIButton class]);
+    assertThat(matcher.classMatcher, instanceOf([MemberOfClassMatcher class]));
+    assertThat(matcher.classMatcher.matchClass, equalTo([UIButton class]));
 }
 
 - (void)testParsesNameAsteriskAsKindOfClassMatcher {
     NodeMatcher *matcher = (NodeMatcher *) [[IgorPattern forPattern:@"UILabel*"] parse];
-    expect(matcher.classMatcher).toBeInstanceOf([KindOfClassMatcher class]);
-    expect(matcher.classMatcher.matchClass).toEqual([UILabel class]);
+    assertThat(matcher.classMatcher, instanceOf([KindOfClassMatcher class]));
+    assertThat(matcher.classMatcher.matchClass, equalTo([UILabel class]));
 }
 
 - (void)testParsesNodeMatcherWithPredicateMatcher {
     NSString *predicateExpression = [[NSPredicate predicateWithFormat:@"myPropertyName='somevalue'"] predicateFormat];
     NodeMatcher *matcher = (NodeMatcher *) [[IgorPattern forPattern:@"*[myPropertyName='somevalue']"] parse];
 
-    expect(matcher.classMatcher).toBeInstanceOf([KindOfClassMatcher class]);
-    expect(matcher.classMatcher.matchClass).toEqual([UIView class]);
+    assertThat(matcher.classMatcher, instanceOf([KindOfClassMatcher class]));
+    assertThat(matcher.classMatcher.matchClass, equalTo([UIView class]));
 
-    expect(matcher.predicateMatcher).toBeInstanceOf([PredicateMatcher class]);
-    expect(matcher.predicateMatcher.matchExpression).toEqual(predicateExpression);
+    assertThat(matcher.predicateMatcher, instanceOf([PredicateMatcher class]));
+    assertThat(matcher.predicateMatcher.matchExpression, equalTo(predicateExpression));
 }
 
 - (void)testParsesDescendantCombinatorMatcher {
     SubjectAndAncestorMatcher *matcher = (SubjectAndAncestorMatcher *) [[IgorPattern forPattern:@"UIButton UILabel"] parse];
-    expect(matcher).toBeInstanceOf([SubjectAndAncestorMatcher class]);
+    assertThat(matcher, instanceOf([SubjectAndAncestorMatcher class]));
 
     NodeMatcher *ancestorMatcher = (NodeMatcher *) matcher.ancestorMatcher;
-    expect(ancestorMatcher.classMatcher).toBeInstanceOf([MemberOfClassMatcher class]);
-    expect(ancestorMatcher.classMatcher.matchClass).toEqual([UIButton class]);
+    assertThat(ancestorMatcher.classMatcher, instanceOf([MemberOfClassMatcher class]));
+    assertThat(ancestorMatcher.classMatcher.matchClass, equalTo([UIButton class]));
 
     NodeMatcher *descendantMatcher = matcher.subjectMatcher;
-    expect(descendantMatcher.classMatcher).toBeInstanceOf([MemberOfClassMatcher class]);
-    expect(descendantMatcher.classMatcher.matchClass).toEqual([UILabel class]);
+    assertThat(descendantMatcher.classMatcher, instanceOf([MemberOfClassMatcher class]));
+    assertThat(descendantMatcher.classMatcher.matchClass, equalTo([UILabel class]));
 }
 
 - (void)testParsesMultipleDescendantCombinatorMatchers {
     SubjectAndAncestorMatcher *matcher = (SubjectAndAncestorMatcher *) [[IgorPattern forPattern:@"UIButton UILabel UIView UITextField"] parse];
-    expect(matcher).toBeInstanceOf([SubjectAndAncestorMatcher class]);
+    assertThat(matcher, instanceOf([SubjectAndAncestorMatcher class]));
 
     NodeMatcher *descendantMatcher = matcher.subjectMatcher;
-    expect(descendantMatcher.classMatcher).toBeInstanceOf([MemberOfClassMatcher class]);
-    expect(descendantMatcher.classMatcher.matchClass).toEqual([UITextField class]);
+    assertThat(descendantMatcher.classMatcher, instanceOf([MemberOfClassMatcher class]));
+    assertThat(descendantMatcher.classMatcher.matchClass, equalTo([UITextField class]));
 
     SubjectAndAncestorMatcher *ancestorMatcher = (SubjectAndAncestorMatcher *) matcher.ancestorMatcher;
-    expect(ancestorMatcher).toBeInstanceOf([SubjectAndAncestorMatcher class]);
+    assertThat(ancestorMatcher, instanceOf([SubjectAndAncestorMatcher class]));
 
     NodeMatcher *ancestorDescendantMatcher = ancestorMatcher.subjectMatcher;
-    expect(ancestorDescendantMatcher.classMatcher).toBeInstanceOf([MemberOfClassMatcher class]);
-    expect(ancestorDescendantMatcher.classMatcher.matchClass).toEqual([UIView class]);
+    assertThat(ancestorDescendantMatcher.classMatcher, instanceOf([MemberOfClassMatcher class]));
+    assertThat(ancestorDescendantMatcher.classMatcher.matchClass, equalTo([UIView class]));
 
     SubjectAndAncestorMatcher *ancestorAncestorMatcher = (SubjectAndAncestorMatcher *) ancestorMatcher.ancestorMatcher;
-    expect(ancestorAncestorMatcher).toBeInstanceOf([SubjectAndAncestorMatcher class]);
+    assertThat(ancestorAncestorMatcher, instanceOf([SubjectAndAncestorMatcher class]));
 
     NodeMatcher *ancestorAncestorDescendantMatcher = ancestorAncestorMatcher.subjectMatcher;
-    expect(ancestorAncestorDescendantMatcher.classMatcher).toBeInstanceOf([MemberOfClassMatcher class]);
-    expect(ancestorAncestorDescendantMatcher.classMatcher.matchClass).toEqual([UILabel class]);
+    assertThat(ancestorAncestorDescendantMatcher.classMatcher, instanceOf([MemberOfClassMatcher class]));
+    assertThat(ancestorAncestorDescendantMatcher.classMatcher.matchClass, equalTo([UILabel class]));
 
     NodeMatcher *ancestorAncestorAncestorMatcher = (NodeMatcher *) ancestorAncestorMatcher.ancestorMatcher;
-    expect(ancestorAncestorAncestorMatcher.classMatcher).toBeInstanceOf([MemberOfClassMatcher class]);
-    expect(ancestorAncestorAncestorMatcher.classMatcher.matchClass).toEqual([UIButton class]);
+    assertThat(ancestorAncestorAncestorMatcher.classMatcher, instanceOf([MemberOfClassMatcher class]));
+    assertThat(ancestorAncestorAncestorMatcher.classMatcher.matchClass, equalTo([UIButton class]));
 }
 @end
 

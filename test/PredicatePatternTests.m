@@ -6,27 +6,25 @@
 
 @implementation PredicatePatternTests {
     Igor *igor;
+    UIView *view;
 }
 
 - (void)setUp {
     igor = [Igor new];
+    view = [ViewFactory buttonWithAccessibilityHint:@"the right accessibility hint"];
 }
 
-- (void)testPredicatePattern {
-    UIView *view = [ViewFactory buttonWithAccessibilityHint:@"monkeymonkey"];
-
-    NSArray *matchingViews = [igor findViewsThatMatchPattern:@"[accessibilityHint='monkeymonkey']" fromRoot:view];
-    expect(matchingViews).toContain(view);
-
-    matchingViews = [igor findViewsThatMatchPattern:@"[accessibilityHint='fiddlefaddle']" fromRoot:view];
-    expect(matchingViews).Not.toContain(view);
-
-    matchingViews = [igor findViewsThatMatchPattern:@"[nonExistentProperty='monkeymonkey']" fromRoot:view];
-    expect(matchingViews).Not.toContain(view);
+- (void)testMatchesSubjectThatSatisfiesPredicate {
+    NSArray *matchingViews = [igor findViewsThatMatchPattern:@"[accessibilityHint='the right accessibility hint']" fromRoot:view];
+    assertThat(matchingViews, hasItem(view));
 }
 
-- (void)testPredicatePatternThrowsIfPatternIsUnparseable {
-    id notUsed = nil;
-    STAssertThrows([igor findViewsThatMatchPattern:@"[this is not a valid predicate]" fromRoot:notUsed], @"Expected predicate parsing exception");
+- (void)testMismatchesSubjectThatDoesNotSatisfyPredicate {
+    NSArray *matchingViews = [igor findViewsThatMatchPattern:@"[accessibilityHint='wrong accessibility hint']" fromRoot:view];
+    assertThat(matchingViews, is(empty()));
+}
+
+- (void)testThrowsIfPatternIsIllegal {
+    STAssertThrows([igor findViewsThatMatchPattern:@"[this is not a valid predicate]" fromRoot:nil], @"Expected predicate parsing exception");
 }
 @end

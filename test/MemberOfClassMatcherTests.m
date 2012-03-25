@@ -16,19 +16,19 @@
 - (void)testMatchesAViewOfTheTargetClass {
     id memberOfUIButtonClassMatcher = [MemberOfClassMatcher forClass:[UIButton class]];
     UIButton *button = [ViewFactory button];
-    expect([memberOfUIButtonClassMatcher matchesView:button]).toBeTruthy();
+    assertThatBool([memberOfUIButtonClassMatcher matchesView:button], equalToBool(YES));
 }
 
 - (void)testMismatchesAViewOfANonTargetClass {
     id memberOfUIButtonClassMatcher = [MemberOfClassMatcher forClass:[UIButton class]];
     UIView *view = [ViewFactory view];
-    expect([memberOfUIButtonClassMatcher matchesView:view]).toBeFalsy();
+    assertThatBool([memberOfUIButtonClassMatcher matchesView:view], equalToBool(NO));
 }
 
 - (void)testMismatchesAViewOfAClassThatInheritsFromTheTargetClass {
     id memberOfUIViewClassMatcher = [MemberOfClassMatcher forClass:[UIView class]];
     UIButton *button = [ViewFactory button];
-    expect([memberOfUIViewClassMatcher matchesView:button]).toBeFalsy();
+    assertThatBool([memberOfUIViewClassMatcher matchesView:button], equalToBool(NO));
 }
 
 @end

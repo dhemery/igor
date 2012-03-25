@@ -12,7 +12,7 @@
     PatternScanner *scanner = [PatternScanner withPattern:noLeadingLeftBracket];
     PredicatePattern *parser = [PredicatePattern forScanner:scanner];
     PredicateMatcher *matcher = [parser parse];
-    expect([matcher matchExpression]).toEqual(@"TRUEPREDICATE");
+    assertThat([matcher matchExpression], equalTo(@"TRUEPREDICATE"));
 }
 
 - (void)testThrowsIfNoPredicate {
@@ -27,8 +27,8 @@
     PatternScanner *scanner = [PatternScanner withPattern:propertyEqualsPattern];
     PredicatePattern *parser = [PredicatePattern forScanner:scanner];
     PredicateMatcher *matcher = [parser parse];
-    expect(matcher).toBeInstanceOf([PredicateMatcher class]);
-    expect(matcher.matchExpression).toEqual(@"pearlBailey == \"opreylady\"");
+    assertThat(matcher, instanceOf([PredicateMatcher class]));
+    assertThat(matcher.matchExpression, equalTo(@"pearlBailey == \"opreylady\""));
 }
 
 - (void)testThrowsIfNoRightBracket {

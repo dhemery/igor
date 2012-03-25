@@ -3,9 +3,9 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#define EXP_SHORTHAND
-
-#import "Expecta.h"
 #import <SenTestingKit/SenTestCase.h>
+
+#define HC_SHORTHAND
+#import <OCHamcrestIOS/OCHamcrestIOS.h>
 
 #endif
