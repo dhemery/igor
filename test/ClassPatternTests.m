@@ -76,7 +76,10 @@
 
     NSArray *matchingViews = [igor findViewsThatMatchPattern:pattern fromRoot:root];
 
-    assertThat(matchingViews, onlyContains(viewOfTargetClass, viewOfClassDerivedFromTargetClass, nil));
+    assertThat(matchingViews, hasItem(viewOfTargetClass));
+    assertThat(matchingViews, hasItem(viewOfClassDerivedFromTargetClass));
+    assertThat(matchingViews, isNot(hasItem(viewOfBaseClassOfTargetClass)));
+    assertThat(matchingViews, isNot(hasItem(viewOfUnrelatedClass)));
 }
 
 @end

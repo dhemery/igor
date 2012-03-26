@@ -12,14 +12,30 @@
     if (![self.scanner skipString:@"["]) {
         return [PredicateMatcher withPredicateExpression:@"TRUEPREDICATE"];
     }
-    NSString *expression = [NSString string];
-    if (![self.scanner scanUpToString:@"]" intoString:&expression]) {
-        [self.scanner failBecause:@"Expected predicate"];
-    }
+    NSString *expression = [self parseExpression];
     if (![self.scanner skipString:@"]"]) {
         [self.scanner failBecause:@"Expected ]"];
     }
     return [PredicateMatcher withPredicateExpression:expression];
+}
+
+- (NSString *)parseExpression {
+    NSString *expression = @"";
+    NSString *chunk;
+    while([self.scanner scanUpToString:@"]" intoString:&chunk]) {
+        expression = [expression stringByAppendingString:chunk];
+        @try {
+            [NSPredicate predicateWithFormat:expression];
+            return expression;
+        }
+        @catch (NSException *e) {
+        }
+        while([self.scanner skipString:@"]"]) {
+            expression = [expression stringByAppendingString:@"]"];
+        }
+    }
+    [self.scanner failBecause:@"Expected predicate"];
+    return nil;
 }
 
 @end
