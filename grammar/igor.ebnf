@@ -1,15 +1,21 @@
 IgorPattern
-	::= TreePattern
-	| SubjectPattern (Combinator TreePattern)?
+	::= Sequence
+	| SubjectPattern (Combinator Sequence)?
 
 SubjectPattern
-	::= TreePattern "!"
+	::= Sequence "!"
 
-TreePattern
-	::= NodePattern (Combinator NodePattern)*
+Sequence
+	::= SequenceItem (Combinator SequenceItem)*
+
+SequenceItem
+	::= (NodePattern | SubtreePattern)
+
+SubtreePattern
+	::= "(" Sequence ")"
 
 Combinator
-	::= S* ( S | ">" | "~") S*
+	::= S ( Whitespace | ">" | "~") S
 
 NodePattern
 	::= ClassTest InstanceTest*
@@ -27,3 +33,5 @@ InstanceTest
 
 Identifier
 	::= Integer | Word | String
+
+S	::= Whitespace?
