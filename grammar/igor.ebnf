@@ -1,35 +1,29 @@
 IgorPattern
-	::= ExplicitSubjectPattern SubtreePattern?
-	| ImpliedSubjectPattern
+	::= TreePattern "!" (S TreePattern)?
 
-ExplicitSubjectPattern
-	::= ImpliedSubjectPattern "!"
-
-ImpliedSubjectPattern
-	::= NodePattern
-	| DescendantCombinatorPattern
-
-SubtreePattern
-	::= Whitespace ImpliedSubjectPattern
-
-DescendantCombinatorPattern
-	::= NodePattern (Whitespace NodePattern)+
+TreePattern
+	::= NodePattern (S NodePattern)*
 
 NodePattern
-	::= ClassPattern IdentifierPattern? InstancePattern*
- 	| IdentifierPattern InstancePattern*
-	| InstancePattern+
+	::= (ClassPattern | InstancePattern) (InstancePattern)*
 
 ClassPattern
+	::= UniversalClassPattern | MemberOfClassPattern | KindOfClassPattern
+
+UniversalClassPattern
 	::= "*"
-	| ClassName
-	| ClassName "*"
+
+MemberOfClassPattern
+	::= ClassName
+
+KindOfClassPattern
+	::= ClassName "*"
+
+InstancePattern
+	::= IdentifierPattern | PositionPattern | PredicatePattern
 
 IdentifierPattern
 	::= "#" Identifier
-
-InstancePattern
-	::= PredicatePattern | PositionPattern
 
 PredicatePattern
 	::= "[" Predicate "]"
