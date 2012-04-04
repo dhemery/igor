@@ -1,18 +1,15 @@
 IgorPattern
-	::= Sequence
-	| SubjectPattern (Combinator Sequence)?
+	::= ComplexPattern
+	| SubjectPattern (Combinator ComplexPattern)?
 
 SubjectPattern
-	::= Sequence "!"
+	::= ComplexPattern "!"
 
-Sequence
-	::= SequenceItem (Combinator SequenceItem)*
+ComplexPattern
+	::= CompoundPattern (Combinator CompoundPattern)*
 
-SequenceItem
-	::= (NodePattern | SubtreePattern)
-
-SubtreePattern
-	::= "(" Sequence ")"
+CompoundPattern
+	::= NodePattern | "(" ComplexPattern ")"
 
 Combinator
 	::= S ( Whitespace | ">" | "~") S
