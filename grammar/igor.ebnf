@@ -1,9 +1,5 @@
 IgorPattern
-	::= ComplexPattern
-	| SubjectPattern (Combinator ComplexPattern)?
-
-SubjectPattern
-	::= ComplexPattern "!"
+	::= ComplexPattern ("!" Combinator ComplexPattern)?
 
 ComplexPattern
 	::= CompoundPattern (Combinator CompoundPattern)*
