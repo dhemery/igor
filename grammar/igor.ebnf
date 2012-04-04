@@ -1,32 +1,29 @@
 IgorPattern
-	::= TreePattern "!" (S TreePattern)?
+	::= TreePattern
+	| SubjectPattern (Combinator TreePattern)?
+
+SubjectPattern
+	::= TreePattern "!"
 
 TreePattern
-	::= NodePattern (S NodePattern)*
+	::= NodePattern (Combinator NodePattern)*
+
+Combinator
+	::= S* ( S | ">" | "~") S*
 
 NodePattern
-	::= (ClassPattern | InstancePattern) (InstancePattern)*
+	::= ClassTest InstanceTest*
+	| InstanceTest+
 
-ClassPattern
-	::= UniversalClassPattern | MemberOfClassPattern | KindOfClassPattern
-
-UniversalClassPattern
-	::= "*"
-
-MemberOfClassPattern
+ClassTest
 	::= ClassName
+	| ClassName "*"
+	| "*"
 
-KindOfClassPattern
-	::= ClassName "*"
-
-InstancePattern
-	::= IdentifierPattern | PositionPattern | PredicatePattern
-
-IdentifierPattern
+InstanceTest
 	::= "#" Identifier
-
-PredicatePattern
-	::= "[" Predicate "]"
+	| ":" PositionTest
+	| "[" Predicate "]"
 
 Identifier
 	::= Integer | Word | String
