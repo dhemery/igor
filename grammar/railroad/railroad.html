@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+		<style type="text/css">
+			button {
+			    vertical-align: top;
+			}
+	    </style>
+
+		<script type="text/javascript" src="jquery.min.js"></script>
+		<script type="text/javascript" src="ebnf-jq.js"></script>
+		<script type="text/javascript" src="ebnfdiagram.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+			    $("#parse").click(function(){
+			        var ebnf = $("#ebnf").val();
+			        $.ebnfParse(ebnf);
+			    });
+  
+			    var dia = $("#out").ebnfcanvas()[0];
+  
+			    $("#dia").click(function(){
+			        var ebnf = $("#ebnf").val();
+			        $.ebnfParse( ebnf, 
+			            function(syn){
+			                dia.setSyntax(syn);
+			            }, 
+			            function(err) {
+			                dia.showErrors(err);
+			            }
+			        );
+			    });
+			});
+	    </script>
+	</head>
+	<body>
+		<textarea id="ebnf" rows="10" cols="80">"EBNF defined in itself" {
+	syntax     = [ title ] "{" { production } "}" [ comment ].
+	production = identifier "=" expression ( "." | ";" ) .
+	expression = term { "|" term } .
+	term       = factor { factor } .
+	factor     = identifier
+	           | literal
+	           | "[" expression "]"
+	           | "(" expression ")"
+	           | "{" expression "}" .
+	identifier = character { character } .
+	title      = literal .
+	comment    = literal .
+	literal    = "'" character { character } "'"
+	           | '"' character { character } '"' .
+} "EBNF is a cool syntax for describing syntaxes."
+		</textarea>
+		<button id="parse">parse it</button>
+		<button id="dia">diagram it</button>
+		<hr />
+		<canvas id="out" height="1800" width="1200">canvas not supported in your browser!</canvas>
+	</body>
+</html>
