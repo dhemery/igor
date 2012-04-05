@@ -13,14 +13,8 @@
 		<script type="text/javascript" src="ebnfdiagram.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
-			    $("#parse").click(function(){
-			        var ebnf = $("#ebnf").val();
-			        $.ebnfParse(ebnf);
-			    });
-  
-			    var dia = $("#out").ebnfcanvas()[0];
-  
-			    $("#dia").click(function(){
+			    var dia = $("#diagram").ebnfcanvas()[0];  
+			    $("#drawButton").click(function(){
 			        var ebnf = $("#ebnf").val();
 			        $.ebnfParse( ebnf, 
 			            function(syn){
@@ -31,6 +25,11 @@
 			            }
 			        );
 			    });
+
+				var canvas  = $("#diagram")[0];
+				$("#saveButton").click(function(){
+				    window.open(canvas.toDataURL());
+				});
 			});
 	    </script>
 	</head>
@@ -52,9 +51,9 @@
 	           | '"' character { character } '"' .
 } "EBNF is a cool syntax for describing syntaxes."
 		</textarea>
-		<button id="parse">parse it</button>
-		<button id="dia">diagram it</button>
+		<button id="drawButton">DRAW</button>
+		<button id="saveButton">SAVE</button>
 		<hr />
-		<canvas id="out" height="1800" width="1200">canvas not supported in your browser!</canvas>
+		<canvas id="diagram" height="1800" width="1200">canvas not supported in your browser!</canvas>
 	</body>
 </html>
