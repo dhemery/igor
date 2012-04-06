@@ -1,43 +1,59 @@
-"Igor View Selector Syntax" {
+"Igor Query Language" {
 
-IgorPattern
+Selector
 	= ComplexPattern [ '!' [ Combinator ComplexPattern ] ]
 	;
 
 ComplexPattern
-	= CompoundPattern { Combinator CompoundPattern }
+	= { SubjectPattern Combinator } SubjectPattern
 	;
 
-CompoundPattern
+SubjectPattern
 	= NodePattern
-	| '(' ComplexPattern ')'
+	| BranchPattern
+	;
+
+BranchPattern
+	= '(' ComplexPattern ')'
 	;
 
 NodePattern
-	= ( ClassTest | InstanceTest ) { InstanceTest }
+	= ( ClassSelector | InstanceSelector ) { InstanceSelector }
 	;
 
-ClassTest
+ClassPattern
 	= ClassName
 	| ClassName '*'
 	| '*'
 	;
 
-InstanceTest
-	= '#' Identifier
-	| ':' PositionTest
-	| '[' Predicate ']'
+InstancePattern
+	= IdentifierPattern
+	| PositionSelector
+	| PredicateSelector
 	;
 
-Combinator
-	= Whitespace
-	| '>'
-	| '~'
+IdentifierPattern
+	= '#' Identifier
+	;
+
+PositionPattern
+	= ':' Position
+	;
+
+PredicatePattern
+	= '[' Predicate ']'
 	;
 
 Identifier
 	= Integer
 	| Word
 	| String
+	;
+
+Combinator
+	= Whitespace
+	| '>'
+	| '~'
 	;
 }
