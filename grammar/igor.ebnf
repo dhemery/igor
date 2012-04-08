@@ -19,7 +19,7 @@ BranchPattern
 
 InstancePattern
 	= ( ClassPattern | IdentifierPattern | PositionPattern | PredicatePattern )
-	  { ClassPattern | IdentifierPattern | PositionPattern | PredicatePattern }
+	  { IdentifierPattern | PositionPattern | PredicatePattern }
 	;
 
 ClassPattern
