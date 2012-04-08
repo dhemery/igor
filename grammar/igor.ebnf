@@ -1,36 +1,33 @@
 "Igor Query Language" {
 
-Selector
-	= ComplexPattern [ '!' [ Combinator ComplexPattern ] ]
+IgorQuery
+	= RelationshipPattern [ '!' [ Combinator RelationshipPattern ] ]
 	;
 
-ComplexPattern
+RelationshipPattern
 	= { SubjectPattern Combinator } SubjectPattern
 	;
 
 SubjectPattern
-	= NodePattern
+	= InstancePattern
 	| BranchPattern
 	;
 
 BranchPattern
-	= '(' ComplexPattern ')'
-	;
-
-NodePattern
-	= ( ClassSelector | InstanceSelector ) { InstanceSelector }
-	;
-
-ClassPattern
-	= ClassName
-	| ClassName '*'
-	| '*'
+	= '(' RelationshipPattern ')'
 	;
 
 InstancePattern
-	= IdentifierPattern
-	| PositionSelector
-	| PredicateSelector
+	= ClassPattern
+    | IdentifierPattern
+	| PositionPattern
+	| PredicatePattern
+	;
+
+ClassPattern
+	= name
+	| name '*'
+	| '*'
 	;
 
 IdentifierPattern
@@ -38,21 +35,21 @@ IdentifierPattern
 	;
 
 PositionPattern
-	= ':' Position
+	= ':' position
 	;
 
 PredicatePattern
-	= '[' Predicate ']'
+	= '[' predicate ']'
 	;
 
 Identifier
-	= Integer
-	| Word
-	| String
+	= integer
+	| string
+	| word
 	;
 
 Combinator
-	= Whitespace
+	= whitespace
 	| '>'
 	| '~'
 	;
