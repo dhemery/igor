@@ -1,7 +1,7 @@
 "Igor Query Language" {
 
 IgorQuery
-	= RelationshipPattern [ '!' [ Combinator RelationshipPattern ] ]
+	= [ [ RelationshipPattern Combinator ] '$' ] RelationshipPattern
 	;
 
 RelationshipPattern
