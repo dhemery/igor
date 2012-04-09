@@ -1,4 +1,4 @@
-#import "Matcher.h"
+#import "SimpleMatcher.h"
 #import "RelationshipMatcher.h"
 
 @interface SubjectAndDescendantMatcher : NSObject <RelationshipMatcher>

@@ -1,4 +1,4 @@
-#import "NodeMatcher.h"
+#import "InstanceMatcher.h"
 
-@interface AlwaysMatcher : NodeMatcher
+@interface AlwaysMatcher : InstanceMatcher
 @end

@@ -23,11 +23,10 @@
 		2D436E221518F9C300071950 /* IdentityMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D436E201518F9C300071950 /* IdentityMatcher.m */; };
 		2D436E271518FF6D00071950 /* ViewFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D436E251518FF6D00071950 /* ViewFactory.h */; };
 		2D436E281518FF6D00071950 /* ViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D436E261518FF6D00071950 /* ViewFactory.m */; };
-		2D436E2A15191B3400071950 /* SubtreeTestParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D436E2915191B3400071950 /* SubtreeTestParserTests.m */; };
 		2D496EA51486A513007E1FDE /* PredicateMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D496EA31486A513007E1FDE /* PredicateMatcher.h */; };
 		2D496EA61486A513007E1FDE /* PredicateMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D496EA41486A513007E1FDE /* PredicateMatcher.m */; };
 		2D695CAB147CD1BA00AF4115 /* ClassPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C8B147CD1BA00AF4115 /* ClassPattern.m */; };
-		2D695CAD147CD1BA00AF4115 /* NodeMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C8D147CD1BA00AF4115 /* NodeMatcher.m */; };
+		2D695CAD147CD1BA00AF4115 /* InstanceMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C8D147CD1BA00AF4115 /* InstanceMatcher.m */; };
 		2D695CB0147CD1BA00AF4115 /* Igor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C90147CD1BA00AF4115 /* Igor.m */; };
 		2D695CB3147CD1BA00AF4115 /* IgorPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C93147CD1BA00AF4115 /* IgorPattern.m */; };
 		2D695CB5147CD1BA00AF4115 /* IgorParserException.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C95147CD1BA00AF4115 /* IgorParserException.m */; };
@@ -51,8 +50,8 @@
 		2D9CC80C15185B6500B51A8D /* TreeWalker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D9CC80A15185B6500B51A8D /* TreeWalker.m */; };
 		2DCE893615193E8900B975EE /* SubjectPattern.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DCE893415193E8900B975EE /* SubjectPattern.h */; };
 		2DCE893715193E8900B975EE /* SubjectPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE893515193E8900B975EE /* SubjectPattern.m */; };
-		2DCE893B15193F6100B975EE /* NodePattern.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DCE893915193F6100B975EE /* NodePattern.h */; };
-		2DCE893C15193F6100B975EE /* NodePattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE893A15193F6100B975EE /* NodePattern.m */; };
+		2DCE893B15193F6100B975EE /* InstancePattern.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DCE893915193F6100B975EE /* InstancePattern.h */; };
+		2DCE893C15193F6100B975EE /* InstancePattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE893A15193F6100B975EE /* InstancePattern.m */; };
 		2DCF9764147ED3FD003B0F38 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD439 /* UIKit.framework */; };
 		2DCF9765147ED3FD003B0F38 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD425 /* Foundation.framework */; };
 		2DCF9767147ED3FD003B0F38 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCF9766147ED3FD003B0F38 /* CoreGraphics.framework */; };
@@ -66,7 +65,6 @@
 		2DCF978E147EDACA003B0F38 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCF978D147EDACA003B0F38 /* CFNetwork.framework */; };
 		2DE232041509EBAA00C0D74D /* libigor-0.4.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD41C /* libigor-0.4.0.a */; };
 		2DE232061509EBB700C0D74D /* libigor-0.4.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD41C /* libigor-0.4.0.a */; };
-		E621659DB794A5D612DCD43B /* ClassMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD43A /* ClassMatcher.m */; };
 		E621659DB794A5D612DCD43F /* Pattern.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD43E /* Pattern.m */; };
 		E621659DB794A5D612DCD441 /* Pattern.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD440 /* Pattern.h */; };
 		E621659DB794A5D612DCD443 /* PatternScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD442 /* PatternScanner.m */; };
@@ -109,15 +107,14 @@
 		2D436E201518F9C300071950 /* IdentityMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdentityMatcher.m; sourceTree = "<group>"; };
 		2D436E251518FF6D00071950 /* ViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewFactory.h; sourceTree = "<group>"; };
 		2D436E261518FF6D00071950 /* ViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewFactory.m; sourceTree = "<group>"; };
-		2D436E2915191B3400071950 /* SubtreeTestParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubtreeTestParserTests.m; sourceTree = "<group>"; };
 		2D496EA31486A513007E1FDE /* PredicateMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PredicateMatcher.h; sourceTree = "<group>"; };
 		2D496EA41486A513007E1FDE /* PredicateMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredicateMatcher.m; sourceTree = "<group>"; };
 		2D674477151E58C600B9BC52 /* vigor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = vigor.entitlements; sourceTree = "<group>"; };
 		2D695C89147CD1BA00AF4115 /* ClassMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassMatcher.h; sourceTree = "<group>"; };
 		2D695C8A147CD1BA00AF4115 /* ClassPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassPattern.h; sourceTree = "<group>"; };
 		2D695C8B147CD1BA00AF4115 /* ClassPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassPattern.m; sourceTree = "<group>"; };
-		2D695C8C147CD1BA00AF4115 /* NodeMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeMatcher.h; sourceTree = "<group>"; };
-		2D695C8D147CD1BA00AF4115 /* NodeMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodeMatcher.m; sourceTree = "<group>"; };
+		2D695C8C147CD1BA00AF4115 /* InstanceMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstanceMatcher.h; sourceTree = "<group>"; };
+		2D695C8D147CD1BA00AF4115 /* InstanceMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstanceMatcher.m; sourceTree = "<group>"; };
 		2D695C8E147CD1BA00AF4115 /* igor-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "igor-Prefix.pch"; sourceTree = "<group>"; };
 		2D695C8F147CD1BA00AF4115 /* Igor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Igor.h; sourceTree = "<group>"; };
 		2D695C90147CD1BA00AF4115 /* Igor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Igor.m; sourceTree = "<group>"; };
@@ -128,7 +125,7 @@
 		2D695C95147CD1BA00AF4115 /* IgorParserException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IgorParserException.m; sourceTree = "<group>"; };
 		2D695C96147CD1BA00AF4115 /* KindOfClassMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KindOfClassMatcher.h; sourceTree = "<group>"; };
 		2D695C97147CD1BA00AF4115 /* KindOfClassMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KindOfClassMatcher.m; sourceTree = "<group>"; };
-		2D695C98147CD1BA00AF4115 /* Matcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matcher.h; sourceTree = "<group>"; };
+		2D695C98147CD1BA00AF4115 /* SimpleMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleMatcher.h; sourceTree = "<group>"; };
 		2D695C99147CD1BA00AF4115 /* MemberOfClassMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberOfClassMatcher.h; sourceTree = "<group>"; };
 		2D695C9A147CD1BA00AF4115 /* MemberOfClassMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberOfClassMatcher.m; sourceTree = "<group>"; };
 		2D695CA3147CD1BA00AF4115 /* PredicatePattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PredicatePattern.h; sourceTree = "<group>"; };
@@ -149,8 +146,8 @@
 		2D9CC80A15185B6500B51A8D /* TreeWalker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreeWalker.m; sourceTree = "<group>"; };
 		2DCE893415193E8900B975EE /* SubjectPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubjectPattern.h; sourceTree = "<group>"; };
 		2DCE893515193E8900B975EE /* SubjectPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectPattern.m; sourceTree = "<group>"; };
-		2DCE893915193F6100B975EE /* NodePattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodePattern.h; sourceTree = "<group>"; };
-		2DCE893A15193F6100B975EE /* NodePattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodePattern.m; sourceTree = "<group>"; };
+		2DCE893915193F6100B975EE /* InstancePattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstancePattern.h; sourceTree = "<group>"; };
+		2DCE893A15193F6100B975EE /* InstancePattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstancePattern.m; sourceTree = "<group>"; };
 		2DCF9762147ED3FD003B0F38 /* vigor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vigor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DCF9766147ED3FD003B0F38 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2DCF976A147ED3FD003B0F38 /* vigor-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "vigor-Info.plist"; sourceTree = "<group>"; };
@@ -170,7 +167,6 @@
 		E621659DB794A5D612DCD425 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E621659DB794A5D612DCD437 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		E621659DB794A5D612DCD439 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		E621659DB794A5D612DCD43A /* ClassMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassMatcher.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD43E /* Pattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pattern.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD440 /* Pattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pattern.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD442 /* PatternScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatternScanner.m; sourceTree = "<group>"; };
@@ -274,17 +270,16 @@
 			isa = PBXGroup;
 			children = (
 				E621659DB794A5D612DCD448 /* RelationshipMatcher.h */,
-				E621659DB794A5D612DCD43A /* ClassMatcher.m */,
 				2D695C89147CD1BA00AF4115 /* ClassMatcher.h */,
 				2D3E1F441509C64C00D62300 /* SubjectAndAncestorMatcher.h */,
 				2D3E1F451509C64C00D62300 /* SubjectAndAncestorMatcher.m */,
 				2D695C96147CD1BA00AF4115 /* KindOfClassMatcher.h */,
 				2D695C97147CD1BA00AF4115 /* KindOfClassMatcher.m */,
-				2D695C98147CD1BA00AF4115 /* Matcher.h */,
+				2D695C98147CD1BA00AF4115 /* SimpleMatcher.h */,
 				2D695C99147CD1BA00AF4115 /* MemberOfClassMatcher.h */,
 				2D695C9A147CD1BA00AF4115 /* MemberOfClassMatcher.m */,
-				2D695C8C147CD1BA00AF4115 /* NodeMatcher.h */,
-				2D695C8D147CD1BA00AF4115 /* NodeMatcher.m */,
+				2D695C8C147CD1BA00AF4115 /* InstanceMatcher.h */,
+				2D695C8D147CD1BA00AF4115 /* InstanceMatcher.m */,
 				2D496EA31486A513007E1FDE /* PredicateMatcher.h */,
 				2D496EA41486A513007E1FDE /* PredicateMatcher.m */,
 				2D99DB361518273100244226 /* SubjectAndDescendantMatcher.h */,
@@ -308,8 +303,8 @@
 				2D695C93147CD1BA00AF4115 /* IgorPattern.m */,
 				2D695C94147CD1BA00AF4115 /* IgorParserException.h */,
 				2D695C95147CD1BA00AF4115 /* IgorParserException.m */,
-				2DCE893915193F6100B975EE /* NodePattern.h */,
-				2DCE893A15193F6100B975EE /* NodePattern.m */,
+				2DCE893915193F6100B975EE /* InstancePattern.h */,
+				2DCE893A15193F6100B975EE /* InstancePattern.m */,
 				2D695CA3147CD1BA00AF4115 /* PredicatePattern.h */,
 				2D695CA4147CD1BA00AF4115 /* PredicatePattern.m */,
 				2DCE893415193E8900B975EE /* SubjectPattern.h */,
@@ -343,7 +338,6 @@
 			children = (
 				2D695CCD147CD1D200AF4115 /* IgorParserTests.m */,
 				2D695CD3147CD1D200AF4115 /* PredicateParserTests.m */,
-				2D436E2915191B3400071950 /* SubtreeTestParserTests.m */,
 			);
 			name = parser;
 			sourceTree = "<group>";
@@ -478,7 +472,7 @@
 				2D99DB381518273100244226 /* SubjectAndDescendantMatcher.h in Headers */,
 				2D9CC80B15185B6500B51A8D /* TreeWalker.h in Headers */,
 				2DCE893615193E8900B975EE /* SubjectPattern.h in Headers */,
-				2DCE893B15193F6100B975EE /* NodePattern.h in Headers */,
+				2DCE893B15193F6100B975EE /* InstancePattern.h in Headers */,
 				E621659DB794A5D612DCD441 /* Pattern.h in Headers */,
 				E621659DB794A5D612DCD445 /* PatternScanner.h in Headers */,
 				E621659DB794A5D612DCD449 /* RelationshipMatcher.h in Headers */,
@@ -615,7 +609,6 @@
 				2D99DB351517E9C900244226 /* SubjectAndDescendantPatternTests.m in Sources */,
 				2D436E221518F9C300071950 /* IdentityMatcher.m in Sources */,
 				2D436E281518FF6D00071950 /* ViewFactory.m in Sources */,
-				2D436E2A15191B3400071950 /* SubtreeTestParserTests.m in Sources */,
 				E621659DB794A5D612DCD44B /* SubjectAndDescendantMatcherTests.m in Sources */,
 				E621659DB794A5D612DCD44D /* AlwaysMatcher.m in Sources */,
 			);
@@ -637,7 +630,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D695CAB147CD1BA00AF4115 /* ClassPattern.m in Sources */,
-				2D695CAD147CD1BA00AF4115 /* NodeMatcher.m in Sources */,
+				2D695CAD147CD1BA00AF4115 /* InstanceMatcher.m in Sources */,
 				2D695CB0147CD1BA00AF4115 /* Igor.m in Sources */,
 				2D695CB3147CD1BA00AF4115 /* IgorPattern.m in Sources */,
 				2D695CB5147CD1BA00AF4115 /* IgorParserException.m in Sources */,
@@ -650,8 +643,7 @@
 				2D99DB391518273100244226 /* SubjectAndDescendantMatcher.m in Sources */,
 				2D9CC80C15185B6500B51A8D /* TreeWalker.m in Sources */,
 				2DCE893715193E8900B975EE /* SubjectPattern.m in Sources */,
-				2DCE893C15193F6100B975EE /* NodePattern.m in Sources */,
-				E621659DB794A5D612DCD43B /* ClassMatcher.m in Sources */,
+				2DCE893C15193F6100B975EE /* InstancePattern.m in Sources */,
 				E621659DB794A5D612DCD43F /* Pattern.m in Sources */,
 				E621659DB794A5D612DCD443 /* PatternScanner.m in Sources */,
 			);

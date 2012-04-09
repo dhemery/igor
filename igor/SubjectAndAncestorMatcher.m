@@ -1,5 +1,5 @@
 #import "SubjectAndAncestorMatcher.h"
-#import "NodeMatcher.h"
+#import "InstanceMatcher.h"
 
 @implementation SubjectAndAncestorMatcher
 
@@ -34,9 +34,8 @@
     return [NSString stringWithFormat:@"[SubjectAndAncestorMatcher:[subjectMatcher:%@][ancestorMatcher:%@]]", _subjectMatcher, _ancestorMatcher];
 }
 
-- (SubjectAndAncestorMatcher *)initWithSubjectMatcher:(NodeMatcher *)subjectMatcher ancestorMatcher:(id <RelationshipMatcher>)ancestorMatcher {
-    self = [super init];
-    if (self) {
+- (SubjectAndAncestorMatcher *)initWithSubjectMatcher:(InstanceMatcher *)subjectMatcher ancestorMatcher:(id <RelationshipMatcher>)ancestorMatcher {
+    if (self = [super init]) {
         _ancestorMatcher = ancestorMatcher;
         _subjectMatcher = subjectMatcher;
     }
@@ -47,7 +46,7 @@
     return [_subjectMatcher matchesView:view withinTree:root] && [self ancestorMatcherMatchesAnAncestorOfView:view withinTree:root];
 }
 
-+ (SubjectAndAncestorMatcher *)withSubjectMatcher:(NodeMatcher *)subjectMatcher ancestorMatcher:(id <RelationshipMatcher>)ancestorMatcher {
++ (SubjectAndAncestorMatcher *)withSubjectMatcher:(InstanceMatcher *)subjectMatcher ancestorMatcher:(id <RelationshipMatcher>)ancestorMatcher {
     return [[self alloc] initWithSubjectMatcher:subjectMatcher ancestorMatcher:ancestorMatcher];
 }
 

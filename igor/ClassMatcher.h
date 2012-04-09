@@ -1,9 +1,7 @@
-#import "Matcher.h"
+#import "SimpleMatcher.h"
 
-@interface ClassMatcher : NSObject <Matcher>
+@protocol ClassMatcher <SimpleMatcher>
 
 @property(retain, readonly) Class matchClass;
-
-- (ClassMatcher *)initForClass:(Class)matchClass;
 
 @end

@@ -1,4 +1,4 @@
-#import "Matcher.h"
+#import "SimpleMatcher.h"
 
 @interface TreeWalker : NSObject
 

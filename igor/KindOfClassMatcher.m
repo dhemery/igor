@@ -2,12 +2,21 @@
 
 @implementation KindOfClassMatcher
 
+@synthesize matchClass = _matchClass;
+
 - (NSString *)description {
     return [NSString stringWithFormat:@"[KindOfClassMatcher:%@]", self.matchClass];
 }
 
 + (KindOfClassMatcher *)forClass:(Class)targetClass {
-    return (KindOfClassMatcher *) [[self alloc] initForClass:targetClass];
+    return [[self alloc] initForClass:targetClass];
+}
+
+- (KindOfClassMatcher*)initForClass:(Class)matchClass {
+    if (self = [super init]) {
+        _matchClass = matchClass;
+    }
+    return self;
 }
 
 - (BOOL)matchesView:(UIView *)view {

@@ -1,6 +1,6 @@
-#import "Matcher.h"
+#import "SimpleMatcher.h"
 
-@interface PredicateMatcher : NSObject <Matcher>
+@interface PredicateMatcher : NSObject <SimpleMatcher>
 
 @property(readonly, retain) NSString *matchExpression;
 

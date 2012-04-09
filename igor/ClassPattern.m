@@ -10,7 +10,7 @@
     return (ClassPattern *) [[self alloc] initWithScanner:scanner];
 }
 
-- (ClassMatcher *)parse {
+- (id<ClassMatcher>)parse {
     Class targetClass = [UIView class];
     Class selectorClass = [KindOfClassMatcher class];
 

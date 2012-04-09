@@ -1,8 +1,7 @@
 #import "ClassMatcher.h"
-#import "NodeMatcher.h"
-#import "PredicateMatcher.h"
+#import "InstanceMatcher.h"
 
-@implementation NodeMatcher
+@implementation InstanceMatcher
 
 @synthesize classMatcher = _classMatcher;
 @synthesize predicateMatcher = _predicateMatcher;
@@ -12,7 +11,7 @@
     return [NSString stringWithFormat:@"[NodeMatcher:%@%@]", _classMatcher, _predicateMatcher];
 }
 
-- (NodeMatcher *)initWithClassMatcher:(ClassMatcher *)classMatcher predicateMatcher:(PredicateMatcher *)predicateMatcher {
+- (InstanceMatcher *)initWithClassMatcher:(id<ClassMatcher>)classMatcher predicateMatcher:(id<SimpleMatcher>)predicateMatcher {
     self = [super init];
     if (self) {
         _classMatcher = classMatcher;
@@ -25,7 +24,7 @@
     return [_classMatcher matchesView:view] && [_predicateMatcher matchesView:view];
 }
 
-+ (NodeMatcher *)withClassMatcher:(ClassMatcher *)classMatcher predicateMatcher:(PredicateMatcher *)predicateMatcher {
++ (InstanceMatcher *)withClassMatcher:(id<ClassMatcher>)classMatcher predicateMatcher:(id<SimpleMatcher>)predicateMatcher {
     return [[self alloc] initWithClassMatcher:classMatcher predicateMatcher:predicateMatcher];
 }
 

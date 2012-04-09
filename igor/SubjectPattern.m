@@ -1,6 +1,6 @@
 #import "SubjectAndAncestorMatcher.h"
-#import "NodePattern.h"
-#import "NodeMatcher.h"
+#import "InstancePattern.h"
+#import "InstanceMatcher.h"
 #import "SubjectPattern.h"
 #import "PatternScanner.h"
 
@@ -11,9 +11,9 @@
 }
 
 - (id <RelationshipMatcher>)parse {
-    id <RelationshipMatcher> matcher = [[NodePattern forScanner:self.scanner] parse];
+    id <RelationshipMatcher> matcher = [[InstancePattern forScanner:self.scanner] parse];
     while ([self.scanner skipWhiteSpace]) {
-        NodeMatcher *descendantMatcher = [[NodePattern forScanner:self.scanner] parse];
+        InstanceMatcher *descendantMatcher = [[InstancePattern forScanner:self.scanner] parse];
         matcher = [SubjectAndAncestorMatcher withSubjectMatcher:descendantMatcher ancestorMatcher:matcher];
     }
     return matcher;

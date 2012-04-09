@@ -1,4 +1,4 @@
-#import "Matcher.h"
+#import "SimpleMatcher.h"
 #import "MemberOfClassMatcher.h"
 #import "ViewFactory.h"
 
