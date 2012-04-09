@@ -1,13 +1,13 @@
 #import "SubjectAndAncestorMatcher.h"
 #import "InstancePattern.h"
 #import "InstanceMatcher.h"
-#import "SubjectPattern.h"
+#import "RelationshipPattern.h"
 #import "PatternScanner.h"
 
-@implementation SubjectPattern
+@implementation RelationshipPattern
 
-+ (SubjectPattern *)forScanner:(PatternScanner *)scanner {
-    return (SubjectPattern *) [[self alloc] initWithScanner:scanner];
++ (RelationshipPattern *)forScanner:(PatternScanner *)scanner {
+    return (RelationshipPattern *) [[self alloc] initWithScanner:scanner];
 }
 
 - (id <RelationshipMatcher>)parse {

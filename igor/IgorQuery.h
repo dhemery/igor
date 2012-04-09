@@ -2,10 +2,11 @@
 
 @protocol RelationshipMatcher;
 
-@interface SubjectPattern : Pattern
+@interface IgorQuery : Pattern
 
-+ (SubjectPattern *)forScanner:(PatternScanner *)scanner;
++ (IgorQuery *)forPattern:(NSString *)pattern;
 
 - (id <RelationshipMatcher>)parse;
+
 
 @end

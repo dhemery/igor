@@ -1,5 +1,5 @@
 #import "Igor.h"
-#import "IgorPattern.h"
+#import "IgorQuery.h"
 #import "RelationshipMatcher.h"
 #import "TreeWalker.h"
 
@@ -18,7 +18,7 @@
 }
 
 - (NSArray *)findViewsThatMatchPattern:(NSString *)pattern fromRoot:(UIView *)root {
-    id <RelationshipMatcher> matcher = [[IgorPattern forPattern:pattern] parse];
+    id <RelationshipMatcher> matcher = [[IgorQuery forPattern:pattern] parse];
 //    NSLog(@"Parsed pattern %@ into matcher %@", pattern, matcher);
     return [self findViewsThatMatchMatcher:matcher fromRoot:root];
 }

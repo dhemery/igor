@@ -1,16 +1,16 @@
-#import "IgorPattern.h"
-#import "SubjectPattern.h"
+#import "IgorQuery.h"
+#import "RelationshipPattern.h"
 #import "SubjectAndDescendantMatcher.h"
 #import "PatternScanner.h"
 
-@implementation IgorPattern
+@implementation IgorQuery
 
-+ (IgorPattern *)forPattern:(NSString *)pattern {
-    return (IgorPattern *) [[self alloc] initWithScanner:[PatternScanner withPattern:pattern]];
++ (IgorQuery *)forPattern:(NSString *)pattern {
+    return (IgorQuery *) [[self alloc] initWithScanner:[PatternScanner withPattern:pattern]];
 }
 
 - (id <RelationshipMatcher>)parse {
-    SubjectPattern *subjectParser = [SubjectPattern forScanner:self.scanner];
+    RelationshipPattern *subjectParser = [RelationshipPattern forScanner:self.scanner];
     id <RelationshipMatcher> matcher = [subjectParser parse];
     if ([self.scanner skipString:@"!"]) {
         [self.scanner skipWhiteSpace];
