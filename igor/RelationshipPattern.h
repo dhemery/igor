@@ -1,11 +1,11 @@
 #import "Pattern.h"
 
-@protocol RelationshipMatcher;
+@protocol SubjectMatcher;
 
 @interface RelationshipPattern : Pattern
 
 + (RelationshipPattern *)forScanner:(PatternScanner *)scanner;
 
-- (id <RelationshipMatcher>)parse;
+- (id <SubjectMatcher>)parse;
 
 @end

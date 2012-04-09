@@ -2,10 +2,10 @@
 #import "PredicatePattern.h"
 #import "PatternScanner.h"
 
-@interface PredicateParserTests : SenTestCase
+@interface PredicatePatternParserTests : SenTestCase
 @end
 
-@implementation PredicateParserTests
+@implementation PredicatePatternParserTests
 
 - (void)testParsesAPredicateBetweenBrackets {
     NSString *expression = @"pearlBailey='opreylady'";

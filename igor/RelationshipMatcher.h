@@ -1,5 +1,13 @@
-@protocol RelationshipMatcher <NSObject>
+#import "SimpleMatcher.h"
+#import "SubjectMatcher.h"
 
-- (BOOL)matchesView:(UIView *)view withinTree:(UIView *)root;
+@class InstanceMatcher;
+
+@interface RelationshipMatcher : NSObject <SubjectMatcher>
+
+@property(retain) id <SubjectMatcher> ancestorMatcher;
+@property(retain) InstanceMatcher *subjectMatcher;
+
++ (RelationshipMatcher *)withSubjectMatcher:(InstanceMatcher *)subjectMatcher ancestorMatcher:(id <SubjectMatcher>)ancestorMatcher;
 
 @end

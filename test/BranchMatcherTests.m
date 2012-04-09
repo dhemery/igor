@@ -1,12 +1,12 @@
-#import "SubjectAndAncestorMatcher.h"
+#import "RelationshipMatcher.h"
 #import "IdentityMatcher.h"
-#import "SubjectAndDescendantMatcher.h"
+#import "BranchMatcher.h"
 #import "ViewFactory.h"
 
-@interface SubjectAndDescendantMatcherTests : SenTestCase
+@interface BranchMatcherTests : SenTestCase
 @end
 
-@implementation SubjectAndDescendantMatcherTests {
+@implementation BranchMatcherTests {
     UIButton *root;
     UIButton *middle;
     UIButton *leaf;
@@ -21,7 +21,7 @@
 }
 
 - (void)testMatchesIfViewMatchesSubjectMatcherAndSubviewMatchesSubtreeMatcher {
-    SubjectAndDescendantMatcher *rootWithLeafDescendant = [SubjectAndDescendantMatcher
+    BranchMatcher *rootWithLeafDescendant = [BranchMatcher
             withSubjectMatcher:[IdentityMatcher forView:root]
              descendantMatcher:[IdentityMatcher forView:leaf]];
 
@@ -31,9 +31,9 @@
 }
 
 - (void)testSubtreeMatcherExaminesOnlySubviewsOfTheSubject {
-    id <RelationshipMatcher> leafWithMiddleAncestor = [SubjectAndAncestorMatcher withSubjectMatcher:[IdentityMatcher forView:leaf] ancestorMatcher:[IdentityMatcher forView:middle]];
+    id <SubjectMatcher> leafWithMiddleAncestor = [RelationshipMatcher withSubjectMatcher:[IdentityMatcher forView:leaf] ancestorMatcher:[IdentityMatcher forView:middle]];
 
-    SubjectAndDescendantMatcher *middleWithLeafInsideMiddleDescendant = [SubjectAndDescendantMatcher
+    BranchMatcher *middleWithLeafInsideMiddleDescendant = [BranchMatcher
             withSubjectMatcher:[IdentityMatcher forView:middle]
              descendantMatcher:leafWithMiddleAncestor];
 

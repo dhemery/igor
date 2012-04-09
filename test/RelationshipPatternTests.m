@@ -1,10 +1,10 @@
 #import "Igor.h"
 #import "ViewFactory.h"
 
-@interface SubjectAndAncestorPatternTests : SenTestCase
+@interface RelationshipPatternTests : SenTestCase
 @end
 
-@implementation SubjectAndAncestorPatternTests {
+@implementation RelationshipPatternTests {
     Igor *igor;
     UIView *root;
     UIView *middle;

@@ -1,10 +1,10 @@
-#import "RelationshipMatcher.h"
+#import "SubjectMatcher.h"
 
 @protocol ClassMatcher;
-@protocol RelationshipMatcher;
+@protocol SubjectMatcher;
 @protocol SimpleMatcher;
 
-@interface InstanceMatcher : NSObject <RelationshipMatcher>
+@interface InstanceMatcher : NSObject <SubjectMatcher>
 
 @property(retain, readonly) id<ClassMatcher> classMatcher;
 @property(retain, readonly) id<SimpleMatcher> predicateMatcher;

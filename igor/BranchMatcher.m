@@ -1,7 +1,7 @@
-#import "SubjectAndDescendantMatcher.h"
+#import "BranchMatcher.h"
 #import "TreeWalker.h"
 
-@implementation SubjectAndDescendantMatcher
+@implementation BranchMatcher
 
 @synthesize subjectMatcher = _subjectMatcher, descendantMatcher = _descendantMatcher;
 
@@ -9,7 +9,7 @@
     return [NSString stringWithFormat:@"[SubjectAndDescendantMatcher:[subjectMatcher:%@][descendantMatcher:%@]]", _subjectMatcher, _descendantMatcher];
 }
 
-- (SubjectAndDescendantMatcher *)initWithSubjectMatcher:(id <RelationshipMatcher>)subjectMatcher descendantMatcher:(id <RelationshipMatcher>)descendantMatcher {
+- (BranchMatcher *)initWithSubjectMatcher:(id <SubjectMatcher>)subjectMatcher descendantMatcher:(id <SubjectMatcher>)descendantMatcher {
     self = [super init];
     if (self) {
         _subjectMatcher = subjectMatcher;
@@ -35,8 +35,8 @@
     return subtreeHasAMatch;
 }
 
-+ (SubjectAndDescendantMatcher *)withSubjectMatcher:(id <RelationshipMatcher>)subjectMatcher descendantMatcher:(id <RelationshipMatcher>)descendantMatcher {
-    return [[SubjectAndDescendantMatcher alloc] initWithSubjectMatcher:subjectMatcher descendantMatcher:descendantMatcher];
++ (BranchMatcher *)withSubjectMatcher:(id <SubjectMatcher>)subjectMatcher descendantMatcher:(id <SubjectMatcher>)descendantMatcher {
+    return [[BranchMatcher alloc] initWithSubjectMatcher:subjectMatcher descendantMatcher:descendantMatcher];
 }
 
 @end

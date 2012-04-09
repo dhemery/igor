@@ -1,12 +1,12 @@
 #import "Pattern.h"
 
-@protocol RelationshipMatcher;
+@protocol SubjectMatcher;
 
 @interface IgorQuery : Pattern
 
 + (IgorQuery *)forPattern:(NSString *)pattern;
 
-- (id <RelationshipMatcher>)parse;
+- (id <SubjectMatcher>)parse;
 
 
 @end
