@@ -5,7 +5,7 @@
 @synthesize matchClass = _matchClass;
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"[MemberOfClassMatcher:%@]", _matchClass];
+    return [NSString stringWithFormat:@"[MemberOfClass:%@]", _matchClass];
 }
 
 + (MemberOfClassMatcher *)forClass:(Class)matchClass {

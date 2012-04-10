@@ -20,9 +20,14 @@
     [middle addSubview:leaf];
 }
 
-- (void)testMatchesIfTheViewMatchesTheSubjectPatternAndASubviewMatchesTheRelationshipPattern {
+- (void)testMarkerBeforeFirstInstancePattern {
     NSArray *nodeWithMiddleDescendant = [igor findViewsThatMatchPattern:@"$* [accessibilityHint='middle']" fromRoot:root];
     assertThat(nodeWithMiddleDescendant, onlyContains(root, nil));
+}
+
+- (void)testMarkerBeforeNonFirstInstancePattern {
+    NSArray *markedMiddleDescendant = [igor findViewsThatMatchPattern:@"* $[accessibilityHint='middle']" fromRoot:root];
+    assertThat(markedMiddleDescendant, onlyContains(middle, nil));
 }
 
 - (void)testMatchesEachViewThatMatchesTheSubjectPatternAndHasASubviewThatMatchesTheRelationshipPattern {

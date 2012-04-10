@@ -13,8 +13,13 @@
 - (id <SubjectMatcher>)parse {
     id <SubjectMatcher> matcher = [[InstancePattern forScanner:self.scanner] parse];
     while ([self.scanner skipWhiteSpace]) {
-        InstanceMatcher *descendantMatcher = [[InstancePattern forScanner:self.scanner] parse];
-        matcher = [RelationshipMatcher withSubjectMatcher:descendantMatcher ancestorMatcher:matcher];
+        if([self.scanner skipString:@"$"]) {
+            [self.scanner backUp];
+            return matcher;
+        } else {
+            InstanceMatcher *descendantMatcher = [[InstancePattern forScanner:self.scanner] parse];
+            matcher = [RelationshipMatcher withSubjectMatcher:descendantMatcher ancestorMatcher:matcher];
+        }
     }
     return matcher;
 }

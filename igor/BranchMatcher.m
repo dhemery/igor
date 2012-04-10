@@ -6,7 +6,7 @@
 @synthesize subjectMatcher = _subjectMatcher, descendantMatcher = _descendantMatcher;
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"[SubjectAndDescendantMatcher:[subjectMatcher:%@][descendantMatcher:%@]]", _subjectMatcher, _descendantMatcher];
+    return [NSString stringWithFormat:@"[Branch:[subject:%@][descendant:%@]]", _subjectMatcher, _descendantMatcher];
 }
 
 - (BranchMatcher *)initWithSubjectMatcher:(id <SubjectMatcher>)subjectMatcher descendantMatcher:(id <SubjectMatcher>)descendantMatcher {

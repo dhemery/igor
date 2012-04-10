@@ -8,7 +8,7 @@
 
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"[NodeMatcher:%@%@]", _classMatcher, _predicateMatcher];
+    return [NSString stringWithFormat:@"[Instance:%@%@]", _classMatcher, _predicateMatcher];
 }
 
 - (InstanceMatcher *)initWithClassMatcher:(id<ClassMatcher>)classMatcher predicateMatcher:(id<SimpleMatcher>)predicateMatcher {

@@ -46,6 +46,10 @@
     return [_scanner scanCharactersFromSet:[NSCharacterSet whitespaceCharacterSet] intoString:nil];
 }
 
+- (void)backUp {
+    [_scanner setScanLocation:[_scanner scanLocation] - 1];
+}
+
 + (PatternScanner *)withPattern:(NSString *)pattern {
     return [[self alloc] initWithPattern:pattern];
 }

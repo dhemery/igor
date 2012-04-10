@@ -7,6 +7,8 @@
 - (BOOL)skipString:(NSString *)string;
 - (BOOL)skipWhiteSpace;
 
+- (void)backUp;
+
 + (PatternScanner *)withPattern:(NSString *)pattern;
 
 @end
