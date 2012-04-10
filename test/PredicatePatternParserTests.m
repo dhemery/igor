@@ -1,6 +1,6 @@
 #import "PredicateMatcher.h"
-#import "PredicatePattern.h"
-#import "PatternScanner.h"
+#import "PredicateParser.h"
+#import "IgorQueryScanner.h"
 
 @interface PredicatePatternParserTests : SenTestCase
 @end
@@ -10,9 +10,8 @@
 - (void)testParsesAPredicateBetweenBrackets {
     NSString *expression = @"pearlBailey='opreylady'";
     NSString *expectedExpression = [[NSPredicate predicateWithFormat:expression] predicateFormat];
-    NSString *pattern = [NSString stringWithFormat:@"[%@]", expression];
-    PredicatePattern *parser = [self parserForPattern:pattern];
-    PredicateMatcher *matcher = [parser parse];
+    NSString *query = [NSString stringWithFormat:@"[%@]", expression];
+    PredicateMatcher *matcher = [PredicateParser parse:[IgorQueryScanner withQuery:query]];
     assertThat(matcher, instanceOf([PredicateMatcher class]));
     assertThat(matcher.matchExpression, equalTo(expectedExpression));
 }
@@ -20,9 +19,8 @@
 - (void)testIgnoresBracketWithinStringsInPredicate {
     NSString *expression = @"myProperty='bracket: ]'";
     NSString *expectedExpression = [[NSPredicate predicateWithFormat:expression] predicateFormat];
-    NSString *pattern = [NSString stringWithFormat:@"[%@]", expression];
-    PredicatePattern *parser = [self parserForPattern:pattern];
-    PredicateMatcher *matcher = [parser parse];
+    NSString *query = [NSString stringWithFormat:@"[%@]", expression];
+    PredicateMatcher *matcher = [PredicateParser parse:[IgorQueryScanner withQuery:query]];
     assertThat(matcher, instanceOf([PredicateMatcher class]));
     assertThat([matcher matchExpression], equalTo(expectedExpression));
 }
@@ -30,32 +28,24 @@
 - (void)testIgnoresConsecutiveBracketsWithinStringsInPredicate {
     NSString *expression = @"myProperty='brackets: ]]]]]'";
     NSString *expectedExpression = [[NSPredicate predicateWithFormat:expression] predicateFormat];
-    NSString *pattern = [NSString stringWithFormat:@"[%@]", expression];
-    PredicatePattern *parser = [self parserForPattern:pattern];
-    PredicateMatcher *matcher = [parser parse];
+    NSString *query = [NSString stringWithFormat:@"[%@]", expression];
+    PredicateMatcher *matcher = [PredicateParser parse:[IgorQueryScanner withQuery:query]];
     assertThat(matcher, instanceOf([PredicateMatcher class]));
     assertThat([matcher matchExpression], equalTo(expectedExpression));
 }
 
 - (void)testReturnsTruePredicateIfNoLeftBracket {
-    PredicatePattern *parser = [self parserForPattern:@""];
-    PredicateMatcher *matcher = [parser parse];
+    PredicateMatcher *matcher = [PredicateParser parse:[IgorQueryScanner withQuery:@""]];
     assertThat(matcher, instanceOf([PredicateMatcher class]));
     assertThat([matcher matchExpression], equalTo(@"TRUEPREDICATE"));
 }
 
 - (void)testThrowsIfNoPredicateBetweenBrackets {
-    PredicatePattern *parser = [self parserForPattern:@"[]"];
-    STAssertThrowsSpecificNamed([parser parse], NSException, @"IgorParserException", @"Expected IgorParserException");
+    STAssertThrowsSpecificNamed([PredicateParser parse:[IgorQueryScanner withQuery:@"[]"]], NSException, @"IgorParserException", @"Expected IgorParserException");
 }
 
 - (void)testThrowsIfNoRightBracket {
-    PredicatePattern *parser = [self parserForPattern:@"[royClark='pickin'"];
-    STAssertThrowsSpecificNamed([parser parse], NSException, @"IgorParserException", @"Expected IgorParserException");
-}
-
-- (PredicatePattern *)parserForPattern:(NSString *)pattern {
-    return [PredicatePattern forScanner:[PatternScanner withPattern:pattern]];
+    STAssertThrowsSpecificNamed([PredicateParser parse:[IgorQueryScanner withQuery:@"[royClark='pickin'"]], NSException, @"IgorParserException", @"Expected IgorParserException");
 }
 
 @end

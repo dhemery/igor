@@ -1,9 +1,13 @@
-#import "PatternScanner.h"
+#import "IgorQueryScanner.h"
 #import "IgorParserException.h"
 
 
-@implementation PatternScanner {
+@implementation IgorQueryScanner {
     NSScanner *_scanner;
+}
+
+- (void)backUp {
+    [_scanner setScanLocation:[_scanner scanLocation] - 1];
 }
 
 - (NSString *)description {
@@ -20,10 +24,10 @@
     }
 }
 
-- (PatternScanner *)initWithPattern:(NSString *)pattern {
+- (IgorQueryScanner *)initWithPattern:(NSString *)query {
     self = [super init];
     if (self) {
-        NSString *stripped = [pattern stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        NSString *stripped = [query stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
         _scanner = [NSScanner scannerWithString:stripped];
         [_scanner setCharactersToBeSkipped:nil];
     }
@@ -46,12 +50,8 @@
     return [_scanner scanCharactersFromSet:[NSCharacterSet whitespaceCharacterSet] intoString:nil];
 }
 
-- (void)backUp {
-    [_scanner setScanLocation:[_scanner scanLocation] - 1];
-}
-
-+ (PatternScanner *)withPattern:(NSString *)pattern {
-    return [[self alloc] initWithPattern:pattern];
++ (IgorQueryScanner *)withQuery:(NSString *)query {
+    return [[self alloc] initWithPattern:query];
 }
 
 @end

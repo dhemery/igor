@@ -1,25 +1,21 @@
 #import "ClassMatcher.h"
-#import "ClassPattern.h"
+#import "ClassParser.h"
 #import "KindOfClassMatcher.h"
 #import "MemberOfClassMatcher.h"
-#import "PatternScanner.h"
+#import "IgorQueryScanner.h"
 
-@implementation ClassPattern
+@implementation ClassParser
 
-+ (ClassPattern *)forScanner:(PatternScanner *)scanner {
-    return (ClassPattern *) [[self alloc] initWithScanner:scanner];
-}
-
-- (id<ClassMatcher>)parse {
++ (id<ClassMatcher>)parse:(IgorQueryScanner *)pattern {
     Class targetClass = [UIView class];
     Class selectorClass = [KindOfClassMatcher class];
 
     NSString *className;
-    if ([self.scanner scanNameIntoString:&className]) {
+    if ([pattern scanNameIntoString:&className]) {
         targetClass = NSClassFromString(className);
         selectorClass = [MemberOfClassMatcher class];
     }
-    if ([self.scanner skipString:@"*"]) {
+    if ([pattern skipString:@"*"]) {
         selectorClass = [KindOfClassMatcher class];
     }
     return [selectorClass forClass:targetClass];

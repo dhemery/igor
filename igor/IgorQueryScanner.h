@@ -1,5 +1,6 @@
-@interface PatternScanner : NSObject
+@interface IgorQueryScanner : NSObject
 
+- (void)backUp;
 - (void)failBecause:(NSString *)string;
 - (void)failIfNotAtEnd;
 - (BOOL)scanNameIntoString:(NSString **)destination;
@@ -7,8 +8,6 @@
 - (BOOL)skipString:(NSString *)string;
 - (BOOL)skipWhiteSpace;
 
-- (void)backUp;
-
-+ (PatternScanner *)withPattern:(NSString *)pattern;
++ (IgorQueryScanner *)withQuery:(NSString *)query;
 
 @end

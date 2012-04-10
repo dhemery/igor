@@ -1,42 +1,37 @@
-#import "IgorQuery.h"
-#import "RelationshipPattern.h"
+#import "IgorQueryParser.h"
+#import "RelationshipParser.h"
 #import "BranchMatcher.h"
-#import "PatternScanner.h"
-#import "InstancePattern.h"
+#import "IgorQueryScanner.h"
+#import "InstanceParser.h"
 #import "InstanceMatcher.h"
 #import "RelationshipMatcher.h"
 
-@implementation IgorQuery
+@implementation IgorQueryParser
 
-+ (IgorQuery *)forPattern:(NSString *)pattern {
-    return (IgorQuery *) [[self alloc] initWithScanner:[PatternScanner withPattern:pattern]];
-}
-
-- (id <SubjectMatcher>)parse {
-    RelationshipPattern *relationshipParser = [RelationshipPattern forScanner:self.scanner];
++ (id <SubjectMatcher>)parse:(IgorQueryScanner *)query {
     id <SubjectMatcher> matcher;
-    if ([self.scanner skipString:@"$"]) {
+    if ([query skipString:@"$"]) {
         // First subject is marked.
         // Scan the subject.
-        id<SubjectMatcher> subject = [[InstancePattern forScanner:self.scanner] parse];
+        id<SubjectMatcher> subject = [InstanceParser parse:query];
         // Skip the combinator.
-        [self.scanner skipWhiteSpace];
+        [query skipWhiteSpace];
         // Scan the rest of the relationship.
-        id<SubjectMatcher> tail = [relationshipParser parse];
+        id<SubjectMatcher> tail = [RelationshipParser parse:query];
         // Make a branch matcher.
         matcher = [BranchMatcher withSubjectMatcher:subject descendantMatcher:tail];
     } else {
         // First subject is not marked.
         // As much of a relationship as we can.
-        id<SubjectMatcher> head = [relationshipParser parse];
-        if ([self.scanner skipString:@"$"]) {
+        id<SubjectMatcher> head = [RelationshipParser parse:query];
+        if ([query skipString:@"$"]) {
             // A non-first subject is marked.
             // Scan the subject.
-            id<SubjectMatcher> subject = [[InstancePattern forScanner:self.scanner] parse];
-            if ([self.scanner skipWhiteSpace]) {
+            id<SubjectMatcher> subject = [InstanceParser parse:query];
+            if ([query skipWhiteSpace]) {
                 // We have a combinator, so there's a branch.
                 // Scan the rest of the relationship.
-                id<SubjectMatcher> tail = [relationshipParser parse];
+                id<SubjectMatcher> tail = [RelationshipParser parse:query];
                 id<SubjectMatcher> branch = [BranchMatcher withSubjectMatcher:subject descendantMatcher:tail];
                 id<SubjectMatcher> relationship = [RelationshipMatcher withSubjectMatcher:branch ancestorMatcher:head];
                 matcher = relationship ;
@@ -51,7 +46,7 @@
             matcher = head;
         }
     }
-    [self.scanner failIfNotAtEnd];
+    [query failIfNotAtEnd];
     return matcher;
 }
 

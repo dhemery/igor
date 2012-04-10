@@ -1,4 +1,4 @@
-@class PatternScanner;
+@class IgorQueryScanner;
 
 @interface IgorParserException
 

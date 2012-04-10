@@ -1,10 +1,11 @@
-#import "IgorQuery.h"
+#import "IgorQueryParser.h"
 #import "ClassMatcher.h"
 #import "MemberOfClassMatcher.h"
 #import "KindOfClassMatcher.h"
 #import "InstanceMatcher.h"
 #import "PredicateMatcher.h"
 #import "RelationshipMatcher.h"
+#import "IgorQueryScanner.h"
 
 @interface IgorQueryParserTests : SenTestCase
 @end
@@ -12,26 +13,30 @@
 @implementation IgorQueryParserTests
 
 - (void)testParsesAsteriskAsKindOfClassMatcherForUIViewClass {
-    id<ClassMatcher> matcher = ((InstanceMatcher *) [[IgorQuery forPattern:@"*"] parse]).classMatcher;
+    IgorQueryScanner *query = [IgorQueryScanner withQuery:@"*"];
+    id<ClassMatcher> matcher = ((InstanceMatcher *) [IgorQueryParser parse:query]).classMatcher;
     assertThat(matcher, instanceOf([KindOfClassMatcher class]));
     assertThat(matcher.matchClass, equalTo([UIView class]));
 }
 
 - (void)testParsesNameAsMemberOfClassMatcher {
-    InstanceMatcher *matcher = (InstanceMatcher *) [[IgorQuery forPattern:@"UIButton"] parse];
+    IgorQueryScanner *query = [IgorQueryScanner withQuery:@"UIButton"];
+    InstanceMatcher *matcher = (InstanceMatcher *) [IgorQueryParser parse:query];
     assertThat(matcher.classMatcher, instanceOf([MemberOfClassMatcher class]));
     assertThat(matcher.classMatcher.matchClass, equalTo([UIButton class]));
 }
 
 - (void)testParsesNameAsteriskAsKindOfClassMatcher {
-    InstanceMatcher *matcher = (InstanceMatcher *) [[IgorQuery forPattern:@"UILabel*"] parse];
+    IgorQueryScanner *query = [IgorQueryScanner withQuery:@"UILabel*"];
+    InstanceMatcher *matcher = (InstanceMatcher *) [IgorQueryParser parse:query];
     assertThat(matcher.classMatcher, instanceOf([KindOfClassMatcher class]));
     assertThat(matcher.classMatcher.matchClass, equalTo([UILabel class]));
 }
 
 - (void)testParsesNodeMatcherWithPredicateMatcher {
+    IgorQueryScanner *query = [IgorQueryScanner withQuery:@"*[myPropertyName='somevalue']"];
     NSString *predicateExpression = [[NSPredicate predicateWithFormat:@"myPropertyName='somevalue'"] predicateFormat];
-    InstanceMatcher *matcher = (InstanceMatcher *) [[IgorQuery forPattern:@"*[myPropertyName='somevalue']"] parse];
+    InstanceMatcher *matcher = (InstanceMatcher *) [IgorQueryParser parse:query];
 
     assertThat(matcher.classMatcher, instanceOf([KindOfClassMatcher class]));
     assertThat(matcher.classMatcher.matchClass, equalTo([UIView class]));
@@ -42,7 +47,8 @@
 }
 
 - (void)testParsesDescendantCombinatorMatcher {
-    RelationshipMatcher *matcher = (RelationshipMatcher *) [[IgorQuery forPattern:@"UIButton UILabel"] parse];
+    IgorQueryScanner *query = [IgorQueryScanner withQuery:@"UIButton UILabel"];
+    RelationshipMatcher *matcher = (RelationshipMatcher *) [IgorQueryParser parse:query];
     assertThat(matcher, instanceOf([RelationshipMatcher class]));
 
     InstanceMatcher *ancestorMatcher = (InstanceMatcher *) matcher.ancestorMatcher;
@@ -55,7 +61,8 @@
 }
 
 - (void)testParsesMultipleDescendantCombinatorMatchers {
-    RelationshipMatcher *matcher = (RelationshipMatcher *) [[IgorQuery forPattern:@"UIButton UILabel UIView UITextField"] parse];
+    IgorQueryScanner *query = [IgorQueryScanner withQuery:@"UIButton UILabel UIView UITextField"];
+    RelationshipMatcher *matcher = (RelationshipMatcher *) [IgorQueryParser parse:query];
     assertThat(matcher, instanceOf([RelationshipMatcher class]));
 
     InstanceMatcher *descendantMatcher = matcher.subjectMatcher;
