@@ -2,6 +2,8 @@
 #import "RelationshipPattern.h"
 #import "BranchMatcher.h"
 #import "PatternScanner.h"
+#import "InstancePattern.h"
+#import "InstanceMatcher.h"
 
 @implementation IgorQuery
 
@@ -10,12 +12,15 @@
 }
 
 - (id <SubjectMatcher>)parse {
-    RelationshipPattern *subjectParser = [RelationshipPattern forScanner:self.scanner];
-    id <SubjectMatcher> matcher = [subjectParser parse];
-    if ([self.scanner skipString:@"!"]) {
+    RelationshipPattern *relationshipParser = [RelationshipPattern forScanner:self.scanner];
+    id <SubjectMatcher> matcher;
+    if ([self.scanner skipString:@"$"]) {
+        id<SubjectMatcher> subjectMatcher = [[InstancePattern forScanner:self.scanner] parse];
         [self.scanner skipWhiteSpace];
-        id <SubjectMatcher> descendantMatcher = [subjectParser parse];
-        matcher = [BranchMatcher withSubjectMatcher:matcher descendantMatcher:descendantMatcher];
+        id<SubjectMatcher> descendantMatcher = [relationshipParser parse];
+        matcher = [BranchMatcher withSubjectMatcher:subjectMatcher descendantMatcher:descendantMatcher];
+    } else {
+        matcher = [relationshipParser parse];
     }
     [self.scanner failIfNotAtEnd];
     return matcher;

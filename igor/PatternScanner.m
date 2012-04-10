@@ -6,6 +6,10 @@
     NSScanner *_scanner;
 }
 
+- (NSString *)description {
+    return [_scanner string];
+}
+
 - (void)failBecause:(NSString *)reason {
     @throw [IgorParserException exceptionWithReason:reason scanner:_scanner];
 }

@@ -20,18 +20,18 @@
     [middle addSubview:leaf];
 }
 
-- (void)testMatchesIfTheViewMatchesTheSubjectPatternAndHasASubviewThatMatchesTheSubtreePattern {
-    NSArray *nodeWithMiddleDescendant = [igor findViewsThatMatchPattern:@"*! [accessibilityHint='middle']" fromRoot:root];
+- (void)testMatchesIfTheViewMatchesTheSubjectPatternAndASubviewMatchesTheRelationshipPattern {
+    NSArray *nodeWithMiddleDescendant = [igor findViewsThatMatchPattern:@"$* [accessibilityHint='middle']" fromRoot:root];
     assertThat(nodeWithMiddleDescendant, onlyContains(root, nil));
 }
 
-- (void)testMatchesEachViewThatMatchesTheSubjectPatternAndHasASubviewThatMatchesTheSubtreePattern {
-    NSArray *nodeWithLeafDescendant = [igor findViewsThatMatchPattern:@"*! [accessibilityHint='leaf']" fromRoot:root];
+- (void)testMatchesEachViewThatMatchesTheSubjectPatternAndHasASubviewThatMatchesTheRelationshipPattern {
+    NSArray *nodeWithLeafDescendant = [igor findViewsThatMatchPattern:@"$* [accessibilityHint='leaf']" fromRoot:root];
     assertThat(nodeWithLeafDescendant, onlyContains(root, middle, nil));
 }
 
 - (void)testSubtreeMatchesOnlyWithinSubjectSubviews {
-    NSArray *middleWithLeafInsideMiddleDescendant = [igor findViewsThatMatchPattern:@"[accessibilityHint='middle']! [accessibilityHint='middle'] [accessibilityHint='leaf']" fromRoot:root];
+    NSArray *middleWithLeafInsideMiddleDescendant = [igor findViewsThatMatchPattern:@"$[accessibilityHint='middle'] [accessibilityHint='middle'] [accessibilityHint='leaf']" fromRoot:root];
     assertThat(middleWithLeafInsideMiddleDescendant, is(empty()));
 }
 
