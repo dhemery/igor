@@ -4,15 +4,15 @@
 
 @implementation PredicateParser
 
-+ (PredicateMatcher *)parse:(IgorQueryScanner *)query {
++ (void)parse:(IgorQueryScanner *)query intoArray:(NSMutableArray *)simpleMatchers {
     if (![query skipString:@"["]) {
-        return [PredicateMatcher withPredicateExpression:@"TRUEPREDICATE"];
+        return;
     }
     NSString *expression = [self parseExpressionFrom:query];
     if (![query skipString:@"]"]) {
         [query failBecause:@"Expected ]"];
     }
-    return [PredicateMatcher withPredicateExpression:expression];
+    [simpleMatchers addObject:[PredicateMatcher withPredicateExpression:expression]];
 }
 
 + (NSString *)parseExpressionFrom:(IgorQueryScanner *)query {

@@ -3,22 +3,27 @@
 #import "KindOfClassMatcher.h"
 #import "MemberOfClassMatcher.h"
 #import "IgorQueryScanner.h"
+#import "UniversalMatcher.h"
 
 @implementation ClassParser
 
-+ (id<ClassMatcher>)parse:(IgorQueryScanner *)pattern {
-    Class targetClass = [UIView class];
-    Class selectorClass = [KindOfClassMatcher class];
++ (void)parse:(IgorQueryScanner *)pattern intoArray:(NSMutableArray*) matchers {
+    if ([pattern skipString:@"*"]) {
+        [matchers addObject:[UniversalMatcher new]];
+        return;
+    }
 
     NSString *className;
-    if ([pattern scanNameIntoString:&className]) {
-        targetClass = NSClassFromString(className);
-        selectorClass = [MemberOfClassMatcher class];
+    if (![pattern scanNameIntoString:&className]) {
+        return;
     }
+
+    Class targetClass = NSClassFromString(className);
     if ([pattern skipString:@"*"]) {
-        selectorClass = [KindOfClassMatcher class];
+        [matchers addObject:[KindOfClassMatcher forClass:targetClass]];
+    } else {
+        [matchers addObject:[MemberOfClassMatcher forClass:targetClass]];
     }
-    return [selectorClass forClass:targetClass];
 }
 
 @end

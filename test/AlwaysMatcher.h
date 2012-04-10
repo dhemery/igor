@@ -1,4 +1,4 @@
-#import "InstanceMatcher.h"
+#import "SubjectMatcher.h"
 
-@interface AlwaysMatcher : InstanceMatcher
+@interface AlwaysMatcher : NSObject<SubjectMatcher>
 @end

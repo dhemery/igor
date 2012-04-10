@@ -1,31 +1,32 @@
 #import "ClassMatcher.h"
 #import "InstanceMatcher.h"
 
-@implementation InstanceMatcher
-
-@synthesize classMatcher = _classMatcher;
-@synthesize predicateMatcher = _predicateMatcher;
-
-
-- (NSString *)description {
-    return [NSString stringWithFormat:@"[Instance:%@%@]", _classMatcher, _predicateMatcher];
+@implementation InstanceMatcher {
+    NSMutableArray *_simpleMatchers;
 }
 
-- (InstanceMatcher *)initWithClassMatcher:(id<ClassMatcher>)classMatcher predicateMatcher:(id<SimpleMatcher>)predicateMatcher {
+@synthesize simpleMatchers = _simpleMatchers;
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"[Instance:%@]", _simpleMatchers];
+}
+
+- (InstanceMatcher *)initWithSimpleMatchers:(NSMutableArray *)simpleMatchers {
     self = [super init];
     if (self) {
-        _classMatcher = classMatcher;
-        _predicateMatcher = predicateMatcher;
+        _simpleMatchers = simpleMatchers;
     }
     return self;
 }
 
 - (BOOL)matchesView:(UIView *)view withinTree:(UIView *)ignored {
-    return [_classMatcher matchesView:view] && [_predicateMatcher matchesView:view];
+    for (id<SimpleMatcher> matcher in _simpleMatchers) {
+        if (![matcher matchesView:view]) return false;
+    }
+    return true;
 }
 
-+ (InstanceMatcher *)withClassMatcher:(id<ClassMatcher>)classMatcher predicateMatcher:(id<SimpleMatcher>)predicateMatcher {
-    return [[self alloc] initWithClassMatcher:classMatcher predicateMatcher:predicateMatcher];
++ (InstanceMatcher *)withSimpleMatchers:(NSMutableArray *)simpleMatchers {
+    return [[self alloc] initWithSimpleMatchers:simpleMatchers];
 }
-
 @end

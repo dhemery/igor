@@ -6,9 +6,7 @@
 
 @interface InstanceMatcher : NSObject <SubjectMatcher>
 
-@property(retain, readonly) id<ClassMatcher> classMatcher;
-@property(retain, readonly) id<SimpleMatcher> predicateMatcher;
+@property(nonatomic, strong) NSMutableArray *simpleMatchers;
 
-+ (InstanceMatcher *)withClassMatcher:(id<ClassMatcher>)classMatcher predicateMatcher:(id<SimpleMatcher>)predicateMatcher;
-
++ (InstanceMatcher *)withSimpleMatchers:(NSMutableArray *)simpleMatchers;
 @end

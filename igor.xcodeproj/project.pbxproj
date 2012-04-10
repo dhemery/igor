@@ -69,8 +69,16 @@
 		E621659DB794A5D612DCD445 /* IgorQueryScanner.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD444 /* IgorQueryScanner.h */; };
 		E621659DB794A5D612DCD449 /* SubjectMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD448 /* SubjectMatcher.h */; };
 		E621659DB794A5D612DCD44B /* BranchMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD44A /* BranchMatcherTests.m */; };
-		E621659DB794A5D612DCD44D /* AlwaysMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD44C /* AlwaysMatcher.m */; };
-		E621659DB794A5D612DCD44F /* AlwaysMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD44E /* AlwaysMatcher.h */; };
+		E621659DB794A5D612DCD451 /* KindOfClassMatcherForClass.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD450 /* KindOfClassMatcherForClass.m */; };
+		E621659DB794A5D612DCD453 /* KindOfClassMatcherForClass.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD452 /* KindOfClassMatcherForClass.h */; };
+		E621659DB794A5D612DCD455 /* MemberOfClassMatcherForClass.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD454 /* MemberOfClassMatcherForClass.m */; };
+		E621659DB794A5D612DCD457 /* MemberOfClassMatcherForClass.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD456 /* MemberOfClassMatcherForClass.h */; };
+		E621659DB794A5D612DCD459 /* PredicateMatcherForExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD458 /* PredicateMatcherForExpression.m */; };
+		E621659DB794A5D612DCD45B /* PredicateMatcherForExpression.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD45A /* PredicateMatcherForExpression.h */; };
+		E621659DB794A5D612DCD45D /* UniversalMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD45C /* UniversalMatcher.h */; };
+		E621659DB794A5D612DCD45F /* UniversalMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD45E /* UniversalMatcher.m */; };
+		E621659DB794A5D612DCD461 /* AlwaysMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD460 /* AlwaysMatcher.h */; };
+		E621659DB794A5D612DCD463 /* AlwaysMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD462 /* AlwaysMatcher.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,8 +177,16 @@
 		E621659DB794A5D612DCD444 /* IgorQueryScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IgorQueryScanner.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD448 /* SubjectMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubjectMatcher.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD44A /* BranchMatcherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BranchMatcherTests.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD44C /* AlwaysMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlwaysMatcher.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD44E /* AlwaysMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlwaysMatcher.h; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD450 /* KindOfClassMatcherForClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KindOfClassMatcherForClass.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD452 /* KindOfClassMatcherForClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KindOfClassMatcherForClass.h; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD454 /* MemberOfClassMatcherForClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberOfClassMatcherForClass.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD456 /* MemberOfClassMatcherForClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberOfClassMatcherForClass.h; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD458 /* PredicateMatcherForExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredicateMatcherForExpression.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD45A /* PredicateMatcherForExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PredicateMatcherForExpression.h; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD45C /* UniversalMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniversalMatcher.h; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD45E /* UniversalMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UniversalMatcher.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD460 /* AlwaysMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlwaysMatcher.h; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD462 /* AlwaysMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlwaysMatcher.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,8 +237,14 @@
 		2D436E241518FF2B00071950 /* fixtures */ = {
 			isa = PBXGroup;
 			children = (
-				E621659DB794A5D612DCD44C /* AlwaysMatcher.m */,
-				E621659DB794A5D612DCD44E /* AlwaysMatcher.h */,
+				E621659DB794A5D612DCD462 /* AlwaysMatcher.m */,
+				E621659DB794A5D612DCD460 /* AlwaysMatcher.h */,
+				E621659DB794A5D612DCD45A /* PredicateMatcherForExpression.h */,
+				E621659DB794A5D612DCD458 /* PredicateMatcherForExpression.m */,
+				E621659DB794A5D612DCD456 /* MemberOfClassMatcherForClass.h */,
+				E621659DB794A5D612DCD454 /* MemberOfClassMatcherForClass.m */,
+				E621659DB794A5D612DCD452 /* KindOfClassMatcherForClass.h */,
+				E621659DB794A5D612DCD450 /* KindOfClassMatcherForClass.m */,
 				2D436E1F1518F9C300071950 /* IdentityMatcher.h */,
 				2D436E201518F9C300071950 /* IdentityMatcher.m */,
 				2D436E251518FF6D00071950 /* ViewFactory.h */,
@@ -265,6 +287,8 @@
 		2D695CE1147CD26700AF4115 /* matchers */ = {
 			isa = PBXGroup;
 			children = (
+				E621659DB794A5D612DCD45E /* UniversalMatcher.m */,
+				E621659DB794A5D612DCD45C /* UniversalMatcher.h */,
 				E621659DB794A5D612DCD448 /* SubjectMatcher.h */,
 				2D695C89147CD1BA00AF4115 /* ClassMatcher.h */,
 				2D3E1F441509C64C00D62300 /* RelationshipMatcher.h */,
@@ -451,7 +475,10 @@
 				2D9649DF147DA19C00C40219 /* igorTests-Prefix.pch in Headers */,
 				2D436E211518F9C300071950 /* IdentityMatcher.h in Headers */,
 				2D436E271518FF6D00071950 /* ViewFactory.h in Headers */,
-				E621659DB794A5D612DCD44F /* AlwaysMatcher.h in Headers */,
+				E621659DB794A5D612DCD453 /* KindOfClassMatcherForClass.h in Headers */,
+				E621659DB794A5D612DCD457 /* MemberOfClassMatcherForClass.h in Headers */,
+				E621659DB794A5D612DCD45B /* PredicateMatcherForExpression.h in Headers */,
+				E621659DB794A5D612DCD461 /* AlwaysMatcher.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +496,7 @@
 				2DCE893B15193F6100B975EE /* InstanceParser.h in Headers */,
 				E621659DB794A5D612DCD445 /* IgorQueryScanner.h in Headers */,
 				E621659DB794A5D612DCD449 /* SubjectMatcher.h in Headers */,
+				E621659DB794A5D612DCD45D /* UniversalMatcher.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,7 +631,10 @@
 				2D436E221518F9C300071950 /* IdentityMatcher.m in Sources */,
 				2D436E281518FF6D00071950 /* ViewFactory.m in Sources */,
 				E621659DB794A5D612DCD44B /* BranchMatcherTests.m in Sources */,
-				E621659DB794A5D612DCD44D /* AlwaysMatcher.m in Sources */,
+				E621659DB794A5D612DCD451 /* KindOfClassMatcherForClass.m in Sources */,
+				E621659DB794A5D612DCD455 /* MemberOfClassMatcherForClass.m in Sources */,
+				E621659DB794A5D612DCD459 /* PredicateMatcherForExpression.m in Sources */,
+				E621659DB794A5D612DCD463 /* AlwaysMatcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -638,6 +669,7 @@
 				2DCE893715193E8900B975EE /* RelationshipParser.m in Sources */,
 				2DCE893C15193F6100B975EE /* InstanceParser.m in Sources */,
 				E621659DB794A5D612DCD443 /* IgorQueryScanner.m in Sources */,
+				E621659DB794A5D612DCD45F /* UniversalMatcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -3,6 +3,6 @@
 
 @interface PredicateParser
 
-+ (PredicateMatcher *)parse:(IgorQueryScanner *)query;
++ (void)parse:(IgorQueryScanner *)query intoArray:(NSMutableArray *)matchers;
 
 @end

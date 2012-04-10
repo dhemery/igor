@@ -54,9 +54,9 @@
 }
 
 - (void)testMatchesAcrossUniversalClassMatcher {
-    InstanceMatcher *rootMatcher = [IdentityMatcher forView:root];
-    InstanceMatcher *leafMatcher = [IdentityMatcher forView:leaf];
-    InstanceMatcher *anyViewMatcher = [AlwaysMatcher new];
+    id<SubjectMatcher> rootMatcher = [IdentityMatcher forView:root];
+    id<SubjectMatcher> leafMatcher = [IdentityMatcher forView:leaf];
+    id<SubjectMatcher> anyViewMatcher = [AlwaysMatcher new];
     RelationshipMatcher *anyViewInsideRootMatcher = [RelationshipMatcher withSubjectMatcher:anyViewMatcher ancestorMatcher:rootMatcher];
     RelationshipMatcher *leafInsideAnyViewInsideRootMatcher = [RelationshipMatcher withSubjectMatcher:leafMatcher ancestorMatcher:anyViewInsideRootMatcher];
     assertThatBool([leafInsideAnyViewInsideRootMatcher matchesView:leaf withinTree:root], equalToBool(YES));
