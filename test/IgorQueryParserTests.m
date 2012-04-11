@@ -4,8 +4,8 @@
 #import "IgorQueryScanner.h"
 #import "IsKindOfClassMatcher.h"
 #import "IsMemberOfClassMatcher.h"
-#import "SubjectOnRightMatcher.h"
 #import "UniversalMatcher.h"
+#import "ComplexMatcher.h"
 
 @interface IgorQueryParserTests : SenTestCase
 @end
@@ -45,10 +45,10 @@
 
 - (void)testParsesDescendantCombinatorMatcher {
     IgorQueryScanner *query = [IgorQueryScanner withQuery:@"UIButton UILabel"];
-    SubjectOnRightMatcher * matcher = (SubjectOnRightMatcher *) [IgorQueryParser parse:query];
-    assertThat(matcher, instanceOf([SubjectOnRightMatcher class]));
+    ComplexMatcher* matcher = (ComplexMatcher*)[IgorQueryParser parse:query];
+    assertThat(matcher, instanceOf([ComplexMatcher class]));
 
-    InstanceMatcher *ancestorMatcher = (InstanceMatcher*) matcher.head;
+    InstanceMatcher* ancestorMatcher = (InstanceMatcher*) matcher.head;
     assertThat(ancestorMatcher.simpleMatchers, hasItem([IsMemberOfClassMatcher forClass:[UIButton class]]));
     assertThat(ancestorMatcher.simpleMatchers, hasCountOf(1));
 
@@ -59,22 +59,22 @@
 
 - (void)testParsesMultipleDescendantCombinatorMatchers {
     IgorQueryScanner *query = [IgorQueryScanner withQuery:@"UIButton UILabel UIView UITextField"];
-    SubjectOnRightMatcher *matcher = (SubjectOnRightMatcher *) [IgorQueryParser parse:query];
-    assertThat(matcher, instanceOf([SubjectOnRightMatcher class]));
+    ComplexMatcher *matcher = (ComplexMatcher *) [IgorQueryParser parse:query];
+    assertThat(matcher, instanceOf([ComplexMatcher class]));
 
     InstanceMatcher *subjectMatcher = (InstanceMatcher*) matcher.subject;
     assertThat(subjectMatcher.simpleMatchers, hasItem([IsMemberOfClassMatcher forClass:[UITextField class]]));
     assertThat(subjectMatcher.simpleMatchers, hasCountOf(1));
 
-    SubjectOnRightMatcher *ancestorMatcher = (SubjectOnRightMatcher *) matcher.head;
-    assertThat(ancestorMatcher, instanceOf([SubjectOnRightMatcher class]));
+    ComplexMatcher *ancestorMatcher = (ComplexMatcher *) matcher.head;
+    assertThat(ancestorMatcher, instanceOf([ComplexMatcher class]));
 
     InstanceMatcher *ancestorSubjectMatcher = (InstanceMatcher*) ancestorMatcher.subject;
     assertThat(ancestorSubjectMatcher.simpleMatchers, hasItem([IsMemberOfClassMatcher forClass:[UIView class]]));
     assertThat(ancestorSubjectMatcher.simpleMatchers, hasCountOf(1));
 
-    SubjectOnRightMatcher *ancestorAncestorMatcher = (SubjectOnRightMatcher *) ancestorMatcher.head;
-    assertThat(ancestorAncestorMatcher, instanceOf([SubjectOnRightMatcher class]));
+    ComplexMatcher *ancestorAncestorMatcher = (ComplexMatcher *) ancestorMatcher.head;
+    assertThat(ancestorAncestorMatcher, instanceOf([ComplexMatcher class]));
 
     InstanceMatcher *ancestorAncestorSubjectMatcher = (InstanceMatcher*) ancestorAncestorMatcher.subject;
     assertThat(ancestorAncestorSubjectMatcher.simpleMatchers, hasItem([IsMemberOfClassMatcher forClass:[UILabel class]]));

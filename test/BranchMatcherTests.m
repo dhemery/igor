@@ -1,8 +1,8 @@
-#import "SubjectOnRightMatcher.h"
 #import "IdentityMatcher.h"
 #import "SubjectOnLeftMatcher.h"
 #import "ViewFactory.h"
 #import "MatchesView.h"
+#import "ComplexMatcher.h"
 
 @interface BranchMatcherTests : SenTestCase
 @end
@@ -30,7 +30,7 @@
 }
 
 - (void)testSubtreeMatcherExaminesOnlySubviewsOfTheSubject {
-    id <SubjectMatcher> leafWithMiddleAncestor = [SubjectOnRightMatcher withSubject:[IdentityMatcher forView:leaf] head:[IdentityMatcher forView:middle]];
+    id <SubjectMatcher> leafWithMiddleAncestor = [ComplexMatcher withHead:[IdentityMatcher forView:middle] subject:[IdentityMatcher forView:leaf]];
 
     SubjectOnLeftMatcher *middleWithLeafInsideMiddleDescendant = [SubjectOnLeftMatcher
             withSubject:[IdentityMatcher forView:middle]

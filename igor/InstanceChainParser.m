@@ -1,8 +1,7 @@
-#import "SubjectOnRightMatcher.h"
 #import "InstanceParser.h"
-#import "InstanceMatcher.h"
 #import "InstanceChainParser.h"
 #import "IgorQueryScanner.h"
+#import "ComplexMatcher.h"
 
 @implementation InstanceChainParser
 
@@ -14,7 +13,7 @@
             return matcher;
         } else {
             InstanceMatcher *subject = [InstanceParser parse:query];
-            matcher = [SubjectOnRightMatcher withSubject:subject head:matcher];
+            matcher = [ComplexMatcher withHead:matcher subject:subject];
         }
     }
     return matcher;

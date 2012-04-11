@@ -1,4 +1,4 @@
-@class InstanceMatcher;
+#import "InstanceMatcher.h"
 @class IgorQueryScanner;
 
 @interface InstanceParser
