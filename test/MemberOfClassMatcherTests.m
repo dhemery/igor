@@ -1,6 +1,7 @@
 #import "SimpleMatcher.h"
 #import "MemberOfClassMatcher.h"
 #import "ViewFactory.h"
+#import "MatchesView.h"
 
 @interface MemberOfClassMatcherTests : SenTestCase
 @end
@@ -16,19 +17,20 @@
 - (void)testMatchesAViewOfTheTargetClass {
     id memberOfUIButtonClassMatcher = [MemberOfClassMatcher forClass:[UIButton class]];
     UIButton *button = [ViewFactory button];
-    assertThatBool([memberOfUIButtonClassMatcher matchesView:button], equalToBool(YES));
+
+    assertThat(memberOfUIButtonClassMatcher, [MatchesView view:button]);
 }
 
 - (void)testMismatchesAViewOfANonTargetClass {
     id memberOfUIButtonClassMatcher = [MemberOfClassMatcher forClass:[UIButton class]];
-    UIView *view = [ViewFactory view];
-    assertThatBool([memberOfUIButtonClassMatcher matchesView:view], equalToBool(NO));
+    UIView *notAButton = [ViewFactory view];
+    assertThat(memberOfUIButtonClassMatcher, isNot([MatchesView view:notAButton]));
 }
 
 - (void)testMismatchesAViewOfAClassThatInheritsFromTheTargetClass {
     id memberOfUIViewClassMatcher = [MemberOfClassMatcher forClass:[UIView class]];
     UIButton *button = [ViewFactory button];
-    assertThatBool([memberOfUIViewClassMatcher matchesView:button], equalToBool(NO));
+    assertThat(memberOfUIViewClassMatcher, isNot([MatchesView view:button]));
 }
 
 @end

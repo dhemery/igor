@@ -1,8 +1,6 @@
 #import "SimpleMatcher.h"
 #import "SubjectMatcher.h"
 
-@class InstanceMatcher;
-
 @interface RelationshipMatcher : NSObject <SubjectMatcher>
 
 @property(retain) id <SubjectMatcher> ancestorMatcher;

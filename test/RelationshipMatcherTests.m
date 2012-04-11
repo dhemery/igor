@@ -2,6 +2,7 @@
 #include "IdentityMatcher.h"
 #include "ViewFactory.h"
 #import "AlwaysMatcher.h"
+#import "MatchesView.h"
 
 @interface RelationshipMatcherTests : SenTestCase
 @end
@@ -23,34 +24,34 @@
 - (void)testMatchesMatchingSubjectWithMatchingParent {
     RelationshipMatcher *middleWithRootAncestor = [RelationshipMatcher withSubjectMatcher:[IdentityMatcher forView:middle]
                                                                                       ancestorMatcher:[IdentityMatcher forView:root]];
-    assertThatBool([middleWithRootAncestor matchesView:middle withinTree:root], equalToBool(YES));
-    assertThatBool([middleWithRootAncestor matchesView:leaf withinTree:root], equalToBool(NO));
+    assertThat(middleWithRootAncestor, [MatchesView view:middle inTree:root]);
+    assertThat(middleWithRootAncestor, isNot([MatchesView view:leaf inTree:root]));
 }
 
 - (void)testMatchesMatchingSubjectWithMatchingAncestor {
     RelationshipMatcher *leafWithRootAncestor = [RelationshipMatcher withSubjectMatcher:[IdentityMatcher forView:leaf]
                                                                                     ancestorMatcher:[IdentityMatcher forView:root]];
-    assertThatBool([leafWithRootAncestor matchesView:root withinTree:root], equalToBool(NO));
-    assertThatBool([leafWithRootAncestor matchesView:middle withinTree:root], equalToBool(NO));
-    assertThatBool([leafWithRootAncestor matchesView:leaf withinTree:root], equalToBool(YES));
+    assertThat(leafWithRootAncestor, isNot([MatchesView view:root inTree:root]));
+    assertThat(leafWithRootAncestor, isNot([MatchesView view:middle inTree:root]));
+    assertThat(leafWithRootAncestor, [MatchesView view:leaf inTree:root]);
 }
 
 - (void)testMismatchesMatchingSubjectWithNoMatchingAncestors {
     RelationshipMatcher *leafWithLeafAncestor = [RelationshipMatcher withSubjectMatcher:[IdentityMatcher forView:leaf]
                                                                                     ancestorMatcher:[IdentityMatcher forView:leaf]];
-    assertThatBool([leafWithLeafAncestor matchesView:leaf withinTree:root], equalToBool(NO));
+    assertThat(leafWithLeafAncestor, isNot([MatchesView view:leaf inTree:root]));
 }
 
 - (void)testExaminesAncestorsUpToGivenRoot {
     RelationshipMatcher *leafWithMiddleAncestor = [RelationshipMatcher withSubjectMatcher:[IdentityMatcher forView:leaf]
                                                                                       ancestorMatcher:[IdentityMatcher forView:middle]];
-    assertThatBool([leafWithMiddleAncestor matchesView:leaf withinTree:middle], equalToBool(YES));
+    assertThat(leafWithMiddleAncestor, [MatchesView view:leaf inTree:middle]);
 }
 
 - (void)testExaminesAncestorsOnlyUpToGivenRoot {
     RelationshipMatcher *leafWithRootAncestor = [RelationshipMatcher withSubjectMatcher:[IdentityMatcher forView:leaf]
                                                                                     ancestorMatcher:[IdentityMatcher forView:root]];
-    assertThatBool([leafWithRootAncestor matchesView:leaf withinTree:middle], equalToBool(NO));
+    assertThat(leafWithRootAncestor, isNot([MatchesView view:leaf inTree:middle]));
 }
 
 - (void)testMatchesAcrossUniversalClassMatcher {
@@ -59,6 +60,7 @@
     id<SubjectMatcher> anyViewMatcher = [AlwaysMatcher new];
     RelationshipMatcher *anyViewInsideRootMatcher = [RelationshipMatcher withSubjectMatcher:anyViewMatcher ancestorMatcher:rootMatcher];
     RelationshipMatcher *leafInsideAnyViewInsideRootMatcher = [RelationshipMatcher withSubjectMatcher:leafMatcher ancestorMatcher:anyViewInsideRootMatcher];
-    assertThatBool([leafInsideAnyViewInsideRootMatcher matchesView:leaf withinTree:root], equalToBool(YES));
+
+    assertThat(leafInsideAnyViewInsideRootMatcher, [MatchesView view:leaf inTree:root]);
 }
 @end

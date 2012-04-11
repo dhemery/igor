@@ -1,6 +1,6 @@
 #import "PredicateParser.h"
 #import "IgorQueryScanner.h"
-#import "PredicateMatcherForExpression.h"
+#import "IsPredicateMatcher.h"
 
 @interface PredicatePatternParserTests : SenTestCase
 @end
@@ -20,7 +20,7 @@
     [PredicateParser parse:[IgorQueryScanner withQuery:query] intoArray:simpleMatchers];
 
     assertThat(simpleMatchers, hasCountOf(1));
-    assertThat(simpleMatchers, hasItem(predicateMatcherForExpression(expression)));
+    assertThat(simpleMatchers, hasItem([IsPredicateMatcher forExpression:expression]));
 }
 
 - (void)testIgnoresBracketWithinStringsInPredicate {
@@ -30,7 +30,7 @@
     [PredicateParser parse:[IgorQueryScanner withQuery:query] intoArray:simpleMatchers];
 
     assertThat(simpleMatchers, hasCountOf(1));
-    assertThat(simpleMatchers, hasItem(predicateMatcherForExpression(expression)));
+    assertThat(simpleMatchers, hasItem([IsPredicateMatcher forExpression:expression]));
 }
 
 - (void)testIgnoresConsecutiveBracketsWithinStringsInPredicate {
@@ -40,7 +40,7 @@
     [PredicateParser parse:[IgorQueryScanner withQuery:query] intoArray:simpleMatchers];
 
     assertThat(simpleMatchers, hasCountOf(1));
-    assertThat(simpleMatchers, hasItem(predicateMatcherForExpression(expression)));
+    assertThat(simpleMatchers, hasItem([IsPredicateMatcher forExpression:expression]));
 }
 
 - (void)testDeliversNoMatcherIfNoLeftBracket {

@@ -2,6 +2,7 @@
 #import "IdentityMatcher.h"
 #import "BranchMatcher.h"
 #import "ViewFactory.h"
+#import "MatchesView.h"
 
 @interface BranchMatcherTests : SenTestCase
 @end
@@ -25,9 +26,9 @@
             withSubjectMatcher:[IdentityMatcher forView:root]
              descendantMatcher:[IdentityMatcher forView:leaf]];
 
-    assertThatBool([rootWithLeafDescendant matchesView:root withinTree:root], equalToBool(YES));
-    assertThatBool([rootWithLeafDescendant matchesView:middle withinTree:root], equalToBool(NO));
-    assertThatBool([rootWithLeafDescendant matchesView:leaf withinTree:root], equalToBool(NO));
+    assertThat(rootWithLeafDescendant, [MatchesView view:root inTree:root]);
+    assertThat(rootWithLeafDescendant, isNot([MatchesView view:middle inTree:root]));
+    assertThat(rootWithLeafDescendant, isNot([MatchesView view:leaf inTree:root]));
 }
 
 - (void)testSubtreeMatcherExaminesOnlySubviewsOfTheSubject {
@@ -37,7 +38,7 @@
             withSubjectMatcher:[IdentityMatcher forView:middle]
              descendantMatcher:leafWithMiddleAncestor];
 
-    assertThatBool([middleWithLeafInsideMiddleDescendant matchesView:middle withinTree:root], equalToBool(NO));
+    assertThat(middleWithLeafInsideMiddleDescendant, isNot([MatchesView view:middle inTree:root]));
 }
 
 @end
