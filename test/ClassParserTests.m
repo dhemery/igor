@@ -15,7 +15,6 @@
     simpleMatchers = [NSMutableArray array];
 }
 
-
 - (void)testParsesAsteriskAsUniversalMatcher {
     [ClassParser parse:[IgorQueryScanner withQuery:@"*"] intoArray:simpleMatchers];
 

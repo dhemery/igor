@@ -1,6 +1,5 @@
 #import "IgorQueryParser.h"
 #import "InstanceChainParser.h"
-#import "SubjectOnLeftMatcher.h"
 #import "IgorQueryScanner.h"
 #import "InstanceParser.h"
 #import "ComplexMatcher.h"
@@ -18,7 +17,7 @@
         // Scan the rest of the relationship.
         id<SubjectMatcher> tail = [InstanceChainParser parse:query];
         // Make a branch matcher.
-        matcher = [SubjectOnLeftMatcher withSubject:subject tail:tail];
+        matcher = [ComplexMatcher withSubject:subject tail:tail];
     } else {
         // First subject is not marked.
         // As much of a relationship as we can.
@@ -31,13 +30,10 @@
                 // We have a combinator, so there's a branch.
                 // Scan the rest of the relationship.
                 id<SubjectMatcher> tail = [InstanceChainParser parse:query];
-                id<SubjectMatcher> branch = [SubjectOnLeftMatcher withSubject:subject tail:tail];
-                id<SubjectMatcher> relationship = [ComplexMatcher withHead:head subject:branch];
-                matcher = relationship ;
+                matcher = ([ComplexMatcher withHead:head subject:subject tail:tail]);
             } else {
                 // There's no combinator after the marked subject. So it's just a relationship.
-                id<SubjectMatcher> relationship = [ComplexMatcher withHead:head subject:subject];
-                matcher = relationship ;
+                matcher = ([ComplexMatcher withHead:head subject:subject]);
             }
         } else {
             // No subject is marked.

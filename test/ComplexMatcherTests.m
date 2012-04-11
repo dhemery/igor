@@ -13,9 +13,9 @@
     UIButton *root;
     UIButton *middle;
     UIButton *leaf;
-    IdentityMatcher *_matchesRoot;
-    IdentityMatcher *_matchesMiddle;
-    IdentityMatcher *_matchesLeaf;
+    id<SubjectMatcher> _matchesRoot;
+    id<SubjectMatcher> _matchesMiddle;
+    id<SubjectMatcher> _matchesLeaf;
 }
 
 - (void)setUp {
@@ -79,5 +79,25 @@
 
     assertThat(leafInAnyViewInRoot, [MatchesView view:leaf inTree:root]);
 }
+
+
+
+
+
+- (void)testMatchesIfViewMatchesSubjectMatcherAndSubviewMatchesSubtreeMatcher {
+    id<SubjectMatcher> rootWithInnerLeaf = [ComplexMatcher withSubject:_matchesRoot tail:_matchesLeaf];
+
+    assertThat(rootWithInnerLeaf, [MatchesView view:root inTree:root]);
+    assertThat(rootWithInnerLeaf, isNot([MatchesView view:middle inTree:root]));
+    assertThat(rootWithInnerLeaf, isNot([MatchesView view:leaf inTree:root]));
+}
+
+- (void)testSubtreeMatcherExaminesOnlySubviewsOfTheSubject {
+    id<SubjectMatcher> leafInMiddle = [ComplexMatcher withHead:_matchesMiddle subject:_matchesLeaf];
+    id<SubjectMatcher> middleWithLeafInsideMiddleDescendant = [ComplexMatcher withSubject:_matchesMiddle tail:leafInMiddle];
+
+    assertThat(middleWithLeafInsideMiddleDescendant, isNot([MatchesView view:middle inTree:root]));
+}
+
 
 @end

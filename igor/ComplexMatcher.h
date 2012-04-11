@@ -10,4 +10,5 @@
 + (ComplexMatcher *)withHead:(id <SubjectMatcher>)head subject:(id <SubjectMatcher>)subject tail:(id <SubjectMatcher>)tail;
 + (ComplexMatcher *)withSubject:(id <SubjectMatcher>)subject;
 
++ (id <SubjectMatcher>)withSubject:(id <SubjectMatcher>)subject tail:(id <SubjectMatcher>)tail;
 @end
