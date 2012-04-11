@@ -5,7 +5,7 @@
 @synthesize matchClass = _matchClass;
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"[KindOfClass:%@]", self.matchClass];
+    return [NSString stringWithFormat:@"[KindOfClass:%@]", _matchClass];
 }
 
 + (KindOfClassMatcher *)forClass:(Class)targetClass {
@@ -20,7 +20,7 @@
 }
 
 - (BOOL)matchesView:(UIView *)view {
-    return [view isKindOfClass:self.matchClass];
+    return [view isKindOfClass:_matchClass];
 }
 
 @end

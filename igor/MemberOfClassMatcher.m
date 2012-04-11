@@ -20,7 +20,7 @@
 }
 
 - (BOOL)matchesView:(UIView *)view {
-    return [view isMemberOfClass:self.matchClass];
+    return [view isMemberOfClass:_matchClass];
 }
 
 @end

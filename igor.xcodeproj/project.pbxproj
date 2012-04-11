@@ -37,7 +37,7 @@
 		2D695CD8147CD1D200AF4115 /* IgorQueryParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695CCD147CD1D200AF4115 /* IgorQueryParserTests.m */; };
 		2D695CDA147CD1D200AF4115 /* KindOfClassMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695CD0147CD1D200AF4115 /* KindOfClassMatcherTests.m */; };
 		2D695CDB147CD1D200AF4115 /* MemberOfClassMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695CD1147CD1D200AF4115 /* MemberOfClassMatcherTests.m */; };
-		2D695CDD147CD1D200AF4115 /* PredicatePatternParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695CD3147CD1D200AF4115 /* PredicatePatternParserTests.m */; };
+		2D695CDD147CD1D200AF4115 /* PredicateParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695CD3147CD1D200AF4115 /* PredicateParserTests.m */; };
 		2D695CDE147CD1D200AF4115 /* PredicatePatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695CD4147CD1D200AF4115 /* PredicatePatternTests.m */; };
 		2D9649DA147D9E0B00C40219 /* IgorLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C91147CD1BA00AF4115 /* IgorLoader.m */; };
 		2D9649DF147DA19C00C40219 /* igorTests-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 2D695CCF147CD1D200AF4115 /* igorTests-Prefix.pch */; };
@@ -83,6 +83,7 @@
 		E621659DB794A5D612DCD467 /* MatchesView.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD466 /* MatchesView.h */; };
 		E621659DB794A5D612DCD469 /* MatchesViewInTree.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD468 /* MatchesViewInTree.m */; };
 		E621659DB794A5D612DCD46B /* MatchesViewInTree.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD46A /* MatchesViewInTree.h */; };
+		E621659DB794A5D612DCD46D /* ClassParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD46C /* ClassParserTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,7 +148,7 @@
 		2D695CCF147CD1D200AF4115 /* igorTests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "igorTests-Prefix.pch"; sourceTree = "<group>"; };
 		2D695CD0147CD1D200AF4115 /* KindOfClassMatcherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KindOfClassMatcherTests.m; sourceTree = "<group>"; };
 		2D695CD1147CD1D200AF4115 /* MemberOfClassMatcherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberOfClassMatcherTests.m; sourceTree = "<group>"; };
-		2D695CD3147CD1D200AF4115 /* PredicatePatternParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredicatePatternParserTests.m; sourceTree = "<group>"; };
+		2D695CD3147CD1D200AF4115 /* PredicateParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredicateParserTests.m; sourceTree = "<group>"; };
 		2D695CD4147CD1D200AF4115 /* PredicatePatternTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredicatePatternTests.m; sourceTree = "<group>"; };
 		2D99DB321517E94B00244226 /* SubjectMarkerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectMarkerTests.m; sourceTree = "<group>"; };
 		2D99DB361518273100244226 /* BranchMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BranchMatcher.h; sourceTree = "<group>"; };
@@ -195,6 +196,7 @@
 		E621659DB794A5D612DCD466 /* MatchesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchesView.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD468 /* MatchesViewInTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchesViewInTree.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD46A /* MatchesViewInTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchesViewInTree.h; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD46C /* ClassParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassParserTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -366,8 +368,9 @@
 		2D695CE6147CD35100AF4115 /* parser */ = {
 			isa = PBXGroup;
 			children = (
+				E621659DB794A5D612DCD46C /* ClassParserTests.m */,
 				2D695CCD147CD1D200AF4115 /* IgorQueryParserTests.m */,
-				2D695CD3147CD1D200AF4115 /* PredicatePatternParserTests.m */,
+				2D695CD3147CD1D200AF4115 /* PredicateParserTests.m */,
 			);
 			name = parser;
 			sourceTree = "<group>";
@@ -637,7 +640,7 @@
 				2D695CD8147CD1D200AF4115 /* IgorQueryParserTests.m in Sources */,
 				2D695CDA147CD1D200AF4115 /* KindOfClassMatcherTests.m in Sources */,
 				2D695CDB147CD1D200AF4115 /* MemberOfClassMatcherTests.m in Sources */,
-				2D695CDD147CD1D200AF4115 /* PredicatePatternParserTests.m in Sources */,
+				2D695CDD147CD1D200AF4115 /* PredicateParserTests.m in Sources */,
 				2D695CDE147CD1D200AF4115 /* PredicatePatternTests.m in Sources */,
 				2D3E1F3F1509B98200D62300 /* RelationshipPatternTests.m in Sources */,
 				2D3E1F4B1509D29800D62300 /* RelationshipMatcherTests.m in Sources */,
@@ -651,6 +654,7 @@
 				E621659DB794A5D612DCD463 /* AlwaysMatcher.m in Sources */,
 				E621659DB794A5D612DCD465 /* MatchesView.m in Sources */,
 				E621659DB794A5D612DCD469 /* MatchesViewInTree.m in Sources */,
+				E621659DB794A5D612DCD46D /* ClassParserTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
