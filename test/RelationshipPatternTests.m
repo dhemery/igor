@@ -21,32 +21,32 @@
 }
 
 - (void)testMatchesMatchingSubjectsWithMatchingParent {
-    NSArray *matchingViews = [igor findViewsThatMatchPattern:@"[accessibilityHint='root'] [accessibilityHint='middle']" fromRoot:root];
+    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"[accessibilityHint='root'] [accessibilityHint='middle']" inTree:root];
     assertThat(matchingViews, hasItem(middle));
 }
 
 - (void)testMatchesMatchingSubjectsWithMatchingAncestors {
-    NSArray *matchingViews = [igor findViewsThatMatchPattern:@"[accessibilityHint='root'] [accessibilityHint='leaf']" fromRoot:root];
+    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"[accessibilityHint='root'] [accessibilityHint='leaf']" inTree:root];
     assertThat(matchingViews, hasItem(leaf));
 }
 
 - (void)testRequiresMatchingAncestor {
-    NSArray *matchingViews = [igor findViewsThatMatchPattern:@"[accessibilityHint='no such ancestor'] [accessibilityHint='leaf']" fromRoot:root];
+    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"[accessibilityHint='no such ancestor'] [accessibilityHint='leaf']" inTree:root];
     assertThat(matchingViews, isNot(hasItem(leaf)));
 }
 
 - (void)testRequiresMatchingSubject {
-    NSArray *matchingViews = [igor findViewsThatMatchPattern:@"[accessibilityHint='root'] [accessibilityHint='no such subject']" fromRoot:root];
+    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"[accessibilityHint='root'] [accessibilityHint='no such subject']" inTree:root];
     assertThat(matchingViews, isNot(hasItem(leaf)));
 }
 
 - (void)testMatchesAcrossUniversalClassMatcher {
-    NSArray *matchingViews = [igor findViewsThatMatchPattern:@"[accessibilityHint='root'] * [accessibilityHint='leaf']" fromRoot:root];
+    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"[accessibilityHint='root'] * [accessibilityHint='leaf']" inTree:root];
     assertThat(matchingViews, hasItem(leaf));
 }
 
 - (void)testRequiresMatchForEachUniversalClassMatcher {
-    NSArray *matchingViews = [igor findViewsThatMatchPattern:@"[accessibilityHint='root'] * * [accessibilityHint='leaf']" fromRoot:root];
+    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"[accessibilityHint='root'] * * [accessibilityHint='leaf']" inTree:root];
     assertThat(matchingViews, is(empty()));
 }
 

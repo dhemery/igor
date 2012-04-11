@@ -3,7 +3,8 @@
 
 @interface InstanceMatcher : NSObject <SubjectMatcher>
 
-@property(nonatomic, strong) NSArray *simpleMatchers;
+@property(strong, readonly) NSArray *simpleMatchers;
 
 + (InstanceMatcher *)withSimpleMatchers:(NSArray *)simpleMatchers;
+
 @end

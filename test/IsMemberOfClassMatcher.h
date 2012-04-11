@@ -2,6 +2,6 @@
 
 @interface IsMemberOfClassMatcher : HCBaseMatcher
 
-+ forClass:(Class) targetClass;
++ (IsMemberOfClassMatcher *)forExactClass:(Class)exactClass;
 
 @end

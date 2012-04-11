@@ -4,7 +4,7 @@
 
 @interface MatchesView : HCBaseMatcher
 
-+ (MatchesView *) view:(UIView *)targetView;
-+ (MatchesViewInTree *) view:(UIView *)targetView inTree:(UIView *)root;
++ (MatchesView *) view:(UIView *)view;
++ (MatchesViewInTree *) view:(UIView *)view inTree:(UIView *)tree;
 
 @end

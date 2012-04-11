@@ -2,25 +2,25 @@
 
 @implementation MemberOfClassMatcher
 
-@synthesize matchClass = _matchClass;
+@synthesize matchClass;
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"[MemberOfClass:%@]", _matchClass];
+    return [NSString stringWithFormat:@"[MemberOfClass:%@]", self.matchClass];
 }
 
-+ (MemberOfClassMatcher *)forClass:(Class)matchClass {
-    return [[self alloc] initForClass:matchClass];
++ (MemberOfClassMatcher *)forExactClass:(Class)exactClass {
+    return [[self alloc] initForExactClass:exactClass];
 }
 
-- (MemberOfClassMatcher*)initForClass:(Class)matchClass {
+- (MemberOfClassMatcher*)initForExactClass:(Class)exactClass {
     if (self = [super init]) {
-        _matchClass = matchClass;
+        matchClass = exactClass;
     }
     return self;
 }
 
 - (BOOL)matchesView:(UIView *)view {
-    return [view isMemberOfClass:_matchClass];
+    return [view isMemberOfClass:self.matchClass];
 }
 
 @end

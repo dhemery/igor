@@ -1,11 +1,11 @@
 #import "IdentityMatcher.h"
 
 @implementation IdentityMatcher {
-    UIView *_matchView;
+    UIView *matchView;
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"[Identity:%@]", _matchView];
+    return [NSString stringWithFormat:@"[Identity:%@]", matchView];
 }
 
 + (IdentityMatcher *)forView:(UIView *)view {
@@ -14,12 +14,12 @@
 
 - (IdentityMatcher *)initForView:(UIView *)view {
     if ((self = [super init])) {
-        _matchView = view;
+        matchView = view;
     }
     return self;
 }
 
 - (BOOL)matchesView:(UIView *)view inTree:(UIView *)root {
-    return _matchView == view;
+    return matchView == view;
 }
 @end

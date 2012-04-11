@@ -2,8 +2,8 @@
 
 @interface KindOfClassMatcher : NSObject<SimpleMatcher>
 
-@property(nonatomic, assign) id matchClass;
+@property(strong, readonly) id matchClass;
 
-+ (KindOfClassMatcher *)forClass:(Class)targetClass;
++ (KindOfClassMatcher *)forBaseClass:(Class)baseClass;
 
 @end

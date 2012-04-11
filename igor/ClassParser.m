@@ -6,22 +6,22 @@
 
 @implementation ClassParser
 
-+ (void)parse:(IgorQueryScanner *)pattern intoArray:(NSMutableArray*) matchers {
-    if ([pattern skipString:@"*"]) {
-        [matchers addObject:[UniversalMatcher new]];
++ (void)addClassMatcherFromQuery:(IgorQueryScanner *)query toArray:(NSMutableArray*)array {
+    if ([query skipString:@"*"]) {
+        [array addObject:[UniversalMatcher new]];
         return;
     }
 
     NSString *className;
-    if (![pattern scanNameIntoString:&className]) {
+    if (![query scanNameIntoString:&className]) {
         return;
     }
 
     Class targetClass = NSClassFromString(className);
-    if ([pattern skipString:@"*"]) {
-        [matchers addObject:[KindOfClassMatcher forClass:targetClass]];
+    if ([query skipString:@"*"]) {
+        [array addObject:[KindOfClassMatcher forBaseClass:targetClass]];
     } else {
-        [matchers addObject:[MemberOfClassMatcher forClass:targetClass]];
+        [array addObject:[MemberOfClassMatcher forExactClass:targetClass]];
     }
 }
 

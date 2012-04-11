@@ -3,6 +3,6 @@
 
 @interface IgorQueryParser
 
-+ (id <SubjectMatcher>)parse:(IgorQueryScanner *)query;
++ (id <SubjectMatcher>)matcherFromQuery:(IgorQueryScanner *)query;
 
 @end

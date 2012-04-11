@@ -3,30 +3,30 @@
 #import "MatchesView.h"
 
 @implementation MatchesView {
-    UIView* _targetView;
+    UIView*targetView;
 }
 
 - (void) describeTo:(id<HCDescription>)description {
-    [[description appendText:@"Matches view "] appendDescriptionOf:_targetView];
+    [[description appendText:@"Matches view "] appendDescriptionOf:targetView];
 }
 
-- (MatchesView *) initWithView:(UIView *)targetView {
+- (MatchesView *) initWithView:(UIView *)view {
     if (self = [super init]) {
-        _targetView = targetView;
+        targetView = view;
     }
     return self;
 }
 
 - (BOOL) matches:(id)matcher {
-    return [(id<SimpleMatcher>)matcher matchesView:_targetView];
+    return [(id<SimpleMatcher>)matcher matchesView:targetView];
 }
 
-+ (MatchesView *) view:(UIView *)targetView {
-    return [[self alloc] initWithView:targetView];
++ (MatchesView *) view:(UIView *)view {
+    return [[self alloc] initWithView:view];
 }
 
-+ (MatchesViewInTree *)view:(UIView *)targetView inTree:(UIView *)root {
-    return [MatchesViewInTree view:targetView inTree:root];
++ (MatchesViewInTree *)view:(UIView *)view inTree:(UIView *)tree {
+    return [MatchesViewInTree view:view inTree:tree];
 }
 
 @end

@@ -9,21 +9,21 @@
 @implementation MemberOfClassMatcherTests
 
 - (void)testMatchesAViewOfTheTargetClass {
-    id<SimpleMatcher> memberOfButtonMatcher = [MemberOfClassMatcher forClass:[UIButton class]];
+    id<SimpleMatcher> memberOfButtonMatcher = [MemberOfClassMatcher forExactClass:[UIButton class]];
     UIButton *classIsExactlyButton = [ViewFactory button];
 
     assertThat(memberOfButtonMatcher, [MatchesView view:classIsExactlyButton]);
 }
 
 - (void)testMismatchesAViewOfANonTargetClass {
-    id<SimpleMatcher> memberOfButtonMatcher = [MemberOfClassMatcher forClass:[UIButton class]];
+    id<SimpleMatcher> memberOfButtonMatcher = [MemberOfClassMatcher forExactClass:[UIButton class]];
     UIView *classIsNotButtonOrSubclass = [ViewFactory view];
 
     assertThat(memberOfButtonMatcher, isNot([MatchesView view:classIsNotButtonOrSubclass]));
 }
 
 - (void)testMismatchesAViewOfAClassThatInheritsFromTheTargetClass {
-    id<SimpleMatcher> memberOfViewMatcher = [MemberOfClassMatcher forClass:[UIView class]];
+    id<SimpleMatcher> memberOfViewMatcher = [MemberOfClassMatcher forExactClass:[UIView class]];
     UIButton *classIsSubclassOfView = [ViewFactory button];
 
     assertThat(memberOfViewMatcher, isNot([MatchesView view:classIsSubclassOfView]));

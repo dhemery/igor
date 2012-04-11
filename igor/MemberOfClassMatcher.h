@@ -2,8 +2,8 @@
 
 @interface MemberOfClassMatcher : NSObject<SimpleMatcher>
 
-@property(nonatomic, assign) id matchClass;
+@property(strong, readonly) Class matchClass;
 
-+ (MemberOfClassMatcher*)forClass:(Class)targetClass;
++ (MemberOfClassMatcher*)forExactClass:(Class)exactClass;
 
 @end

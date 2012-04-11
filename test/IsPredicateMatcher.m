@@ -3,16 +3,16 @@
 #import "PredicateMatcher.h"
 
 @implementation IsPredicateMatcher {
-    NSString *_expression;
+    NSPredicate *predicate;
 }
 
-+ (id) forExpression:(NSString *)expression{
-    return [[self alloc] initWithClass:expression];
++ (IsPredicateMatcher *) forExpression:(NSString *)expression{
+    return [[self alloc] initWithExpression:expression];
 }
 
-- (id) initWithClass:(NSString *)expression {
+- (IsPredicateMatcher *) initWithExpression:(NSString *)expression {
     if (self = [super init]) {
-        _expression = expression ;
+        predicate = [NSPredicate predicateWithFormat:expression];
     }
     return self;
 }
@@ -22,11 +22,11 @@
         return NO;
     }
     PredicateMatcher* matcher = item;
-    return [matcher.matchExpression isEqualToString:[[NSPredicate predicateWithFormat:_expression] predicateFormat]];
+    return [matcher.expression isEqualToString:[predicate predicateFormat]];
 }
 
 - (void) describeTo:(id<HCDescription>)description; {
-    [description appendDescriptionOf:[PredicateMatcher withPredicateExpression:_expression]];
+    [description appendDescriptionOf:predicate];
 }
 
 @end

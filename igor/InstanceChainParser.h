@@ -3,6 +3,6 @@
 
 @interface InstanceChainParser
 
-+ (void)parse:(IgorQueryScanner *)query intoArray:(NSMutableArray*)array;
++ (void)collectInstanceMatchersFromQuery:(IgorQueryScanner *)query intoArray:(NSMutableArray*)array;
 
 @end

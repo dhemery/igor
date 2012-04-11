@@ -4,15 +4,9 @@
 #import "UniversalMatcher.h"
 #import "TreeWalker.h"
 
-@implementation ComplexMatcher {
-    id<SubjectMatcher> _head;
-    id<SubjectMatcher> _subject;
-    id<SubjectMatcher> _tail;
-}
+@implementation ComplexMatcher
 
-@synthesize head = _head;
-@synthesize subject = _subject;
-@synthesize tail = _tail;
+@synthesize head, subject, tail;
 
 - (NSMutableArray *)ancestorsOfView:(UIView *)view {
     NSMutableArray *ancestors = [NSMutableArray array];
@@ -31,9 +25,9 @@
 }
 
 - (BOOL)headMatchesAnAncestorOfView:(UIView *)view inTree:(UIView *)root {
-    if ([_head isMemberOfClass:[UniversalMatcher class]]) return true;
+    if ([self.head isMemberOfClass:[UniversalMatcher class]]) return true;
     for (id ancestor in [self ancestorsOfView:view withinTree:root]) {
-        if ([_head matchesView:ancestor inTree:root]) {
+        if ([self.head matchesView:ancestor inTree:root]) {
             return true;
         }
     }
@@ -41,24 +35,24 @@
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"[Complex:[head:%@][subject:%@][tail:%@]]", _head, _subject, _tail];
+    return [NSString stringWithFormat:@"[Complex:[head:%@][subject:%@][tail:%@]]", self.head, self.subject, self.tail];
 }
 
-- (ComplexMatcher *)initWithHead:(id<SubjectMatcher>)head subject:(id <SubjectMatcher>)subject tail:(id<SubjectMatcher>)tail {
+- (ComplexMatcher *)initWithHead:(id<SubjectMatcher>)headMatcher subject:(id <SubjectMatcher>)subjectMatcher tail:(id<SubjectMatcher>)tailMatcher {
     if (self = [super init]) {
-        _head = head;
-        _subject = subject;
-        _tail = tail;
+        head = headMatcher;
+        subject = subjectMatcher;
+        tail = tailMatcher;
     }
     return self;
 }
 
 - (BOOL)tailMatchesASubviewOfView:(UIView *)view {
-    if ([_tail isMemberOfClass:[UniversalMatcher class]]) return true;
+    if ([self.tail isMemberOfClass:[UniversalMatcher class]]) return true;
     __block BOOL subtreeHasAMatch = NO;
     for (id subview in [view subviews]) {
         void (^noteMatch)(UIView *) = ^(UIView *target) {
-            if ([_tail matchesView:target inTree:subview]) {
+            if ([self.tail matchesView:target inTree:subview]) {
                 subtreeHasAMatch = YES;
             }
         };
@@ -68,7 +62,7 @@
 }
 
 - (BOOL)matchesView:(UIView *)view inTree:(UIView *)root {
-    return [_subject matchesView:view inTree:root] && [self headMatchesAnAncestorOfView:view inTree:root] && [self tailMatchesASubviewOfView:view];
+    return [self.subject matchesView:view inTree:root] && [self headMatchesAnAncestorOfView:view inTree:root] && [self tailMatchesASubviewOfView:view];
 }
 
 + (ComplexMatcher *)withHead:(id<SubjectMatcher>)head subject:(id <SubjectMatcher>)subject {
@@ -83,7 +77,7 @@
     return [self withHead:[UniversalMatcher new] subject:subject tail:[UniversalMatcher new]];
 }
 
-+ (id <SubjectMatcher>)withSubject:(id <SubjectMatcher>)subject tail:(id <SubjectMatcher>)tail {
++ (ComplexMatcher *)withSubject:(id <SubjectMatcher>)subject tail:(id <SubjectMatcher>)tail {
     return [self withHead:[UniversalMatcher new] subject:subject tail:tail];
 }
 

@@ -2,6 +2,6 @@
 
 @interface IsPredicateMatcher : HCBaseMatcher
 
-+ (id)forExpression:(NSString *)expression;
++ (IsPredicateMatcher *)forExpression:(NSString *)expression;
 
 @end

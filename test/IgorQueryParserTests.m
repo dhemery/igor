@@ -14,7 +14,7 @@
 
 - (void)testParsesAsteriskAsUniversalMatcher {
     IgorQueryScanner *query = [IgorQueryScanner withQuery:@"*"];
-    ComplexMatcher* matcher = (ComplexMatcher*) [IgorQueryParser parse:query];
+    ComplexMatcher* matcher = (ComplexMatcher*) [IgorQueryParser matcherFromQuery:query];
     InstanceMatcher* subject = (InstanceMatcher*) matcher.subject;
 
     assertThat(subject, instanceOf([InstanceMatcher class]));
@@ -24,16 +24,16 @@
 
 - (void)testParsesNameAsMemberOfClassMatcher {
     IgorQueryScanner *query = [IgorQueryScanner withQuery:@"UIButton"];
-    ComplexMatcher* matcher = (ComplexMatcher*) [IgorQueryParser parse:query];
+    ComplexMatcher* matcher = (ComplexMatcher*) [IgorQueryParser matcherFromQuery:query];
     InstanceMatcher* subject = (InstanceMatcher*) matcher.subject;
 
-    assertThat(subject.simpleMatchers, hasItem([IsMemberOfClassMatcher forClass:[UIButton class]]));
+    assertThat(subject.simpleMatchers, hasItem([IsMemberOfClassMatcher forExactClass:[UIButton class]]));
     assertThat(subject.simpleMatchers, hasCountOf(1));
 }
 
 - (void)testParsesNameAsteriskAsKindOfClassMatcher {
     IgorQueryScanner *query = [IgorQueryScanner withQuery:@"UILabel*"];
-    ComplexMatcher* matcher = (ComplexMatcher*) [IgorQueryParser parse:query];
+    ComplexMatcher* matcher = (ComplexMatcher*) [IgorQueryParser matcherFromQuery:query];
     InstanceMatcher* subject = (InstanceMatcher*) matcher.subject;
 
     assertThat(subject.simpleMatchers, hasItem([IsKindOfClassMatcher forClass:[UILabel class]]));
@@ -42,7 +42,7 @@
 
 - (void)testParsesBracketedStringAsPredicateMatcher {
     IgorQueryScanner *query = [IgorQueryScanner withQuery:@"[myPropertyName='somevalue']"];
-    ComplexMatcher* matcher = (ComplexMatcher*) [IgorQueryParser parse:query];
+    ComplexMatcher* matcher = (ComplexMatcher*) [IgorQueryParser matcherFromQuery:query];
     InstanceMatcher* subject = (InstanceMatcher*) matcher.subject;
 
     assertThat(subject.simpleMatchers, hasItem([IsPredicateMatcher forExpression:@"myPropertyName='somevalue'"]));
@@ -51,43 +51,43 @@
 
 - (void)testParsesDescendantCombinatorMatcher {
     IgorQueryScanner *query = [IgorQueryScanner withQuery:@"UIButton UILabel"];
-    ComplexMatcher* matcher = (ComplexMatcher*)[IgorQueryParser parse:query];
+    ComplexMatcher* matcher = (ComplexMatcher*)[IgorQueryParser matcherFromQuery:query];
     assertThat(matcher, instanceOf([ComplexMatcher class]));
 
     InstanceMatcher* ancestorMatcher = (InstanceMatcher*) matcher.head;
-    assertThat(ancestorMatcher.simpleMatchers, hasItem([IsMemberOfClassMatcher forClass:[UIButton class]]));
+    assertThat(ancestorMatcher.simpleMatchers, hasItem([IsMemberOfClassMatcher forExactClass:[UIButton class]]));
     assertThat(ancestorMatcher.simpleMatchers, hasCountOf(1));
 
     InstanceMatcher *subjectMatcher = (InstanceMatcher*) matcher.subject;
-    assertThat(subjectMatcher.simpleMatchers, hasItem([IsMemberOfClassMatcher forClass:[UILabel class]]));
+    assertThat(subjectMatcher.simpleMatchers, hasItem([IsMemberOfClassMatcher forExactClass:[UILabel class]]));
     assertThat(ancestorMatcher.simpleMatchers, hasCountOf(1));
 }
 
 - (void)testParsesMultipleDescendantCombinatorMatchers {
     IgorQueryScanner *query = [IgorQueryScanner withQuery:@"UIButton UILabel UIView UITextField"];
-    ComplexMatcher *matcher = (ComplexMatcher *) [IgorQueryParser parse:query];
+    ComplexMatcher *matcher = (ComplexMatcher *) [IgorQueryParser matcherFromQuery:query];
     assertThat(matcher, instanceOf([ComplexMatcher class]));
 
     InstanceMatcher *subjectMatcher = (InstanceMatcher*) matcher.subject;
-    assertThat(subjectMatcher.simpleMatchers, hasItem([IsMemberOfClassMatcher forClass:[UITextField class]]));
+    assertThat(subjectMatcher.simpleMatchers, hasItem([IsMemberOfClassMatcher forExactClass:[UITextField class]]));
     assertThat(subjectMatcher.simpleMatchers, hasCountOf(1));
 
     ComplexMatcher *ancestorMatcher = (ComplexMatcher *) matcher.head;
     assertThat(ancestorMatcher, instanceOf([ComplexMatcher class]));
 
     InstanceMatcher *ancestorSubjectMatcher = (InstanceMatcher*) ancestorMatcher.subject;
-    assertThat(ancestorSubjectMatcher.simpleMatchers, hasItem([IsMemberOfClassMatcher forClass:[UIView class]]));
+    assertThat(ancestorSubjectMatcher.simpleMatchers, hasItem([IsMemberOfClassMatcher forExactClass:[UIView class]]));
     assertThat(ancestorSubjectMatcher.simpleMatchers, hasCountOf(1));
 
     ComplexMatcher *ancestorAncestorMatcher = (ComplexMatcher *) ancestorMatcher.head;
     assertThat(ancestorAncestorMatcher, instanceOf([ComplexMatcher class]));
 
     InstanceMatcher *ancestorAncestorSubjectMatcher = (InstanceMatcher*) ancestorAncestorMatcher.subject;
-    assertThat(ancestorAncestorSubjectMatcher.simpleMatchers, hasItem([IsMemberOfClassMatcher forClass:[UILabel class]]));
+    assertThat(ancestorAncestorSubjectMatcher.simpleMatchers, hasItem([IsMemberOfClassMatcher forExactClass:[UILabel class]]));
     assertThat(ancestorAncestorSubjectMatcher.simpleMatchers, hasCountOf(1));
 
     InstanceMatcher *ancestorAncestorAncestorMatcher = (InstanceMatcher *) ancestorAncestorMatcher.head;
-    assertThat(ancestorAncestorAncestorMatcher.simpleMatchers, hasItem([IsMemberOfClassMatcher forClass:[UIButton class]]));
+    assertThat(ancestorAncestorAncestorMatcher.simpleMatchers, hasItem([IsMemberOfClassMatcher forExactClass:[UIButton class]]));
     assertThat(ancestorAncestorAncestorMatcher.simpleMatchers, hasCountOf(1));
 }
 

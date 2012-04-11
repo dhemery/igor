@@ -3,6 +3,6 @@
 
 @interface InstanceParser
 
-+ (InstanceMatcher *)parse:(IgorQueryScanner *)query;
++ (InstanceMatcher *)instanceMatcherFromQuery:(IgorQueryScanner *)query;
 
 @end

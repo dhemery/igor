@@ -15,16 +15,16 @@
 }
 
 - (void)testMatchesSubjectThatSatisfiesPredicate {
-    NSArray *matchingViews = [igor findViewsThatMatchPattern:@"[accessibilityHint='the right accessibility hint']" fromRoot:view];
+    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"[accessibilityHint='the right accessibility hint']" inTree:view];
     assertThat(matchingViews, hasItem(view));
 }
 
 - (void)testMismatchesSubjectThatDoesNotSatisfyPredicate {
-    NSArray *matchingViews = [igor findViewsThatMatchPattern:@"[accessibilityHint='wrong accessibility hint']" fromRoot:view];
+    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"[accessibilityHint='wrong accessibility hint']" inTree:view];
     assertThat(matchingViews, is(empty()));
 }
 
 - (void)testThrowsIfPatternIsIllegal {
-    STAssertThrows([igor findViewsThatMatchPattern:@"[this is not a valid predicate]" fromRoot:nil], @"Expected predicate parsing exception");
+    STAssertThrows([igor findViewsThatMatchQuery:@"[this is not a valid predicate]" inTree:nil], @"Expected predicate parsing exception");
 }
 @end

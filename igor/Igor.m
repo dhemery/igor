@@ -6,26 +6,26 @@
 
 @implementation Igor
 
-- (NSArray *)findViewsThatMatchMatcher:(id <SubjectMatcher>)matcher fromRoot:(UIView *)root {
+- (NSArray *)findViewsThatMatchMatcher:(id <SubjectMatcher>)matcher inTree:(UIView *)tree {
     NSMutableSet *matchingViews = [NSMutableSet set];
     void (^collectMatches)(UIView *) = ^(UIView *view) {
-        if ([matcher matchesView:view inTree:root]) {
+        if ([matcher matchesView:view inTree:tree]) {
             [matchingViews addObject:view];
         }
     };
-    [TreeWalker walkTree:root withVisitor:collectMatches];
+    [TreeWalker walkTree:tree withVisitor:collectMatches];
     return [matchingViews allObjects];
 
 }
 
-- (NSArray *)findViewsThatMatchPattern:(NSString *)pattern fromRoot:(UIView *)root {
-    id <SubjectMatcher> matcher = [IgorQueryParser parse:[IgorQueryScanner withQuery:pattern]];
-    return [self findViewsThatMatchMatcher:matcher fromRoot:root];
+- (NSArray *)findViewsThatMatchQuery:(NSString *)query inTree:(UIView *)tree {
+    id <SubjectMatcher> matcher = [IgorQueryParser matcherFromQuery:[IgorQueryScanner withQuery:query]];
+    return [self findViewsThatMatchMatcher:matcher inTree:tree];
 }
 
-- (NSArray *)selectViewsWithSelector:(NSString *)pattern {
-    return [self findViewsThatMatchPattern:pattern
-                                  fromRoot:[[UIApplication sharedApplication] keyWindow]];
+- (NSArray *)selectViewsWithSelector:(NSString *)query {
+    UIView *tree = [[UIApplication sharedApplication] keyWindow];
+    return [self findViewsThatMatchQuery:query inTree:tree];
 }
 
 @end

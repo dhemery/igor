@@ -4,7 +4,7 @@
 
 @implementation PredicateParser
 
-+ (void)parse:(IgorQueryScanner *)query intoArray:(NSMutableArray *)simpleMatchers {
++ (void)addPredicateMatcherFromQuery:(IgorQueryScanner *)query toArray:(NSMutableArray *)matchers {
     if (![query skipString:@"["]) {
         return;
     }
@@ -12,7 +12,7 @@
     if (![query skipString:@"]"]) {
         [query failBecause:@"Expected ]"];
     }
-    [simpleMatchers addObject:[PredicateMatcher withPredicateExpression:expression]];
+    [matchers addObject:[PredicateMatcher withPredicateExpression:expression]];
 }
 
 + (NSString *)parseExpressionFrom:(IgorQueryScanner *)query {

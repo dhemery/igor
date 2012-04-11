@@ -7,28 +7,28 @@
 
 @implementation IgorQueryParser
 
-+ (id <SubjectMatcher>)complexMatcherFromMatchers:(NSMutableArray *)matchers {
-    if ([matchers count] == 0) {
++ (id <SubjectMatcher>)subjectMatcherFromMatcherChain:(NSArray *)matcherChain {
+    if ([matcherChain count] == 0) {
         return [UniversalMatcher new];
     }
-    if ([matchers count] == 1) {
-        return [matchers lastObject];
+    if ([matcherChain count] == 1) {
+        return [matcherChain lastObject];
     }
-    id<SubjectMatcher> matcher = [matchers objectAtIndex:0];
-    for (NSUInteger i = 1 ; i < [matchers count] ; i++) {
-        matcher = [ComplexMatcher withHead:matcher subject:[matchers objectAtIndex:i] ];
+    id<SubjectMatcher> matcher = [matcherChain objectAtIndex:0];
+    for (NSUInteger i = 1 ; i < [matcherChain count] ; i++) {
+        matcher = [ComplexMatcher withHead:matcher subject:[matcherChain objectAtIndex:i] ];
     }
     return matcher;
 }
 
-+ (id <SubjectMatcher>)parse:(IgorQueryScanner *)query {
++ (id <SubjectMatcher>)matcherFromQuery:(IgorQueryScanner *)query {
     NSMutableArray* head = [NSMutableArray array];
     NSMutableArray* tail = [NSMutableArray array];
     id<SubjectMatcher> subject;
 
-    [InstanceChainParser parse:query intoArray:head];
+    [InstanceChainParser collectInstanceMatchersFromQuery:query intoArray:head];
     if ([query skipString:@"$"]) {
-        subject = [InstanceParser parse:query];
+        subject = [InstanceParser instanceMatcherFromQuery:query];
         NSLog(@"Found subject marker. Parsed subject %@", subject);
     } else {
         subject = [head lastObject];
@@ -38,10 +38,10 @@
     }
     if ([query skipWhiteSpace]) {
         NSLog(@"Found whitespace after subject. Parsing tail.");
-        [InstanceChainParser parse:query intoArray:tail];
+        [InstanceChainParser collectInstanceMatchersFromQuery:query intoArray:tail];
     }
     [query failIfNotAtEnd];
-    return [ComplexMatcher withHead:[self complexMatcherFromMatchers:head] subject:subject tail:[self complexMatcherFromMatchers:tail]];
+    return [ComplexMatcher withHead:[self subjectMatcherFromMatcherChain:head] subject:subject tail:[self subjectMatcherFromMatcherChain:tail]];
 }
 
 @end

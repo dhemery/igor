@@ -1,36 +1,36 @@
 #import "PredicateMatcher.h"
 
-@implementation PredicateMatcher {
-    NSPredicate *predicate;
-}
+@implementation PredicateMatcher
+
+@synthesize predicate;
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"[Predicate:%@]", predicate];
+    return [NSString stringWithFormat:@"[Predicate:%@]", self.expression];
 }
 
-- (PredicateMatcher *)initWithPredicateExpression:(NSString *)expression {
+- (PredicateMatcher *)initWithPredicate:(NSPredicate *)aPredicate {
     self = [super init];
     if (self) {
-        predicate = [NSPredicate predicateWithFormat:expression];
+        predicate = aPredicate;
     }
     return self;
 }
 
 - (BOOL)matchesView:(UIView *)view {
     @try {
-        return [predicate evaluateWithObject:view];
+        return [self.predicate evaluateWithObject:view];
     }
     @catch (NSException *e) {
         return NO;
     }
 }
 
-- (NSString *)matchExpression {
-    return [predicate predicateFormat];
+- (NSString *)expression {
+    return [self.predicate predicateFormat];
 }
 
 + (PredicateMatcher *)withPredicateExpression:(NSString *)expression {
-    return [[PredicateMatcher alloc] initWithPredicateExpression:expression];
+    return [[PredicateMatcher alloc] initWithPredicate:[NSPredicate predicateWithFormat:expression]];
 }
 
 @end

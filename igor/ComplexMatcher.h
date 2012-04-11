@@ -2,13 +2,10 @@
 
 @interface ComplexMatcher : NSObject<SubjectMatcher>
 
-@property(nonatomic, strong) id <SubjectMatcher> head;
-@property(nonatomic, strong) id <SubjectMatcher> subject;
-@property(nonatomic, strong) id <SubjectMatcher> tail;
+@property(strong, readonly) id <SubjectMatcher> head, subject, tail;
 
 + (ComplexMatcher *)withHead:(id <SubjectMatcher>)head subject:(id <SubjectMatcher>)subject;
 + (ComplexMatcher *)withHead:(id <SubjectMatcher>)head subject:(id <SubjectMatcher>)subject tail:(id <SubjectMatcher>)tail;
 + (ComplexMatcher *)withSubject:(id <SubjectMatcher>)subject;
-
-+ (id <SubjectMatcher>)withSubject:(id <SubjectMatcher>)subject tail:(id <SubjectMatcher>)tail;
++ (ComplexMatcher *)withSubject:(id <SubjectMatcher>)subject tail:(id <SubjectMatcher>)tail;
 @end

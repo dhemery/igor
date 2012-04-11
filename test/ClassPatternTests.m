@@ -15,7 +15,7 @@
 }
 
 - (void)testAnyClassPattern {
-    NSString *pattern = @"*";
+    NSString *query = @"*";
 
     UIView *root = [ViewFactory view];
     UIView *view1 = [ViewFactory view];
@@ -40,13 +40,13 @@
     [view2 addSubview:view22];
     [view2 addSubview:view23];
 
-    NSArray *matchingViews = [igor findViewsThatMatchPattern:pattern fromRoot:root];
+    NSArray *matchingViews = [igor findViewsThatMatchQuery:query inTree:root];
 
     assertThat(matchingViews, containsInAnyOrder(root, view1, view11, view12, view2, view21, view211, view212, view213, view22, view23, nil));
 }
 
 - (void)testMemberOfClassPattern {
-    NSString *pattern = @"UIButton";
+    NSString *query = @"UIButton";
 
     UIView *view = [ViewFactory view];
     UIView *button = [ViewFactory button];
@@ -55,14 +55,14 @@
     [root addSubview:button];
     [button addSubview:imageView];
 
-    NSArray *matchingViews = [igor findViewsThatMatchPattern:pattern fromRoot:root];
+    NSArray *matchingViews = [igor findViewsThatMatchQuery:query inTree:root];
 
     assertThat(matchingViews, hasItem(button));
     assertThat(matchingViews, hasCountOf(1));
 }
 
 - (void)testKindOfClassPattern {
-    NSString *pattern = @"UIControl*";
+    NSString *query = @"UIControl*";
 
     UIView *viewOfBaseClassOfTargetClass = [ViewFactory view];
     UIControl *viewOfTargetClass = [ViewFactory control];
@@ -74,7 +74,7 @@
     [root addSubview:viewOfClassDerivedFromTargetClass];
     [root addSubview:viewOfUnrelatedClass];
 
-    NSArray *matchingViews = [igor findViewsThatMatchPattern:pattern fromRoot:root];
+    NSArray *matchingViews = [igor findViewsThatMatchQuery:query inTree:root];
 
     assertThat(matchingViews, hasItem(viewOfTargetClass));
     assertThat(matchingViews, hasItem(viewOfClassDerivedFromTargetClass));

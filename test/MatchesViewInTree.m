@@ -4,29 +4,29 @@
 
 
 @implementation MatchesViewInTree {
-    UIView* _targetView;
-    UIView* _root;
+    UIView* targetView;
+    UIView*root;
 }
 
 - (void) describeTo:(id<HCDescription>)description {
-    [[description appendText:@"Matches view "] appendDescriptionOf:_targetView];
-    [[description appendText:@" in tree "] appendDescriptionOf:_root];
+    [[description appendText:@"Matches view "] appendDescriptionOf:targetView];
+    [[description appendText:@" in tree "] appendDescriptionOf:root];
 }
 
-+ (MatchesViewInTree *) view:(UIView *)targetView inTree:(UIView *)root{
-    return [[self alloc] initWithView:targetView inTree:root];
++ (MatchesViewInTree *) view:(UIView *)view inTree:(UIView *)tree{
+    return [[self alloc] initWithView:view inTree:tree];
 }
 
-- (MatchesViewInTree *) initWithView:(UIView *)targetView inTree:(UIView *)root{
+- (MatchesViewInTree *) initWithView:(UIView *)view inTree:(UIView *)tree{
     if (self = [super init]) {
-        _targetView = targetView;
-        _root = root;
+        targetView = view;
+        root = tree;
     }
     return self;
 }
 
 - (BOOL) matches:(id)matcher {
-    return [(id<SubjectMatcher>)matcher matchesView:_targetView inTree:_root];
+    return [(id<SubjectMatcher>)matcher matchesView:targetView inTree:root];
 }
 
 @end

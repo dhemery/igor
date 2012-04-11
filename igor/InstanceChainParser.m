@@ -4,11 +4,11 @@
 
 @implementation InstanceChainParser
 
-+ (void)parse:(IgorQueryScanner *)query intoArray:(NSMutableArray*)matchers {
++ (void)collectInstanceMatchersFromQuery:(IgorQueryScanner *)query intoArray:(NSMutableArray*)array {
     BOOL foundSubjectMarker;
     while(!(foundSubjectMarker = [query skipString:@"$"])) {
-        InstanceMatcher *matcher = [InstanceParser parse:query];
-        [matchers addObject:matcher];
+        InstanceMatcher *matcher = [InstanceParser instanceMatcherFromQuery:query];
+        [array addObject:matcher];
         NSLog(@"Parsed matcher: %@", matcher);
         if (![query skipWhiteSpace]) {
             NSLog(@"No whitespace. Done parsing chain.");

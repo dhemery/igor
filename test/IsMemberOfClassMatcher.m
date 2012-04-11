@@ -4,16 +4,16 @@
 #import <OCHamcrestIOS/HCDescription.h>
 
 @implementation IsMemberOfClassMatcher {
-    Class _targetClass;
+    Class targetClass;
 }
 
-+ (id) forClass:(Class)targetClass {
-    return [[self alloc] initWithClass:targetClass];
++ (IsMemberOfClassMatcher *) forExactClass:(Class)exactClass {
+    return [[self alloc] initWithExactClass:exactClass];
 }
 
-- (id) initWithClass:(Class)targetClass {    ;
+- (IsMemberOfClassMatcher *) initWithExactClass:(Class)exactClass {    ;
     if (self = [super init]) {
-        _targetClass = targetClass;
+        targetClass = exactClass;
     }
     return self;
 }
@@ -23,11 +23,11 @@
         return NO;
     }
     MemberOfClassMatcher* matcher = item;
-    return _targetClass == matcher.matchClass;
+    return targetClass == matcher.matchClass;
 }
 
 - (void) describeTo:(id<HCDescription>)description; {
-    [description appendDescriptionOf:[MemberOfClassMatcher forClass:_targetClass]];
+    [description appendDescriptionOf:[MemberOfClassMatcher forExactClass:targetClass]];
 }
 
 @end

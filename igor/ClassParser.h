@@ -2,6 +2,6 @@
 
 @interface ClassParser
 
-+ (void)parse:(IgorQueryScanner *)query intoArray:(NSMutableArray*)array;
++ (void)addClassMatcherFromQuery:(IgorQueryScanner *)query toArray:(NSMutableArray*)array;
 
 @end

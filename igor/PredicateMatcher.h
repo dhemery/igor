@@ -2,7 +2,8 @@
 
 @interface PredicateMatcher : NSObject <SimpleMatcher>
 
-@property(readonly, retain) NSString *matchExpression;
+@property(strong, readonly) NSPredicate* predicate;
+@property(strong, readonly) NSString* expression;
 
 + (id)withPredicateExpression:(NSString *)expression;
 
