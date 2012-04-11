@@ -20,7 +20,6 @@
 
 - (NSArray *)findViewsThatMatchPattern:(NSString *)pattern fromRoot:(UIView *)root {
     id <SubjectMatcher> matcher = [IgorQueryParser parse:[IgorQueryScanner withQuery:pattern]];
-//    NSLog(@"Parsed pattern %@ into matcher %@", pattern, matcher);
     return [self findViewsThatMatchMatcher:matcher fromRoot:root];
 }
 
