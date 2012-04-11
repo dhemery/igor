@@ -14,7 +14,6 @@
 		2D2D4D0D1478787F00FF3D88 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD425 /* Foundation.framework */; };
 		2D3E1F391509B6C000D62300 /* frank_static_resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2D3E1F361509B6C000D62300 /* frank_static_resources.bundle */; };
 		2D3E1F3F1509B98200D62300 /* RelationshipPatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3E1F3D1509B98200D62300 /* RelationshipPatternTests.m */; };
-		2D3E1F4B1509D29800D62300 /* RelationshipMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3E1F491509D29800D62300 /* RelationshipMatcherTests.m */; };
 		2D3E1F4E1509DE8700D62300 /* libFrank.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D3E1F371509B6C000D62300 /* libFrank.a */; };
 		2D3E1F4F1509DE8700D62300 /* libShelley.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D3E1F381509B6C000D62300 /* libShelley.a */; };
 		2D436E211518F9C300071950 /* IdentityMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D436E1F1518F9C300071950 /* IdentityMatcher.h */; };
@@ -114,7 +113,6 @@
 		2D3E1F371509B6C000D62300 /* libFrank.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFrank.a; sourceTree = "<group>"; };
 		2D3E1F381509B6C000D62300 /* libShelley.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libShelley.a; sourceTree = "<group>"; };
 		2D3E1F3D1509B98200D62300 /* RelationshipPatternTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RelationshipPatternTests.m; sourceTree = "<group>"; };
-		2D3E1F491509D29800D62300 /* RelationshipMatcherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RelationshipMatcherTests.m; sourceTree = "<group>"; };
 		2D436E1F1518F9C300071950 /* IdentityMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdentityMatcher.h; sourceTree = "<group>"; };
 		2D436E201518F9C300071950 /* IdentityMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdentityMatcher.m; sourceTree = "<group>"; };
 		2D436E251518FF6D00071950 /* ViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewFactory.h; sourceTree = "<group>"; };
@@ -388,7 +386,6 @@
 				E621659DB794A5D612DCD44A /* BranchMatcherTests.m */,
 				2D695CD0147CD1D200AF4115 /* KindOfClassMatcherTests.m */,
 				2D695CD1147CD1D200AF4115 /* MemberOfClassMatcherTests.m */,
-				2D3E1F491509D29800D62300 /* RelationshipMatcherTests.m */,
 			);
 			name = matchers;
 			sourceTree = "<group>";
@@ -651,7 +648,6 @@
 				2D695CDD147CD1D200AF4115 /* PredicateParserTests.m in Sources */,
 				2D695CDE147CD1D200AF4115 /* PredicatePatternTests.m in Sources */,
 				2D3E1F3F1509B98200D62300 /* RelationshipPatternTests.m in Sources */,
-				2D3E1F4B1509D29800D62300 /* RelationshipMatcherTests.m in Sources */,
 				2D99DB351517E9C900244226 /* SubjectMarkerTests.m in Sources */,
 				2D436E221518F9C300071950 /* IdentityMatcher.m in Sources */,
 				2D436E281518FF6D00071950 /* ViewFactory.m in Sources */,
