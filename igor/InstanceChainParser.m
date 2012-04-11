@@ -1,22 +1,26 @@
 #import "InstanceParser.h"
 #import "InstanceChainParser.h"
 #import "IgorQueryScanner.h"
-#import "ComplexMatcher.h"
 
 @implementation InstanceChainParser
 
-+ (id <SubjectMatcher>)parse:(IgorQueryScanner *)query {
-    id <SubjectMatcher> matcher = [InstanceParser parse:query];
-    while ([query skipWhiteSpace]) {
-        if([query skipString:@"$"]) {
-            [query backUp];
-            return matcher;
-        } else {
-            InstanceMatcher *subject = [InstanceParser parse:query];
-            matcher = [ComplexMatcher withHead:matcher subject:subject];
++ (void)parse:(IgorQueryScanner *)query intoArray:(NSMutableArray*)matchers {
+    BOOL foundSubjectMarker;
+    while(!(foundSubjectMarker = [query skipString:@"$"])) {
+        InstanceMatcher *matcher = [InstanceParser parse:query];
+        [matchers addObject:matcher];
+        NSLog(@"Parsed matcher: %@", matcher);
+        if (![query skipWhiteSpace]) {
+            NSLog(@"No whitespace. Done parsing chain.");
+            return;
         }
     }
-    return matcher;
+    if (foundSubjectMarker) {
+        NSLog(@"Hit subject marker. Done parsing chain.");
+        [query backUp];
+        return;
+    }
+    NSLog(@"Reached end of query. Done parsing chain.");
 }
 
 @end

@@ -3,46 +3,45 @@
 #import "IgorQueryScanner.h"
 #import "InstanceParser.h"
 #import "ComplexMatcher.h"
+#import "UniversalMatcher.h"
 
 @implementation IgorQueryParser
 
++ (id <SubjectMatcher>)complexMatcherFromMatchers:(NSMutableArray *)matchers {
+    if ([matchers count] == 0) {
+        return [UniversalMatcher new];
+    }
+    if ([matchers count] == 1) {
+        return [matchers lastObject];
+    }
+    id<SubjectMatcher> matcher = [matchers objectAtIndex:0];
+    for (NSUInteger i = 1 ; i < [matchers count] ; i++) {
+        matcher = [ComplexMatcher withHead:matcher subject:[matchers objectAtIndex:i] ];
+    }
+    return matcher;
+}
+
 + (id <SubjectMatcher>)parse:(IgorQueryScanner *)query {
-    id <SubjectMatcher> matcher;
+    NSMutableArray* head = [NSMutableArray array];
+    NSMutableArray* tail = [NSMutableArray array];
+    id<SubjectMatcher> subject;
+
+    [InstanceChainParser parse:query intoArray:head];
     if ([query skipString:@"$"]) {
-        // First subject is marked.
-        // Scan the subject.
-        id<SubjectMatcher> subject = [InstanceParser parse:query];
-        // Skip the combinator.
-        [query skipWhiteSpace];
-        // Scan the rest of the relationship.
-        id<SubjectMatcher> tail = [InstanceChainParser parse:query];
-        // Make a branch matcher.
-        matcher = [ComplexMatcher withSubject:subject tail:tail];
+        subject = [InstanceParser parse:query];
+        NSLog(@"Found subject marker. Parsed subject %@", subject);
     } else {
-        // First subject is not marked.
-        // As much of a relationship as we can.
-        id<SubjectMatcher> head = [InstanceChainParser parse:query];
-        if ([query skipString:@"$"]) {
-            // A non-first subject is marked.
-            // Scan the subject.
-            id<SubjectMatcher> subject = [InstanceParser parse:query];
-            if ([query skipWhiteSpace]) {
-                // We have a combinator, so there's a branch.
-                // Scan the rest of the relationship.
-                id<SubjectMatcher> tail = [InstanceChainParser parse:query];
-                matcher = ([ComplexMatcher withHead:head subject:subject tail:tail]);
-            } else {
-                // There's no combinator after the marked subject. So it's just a relationship.
-                matcher = ([ComplexMatcher withHead:head subject:subject]);
-            }
-        } else {
-            // No subject is marked.
-            // Yield the relationship.
-            matcher = head;
-        }
+        subject = [head lastObject];
+        [head removeLastObject];
+        NSLog(@"No subject marker. Stealing subject from head: %@", subject);
+        NSLog(@"Head now contains %@", head);
+    }
+    if ([query skipWhiteSpace]) {
+        NSLog(@"Found whitespace after subject. Parsing tail.");
+        [InstanceChainParser parse:query intoArray:tail];
     }
     [query failIfNotAtEnd];
-    return matcher;
+    return [ComplexMatcher withHead:[self complexMatcherFromMatchers:head] subject:subject tail:[self complexMatcherFromMatchers:tail]];
 }
 
 @end

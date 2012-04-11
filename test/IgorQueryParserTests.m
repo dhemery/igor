@@ -14,33 +14,39 @@
 
 - (void)testParsesAsteriskAsUniversalMatcher {
     IgorQueryScanner *query = [IgorQueryScanner withQuery:@"*"];
-    InstanceMatcher* instanceMatcher = ((InstanceMatcher *) [IgorQueryParser parse:query]);
+    ComplexMatcher* matcher = (ComplexMatcher*) [IgorQueryParser parse:query];
+    InstanceMatcher* subject = (InstanceMatcher*) matcher.subject;
 
-    assertThat(instanceMatcher.simpleMatchers, hasItem(instanceOf([UniversalMatcher class])));
-    assertThat(instanceMatcher.simpleMatchers, hasCountOf(1));
+    assertThat(subject, instanceOf([InstanceMatcher class]));
+    assertThat(subject.simpleMatchers, hasItem(instanceOf([UniversalMatcher class])));
+    assertThat(subject.simpleMatchers, hasCountOf(1));
 }
 
 - (void)testParsesNameAsMemberOfClassMatcher {
     IgorQueryScanner *query = [IgorQueryScanner withQuery:@"UIButton"];
-    InstanceMatcher *instanceMatcher = (InstanceMatcher *) [IgorQueryParser parse:query];
+    ComplexMatcher* matcher = (ComplexMatcher*) [IgorQueryParser parse:query];
+    InstanceMatcher* subject = (InstanceMatcher*) matcher.subject;
 
-    assertThat(instanceMatcher.simpleMatchers, hasItem([IsMemberOfClassMatcher forClass:[UIButton class]]));
+    assertThat(subject.simpleMatchers, hasItem([IsMemberOfClassMatcher forClass:[UIButton class]]));
+    assertThat(subject.simpleMatchers, hasCountOf(1));
 }
 
 - (void)testParsesNameAsteriskAsKindOfClassMatcher {
     IgorQueryScanner *query = [IgorQueryScanner withQuery:@"UILabel*"];
-    InstanceMatcher *instanceMatcher = (InstanceMatcher *) [IgorQueryParser parse:query];
+    ComplexMatcher* matcher = (ComplexMatcher*) [IgorQueryParser parse:query];
+    InstanceMatcher* subject = (InstanceMatcher*) matcher.subject;
 
-    assertThat(instanceMatcher.simpleMatchers, hasItem([IsKindOfClassMatcher forClass:[UILabel class]]));
-    assertThat(instanceMatcher.simpleMatchers, hasCountOf(1));
+    assertThat(subject.simpleMatchers, hasItem([IsKindOfClassMatcher forClass:[UILabel class]]));
+    assertThat(subject.simpleMatchers, hasCountOf(1));
 }
 
 - (void)testParsesBracketedStringAsPredicateMatcher {
     IgorQueryScanner *query = [IgorQueryScanner withQuery:@"[myPropertyName='somevalue']"];
-    InstanceMatcher *instanceMatcher = (InstanceMatcher *) [IgorQueryParser parse:query];
+    ComplexMatcher* matcher = (ComplexMatcher*) [IgorQueryParser parse:query];
+    InstanceMatcher* subject = (InstanceMatcher*) matcher.subject;
 
-    assertThat(instanceMatcher.simpleMatchers, hasItem([IsPredicateMatcher forExpression:@"myPropertyName='somevalue'"]));
-    assertThat(instanceMatcher.simpleMatchers, hasCountOf(1));
+    assertThat(subject.simpleMatchers, hasItem([IsPredicateMatcher forExpression:@"myPropertyName='somevalue'"]));
+    assertThat(subject.simpleMatchers, hasCountOf(1));
 }
 
 - (void)testParsesDescendantCombinatorMatcher {

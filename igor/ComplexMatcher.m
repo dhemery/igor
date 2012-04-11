@@ -67,7 +67,6 @@
     return subtreeHasAMatch;
 }
 
-
 - (BOOL)matchesView:(UIView *)view inTree:(UIView *)root {
     return [_subject matchesView:view inTree:root] && [self headMatchesAnAncestorOfView:view inTree:root] && [self tailMatchesASubviewOfView:view];
 }
