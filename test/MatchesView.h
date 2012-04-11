@@ -1,6 +1,6 @@
 #import <OCHamcrestIOS/HCBaseMatcher.h>
 
-@class MatchesViewInTree;
+#import "MatchesViewInTree.h"
 
 @interface MatchesView : HCBaseMatcher
 

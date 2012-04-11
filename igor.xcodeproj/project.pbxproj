@@ -84,6 +84,9 @@
 		E621659DB794A5D612DCD469 /* MatchesViewInTree.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD468 /* MatchesViewInTree.m */; };
 		E621659DB794A5D612DCD46B /* MatchesViewInTree.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD46A /* MatchesViewInTree.h */; };
 		E621659DB794A5D612DCD46D /* ClassParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD46C /* ClassParserTests.m */; };
+		E621659DB794A5D612DCD475 /* ComplexMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD474 /* ComplexMatcherTests.m */; };
+		E621659DB794A5D612DCD479 /* ComplexMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD478 /* ComplexMatcher.m */; };
+		E621659DB794A5D612DCD47B /* ComplexMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD47A /* ComplexMatcher.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -196,6 +199,9 @@
 		E621659DB794A5D612DCD468 /* MatchesViewInTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchesViewInTree.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD46A /* MatchesViewInTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchesViewInTree.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD46C /* ClassParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassParserTests.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD474 /* ComplexMatcherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComplexMatcherTests.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD478 /* ComplexMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComplexMatcher.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD47A /* ComplexMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComplexMatcher.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,6 +306,8 @@
 		2D695CE1147CD26700AF4115 /* matchers */ = {
 			isa = PBXGroup;
 			children = (
+				E621659DB794A5D612DCD478 /* ComplexMatcher.m */,
+				E621659DB794A5D612DCD47A /* ComplexMatcher.h */,
 				E621659DB794A5D612DCD45E /* UniversalMatcher.m */,
 				E621659DB794A5D612DCD45C /* UniversalMatcher.h */,
 				E621659DB794A5D612DCD448 /* SubjectMatcher.h */,
@@ -376,6 +384,7 @@
 		2D695CE7147CD38000AF4115 /* matchers */ = {
 			isa = PBXGroup;
 			children = (
+				E621659DB794A5D612DCD474 /* ComplexMatcherTests.m */,
 				E621659DB794A5D612DCD44A /* BranchMatcherTests.m */,
 				2D695CD0147CD1D200AF4115 /* KindOfClassMatcherTests.m */,
 				2D695CD1147CD1D200AF4115 /* MemberOfClassMatcherTests.m */,
@@ -512,6 +521,7 @@
 				E621659DB794A5D612DCD445 /* IgorQueryScanner.h in Headers */,
 				E621659DB794A5D612DCD449 /* SubjectMatcher.h in Headers */,
 				E621659DB794A5D612DCD45D /* UniversalMatcher.h in Headers */,
+				E621659DB794A5D612DCD47B /* ComplexMatcher.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -653,6 +663,7 @@
 				E621659DB794A5D612DCD465 /* MatchesView.m in Sources */,
 				E621659DB794A5D612DCD469 /* MatchesViewInTree.m in Sources */,
 				E621659DB794A5D612DCD46D /* ClassParserTests.m in Sources */,
+				E621659DB794A5D612DCD475 /* ComplexMatcherTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -688,6 +699,7 @@
 				2DCE893C15193F6100B975EE /* InstanceParser.m in Sources */,
 				E621659DB794A5D612DCD443 /* IgorQueryScanner.m in Sources */,
 				E621659DB794A5D612DCD45F /* UniversalMatcher.m in Sources */,
+				E621659DB794A5D612DCD479 /* ComplexMatcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
