@@ -3,6 +3,10 @@
 
 @implementation UniversalMatcher
 
+- (NSString *)description {
+    return @"[Universal]";
+}
+
 - (BOOL)matchesView:(UIView *)view {
     return YES;
 }

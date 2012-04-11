@@ -38,6 +38,10 @@
     return false;
 }
 
+- (NSString *)description {
+    return [NSString stringWithFormat:@"[Complex:[head:%@][subject:%@][tail:%@]]", _head, _subject, _tail];
+}
+
 - (ComplexMatcher *)initWithHead:(id<SubjectMatcher>)head subject:(id <SubjectMatcher>)subject tail:(id<SubjectMatcher>)tail {
     if (self = [super init]) {
         _head = head;

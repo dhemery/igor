@@ -30,7 +30,7 @@
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"[Relationship:[subject:%@][ancestor:%@]]", _subject, _head];
+    return [NSString stringWithFormat:@"[SubjectOnRight:[head:%@][subject:%@]]", _head, _subject];
 }
 
 - (SubjectOnRightMatcher *)initWithSubjectMatcher:(id<SubjectMatcher>)subjectMatcher ancestorMatcher:(id <SubjectMatcher>)ancestorMatcher {

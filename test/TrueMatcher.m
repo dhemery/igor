@@ -1,7 +1,7 @@
-#import "AlwaysMatcher.h"
+#import "TrueMatcher.h"
 
 
-@implementation AlwaysMatcher
+@implementation TrueMatcher
 
 - (BOOL)matchesView:(UIView *)view  inTree:(UIView *)root{
     return YES;

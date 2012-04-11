@@ -3,6 +3,7 @@
 #import "MatchesView.h"
 #import "InstanceMatcher.h"
 #import "IdentityMatcher.h"
+#import "FalseMatcher.h"
 
 @interface ComplexMatcherTests : SenTestCase
 @end
@@ -22,37 +23,37 @@
 }
 
 - (void)testMatchingSubject {
-    id<SubjectMatcher> subject = [IdentityMatcher forView:middle];
+    id<SubjectMatcher> matchesMiddle = [IdentityMatcher forView:middle];
 
-    ComplexMatcher *middleMatcher = [ComplexMatcher withSubject:subject];
+    ComplexMatcher *middleAnywhere = [ComplexMatcher withSubject:matchesMiddle];
 
-    assertThat(middleMatcher, [MatchesView view:middle inTree:root]);
+    assertThat(middleAnywhere, [MatchesView view:middle inTree:root]);
 }
 
 - (void)testMismatchingSubject {
-    id<SubjectMatcher> subject = [IdentityMatcher forView:middle];
+    id<SubjectMatcher> matchesMiddle = [IdentityMatcher forView:middle];
 
-    ComplexMatcher *middleMatcher = [ComplexMatcher withSubject:subject];
+    ComplexMatcher *middleAnywhere = [ComplexMatcher withSubject:matchesMiddle];
 
-    assertThat(middleMatcher, isNot([MatchesView view:leaf inTree:root]));
+    assertThat(middleAnywhere, isNot([MatchesView view:leaf inTree:root]));
 }
 
 - (void)testMatchingSubjectMatchingHead {
-    id<SubjectMatcher> head = [IdentityMatcher forView:root];
-    id<SubjectMatcher> subject = [IdentityMatcher forView:middle];
+    id<SubjectMatcher> matchesRoot = [IdentityMatcher forView:root];
+    id<SubjectMatcher> matchesMiddle = [IdentityMatcher forView:middle];
 
-    ComplexMatcher *middleInRoot = [ComplexMatcher withHead:head subject:subject];
+    ComplexMatcher *middleInRoot = [ComplexMatcher withHead:matchesRoot subject:matchesMiddle];
 
     assertThat(middleInRoot, [MatchesView view:middle inTree:root]);
 }
 
 - (void)testMatchingSubjectMismatchingHead {
-    id<SubjectMatcher> head = [IdentityMatcher forView:leaf];
-    id<SubjectMatcher> subject = [IdentityMatcher forView:middle];
+    id<SubjectMatcher> neverMatches = [FalseMatcher new];
+    id<SubjectMatcher> matchesMiddle = [IdentityMatcher forView:middle];
 
-    ComplexMatcher *middleInLeaf = [ComplexMatcher withHead:head subject:subject];
+    ComplexMatcher *middleInNonExistent = [ComplexMatcher withHead:neverMatches subject:matchesMiddle];
 
-    assertThat(middleInLeaf, isNot([MatchesView view:middle inTree:root]));
+    assertThat(middleInNonExistent, isNot([MatchesView view:middle inTree:root]));
 }
 
 @end

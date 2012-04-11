@@ -22,9 +22,7 @@
 }
 
 - (void)testMatchesIfViewMatchesSubjectMatcherAndSubviewMatchesSubtreeMatcher {
-    SubjectOnLeftMatcher *rootWithLeafDescendant = [SubjectOnLeftMatcher
-            withSubject:[IdentityMatcher forView:root]
-             tail:[IdentityMatcher forView:leaf]];
+    SubjectOnLeftMatcher *rootWithLeafDescendant = [SubjectOnLeftMatcher withSubject:[IdentityMatcher forView:root] tail:[IdentityMatcher forView:leaf]];
 
     assertThat(rootWithLeafDescendant, [MatchesView view:root inTree:root]);
     assertThat(rootWithLeafDescendant, isNot([MatchesView view:middle inTree:root]));

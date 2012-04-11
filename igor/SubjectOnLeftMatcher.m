@@ -6,7 +6,7 @@
 @synthesize subject = _subject, tail = _tail;
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"[Branch:[subject:%@][descendant:%@]]", _subject, _tail];
+    return [NSString stringWithFormat:@"[SubjectOnLeft:[subject:%@][tail:%@]]", _subject, _tail];
 }
 
 - (SubjectOnLeftMatcher *)initWithSubject:(id <SubjectMatcher>)subject tail:(id <SubjectMatcher>)tail {

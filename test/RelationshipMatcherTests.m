@@ -1,7 +1,7 @@
 #include "SubjectOnRightMatcher.h"
 #include "IdentityMatcher.h"
 #include "ViewFactory.h"
-#import "AlwaysMatcher.h"
+#import "TrueMatcher.h"
 #import "MatchesView.h"
 
 @interface RelationshipMatcherTests : SenTestCase
@@ -57,7 +57,7 @@
 - (void)testMatchesAcrossUniversalClassMatcher {
     id<SubjectMatcher> rootMatcher = [IdentityMatcher forView:root];
     id<SubjectMatcher> leafMatcher = [IdentityMatcher forView:leaf];
-    id<SubjectMatcher> anyViewMatcher = [AlwaysMatcher new];
+    id<SubjectMatcher> anyViewMatcher = [TrueMatcher new];
     SubjectOnRightMatcher *anyViewInsideRootMatcher = [SubjectOnRightMatcher withSubject:anyViewMatcher head:rootMatcher];
     SubjectOnRightMatcher *leafInsideAnyViewInsideRootMatcher = [SubjectOnRightMatcher withSubject:leafMatcher head:anyViewInsideRootMatcher];
 

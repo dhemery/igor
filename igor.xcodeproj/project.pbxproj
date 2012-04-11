@@ -77,8 +77,8 @@
 		E621659DB794A5D612DCD45B /* IsPredicateMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD45A /* IsPredicateMatcher.h */; };
 		E621659DB794A5D612DCD45D /* UniversalMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD45C /* UniversalMatcher.h */; };
 		E621659DB794A5D612DCD45F /* UniversalMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD45E /* UniversalMatcher.m */; };
-		E621659DB794A5D612DCD461 /* AlwaysMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD460 /* AlwaysMatcher.h */; };
-		E621659DB794A5D612DCD463 /* AlwaysMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD462 /* AlwaysMatcher.m */; };
+		E621659DB794A5D612DCD461 /* TrueMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD460 /* TrueMatcher.h */; };
+		E621659DB794A5D612DCD463 /* TrueMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD462 /* TrueMatcher.m */; };
 		E621659DB794A5D612DCD465 /* MatchesView.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD464 /* MatchesView.m */; };
 		E621659DB794A5D612DCD467 /* MatchesView.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD466 /* MatchesView.h */; };
 		E621659DB794A5D612DCD469 /* MatchesViewInTree.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD468 /* MatchesViewInTree.m */; };
@@ -87,6 +87,8 @@
 		E621659DB794A5D612DCD475 /* ComplexMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD474 /* ComplexMatcherTests.m */; };
 		E621659DB794A5D612DCD479 /* ComplexMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD478 /* ComplexMatcher.m */; };
 		E621659DB794A5D612DCD47B /* ComplexMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD47A /* ComplexMatcher.h */; };
+		E621659DB794A5D612DCD481 /* FalseMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD480 /* FalseMatcher.m */; };
+		E621659DB794A5D612DCD483 /* FalseMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD482 /* FalseMatcher.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -192,8 +194,8 @@
 		E621659DB794A5D612DCD45A /* IsPredicateMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IsPredicateMatcher.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD45C /* UniversalMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniversalMatcher.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD45E /* UniversalMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UniversalMatcher.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD460 /* AlwaysMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlwaysMatcher.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD462 /* AlwaysMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlwaysMatcher.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD460 /* TrueMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrueMatcher.h; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD462 /* TrueMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrueMatcher.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD464 /* MatchesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchesView.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD466 /* MatchesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchesView.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD468 /* MatchesViewInTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchesViewInTree.m; sourceTree = "<group>"; };
@@ -202,6 +204,8 @@
 		E621659DB794A5D612DCD474 /* ComplexMatcherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComplexMatcherTests.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD478 /* ComplexMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComplexMatcher.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD47A /* ComplexMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComplexMatcher.h; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD480 /* FalseMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FalseMatcher.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD482 /* FalseMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FalseMatcher.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,12 +256,14 @@
 		2D436E241518FF2B00071950 /* fixtures */ = {
 			isa = PBXGroup;
 			children = (
+				E621659DB794A5D612DCD482 /* FalseMatcher.h */,
+				E621659DB794A5D612DCD480 /* FalseMatcher.m */,
 				E621659DB794A5D612DCD468 /* MatchesViewInTree.m */,
 				E621659DB794A5D612DCD46A /* MatchesViewInTree.h */,
 				E621659DB794A5D612DCD466 /* MatchesView.h */,
 				E621659DB794A5D612DCD464 /* MatchesView.m */,
-				E621659DB794A5D612DCD462 /* AlwaysMatcher.m */,
-				E621659DB794A5D612DCD460 /* AlwaysMatcher.h */,
+				E621659DB794A5D612DCD462 /* TrueMatcher.m */,
+				E621659DB794A5D612DCD460 /* TrueMatcher.h */,
 				E621659DB794A5D612DCD45A /* IsPredicateMatcher.h */,
 				E621659DB794A5D612DCD458 /* IsPredicateMatcher.m */,
 				E621659DB794A5D612DCD456 /* IsMemberOfClassMatcher.h */,
@@ -500,9 +506,10 @@
 				E621659DB794A5D612DCD453 /* IsKindOfClassMatcher.h in Headers */,
 				E621659DB794A5D612DCD457 /* IsMemberOfClassMatcher.h in Headers */,
 				E621659DB794A5D612DCD45B /* IsPredicateMatcher.h in Headers */,
-				E621659DB794A5D612DCD461 /* AlwaysMatcher.h in Headers */,
+				E621659DB794A5D612DCD461 /* TrueMatcher.h in Headers */,
 				E621659DB794A5D612DCD467 /* MatchesView.h in Headers */,
 				E621659DB794A5D612DCD46B /* MatchesViewInTree.h in Headers */,
+				E621659DB794A5D612DCD483 /* FalseMatcher.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -659,11 +666,12 @@
 				E621659DB794A5D612DCD451 /* IsKindOfClassMatcher.m in Sources */,
 				E621659DB794A5D612DCD455 /* IsMemberOfClassMatcher.m in Sources */,
 				E621659DB794A5D612DCD459 /* IsPredicateMatcher.m in Sources */,
-				E621659DB794A5D612DCD463 /* AlwaysMatcher.m in Sources */,
+				E621659DB794A5D612DCD463 /* TrueMatcher.m in Sources */,
 				E621659DB794A5D612DCD465 /* MatchesView.m in Sources */,
 				E621659DB794A5D612DCD469 /* MatchesViewInTree.m in Sources */,
 				E621659DB794A5D612DCD46D /* ClassParserTests.m in Sources */,
 				E621659DB794A5D612DCD475 /* ComplexMatcherTests.m in Sources */,
+				E621659DB794A5D612DCD481 /* FalseMatcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
