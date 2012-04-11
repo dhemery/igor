@@ -1,7 +1,7 @@
 #import "InstanceMatcher.h"
 
 @implementation InstanceMatcher {
-    NSMutableArray *_simpleMatchers;
+    NSArray *_simpleMatchers;
 }
 
 @synthesize simpleMatchers = _simpleMatchers;
@@ -10,7 +10,7 @@
     return [NSString stringWithFormat:@"[Instance:%@]", _simpleMatchers];
 }
 
-- (InstanceMatcher *)initWithSimpleMatchers:(NSMutableArray *)simpleMatchers {
+- (InstanceMatcher *)initWithSimpleMatchers:(NSArray *)simpleMatchers {
     self = [super init];
     if (self) {
         _simpleMatchers = simpleMatchers;
@@ -25,7 +25,7 @@
     return true;
 }
 
-+ (InstanceMatcher *)withSimpleMatchers:(NSMutableArray *)simpleMatchers {
++ (InstanceMatcher *)withSimpleMatchers:(NSArray *)simpleMatchers {
     return [[self alloc] initWithSimpleMatchers:simpleMatchers];
 }
 @end

@@ -1,7 +1,6 @@
 #import <OCHamcrestIOS/HCDescription.h>
 #import "SimpleMatcher.h"
 #import "MatchesView.h"
-#import "MatchesViewInTree.h"
 
 @implementation MatchesView {
     UIView* _targetView;

@@ -5,7 +5,7 @@
 
 @interface InstanceMatcher : NSObject <SubjectMatcher>
 
-@property(nonatomic, strong) NSMutableArray *simpleMatchers;
+@property(nonatomic, strong) NSArray *simpleMatchers;
 
-+ (InstanceMatcher *)withSimpleMatchers:(NSMutableArray *)simpleMatchers;
++ (InstanceMatcher *)withSimpleMatchers:(NSArray *)simpleMatchers;
 @end

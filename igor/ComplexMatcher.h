@@ -9,4 +9,5 @@
 + (ComplexMatcher *)withSubject:(id <SubjectMatcher>)subject;
 + (ComplexMatcher *)withHead:(NSArray *)head subject:(id <SubjectMatcher>)subject tail:(NSArray *)tail;
 
++ (ComplexMatcher *)withHead:(NSArray *)head subject:(id <SubjectMatcher>)subject;
 @end
