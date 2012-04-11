@@ -1,8 +1,7 @@
+#import "SimpleMatcher.h"
 #import "SubjectMatcher.h"
 
-@protocol ClassMatcher;
 @protocol SubjectMatcher;
-@protocol SimpleMatcher;
 
 @interface InstanceMatcher : NSObject <SubjectMatcher>
 

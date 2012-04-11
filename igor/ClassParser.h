@@ -1,4 +1,3 @@
-@protocol ClassMatcher;
 @class IgorQueryScanner;
 
 @interface ClassParser

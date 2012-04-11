@@ -1,4 +1,3 @@
-#import "ClassMatcher.h"
 #import "ClassParser.h"
 #import "KindOfClassMatcher.h"
 #import "MemberOfClassMatcher.h"

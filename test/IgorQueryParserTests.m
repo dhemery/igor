@@ -4,7 +4,7 @@
 #import "IgorQueryScanner.h"
 #import "IsKindOfClassMatcher.h"
 #import "IsMemberOfClassMatcher.h"
-#import "RelationshipMatcher.h"
+#import "SubjectOnRightMatcher.h"
 #import "UniversalMatcher.h"
 
 @interface IgorQueryParserTests : SenTestCase
@@ -45,42 +45,42 @@
 
 - (void)testParsesDescendantCombinatorMatcher {
     IgorQueryScanner *query = [IgorQueryScanner withQuery:@"UIButton UILabel"];
-    RelationshipMatcher* matcher = (RelationshipMatcher*) [IgorQueryParser parse:query];
-    assertThat(matcher, instanceOf([RelationshipMatcher class]));
+    SubjectOnRightMatcher * matcher = (SubjectOnRightMatcher *) [IgorQueryParser parse:query];
+    assertThat(matcher, instanceOf([SubjectOnRightMatcher class]));
 
-    InstanceMatcher *ancestorMatcher = (InstanceMatcher*) matcher.ancestorMatcher;
+    InstanceMatcher *ancestorMatcher = (InstanceMatcher*) matcher.head;
     assertThat(ancestorMatcher.simpleMatchers, hasItem([IsMemberOfClassMatcher forClass:[UIButton class]]));
     assertThat(ancestorMatcher.simpleMatchers, hasCountOf(1));
 
-    InstanceMatcher *subjectMatcher = (InstanceMatcher*) matcher.subjectMatcher;
+    InstanceMatcher *subjectMatcher = (InstanceMatcher*) matcher.subject;
     assertThat(subjectMatcher.simpleMatchers, hasItem([IsMemberOfClassMatcher forClass:[UILabel class]]));
     assertThat(ancestorMatcher.simpleMatchers, hasCountOf(1));
 }
 
 - (void)testParsesMultipleDescendantCombinatorMatchers {
     IgorQueryScanner *query = [IgorQueryScanner withQuery:@"UIButton UILabel UIView UITextField"];
-    RelationshipMatcher *matcher = (RelationshipMatcher *) [IgorQueryParser parse:query];
-    assertThat(matcher, instanceOf([RelationshipMatcher class]));
+    SubjectOnRightMatcher *matcher = (SubjectOnRightMatcher *) [IgorQueryParser parse:query];
+    assertThat(matcher, instanceOf([SubjectOnRightMatcher class]));
 
-    InstanceMatcher *subjectMatcher = (InstanceMatcher*) matcher.subjectMatcher;
+    InstanceMatcher *subjectMatcher = (InstanceMatcher*) matcher.subject;
     assertThat(subjectMatcher.simpleMatchers, hasItem([IsMemberOfClassMatcher forClass:[UITextField class]]));
     assertThat(subjectMatcher.simpleMatchers, hasCountOf(1));
 
-    RelationshipMatcher *ancestorMatcher = (RelationshipMatcher *) matcher.ancestorMatcher;
-    assertThat(ancestorMatcher, instanceOf([RelationshipMatcher class]));
+    SubjectOnRightMatcher *ancestorMatcher = (SubjectOnRightMatcher *) matcher.head;
+    assertThat(ancestorMatcher, instanceOf([SubjectOnRightMatcher class]));
 
-    InstanceMatcher *ancestorSubjectMatcher = (InstanceMatcher*) ancestorMatcher.subjectMatcher;
+    InstanceMatcher *ancestorSubjectMatcher = (InstanceMatcher*) ancestorMatcher.subject;
     assertThat(ancestorSubjectMatcher.simpleMatchers, hasItem([IsMemberOfClassMatcher forClass:[UIView class]]));
     assertThat(ancestorSubjectMatcher.simpleMatchers, hasCountOf(1));
 
-    RelationshipMatcher *ancestorAncestorMatcher = (RelationshipMatcher *) ancestorMatcher.ancestorMatcher;
-    assertThat(ancestorAncestorMatcher, instanceOf([RelationshipMatcher class]));
+    SubjectOnRightMatcher *ancestorAncestorMatcher = (SubjectOnRightMatcher *) ancestorMatcher.head;
+    assertThat(ancestorAncestorMatcher, instanceOf([SubjectOnRightMatcher class]));
 
-    InstanceMatcher *ancestorAncestorSubjectMatcher = (InstanceMatcher*) ancestorAncestorMatcher.subjectMatcher;
+    InstanceMatcher *ancestorAncestorSubjectMatcher = (InstanceMatcher*) ancestorAncestorMatcher.subject;
     assertThat(ancestorAncestorSubjectMatcher.simpleMatchers, hasItem([IsMemberOfClassMatcher forClass:[UILabel class]]));
     assertThat(ancestorAncestorSubjectMatcher.simpleMatchers, hasCountOf(1));
 
-    InstanceMatcher *ancestorAncestorAncestorMatcher = (InstanceMatcher *) ancestorAncestorMatcher.ancestorMatcher;
+    InstanceMatcher *ancestorAncestorAncestorMatcher = (InstanceMatcher *) ancestorAncestorMatcher.head;
     assertThat(ancestorAncestorAncestorMatcher.simpleMatchers, hasItem([IsMemberOfClassMatcher forClass:[UIButton class]]));
     assertThat(ancestorAncestorAncestorMatcher.simpleMatchers, hasCountOf(1));
 }

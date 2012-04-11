@@ -1,7 +1,7 @@
 @protocol SubjectMatcher;
 @class IgorQueryScanner;
 
-@interface RelationshipParser
+@interface InstanceChainParser
 
 + (id <SubjectMatcher>)parse:(IgorQueryScanner *)query;
 

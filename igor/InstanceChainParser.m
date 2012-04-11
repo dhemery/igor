@@ -1,10 +1,10 @@
-#import "RelationshipMatcher.h"
+#import "SubjectOnRightMatcher.h"
 #import "InstanceParser.h"
 #import "InstanceMatcher.h"
-#import "RelationshipParser.h"
+#import "InstanceChainParser.h"
 #import "IgorQueryScanner.h"
 
-@implementation RelationshipParser
+@implementation InstanceChainParser
 
 + (id <SubjectMatcher>)parse:(IgorQueryScanner *)query {
     id <SubjectMatcher> matcher = [InstanceParser parse:query];
@@ -13,8 +13,8 @@
             [query backUp];
             return matcher;
         } else {
-            InstanceMatcher *descendantMatcher = [InstanceParser parse:query];
-            matcher = [RelationshipMatcher withSubjectMatcher:descendantMatcher ancestorMatcher:matcher];
+            InstanceMatcher *subject = [InstanceParser parse:query];
+            matcher = [SubjectOnRightMatcher withSubject:subject head:matcher];
         }
     }
     return matcher;

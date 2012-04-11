@@ -1,6 +1,6 @@
-#import "RelationshipMatcher.h"
+#import "SubjectOnRightMatcher.h"
 #import "IdentityMatcher.h"
-#import "BranchMatcher.h"
+#import "SubjectOnLeftMatcher.h"
 #import "ViewFactory.h"
 #import "MatchesView.h"
 
@@ -22,9 +22,9 @@
 }
 
 - (void)testMatchesIfViewMatchesSubjectMatcherAndSubviewMatchesSubtreeMatcher {
-    BranchMatcher *rootWithLeafDescendant = [BranchMatcher
-            withSubjectMatcher:[IdentityMatcher forView:root]
-             descendantMatcher:[IdentityMatcher forView:leaf]];
+    SubjectOnLeftMatcher *rootWithLeafDescendant = [SubjectOnLeftMatcher
+            withSubject:[IdentityMatcher forView:root]
+             tail:[IdentityMatcher forView:leaf]];
 
     assertThat(rootWithLeafDescendant, [MatchesView view:root inTree:root]);
     assertThat(rootWithLeafDescendant, isNot([MatchesView view:middle inTree:root]));
@@ -32,11 +32,11 @@
 }
 
 - (void)testSubtreeMatcherExaminesOnlySubviewsOfTheSubject {
-    id <SubjectMatcher> leafWithMiddleAncestor = [RelationshipMatcher withSubjectMatcher:[IdentityMatcher forView:leaf] ancestorMatcher:[IdentityMatcher forView:middle]];
+    id <SubjectMatcher> leafWithMiddleAncestor = [SubjectOnRightMatcher withSubject:[IdentityMatcher forView:leaf] head:[IdentityMatcher forView:middle]];
 
-    BranchMatcher *middleWithLeafInsideMiddleDescendant = [BranchMatcher
-            withSubjectMatcher:[IdentityMatcher forView:middle]
-             descendantMatcher:leafWithMiddleAncestor];
+    SubjectOnLeftMatcher *middleWithLeafInsideMiddleDescendant = [SubjectOnLeftMatcher
+            withSubject:[IdentityMatcher forView:middle]
+             tail:leafWithMiddleAncestor];
 
     assertThat(middleWithLeafInsideMiddleDescendant, isNot([MatchesView view:middle inTree:root]));
 }

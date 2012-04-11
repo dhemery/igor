@@ -1,4 +1,3 @@
-#import "ClassMatcher.h"
 #import "InstanceMatcher.h"
 
 @implementation InstanceMatcher {
@@ -19,7 +18,7 @@
     return self;
 }
 
-- (BOOL)matchesView:(UIView *)view withinTree:(UIView *)ignored {
+- (BOOL)matchesView:(UIView *)view inTree:(UIView *)root {
     for (id<SimpleMatcher> matcher in _simpleMatchers) {
         if (![matcher matchesView:view]) return false;
     }

@@ -26,7 +26,7 @@
 }
 
 - (BOOL) matches:(id)matcher {
-    return [(id<SubjectMatcher>)matcher matchesView:_targetView withinTree:_root];
+    return [(id<SubjectMatcher>)matcher matchesView:_targetView inTree:_root];
 }
 
 @end
