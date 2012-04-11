@@ -11,7 +11,6 @@
     UIButton *root;
     UIButton *middle;
     UIButton *leaf;
-    UIButton *notInTree;
 }
 
 - (void)setUp {
@@ -20,7 +19,6 @@
     leaf = [ViewFactory buttonWithAccessibilityHint:@"leaf"];
     [root addSubview:middle];
     [middle addSubview:leaf];
-    notInTree = [ViewFactory buttonWithAccessibilityHint:@"not in tree"];
 }
 
 - (void)testMatchingSubject {
@@ -36,12 +34,12 @@
 
     ComplexMatcher *middleMatcher = [ComplexMatcher withSubject:subject];
 
-    assertThat(middleMatcher, isNot([MatchesView view:notInTree inTree:root]));
+    assertThat(middleMatcher, isNot([MatchesView view:leaf inTree:root]));
 }
 
 - (void)testMatchingSubjectMatchingHead {
-    NSArray *head = [NSArray arrayWithObject:[IdentityMatcher forView:root]];
-    id <SubjectMatcher> subject = [IdentityMatcher forView:middle];
+    id<SubjectMatcher> head = [IdentityMatcher forView:root];
+    id<SubjectMatcher> subject = [IdentityMatcher forView:middle];
 
     ComplexMatcher *middleInRoot = [ComplexMatcher withHead:head subject:subject];
 
@@ -49,7 +47,7 @@
 }
 
 - (void)testMatchingSubjectMismatchingHead {
-    NSArray *head = [NSArray arrayWithObject:[IdentityMatcher forView:leaf]];
+    id<SubjectMatcher> head = [IdentityMatcher forView:leaf];
     id<SubjectMatcher> subject = [IdentityMatcher forView:middle];
 
     ComplexMatcher *middleInLeaf = [ComplexMatcher withHead:head subject:subject];
