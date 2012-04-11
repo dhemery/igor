@@ -6,31 +6,27 @@
 @interface MemberOfClassMatcherTests : SenTestCase
 @end
 
-@implementation MemberOfClassMatcherTests {
-    CGRect frame;
-}
-
-- (void)setUp {
-    frame = CGRectMake(0, 0, 100, 100);
-}
+@implementation MemberOfClassMatcherTests
 
 - (void)testMatchesAViewOfTheTargetClass {
-    id memberOfUIButtonClassMatcher = [MemberOfClassMatcher forClass:[UIButton class]];
-    UIButton *button = [ViewFactory button];
+    id<SimpleMatcher> memberOfButtonMatcher = [MemberOfClassMatcher forClass:[UIButton class]];
+    UIButton *classIsExactlyButton = [ViewFactory button];
 
-    assertThat(memberOfUIButtonClassMatcher, [MatchesView view:button]);
+    assertThat(memberOfButtonMatcher, [MatchesView view:classIsExactlyButton]);
 }
 
 - (void)testMismatchesAViewOfANonTargetClass {
-    id memberOfUIButtonClassMatcher = [MemberOfClassMatcher forClass:[UIButton class]];
-    UIView *notAButton = [ViewFactory view];
-    assertThat(memberOfUIButtonClassMatcher, isNot([MatchesView view:notAButton]));
+    id<SimpleMatcher> memberOfButtonMatcher = [MemberOfClassMatcher forClass:[UIButton class]];
+    UIView *classIsNotButtonOrSubclass = [ViewFactory view];
+
+    assertThat(memberOfButtonMatcher, isNot([MatchesView view:classIsNotButtonOrSubclass]));
 }
 
 - (void)testMismatchesAViewOfAClassThatInheritsFromTheTargetClass {
-    id memberOfUIViewClassMatcher = [MemberOfClassMatcher forClass:[UIView class]];
-    UIButton *button = [ViewFactory button];
-    assertThat(memberOfUIViewClassMatcher, isNot([MatchesView view:button]));
+    id<SimpleMatcher> memberOfViewMatcher = [MemberOfClassMatcher forClass:[UIView class]];
+    UIButton *classIsSubclassOfView = [ViewFactory button];
+
+    assertThat(memberOfViewMatcher, isNot([MatchesView view:classIsSubclassOfView]));
 }
 
 @end

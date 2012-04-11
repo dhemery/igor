@@ -11,6 +11,9 @@
     UIButton *root;
     UIButton *middle;
     UIButton *leaf;
+    IdentityMatcher *_matchesRoot;
+    IdentityMatcher *_matchesLeaf;
+    IdentityMatcher *_matchesMiddle;
 }
 
 - (void)setUp {
@@ -19,10 +22,13 @@
     leaf = [ViewFactory button];
     [root addSubview:middle];
     [middle addSubview:leaf];
+    _matchesRoot = [IdentityMatcher forView:root];
+    _matchesMiddle = [IdentityMatcher forView:middle];
+    _matchesLeaf = [IdentityMatcher forView:leaf];
 }
 
 - (void)testMatchesIfViewMatchesSubjectMatcherAndSubviewMatchesSubtreeMatcher {
-    SubjectOnLeftMatcher *rootWithLeafDescendant = [SubjectOnLeftMatcher withSubject:[IdentityMatcher forView:root] tail:[IdentityMatcher forView:leaf]];
+    id<SubjectMatcher> rootWithLeafDescendant = [SubjectOnLeftMatcher withSubject:_matchesRoot tail:_matchesLeaf];
 
     assertThat(rootWithLeafDescendant, [MatchesView view:root inTree:root]);
     assertThat(rootWithLeafDescendant, isNot([MatchesView view:middle inTree:root]));
@@ -30,11 +36,8 @@
 }
 
 - (void)testSubtreeMatcherExaminesOnlySubviewsOfTheSubject {
-    id <SubjectMatcher> leafWithMiddleAncestor = [ComplexMatcher withHead:[IdentityMatcher forView:middle] subject:[IdentityMatcher forView:leaf]];
-
-    SubjectOnLeftMatcher *middleWithLeafInsideMiddleDescendant = [SubjectOnLeftMatcher
-            withSubject:[IdentityMatcher forView:middle]
-             tail:leafWithMiddleAncestor];
+    id<SubjectMatcher> leafInMiddle = [ComplexMatcher withHead:_matchesMiddle subject:_matchesLeaf];
+    id<SubjectMatcher> middleWithLeafInsideMiddleDescendant = [SubjectOnLeftMatcher withSubject:_matchesMiddle tail:leafInMiddle];
 
     assertThat(middleWithLeafInsideMiddleDescendant, isNot([MatchesView view:middle inTree:root]));
 }
