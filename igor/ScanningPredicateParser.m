@@ -40,7 +40,7 @@
     if (![scanner skipString:@"]"]) {
         [scanner failBecause:@"Expected ]"];
     }
-    [matchers addObject:[PredicateMatcher withPredicateExpression:expression]];
+    [matchers addObject:[PredicateMatcher matcherForPredicateExpression:expression]];
 }
 
 + (id<PredicateParser>)parserWithScanner:(id<IgorQueryScanner>)scanner {

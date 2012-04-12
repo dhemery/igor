@@ -4,6 +4,6 @@
 
 @property(strong, readonly) id matchClass;
 
-+ (KindOfClassMatcher *)forBaseClass:(Class)baseClass;
++ (KindOfClassMatcher *)matcherForBaseClass:(Class)baseClass;
 
 @end

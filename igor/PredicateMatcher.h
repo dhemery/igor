@@ -5,6 +5,6 @@
 @property(strong, readonly) NSPredicate* predicate;
 @property(strong, readonly) NSString* expression;
 
-+ (id)withPredicateExpression:(NSString *)expression;
++ (PredicateMatcher *)matcherForPredicateExpression:(NSString *)expression;
 
 @end

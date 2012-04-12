@@ -23,7 +23,7 @@
     return true;
 }
 
-+ (InstanceMatcher *)withSimpleMatchers:(NSArray *)matchers {
-    return [[self alloc] initWithSimpleMatchers:matchers];
++ (InstanceMatcher *)matcherWithSimpleMatchers:(NSArray *)simpleMatchers {
+    return [[self alloc] initWithSimpleMatchers:simpleMatchers];
 }
 @end

@@ -65,20 +65,20 @@
     return [self.subject matchesView:view inTree:root] && [self headMatchesAnAncestorOfView:view inTree:root] && [self tailMatchesASubviewOfView:view];
 }
 
-+ (ComplexMatcher *)withHead:(id<SubjectMatcher>)head subject:(id <SubjectMatcher>)subject {
-    return [self withHead:head subject:subject tail:[UniversalMatcher new]];
++ (ComplexMatcher *)matcherWithHead:(id<SubjectMatcher>)head subject:(id <SubjectMatcher>)subject {
+    return [self matcherWithHead:head subject:subject tail:[UniversalMatcher new]];
 }
 
-+ (ComplexMatcher *)withHead:(id<SubjectMatcher>)head subject:(id <SubjectMatcher>)subject tail:(id<SubjectMatcher>)tail {
++ (ComplexMatcher *)matcherWithHead:(id<SubjectMatcher>)head subject:(id <SubjectMatcher>)subject tail:(id<SubjectMatcher>)tail {
     return [[self alloc] initWithHead:head subject:subject tail:tail];
 }
 
-+ (ComplexMatcher *)withSubject:(id <SubjectMatcher>)subject {
-    return [self withHead:[UniversalMatcher new] subject:subject tail:[UniversalMatcher new]];
++ (ComplexMatcher *)matcherWithSubject:(id <SubjectMatcher>)subject {
+    return [self matcherWithHead:[UniversalMatcher new] subject:subject tail:[UniversalMatcher new]];
 }
 
-+ (ComplexMatcher *)withSubject:(id <SubjectMatcher>)subject tail:(id <SubjectMatcher>)tail {
-    return [self withHead:[UniversalMatcher new] subject:subject tail:tail];
++ (ComplexMatcher *)matcherWithSubject:(id <SubjectMatcher>)subject tail:(id <SubjectMatcher>)tail {
+    return [self matcherWithHead:[UniversalMatcher new] subject:subject tail:tail];
 }
 
 @end

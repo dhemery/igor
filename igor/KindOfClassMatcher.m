@@ -8,7 +8,7 @@
     return [NSString stringWithFormat:@"[KindOfClass:%@]", self.matchClass];
 }
 
-+ (KindOfClassMatcher *)forBaseClass:(Class)baseClass {
++ (KindOfClassMatcher *)matcherForBaseClass:(Class)baseClass {
     return [[self alloc] initForBaseClass:baseClass];
 }
 

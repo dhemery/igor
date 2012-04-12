@@ -28,7 +28,7 @@
     }
     id<SubjectMatcher> matcher = [matcherChain objectAtIndex:0];
     for (NSUInteger i = 1 ; i < [matcherChain count] ; i++) {
-        matcher = [ComplexMatcher withHead:matcher subject:[matcherChain objectAtIndex:i] ];
+        matcher = [ComplexMatcher matcherWithHead:matcher subject:[matcherChain objectAtIndex:i] ];
     }
     return matcher;
 }
@@ -54,7 +54,7 @@
         [instanceChainParser parseInstanceMatchersIntoArray:tail];
     }
     [scanner failIfNotAtEnd];
-    return [ComplexMatcher withHead:[self subjectMatcherFromMatcherChain:head] subject:subject tail:[self subjectMatcherFromMatcherChain:tail]];
+    return [ComplexMatcher matcherWithHead:[self subjectMatcherFromMatcherChain:head] subject:subject tail:[self subjectMatcherFromMatcherChain:tail]];
 }
 
 + (id<IgorQueryParser>)parserWithScanner:(id <IgorQueryScanner>)scanner instanceParser:(id<InstanceParser>)instanceParser instanceChainParser:(id <InstanceChainParser>)instanceChainParser {

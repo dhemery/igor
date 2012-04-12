@@ -4,6 +4,6 @@
 
 @property(strong, readonly) Class matchClass;
 
-+ (MemberOfClassMatcher*)forExactClass:(Class)exactClass;
++ (MemberOfClassMatcher*)matcherForExactClass:(Class)exactClass;
 
 @end

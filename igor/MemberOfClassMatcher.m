@@ -8,7 +8,7 @@
     return [NSString stringWithFormat:@"[MemberOfClass:%@]", self.matchClass];
 }
 
-+ (MemberOfClassMatcher *)forExactClass:(Class)exactClass {
++ (MemberOfClassMatcher *)matcherForExactClass:(Class)exactClass {
     return [[self alloc] initForExactClass:exactClass];
 }
 

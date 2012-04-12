@@ -5,6 +5,6 @@
 
 @property(strong, readonly) NSArray *simpleMatchers;
 
-+ (InstanceMatcher *)withSimpleMatchers:(NSArray *)simpleMatchers;
++ (InstanceMatcher *)matcherWithSimpleMatchers:(NSArray *)simpleMatchers;
 
 @end

@@ -20,7 +20,7 @@
     NSMutableArray* simpleMatchers = [NSMutableArray array];
     [classParser parseClassMatcherIntoArray:simpleMatchers];
     [predicateParser parsePredicateMatcherIntoArray:simpleMatchers];
-    return [InstanceMatcher withSimpleMatchers:simpleMatchers];
+    return [InstanceMatcher matcherWithSimpleMatchers:simpleMatchers];
 }
 
 + (id<InstanceParser>)parserWithClassParser:(id<ClassParser>)classParser predicateParser:(id<PredicateParser>)predicateParser {

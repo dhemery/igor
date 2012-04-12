@@ -29,7 +29,7 @@
     return [self.predicate predicateFormat];
 }
 
-+ (PredicateMatcher *)withPredicateExpression:(NSString *)expression {
++ (PredicateMatcher *)matcherForPredicateExpression:(NSString *)expression {
     return [[PredicateMatcher alloc] initWithPredicate:[NSPredicate predicateWithFormat:expression]];
 }
 

@@ -27,7 +27,7 @@
 }
 
 - (void) describeTo:(id<HCDescription>)description; {
-    [description appendDescriptionOf:[MemberOfClassMatcher forExactClass:targetClass]];
+    [description appendDescriptionOf:[MemberOfClassMatcher matcherForExactClass:targetClass]];
 }
 
 @end

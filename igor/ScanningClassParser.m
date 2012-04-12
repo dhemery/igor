@@ -29,9 +29,9 @@
 
     Class targetClass = NSClassFromString(className);
     if ([scanner skipString:@"*"]) {
-        [array addObject:[KindOfClassMatcher forBaseClass:targetClass]];
+        [array addObject:[KindOfClassMatcher matcherForBaseClass:targetClass]];
     } else {
-        [array addObject:[MemberOfClassMatcher forExactClass:targetClass]];
+        [array addObject:[MemberOfClassMatcher matcherForExactClass:targetClass]];
     }
 }
 
