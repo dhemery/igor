@@ -1,24 +1,28 @@
 #import "InstanceParser.h"
 #import "ScanningInstanceChainParser.h"
 #import "IgorQueryStringScanner.h"
+#import "PredicateParser.h"
+#import "ClassParser.h"
 
 @implementation ScanningInstanceChainParser {
-    id<IgorQueryScanner> scanner;
+    InstanceParser *instanceParser;
 }
 
-- (id<InstanceChainParser>)initWithQueryScanner:(id <IgorQueryScanner>)theScanner {
+- (id<InstanceChainParser>)init {
     if (self = [super init]) {
-        scanner = theScanner;
+        PredicateParser *predicateParser = [PredicateParser parser];
+        ClassParser *classParser = [ClassParser parser];
+        instanceParser = [InstanceParser parserWithClassParser:classParser predicateParser:predicateParser];
     }
     return self;
 }
 
-- (void)collectInstanceMatchersIntoArray:(NSMutableArray*)array {
+- (void)parseInstanceMatchersFromQuery:(id<IgorQueryScanner>)scanner intoArray:(NSMutableArray*)instanceMatchers {
     BOOL foundSubjectMarker;
     while(!(foundSubjectMarker = [scanner nextStringIs:@"$"])) {
-        InstanceMatcher *matcher = [InstanceParser instanceMatcherFromQuery:scanner];
-        [array addObject:matcher];
-        NSLog(@"Parsed matcher: %@", matcher);
+        id<SubjectMatcher> instanceMatcher = [instanceParser parseInstanceMatcherFromQuery:scanner];
+        [instanceMatchers addObject:instanceMatcher];
+        NSLog(@"Parsed matcher: %@", instanceMatcher);
         if (![scanner skipWhiteSpace]) {
             NSLog(@"No whitespace. Done parsing chain.");
             return;
@@ -31,8 +35,8 @@
     NSLog(@"Reached end of query. Done parsing chain.");
 }
 
-+ (id<InstanceChainParser>)withQueryScanner:(id <IgorQueryScanner>)scanner {
-    return [[self alloc] initWithQueryScanner:scanner];
++ (id<InstanceChainParser>)parser {
+    return [[self alloc] init];
 }
 
 @end

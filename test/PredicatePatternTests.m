@@ -13,7 +13,7 @@
 
 - (void)setUp {
     id <IgorQueryScanner> scanner = [IgorQueryStringScanner new];
-    id <InstanceChainParser> instanceChainParser = [ScanningInstanceChainParser withQueryScanner:scanner];
+    id <InstanceChainParser> instanceChainParser = [ScanningInstanceChainParser parser];
     igor = [Igor igorWithQueryScanner:scanner instanceChainParser:instanceChainParser];
     igor = [Igor igor];
     view = [ViewFactory buttonWithAccessibilityHint:@"the right accessibility hint"];

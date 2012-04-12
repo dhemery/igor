@@ -35,7 +35,7 @@
 
 + (Igor *)igor {
     id <IgorQueryScanner> scanner = [IgorQueryStringScanner new];
-    id <InstanceChainParser> instanceChainParser = [ScanningInstanceChainParser withQueryScanner:scanner];
+    id <InstanceChainParser> instanceChainParser = [ScanningInstanceChainParser parser];
     return [self igorWithQueryScanner:scanner instanceChainParser:instanceChainParser];
 }
 

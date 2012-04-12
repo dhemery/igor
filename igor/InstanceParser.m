@@ -4,13 +4,29 @@
 #import "PredicateParser.h"
 #import "IgorQueryScanner.h"
 
-@implementation InstanceParser
+@implementation InstanceParser {
+    ClassParser *classParser;
+    PredicateParser *predicateParser;
+}
 
-+ (InstanceMatcher *)instanceMatcherFromQuery:(id<IgorQueryScanner>)query {
+- (InstanceParser *)initWithClassParser:(ClassParser *)theClassParser predicateParser:(PredicateParser *)thePredicateParser {
+    if (self = [super init]) {
+        classParser = theClassParser;
+        predicateParser = thePredicateParser;
+    }
+    return self;
+}
+
+- (id<SubjectMatcher>)parseInstanceMatcherFromQuery:(id <IgorQueryScanner>)query {
     NSMutableArray* simpleMatchers = [NSMutableArray array];
-    [[ClassParser parser] parseClassMatcherFromQuery:query intoArray:simpleMatchers];
-    [[PredicateParser parser] parsePredicateMatcherFromQuery:query intoArray:simpleMatchers];
+    [classParser parseClassMatcherFromQuery:query intoArray:simpleMatchers];
+    [predicateParser parsePredicateMatcherFromQuery:query intoArray:simpleMatchers];
     return [InstanceMatcher withSimpleMatchers:simpleMatchers];
 }
+
++ (InstanceParser *)parserWithClassParser:(ClassParser *)classParser predicateParser:(PredicateParser *)predicateParser {
+    return [[self alloc] initWithClassParser:classParser predicateParser:predicateParser];
+}
+
 
 @end

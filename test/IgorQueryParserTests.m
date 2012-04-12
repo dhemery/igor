@@ -17,7 +17,7 @@
 
 - (void)setUp {
     id<IgorQueryScanner> scanner = [IgorQueryStringScanner scanner];
-    id<InstanceChainParser> instanceChainParser = [ScanningInstanceChainParser withQueryScanner:scanner];
+    id<InstanceChainParser> instanceChainParser = [ScanningInstanceChainParser parser];
     parser = [IgorQueryParser withQueryScanner:scanner instanceChainParser:instanceChainParser];
 }
 

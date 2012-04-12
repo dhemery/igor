@@ -3,16 +3,22 @@
 #import "InstanceParser.h"
 #import "ComplexMatcher.h"
 #import "UniversalMatcher.h"
+#import "ClassParser.h"
+#import "PredicateParser.h"
 
 @implementation IgorQueryParser {
     id<IgorQueryScanner> scanner;
     id<InstanceChainParser> instanceChainParser;
+    InstanceParser* instanceParser;
 }
 
 - (IgorQueryParser *)initWithQueryScanner:(id <IgorQueryScanner>)theScanner instanceChainParser:(id<InstanceChainParser>)theInstanceChainParser {
     if (self = [super init]) {
         scanner = theScanner;
         instanceChainParser = theInstanceChainParser;
+        ClassParser *classParser = [ClassParser parser];
+        PredicateParser *predicateParser = [PredicateParser parser];
+        instanceParser = [InstanceParser parserWithClassParser:classParser predicateParser:predicateParser];
     }
     return self;
 }
@@ -37,9 +43,9 @@
     NSMutableArray* tail = [NSMutableArray array];
     id<SubjectMatcher> subject;
 
-    [instanceChainParser collectInstanceMatchersIntoArray:head];
+    [instanceChainParser parseInstanceMatchersFromQuery:scanner intoArray:head];
     if ([scanner skipString:@"$"]) {
-        subject = [InstanceParser instanceMatcherFromQuery:scanner];
+        subject = [instanceParser parseInstanceMatcherFromQuery:scanner];
         NSLog(@"Found subject marker. Parsed subject %@", subject);
     } else {
         subject = [head lastObject];
@@ -49,7 +55,7 @@
     }
     if ([scanner skipWhiteSpace]) {
         NSLog(@"Found whitespace after subject. Parsing tail.");
-        [instanceChainParser collectInstanceMatchersIntoArray:tail];
+        [instanceChainParser parseInstanceMatchersFromQuery:scanner intoArray:tail];
     }
     [scanner failIfNotAtEnd];
     return [ComplexMatcher withHead:[self subjectMatcherFromMatcherChain:head] subject:subject tail:[self subjectMatcherFromMatcherChain:tail]];
