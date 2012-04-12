@@ -1,14 +1,16 @@
 #import "Igor.h"
-#import "IgorQueryParser.h"
+#import "ScanningIgorQueryParser.h"
 #import "SubjectMatcher.h"
 #import "TreeWalker.h"
 #import "IgorQueryScanner.h"
 #import "IgorQueryStringScanner.h"
 #import "ScanningInstanceChainParser.h"
+#import "ScanningInstanceParser.h"
+#import "ScanningClassParser.h"
+#import "ScanningPredicateParser.h"
 
 @implementation Igor {
-    id <InstanceChainParser> instanceChainParser;
-    id <IgorQueryScanner> scanner;
+    id <IgorQueryParser> parser;
 }
 
 - (NSArray *)findViewsThatMatchMatcher:(id <SubjectMatcher>)matcher inTree:(UIView *)tree {
@@ -24,25 +26,27 @@
 }
 
 - (NSArray *)findViewsThatMatchQuery:(NSString *)query inTree:(UIView *)tree {
-    IgorQueryParser* parser = [IgorQueryParser withQueryScanner:scanner instanceChainParser:instanceChainParser];
     id <SubjectMatcher> matcher = [parser parseMatcherFromQuery:query];
     return [self findViewsThatMatchMatcher:matcher inTree:tree];
 }
 
-+ (Igor*)igorWithQueryScanner:(id<IgorQueryScanner>)scanner instanceChainParser:(id<InstanceChainParser>)instanceChainParser {
-    return [[self alloc] initWithQueryScanner:scanner instanceChainParser:instanceChainParser];
-}
-
 + (Igor *)igor {
     id <IgorQueryScanner> scanner = [IgorQueryStringScanner new];
-    id <InstanceChainParser> instanceChainParser = [ScanningInstanceChainParser parser];
-    return [self igorWithQueryScanner:scanner instanceChainParser:instanceChainParser];
+    id <PredicateParser> predicateParser = [ScanningPredicateParser parserWithScanner:scanner];
+    id <ClassParser> classParser = [ScanningClassParser parserWithScanner:scanner];
+    id <InstanceParser> instanceParser = [ScanningInstanceParser parserWithClassParser:classParser predicateParser:predicateParser];
+    id <InstanceChainParser> instanceChainParser = [ScanningInstanceChainParser parserWithScanner:scanner instanceParser:instanceParser];
+    id <IgorQueryParser> parser = [ScanningIgorQueryParser parserWithScanner:scanner instanceParser:instanceParser instanceChainParser:instanceChainParser];
+    return [self igorWithParser:parser];
 }
 
-- (Igor *)initWithQueryScanner:(id<IgorQueryScanner>)theScanner instanceChainParser:(id <InstanceChainParser>)theInstanceChainParser {
++ (Igor*)igorWithParser:(id<IgorQueryParser>)parser {
+    return [[self alloc] initWithParser:parser];
+}
+
+- (Igor *)initWithParser:(id<IgorQueryParser>)theParser {
     if (self = [super init]) {
-        instanceChainParser = theInstanceChainParser;
-        scanner = theScanner;
+        parser = theParser;
     }
     return self;
 }

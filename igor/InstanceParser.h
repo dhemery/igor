@@ -1,12 +1,7 @@
-#import "InstanceMatcher.h"
-@protocol IgorQueryScanner;
-@class ClassParser;
-@class PredicateParser;
+@protocol SubjectMatcher;
 
-@interface InstanceParser : NSObject
+@protocol InstanceParser <NSObject>
 
-- (id<SubjectMatcher>)parseInstanceMatcherFromQuery:(id<IgorQueryScanner>)query;
-
-+ (InstanceParser*)parserWithClassParser:(ClassParser*)classParser predicateParser:(PredicateParser*)predicateParser;
+- (id<SubjectMatcher>)parseInstanceMatcher;
 
 @end

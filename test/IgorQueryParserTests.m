@@ -1,4 +1,4 @@
-#import "IgorQueryParser.h"
+#import "ScanningIgorQueryParser.h"
 #import "InstanceMatcher.h"
 #import "IsPredicateMatcher.h"
 #import "IgorQueryStringScanner.h"
@@ -7,18 +7,24 @@
 #import "UniversalMatcher.h"
 #import "ComplexMatcher.h"
 #import "ScanningInstanceChainParser.h"
+#import "ScanningInstanceParser.h"
+#import "ScanningPredicateParser.h"
+#import "ScanningClassParser.h"
 
 @interface IgorQueryParserTests : SenTestCase
 @end
 
 @implementation IgorQueryParserTests {
-    IgorQueryParser *parser;
+    id<IgorQueryParser> parser;
 }
 
 - (void)setUp {
     id<IgorQueryScanner> scanner = [IgorQueryStringScanner scanner];
-    id<InstanceChainParser> instanceChainParser = [ScanningInstanceChainParser parser];
-    parser = [IgorQueryParser withQueryScanner:scanner instanceChainParser:instanceChainParser];
+    id <ClassParser> classParser = [ScanningClassParser parserWithScanner:scanner];
+    id <PredicateParser> predicateParser = [ScanningPredicateParser parserWithScanner:scanner];
+    id <InstanceParser> instanceParser = [ScanningInstanceParser parserWithClassParser:classParser predicateParser:predicateParser];
+    id <InstanceChainParser> instanceChainParser = [ScanningInstanceChainParser parserWithScanner:scanner instanceParser:instanceParser];
+    parser = [ScanningIgorQueryParser parserWithScanner:scanner instanceParser:instanceParser instanceChainParser:instanceChainParser];
 }
 
 - (void)testParsesAsteriskAsUniversalMatcher {

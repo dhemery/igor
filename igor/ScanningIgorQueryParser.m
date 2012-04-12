@@ -1,24 +1,20 @@
-#import "IgorQueryParser.h"
+#import "ScanningIgorQueryParser.h"
 #import "IgorQueryScanner.h"
-#import "InstanceParser.h"
+#import "ScanningInstanceParser.h"
 #import "ComplexMatcher.h"
 #import "UniversalMatcher.h"
-#import "ClassParser.h"
-#import "PredicateParser.h"
 
-@implementation IgorQueryParser {
+@implementation ScanningIgorQueryParser {
     id<IgorQueryScanner> scanner;
     id<InstanceChainParser> instanceChainParser;
-    InstanceParser* instanceParser;
+    id<InstanceParser> instanceParser;
 }
 
-- (IgorQueryParser *)initWithQueryScanner:(id <IgorQueryScanner>)theScanner instanceChainParser:(id<InstanceChainParser>)theInstanceChainParser {
+- (id<IgorQueryParser>)initWithQueryScanner:(id <IgorQueryScanner>)theScanner instanceParser:(id<InstanceParser>)theInstanceParser instanceChainParser:(id<InstanceChainParser>)theInstanceChainParser {
     if (self = [super init]) {
         scanner = theScanner;
+        instanceParser = theInstanceParser;
         instanceChainParser = theInstanceChainParser;
-        ClassParser *classParser = [ClassParser parser];
-        PredicateParser *predicateParser = [PredicateParser parser];
-        instanceParser = [InstanceParser parserWithClassParser:classParser predicateParser:predicateParser];
     }
     return self;
 }
@@ -43,9 +39,9 @@
     NSMutableArray* tail = [NSMutableArray array];
     id<SubjectMatcher> subject;
 
-    [instanceChainParser parseInstanceMatchersFromQuery:scanner intoArray:head];
+    [instanceChainParser parseInstanceMatchersIntoArray:head];
     if ([scanner skipString:@"$"]) {
-        subject = [instanceParser parseInstanceMatcherFromQuery:scanner];
+        subject = [instanceParser parseInstanceMatcher];
         NSLog(@"Found subject marker. Parsed subject %@", subject);
     } else {
         subject = [head lastObject];
@@ -55,14 +51,14 @@
     }
     if ([scanner skipWhiteSpace]) {
         NSLog(@"Found whitespace after subject. Parsing tail.");
-        [instanceChainParser parseInstanceMatchersFromQuery:scanner intoArray:tail];
+        [instanceChainParser parseInstanceMatchersIntoArray:tail];
     }
     [scanner failIfNotAtEnd];
     return [ComplexMatcher withHead:[self subjectMatcherFromMatcherChain:head] subject:subject tail:[self subjectMatcherFromMatcherChain:tail]];
 }
 
-+ (IgorQueryParser *)withQueryScanner:(id <IgorQueryScanner>)scanner instanceChainParser:(id <InstanceChainParser>)instanceChainParser {
-    return [[self alloc] initWithQueryScanner:scanner instanceChainParser:instanceChainParser];
++ (id<IgorQueryParser>)parserWithScanner:(id <IgorQueryScanner>)scanner instanceParser:(id<InstanceParser>)instanceParser instanceChainParser:(id <InstanceChainParser>)instanceChainParser {
+    return [[self alloc] initWithQueryScanner:scanner instanceParser:instanceParser instanceChainParser:instanceChainParser];
 }
 
 

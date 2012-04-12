@@ -2,12 +2,13 @@
 
 @protocol InstanceChainParser;
 @protocol IgorQueryScanner;
+@protocol IgorQueryParser;
 
 @interface Igor : NSObject <SelectorEngine>
 
 - (NSArray *)findViewsThatMatchQuery:(NSString *)query inTree:(UIView *)tree;
 
 + (Igor *)igor;
-+ (Igor *)igorWithQueryScanner:(id<IgorQueryScanner>)scanner instanceChainParser:(id <InstanceChainParser>)instanceChainParser;
++ (Igor *)igorWithParser:(id<IgorQueryParser>)parser;
 
 @end

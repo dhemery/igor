@@ -1,10 +1,7 @@
-@class PredicateMatcher;
 @protocol IgorQueryScanner;
 
-@interface PredicateParser : NSObject
+@protocol PredicateParser <NSObject>
 
-- (void)parsePredicateMatcherFromQuery:(id<IgorQueryScanner>)query intoArray:(NSMutableArray *)matchers;
-
-+ (PredicateParser *)parser;
+- (void)parsePredicateMatcherIntoArray:(NSMutableArray *)matchers;
 
 @end

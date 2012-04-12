@@ -1,10 +1,7 @@
-@class IgorQueryStringScanner;
 @protocol IgorQueryScanner;
 
-@interface ClassParser : NSObject
+@protocol ClassParser <NSObject>
 
-- (void)parseClassMatcherFromQuery:(id<IgorQueryScanner>)query intoArray:(NSMutableArray*)array;
-
-+ (ClassParser*)parser;
+- (void)parseClassMatcherIntoArray:(NSMutableArray *)array;
 
 @end
