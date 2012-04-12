@@ -54,7 +54,9 @@
         [instanceChainParser parseInstanceMatchersIntoArray:tail];
     }
     [scanner failIfNotAtEnd];
-    return [ComplexMatcher matcherWithHead:[self subjectMatcherFromMatcherChain:head] subject:subject tail:[self subjectMatcherFromMatcherChain:tail]];
+    id<SubjectMatcher> matcher = [ComplexMatcher matcherWithHead:[self subjectMatcherFromMatcherChain:head] subject:subject tail:[self subjectMatcherFromMatcherChain:tail]];
+    NSLog(@"Final matcher: %@", matcher);
+    return matcher;
 }
 
 + (id<IgorQueryParser>)parserWithScanner:(id <IgorQueryScanner>)scanner instanceParser:(id<InstanceParser>)instanceParser instanceChainParser:(id <InstanceChainParser>)instanceChainParser {
