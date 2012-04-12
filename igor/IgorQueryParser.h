@@ -1,8 +1,9 @@
 @protocol SubjectMatcher;
-@class IgorQueryScanner;
+@protocol IgorQueryScanner;
+
 
 @interface IgorQueryParser
 
-+ (id <SubjectMatcher>)matcherFromQuery:(IgorQueryScanner *)query;
++ (id <SubjectMatcher>)matcherFromQuery:(id<IgorQueryScanner>)query;
 
 @end

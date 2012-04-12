@@ -6,7 +6,7 @@
 
 @implementation ClassParser
 
-+ (void)addClassMatcherFromQuery:(IgorQueryScanner *)query toArray:(NSMutableArray*)array {
++ (void)addClassMatcherFromQuery:(id<IgorQueryScanner>)query toArray:(NSMutableArray*)array {
     if ([query skipString:@"*"]) {
         [array addObject:[UniversalMatcher new]];
         return;

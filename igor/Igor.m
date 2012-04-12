@@ -2,7 +2,7 @@
 #import "IgorQueryParser.h"
 #import "SubjectMatcher.h"
 #import "TreeWalker.h"
-#import "IgorQueryScanner.h"
+#import "IgorQueryStringScanner.h"
 
 @implementation Igor
 
@@ -19,7 +19,7 @@
 }
 
 - (NSArray *)findViewsThatMatchQuery:(NSString *)query inTree:(UIView *)tree {
-    id <SubjectMatcher> matcher = [IgorQueryParser matcherFromQuery:[IgorQueryScanner withQuery:query]];
+    id <SubjectMatcher> matcher = [IgorQueryParser matcherFromQuery:[IgorQueryStringScanner withQuery:query]];
     return [self findViewsThatMatchMatcher:matcher inTree:tree];
 }
 

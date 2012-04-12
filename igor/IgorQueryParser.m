@@ -1,6 +1,6 @@
 #import "IgorQueryParser.h"
 #import "InstanceChainParser.h"
-#import "IgorQueryScanner.h"
+#import "IgorQueryStringScanner.h"
 #import "InstanceParser.h"
 #import "ComplexMatcher.h"
 #import "UniversalMatcher.h"
@@ -21,7 +21,7 @@
     return matcher;
 }
 
-+ (id <SubjectMatcher>)matcherFromQuery:(IgorQueryScanner *)query {
++ (id <SubjectMatcher>)matcherFromQuery:(id<IgorQueryScanner>)query {
     NSMutableArray* head = [NSMutableArray array];
     NSMutableArray* tail = [NSMutableArray array];
     id<SubjectMatcher> subject;

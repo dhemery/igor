@@ -1,4 +1,3 @@
-@class IgorQueryScanner;
 
 @interface IgorParserException
 

@@ -1,13 +1,11 @@
-@interface IgorQueryScanner : NSObject
+@protocol IgorQueryScanner <NSObject>
 
-- (void)backUp;
 - (void)failBecause:(NSString *)string;
 - (void)failIfNotAtEnd;
+- (BOOL)nextStringIs:(NSString *)string;
 - (BOOL)scanNameIntoString:(NSString **)destination;
 - (BOOL)scanUpToString:(NSString *)string intoString:(NSString **)destination;
 - (BOOL)skipString:(NSString *)string;
 - (BOOL)skipWhiteSpace;
-
-+ (IgorQueryScanner *)withQuery:(NSString *)query;
 
 @end

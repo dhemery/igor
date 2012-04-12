@@ -1,10 +1,9 @@
 #import "PredicateParser.h"
 #import "PredicateMatcher.h"
-#import "IgorQueryScanner.h"
 
 @implementation PredicateParser
 
-+ (void)addPredicateMatcherFromQuery:(IgorQueryScanner *)query toArray:(NSMutableArray *)matchers {
++ (void)addPredicateMatcherFromQuery:(id<IgorQueryScanner>)query toArray:(NSMutableArray *)matchers {
     if (![query skipString:@"["]) {
         return;
     }
@@ -15,7 +14,7 @@
     [matchers addObject:[PredicateMatcher withPredicateExpression:expression]];
 }
 
-+ (NSString *)parseExpressionFrom:(IgorQueryScanner *)query {
++ (NSString *)parseExpressionFrom:(id<IgorQueryScanner>)query {
     NSString *expression = @"";
     NSString *chunk;
     while([query scanUpToString:@"]" intoString:&chunk]) {

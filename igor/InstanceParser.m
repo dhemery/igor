@@ -6,7 +6,7 @@
 
 @implementation InstanceParser
 
-+ (InstanceMatcher *)instanceMatcherFromQuery:(IgorQueryScanner *)query {
++ (InstanceMatcher *)instanceMatcherFromQuery:(id<IgorQueryScanner>)query {
     NSMutableArray* simpleMatchers = [NSMutableArray array];
     [ClassParser addClassMatcherFromQuery:query toArray:simpleMatchers];
     [PredicateParser addPredicateMatcherFromQuery:query toArray:simpleMatchers];

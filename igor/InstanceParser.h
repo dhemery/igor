@@ -1,8 +1,8 @@
 #import "InstanceMatcher.h"
-@class IgorQueryScanner;
+@protocol IgorQueryScanner;
 
 @interface InstanceParser
 
-+ (InstanceMatcher *)instanceMatcherFromQuery:(IgorQueryScanner *)query;
++ (InstanceMatcher *)instanceMatcherFromQuery:(id<IgorQueryScanner>)query;
 
 @end
