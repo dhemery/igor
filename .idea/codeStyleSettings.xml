@@ -32,6 +32,9 @@
             <option name="com.jetbrains.objc.lang.OCDeclarationKind" value="DeallocMethod" />
           </class>
         </Objective-C-extensions>
+        <XML>
+          <option name="XML_LEGACY_SETTINGS_IMPORTED" value="true" />
+        </XML>
       </value>
     </option>
   </component>

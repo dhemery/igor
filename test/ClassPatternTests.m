@@ -11,7 +11,7 @@
 
 - (void)setUp {
     frame = CGRectMake(0, 0, 100, 100);
-    igor = [Igor new];
+    igor = [Igor igor];
 }
 
 - (void)testAnyClassPattern {

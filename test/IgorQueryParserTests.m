@@ -11,12 +11,18 @@
 @interface IgorQueryParserTests : SenTestCase
 @end
 
-@implementation IgorQueryParserTests
+@implementation IgorQueryParserTests {
+    IgorQueryParser *parser;
+}
+
+- (void)setUp {
+    id<IgorQueryScanner> scanner = [IgorQueryStringScanner scanner];
+    id<InstanceChainParser> instanceChainParser = [ScanningInstanceChainParser withQueryScanner:scanner];
+    parser = [IgorQueryParser withQueryScanner:scanner instanceChainParser:instanceChainParser];
+}
 
 - (void)testParsesAsteriskAsUniversalMatcher {
-    id<IgorQueryScanner> scanner = [IgorQueryStringScanner withQueryString:@"*"];
-    id<InstanceChainParser> instanceChainParser = [ScanningInstanceChainParser withQueryScanner:scanner];
-    ComplexMatcher* matcher = (ComplexMatcher*) [[IgorQueryParser withQueryScanner:scanner instanceChainParser:instanceChainParser] nextMatcher];
+    ComplexMatcher* matcher = (ComplexMatcher*) [parser parseMatcherFromQuery:@"*"];
     InstanceMatcher* subject = (InstanceMatcher*) matcher.subject;
 
     assertThat(subject, instanceOf([InstanceMatcher class]));
@@ -25,9 +31,7 @@
 }
 
 - (void)testParsesNameAsMemberOfClassMatcher {
-    id<IgorQueryScanner> scanner = [IgorQueryStringScanner withQueryString:@"UIButton"];
-    id<InstanceChainParser> instanceChainParser = [ScanningInstanceChainParser withQueryScanner:scanner];
-    ComplexMatcher* matcher = (ComplexMatcher*) [[IgorQueryParser withQueryScanner:scanner instanceChainParser:instanceChainParser] nextMatcher];
+    ComplexMatcher* matcher = (ComplexMatcher*) [parser parseMatcherFromQuery:@"UIButton"];
     InstanceMatcher* subject = (InstanceMatcher*) matcher.subject;
 
     assertThat(subject.simpleMatchers, hasItem([IsMemberOfClassMatcher forExactClass:[UIButton class]]));
@@ -35,9 +39,7 @@
 }
 
 - (void)testParsesNameAsteriskAsKindOfClassMatcher {
-    id<IgorQueryScanner> scanner = [IgorQueryStringScanner withQueryString:@"UILabel*"];
-    id<InstanceChainParser> instanceChainParser = [ScanningInstanceChainParser withQueryScanner:scanner];
-    ComplexMatcher* matcher = (ComplexMatcher*) [[IgorQueryParser withQueryScanner:scanner instanceChainParser:instanceChainParser] nextMatcher];
+    ComplexMatcher* matcher = (ComplexMatcher*) [parser parseMatcherFromQuery:@"UILabel*"];
     InstanceMatcher* subject = (InstanceMatcher*) matcher.subject;
 
     assertThat(subject.simpleMatchers, hasItem([IsKindOfClassMatcher forClass:[UILabel class]]));
@@ -45,9 +47,7 @@
 }
 
 - (void)testParsesBracketedStringAsPredicateMatcher {
-    id<IgorQueryScanner> scanner = [IgorQueryStringScanner withQueryString:@"[myPropertyName='somevalue']"];
-    id<InstanceChainParser> instanceChainParser = [ScanningInstanceChainParser withQueryScanner:scanner];
-    ComplexMatcher* matcher = (ComplexMatcher*) [[IgorQueryParser withQueryScanner:scanner instanceChainParser:instanceChainParser] nextMatcher];
+    ComplexMatcher* matcher = (ComplexMatcher*) [parser parseMatcherFromQuery:@"[myPropertyName='somevalue']"];
     InstanceMatcher* subject = (InstanceMatcher*) matcher.subject;
 
     assertThat(subject.simpleMatchers, hasItem([IsPredicateMatcher forExpression:@"myPropertyName='somevalue'"]));
@@ -55,9 +55,7 @@
 }
 
 - (void)testParsesDescendantCombinatorMatcher {
-    id<IgorQueryScanner> scanner = [IgorQueryStringScanner withQueryString:@"UIButton UILabel"];
-    id<InstanceChainParser> instanceChainParser = [ScanningInstanceChainParser withQueryScanner:scanner];
-    ComplexMatcher* matcher = (ComplexMatcher*) [[IgorQueryParser withQueryScanner:scanner instanceChainParser:instanceChainParser] nextMatcher];
+    ComplexMatcher* matcher = (ComplexMatcher*) [parser parseMatcherFromQuery:@"UIButton UILabel"];
     assertThat(matcher, instanceOf([ComplexMatcher class]));
 
     InstanceMatcher* ancestorMatcher = (InstanceMatcher*) matcher.head;
@@ -70,9 +68,7 @@
 }
 
 - (void)testParsesMultipleDescendantCombinatorMatchers {
-    id<IgorQueryScanner> scanner = [IgorQueryStringScanner withQueryString:@"UIButton UILabel UIView UITextField"];
-    id<InstanceChainParser> instanceChainParser = [ScanningInstanceChainParser withQueryScanner:scanner];
-    ComplexMatcher *matcher = (ComplexMatcher *) [[IgorQueryParser withQueryScanner:scanner instanceChainParser:instanceChainParser] nextMatcher];
+    ComplexMatcher *matcher = (ComplexMatcher *) [parser parseMatcherFromQuery:@"UIButton UILabel UIView UITextField"];
     assertThat(matcher, instanceOf([ComplexMatcher class]));
 
     InstanceMatcher *subjectMatcher = (InstanceMatcher*) matcher.subject;

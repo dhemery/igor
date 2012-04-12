@@ -5,39 +5,16 @@
 #import "UniversalMatcher.h"
 
 @implementation IgorQueryParser {
-    id<IgorQueryScanner> query;
+    id<IgorQueryScanner> scanner;
     id<InstanceChainParser> instanceChainParser;
 }
 
-- (IgorQueryParser *)initWithQueryScanner:(id <IgorQueryScanner>)theQuery instanceChainParser:(id<InstanceChainParser>)theInstanceChainParser {
+- (IgorQueryParser *)initWithQueryScanner:(id <IgorQueryScanner>)theScanner instanceChainParser:(id<InstanceChainParser>)theInstanceChainParser {
     if (self = [super init]) {
-        query = theQuery;
+        scanner = theScanner;
         instanceChainParser = theInstanceChainParser;
     }
     return self;
-}
-
-- (id <SubjectMatcher>)nextMatcher {
-    NSMutableArray* head = [NSMutableArray array];
-    NSMutableArray* tail = [NSMutableArray array];
-    id<SubjectMatcher> subject;
-
-    [instanceChainParser collectInstanceMatchersIntoArray:head];
-    if ([query skipString:@"$"]) {
-        subject = [InstanceParser instanceMatcherFromQuery:query];
-        NSLog(@"Found subject marker. Parsed subject %@", subject);
-    } else {
-        subject = [head lastObject];
-        [head removeLastObject];
-        NSLog(@"No subject marker. Stealing subject from head: %@", subject);
-        NSLog(@"Head now contains %@", head);
-    }
-    if ([query skipWhiteSpace]) {
-        NSLog(@"Found whitespace after subject. Parsing tail.");
-        [instanceChainParser collectInstanceMatchersIntoArray:tail];
-    }
-    [query failIfNotAtEnd];
-    return [ComplexMatcher withHead:[self subjectMatcherFromMatcherChain:head] subject:subject tail:[self subjectMatcherFromMatcherChain:tail]];
 }
 
 - (id <SubjectMatcher>)subjectMatcherFromMatcherChain:(NSArray *)matcherChain {
@@ -52,6 +29,30 @@
         matcher = [ComplexMatcher withHead:matcher subject:[matcherChain objectAtIndex:i] ];
     }
     return matcher;
+}
+
+- (id <SubjectMatcher>)parseMatcherFromQuery:(NSString *)query {
+    [scanner setQuery:query];
+    NSMutableArray* head = [NSMutableArray array];
+    NSMutableArray* tail = [NSMutableArray array];
+    id<SubjectMatcher> subject;
+
+    [instanceChainParser collectInstanceMatchersIntoArray:head];
+    if ([scanner skipString:@"$"]) {
+        subject = [InstanceParser instanceMatcherFromQuery:scanner];
+        NSLog(@"Found subject marker. Parsed subject %@", subject);
+    } else {
+        subject = [head lastObject];
+        [head removeLastObject];
+        NSLog(@"No subject marker. Stealing subject from head: %@", subject);
+        NSLog(@"Head now contains %@", head);
+    }
+    if ([scanner skipWhiteSpace]) {
+        NSLog(@"Found whitespace after subject. Parsing tail.");
+        [instanceChainParser collectInstanceMatchersIntoArray:tail];
+    }
+    [scanner failIfNotAtEnd];
+    return [ComplexMatcher withHead:[self subjectMatcherFromMatcherChain:head] subject:subject tail:[self subjectMatcherFromMatcherChain:tail]];
 }
 
 + (IgorQueryParser *)withQueryScanner:(id <IgorQueryScanner>)scanner instanceChainParser:(id <InstanceChainParser>)instanceChainParser {

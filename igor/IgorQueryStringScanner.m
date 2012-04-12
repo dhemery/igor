@@ -3,7 +3,7 @@
 
 
 @implementation IgorQueryStringScanner {
-    NSScanner *scanner;
+    NSScanner* scanner;
 }
 
 - (NSString *)description {
@@ -20,16 +20,6 @@
     }
 }
 
-- (id<IgorQueryScanner>)initWithPattern:(NSString *)query {
-    self = [super init];
-    if (self) {
-        NSString *stripped = [query stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-        scanner = [NSScanner scannerWithString:stripped];
-        [scanner setCharactersToBeSkipped:nil];
-    }
-    return self;
-}
-
 - (BOOL)nextStringIs:(NSString*)string {
     NSUInteger originalLocation = [scanner scanLocation];
     if ([scanner scanString:string intoString:nil]) {
@@ -43,8 +33,18 @@
     return [scanner scanCharactersFromSet:[NSCharacterSet letterCharacterSet] intoString:destination];
 }
 
++ (id <IgorQueryScanner>)scanner {
+    return [self alloc];
+}
+
 - (BOOL)scanUpToString:(NSString *)string intoString:(NSString **)destination {
     return [scanner scanUpToString:string intoString:destination];
+}
+
+- (void)setQuery:(NSString *)query {
+    NSString *stripped = [query stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    scanner = [NSScanner scannerWithString:stripped];
+    [scanner setCharactersToBeSkipped:nil];
 }
 
 - (BOOL)skipString:(NSString *)string {
@@ -53,10 +53,6 @@
 
 - (BOOL)skipWhiteSpace {
     return [scanner scanCharactersFromSet:[NSCharacterSet whitespaceCharacterSet] intoString:nil];
-}
-
-+ (id<IgorQueryScanner>)withQueryString:(NSString *)queryString {
-    return [[self alloc] initWithPattern:queryString];
 }
 
 @end

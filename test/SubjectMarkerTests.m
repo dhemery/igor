@@ -12,7 +12,7 @@
 }
 
 - (void)setUp {
-    igor = [Igor new];
+    igor = [Igor igor];
     root = [ViewFactory buttonWithAccessibilityHint:@"root"];
     middle = [ViewFactory buttonWithAccessibilityHint:@"middle"];
     leaf = [ViewFactory buttonWithAccessibilityHint:@"leaf"];

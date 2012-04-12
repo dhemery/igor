@@ -7,17 +7,19 @@
 
 @implementation PredicateParserTests {
     NSMutableArray *simpleMatchers;
+    id<IgorQueryScanner> scanner;
 }
 
 - (void)setUp {
     simpleMatchers = [NSMutableArray array];
+    scanner = [IgorQueryStringScanner scanner];
 }
 
 - (void)testParsesAPredicateBetweenBrackets {
     NSString *expression = @"pearlBailey='opreylady'";
     NSString *query = [NSString stringWithFormat:@"[%@]", expression];
-
-    [PredicateParser addPredicateMatcherFromQuery:[IgorQueryStringScanner withQueryString:query] toArray:simpleMatchers];
+    [scanner setQuery:query];
+    [PredicateParser parsePredicateMatcherFromQuery:scanner intoArray:simpleMatchers];
 
     assertThat(simpleMatchers, hasItem([IsPredicateMatcher forExpression:expression]));
     assertThat(simpleMatchers, hasCountOf(1));
@@ -26,8 +28,8 @@
 - (void)testIgnoresBracketWithinStringsInPredicate {
     NSString *expression = @"myProperty='bracket: ]'";
     NSString *query = [NSString stringWithFormat:@"[%@]", expression];
-
-    [PredicateParser addPredicateMatcherFromQuery:[IgorQueryStringScanner withQueryString:query] toArray:simpleMatchers];
+    [scanner setQuery:query];
+    [PredicateParser parsePredicateMatcherFromQuery:scanner intoArray:simpleMatchers];
 
     assertThat(simpleMatchers, hasItem([IsPredicateMatcher forExpression:expression]));
     assertThat(simpleMatchers, hasCountOf(1));
@@ -36,27 +38,27 @@
 - (void)testIgnoresConsecutiveBracketsWithinStringsInPredicate {
     NSString *expression = @"myProperty='brackets: ]]]]]'";
     NSString *query = [NSString stringWithFormat:@"[%@]", expression];
-
-    [PredicateParser addPredicateMatcherFromQuery:[IgorQueryStringScanner withQueryString:query] toArray:simpleMatchers];
+    [scanner setQuery:query];
+    [PredicateParser parsePredicateMatcherFromQuery:scanner intoArray:simpleMatchers];
 
     assertThat(simpleMatchers, hasItem([IsPredicateMatcher forExpression:expression]));
     assertThat(simpleMatchers, hasCountOf(1));
 }
 
 - (void)testDeliversNoMatcherIfNoLeftBracket {
-    id<IgorQueryScanner>  query = [IgorQueryStringScanner withQueryString:@"no left bracket"];
-    [PredicateParser addPredicateMatcherFromQuery:query toArray:simpleMatchers];
+    [scanner setQuery:@"no left bracket"];
+    [PredicateParser parsePredicateMatcherFromQuery:scanner intoArray:simpleMatchers];
     assertThat(simpleMatchers, is(empty()));
 }
 
 - (void)testThrowsIfNoPredicateBetweenBrackets {
-    id<IgorQueryScanner> query = [IgorQueryStringScanner withQueryString:@"[]"];
-    STAssertThrowsSpecificNamed([PredicateParser addPredicateMatcherFromQuery:query toArray:simpleMatchers], NSException, @"IgorParserException", @"Expected IgorParserException");
+    [scanner setQuery:@"[]"];
+    STAssertThrowsSpecificNamed([PredicateParser parsePredicateMatcherFromQuery:scanner intoArray:simpleMatchers], NSException, @"IgorParserException", @"Expected IgorParserException");
 }
 
 - (void)testThrowsIfNoRightBracket {
-    id<IgorQueryScanner> query = [IgorQueryStringScanner withQueryString:@"[royClark='pickin'"];
-    STAssertThrowsSpecificNamed([PredicateParser addPredicateMatcherFromQuery:query toArray:simpleMatchers], NSException, @"IgorParserException", @"Expected IgorParserException");
+    [scanner setQuery:@"[royClark='pickin'"];
+    STAssertThrowsSpecificNamed([PredicateParser parsePredicateMatcherFromQuery:scanner intoArray:simpleMatchers], NSException, @"IgorParserException", @"Expected IgorParserException");
 }
 
 @end

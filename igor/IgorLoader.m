@@ -5,7 +5,7 @@
 
 + (void)applicationDidBecomeActive:(NSNotification *)notification {
 #ifndef DEBUG
-    [SelectorEngineRegistry registerSelectorEngine:[Igor new] WithName:@"igor"];
+    [SelectorEngineRegistry registerSelectorEngine:[Igor defaultIgor] WithName:@"igor"];
     NSLog(@"Igor registered with Frank as selector engine named 'igor'");
 #endif
 }

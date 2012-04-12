@@ -5,7 +5,7 @@
 
 @interface IgorQueryParser : NSObject
 
-- (id <SubjectMatcher>)nextMatcher;
+- (id<SubjectMatcher>)parseMatcherFromQuery:(NSString *)query;
 
 + (IgorQueryParser *)withQueryScanner:(id <IgorQueryScanner>)scanner instanceChainParser:(id <InstanceChainParser>)instanceChainParser;
 

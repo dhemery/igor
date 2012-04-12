@@ -4,7 +4,7 @@
 
 @implementation PredicateParser
 
-+ (void)addPredicateMatcherFromQuery:(id<IgorQueryScanner>)query toArray:(NSMutableArray *)matchers {
++ (void)parsePredicateMatcherFromQuery:(id<IgorQueryScanner>)query intoArray:(NSMutableArray *)matchers {
     if (![query skipString:@"["]) {
         return;
     }

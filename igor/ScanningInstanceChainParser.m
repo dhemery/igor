@@ -35,5 +35,4 @@
     return [[self alloc] initWithQueryScanner:scanner];
 }
 
-
 @end
