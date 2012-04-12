@@ -4,7 +4,7 @@
 
 @implementation PredicateParser
 
-+ (void)parsePredicateMatcherFromQuery:(id<IgorQueryScanner>)query intoArray:(NSMutableArray *)matchers {
+- (void)parsePredicateMatcherFromQuery:(id<IgorQueryScanner>)query intoArray:(NSMutableArray *)matchers {
     if (![query skipString:@"["]) {
         return;
     }
@@ -15,7 +15,7 @@
     [matchers addObject:[PredicateMatcher withPredicateExpression:expression]];
 }
 
-+ (NSString *)parseExpressionFrom:(id<IgorQueryScanner>)query {
+- (NSString *)parseExpressionFrom:(id<IgorQueryScanner>)query {
     NSString *expression = @"";
     NSString *chunk;
     while([query scanUpToString:@"]" intoString:&chunk]) {
@@ -32,6 +32,10 @@
     }
     [query failBecause:@"Expected predicate"];
     return nil;
+}
+
++ (PredicateParser *)parser {
+    return [self new];
 }
 
 @end

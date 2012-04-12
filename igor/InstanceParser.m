@@ -9,7 +9,7 @@
 + (InstanceMatcher *)instanceMatcherFromQuery:(id<IgorQueryScanner>)query {
     NSMutableArray* simpleMatchers = [NSMutableArray array];
     [ClassParser addClassMatcherFromQuery:query toArray:simpleMatchers];
-    [PredicateParser parsePredicateMatcherFromQuery:query intoArray:simpleMatchers];
+    [[PredicateParser parser] parsePredicateMatcherFromQuery:query intoArray:simpleMatchers];
     return [InstanceMatcher withSimpleMatchers:simpleMatchers];
 }
 
