@@ -19,7 +19,9 @@
 }
 
 - (NSArray *)findViewsThatMatchQuery:(NSString *)query inTree:(UIView *)tree {
-    id <SubjectMatcher> matcher = [IgorQueryParser matcherFromQuery:[IgorQueryStringScanner withQuery:query]];
+    id <IgorQueryScanner> const scanner = [IgorQueryStringScanner withQueryString:query];
+    IgorQueryParser* parser = [IgorQueryParser withQueryScanner:scanner];
+    id <SubjectMatcher> matcher = [parser nextMatcher];
     return [self findViewsThatMatchMatcher:matcher inTree:tree];
 }
 

@@ -1,5 +1,6 @@
 #import "PredicateParser.h"
 #import "PredicateMatcher.h"
+#import "IgorQueryScanner.h"
 
 @implementation PredicateParser
 

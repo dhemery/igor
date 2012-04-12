@@ -16,27 +16,27 @@
 }
 
 - (void)testParsesAsteriskAsUniversalMatcher {
-    [ClassParser addClassMatcherFromQuery:[IgorQueryStringScanner withQuery:@"*"] toArray:simpleMatchers];
+    [ClassParser addClassMatcherFromQuery:[IgorQueryStringScanner withQueryString:@"*"] toArray:simpleMatchers];
 
     assertThat(simpleMatchers, hasItem(instanceOf([UniversalMatcher class])));
     assertThat(simpleMatchers, hasCountOf(1));
 }
 
 - (void)testParsesNameAsMemberOfClassMatcher {
-    [ClassParser addClassMatcherFromQuery:[IgorQueryStringScanner withQuery:@"UIButton"] toArray:simpleMatchers];
+    [ClassParser addClassMatcherFromQuery:[IgorQueryStringScanner withQueryString:@"UIButton"] toArray:simpleMatchers];
 
     assertThat(simpleMatchers, hasItem([IsMemberOfClassMatcher forExactClass:[UIButton class]]));
 }
 
 - (void)testParsesNameAsteriskAsKindOfClassMatcher {
-    [ClassParser addClassMatcherFromQuery:[IgorQueryStringScanner withQuery:@"UILabel*"] toArray:simpleMatchers];
+    [ClassParser addClassMatcherFromQuery:[IgorQueryStringScanner withQueryString:@"UILabel*"] toArray:simpleMatchers];
 
     assertThat(simpleMatchers, hasItem([IsKindOfClassMatcher forClass:[UILabel class]]));
     assertThat(simpleMatchers, hasCountOf(1));
 }
 
 - (void)testDeliversNoMatcherIfQueryDoesNotStartWithAClassPattern {
-    [ClassParser addClassMatcherFromQuery:[IgorQueryStringScanner withQuery:@"[property='value']"] toArray:simpleMatchers];
+    [ClassParser addClassMatcherFromQuery:[IgorQueryStringScanner withQueryString:@"[property='value']"] toArray:simpleMatchers];
 
     assertThat(simpleMatchers, is(empty()));
 }

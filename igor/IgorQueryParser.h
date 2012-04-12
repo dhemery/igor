@@ -2,8 +2,11 @@
 @protocol IgorQueryScanner;
 
 
-@interface IgorQueryParser
+@interface IgorQueryParser : NSObject
 
-+ (id <SubjectMatcher>)matcherFromQuery:(id<IgorQueryScanner>)query;
+- (IgorQueryParser *)initWithQueryScanner:(id <IgorQueryScanner>)scanner;
+
+- (id <SubjectMatcher>)nextMatcher;
++ (IgorQueryParser*) withQueryScanner:(id<IgorQueryScanner>)scanner;
 
 @end

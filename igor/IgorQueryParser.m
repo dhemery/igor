@@ -1,27 +1,22 @@
 #import "IgorQueryParser.h"
 #import "InstanceChainParser.h"
-#import "IgorQueryStringScanner.h"
+#import "IgorQueryScanner.h"
 #import "InstanceParser.h"
 #import "ComplexMatcher.h"
 #import "UniversalMatcher.h"
 
-@implementation IgorQueryParser
-
-+ (id <SubjectMatcher>)subjectMatcherFromMatcherChain:(NSArray *)matcherChain {
-    if ([matcherChain count] == 0) {
-        return [UniversalMatcher new];
-    }
-    if ([matcherChain count] == 1) {
-        return [matcherChain lastObject];
-    }
-    id<SubjectMatcher> matcher = [matcherChain objectAtIndex:0];
-    for (NSUInteger i = 1 ; i < [matcherChain count] ; i++) {
-        matcher = [ComplexMatcher withHead:matcher subject:[matcherChain objectAtIndex:i] ];
-    }
-    return matcher;
+@implementation IgorQueryParser {
+    id<IgorQueryScanner> query;
 }
 
-+ (id <SubjectMatcher>)matcherFromQuery:(id<IgorQueryScanner>)query {
+- (IgorQueryParser *)initWithQueryScanner:(id <IgorQueryScanner>)theQuery {
+    if (self = [super init]) {
+        query = theQuery;
+    }
+    return self;
+}
+
+- (id <SubjectMatcher>)nextMatcher {
     NSMutableArray* head = [NSMutableArray array];
     NSMutableArray* tail = [NSMutableArray array];
     id<SubjectMatcher> subject;
@@ -43,5 +38,24 @@
     [query failIfNotAtEnd];
     return [ComplexMatcher withHead:[self subjectMatcherFromMatcherChain:head] subject:subject tail:[self subjectMatcherFromMatcherChain:tail]];
 }
+
+- (id <SubjectMatcher>)subjectMatcherFromMatcherChain:(NSArray *)matcherChain {
+    if ([matcherChain count] == 0) {
+        return [UniversalMatcher new];
+    }
+    if ([matcherChain count] == 1) {
+        return [matcherChain lastObject];
+    }
+    id<SubjectMatcher> matcher = [matcherChain objectAtIndex:0];
+    for (NSUInteger i = 1 ; i < [matcherChain count] ; i++) {
+        matcher = [ComplexMatcher withHead:matcher subject:[matcherChain objectAtIndex:i] ];
+    }
+    return matcher;
+}
+
++ (IgorQueryParser *)withQueryScanner:(id <IgorQueryScanner>)scanner {
+    return [[self alloc] initWithQueryScanner:scanner];
+}
+
 
 @end

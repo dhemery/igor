@@ -2,6 +2,6 @@
 
 @interface IgorQueryStringScanner : NSObject <IgorQueryScanner>
 
-+ (id<IgorQueryScanner>)withQuery:(NSString *)query;
++ (id<IgorQueryScanner>)withQueryString:(NSString *)queryString;
 
 @end

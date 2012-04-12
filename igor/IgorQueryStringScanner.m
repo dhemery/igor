@@ -55,8 +55,8 @@
     return [scanner scanCharactersFromSet:[NSCharacterSet whitespaceCharacterSet] intoString:nil];
 }
 
-+ (IgorQueryStringScanner *)withQuery:(NSString *)query {
-    return [[self alloc] initWithPattern:query];
++ (IgorQueryStringScanner *)withQueryString:(NSString *)queryString {
+    return [[self alloc] initWithPattern:queryString];
 }
 
 @end
