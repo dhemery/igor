@@ -1,3 +1,5 @@
+#import "Igor.h"
+
 @interface IgorLoader
 @end
 
@@ -5,7 +7,7 @@
 
 + (void)applicationDidBecomeActive:(NSNotification *)notification {
 #ifndef DEBUG
-    [SelectorEngineRegistry registerSelectorEngine:[Igor defaultIgor] WithName:@"igor"];
+    [SelectorEngineRegistry registerSelectorEngine:[Igor igor] WithName:@"igor"];
     NSLog(@"Igor registered with Frank as selector engine named 'igor'");
 #endif
 }
