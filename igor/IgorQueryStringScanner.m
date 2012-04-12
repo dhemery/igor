@@ -20,7 +20,7 @@
     }
 }
 
-- (IgorQueryStringScanner *)initWithPattern:(NSString *)query {
+- (id<IgorQueryScanner>)initWithPattern:(NSString *)query {
     self = [super init];
     if (self) {
         NSString *stripped = [query stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
@@ -55,7 +55,7 @@
     return [scanner scanCharactersFromSet:[NSCharacterSet whitespaceCharacterSet] intoString:nil];
 }
 
-+ (IgorQueryStringScanner *)withQueryString:(NSString *)queryString {
++ (id<IgorQueryScanner>)withQueryString:(NSString *)queryString {
     return [[self alloc] initWithPattern:queryString];
 }
 

@@ -1,7 +1,5 @@
-@protocol IgorQueryScanner;
+@protocol InstanceChainParser <NSObject>
 
-@interface InstanceChainParser
-
-+ (void)collectInstanceMatchersFromQuery:(id<IgorQueryScanner>)query intoArray:(NSMutableArray*)array;
+- (void)collectInstanceMatchersIntoArray:(NSMutableArray*)array;
 
 @end

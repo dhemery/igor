@@ -3,6 +3,7 @@
 #import "SubjectMatcher.h"
 #import "TreeWalker.h"
 #import "IgorQueryStringScanner.h"
+#import "ScanningInstanceChainParser.h"
 
 @implementation Igor
 
@@ -19,8 +20,9 @@
 }
 
 - (NSArray *)findViewsThatMatchQuery:(NSString *)query inTree:(UIView *)tree {
-    id <IgorQueryScanner> const scanner = [IgorQueryStringScanner withQueryString:query];
-    IgorQueryParser* parser = [IgorQueryParser withQueryScanner:scanner];
+    id <IgorQueryScanner> scanner = [IgorQueryStringScanner withQueryString:query];
+    id<InstanceChainParser> instanceChainParser = [ScanningInstanceChainParser withQueryScanner:scanner];
+    IgorQueryParser* parser = [IgorQueryParser withQueryScanner:scanner instanceChainParser:instanceChainParser];
     id <SubjectMatcher> matcher = [parser nextMatcher];
     return [self findViewsThatMatchMatcher:matcher inTree:tree];
 }
