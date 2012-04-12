@@ -61,5 +61,4 @@
     return [[self alloc] initWithQueryScanner:scanner instanceParser:instanceParser instanceChainParser:instanceChainParser];
 }
 
-
 @end

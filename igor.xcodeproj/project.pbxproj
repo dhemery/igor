@@ -87,6 +87,7 @@
 		E621659DB794A5D612DCD48B /* InstanceParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD48A /* InstanceParser.h */; };
 		E621659DB794A5D612DCD48D /* PredicateParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD48C /* PredicateParser.h */; };
 		E621659DB794A5D612DCD48F /* IgorQueryParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD48E /* IgorQueryParser.h */; };
+		E621659DB794A5D612DCD491 /* BranchPatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD490 /* BranchPatternTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -202,6 +203,7 @@
 		E621659DB794A5D612DCD48A /* InstanceParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstanceParser.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD48C /* PredicateParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PredicateParser.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD48E /* IgorQueryParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IgorQueryParser.h; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD490 /* BranchPatternTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BranchPatternTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -396,6 +398,7 @@
 		2D695CE8147CD3CA00AF4115 /* acceptance */ = {
 			isa = PBXGroup;
 			children = (
+				E621659DB794A5D612DCD490 /* BranchPatternTests.m */,
 				2D695CCA147CD1D200AF4115 /* ClassPatternTests.m */,
 				2D695CD4147CD1D200AF4115 /* PredicatePatternTests.m */,
 				2D3E1F3D1509B98200D62300 /* RelationshipPatternTests.m */,
@@ -666,6 +669,7 @@
 				E621659DB794A5D612DCD46D /* ClassParserTests.m in Sources */,
 				E621659DB794A5D612DCD475 /* ComplexMatcherTests.m in Sources */,
 				E621659DB794A5D612DCD481 /* FalseMatcher.m in Sources */,
+				E621659DB794A5D612DCD491 /* BranchPatternTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
