@@ -1,12 +1,12 @@
-#import "ScanningPredicateParser.h"
+#import "PredicateParser.h"
 #import "PredicateMatcher.h"
 #import "IgorQueryScanner.h"
 
-@implementation ScanningPredicateParser {
+@implementation PredicateParser {
     id <IgorQueryScanner> scanner;
 }
 
-- (id<PredicateParser>)initWithScanner:(id <IgorQueryScanner>)theScanner {
+- (id<SimplePatternParser>)initWithScanner:(id <IgorQueryScanner>)theScanner {
     if (self = [super init]) {
         scanner = theScanner;
     }
@@ -32,7 +32,7 @@
     return nil;
 }
 
-- (void)parsePredicateMatcherIntoArray:(NSMutableArray *)matchers {
+- (void)parseSimpleMatcherIntoArray:(NSMutableArray *)matchers {
     if (![scanner skipString:@"["]) {
         return;
     }
@@ -43,7 +43,7 @@
     [matchers addObject:[PredicateMatcher matcherForPredicateExpression:expression]];
 }
 
-+ (id<PredicateParser>)parserWithScanner:(id<IgorQueryScanner>)scanner {
++ (id<SimplePatternParser>)parserWithScanner:(id<IgorQueryScanner>)scanner {
     return [[self alloc] initWithScanner:scanner];
 }
 

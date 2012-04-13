@@ -1,22 +1,22 @@
-#import "ScanningClassParser.h"
+#import "ClassParser.h"
 #import "KindOfClassMatcher.h"
 #import "MemberOfClassMatcher.h"
 #import "IgorQueryScanner.h"
 #import "UniversalMatcher.h"
 
 
-@implementation ScanningClassParser {
+@implementation ClassParser {
     id <IgorQueryScanner> scanner;
 }
 
-- (id<ClassParser>)initWithScanner:(id <IgorQueryScanner>)theScanner {
+- (id<SimplePatternParser>)initWithScanner:(id <IgorQueryScanner>)theScanner {
     if (self = [super init]) {
         scanner = theScanner;
     }
     return self;
 }
 
-- (void)parseClassMatcherIntoArray:(NSMutableArray*)array {
+- (void)parseSimpleMatcherIntoArray:(NSMutableArray*)array {
     if ([scanner skipString:@"*"]) {
         [array addObject:[UniversalMatcher new]];
         return;
@@ -35,7 +35,7 @@
     }
 }
 
-+ (id<ClassParser>)parserWithScanner:(id<IgorQueryScanner>)scanner {
++ (id<SimplePatternParser>)parserWithScanner:(id<IgorQueryScanner>)scanner {
     return [[self alloc] initWithScanner:scanner];
 }
 @end

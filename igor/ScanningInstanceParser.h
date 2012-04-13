@@ -1,9 +1,8 @@
 #import "InstanceParser.h"
-@protocol ClassParser;
-@protocol PredicateParser;
+@protocol SimplePatternParser;
 
 @interface ScanningInstanceParser : NSObject<InstanceParser>
 
-+ (id<InstanceParser>)parserWithClassParser:(id<ClassParser>)classParser predicateParser:(id<PredicateParser>)predicateParser;
++ (id<InstanceParser>)parserWithClassParser:(id<SimplePatternParser>)classParser predicateParser:(id<SimplePatternParser>)predicateParser;
 
 @end

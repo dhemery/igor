@@ -1,14 +1,13 @@
-#import "ScanningClassParser.h"
+#import "ClassParser.h"
 #import "InstanceMatcher.h"
 #import "ScanningInstanceParser.h"
-#import "ScanningPredicateParser.h"
 
 @implementation ScanningInstanceParser {
-    id<ClassParser> classParser;
-    id<PredicateParser> predicateParser;
+    id<SimplePatternParser> classParser;
+    id<SimplePatternParser> predicateParser;
 }
 
-- (id<InstanceParser>)initWithClassParser:(id<ClassParser>)theClassParser predicateParser:(id<PredicateParser>)thePredicateParser {
+- (id<InstanceParser>)initWithClassParser:(id<SimplePatternParser>)theClassParser predicateParser:(id<SimplePatternParser>)thePredicateParser {
     if (self = [super init]) {
         classParser = theClassParser;
         predicateParser = thePredicateParser;
@@ -18,12 +17,12 @@
 
 - (id<SubjectMatcher>)parseInstanceMatcher {
     NSMutableArray* simpleMatchers = [NSMutableArray array];
-    [classParser parseClassMatcherIntoArray:simpleMatchers];
-    [predicateParser parsePredicateMatcherIntoArray:simpleMatchers];
+    [classParser parseSimpleMatcherIntoArray:simpleMatchers];
+    [predicateParser parseSimpleMatcherIntoArray:simpleMatchers];
     return [InstanceMatcher matcherWithSimpleMatchers:simpleMatchers];
 }
 
-+ (id<InstanceParser>)parserWithClassParser:(id<ClassParser>)classParser predicateParser:(id<PredicateParser>)predicateParser {
++ (id<InstanceParser>)parserWithClassParser:(id<SimplePatternParser>)classParser predicateParser:(id<SimplePatternParser>)predicateParser {
     return [[self alloc] initWithClassParser:classParser predicateParser:predicateParser];
 }
 

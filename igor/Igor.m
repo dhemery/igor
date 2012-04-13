@@ -6,8 +6,8 @@
 #import "IgorQueryStringScanner.h"
 #import "ScanningInstanceChainParser.h"
 #import "ScanningInstanceParser.h"
-#import "ScanningClassParser.h"
-#import "ScanningPredicateParser.h"
+#import "ClassParser.h"
+#import "PredicateParser.h"
 
 @implementation Igor {
     id <IgorQueryParser> parser;
@@ -32,8 +32,8 @@
 
 + (Igor *)igor {
     id <IgorQueryScanner> scanner = [IgorQueryStringScanner new];
-    id <PredicateParser> predicateParser = [ScanningPredicateParser parserWithScanner:scanner];
-    id <ClassParser> classParser = [ScanningClassParser parserWithScanner:scanner];
+    id <SimplePatternParser> predicateParser = [PredicateParser parserWithScanner:scanner];
+    id <SimplePatternParser> classParser = [ClassParser parserWithScanner:scanner];
     id <InstanceParser> instanceParser = [ScanningInstanceParser parserWithClassParser:classParser predicateParser:predicateParser];
     id <InstanceChainParser> instanceChainParser = [ScanningInstanceChainParser parserWithScanner:scanner instanceParser:instanceParser];
     id <IgorQueryParser> parser = [ScanningIgorQueryParser parserWithScanner:scanner instanceParser:instanceParser instanceChainParser:instanceChainParser];

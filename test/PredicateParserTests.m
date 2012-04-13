@@ -1,27 +1,27 @@
-#import "ScanningPredicateParser.h"
+#import "PredicateParser.h"
 #import "IgorQueryStringScanner.h"
 #import "IsPredicateMatcher.h"
 
-@interface ScanningPredicateParserTests : SenTestCase
+@interface PredicateParserTests : SenTestCase
 @end
 
-@implementation ScanningPredicateParserTests {
+@implementation PredicateParserTests {
     NSMutableArray *simpleMatchers;
     id<IgorQueryScanner> scanner;
-    id<PredicateParser> parser;
+    id<SimplePatternParser> parser;
 }
 
 - (void)setUp {
     simpleMatchers = [NSMutableArray array];
     scanner = [IgorQueryStringScanner scanner];
-    parser = [ScanningPredicateParser parserWithScanner:scanner];
+    parser = [PredicateParser parserWithScanner:scanner];
 }
 
 - (void)testParsesAPredicateBetweenBrackets {
     NSString *expression = @"pearlBailey='opreylady'";
     [scanner setQuery:[NSString stringWithFormat:@"[%@]", expression]];
 
-    [parser parsePredicateMatcherIntoArray:simpleMatchers];
+    [parser parseSimpleMatcherIntoArray:simpleMatchers];
 
     assertThat(simpleMatchers, hasItem([IsPredicateMatcher forExpression:expression]));
     assertThat(simpleMatchers, hasCountOf(1));
@@ -31,7 +31,7 @@
     NSString *expression = @"myProperty='bracket: ]'";
     [scanner setQuery:[NSString stringWithFormat:@"[%@]", expression]];
 
-    [parser parsePredicateMatcherIntoArray:simpleMatchers];
+    [parser parseSimpleMatcherIntoArray:simpleMatchers];
 
     assertThat(simpleMatchers, hasItem([IsPredicateMatcher forExpression:expression]));
     assertThat(simpleMatchers, hasCountOf(1));
@@ -41,7 +41,7 @@
     NSString *expression = @"myProperty='brackets: ]]]]]'";
     [scanner setQuery:[NSString stringWithFormat:@"[%@]", expression]];
 
-    [parser parsePredicateMatcherIntoArray:simpleMatchers];
+    [parser parseSimpleMatcherIntoArray:simpleMatchers];
 
     assertThat(simpleMatchers, hasItem([IsPredicateMatcher forExpression:expression]));
     assertThat(simpleMatchers, hasCountOf(1));
@@ -50,7 +50,7 @@
 - (void)testDeliversNoMatcherIfNoLeftBracket {
     [scanner setQuery:@"no left bracket"];
 
-    [parser parsePredicateMatcherIntoArray:simpleMatchers];
+    [parser parseSimpleMatcherIntoArray:simpleMatchers];
 
     assertThat(simpleMatchers, is(empty()));
 }
@@ -58,13 +58,13 @@
 - (void)testThrowsIfNoPredicateBetweenBrackets {
     [scanner setQuery:@"[]"];
 
-    STAssertThrowsSpecificNamed([parser parsePredicateMatcherIntoArray:simpleMatchers], NSException, @"IgorParserException", @"Expected IgorParserException");
+    STAssertThrowsSpecificNamed([parser parseSimpleMatcherIntoArray:simpleMatchers], NSException, @"IgorParserException", @"Expected IgorParserException");
 }
 
 - (void)testThrowsIfNoRightBracket {
     [scanner setQuery:@"[royClark='pickin'"];
 
-    STAssertThrowsSpecificNamed([parser parsePredicateMatcherIntoArray:simpleMatchers], NSException, @"IgorParserException", @"Expected IgorParserException");
+    STAssertThrowsSpecificNamed([parser parseSimpleMatcherIntoArray:simpleMatchers], NSException, @"IgorParserException", @"Expected IgorParserException");
 }
 
 @end

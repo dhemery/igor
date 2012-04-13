@@ -8,8 +8,8 @@
 #import "ComplexMatcher.h"
 #import "ScanningInstanceChainParser.h"
 #import "ScanningInstanceParser.h"
-#import "ScanningPredicateParser.h"
-#import "ScanningClassParser.h"
+#import "PredicateParser.h"
+#import "ClassParser.h"
 
 @interface ScanningIgorQueryParserTests : SenTestCase
 @end
@@ -20,8 +20,8 @@
 
 - (void)setUp {
     id<IgorQueryScanner> scanner = [IgorQueryStringScanner scanner];
-    id <ClassParser> classParser = [ScanningClassParser parserWithScanner:scanner];
-    id <PredicateParser> predicateParser = [ScanningPredicateParser parserWithScanner:scanner];
+    id <SimplePatternParser> classParser = [ClassParser parserWithScanner:scanner];
+    id <SimplePatternParser> predicateParser = [PredicateParser parserWithScanner:scanner];
     id <InstanceParser> instanceParser = [ScanningInstanceParser parserWithClassParser:classParser predicateParser:predicateParser];
     id <InstanceChainParser> instanceChainParser = [ScanningInstanceChainParser parserWithScanner:scanner instanceParser:instanceParser];
     parser = [ScanningIgorQueryParser parserWithScanner:scanner instanceParser:instanceParser instanceChainParser:instanceChainParser];

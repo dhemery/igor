@@ -1,4 +1,6 @@
+#ifndef DEBUG
 #import "Igor.h"
+#endif
 
 @interface IgorLoader
 @end
