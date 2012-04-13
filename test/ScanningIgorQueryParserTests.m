@@ -20,9 +20,8 @@
 
 - (void)setUp {
     id<IgorQueryScanner> scanner = [IgorQueryStringScanner scanner];
-    id <SimplePatternParser> classParser = [ClassParser parserWithScanner:scanner];
-    id <SimplePatternParser> predicateParser = [PredicateParser parserWithScanner:scanner];
-    id <InstanceParser> instanceParser = [ScanningInstanceParser parserWithClassParser:classParser predicateParser:predicateParser];
+    NSArray* simplePatternParsers = [NSArray arrayWithObjects:[ClassParser parserWithScanner:scanner], [PredicateParser parserWithScanner:scanner], nil];
+    id <InstanceParser> instanceParser = [ScanningInstanceParser parserWithSimplePatternParsers:simplePatternParsers];
     id <InstanceChainParser> instanceChainParser = [ScanningInstanceChainParser parserWithScanner:scanner instanceParser:instanceParser];
     parser = [ScanningIgorQueryParser parserWithScanner:scanner instanceParser:instanceParser instanceChainParser:instanceChainParser];
 }

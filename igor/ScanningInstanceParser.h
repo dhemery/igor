@@ -3,6 +3,6 @@
 
 @interface ScanningInstanceParser : NSObject<InstanceParser>
 
-+ (id<InstanceParser>)parserWithClassParser:(id<SimplePatternParser>)classParser predicateParser:(id<SimplePatternParser>)predicateParser;
++ (id<InstanceParser>)parserWithSimplePatternParsers:(NSArray*)simplePatternParsers;
 
 @end

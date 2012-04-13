@@ -3,27 +3,35 @@
 #import "ScanningInstanceParser.h"
 
 @implementation ScanningInstanceParser {
-    id<SimplePatternParser> classParser;
-    id<SimplePatternParser> predicateParser;
+    NSArray*simplePatternParsers;
 }
 
-- (id<InstanceParser>)initWithClassParser:(id<SimplePatternParser>)theClassParser predicateParser:(id<SimplePatternParser>)thePredicateParser {
+- (id<InstanceParser>)initWithSimplePatternParsers:(NSArray*)theSimplePatternParsers {
     if (self = [super init]) {
-        classParser = theClassParser;
-        predicateParser = thePredicateParser;
+        simplePatternParsers = [NSArray arrayWithArray:theSimplePatternParsers];
     }
     return self;
 }
 
+- (void)parseSimpleMatcherIntoArray:(NSMutableArray *)array {
+    for (id<SimplePatternParser> parser in simplePatternParsers) {
+        [parser parseSimpleMatcherIntoArray:array];
+    }
+}
+
 - (id<SubjectMatcher>)parseInstanceMatcher {
     NSMutableArray* simpleMatchers = [NSMutableArray array];
-    [classParser parseSimpleMatcherIntoArray:simpleMatchers];
-    [predicateParser parseSimpleMatcherIntoArray:simpleMatchers];
+    BOOL addedSomeMatchers;
+    do {
+        NSUInteger originalCount = [simpleMatchers count];
+        [self parseSimpleMatcherIntoArray:simpleMatchers];
+        addedSomeMatchers = ([simpleMatchers count] > originalCount);
+    } while(addedSomeMatchers);
     return [InstanceMatcher matcherWithSimpleMatchers:simpleMatchers];
 }
 
-+ (id<InstanceParser>)parserWithClassParser:(id<SimplePatternParser>)classParser predicateParser:(id<SimplePatternParser>)predicateParser {
-    return [[self alloc] initWithClassParser:classParser predicateParser:predicateParser];
++ (id<InstanceParser>)parserWithSimplePatternParsers:(NSArray *)simplePatternParsers {
+    return [[self alloc] initWithSimplePatternParsers:simplePatternParsers];
 }
 
 @end

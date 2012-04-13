@@ -32,9 +32,8 @@
 
 + (Igor *)igor {
     id <IgorQueryScanner> scanner = [IgorQueryStringScanner new];
-    id <SimplePatternParser> predicateParser = [PredicateParser parserWithScanner:scanner];
-    id <SimplePatternParser> classParser = [ClassParser parserWithScanner:scanner];
-    id <InstanceParser> instanceParser = [ScanningInstanceParser parserWithClassParser:classParser predicateParser:predicateParser];
+    NSArray* simplePatternParsers = [NSArray arrayWithObjects:[ClassParser parserWithScanner:scanner], [PredicateParser parserWithScanner:scanner], nil];
+    id <InstanceParser> instanceParser = [ScanningInstanceParser parserWithSimplePatternParsers:simplePatternParsers];
     id <InstanceChainParser> instanceChainParser = [ScanningInstanceChainParser parserWithScanner:scanner instanceParser:instanceParser];
     id <IgorQueryParser> parser = [ScanningIgorQueryParser parserWithScanner:scanner instanceParser:instanceParser instanceChainParser:instanceChainParser];
     return [self igorWithParser:parser];
