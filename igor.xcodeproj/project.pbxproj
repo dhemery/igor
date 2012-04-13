@@ -87,10 +87,11 @@
 		E621659DB794A5D612DCD48B /* SubjectPatternParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD48A /* SubjectPatternParser.h */; };
 		E621659DB794A5D612DCD48F /* IgorQueryParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD48E /* IgorQueryParser.h */; };
 		E621659DB794A5D612DCD491 /* BranchPatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD490 /* BranchPatternTests.m */; };
-		E621659DB794A5D612DCD495 /* ScanningInstanceParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD494 /* ScanningInstanceParserTests.m */; };
-		E621659DB794A5D612DCD498 /* ScanningInstanceChainParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD497 /* ScanningInstanceChainParserTests.m */; };
+		E621659DB794A5D612DCD495 /* InstanceParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD494 /* InstanceParserTests.m */; };
 		E621659DB794A5D612DCD49A /* BranchParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD499 /* BranchParser.m */; };
 		E621659DB794A5D612DCD49C /* BranchParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD49B /* BranchParser.h */; };
+		E621659DB794A5D612DCD49E /* FakeSimpleParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD49D /* FakeSimpleParser.m */; };
+		E621659DB794A5D612DCD4A0 /* FakeSimpleParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD49F /* FakeSimpleParser.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -206,11 +207,11 @@
 		E621659DB794A5D612DCD48A /* SubjectPatternParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubjectPatternParser.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD48E /* IgorQueryParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IgorQueryParser.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD490 /* BranchPatternTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BranchPatternTests.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD494 /* ScanningInstanceParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanningInstanceParserTests.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD496 /* .DS_Store */ = {isa = PBXFileReference; lastKnownFileType = file.ds_store; path = .DS_Store; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD497 /* ScanningInstanceChainParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanningInstanceChainParserTests.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD494 /* InstanceParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstanceParserTests.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD499 /* BranchParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BranchParser.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD49B /* BranchParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BranchParser.h; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD49D /* FakeSimpleParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeSimpleParser.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD49F /* FakeSimpleParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSimpleParser.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +262,8 @@
 		2D436E241518FF2B00071950 /* fixtures */ = {
 			isa = PBXGroup;
 			children = (
+				E621659DB794A5D612DCD49F /* FakeSimpleParser.h */,
+				E621659DB794A5D612DCD49D /* FakeSimpleParser.m */,
 				E621659DB794A5D612DCD482 /* FalseMatcher.h */,
 				E621659DB794A5D612DCD480 /* FalseMatcher.m */,
 				E621659DB794A5D612DCD468 /* MatchesViewInTree.m */,
@@ -386,9 +389,7 @@
 		2D695CE6147CD35100AF4115 /* parser */ = {
 			isa = PBXGroup;
 			children = (
-				E621659DB794A5D612DCD497 /* ScanningInstanceChainParserTests.m */,
-				E621659DB794A5D612DCD496 /* .DS_Store */,
-				E621659DB794A5D612DCD494 /* ScanningInstanceParserTests.m */,
+				E621659DB794A5D612DCD494 /* InstanceParserTests.m */,
 				E621659DB794A5D612DCD46C /* ClassParserTests.m */,
 				2D695CCD147CD1D200AF4115 /* ScanningIgorQueryParserTests.m */,
 				2D695CD3147CD1D200AF4115 /* PredicateParserTests.m */,
@@ -517,6 +518,7 @@
 				E621659DB794A5D612DCD467 /* MatchesView.h in Headers */,
 				E621659DB794A5D612DCD46B /* MatchesViewInTree.h in Headers */,
 				E621659DB794A5D612DCD483 /* FalseMatcher.h in Headers */,
+				E621659DB794A5D612DCD4A0 /* FakeSimpleParser.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -681,8 +683,8 @@
 				E621659DB794A5D612DCD475 /* ComplexMatcherTests.m in Sources */,
 				E621659DB794A5D612DCD481 /* FalseMatcher.m in Sources */,
 				E621659DB794A5D612DCD491 /* BranchPatternTests.m in Sources */,
-				E621659DB794A5D612DCD495 /* ScanningInstanceParserTests.m in Sources */,
-				E621659DB794A5D612DCD498 /* ScanningInstanceChainParserTests.m in Sources */,
+				E621659DB794A5D612DCD495 /* InstanceParserTests.m in Sources */,
+				E621659DB794A5D612DCD49E /* FakeSimpleParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

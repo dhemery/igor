@@ -5,7 +5,7 @@
 @synthesize simpleMatchers;
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"[Instance(%@)]", [self.simpleMatchers componentsJoinedByString:@","]];
+    return [NSString stringWithFormat:@"[Instance:%@]", [self.simpleMatchers componentsJoinedByString:@","]];
 }
 
 - (InstanceMatcher *)initWithSimpleMatchers:(NSArray *)matchers {
