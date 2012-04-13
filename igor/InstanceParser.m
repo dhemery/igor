@@ -1,12 +1,12 @@
 #import "ClassParser.h"
 #import "InstanceMatcher.h"
-#import "ScanningInstanceParser.h"
+#import "InstanceParser.h"
 
-@implementation ScanningInstanceParser {
+@implementation InstanceParser {
     NSArray*simplePatternParsers;
 }
 
-- (id<InstanceParser>)initWithSimplePatternParsers:(NSArray*)theSimplePatternParsers {
+- (id<SubjectPatternParser>)initWithSimplePatternParsers:(NSArray*)theSimplePatternParsers {
     if (self = [super init]) {
         simplePatternParsers = [NSArray arrayWithArray:theSimplePatternParsers];
     }
@@ -19,7 +19,7 @@
     }
 }
 
-- (id<SubjectMatcher>)parseInstanceMatcher {
+- (id<SubjectMatcher>)parseSubjectMatcher {
     NSMutableArray* simpleMatchers = [NSMutableArray array];
     BOOL addedSomeMatchers;
     do {
@@ -30,7 +30,7 @@
     return [InstanceMatcher matcherWithSimpleMatchers:simpleMatchers];
 }
 
-+ (id<InstanceParser>)parserWithSimplePatternParsers:(NSArray *)simplePatternParsers {
++ (id<SubjectPatternParser>)parserWithSimplePatternParsers:(NSArray *)simplePatternParsers {
     return [[self alloc] initWithSimplePatternParsers:simplePatternParsers];
 }
 

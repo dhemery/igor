@@ -1,4 +1,4 @@
-#import "ScanningInstanceParser.h"
+#import "InstanceParser.h"
 
 @interface ScanningInstanceParserTests : SenTestCase
 @end

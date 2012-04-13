@@ -7,7 +7,7 @@
 #import "UniversalMatcher.h"
 #import "ComplexMatcher.h"
 #import "ScanningInstanceChainParser.h"
-#import "ScanningInstanceParser.h"
+#import "InstanceParser.h"
 #import "PredicateParser.h"
 #import "ClassParser.h"
 
@@ -21,7 +21,7 @@
 - (void)setUp {
     id<IgorQueryScanner> scanner = [IgorQueryStringScanner scanner];
     NSArray* simplePatternParsers = [NSArray arrayWithObjects:[ClassParser parserWithScanner:scanner], [PredicateParser parserWithScanner:scanner], nil];
-    id <InstanceParser> instanceParser = [ScanningInstanceParser parserWithSimplePatternParsers:simplePatternParsers];
+    id <SubjectPatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simplePatternParsers];
     id <InstanceChainParser> instanceChainParser = [ScanningInstanceChainParser parserWithScanner:scanner instanceParser:instanceParser];
     parser = [ScanningIgorQueryParser parserWithScanner:scanner instanceParser:instanceParser instanceChainParser:instanceChainParser];
 }

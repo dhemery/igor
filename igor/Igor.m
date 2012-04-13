@@ -5,7 +5,7 @@
 #import "IgorQueryScanner.h"
 #import "IgorQueryStringScanner.h"
 #import "ScanningInstanceChainParser.h"
-#import "ScanningInstanceParser.h"
+#import "InstanceParser.h"
 #import "ClassParser.h"
 #import "PredicateParser.h"
 
@@ -33,7 +33,7 @@
 + (Igor *)igor {
     id <IgorQueryScanner> scanner = [IgorQueryStringScanner new];
     NSArray* simplePatternParsers = [NSArray arrayWithObjects:[ClassParser parserWithScanner:scanner], [PredicateParser parserWithScanner:scanner], nil];
-    id <InstanceParser> instanceParser = [ScanningInstanceParser parserWithSimplePatternParsers:simplePatternParsers];
+    id <SubjectPatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simplePatternParsers];
     id <InstanceChainParser> instanceChainParser = [ScanningInstanceChainParser parserWithScanner:scanner instanceParser:instanceParser];
     id <IgorQueryParser> parser = [ScanningIgorQueryParser parserWithScanner:scanner instanceParser:instanceParser instanceChainParser:instanceChainParser];
     return [self igorWithParser:parser];

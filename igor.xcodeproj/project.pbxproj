@@ -45,8 +45,8 @@
 		2D9CC80C15185B6500B51A8D /* TreeWalker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D9CC80A15185B6500B51A8D /* TreeWalker.m */; };
 		2DCE893615193E8900B975EE /* ScanningInstanceChainParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DCE893415193E8900B975EE /* ScanningInstanceChainParser.h */; };
 		2DCE893715193E8900B975EE /* ScanningInstanceChainParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE893515193E8900B975EE /* ScanningInstanceChainParser.m */; };
-		2DCE893B15193F6100B975EE /* ScanningInstanceParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DCE893915193F6100B975EE /* ScanningInstanceParser.h */; };
-		2DCE893C15193F6100B975EE /* ScanningInstanceParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE893A15193F6100B975EE /* ScanningInstanceParser.m */; };
+		2DCE893B15193F6100B975EE /* InstanceParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DCE893915193F6100B975EE /* InstanceParser.h */; };
+		2DCE893C15193F6100B975EE /* InstanceParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE893A15193F6100B975EE /* InstanceParser.m */; };
 		2DCF9764147ED3FD003B0F38 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD439 /* UIKit.framework */; };
 		2DCF9765147ED3FD003B0F38 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD425 /* Foundation.framework */; };
 		2DCF9767147ED3FD003B0F38 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCF9766147ED3FD003B0F38 /* CoreGraphics.framework */; };
@@ -84,7 +84,7 @@
 		E621659DB794A5D612DCD485 /* IgorQueryScanner.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD484 /* IgorQueryScanner.h */; };
 		E621659DB794A5D612DCD487 /* InstanceChainParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD486 /* InstanceChainParser.h */; };
 		E621659DB794A5D612DCD489 /* SimplePatternParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD488 /* SimplePatternParser.h */; };
-		E621659DB794A5D612DCD48B /* InstanceParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD48A /* InstanceParser.h */; };
+		E621659DB794A5D612DCD48B /* SubjectPatternParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD48A /* SubjectPatternParser.h */; };
 		E621659DB794A5D612DCD48F /* IgorQueryParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD48E /* IgorQueryParser.h */; };
 		E621659DB794A5D612DCD491 /* BranchPatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD490 /* BranchPatternTests.m */; };
 		E621659DB794A5D612DCD495 /* ScanningInstanceParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD494 /* ScanningInstanceParserTests.m */; };
@@ -156,8 +156,8 @@
 		2D9CC80A15185B6500B51A8D /* TreeWalker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreeWalker.m; sourceTree = "<group>"; };
 		2DCE893415193E8900B975EE /* ScanningInstanceChainParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanningInstanceChainParser.h; sourceTree = "<group>"; };
 		2DCE893515193E8900B975EE /* ScanningInstanceChainParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanningInstanceChainParser.m; sourceTree = "<group>"; };
-		2DCE893915193F6100B975EE /* ScanningInstanceParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanningInstanceParser.h; sourceTree = "<group>"; };
-		2DCE893A15193F6100B975EE /* ScanningInstanceParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanningInstanceParser.m; sourceTree = "<group>"; };
+		2DCE893915193F6100B975EE /* InstanceParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstanceParser.h; sourceTree = "<group>"; };
+		2DCE893A15193F6100B975EE /* InstanceParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstanceParser.m; sourceTree = "<group>"; };
 		2DCF9762147ED3FD003B0F38 /* vigor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vigor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DCF9766147ED3FD003B0F38 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2DCF976A147ED3FD003B0F38 /* vigor-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "vigor-Info.plist"; sourceTree = "<group>"; };
@@ -201,7 +201,7 @@
 		E621659DB794A5D612DCD484 /* IgorQueryScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IgorQueryScanner.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD486 /* InstanceChainParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstanceChainParser.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD488 /* SimplePatternParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimplePatternParser.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD48A /* InstanceParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstanceParser.h; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD48A /* SubjectPatternParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubjectPatternParser.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD48E /* IgorQueryParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IgorQueryParser.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD490 /* BranchPatternTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BranchPatternTests.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD494 /* ScanningInstanceParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanningInstanceParserTests.m; sourceTree = "<group>"; };
@@ -335,7 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				E621659DB794A5D612DCD48E /* IgorQueryParser.h */,
-				E621659DB794A5D612DCD48A /* InstanceParser.h */,
+				E621659DB794A5D612DCD48A /* SubjectPatternParser.h */,
 				E621659DB794A5D612DCD488 /* SimplePatternParser.h */,
 				E621659DB794A5D612DCD486 /* InstanceChainParser.h */,
 				E621659DB794A5D612DCD484 /* IgorQueryScanner.h */,
@@ -347,8 +347,8 @@
 				2D695C93147CD1BA00AF4115 /* ScanningIgorQueryParser.m */,
 				2D695C94147CD1BA00AF4115 /* IgorParserException.h */,
 				2D695C95147CD1BA00AF4115 /* IgorParserException.m */,
-				2DCE893915193F6100B975EE /* ScanningInstanceParser.h */,
-				2DCE893A15193F6100B975EE /* ScanningInstanceParser.m */,
+				2DCE893915193F6100B975EE /* InstanceParser.h */,
+				2DCE893A15193F6100B975EE /* InstanceParser.m */,
 				2D695CA3147CD1BA00AF4115 /* PredicateParser.h */,
 				2D695CA4147CD1BA00AF4115 /* PredicateParser.m */,
 				2DCE893415193E8900B975EE /* ScanningInstanceChainParser.h */,
@@ -523,7 +523,7 @@
 				2D496EA51486A513007E1FDE /* PredicateMatcher.h in Headers */,
 				2D9CC80B15185B6500B51A8D /* TreeWalker.h in Headers */,
 				2DCE893615193E8900B975EE /* ScanningInstanceChainParser.h in Headers */,
-				2DCE893B15193F6100B975EE /* ScanningInstanceParser.h in Headers */,
+				2DCE893B15193F6100B975EE /* InstanceParser.h in Headers */,
 				E621659DB794A5D612DCD445 /* IgorQueryStringScanner.h in Headers */,
 				E621659DB794A5D612DCD449 /* SubjectMatcher.h in Headers */,
 				E621659DB794A5D612DCD45D /* UniversalMatcher.h in Headers */,
@@ -531,7 +531,7 @@
 				E621659DB794A5D612DCD485 /* IgorQueryScanner.h in Headers */,
 				E621659DB794A5D612DCD487 /* InstanceChainParser.h in Headers */,
 				E621659DB794A5D612DCD489 /* SimplePatternParser.h in Headers */,
-				E621659DB794A5D612DCD48B /* InstanceParser.h in Headers */,
+				E621659DB794A5D612DCD48B /* SubjectPatternParser.h in Headers */,
 				E621659DB794A5D612DCD48F /* IgorQueryParser.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -706,7 +706,7 @@
 				2D496EA61486A513007E1FDE /* PredicateMatcher.m in Sources */,
 				2D9CC80C15185B6500B51A8D /* TreeWalker.m in Sources */,
 				2DCE893715193E8900B975EE /* ScanningInstanceChainParser.m in Sources */,
-				2DCE893C15193F6100B975EE /* ScanningInstanceParser.m in Sources */,
+				2DCE893C15193F6100B975EE /* InstanceParser.m in Sources */,
 				E621659DB794A5D612DCD443 /* IgorQueryStringScanner.m in Sources */,
 				E621659DB794A5D612DCD45F /* UniversalMatcher.m in Sources */,
 				E621659DB794A5D612DCD479 /* ComplexMatcher.m in Sources */,

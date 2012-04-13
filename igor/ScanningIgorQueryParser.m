@@ -1,16 +1,16 @@
 #import "ScanningIgorQueryParser.h"
 #import "IgorQueryScanner.h"
-#import "ScanningInstanceParser.h"
+#import "InstanceParser.h"
 #import "ComplexMatcher.h"
 #import "UniversalMatcher.h"
 
 @implementation ScanningIgorQueryParser {
     id<IgorQueryScanner> scanner;
     id<InstanceChainParser> instanceChainParser;
-    id<InstanceParser> instanceParser;
+    id<SubjectPatternParser> instanceParser;
 }
 
-- (id<IgorQueryParser>)initWithQueryScanner:(id <IgorQueryScanner>)theScanner instanceParser:(id<InstanceParser>)theInstanceParser instanceChainParser:(id<InstanceChainParser>)theInstanceChainParser {
+- (id<IgorQueryParser>)initWithQueryScanner:(id <IgorQueryScanner>)theScanner instanceParser:(id<SubjectPatternParser>)theInstanceParser instanceChainParser:(id<InstanceChainParser>)theInstanceChainParser {
     if (self = [super init]) {
         scanner = theScanner;
         instanceParser = theInstanceParser;
@@ -41,7 +41,7 @@
 
     [instanceChainParser parseInstanceMatchersIntoArray:head];
     if ([scanner skipString:@"$"]) {
-        subject = [instanceParser parseInstanceMatcher];
+        subject = [instanceParser parseSubjectMatcher];
         NSLog(@"Found subject marker. Parsed subject %@", subject);
     } else {
         subject = [head lastObject];
@@ -59,7 +59,7 @@
     return matcher;
 }
 
-+ (id<IgorQueryParser>)parserWithScanner:(id <IgorQueryScanner>)scanner instanceParser:(id<InstanceParser>)instanceParser instanceChainParser:(id <InstanceChainParser>)instanceChainParser {
++ (id<IgorQueryParser>)parserWithScanner:(id <IgorQueryScanner>)scanner instanceParser:(id<SubjectPatternParser>)instanceParser instanceChainParser:(id <InstanceChainParser>)instanceChainParser {
     return [[self alloc] initWithQueryScanner:scanner instanceParser:instanceParser instanceChainParser:instanceChainParser];
 }
 

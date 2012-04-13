@@ -1,7 +1,7 @@
-@protocol SubjectMatcher;
+#import "SubjectPatternParser.h"
 
-@protocol InstanceParser <NSObject>
+@interface InstanceParser : NSObject<SubjectPatternParser>
 
-- (id<SubjectMatcher>)parseInstanceMatcher;
++ (id<SubjectPatternParser>)parserWithSimplePatternParsers:(NSArray*)simplePatternParsers;
 
 @end
