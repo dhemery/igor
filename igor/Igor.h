@@ -1,6 +1,6 @@
 #import "SelectorEngineRegistry.h"
 
-@protocol InstanceChainParser;
+@protocol SubjectChainParser;
 @protocol IgorQueryScanner;
 @protocol IgorQueryParser;
 

@@ -2,6 +2,6 @@
 
 @protocol SimplePatternParser <NSObject>
 
-- (void)parseSimpleMatcherIntoArray:(NSMutableArray *)array;
+- (BOOL)parseSimpleMatcherIntoArray:(NSMutableArray *)array;
 
 @end

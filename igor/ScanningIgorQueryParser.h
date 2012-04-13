@@ -1,12 +1,12 @@
 @protocol IgorQueryScanner;
 @protocol SubjectPatternParser;
 
-#import "InstanceChainParser.h"
+#import "SubjectChainParser.h"
 #import "IgorQueryParser.h"
 
 
 @interface ScanningIgorQueryParser : NSObject <IgorQueryParser>
 
-+ (id <IgorQueryParser>)parserWithScanner:(id <IgorQueryScanner>)scanner instanceParser:(id <SubjectPatternParser>)instanceParser instanceChainParser:(id <InstanceChainParser>)instanceChainParser;
++ (id <IgorQueryParser>)parserWithScanner:(id <IgorQueryScanner>)scanner instanceChainParser:(id <SubjectChainParser>)instanceChainParser;
 
 @end

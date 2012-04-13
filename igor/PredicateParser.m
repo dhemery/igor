@@ -32,15 +32,16 @@
     return nil;
 }
 
-- (void)parseSimpleMatcherIntoArray:(NSMutableArray *)matchers {
+- (BOOL)parseSimpleMatcherIntoArray:(NSMutableArray *)matchers {
     if (![scanner skipString:@"["]) {
-        return;
+        return NO;
     }
     NSString *expression = [self parseExpression];
     if (![scanner skipString:@"]"]) {
         [scanner failBecause:@"Expected ]"];
     }
     [matchers addObject:[PredicateMatcher matcherForPredicateExpression:expression]];
+    return YES;
 }
 
 + (id <SimplePatternParser>)parserWithScanner:(id <IgorQueryScanner>)scanner {

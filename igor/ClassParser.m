@@ -16,23 +16,22 @@
     return self;
 }
 
-- (void)parseSimpleMatcherIntoArray:(NSMutableArray *)array {
+- (BOOL)parseSimpleMatcherIntoArray:(NSMutableArray *)simpleMatchers {
     if ([scanner skipString:@"*"]) {
-        [array addObject:[UniversalMatcher new]];
-        return;
+        [simpleMatchers addObject:[UniversalMatcher new]];
+        return YES;
     }
 
     NSString *className;
-    if (![scanner scanNameIntoString:&className]) {
-        return;
-    }
+    if (![scanner scanNameIntoString:&className]) return NO;
 
     Class targetClass = NSClassFromString(className);
     if ([scanner skipString:@"*"]) {
-        [array addObject:[KindOfClassMatcher matcherForBaseClass:targetClass]];
+        [simpleMatchers addObject:[KindOfClassMatcher matcherForBaseClass:targetClass]];
     } else {
-        [array addObject:[MemberOfClassMatcher matcherForExactClass:targetClass]];
+        [simpleMatchers addObject:[MemberOfClassMatcher matcherForExactClass:targetClass]];
     }
+    return YES;
 }
 
 + (id <SimplePatternParser>)parserWithScanner:(id <IgorQueryScanner>)scanner {

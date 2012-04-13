@@ -13,21 +13,25 @@
     return self;
 }
 
-- (void)parseSimpleMatcherIntoArray:(NSMutableArray *)array {
+- (BOOL)parseSimpleMatcherIntoArray:(NSMutableArray *)array {
     for (id <SimplePatternParser> parser in simplePatternParsers) {
-        [parser parseSimpleMatcherIntoArray:array];
+        if ([parser parseSimpleMatcherIntoArray:array]) {
+            return YES;
+        }
     }
+    return NO;
 }
 
-- (id <SubjectMatcher>)parseSubjectMatcher {
+- (BOOL)parseSubjectMatcherIntoArray:(NSMutableArray *)subjectMatchers {
     NSMutableArray *simpleMatchers = [NSMutableArray array];
-    BOOL addedSomeMatchers;
-    do {
-        NSUInteger originalCount = [simpleMatchers count];
-        [self parseSimpleMatcherIntoArray:simpleMatchers];
-        addedSomeMatchers = ([simpleMatchers count] > originalCount);
-    } while (addedSomeMatchers);
-    return [InstanceMatcher matcherWithSimpleMatchers:simpleMatchers];
+    BOOL foundSimpleMatchers = NO;
+    while([self parseSimpleMatcherIntoArray:simpleMatchers]) {
+        foundSimpleMatchers = YES;
+    }
+    if (foundSimpleMatchers) {
+        [subjectMatchers addObject:[InstanceMatcher matcherWithSimpleMatchers:simpleMatchers]];
+    }
+    return foundSimpleMatchers;
 }
 
 + (id <SubjectPatternParser>)parserWithSimplePatternParsers:(NSArray *)simplePatternParsers {

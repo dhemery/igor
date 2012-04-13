@@ -4,10 +4,11 @@
 #import "TreeWalker.h"
 #import "IgorQueryScanner.h"
 #import "IgorQueryStringScanner.h"
-#import "ScanningInstanceChainParser.h"
+#import "RelationshipParser.h"
 #import "InstanceParser.h"
 #import "ClassParser.h"
 #import "PredicateParser.h"
+#import "BranchParser.h"
 
 @implementation Igor {
     id <IgorQueryParser> parser;
@@ -32,10 +33,19 @@
 
 + (Igor *)igor {
     id <IgorQueryScanner> scanner = [IgorQueryStringScanner new];
-    NSArray *simplePatternParsers = [NSArray arrayWithObjects:[ClassParser parserWithScanner:scanner], [PredicateParser parserWithScanner:scanner], nil];
-    NSArray *subjectPatternParsers = [NSArray arrayWithObject:[InstanceParser parserWithSimplePatternParsers:simplePatternParsers]];
-    id <InstanceChainParser> instanceChainParser = [ScanningInstanceChainParser parserWithScanner:scanner subjectPatternParsers:subjectPatternParsers];
-    id <IgorQueryParser> parser = [ScanningIgorQueryParser parserWithScanner:scanner instanceParser:[subjectPatternParsers lastObject] instanceChainParser:instanceChainParser];
+    id <SimplePatternParser> classParser = [ClassParser parserWithScanner:scanner];
+    id <SimplePatternParser> predicateParser = [PredicateParser parserWithScanner:scanner];
+    NSArray *simplePatternParsers = [NSArray arrayWithObjects:classParser, predicateParser, nil];
+
+    id <SubjectPatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simplePatternParsers];
+    id <SubjectChainParser> instanceChainParser = [RelationshipParser parserWithScanner:scanner];
+    id <SubjectPatternParser> branchParser = [BranchParser parserWithScanner:scanner subjectChainParser:instanceChainParser];
+    NSArray *subjectPatternParsers = [NSArray arrayWithObjects:instanceParser, branchParser, nil];
+
+    [instanceChainParser setSubjectPatternParsers:subjectPatternParsers];
+
+    id <IgorQueryParser> parser = [ScanningIgorQueryParser parserWithScanner:scanner instanceChainParser:instanceChainParser];
+
     return [self igorWithParser:parser];
 }
 

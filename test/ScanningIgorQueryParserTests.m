@@ -6,10 +6,11 @@
 #import "IsMemberOfClassMatcher.h"
 #import "UniversalMatcher.h"
 #import "ComplexMatcher.h"
-#import "ScanningInstanceChainParser.h"
+#import "RelationshipParser.h"
 #import "InstanceParser.h"
 #import "PredicateParser.h"
 #import "ClassParser.h"
+#import "BranchParser.h"
 
 @interface ScanningIgorQueryParserTests : SenTestCase
 @end
@@ -19,11 +20,19 @@
 }
 
 - (void)setUp {
-    id <IgorQueryScanner> scanner = [IgorQueryStringScanner scanner];
-    NSArray *simplePatternParsers = [NSArray arrayWithObjects:[ClassParser parserWithScanner:scanner], [PredicateParser parserWithScanner:scanner], nil];
-    NSArray *subjectPatternParsers = [NSArray arrayWithObject:[InstanceParser parserWithSimplePatternParsers:simplePatternParsers]];
-    id <InstanceChainParser> instanceChainParser = [ScanningInstanceChainParser parserWithScanner:scanner subjectPatternParsers:subjectPatternParsers];
-    parser = [ScanningIgorQueryParser parserWithScanner:scanner instanceParser:[subjectPatternParsers lastObject] instanceChainParser:instanceChainParser];
+    id <IgorQueryScanner> scanner = [IgorQueryStringScanner new];
+    id <SimplePatternParser> classParser = [ClassParser parserWithScanner:scanner];
+    id <SimplePatternParser> predicateParser = [PredicateParser parserWithScanner:scanner];
+    NSArray *simplePatternParsers = [NSArray arrayWithObjects:classParser, predicateParser, nil];
+
+    id <SubjectPatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simplePatternParsers];
+    id <SubjectChainParser> instanceChainParser = [RelationshipParser parserWithScanner:scanner];
+    id <SubjectPatternParser> branchParser = [BranchParser parserWithScanner:scanner subjectChainParser:instanceChainParser];
+    NSArray *subjectPatternParsers = [NSArray arrayWithObjects:instanceParser, branchParser, nil];
+
+    [instanceChainParser setSubjectPatternParsers:subjectPatternParsers];
+
+    parser = [ScanningIgorQueryParser parserWithScanner:scanner instanceChainParser:instanceChainParser];
 }
 
 - (void)testParsesAsteriskAsUniversalMatcher {
