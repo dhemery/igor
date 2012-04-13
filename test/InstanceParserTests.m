@@ -36,15 +36,14 @@
 }
 
 - (void)testDeliversInstanceMatcherWithSimpleMatcherFromSimpleParser {
-    id <SimpleMatcher> aMatcher = [UniversalMatcher new];
-    [simpleParsers addObject:[FakeSimpleParser parserThatYieldsSimpleMatcher:aMatcher]];
+    id <SimpleMatcher> simpleMatcher = [UniversalMatcher new];
+    [simpleParsers addObject:[FakeSimpleParser parserThatYieldsSimpleMatcher:simpleMatcher]];
     id <SubjectPatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simpleParsers];
 
     [instanceParser parseSubjectMatcherIntoArray:subjectMatchers];
 
     InstanceMatcher *subjectMatcher = (InstanceMatcher *)[subjectMatchers lastObject];
-    assertThat(subjectMatcher.simpleMatchers, hasItem(sameInstance(aMatcher)));
-    assertThat(subjectMatcher.simpleMatchers, hasCountOf(1));
+    assertThat(subjectMatcher.simpleMatchers, onlyContains(simpleMatcher, nil));
 }
 
 - (void)testReportsMatcherDeliveredIfMatcherDelivered {
@@ -72,13 +71,15 @@
     [instanceParser parseSubjectMatcherIntoArray:subjectMatchers];
 
     InstanceMatcher *subjectMatcher = (InstanceMatcher *)[subjectMatchers lastObject];
-    assertThat(subjectMatcher.simpleMatchers, hasItem(sameInstance(matcher1)));
-    assertThat(subjectMatcher.simpleMatchers, hasItem(sameInstance(matcher21)));
-    assertThat(subjectMatcher.simpleMatchers, hasItem(sameInstance(matcher22)));
-    assertThat(subjectMatcher.simpleMatchers, hasItem(sameInstance(matcher31)));
-    assertThat(subjectMatcher.simpleMatchers, hasItem(sameInstance(matcher32)));
-    assertThat(subjectMatcher.simpleMatchers, hasItem(sameInstance(matcher33)));
-    assertThat(subjectMatcher.simpleMatchers, hasCountOf(6));
+    assertThat(subjectMatcher.simpleMatchers,
+        onlyContains(
+                matcher1,
+                matcher21,
+                matcher22,
+                matcher31,
+                matcher32,
+                matcher33,
+                nil));
 }
 
 - (void)testDeliversOneInstanceMatcherIfSimpleParsersYieldSimpleMatchers {
@@ -88,9 +89,8 @@
 
     [instanceParser parseSubjectMatcherIntoArray:subjectMatchers];
 
+    assertThat([subjectMatchers objectAtIndex:0], instanceOf([InstanceMatcher class]));
     assertThat(subjectMatchers, hasCountOf(1));
-    id <SubjectMatcher> subjectMatcher = (InstanceMatcher *)[subjectMatchers lastObject];
-    assertThat(subjectMatcher, instanceOf([InstanceMatcher class]));
 }
 
 @end
