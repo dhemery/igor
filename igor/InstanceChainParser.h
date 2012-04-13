@@ -2,6 +2,6 @@
 
 @protocol InstanceChainParser <NSObject>
 
-- (void)parseInstanceMatchersIntoArray:(NSMutableArray*)array;
+- (void)parseInstanceMatchersIntoArray:(NSMutableArray *)array;
 
 @end

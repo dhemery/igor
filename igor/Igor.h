@@ -9,6 +9,7 @@
 - (NSArray *)findViewsThatMatchQuery:(NSString *)query inTree:(UIView *)tree;
 
 + (Igor *)igor;
-+ (Igor *)igorWithParser:(id<IgorQueryParser>)parser;
+
++ (Igor *)igorWithParser:(id <IgorQueryParser>)parser;
 
 @end

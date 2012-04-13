@@ -9,14 +9,14 @@
     id <IgorQueryScanner> scanner;
 }
 
-- (id<SimplePatternParser>)initWithScanner:(id <IgorQueryScanner>)theScanner {
+- (id <SimplePatternParser>)initWithScanner:(id <IgorQueryScanner>)theScanner {
     if (self = [super init]) {
         scanner = theScanner;
     }
     return self;
 }
 
-- (void)parseSimpleMatcherIntoArray:(NSMutableArray*)array {
+- (void)parseSimpleMatcherIntoArray:(NSMutableArray *)array {
     if ([scanner skipString:@"*"]) {
         [array addObject:[UniversalMatcher new]];
         return;
@@ -35,7 +35,7 @@
     }
 }
 
-+ (id<SimplePatternParser>)parserWithScanner:(id<IgorQueryScanner>)scanner {
++ (id <SimplePatternParser>)parserWithScanner:(id <IgorQueryScanner>)scanner {
     return [[self alloc] initWithScanner:scanner];
 }
 @end

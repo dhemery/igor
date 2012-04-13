@@ -5,11 +5,11 @@
 #import "UniversalMatcher.h"
 
 @implementation ScanningInstanceChainParser {
-    id<SubjectPatternParser> instanceParser;
-    id<IgorQueryScanner> scanner;
+    id <SubjectPatternParser> instanceParser;
+    id <IgorQueryScanner> scanner;
 }
 
-- (id<InstanceChainParser>)initWithScanner:(id<IgorQueryScanner>)theScanner instanceParser:(id<SubjectPatternParser>)theInstanceParser {
+- (id <InstanceChainParser>)initWithScanner:(id <IgorQueryScanner>)theScanner instanceParser:(id <SubjectPatternParser>)theInstanceParser {
     if (self = [super init]) {
         scanner = theScanner;
         instanceParser = theInstanceParser;
@@ -26,20 +26,20 @@
     return [instanceParser parseSubjectMatcher];
 }
 
-- (id<SubjectMatcher>)parseBranchMatcher {
+- (id <SubjectMatcher>)parseBranchMatcher {
     [scanner skipString:@"("];
-    NSMutableArray* branchInstanceChain = [NSMutableArray array];
+    NSMutableArray *branchInstanceChain = [NSMutableArray array];
     [self parseInstanceMatchersIntoArray:branchInstanceChain];
     [scanner skipString:@")"];
-    id<SubjectMatcher> subject = [branchInstanceChain objectAtIndex:0];
+    id <SubjectMatcher> subject = [branchInstanceChain objectAtIndex:0];
     [branchInstanceChain removeObjectAtIndex:0];
     id <SubjectMatcher> tail = [self subjectMatcherFromMatcherChain:branchInstanceChain];
     return [ComplexMatcher matcherWithSubject:subject tail:tail];
 }
 
-- (void)parseInstanceMatchersIntoArray:(NSMutableArray*)instanceMatchers {
+- (void)parseInstanceMatchersIntoArray:(NSMutableArray *)instanceMatchers {
     BOOL foundSubjectMarker;
-    while(!(foundSubjectMarker = [scanner nextStringIs:@"$"])) {
+    while (!(foundSubjectMarker = [scanner nextStringIs:@"$"])) {
         id <SubjectMatcher> subjectMatcher = [self parseSubjectMatcher];
         [instanceMatchers addObject:subjectMatcher];
         NSLog(@"Parsed matcher: %@", subjectMatcher);
@@ -55,7 +55,7 @@
     NSLog(@"Reached end of query. Done parsing chain.");
 }
 
-+ (id<InstanceChainParser>)parserWithScanner:(id<IgorQueryScanner>)scanner instanceParser:(id<SubjectPatternParser>)instanceParser {
++ (id <InstanceChainParser>)parserWithScanner:(id <IgorQueryScanner>)scanner instanceParser:(id <SubjectPatternParser>)instanceParser {
     return [[self alloc] initWithScanner:scanner instanceParser:instanceParser];
 }
 
@@ -66,9 +66,9 @@
     if ([matcherChain count] == 1) {
         return [matcherChain lastObject];
     }
-    id<SubjectMatcher> matcher = [matcherChain objectAtIndex:0];
-    for (NSUInteger i = 1 ; i < [matcherChain count] ; i++) {
-        matcher = [ComplexMatcher matcherWithHead:matcher subject:[matcherChain objectAtIndex:i] ];
+    id <SubjectMatcher> matcher = [matcherChain objectAtIndex:0];
+    for (NSUInteger i = 1; i < [matcherChain count]; i++) {
+        matcher = [ComplexMatcher matcherWithHead:matcher subject:[matcherChain objectAtIndex:i]];
     }
     return matcher;
 }

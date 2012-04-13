@@ -12,7 +12,7 @@
     return [[self alloc] initForExactClass:exactClass];
 }
 
-- (MemberOfClassMatcher*)initForExactClass:(Class)exactClass {
+- (MemberOfClassMatcher *)initForExactClass:(Class)exactClass {
     if (self = [super init]) {
         matchClass = exactClass;
     }

@@ -17,7 +17,7 @@
 }
 
 - (BOOL)matchesView:(UIView *)view inTree:(UIView *)root {
-    for (id<SimpleMatcher> matcher in self.simpleMatchers) {
+    for (id <SimpleMatcher> matcher in self.simpleMatchers) {
         if (![matcher matchesView:view]) return false;
     }
     return true;

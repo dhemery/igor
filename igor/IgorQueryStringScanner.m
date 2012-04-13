@@ -3,7 +3,7 @@
 
 
 @implementation IgorQueryStringScanner {
-    NSScanner* scanner;
+    NSScanner *scanner;
 }
 
 - (NSString *)description {
@@ -20,7 +20,7 @@
     }
 }
 
-- (BOOL)nextStringIs:(NSString*)string {
+- (BOOL)nextStringIs:(NSString *)string {
     NSUInteger originalLocation = [scanner scanLocation];
     if ([scanner scanString:string intoString:nil]) {
         [scanner setScanLocation:originalLocation];

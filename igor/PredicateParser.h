@@ -5,6 +5,6 @@
 
 @interface PredicateParser : NSObject <SimplePatternParser>
 
-+ (id<SimplePatternParser>)parserWithScanner:(id<IgorQueryScanner>)scanner;
++ (id <SimplePatternParser>)parserWithScanner:(id <IgorQueryScanner>)scanner;
 
 @end

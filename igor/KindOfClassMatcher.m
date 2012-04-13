@@ -12,7 +12,7 @@
     return [[self alloc] initForBaseClass:baseClass];
 }
 
-- (KindOfClassMatcher*)initForBaseClass:(Class)baseClass {
+- (KindOfClassMatcher *)initForBaseClass:(Class)baseClass {
     if (self = [super init]) {
         matchClass = baseClass;
     }

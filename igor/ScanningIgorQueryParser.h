@@ -7,6 +7,6 @@
 
 @interface ScanningIgorQueryParser : NSObject <IgorQueryParser>
 
-+ (id<IgorQueryParser>)parserWithScanner:(id <IgorQueryScanner>)scanner instanceParser:(id<SubjectPatternParser>)instanceParser instanceChainParser:(id <InstanceChainParser>)instanceChainParser;
++ (id <IgorQueryParser>)parserWithScanner:(id <IgorQueryScanner>)scanner instanceParser:(id <SubjectPatternParser>)instanceParser instanceChainParser:(id <InstanceChainParser>)instanceChainParser;
 
 @end

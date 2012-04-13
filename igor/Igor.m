@@ -32,18 +32,18 @@
 
 + (Igor *)igor {
     id <IgorQueryScanner> scanner = [IgorQueryStringScanner new];
-    NSArray* simplePatternParsers = [NSArray arrayWithObjects:[ClassParser parserWithScanner:scanner], [PredicateParser parserWithScanner:scanner], nil];
+    NSArray *simplePatternParsers = [NSArray arrayWithObjects:[ClassParser parserWithScanner:scanner], [PredicateParser parserWithScanner:scanner], nil];
     id <SubjectPatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simplePatternParsers];
     id <InstanceChainParser> instanceChainParser = [ScanningInstanceChainParser parserWithScanner:scanner instanceParser:instanceParser];
     id <IgorQueryParser> parser = [ScanningIgorQueryParser parserWithScanner:scanner instanceParser:instanceParser instanceChainParser:instanceChainParser];
     return [self igorWithParser:parser];
 }
 
-+ (Igor*)igorWithParser:(id<IgorQueryParser>)parser {
++ (Igor *)igorWithParser:(id <IgorQueryParser>)parser {
     return [[self alloc] initWithParser:parser];
 }
 
-- (Igor *)initWithParser:(id<IgorQueryParser>)theParser {
+- (Igor *)initWithParser:(id <IgorQueryParser>)theParser {
     if (self = [super init]) {
         parser = theParser;
     }

@@ -6,7 +6,7 @@
     id <IgorQueryScanner> scanner;
 }
 
-- (id<SimplePatternParser>)initWithScanner:(id <IgorQueryScanner>)theScanner {
+- (id <SimplePatternParser>)initWithScanner:(id <IgorQueryScanner>)theScanner {
     if (self = [super init]) {
         scanner = theScanner;
     }
@@ -16,7 +16,7 @@
 - (NSString *)parseExpression {
     NSString *expression = @"";
     NSString *chunk;
-    while([scanner scanUpToString:@"]" intoString:&chunk]) {
+    while ([scanner scanUpToString:@"]" intoString:&chunk]) {
         expression = [expression stringByAppendingString:chunk];
         @try {
             [NSPredicate predicateWithFormat:expression];
@@ -24,7 +24,7 @@
         }
         @catch (NSException *e) {
         }
-        while([scanner skipString:@"]"]) {
+        while ([scanner skipString:@"]"]) {
             expression = [expression stringByAppendingString:@"]"];
         }
     }
@@ -43,7 +43,7 @@
     [matchers addObject:[PredicateMatcher matcherForPredicateExpression:expression]];
 }
 
-+ (id<SimplePatternParser>)parserWithScanner:(id<IgorQueryScanner>)scanner {
++ (id <SimplePatternParser>)parserWithScanner:(id <IgorQueryScanner>)scanner {
     return [[self alloc] initWithScanner:scanner];
 }
 

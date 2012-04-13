@@ -1,4 +1,3 @@
-
 #import "ComplexMatcher.h"
 #import "InstanceMatcher.h"
 #import "UniversalMatcher.h"
@@ -38,7 +37,7 @@
     return [NSString stringWithFormat:@"[Complex:[head:%@][subject:%@][tail:%@]]", self.head, self.subject, self.tail];
 }
 
-- (ComplexMatcher *)initWithHead:(id<SubjectMatcher>)headMatcher subject:(id <SubjectMatcher>)subjectMatcher tail:(id<SubjectMatcher>)tailMatcher {
+- (ComplexMatcher *)initWithHead:(id <SubjectMatcher>)headMatcher subject:(id <SubjectMatcher>)subjectMatcher tail:(id <SubjectMatcher>)tailMatcher {
     if (self = [super init]) {
         head = headMatcher;
         subject = subjectMatcher;
@@ -65,11 +64,11 @@
     return [self.subject matchesView:view inTree:root] && [self headMatchesAnAncestorOfView:view inTree:root] && [self tailMatchesASubviewOfView:view];
 }
 
-+ (ComplexMatcher *)matcherWithHead:(id<SubjectMatcher>)head subject:(id <SubjectMatcher>)subject {
++ (ComplexMatcher *)matcherWithHead:(id <SubjectMatcher>)head subject:(id <SubjectMatcher>)subject {
     return [self matcherWithHead:head subject:subject tail:[UniversalMatcher new]];
 }
 
-+ (ComplexMatcher *)matcherWithHead:(id<SubjectMatcher>)head subject:(id <SubjectMatcher>)subject tail:(id<SubjectMatcher>)tail {
++ (ComplexMatcher *)matcherWithHead:(id <SubjectMatcher>)head subject:(id <SubjectMatcher>)subject tail:(id <SubjectMatcher>)tail {
     return [[self alloc] initWithHead:head subject:subject tail:tail];
 }
 
