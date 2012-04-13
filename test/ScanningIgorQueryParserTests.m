@@ -11,10 +11,10 @@
 #import "ScanningPredicateParser.h"
 #import "ScanningClassParser.h"
 
-@interface IgorQueryParserTests : SenTestCase
+@interface ScanningIgorQueryParserTests : SenTestCase
 @end
 
-@implementation IgorQueryParserTests {
+@implementation ScanningIgorQueryParserTests {
     id<IgorQueryParser> parser;
 }
 

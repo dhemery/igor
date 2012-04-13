@@ -2,10 +2,10 @@
 #import "IgorQueryStringScanner.h"
 #import "IsPredicateMatcher.h"
 
-@interface PredicateParserTests : SenTestCase
+@interface ScanningPredicateParserTests : SenTestCase
 @end
 
-@implementation PredicateParserTests {
+@implementation ScanningPredicateParserTests {
     NSMutableArray *simpleMatchers;
     id<IgorQueryScanner> scanner;
     id<PredicateParser> parser;

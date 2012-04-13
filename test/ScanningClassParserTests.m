@@ -4,10 +4,10 @@
 #import "IsKindOfClassMatcher.h"
 #import "IsMemberOfClassMatcher.h"
 
-@interface ClassParserTests : SenTestCase
+@interface ScanningClassParserTests : SenTestCase
 @end
 
-@implementation ClassParserTests {
+@implementation ScanningClassParserTests {
     NSMutableArray *simpleMatchers;
     id<IgorQueryScanner> scanner;
     id<ClassParser> parser;
