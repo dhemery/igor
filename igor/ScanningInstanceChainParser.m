@@ -5,14 +5,14 @@
 #import "UniversalMatcher.h"
 
 @implementation ScanningInstanceChainParser {
-    id <SubjectPatternParser> instanceParser;
     id <IgorQueryScanner> scanner;
+    NSArray *subjectPatternParsers;
 }
 
-- (id <InstanceChainParser>)initWithScanner:(id <IgorQueryScanner>)theScanner instanceParser:(id <SubjectPatternParser>)theInstanceParser {
+- (id <InstanceChainParser>)initWithScanner:(id <IgorQueryScanner>)theScanner subjectPatternParsers:(NSArray *)theSubjectPatternParsers {
     if (self = [super init]) {
         scanner = theScanner;
-        instanceParser = theInstanceParser;
+        subjectPatternParsers = theSubjectPatternParsers;
     }
     return self;
 }
@@ -23,7 +23,7 @@
         return [self parseBranchMatcher];
     }
     NSLog(@"Found instance pattern. Parsing.");
-    return [instanceParser parseSubjectMatcher];
+    return [[subjectPatternParsers lastObject] parseSubjectMatcher];
 }
 
 - (id <SubjectMatcher>)parseBranchMatcher {
@@ -55,8 +55,8 @@
     NSLog(@"Reached end of query. Done parsing chain.");
 }
 
-+ (id <InstanceChainParser>)parserWithScanner:(id <IgorQueryScanner>)scanner instanceParser:(id <SubjectPatternParser>)instanceParser {
-    return [[self alloc] initWithScanner:scanner instanceParser:instanceParser];
++ (id <InstanceChainParser>)parserWithScanner:(id <IgorQueryScanner>)scanner subjectPatternParsers:(NSArray *)subjectPatternParsers {
+    return [[self alloc] initWithScanner:scanner subjectPatternParsers:subjectPatternParsers];
 }
 
 - (id <SubjectMatcher>)subjectMatcherFromMatcherChain:(NSArray *)matcherChain {

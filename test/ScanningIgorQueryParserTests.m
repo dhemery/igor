@@ -21,9 +21,9 @@
 - (void)setUp {
     id <IgorQueryScanner> scanner = [IgorQueryStringScanner scanner];
     NSArray *simplePatternParsers = [NSArray arrayWithObjects:[ClassParser parserWithScanner:scanner], [PredicateParser parserWithScanner:scanner], nil];
-    id <SubjectPatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simplePatternParsers];
-    id <InstanceChainParser> instanceChainParser = [ScanningInstanceChainParser parserWithScanner:scanner instanceParser:instanceParser];
-    parser = [ScanningIgorQueryParser parserWithScanner:scanner instanceParser:instanceParser instanceChainParser:instanceChainParser];
+    NSArray *subjectPatternParsers = [NSArray arrayWithObject:[InstanceParser parserWithSimplePatternParsers:simplePatternParsers]];
+    id <InstanceChainParser> instanceChainParser = [ScanningInstanceChainParser parserWithScanner:scanner subjectPatternParsers:subjectPatternParsers];
+    parser = [ScanningIgorQueryParser parserWithScanner:scanner instanceParser:[subjectPatternParsers lastObject] instanceChainParser:instanceChainParser];
 }
 
 - (void)testParsesAsteriskAsUniversalMatcher {
