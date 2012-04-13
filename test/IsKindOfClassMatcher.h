@@ -3,6 +3,6 @@
 
 @interface IsKindOfClassMatcher : HCBaseMatcher
 
-+ forClass:(Class) targetClass;
++ (IsKindOfClassMatcher *)forClass:(Class)targetClass;
 
 @end

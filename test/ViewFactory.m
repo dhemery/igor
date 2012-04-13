@@ -32,12 +32,12 @@
 @end
 
 @interface UIView (ViewFactory)
--(NSString*)description;
+- (NSString *)description;
 @end
 
 @implementation UIView (ViewFactory)
 
--(NSString*)description {
+- (NSString *)description {
     return [NSString stringWithFormat:@"[%@(%@)]", [self class], [self accessibilityHint]];
 }
 @end

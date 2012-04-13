@@ -9,8 +9,8 @@
 
 @implementation ClassParserTests {
     NSMutableArray *simpleMatchers;
-    id<IgorQueryScanner> scanner;
-    id<SimplePatternParser> parser;
+    id <IgorQueryScanner> scanner;
+    id <SimplePatternParser> parser;
 }
 
 - (void)setUp {

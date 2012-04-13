@@ -6,26 +6,26 @@
     NSPredicate *predicate;
 }
 
-+ (IsPredicateMatcher *) forExpression:(NSString *)expression{
++ (IsPredicateMatcher *)forExpression:(NSString *)expression {
     return [[self alloc] initWithExpression:expression];
 }
 
-- (IsPredicateMatcher *) initWithExpression:(NSString *)expression {
+- (IsPredicateMatcher *)initWithExpression:(NSString *)expression {
     if (self = [super init]) {
         predicate = [NSPredicate predicateWithFormat:expression];
     }
     return self;
 }
 
-- (BOOL) matches:(id)item {
+- (BOOL)matches:(id)item {
     if (![item isMemberOfClass:[PredicateMatcher class]]) {
         return NO;
     }
-    PredicateMatcher* matcher = item;
+    PredicateMatcher *matcher = item;
     return [matcher.expression isEqualToString:[predicate predicateFormat]];
 }
 
-- (void) describeTo:(id<HCDescription>)description; {
+- (void)describeTo:(id <HCDescription>)description; {
     [description appendDescriptionOf:predicate];
 }
 

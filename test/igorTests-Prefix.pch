@@ -6,6 +6,7 @@
 #import <SenTestingKit/SenTestCase.h>
 
 #define HC_SHORTHAND
+
 #import <OCHamcrestIOS/OCHamcrestIOS.h>
 
 #endif
