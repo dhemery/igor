@@ -92,6 +92,10 @@
 		E621659DB794A5D612DCD49C /* BranchParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD49B /* BranchParser.h */; };
 		E621659DB794A5D612DCD49E /* FakeSimpleParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD49D /* FakeSimpleParser.m */; };
 		E621659DB794A5D612DCD4A0 /* FakeSimpleParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD49F /* FakeSimpleParser.h */; };
+		E621659DB794A5D612DCD4A2 /* IdentityCombinatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4A1 /* IdentityCombinatorTests.m */; };
+		E621659DB794A5D612DCD4A6 /* Combinator.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4A5 /* Combinator.h */; };
+		E621659DB794A5D612DCD4A8 /* IdentityCombinator.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4A7 /* IdentityCombinator.m */; };
+		E621659DB794A5D612DCD4AA /* IdentityCombinator.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4A9 /* IdentityCombinator.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -212,6 +216,10 @@
 		E621659DB794A5D612DCD49B /* BranchParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BranchParser.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD49D /* FakeSimpleParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeSimpleParser.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD49F /* FakeSimpleParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSimpleParser.h; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD4A1 /* IdentityCombinatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdentityCombinatorTests.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD4A5 /* Combinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Combinator.h; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD4A7 /* IdentityCombinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdentityCombinator.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD4A9 /* IdentityCombinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdentityCombinator.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,6 +326,9 @@
 		2D695CE1147CD26700AF4115 /* matchers */ = {
 			isa = PBXGroup;
 			children = (
+				E621659DB794A5D612DCD4A9 /* IdentityCombinator.h */,
+				E621659DB794A5D612DCD4A7 /* IdentityCombinator.m */,
+				E621659DB794A5D612DCD4A5 /* Combinator.h */,
 				E621659DB794A5D612DCD478 /* ComplexMatcher.m */,
 				E621659DB794A5D612DCD47A /* ComplexMatcher.h */,
 				E621659DB794A5D612DCD45E /* UniversalMatcher.m */,
@@ -400,6 +411,7 @@
 		2D695CE7147CD38000AF4115 /* matchers */ = {
 			isa = PBXGroup;
 			children = (
+				E621659DB794A5D612DCD4A1 /* IdentityCombinatorTests.m */,
 				E621659DB794A5D612DCD474 /* ComplexMatcherTests.m */,
 				2D695CD0147CD1D200AF4115 /* KindOfClassMatcherTests.m */,
 				2D695CD1147CD1D200AF4115 /* MemberOfClassMatcherTests.m */,
@@ -542,6 +554,8 @@
 				E621659DB794A5D612DCD48B /* SubjectPatternParser.h in Headers */,
 				E621659DB794A5D612DCD48F /* IgorQueryParser.h in Headers */,
 				E621659DB794A5D612DCD49C /* BranchParser.h in Headers */,
+				E621659DB794A5D612DCD4A6 /* Combinator.h in Headers */,
+				E621659DB794A5D612DCD4AA /* IdentityCombinator.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -685,6 +699,7 @@
 				E621659DB794A5D612DCD491 /* BranchPatternTests.m in Sources */,
 				E621659DB794A5D612DCD495 /* InstanceParserTests.m in Sources */,
 				E621659DB794A5D612DCD49E /* FakeSimpleParser.m in Sources */,
+				E621659DB794A5D612DCD4A2 /* IdentityCombinatorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -720,6 +735,7 @@
 				E621659DB794A5D612DCD45F /* UniversalMatcher.m in Sources */,
 				E621659DB794A5D612DCD479 /* ComplexMatcher.m in Sources */,
 				E621659DB794A5D612DCD49A /* BranchParser.m in Sources */,
+				E621659DB794A5D612DCD4A8 /* IdentityCombinator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

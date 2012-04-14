@@ -17,7 +17,6 @@
     return self;
 }
 
-
 - (BOOL)parseSubjectMatcherIntoArray:(NSMutableArray *)subjectMatchers {
     if (![scanner skipString:@"("]) return NO;
 
