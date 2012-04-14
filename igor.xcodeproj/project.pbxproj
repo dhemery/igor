@@ -105,6 +105,8 @@
 		E621659DB794A5D612DCD4C8 /* DescendantCombinator.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4C7 /* DescendantCombinator.h */; };
 		E621659DB794A5D612DCD4CA /* DescendantCombinatorParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4C9 /* DescendantCombinatorParser.m */; };
 		E621659DB794A5D612DCD4CC /* DescendantCombinatorParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4CB /* DescendantCombinatorParser.h */; };
+		E621659DB794A5D612DCD4CE /* ChildCombinator.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4CD /* ChildCombinator.m */; };
+		E621659DB794A5D612DCD4D0 /* ChildCombinator.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4CF /* ChildCombinator.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -238,6 +240,8 @@
 		E621659DB794A5D612DCD4C7 /* DescendantCombinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescendantCombinator.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4C9 /* DescendantCombinatorParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescendantCombinatorParser.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4CB /* DescendantCombinatorParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescendantCombinatorParser.h; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD4CD /* ChildCombinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildCombinator.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD4CF /* ChildCombinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildCombinator.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -348,6 +352,8 @@
 		2D695CE1147CD26700AF4115 /* matchers */ = {
 			isa = PBXGroup;
 			children = (
+				E621659DB794A5D612DCD4CF /* ChildCombinator.h */,
+				E621659DB794A5D612DCD4CD /* ChildCombinator.m */,
 				E621659DB794A5D612DCD4C7 /* DescendantCombinator.h */,
 				E621659DB794A5D612DCD4C5 /* DescendantCombinator.m */,
 				E621659DB794A5D612DCD4C3 /* Combinator.h */,
@@ -587,6 +593,7 @@
 				E621659DB794A5D612DCD4C4 /* Combinator.h in Headers */,
 				E621659DB794A5D612DCD4C8 /* DescendantCombinator.h in Headers */,
 				E621659DB794A5D612DCD4CC /* DescendantCombinatorParser.h in Headers */,
+				E621659DB794A5D612DCD4D0 /* ChildCombinator.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -772,6 +779,7 @@
 				E621659DB794A5D612DCD4B0 /* CombinatorMatcher.m in Sources */,
 				E621659DB794A5D612DCD4C6 /* DescendantCombinator.m in Sources */,
 				E621659DB794A5D612DCD4CA /* DescendantCombinatorParser.m in Sources */,
+				E621659DB794A5D612DCD4CE /* ChildCombinator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,6 +23,7 @@
     return ancestorsOfView;
 }
 
+// TODO Return all descendants. Need a test for that.
 - (NSArray *)relativesOfView:(UIView *)view {
     return [view subviews];
 }

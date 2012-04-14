@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Igor" pattern="(file:test/*||file:igor//*||file:test//*)&amp;&amp;!file:test/en.lproj//*" />
+</component>
