@@ -1,4 +1,7 @@
-#import "SubjectMatcher.h"
+@protocol Combinator <NSObject>
 
-@protocol Combinator <SubjectMatcher>
+- (NSArray *)relativesOfView:(UIView *)view;
+
+- (NSArray *)inverseRelativesOfView:(UIView *)subject inTree:(UIView *)root;
+
 @end

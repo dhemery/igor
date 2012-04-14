@@ -5,7 +5,7 @@
 @synthesize simpleMatchers;
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"[Instance:%@]", [self.simpleMatchers componentsJoinedByString:@","]];
+    return [NSString stringWithFormat:@"%@", [self.simpleMatchers componentsJoinedByString:@","]];
 }
 
 - (InstanceMatcher *)initWithSimpleMatchers:(NSArray *)matchers {
@@ -16,11 +16,15 @@
     return self;
 }
 
-- (BOOL)matchesView:(UIView *)view inTree:(UIView *)root {
+- (BOOL)matchesView:(UIView *)view {
     for (id <SimpleMatcher> matcher in self.simpleMatchers) {
         if (![matcher matchesView:view]) return false;
     }
     return true;
+}
+
+- (BOOL)matchesView:(UIView *)view inTree:(UIView *)ignored {
+    return [self matchesView:view];
 }
 
 + (InstanceMatcher *)matcherWithSimpleMatchers:(NSArray *)simpleMatchers {

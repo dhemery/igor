@@ -1,56 +1,83 @@
 #import "ScanningIgorQueryParser.h"
 #import "IgorQueryScanner.h"
-#import "ComplexMatcher.h"
-#import "UniversalMatcher.h"
+#import "BranchMatcher.h"
+#import "RelationshipParser.h"
+#import "CombinatorMatcher.h"
 
 @implementation ScanningIgorQueryParser {
     id <IgorQueryScanner> scanner;
-    id <SubjectChainParser> instanceChainParser;
+    id <SubjectPatternParser> subjectParser;
+    id <CombinatorParser> combinatorParser;
 }
 
-- (id <IgorQueryParser>)initWithQueryScanner:(id <IgorQueryScanner>)theScanner instanceChainParser:(id <SubjectChainParser>)theInstanceChainParser {
+- (id <IgorQueryParser>)initWithQueryScanner:(id <IgorQueryScanner>)theScanner relationshipParser:(RelationshipParser *)theRelationshipParser {
     if (self = [super init]) {
         scanner = theScanner;
-        instanceChainParser = theInstanceChainParser;
+        subjectParser = theRelationshipParser;
+        combinatorParser = theRelationshipParser;
     }
     return self;
 }
 
-- (id <SubjectMatcher>)subjectMatcherFromMatcherChain:(NSArray *)matcherChain {
-    if ([matcherChain count] == 0) {
-        return [UniversalMatcher new];
-    }
-    if ([matcherChain count] == 1) {
-        return [matcherChain lastObject];
-    }
-    id <SubjectMatcher> matcher = [matcherChain objectAtIndex:0];
-    for (NSUInteger i = 1; i < [matcherChain count]; i++) {
-        matcher = [ComplexMatcher matcherWithHead:matcher subject:[matcherChain objectAtIndex:i]];
-    }
-    return matcher;
-}
-
 - (id <SubjectMatcher>)parseMatcherFromQuery:(NSString *)query {
     [scanner setQuery:query];
-    NSMutableArray *head = [NSMutableArray array];
-    NSMutableArray *tail = [NSMutableArray array];
 
-    [instanceChainParser parseSubjectMatchersIntoArray:head];
-    if ([scanner skipString:@"$"]) {
-        [instanceChainParser parseSubjectMatcherIntoArray:head];
+    id <SubjectMatcher> matcher = [subjectParser parseSubjectMatcher];
+    id <Combinator> combinator;
+
+    while ((combinator = [combinatorParser parseCombinator])) {
+        id <SubjectMatcher> subjectMatcher = [subjectParser parseSubjectMatcher];
+        if (!subjectMatcher) break;
+        matcher = [CombinatorMatcher matcherWithSubjectMatcher:subjectMatcher combinator:combinator relativeMatcher:matcher];
     }
-    id <SubjectMatcher> subject = [head lastObject];
-    [head removeLastObject];
-    if ([scanner skipWhiteSpace]) {
-        [instanceChainParser parseSubjectMatchersIntoArray:tail];
+
+    if (combinator) {
+        if (![scanner skipString:@"$"]) {
+            [scanner failBecause:@"Expected $"];
+        }
+        id <SubjectMatcher> subjectMatcher = [subjectParser parseSubjectMatcher];
+        if (!subjectMatcher) {
+            [scanner failBecause:@"Expected a subject pattern after '$'"];
+        }
+        matcher = [CombinatorMatcher matcherWithSubjectMatcher:subjectMatcher combinator:combinator relativeMatcher:matcher];
+        combinator = [combinatorParser parseCombinator];
     }
+
+    if (!matcher) {
+        if (![scanner skipString:@"$"]) {
+            [scanner failBecause:@"The query must start with a subject pattern"];
+        }
+        matcher = [subjectParser parseSubjectMatcher];
+        if (!matcher) {
+            [scanner failBecause:@"Expected a subject pattern after '$'"];
+        }
+        combinator = [combinatorParser parseCombinator];
+    }
+
+    if (combinator) {
+        id <SubjectMatcher> branchMatcher = [subjectParser parseSubjectMatcher];
+        if (!branchMatcher) {
+            NSString *message = [NSString stringWithFormat:@"Expected a subject pattern after '%@'", combinator];
+            [scanner failBecause:message];
+        }
+        id <Combinator> branchCombinator;
+        while ((branchCombinator = [combinatorParser parseCombinator])) {
+            id <SubjectMatcher> subjectMatcher = [subjectParser parseSubjectMatcher];
+            if (!subjectMatcher) {
+                NSString *message = [NSString stringWithFormat:@"Expected a subject pattern after '%@'", branchCombinator];
+                [scanner failBecause:message];
+            }
+            branchMatcher = [CombinatorMatcher matcherWithSubjectMatcher:subjectMatcher combinator:branchCombinator relativeMatcher:branchMatcher];
+        }
+        matcher = [BranchMatcher matcherWithSubjectMatcher:matcher combinator:combinator relativeMatcher:branchMatcher];
+    }
+
     [scanner failIfNotAtEnd];
-    id <SubjectMatcher> matcher = [ComplexMatcher matcherWithHead:[self subjectMatcherFromMatcherChain:head] subject:subject tail:[self subjectMatcherFromMatcherChain:tail]];
     return matcher;
 }
 
-+ (id <IgorQueryParser>)parserWithScanner:(id <IgorQueryScanner>)scanner instanceChainParser:(id <SubjectChainParser>)instanceChainParser {
-    return [[self alloc] initWithQueryScanner:scanner instanceChainParser:instanceChainParser];
++ (id <IgorQueryParser>)parserWithScanner:(id <IgorQueryScanner>)scanner relationshipParser:(RelationshipParser *)relationshipParser {
+    return [[self alloc] initWithQueryScanner:scanner relationshipParser:relationshipParser];
 }
 
 @end

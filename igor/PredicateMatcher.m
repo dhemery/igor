@@ -5,7 +5,7 @@
 @synthesize predicate;
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"[Predicate:%@]", self.expression];
+    return [NSString stringWithFormat:@"[%@]", self.expression];
 }
 
 - (PredicateMatcher *)initWithPredicate:(NSPredicate *)aPredicate {

@@ -1,39 +1,40 @@
 #import "InstanceParser.h"
 #import "RelationshipParser.h"
 #import "IgorQueryStringScanner.h"
+#import "DescendantCombinator.h"
 
 @implementation RelationshipParser {
     id <IgorQueryScanner> scanner;
+    NSArray *combinatorParsers;
 }
 
 @synthesize subjectPatternParsers;
 
-- (id <SubjectChainParser>)initWithScanner:(id <IgorQueryScanner>)theScanner {
+- (RelationshipParser *)initWithCombinatorParsers:(NSArray *)theCombinatorParsers {
     if (self = [super init]) {
-        scanner = theScanner;
+        combinatorParsers = theCombinatorParsers;
     }
     return self;
 }
 
-- (BOOL)parseSubjectMatcherIntoArray:(NSMutableArray *)subjectMatchers {
+- (id <SubjectMatcher>)parseSubjectMatcher {
     for (id <SubjectPatternParser>parser in subjectPatternParsers) {
-        if ([parser parseSubjectMatcherIntoArray:subjectMatchers]) return YES;
+        id <SubjectMatcher> matcher = [parser parseSubjectMatcher];
+        if (matcher) return matcher;
     }
-    return NO;
+    return nil;
 }
 
-- (BOOL)parseCombinator {
-    return [scanner skipWhiteSpace];
+- (id <Combinator>)parseCombinator {
+    for (id <CombinatorParser>parser in combinatorParsers) {
+        id <Combinator> combinator = [parser parseCombinator];
+        if (combinator) return combinator;
+    }
+    return nil;
 }
 
-- (BOOL)parseSubjectMatchersIntoArray:(NSMutableArray *)subjectMatchers {
-    if (![self parseSubjectMatcherIntoArray:subjectMatchers]) return NO;
-    while([self parseCombinator] && [self parseSubjectMatcherIntoArray:subjectMatchers]);
-    return YES;
-}
-
-+ (id <SubjectChainParser>)parserWithScanner:(id <IgorQueryScanner>)scanner {
-    return [[self alloc] initWithScanner:scanner];
++ (RelationshipParser *)parserWithCombinatorParsers:(NSArray *)combinatorParsers {
+    return [[self alloc] initWithCombinatorParsers:combinatorParsers];
 }
 
 @end

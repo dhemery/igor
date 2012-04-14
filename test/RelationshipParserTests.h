@@ -1,0 +1,3 @@
+@interface RelationshipParserTests : NSObject
+
+@end

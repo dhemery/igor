@@ -2,6 +2,6 @@
 
 @protocol SubjectPatternParser <NSObject>
 
-- (BOOL)parseSubjectMatcherIntoArray:(NSMutableArray *)subjectMatchers;
+- (id <SubjectMatcher>)parseSubjectMatcher;
 
 @end

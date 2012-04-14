@@ -9,54 +9,31 @@
 @end
 
 @implementation InstanceParserTests {
-    NSMutableArray *subjectMatchers;
     NSMutableArray *simpleParsers;
 }
 
 - (void)setUp {
-    subjectMatchers = [NSMutableArray array];
     simpleParsers = [NSMutableArray array];
 }
 
-- (void)testDeliversNoInstanceMatcherIfSimpleParsersYieldNoMatchers {
-    [simpleParsers addObject:[FakeSimpleParser parserThatYieldsNoSimpleMatchers]];
-
-    id <SubjectPatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simpleParsers];
-
-    [instanceParser parseSubjectMatcherIntoArray:subjectMatchers];
-    assertThat(subjectMatchers, is(empty()));
-}
-
-- (void)testReportsNoMatchersDeliveredIfNoMatchersDelivered {
+- (void)testYieldsNilIfSimpleParsersYieldNoMatchers {
     [simpleParsers addObject:[FakeSimpleParser parserThatYieldsNoSimpleMatchers]];
     id <SubjectPatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simpleParsers];
 
-    BOOL deliveredAMatcher = [instanceParser parseSubjectMatcherIntoArray:subjectMatchers];
-
-    assertThatBool(deliveredAMatcher, equalToBool(NO));
+    assertThat([instanceParser parseSubjectMatcher], nilValue());
 }
 
-- (void)testDeliversInstanceMatcherWithSimpleMatcherFromSimpleParser {
+- (void)testYieldsInstanceMatcherWithSimpleMatcherFromSimpleParser {
     id <SimpleMatcher> simpleMatcher = [UniversalMatcher new];
     [simpleParsers addObject:[FakeSimpleParser parserThatYieldsSimpleMatcher:simpleMatcher]];
     id <SubjectPatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simpleParsers];
 
-    [instanceParser parseSubjectMatcherIntoArray:subjectMatchers];
+    InstanceMatcher *subjectMatcher = (InstanceMatcher *)[instanceParser parseSubjectMatcher];
 
-    InstanceMatcher *subjectMatcher = (InstanceMatcher *)[subjectMatchers lastObject];
     assertThat(subjectMatcher.simpleMatchers, contains(sameInstance(simpleMatcher), nil));
 }
 
-- (void)testReportsDeliveredIfItDeliversAMatcher {
-    [simpleParsers addObject:[FakeSimpleParser parserThatYieldsSimpleMatcher:[UniversalMatcher new]]];
-    id <SubjectPatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simpleParsers];
-
-    BOOL deliveredAMatcher = [instanceParser parseSubjectMatcherIntoArray:subjectMatchers];
-
-    assertThatBool(deliveredAMatcher, equalToBool(YES));
-}
-
-- (void)testDeliversInstanceMatcherWithAllSimpleMatchersFromAllSimpleParsers {
+- (void)testYieldsInstanceMatcherWithAllSimpleMatchersFromAllSimpleParsers {
     id <SimpleMatcher> matcher1 = [UniversalMatcher new];
     [simpleParsers addObject:[FakeSimpleParser parserThatYieldsSimpleMatcher:matcher1]];
 
@@ -71,9 +48,8 @@
 
     id <SubjectPatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simpleParsers];
 
-    [instanceParser parseSubjectMatcherIntoArray:subjectMatchers];
+    InstanceMatcher *subjectMatcher = (InstanceMatcher *)[instanceParser parseSubjectMatcher];
 
-    InstanceMatcher *subjectMatcher = (InstanceMatcher *)[subjectMatchers lastObject];
     assertThat(subjectMatcher.simpleMatchers,
         containsInAnyOrder(
                 sameInstance(matcher1),
@@ -83,16 +59,6 @@
                 sameInstance(matcher32),
                 sameInstance(matcher33),
                 nil));
-}
-
-- (void)testDeliversOneInstanceMatcherIfSimpleParsersYieldSimpleMatchers {
-    [simpleParsers addObject:[FakeSimpleParser parserThatYieldsSimpleMatcher:[UniversalMatcher new]]];
-    [simpleParsers addObject:[FakeSimpleParser parserThatYieldsSimpleMatcher:[UniversalMatcher new]]];
-    id <SubjectPatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simpleParsers];
-
-    [instanceParser parseSubjectMatcherIntoArray:subjectMatchers];
-
-    assertThat(subjectMatchers, contains(instanceOf([InstanceMatcher class]), nil));
 }
 
 @end

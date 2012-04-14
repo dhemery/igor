@@ -77,12 +77,11 @@
 		E621659DB794A5D612DCD46B /* MatchesViewInTree.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD46A /* MatchesViewInTree.h */; };
 		E621659DB794A5D612DCD46D /* ClassParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD46C /* ClassParserTests.m */; };
 		E621659DB794A5D612DCD475 /* ComplexMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD474 /* ComplexMatcherTests.m */; };
-		E621659DB794A5D612DCD479 /* ComplexMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD478 /* ComplexMatcher.m */; };
-		E621659DB794A5D612DCD47B /* ComplexMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD47A /* ComplexMatcher.h */; };
+		E621659DB794A5D612DCD479 /* BranchMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD478 /* BranchMatcher.m */; };
+		E621659DB794A5D612DCD47B /* BranchMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD47A /* BranchMatcher.h */; };
 		E621659DB794A5D612DCD481 /* FalseMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD480 /* FalseMatcher.m */; };
 		E621659DB794A5D612DCD483 /* FalseMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD482 /* FalseMatcher.h */; };
 		E621659DB794A5D612DCD485 /* IgorQueryScanner.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD484 /* IgorQueryScanner.h */; };
-		E621659DB794A5D612DCD487 /* SubjectChainParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD486 /* SubjectChainParser.h */; };
 		E621659DB794A5D612DCD489 /* SimplePatternParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD488 /* SimplePatternParser.h */; };
 		E621659DB794A5D612DCD48B /* SubjectPatternParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD48A /* SubjectPatternParser.h */; };
 		E621659DB794A5D612DCD48F /* IgorQueryParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD48E /* IgorQueryParser.h */; };
@@ -92,13 +91,20 @@
 		E621659DB794A5D612DCD49C /* BranchParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD49B /* BranchParser.h */; };
 		E621659DB794A5D612DCD49E /* FakeSimpleParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD49D /* FakeSimpleParser.m */; };
 		E621659DB794A5D612DCD4A0 /* FakeSimpleParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD49F /* FakeSimpleParser.h */; };
-		E621659DB794A5D612DCD4A2 /* IdentityCombinatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4A1 /* IdentityCombinatorTests.m */; };
-		E621659DB794A5D612DCD4A8 /* IdentityCombinator.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4A7 /* IdentityCombinator.m */; };
-		E621659DB794A5D612DCD4AA /* IdentityCombinator.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4A9 /* IdentityCombinator.h */; };
 		E621659DB794A5D612DCD4AC /* DescendantCombinatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4AB /* DescendantCombinatorTests.m */; };
-		E621659DB794A5D612DCD4B0 /* DescendantCombinator.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4AF /* DescendantCombinator.m */; };
-		E621659DB794A5D612DCD4B2 /* DescendantCombinator.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4B1 /* DescendantCombinator.h */; };
-		E621659DB794A5D612DCD4B4 /* Combinator.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4B3 /* Combinator.h */; };
+		E621659DB794A5D612DCD4B0 /* CombinatorMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4AF /* CombinatorMatcher.m */; };
+		E621659DB794A5D612DCD4B4 /* CombinatorMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4B3 /* CombinatorMatcher.h */; };
+		E621659DB794A5D612DCD4B6 /* RelationshipParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4B5 /* RelationshipParserTests.m */; };
+		E621659DB794A5D612DCD4BA /* FakeSubjectParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4B9 /* FakeSubjectParser.m */; };
+		E621659DB794A5D612DCD4BC /* FakeSubjectParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4BB /* FakeSubjectParser.h */; };
+		E621659DB794A5D612DCD4BE /* FakeCombinatorParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4BD /* FakeCombinatorParser.m */; };
+		E621659DB794A5D612DCD4C0 /* FakeCombinatorParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4BF /* FakeCombinatorParser.h */; };
+		E621659DB794A5D612DCD4C2 /* CombinatorParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4C1 /* CombinatorParser.h */; };
+		E621659DB794A5D612DCD4C4 /* Combinator.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4C3 /* Combinator.h */; };
+		E621659DB794A5D612DCD4C6 /* DescendantCombinator.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4C5 /* DescendantCombinator.m */; };
+		E621659DB794A5D612DCD4C8 /* DescendantCombinator.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4C7 /* DescendantCombinator.h */; };
+		E621659DB794A5D612DCD4CA /* DescendantCombinatorParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4C9 /* DescendantCombinatorParser.m */; };
+		E621659DB794A5D612DCD4CC /* DescendantCombinatorParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4CB /* DescendantCombinatorParser.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -204,12 +210,11 @@
 		E621659DB794A5D612DCD46A /* MatchesViewInTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchesViewInTree.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD46C /* ClassParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassParserTests.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD474 /* ComplexMatcherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComplexMatcherTests.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD478 /* ComplexMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComplexMatcher.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD47A /* ComplexMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComplexMatcher.h; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD478 /* BranchMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BranchMatcher.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD47A /* BranchMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BranchMatcher.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD480 /* FalseMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FalseMatcher.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD482 /* FalseMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FalseMatcher.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD484 /* IgorQueryScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IgorQueryScanner.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD486 /* SubjectChainParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubjectChainParser.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD488 /* SimplePatternParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimplePatternParser.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD48A /* SubjectPatternParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubjectPatternParser.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD48E /* IgorQueryParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IgorQueryParser.h; sourceTree = "<group>"; };
@@ -219,13 +224,20 @@
 		E621659DB794A5D612DCD49B /* BranchParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BranchParser.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD49D /* FakeSimpleParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeSimpleParser.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD49F /* FakeSimpleParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSimpleParser.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4A1 /* IdentityCombinatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdentityCombinatorTests.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4A7 /* IdentityCombinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdentityCombinator.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4A9 /* IdentityCombinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdentityCombinator.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4AB /* DescendantCombinatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescendantCombinatorTests.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4AF /* DescendantCombinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescendantCombinator.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4B1 /* DescendantCombinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescendantCombinator.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4B3 /* Combinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Combinator.h; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD4AF /* CombinatorMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CombinatorMatcher.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD4B3 /* CombinatorMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CombinatorMatcher.h; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD4B5 /* RelationshipParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RelationshipParserTests.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD4B9 /* FakeSubjectParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeSubjectParser.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD4BB /* FakeSubjectParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSubjectParser.h; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD4BD /* FakeCombinatorParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeCombinatorParser.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD4BF /* FakeCombinatorParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeCombinatorParser.h; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD4C1 /* CombinatorParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CombinatorParser.h; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD4C3 /* Combinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Combinator.h; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD4C5 /* DescendantCombinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescendantCombinator.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD4C7 /* DescendantCombinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescendantCombinator.h; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD4C9 /* DescendantCombinatorParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescendantCombinatorParser.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD4CB /* DescendantCombinatorParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescendantCombinatorParser.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +288,10 @@
 		2D436E241518FF2B00071950 /* fixtures */ = {
 			isa = PBXGroup;
 			children = (
+				E621659DB794A5D612DCD4BF /* FakeCombinatorParser.h */,
+				E621659DB794A5D612DCD4BD /* FakeCombinatorParser.m */,
+				E621659DB794A5D612DCD4BB /* FakeSubjectParser.h */,
+				E621659DB794A5D612DCD4B9 /* FakeSubjectParser.m */,
 				E621659DB794A5D612DCD49F /* FakeSimpleParser.h */,
 				E621659DB794A5D612DCD49D /* FakeSimpleParser.m */,
 				E621659DB794A5D612DCD482 /* FalseMatcher.h */,
@@ -332,13 +348,13 @@
 		2D695CE1147CD26700AF4115 /* matchers */ = {
 			isa = PBXGroup;
 			children = (
-				E621659DB794A5D612DCD4B3 /* Combinator.h */,
-				E621659DB794A5D612DCD4B1 /* DescendantCombinator.h */,
-				E621659DB794A5D612DCD4AF /* DescendantCombinator.m */,
-				E621659DB794A5D612DCD4A9 /* IdentityCombinator.h */,
-				E621659DB794A5D612DCD4A7 /* IdentityCombinator.m */,
-				E621659DB794A5D612DCD478 /* ComplexMatcher.m */,
-				E621659DB794A5D612DCD47A /* ComplexMatcher.h */,
+				E621659DB794A5D612DCD4C7 /* DescendantCombinator.h */,
+				E621659DB794A5D612DCD4C5 /* DescendantCombinator.m */,
+				E621659DB794A5D612DCD4C3 /* Combinator.h */,
+				E621659DB794A5D612DCD4B3 /* CombinatorMatcher.h */,
+				E621659DB794A5D612DCD4AF /* CombinatorMatcher.m */,
+				E621659DB794A5D612DCD478 /* BranchMatcher.m */,
+				E621659DB794A5D612DCD47A /* BranchMatcher.h */,
 				E621659DB794A5D612DCD45E /* UniversalMatcher.m */,
 				E621659DB794A5D612DCD45C /* UniversalMatcher.h */,
 				E621659DB794A5D612DCD448 /* SubjectMatcher.h */,
@@ -360,12 +376,14 @@
 		2D695CE2147CD27100AF4115 /* parser */ = {
 			isa = PBXGroup;
 			children = (
+				E621659DB794A5D612DCD4CB /* DescendantCombinatorParser.h */,
+				E621659DB794A5D612DCD4C9 /* DescendantCombinatorParser.m */,
+				E621659DB794A5D612DCD4C1 /* CombinatorParser.h */,
 				E621659DB794A5D612DCD49B /* BranchParser.h */,
 				E621659DB794A5D612DCD499 /* BranchParser.m */,
 				E621659DB794A5D612DCD48E /* IgorQueryParser.h */,
 				E621659DB794A5D612DCD48A /* SubjectPatternParser.h */,
 				E621659DB794A5D612DCD488 /* SimplePatternParser.h */,
-				E621659DB794A5D612DCD486 /* SubjectChainParser.h */,
 				E621659DB794A5D612DCD484 /* IgorQueryScanner.h */,
 				E621659DB794A5D612DCD444 /* IgorQueryStringScanner.h */,
 				E621659DB794A5D612DCD442 /* IgorQueryStringScanner.m */,
@@ -408,6 +426,7 @@
 		2D695CE6147CD35100AF4115 /* parser */ = {
 			isa = PBXGroup;
 			children = (
+				E621659DB794A5D612DCD4B5 /* RelationshipParserTests.m */,
 				E621659DB794A5D612DCD494 /* InstanceParserTests.m */,
 				E621659DB794A5D612DCD46C /* ClassParserTests.m */,
 				2D695CCD147CD1D200AF4115 /* ScanningIgorQueryParserTests.m */,
@@ -420,7 +439,6 @@
 			isa = PBXGroup;
 			children = (
 				E621659DB794A5D612DCD4AB /* DescendantCombinatorTests.m */,
-				E621659DB794A5D612DCD4A1 /* IdentityCombinatorTests.m */,
 				E621659DB794A5D612DCD474 /* ComplexMatcherTests.m */,
 				2D695CD0147CD1D200AF4115 /* KindOfClassMatcherTests.m */,
 				2D695CD1147CD1D200AF4115 /* MemberOfClassMatcherTests.m */,
@@ -540,6 +558,8 @@
 				E621659DB794A5D612DCD46B /* MatchesViewInTree.h in Headers */,
 				E621659DB794A5D612DCD483 /* FalseMatcher.h in Headers */,
 				E621659DB794A5D612DCD4A0 /* FakeSimpleParser.h in Headers */,
+				E621659DB794A5D612DCD4BC /* FakeSubjectParser.h in Headers */,
+				E621659DB794A5D612DCD4C0 /* FakeCombinatorParser.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,16 +576,17 @@
 				E621659DB794A5D612DCD445 /* IgorQueryStringScanner.h in Headers */,
 				E621659DB794A5D612DCD449 /* SubjectMatcher.h in Headers */,
 				E621659DB794A5D612DCD45D /* UniversalMatcher.h in Headers */,
-				E621659DB794A5D612DCD47B /* ComplexMatcher.h in Headers */,
+				E621659DB794A5D612DCD47B /* BranchMatcher.h in Headers */,
 				E621659DB794A5D612DCD485 /* IgorQueryScanner.h in Headers */,
-				E621659DB794A5D612DCD487 /* SubjectChainParser.h in Headers */,
 				E621659DB794A5D612DCD489 /* SimplePatternParser.h in Headers */,
 				E621659DB794A5D612DCD48B /* SubjectPatternParser.h in Headers */,
 				E621659DB794A5D612DCD48F /* IgorQueryParser.h in Headers */,
 				E621659DB794A5D612DCD49C /* BranchParser.h in Headers */,
-				E621659DB794A5D612DCD4AA /* IdentityCombinator.h in Headers */,
-				E621659DB794A5D612DCD4B2 /* DescendantCombinator.h in Headers */,
-				E621659DB794A5D612DCD4B4 /* Combinator.h in Headers */,
+				E621659DB794A5D612DCD4B4 /* CombinatorMatcher.h in Headers */,
+				E621659DB794A5D612DCD4C2 /* CombinatorParser.h in Headers */,
+				E621659DB794A5D612DCD4C4 /* Combinator.h in Headers */,
+				E621659DB794A5D612DCD4C8 /* DescendantCombinator.h in Headers */,
+				E621659DB794A5D612DCD4CC /* DescendantCombinatorParser.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -709,8 +730,10 @@
 				E621659DB794A5D612DCD491 /* BranchPatternTests.m in Sources */,
 				E621659DB794A5D612DCD495 /* InstanceParserTests.m in Sources */,
 				E621659DB794A5D612DCD49E /* FakeSimpleParser.m in Sources */,
-				E621659DB794A5D612DCD4A2 /* IdentityCombinatorTests.m in Sources */,
 				E621659DB794A5D612DCD4AC /* DescendantCombinatorTests.m in Sources */,
+				E621659DB794A5D612DCD4B6 /* RelationshipParserTests.m in Sources */,
+				E621659DB794A5D612DCD4BA /* FakeSubjectParser.m in Sources */,
+				E621659DB794A5D612DCD4BE /* FakeCombinatorParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -744,10 +767,11 @@
 				2DCE893C15193F6100B975EE /* InstanceParser.m in Sources */,
 				E621659DB794A5D612DCD443 /* IgorQueryStringScanner.m in Sources */,
 				E621659DB794A5D612DCD45F /* UniversalMatcher.m in Sources */,
-				E621659DB794A5D612DCD479 /* ComplexMatcher.m in Sources */,
+				E621659DB794A5D612DCD479 /* BranchMatcher.m in Sources */,
 				E621659DB794A5D612DCD49A /* BranchParser.m in Sources */,
-				E621659DB794A5D612DCD4A8 /* IdentityCombinator.m in Sources */,
-				E621659DB794A5D612DCD4B0 /* DescendantCombinator.m in Sources */,
+				E621659DB794A5D612DCD4B0 /* CombinatorMatcher.m in Sources */,
+				E621659DB794A5D612DCD4C6 /* DescendantCombinator.m in Sources */,
+				E621659DB794A5D612DCD4CA /* DescendantCombinatorParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

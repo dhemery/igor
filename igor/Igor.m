@@ -9,6 +9,7 @@
 #import "ClassParser.h"
 #import "PredicateParser.h"
 #import "BranchParser.h"
+#import "DescendantCombinatorParser.h"
 
 @implementation Igor {
     id <IgorQueryParser> parser;
@@ -38,13 +39,14 @@
     NSArray *simplePatternParsers = [NSArray arrayWithObjects:classParser, predicateParser, nil];
 
     id <SubjectPatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simplePatternParsers];
-    id <SubjectChainParser> instanceChainParser = [RelationshipParser parserWithScanner:scanner];
-    id <SubjectPatternParser> branchParser = [BranchParser parserWithScanner:scanner subjectChainParser:instanceChainParser];
+    NSArray *combinatorParsers = [NSArray arrayWithObject:[DescendantCombinatorParser parserWithScanner:scanner]];
+    RelationshipParser *relationshipParser = [RelationshipParser parserWithCombinatorParsers:combinatorParsers];
+    id <SubjectPatternParser> branchParser = [BranchParser parserWithScanner:scanner relationshipParser:relationshipParser];
     NSArray *subjectPatternParsers = [NSArray arrayWithObjects:instanceParser, branchParser, nil];
 
-    [instanceChainParser setSubjectPatternParsers:subjectPatternParsers];
+    [relationshipParser setSubjectPatternParsers:subjectPatternParsers];
 
-    id <IgorQueryParser> parser = [ScanningIgorQueryParser parserWithScanner:scanner instanceChainParser:instanceChainParser];
+    id <IgorQueryParser> parser = [ScanningIgorQueryParser parserWithScanner:scanner relationshipParser:relationshipParser];
 
     return [self igorWithParser:parser];
 }

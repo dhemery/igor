@@ -1,10 +1,5 @@
 #import "ViewFactory.h"
-#import "Combinator.h"
-#import "UniversalMatcher.h"
 #import "DescendantCombinator.h"
-#import "MatchesView.h"
-#import "FalseMatcher.h"
-#import "IdentityMatcher.h"
 
 @interface DescendantCombinatorTests : SenTestCase
 @end
@@ -19,12 +14,12 @@
 }
 
 - (void)setUp {
-    subject = [ViewFactory view];
-    parent = [ViewFactory view];
-    grandParent = [ViewFactory view];
-    greatGrandParent = [ViewFactory view];
-    greatGreatGrandParent = [ViewFactory view];
-    greatGreatGreatGrandParent = [ViewFactory view];
+    subject = [ViewFactory buttonWithAccessibilityHint:@"subject"];
+    parent = [ViewFactory buttonWithAccessibilityHint:@"parent"];
+    grandParent = [ViewFactory buttonWithAccessibilityHint:@"grandparent"];
+    greatGrandParent = [ViewFactory buttonWithAccessibilityHint:@"great grandparent"];
+    greatGreatGrandParent = [ViewFactory buttonWithAccessibilityHint:@"great great grandparent"];
+    greatGreatGreatGrandParent = [ViewFactory buttonWithAccessibilityHint:@"great great great grandparent"];
     [parent addSubview:subject];
     [grandParent addSubview:parent];
     [greatGrandParent addSubview:grandParent];
@@ -32,44 +27,27 @@
     [greatGreatGreatGrandParent addSubview:greatGreatGrandParent];
 }
 
-- (void)testMatchesIfViewMatchesSubjectMatcherAndAncestorMatchesRelativeMatcher {
-    id <SubjectMatcher> grandParentMatcher = [IdentityMatcher forView:grandParent];
-    id <Combinator> combinator = [DescendantCombinator combinatorWithSubjectMatcher:[UniversalMatcher new]
-                                                                    relativeMatcher:grandParentMatcher];
+- (void)testYieldsAllAncestorsIncludingTreeRoot {
+    id <Combinator> combinator = [DescendantCombinator new];
 
-    assertThat(combinator, [MatchesView view:subject inTree:greatGreatGreatGrandParent]);
+    NSArray *relatives = [combinator inverseRelativesOfView:subject inTree:greatGreatGreatGrandParent];
+    assertThat(relatives, contains(
+            sameInstance(parent),
+            sameInstance(grandParent),
+            sameInstance(greatGrandParent),
+            sameInstance(greatGreatGrandParent),
+            sameInstance(greatGreatGreatGrandParent),
+            nil));
 }
 
-- (void)testSearchesToRootForMatchingAncestor {
-    IdentityMatcher *greatGreatGreatGrandParentMatcher = [IdentityMatcher forView:greatGreatGreatGrandParent];
-    id <Combinator> combinator = [DescendantCombinator combinatorWithSubjectMatcher:[UniversalMatcher new]
-                                                                    relativeMatcher:greatGreatGreatGrandParentMatcher];
+- (void)testYieldsNoAncestorsAboveTreeRoot {
+    id <Combinator> combinator = [DescendantCombinator new];
 
-    assertThat(combinator, [MatchesView view:subject inTree:greatGreatGreatGrandParent]);
-}
-
-- (void)testMismatchesIfViewMismatchesSubjectMatcher {
-
-    id <Combinator> combinator = [DescendantCombinator combinatorWithSubjectMatcher:[FalseMatcher new]
-                                                                    relativeMatcher:[UniversalMatcher new]];
-
-    assertThat(combinator, isNot([MatchesView view:subject inTree:greatGreatGreatGrandParent]));
-}
-
-- (void)testMismatchesIfViewMatchesSubjectMatcherAndNoAncestorMatchesRelativeMatcher {
-
-    id <Combinator> combinator = [DescendantCombinator combinatorWithSubjectMatcher:[UniversalMatcher new]
-                                                                    relativeMatcher:[FalseMatcher new]];
-
-    assertThat(combinator, isNot([MatchesView view:subject inTree:greatGreatGreatGrandParent]));
-}
-
-- (void)testMismatchesIfMatchingAncestorIsAboveTree {
-
-    id <Combinator> combinator = [DescendantCombinator combinatorWithSubjectMatcher:[UniversalMatcher new]
-                                                                    relativeMatcher:[IdentityMatcher forView:greatGreatGreatGrandParent]];
-
-    assertThat(combinator, isNot([MatchesView view:subject inTree:grandParent]));
+    NSArray *relatives = [combinator inverseRelativesOfView:subject inTree:grandParent];
+    assertThat(relatives, contains(
+            sameInstance(parent),
+            sameInstance(grandParent),
+            nil));
 }
 
 @end

@@ -1,56 +1,68 @@
 #import "BranchParser.h"
-#import "ComplexMatcher.h"
+#import "BranchMatcher.h"
 #import "IgorQueryScanner.h"
-#import "SubjectChainParser.h"
-#import "UniversalMatcher.h"
+#import "RelationshipParser.h"
+#import "CombinatorMatcher.h"
 
 @implementation BranchParser {
     id <IgorQueryScanner> scanner;
-    id <SubjectChainParser> instanceChainParser;
+    id <SubjectPatternParser> subjectParser;
+    id <CombinatorParser> combinatorParser;
 }
-- (id <SubjectPatternParser>)initWithScanner:(id <IgorQueryScanner>)aScanner subjectChainParser:(id <SubjectChainParser>)theSubjectChainParser {
+- (id <SubjectPatternParser>)initWithScanner:(id <IgorQueryScanner>)aScanner relationshipParser:(RelationshipParser *)theRelationshipParser {
     self = [super init];
     if (self) {
         scanner = aScanner;
-        instanceChainParser = theSubjectChainParser;
+        subjectParser = theRelationshipParser;
+        combinatorParser = theRelationshipParser;
     }
     return self;
 }
 
-- (BOOL)parseSubjectMatcherIntoArray:(NSMutableArray *)subjectMatchers {
-    if (![scanner skipString:@"("]) return NO;
-
-    NSMutableArray *branchSubjectChain = [NSMutableArray array];
-    if (![instanceChainParser parseSubjectMatchersIntoArray:branchSubjectChain]) {
-        [scanner failBecause:@"Expected instance pattern"];
+- (id <SubjectMatcher>)parseBranchMatcher {
+    id <SubjectMatcher> matcher;
+    id <SubjectMatcher> branchSubjectMatcher = [subjectParser parseSubjectMatcher];
+    if (!branchSubjectMatcher) {
+        [scanner failBecause:@"Expected a subject pattern after '('"];
     }
-    if (![scanner skipString:@")"]) {
-        [scanner failBecause:@"Expected ')'"];
-    }
-
-    id <SubjectMatcher> subject = [branchSubjectChain objectAtIndex:0];
-    [branchSubjectChain removeObjectAtIndex:0];
-
-    id <SubjectMatcher> tail = [self subjectMatcherFromMatcherChain:branchSubjectChain];
-    [subjectMatchers addObject:[ComplexMatcher matcherWithSubject:subject tail:tail]];
-    return YES;
-}
-
-- (id <SubjectMatcher>)subjectMatcherFromMatcherChain:(NSArray *)matcherChain {
-    if ([matcherChain count] == 0) {
-        return [UniversalMatcher new];
-    }
-    if ([matcherChain count] == 1) {
-        return [matcherChain lastObject];
-    }
-    id <SubjectMatcher> matcher = [matcherChain objectAtIndex:0];
-    for (NSUInteger i = 1; i < [matcherChain count]; i++) {
-        matcher = [ComplexMatcher matcherWithHead:matcher subject:[matcherChain objectAtIndex:i]];
+    id <Combinator> branchTestCombinator = [combinatorParser parseCombinator];
+    if (branchTestCombinator) {
+        id <SubjectMatcher> branchTestMatcher = [self parseBranchTest];
+        matcher = [BranchMatcher matcherWithSubjectMatcher:branchSubjectMatcher combinator:branchTestCombinator relativeMatcher:branchTestMatcher];
+    } else {
+        matcher = branchSubjectMatcher;
     }
     return matcher;
 }
 
-+ (id <SubjectPatternParser>)parserWithScanner:(id <IgorQueryScanner>)scanner subjectChainParser:(id <SubjectChainParser>)subjectChainParser {
-    return [[self alloc] initWithScanner:scanner subjectChainParser:subjectChainParser];
+- (id <SubjectMatcher>)parseBranchTest {
+    id <SubjectMatcher> matcher = [subjectParser parseSubjectMatcher];
+    if (!matcher) {
+        [scanner failBecause:@"Expected a subject pattern"];
+    }
+    id <Combinator> combinator;
+    while ((combinator = [combinatorParser parseCombinator])) {
+        id <SubjectMatcher> subjectMatcher = [subjectParser parseSubjectMatcher];
+        if (!subjectMatcher) {
+            NSString *message = [NSString stringWithFormat:@"Expected a subject pattern after '%@'", combinator];
+            [scanner failBecause:message];
+        }
+        matcher = [CombinatorMatcher matcherWithSubjectMatcher:subjectMatcher combinator:combinator relativeMatcher:matcher];
+    }
+    return matcher;
 }
+
+- (id <SubjectMatcher>)parseSubjectMatcher {
+    if (![scanner skipString:@"("]) return nil;
+    id <SubjectMatcher> matcher = [self parseBranchMatcher];
+    if (![scanner skipString:@")"]) {
+        [scanner failBecause:@"Expected ')'"];
+    }
+    return matcher;
+}
+
++ (id <SubjectPatternParser>)parserWithScanner:(id <IgorQueryScanner>)scanner relationshipParser:(RelationshipParser *)relationshipParser {
+    return [[self alloc] initWithScanner:scanner relationshipParser:relationshipParser];
+}
+
 @end

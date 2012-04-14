@@ -4,7 +4,7 @@
 @implementation UniversalMatcher
 
 - (NSString *)description {
-    return @"[Universal]";
+    return @"*";
 }
 
 - (BOOL)matchesView:(UIView *)ignoredView {
