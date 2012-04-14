@@ -1,10 +1,10 @@
 #import "IdentityCombinator.h"
-#import "SubjectMatcher.h"
+#import "SimpleMatcher.h"
 
 @implementation IdentityCombinator {
-    id <SubjectMatcher> subjectMatcher;
+    id <SimpleMatcher> subjectMatcher;
 }
-- (id <Combinator>)initWithSubjectMatcher:(id <SubjectMatcher>)theSubjectMatcher {
+- (id <Combinator>)initWithSubjectMatcher:(id <SimpleMatcher>)theSubjectMatcher {
     self = [super init];
     if (self) {
         subjectMatcher = theSubjectMatcher;
@@ -12,18 +12,11 @@
     return self;
 }
 
-- (BOOL)collectMatchingRelativesOfViews:(NSArray *)targetViews inTree:(UIView *)tree intoArray:(NSMutableArray *)matchingRelatives {
-    BOOL foundMatchingViews = NO;
-    for(id view in targetViews) {
-        if([subjectMatcher matchesView:view inTree:tree]) {
-            foundMatchingViews = YES;
-            [matchingRelatives addObject:view];
-        }
-    }
-    return foundMatchingViews;
+- (BOOL)matchesView:(UIView *)view inTree:(UIView *)tree {
+    return [subjectMatcher matchesView:view];
 }
 
-+ (id <Combinator>)combinatorThatAppliesMatcher:(id <SubjectMatcher>)subjectMatcher {
++ (id <Combinator>)combinatorWithSubjectMatcher:(id <SimpleMatcher>)subjectMatcher {
     return [[self alloc] initWithSubjectMatcher:subjectMatcher];
 }
 @end

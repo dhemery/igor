@@ -1,10 +1,9 @@
 #import "Combinator.h"
 
-@protocol SubjectMatcher;
+@protocol SimpleMatcher;
 
 @interface IdentityCombinator : NSObject <Combinator>
-- (id <Combinator>)initWithSubjectMatcher:(id <SubjectMatcher>)aSubjectMatcher;
 
++ (id <Combinator>)combinatorWithSubjectMatcher:(id <SimpleMatcher>)subjectMatcher;
 
-+ (id <Combinator>)combinatorThatAppliesMatcher:(id <SubjectMatcher>)subjectMatcher;
 @end

@@ -20,7 +20,7 @@
 }
 
 - (BOOL)matchesView:(UIView *)view {
-    return [self matchesView:view inTree:nil];
+    return matchView == view;
 }
 
 - (BOOL)matchesView:(UIView *)view inTree:(UIView *)root {
