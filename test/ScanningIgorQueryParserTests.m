@@ -4,7 +4,7 @@
 #import "IsKindOfClassMatcher.h"
 #import "IsMemberOfClassMatcher.h"
 #import "UniversalMatcher.h"
-#import "RelationshipParser.h"
+#import "ChainParser.h"
 #import "InstanceParser.h"
 #import "PredicateParser.h"
 #import "ClassParser.h"
@@ -13,6 +13,7 @@
 @interface ScanningIgorQueryParserTests : SenTestCase
 @end
 
+// todo Use mocks to focus the test.
 @implementation ScanningIgorQueryParserTests {
     id <IgorQueryParser> parser;
 }
@@ -24,13 +25,12 @@
     NSArray *simplePatternParsers = [NSArray arrayWithObjects:classParser, predicateParser, nil];
 
     id <SubjectPatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simplePatternParsers];
-    RelationshipParser *relationshipParser = [RelationshipParser parserWithCombinatorParsers:nil];
-    id <SubjectPatternParser> branchParser = [BranchParser parserWithScanner:scanner relationshipParser:relationshipParser];
+    ChainParser *chainParser = [ChainParser parserWithCombinatorParsers:nil];
+    id <SubjectPatternParser> branchParser = [BranchParser parserWithScanner:scanner chainParser:chainParser];
     NSArray *subjectPatternParsers = [NSArray arrayWithObjects:instanceParser, branchParser, nil];
+    chainParser.subjectParsers = subjectPatternParsers;
 
-    [relationshipParser setSubjectPatternParsers:subjectPatternParsers];
-
-    parser = [ScanningIgorQueryParser parserWithScanner:scanner relationshipParser:relationshipParser];
+    parser = [ScanningIgorQueryParser parserWithScanner:scanner relationshipParser:chainParser];
 }
 
 - (void)testParsesAsteriskAsUniversalMatcher {

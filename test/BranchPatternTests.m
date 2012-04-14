@@ -55,6 +55,12 @@
     assertThat(matchingViews, hasCountOf(1));
 }
 
+- (void)testTailHasAChainOfMatchers {
+    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"([accessibilityHint='root'] [accessibilityHint='middle 1'] [accessibilityHint='middle 1 leaf 1'])" inTree:root];
+    assertThat(matchingViews, hasItem(root));
+    assertThat(matchingViews, hasCountOf(1));
+}
+
 - (void)testSubjectMatchesViewHeadBranchMatchesSubjectMismatchesDescendants {
     NSArray *matchingViews = [igor findViewsThatMatchQuery:@"([accessibilityHint='root'] [accessibilityHint='does not exist']) [accessibilityHint='middle 2 leaf 1']" inTree:root];
     assertThat(matchingViews, is(empty()));

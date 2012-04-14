@@ -6,10 +6,11 @@
 //#import "FalseMatcher.h"
 //#import "UniversalMatcher.h"
 
-@interface ComplexMatcherTests : SenTestCase
+@interface BranchMatcherTests : SenTestCase
 @end
 
-@implementation ComplexMatcherTests // {
+// todo Write these tests
+@implementation BranchMatcherTests // {
 //    UIButton *root;
 //    UIButton *middle;
 //    UIButton *leaf;

@@ -1,12 +1,13 @@
 #import "CombinatorMatcher.h"
 #import "Combinator.h"
 
+// TODO Test
 @implementation CombinatorMatcher
 
 @synthesize subjectMatcher, combinator, relativeMatcher;
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"Combinator:[subject:%@][combinator:%@][relative:%@]", self.subjectMatcher, self.combinator, self.relativeMatcher];
+    return [NSString stringWithFormat:@"%@ %@ %@", self.subjectMatcher, self.combinator, self.relativeMatcher];
 }
 
 - (id)initWithSubjectMatcher:(id <SubjectMatcher>)theSubjectMatcher combinator:(id <Combinator>)theCombinator relativeMatcher:(id <SubjectMatcher>)theRelativeMatcher {

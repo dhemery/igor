@@ -1,16 +1,17 @@
 #import "ScanningIgorQueryParser.h"
 #import "IgorQueryScanner.h"
 #import "BranchMatcher.h"
-#import "RelationshipParser.h"
+#import "ChainParser.h"
 #import "CombinatorMatcher.h"
 
+// TODO Extract common branch parsing stuff
 @implementation ScanningIgorQueryParser {
     id <IgorQueryScanner> scanner;
     id <SubjectPatternParser> subjectParser;
     id <CombinatorParser> combinatorParser;
 }
 
-- (id <IgorQueryParser>)initWithQueryScanner:(id <IgorQueryScanner>)theScanner relationshipParser:(RelationshipParser *)theRelationshipParser {
+- (id <IgorQueryParser>)initWithQueryScanner:(id <IgorQueryScanner>)theScanner relationshipParser:(ChainParser *)theRelationshipParser {
     if (self = [super init]) {
         scanner = theScanner;
         subjectParser = theRelationshipParser;
@@ -24,17 +25,18 @@
 
     id <SubjectMatcher> matcher = [subjectParser parseSubjectMatcher];
     id <Combinator> combinator;
-
     while ((combinator = [combinatorParser parseCombinator])) {
         id <SubjectMatcher> subjectMatcher = [subjectParser parseSubjectMatcher];
-        if (!subjectMatcher) break;
+        if (!subjectMatcher) break; // what if we put the combinator back before breaking?
         matcher = [CombinatorMatcher matcherWithSubjectMatcher:subjectMatcher combinator:combinator relativeMatcher:matcher];
     }
 
-    if (combinator) {
+    if (combinator) { // Interrupted.
         if (![scanner skipString:@"$"]) {
             [scanner failBecause:@"Expected $"];
         }
+        // Parse a subject, combine it with the chain built so far
+        // to make the subject of the Igor query.
         id <SubjectMatcher> subjectMatcher = [subjectParser parseSubjectMatcher];
         if (!subjectMatcher) {
             [scanner failBecause:@"Expected a subject pattern after '$'"];
@@ -43,7 +45,7 @@
         combinator = [combinatorParser parseCombinator];
     }
 
-    if (!matcher) {
+    if (!matcher) { // If not started.
         if (![scanner skipString:@"$"]) {
             [scanner failBecause:@"The query must start with a subject pattern"];
         }
@@ -54,7 +56,7 @@
         combinator = [combinatorParser parseCombinator];
     }
 
-    if (combinator) {
+    if (combinator) { // If not completed.
         id <SubjectMatcher> branchMatcher = [subjectParser parseSubjectMatcher];
         if (!branchMatcher) {
             NSString *message = [NSString stringWithFormat:@"Expected a subject pattern after '%@'", combinator];
@@ -76,7 +78,7 @@
     return matcher;
 }
 
-+ (id <IgorQueryParser>)parserWithScanner:(id <IgorQueryScanner>)scanner relationshipParser:(RelationshipParser *)relationshipParser {
++ (id <IgorQueryParser>)parserWithScanner:(id <IgorQueryScanner>)scanner relationshipParser:(ChainParser *)relationshipParser {
     return [[self alloc] initWithQueryScanner:scanner relationshipParser:relationshipParser];
 }
 

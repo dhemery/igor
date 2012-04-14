@@ -1,11 +1,12 @@
 #import "SubjectPatternParser.h"
 
 @protocol IgorQueryScanner;
-@class RelationshipParser;
+@class ChainParser;
 
+// TODO Test
 @interface BranchParser : NSObject <SubjectPatternParser>
 
-+ (id <SubjectPatternParser>)parserWithScanner:(id <IgorQueryScanner>)scanner relationshipParser:(RelationshipParser *)relationshipParser;
++ (id <SubjectPatternParser>)parserWithScanner:(id <IgorQueryScanner>)scanner chainParser:(ChainParser *)relationshipParser;
 
 
 @end

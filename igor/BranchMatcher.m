@@ -2,12 +2,14 @@
 #import "TreeWalker.h"
 #import "Combinator.h"
 
+// TODO Test
+// TODO Extract common branch parsing stuff
 @implementation BranchMatcher
 
 @synthesize subjectMatcher, combinator, relativeMatcher;
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"(%@$$%@%@)", self.subjectMatcher, self.combinator, self.relativeMatcher];
+    return [NSString stringWithFormat:@"%@$$ %@ %@", self.subjectMatcher, self.combinator, self.relativeMatcher];
 }
 
 - (BranchMatcher *)initWithSubjectMatcher:(id <SubjectMatcher>)theSubjectMatcher

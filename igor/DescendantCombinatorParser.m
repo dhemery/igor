@@ -3,10 +3,10 @@
 #import "IgorQueryScanner.h"
 #import "DescendantCombinator.h"
 
+// TODO Test
 @implementation DescendantCombinatorParser {
     id <IgorQueryScanner> scanner;
 }
-
 
 - (id <CombinatorParser>)initWithScanner:(id <IgorQueryScanner>)theScanner {
     self = [super init];

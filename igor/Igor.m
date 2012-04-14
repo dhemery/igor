@@ -4,7 +4,7 @@
 #import "TreeWalker.h"
 #import "IgorQueryScanner.h"
 #import "IgorQueryStringScanner.h"
-#import "RelationshipParser.h"
+#import "ChainParser.h"
 #import "InstanceParser.h"
 #import "ClassParser.h"
 #import "PredicateParser.h"
@@ -36,15 +36,15 @@
     id <IgorQueryScanner> scanner = [IgorQueryStringScanner new];
     id <SimplePatternParser> classParser = [ClassParser parserWithScanner:scanner];
     id <SimplePatternParser> predicateParser = [PredicateParser parserWithScanner:scanner];
+
     NSArray *simplePatternParsers = [NSArray arrayWithObjects:classParser, predicateParser, nil];
-
     id <SubjectPatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simplePatternParsers];
-    NSArray *combinatorParsers = [NSArray arrayWithObject:[DescendantCombinatorParser parserWithScanner:scanner]];
-    RelationshipParser *relationshipParser = [RelationshipParser parserWithCombinatorParsers:combinatorParsers];
-    id <SubjectPatternParser> branchParser = [BranchParser parserWithScanner:scanner relationshipParser:relationshipParser];
-    NSArray *subjectPatternParsers = [NSArray arrayWithObjects:instanceParser, branchParser, nil];
 
-    [relationshipParser setSubjectPatternParsers:subjectPatternParsers];
+    NSArray *combinatorParsers = [NSArray arrayWithObject:[DescendantCombinatorParser parserWithScanner:scanner]];
+    ChainParser *relationshipParser = [ChainParser parserWithCombinatorParsers:combinatorParsers];
+    id <SubjectPatternParser> branchParser = [BranchParser parserWithScanner:scanner chainParser:relationshipParser];
+    NSArray *subjectParsers = [NSArray arrayWithObjects:instanceParser, branchParser, nil];
+    relationshipParser.subjectParsers = subjectParsers;
 
     id <IgorQueryParser> parser = [ScanningIgorQueryParser parserWithScanner:scanner relationshipParser:relationshipParser];
 
