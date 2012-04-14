@@ -4,8 +4,8 @@
 
 @interface BranchMatcher : NSObject <SubjectMatcher>
 
-@property id <SubjectMatcher> subjectMatcher, relativeMatcher;
-@property id <Combinator> combinator;
+@property (strong) id <SubjectMatcher> subjectMatcher, relativeMatcher;
+@property (strong) id <Combinator> combinator;
 
 + (BranchMatcher *)matcherWithSubjectMatcher:(id <SubjectMatcher>)subject
                                    combinator:(id <Combinator>)combinator

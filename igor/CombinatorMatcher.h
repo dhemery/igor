@@ -4,9 +4,9 @@
 
 @interface CombinatorMatcher : NSObject <SubjectMatcher>
 
-@property id <SubjectMatcher> subjectMatcher;
-@property id <Combinator> combinator;
-@property id <SubjectMatcher> relativeMatcher;
+@property (strong) id <SubjectMatcher> subjectMatcher;
+@property (strong) id <Combinator> combinator;
+@property (strong) id <SubjectMatcher> relativeMatcher;
 
 - (id)initWithSubjectMatcher:(id <SubjectMatcher>)theSubjectMatcher combinator:(id <Combinator>)theCombinator relativeMatcher:(id <SubjectMatcher>)theRelativeMatcher;
 
