@@ -6,24 +6,24 @@
     return @" ";
 }
 
-- (NSMutableArray *)ancestorsOfView:(UIView *)view {
+- (NSArray *)inverseRelativesOfView:(UIView *)subject {
     NSMutableArray *ancestors = [NSMutableArray array];
-    id ancestor = [view superview];
+    id ancestor = [subject superview];
     while (ancestor) {
         [ancestors addObject:ancestor];
         ancestor = [ancestor superview];
     }
-    return ancestors;
+    return [NSArray arrayWithArray:ancestors];
 }
 
 - (NSArray *)inverseRelativesOfView:(UIView *)subject inTree:(UIView *)root {
-    NSMutableArray *ancestorsOfView = [self ancestorsOfView:subject];
-    NSMutableArray *ancestorsOfRoot = [self ancestorsOfView:root];
+    NSMutableArray *ancestorsOfView = [NSMutableArray arrayWithArray:[self inverseRelativesOfView:subject]];
+    NSArray *ancestorsOfRoot = [self inverseRelativesOfView:root];
     [ancestorsOfView removeObjectsInArray:ancestorsOfRoot];
-    return ancestorsOfView;
+    return [NSArray arrayWithArray:ancestorsOfView];
 }
 
-// TODO Return all descendants. Need a test for that.
+// TODO Return all descendants?
 - (NSArray *)relativesOfView:(UIView *)view {
     return [view subviews];
 }

@@ -112,6 +112,7 @@
 		E621659DB794A5D612DCD4D6 /* SubjectChainTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4D5 /* SubjectChainTests.m */; };
 		E621659DB794A5D612DCD4D8 /* EmptySetCombinator.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4D7 /* EmptySetCombinator.m */; };
 		E621659DB794A5D612DCD4DA /* EmptySetCombinator.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4D9 /* EmptySetCombinator.h */; };
+		E621659DB794A5D612DCD4DE /* ChildCombinatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4DD /* ChildCombinatorTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -252,6 +253,7 @@
 		E621659DB794A5D612DCD4D5 /* SubjectChainTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectChainTests.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4D7 /* EmptySetCombinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptySetCombinator.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4D9 /* EmptySetCombinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptySetCombinator.h; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD4DD /* ChildCombinatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildCombinatorTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -459,6 +461,7 @@
 		2D695CE7147CD38000AF4115 /* matchers */ = {
 			isa = PBXGroup;
 			children = (
+				E621659DB794A5D612DCD4DD /* ChildCombinatorTests.m */,
 				E621659DB794A5D612DCD4AB /* DescendantCombinatorTests.m */,
 				E621659DB794A5D612DCD474 /* BranchMatcherTests.m */,
 				2D695CD0147CD1D200AF4115 /* KindOfClassMatcherTests.m */,
@@ -760,6 +763,7 @@
 				E621659DB794A5D612DCD4BE /* FakeCombinatorParser.m in Sources */,
 				E621659DB794A5D612DCD4D6 /* SubjectChainTests.m in Sources */,
 				E621659DB794A5D612DCD4D8 /* EmptySetCombinator.m in Sources */,
+				E621659DB794A5D612DCD4DE /* ChildCombinatorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
