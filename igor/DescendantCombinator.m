@@ -23,9 +23,13 @@
     return [NSArray arrayWithArray:ancestorsOfView];
 }
 
-// TODO Return all descendants?
-- (NSArray *)relativesOfView:(UIView *)view {
-    return [view subviews];
+- (NSArray *)relativesOfView:(UIView *)subject {
+    NSArray *const subviews = [subject subviews];
+    NSMutableArray* descendants = [NSMutableArray arrayWithArray:subviews];
+    for (UIView *subview in subviews) {
+        [descendants addObjectsFromArray:[self relativesOfView:subview]];
+    }
+    return [NSArray arrayWithArray:descendants];
 }
 
 @end

@@ -1,11 +1,6 @@
 #import "ChildCombinator.h"
 
-@implementation ChildCombinator {
-
-}
-- (NSArray *)relativesOfView:(UIView *)subject {
-    return [subject subviews];
-}
+@implementation ChildCombinator
 
 - (NSArray *)inverseRelativesOfView:(UIView *)subject {
     UIView *parent = [subject superview];
@@ -20,6 +15,10 @@
         return [NSArray array];
     }
     return [self inverseRelativesOfView:subject];
+}
+
+- (NSArray *)relativesOfView:(UIView *)subject {
+    return [subject subviews];
 }
 
 @end
