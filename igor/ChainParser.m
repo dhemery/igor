@@ -2,7 +2,6 @@
 #import "ChainParser.h"
 #import "IgorQueryStringScanner.h"
 #import "DescendantCombinator.h"
-#import "ChainParserState.h"
 #import "SubjectMatcher.h"
 #import "CombinatorMatcher.h"
 

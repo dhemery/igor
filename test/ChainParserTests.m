@@ -2,7 +2,6 @@
 #import "FakeSubjectParser.h"
 #import "UniversalMatcher.h"
 #import "FakeCombinatorParser.h"
-#import "ChainParserState.h"
 #import "DescendantCombinator.h"
 #import "CombinatorMatcher.h"
 

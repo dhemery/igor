@@ -2,7 +2,6 @@
 #import "BranchMatcher.h"
 #import "IgorQueryScanner.h"
 #import "ChainParser.h"
-#import "ChainParserState.h"
 
 @implementation BranchParser {
     id <IgorQueryScanner> scanner;
