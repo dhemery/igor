@@ -11,7 +11,8 @@
 }
 
 - (MatchesView *)initWithView:(UIView *)view {
-    if (self = [super init]) {
+    self = [super init];
+    if (self) {
         targetView = view;
     }
     return self;

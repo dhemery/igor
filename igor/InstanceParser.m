@@ -7,7 +7,8 @@
 }
 
 - (id <SubjectPatternParser>)initWithSimplePatternParsers:(NSArray *)theSimplePatternParsers {
-    if (self = [super init]) {
+    self = [super init];
+    if (self) {
         simplePatternParsers = [NSArray arrayWithArray:theSimplePatternParsers];
     }
     return self;

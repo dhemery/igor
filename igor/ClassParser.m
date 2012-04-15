@@ -10,7 +10,8 @@
 }
 
 - (id <SimplePatternParser>)initWithScanner:(id <IgorQueryScanner>)theScanner {
-    if (self = [super init]) {
+    self = [super init];
+    if (self) {
         scanner = theScanner;
     }
     return self;

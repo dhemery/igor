@@ -15,7 +15,8 @@
 - (BranchMatcher *)initWithSubjectMatcher:(id <SubjectMatcher>)theSubjectMatcher
                                    combinator:(id <Combinator>)theCombinator
                               relativeMatcher:(id <SubjectMatcher>)theRelativeMatcher {
-    if (self = [super init]) {
+    self = [super init];
+    if (self) {
         subjectMatcher = theSubjectMatcher;
         combinator = theCombinator;
         relativeMatcher = theRelativeMatcher;

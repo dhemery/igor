@@ -5,6 +5,8 @@
 
 @interface Igor : NSObject <SelectorEngine>
 
+@property(strong) id <IgorQueryParser> parser;
+
 - (NSArray *)findViewsThatMatchQuery:(NSString *)query inTree:(UIView *)tree;
 
 + (Igor *)igor;

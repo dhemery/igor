@@ -3,10 +3,10 @@
 
 @interface SubjectChain : NSObject
 
-@property(nonatomic, strong) id <Combinator> combinator;
-@property(nonatomic, readonly, getter=isDone) BOOL done;
-@property(nonatomic, strong) id <SubjectMatcher> matcher;
-@property(nonatomic, readonly, getter=isStarted) BOOL started;
+@property(strong) id <SubjectMatcher> matcher;
+@property(strong) id <Combinator> combinator;
+@property(readonly, getter=isStarted) BOOL started;
+@property(readonly, getter=isDone) BOOL done;
 
 + (SubjectChain *)stateWithMatcher:(id <SubjectMatcher>)subjectMatcher combinator:(id <Combinator>)combinator;
 

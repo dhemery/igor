@@ -13,7 +13,8 @@
 }
 
 - (KindOfClassMatcher *)initForBaseClass:(Class)baseClass {
-    if (self = [super init]) {
+    self = [super init];
+    if (self) {
         matchClass = baseClass;
     }
     return self;

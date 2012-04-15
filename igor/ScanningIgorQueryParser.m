@@ -15,7 +15,8 @@
 }
 
 - (id <IgorQueryParser>)initWithQueryScanner:(id <IgorQueryScanner>)theScanner subjectChainParser:(SubjectChainParser *)theSubjectChainParser {
-    if (self = [super init]) {
+    self = [super init];
+    if (self) {
         scanner = theScanner;
         subjectChainParser = theSubjectChainParser;
     }

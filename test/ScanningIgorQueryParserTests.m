@@ -16,6 +16,7 @@
 // todo Use mocks to focus the test.
 @implementation ScanningIgorQueryParserTests {
     id <IgorQueryParser> parser;
+
 }
 
 - (void)setUp {

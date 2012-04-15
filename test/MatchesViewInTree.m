@@ -18,7 +18,8 @@
 }
 
 - (MatchesViewInTree *)initWithView:(UIView *)view inTree:(UIView *)tree {
-    if (self = [super init]) {
+    self = [super init];
+    if (self) {
         targetView = view;
         root = tree;
     }

@@ -12,7 +12,8 @@
 }
 
 - (IsKindOfClassMatcher *)initWithClass:(Class)baseClass {
-    if (self = [super init]) {
+    self = [super init];
+    if (self) {
         targetClass = baseClass;
     }
     return self;

@@ -1,17 +1,13 @@
 #import "InstanceParser.h"
 #import "SubjectChainParser.h"
-#import "IgorQueryStringScanner.h"
 #import "DescendantCombinator.h"
 #import "SubjectMatcher.h"
 #import "CombinatorMatcher.h"
 #import "CombinatorParser.h"
 
-@implementation SubjectChainParser {
-    id <IgorQueryScanner> scanner;
-    NSArray *combinatorParsers;
-}
+@implementation SubjectChainParser
 
-@synthesize subjectParsers;
+@synthesize combinatorParsers, scanner, subjectParsers;
 
 + (SubjectChainParser *)parserWithSubjectParsers:(NSArray *)subjectParsers combinatorParsers:(NSArray *)combinatorParsers {
     return [[self alloc] initWithSubjectParsers:subjectParsers combinatorParsers:combinatorParsers];
@@ -22,7 +18,8 @@
 }
 
 - (SubjectChainParser *)initWithSubjectParsers:(NSArray *)theSubjectParsers combinatorParsers:(NSArray *)theCombinatorParsers {
-    if (self = [super init]) {
+    self = [super init];
+    if (self) {
         subjectParsers = theSubjectParsers;
         combinatorParsers = theCombinatorParsers;
     }

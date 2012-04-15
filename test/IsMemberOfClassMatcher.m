@@ -12,7 +12,8 @@
 }
 
 - (IsMemberOfClassMatcher *)initWithExactClass:(Class)exactClass {
-    if (self = [super init]) {
+    self = [super init];
+    if (self) {
         targetClass = exactClass;
     }
     return self;

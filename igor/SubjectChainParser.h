@@ -5,6 +5,9 @@
 @interface SubjectChainParser : NSObject
 
 @property (strong) NSArray *subjectParsers;
+@property(strong) id <IgorQueryScanner> scanner;
+@property(strong) NSArray *combinatorParsers;
+
 
 + (SubjectChainParser *)parserWithCombinatorParsers:(NSArray *)combinatorParsers;
 

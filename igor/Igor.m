@@ -11,9 +11,10 @@
 #import "BranchParser.h"
 #import "DescendantCombinatorParser.h"
 
-@implementation Igor {
-    id <IgorQueryParser> parser;
-}
+@implementation Igor
+
+@synthesize parser;
+
 
 - (NSArray *)findViewsThatMatchMatcher:(id <SubjectMatcher>)matcher inTree:(UIView *)tree {
     NSMutableSet *matchingViews = [NSMutableSet set];
@@ -56,7 +57,8 @@
 }
 
 - (Igor *)initWithParser:(id <IgorQueryParser>)theParser {
-    if (self = [super init]) {
+    self = [super init];
+    if (self) {
         parser = theParser;
     }
     return self;
