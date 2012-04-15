@@ -13,7 +13,7 @@
 		2D2D4D0C1478787F00FF3D88 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD439 /* UIKit.framework */; };
 		2D2D4D0D1478787F00FF3D88 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD425 /* Foundation.framework */; };
 		2D3E1F391509B6C000D62300 /* frank_static_resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2D3E1F361509B6C000D62300 /* frank_static_resources.bundle */; };
-		2D3E1F3F1509B98200D62300 /* RelationshipPatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3E1F3D1509B98200D62300 /* RelationshipPatternTests.m */; };
+		2D3E1F3F1509B98200D62300 /* SubjectChainPatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3E1F3D1509B98200D62300 /* SubjectChainPatternTests.m */; };
 		2D3E1F4E1509DE8700D62300 /* libFrank.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D3E1F371509B6C000D62300 /* libFrank.a */; };
 		2D3E1F4F1509DE8700D62300 /* libShelley.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D3E1F381509B6C000D62300 /* libShelley.a */; };
 		2D436E211518F9C300071950 /* IdentityMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D436E1F1518F9C300071950 /* IdentityMatcher.h */; };
@@ -43,8 +43,8 @@
 		2D99DB351517E9C900244226 /* SubjectMarkerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D99DB321517E94B00244226 /* SubjectMarkerTests.m */; };
 		2D9CC80B15185B6500B51A8D /* TreeWalker.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D9CC80915185B6500B51A8D /* TreeWalker.h */; };
 		2D9CC80C15185B6500B51A8D /* TreeWalker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D9CC80A15185B6500B51A8D /* TreeWalker.m */; };
-		2DCE893615193E8900B975EE /* ChainParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DCE893415193E8900B975EE /* ChainParser.h */; };
-		2DCE893715193E8900B975EE /* ChainParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE893515193E8900B975EE /* ChainParser.m */; };
+		2DCE893615193E8900B975EE /* SubjectChainParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DCE893415193E8900B975EE /* SubjectChainParser.h */; };
+		2DCE893715193E8900B975EE /* SubjectChainParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE893515193E8900B975EE /* SubjectChainParser.m */; };
 		2DCE893B15193F6100B975EE /* InstanceParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DCE893915193F6100B975EE /* InstanceParser.h */; };
 		2DCE893C15193F6100B975EE /* InstanceParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE893A15193F6100B975EE /* InstanceParser.m */; };
 		2DCF9764147ED3FD003B0F38 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD439 /* UIKit.framework */; };
@@ -94,7 +94,7 @@
 		E621659DB794A5D612DCD4AC /* DescendantCombinatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4AB /* DescendantCombinatorTests.m */; };
 		E621659DB794A5D612DCD4B0 /* CombinatorMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4AF /* CombinatorMatcher.m */; };
 		E621659DB794A5D612DCD4B4 /* CombinatorMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4B3 /* CombinatorMatcher.h */; };
-		E621659DB794A5D612DCD4B6 /* ChainParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4B5 /* ChainParserTests.m */; };
+		E621659DB794A5D612DCD4B6 /* SubjectChainParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4B5 /* SubjectChainParserTests.m */; };
 		E621659DB794A5D612DCD4BA /* FakeSubjectParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4B9 /* FakeSubjectParser.m */; };
 		E621659DB794A5D612DCD4BC /* FakeSubjectParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4BB /* FakeSubjectParser.h */; };
 		E621659DB794A5D612DCD4BE /* FakeCombinatorParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4BD /* FakeCombinatorParser.m */; };
@@ -107,9 +107,9 @@
 		E621659DB794A5D612DCD4CC /* DescendantCombinatorParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4CB /* DescendantCombinatorParser.h */; };
 		E621659DB794A5D612DCD4CE /* ChildCombinator.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4CD /* ChildCombinator.m */; };
 		E621659DB794A5D612DCD4D0 /* ChildCombinator.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4CF /* ChildCombinator.h */; };
-		E621659DB794A5D612DCD4D2 /* ChainParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4D1 /* ChainParserState.m */; };
-		E621659DB794A5D612DCD4D4 /* ChainParserState.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4D3 /* ChainParserState.h */; };
-		E621659DB794A5D612DCD4D6 /* ChainParserStateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4D5 /* ChainParserStateTests.m */; };
+		E621659DB794A5D612DCD4D2 /* SubjectChain.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4D1 /* SubjectChain.m */; };
+		E621659DB794A5D612DCD4D4 /* SubjectChain.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4D3 /* SubjectChain.h */; };
+		E621659DB794A5D612DCD4D6 /* SubjectChainTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4D5 /* SubjectChainTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,7 +136,7 @@
 		2D3E1F361509B6C000D62300 /* frank_static_resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = frank_static_resources.bundle; sourceTree = "<group>"; };
 		2D3E1F371509B6C000D62300 /* libFrank.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFrank.a; sourceTree = "<group>"; };
 		2D3E1F381509B6C000D62300 /* libShelley.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libShelley.a; sourceTree = "<group>"; };
-		2D3E1F3D1509B98200D62300 /* RelationshipPatternTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RelationshipPatternTests.m; sourceTree = "<group>"; };
+		2D3E1F3D1509B98200D62300 /* SubjectChainPatternTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectChainPatternTests.m; sourceTree = "<group>"; };
 		2D436E1F1518F9C300071950 /* IdentityMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdentityMatcher.h; sourceTree = "<group>"; };
 		2D436E201518F9C300071950 /* IdentityMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdentityMatcher.m; sourceTree = "<group>"; };
 		2D436E251518FF6D00071950 /* ViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewFactory.h; sourceTree = "<group>"; };
@@ -175,8 +175,8 @@
 		2D99DB321517E94B00244226 /* SubjectMarkerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectMarkerTests.m; sourceTree = "<group>"; };
 		2D9CC80915185B6500B51A8D /* TreeWalker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeWalker.h; sourceTree = "<group>"; };
 		2D9CC80A15185B6500B51A8D /* TreeWalker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreeWalker.m; sourceTree = "<group>"; };
-		2DCE893415193E8900B975EE /* ChainParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainParser.h; sourceTree = "<group>"; };
-		2DCE893515193E8900B975EE /* ChainParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainParser.m; sourceTree = "<group>"; };
+		2DCE893415193E8900B975EE /* SubjectChainParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubjectChainParser.h; sourceTree = "<group>"; };
+		2DCE893515193E8900B975EE /* SubjectChainParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectChainParser.m; sourceTree = "<group>"; };
 		2DCE893915193F6100B975EE /* InstanceParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstanceParser.h; sourceTree = "<group>"; };
 		2DCE893A15193F6100B975EE /* InstanceParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstanceParser.m; sourceTree = "<group>"; };
 		2DCF9762147ED3FD003B0F38 /* vigor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vigor.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,7 +232,7 @@
 		E621659DB794A5D612DCD4AB /* DescendantCombinatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescendantCombinatorTests.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4AF /* CombinatorMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CombinatorMatcher.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4B3 /* CombinatorMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CombinatorMatcher.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4B5 /* ChainParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainParserTests.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD4B5 /* SubjectChainParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectChainParserTests.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4B9 /* FakeSubjectParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeSubjectParser.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4BB /* FakeSubjectParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSubjectParser.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4BD /* FakeCombinatorParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeCombinatorParser.m; sourceTree = "<group>"; };
@@ -245,9 +245,9 @@
 		E621659DB794A5D612DCD4CB /* DescendantCombinatorParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescendantCombinatorParser.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4CD /* ChildCombinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildCombinator.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4CF /* ChildCombinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildCombinator.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4D1 /* ChainParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainParserState.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4D3 /* ChainParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainParserState.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4D5 /* ChainParserStateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainParserStateTests.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD4D1 /* SubjectChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectChain.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD4D3 /* SubjectChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubjectChain.h; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD4D5 /* SubjectChainTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectChainTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -388,8 +388,8 @@
 		2D695CE2147CD27100AF4115 /* parser */ = {
 			isa = PBXGroup;
 			children = (
-				E621659DB794A5D612DCD4D3 /* ChainParserState.h */,
-				E621659DB794A5D612DCD4D1 /* ChainParserState.m */,
+				E621659DB794A5D612DCD4D3 /* SubjectChain.h */,
+				E621659DB794A5D612DCD4D1 /* SubjectChain.m */,
 				E621659DB794A5D612DCD4CB /* DescendantCombinatorParser.h */,
 				E621659DB794A5D612DCD4C9 /* DescendantCombinatorParser.m */,
 				E621659DB794A5D612DCD4C1 /* CombinatorParser.h */,
@@ -411,8 +411,8 @@
 				2DCE893A15193F6100B975EE /* InstanceParser.m */,
 				2D695CA3147CD1BA00AF4115 /* PredicateParser.h */,
 				2D695CA4147CD1BA00AF4115 /* PredicateParser.m */,
-				2DCE893415193E8900B975EE /* ChainParser.h */,
-				2DCE893515193E8900B975EE /* ChainParser.m */,
+				2DCE893415193E8900B975EE /* SubjectChainParser.h */,
+				2DCE893515193E8900B975EE /* SubjectChainParser.m */,
 			);
 			name = parser;
 			sourceTree = "<group>";
@@ -440,8 +440,8 @@
 		2D695CE6147CD35100AF4115 /* parser */ = {
 			isa = PBXGroup;
 			children = (
-				E621659DB794A5D612DCD4D5 /* ChainParserStateTests.m */,
-				E621659DB794A5D612DCD4B5 /* ChainParserTests.m */,
+				E621659DB794A5D612DCD4D5 /* SubjectChainTests.m */,
+				E621659DB794A5D612DCD4B5 /* SubjectChainParserTests.m */,
 				E621659DB794A5D612DCD494 /* InstanceParserTests.m */,
 				E621659DB794A5D612DCD46C /* ClassParserTests.m */,
 				2D695CCD147CD1D200AF4115 /* ScanningIgorQueryParserTests.m */,
@@ -467,7 +467,7 @@
 				E621659DB794A5D612DCD490 /* BranchPatternTests.m */,
 				2D695CCA147CD1D200AF4115 /* ClassPatternTests.m */,
 				2D695CD4147CD1D200AF4115 /* PredicatePatternTests.m */,
-				2D3E1F3D1509B98200D62300 /* RelationshipPatternTests.m */,
+				2D3E1F3D1509B98200D62300 /* SubjectChainPatternTests.m */,
 				2D99DB321517E94B00244226 /* SubjectMarkerTests.m */,
 			);
 			name = acceptance;
@@ -586,7 +586,7 @@
 				2D080CFC147DAC36002A09E2 /* SelectorEngineRegistry.h in Headers */,
 				2D496EA51486A513007E1FDE /* PredicateMatcher.h in Headers */,
 				2D9CC80B15185B6500B51A8D /* TreeWalker.h in Headers */,
-				2DCE893615193E8900B975EE /* ChainParser.h in Headers */,
+				2DCE893615193E8900B975EE /* SubjectChainParser.h in Headers */,
 				2DCE893B15193F6100B975EE /* InstanceParser.h in Headers */,
 				E621659DB794A5D612DCD445 /* IgorQueryStringScanner.h in Headers */,
 				E621659DB794A5D612DCD449 /* SubjectMatcher.h in Headers */,
@@ -603,7 +603,7 @@
 				E621659DB794A5D612DCD4C8 /* DescendantCombinator.h in Headers */,
 				E621659DB794A5D612DCD4CC /* DescendantCombinatorParser.h in Headers */,
 				E621659DB794A5D612DCD4D0 /* ChildCombinator.h in Headers */,
-				E621659DB794A5D612DCD4D4 /* ChainParserState.h in Headers */,
+				E621659DB794A5D612DCD4D4 /* SubjectChain.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -732,7 +732,7 @@
 				2D695CDB147CD1D200AF4115 /* MemberOfClassMatcherTests.m in Sources */,
 				2D695CDD147CD1D200AF4115 /* PredicateParserTests.m in Sources */,
 				2D695CDE147CD1D200AF4115 /* PredicatePatternTests.m in Sources */,
-				2D3E1F3F1509B98200D62300 /* RelationshipPatternTests.m in Sources */,
+				2D3E1F3F1509B98200D62300 /* SubjectChainPatternTests.m in Sources */,
 				2D99DB351517E9C900244226 /* SubjectMarkerTests.m in Sources */,
 				2D436E221518F9C300071950 /* IdentityMatcher.m in Sources */,
 				2D436E281518FF6D00071950 /* ViewFactory.m in Sources */,
@@ -748,10 +748,10 @@
 				E621659DB794A5D612DCD495 /* InstanceParserTests.m in Sources */,
 				E621659DB794A5D612DCD49E /* FakeSimpleParser.m in Sources */,
 				E621659DB794A5D612DCD4AC /* DescendantCombinatorTests.m in Sources */,
-				E621659DB794A5D612DCD4B6 /* ChainParserTests.m in Sources */,
+				E621659DB794A5D612DCD4B6 /* SubjectChainParserTests.m in Sources */,
 				E621659DB794A5D612DCD4BA /* FakeSubjectParser.m in Sources */,
 				E621659DB794A5D612DCD4BE /* FakeCombinatorParser.m in Sources */,
-				E621659DB794A5D612DCD4D6 /* ChainParserStateTests.m in Sources */,
+				E621659DB794A5D612DCD4D6 /* SubjectChainTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -781,7 +781,7 @@
 				2D9649DA147D9E0B00C40219 /* IgorLoader.m in Sources */,
 				2D496EA61486A513007E1FDE /* PredicateMatcher.m in Sources */,
 				2D9CC80C15185B6500B51A8D /* TreeWalker.m in Sources */,
-				2DCE893715193E8900B975EE /* ChainParser.m in Sources */,
+				2DCE893715193E8900B975EE /* SubjectChainParser.m in Sources */,
 				2DCE893C15193F6100B975EE /* InstanceParser.m in Sources */,
 				E621659DB794A5D612DCD443 /* IgorQueryStringScanner.m in Sources */,
 				E621659DB794A5D612DCD45F /* UniversalMatcher.m in Sources */,
@@ -791,7 +791,7 @@
 				E621659DB794A5D612DCD4C6 /* DescendantCombinator.m in Sources */,
 				E621659DB794A5D612DCD4CA /* DescendantCombinatorParser.m in Sources */,
 				E621659DB794A5D612DCD4CE /* ChildCombinator.m in Sources */,
-				E621659DB794A5D612DCD4D2 /* ChainParserState.m in Sources */,
+				E621659DB794A5D612DCD4D2 /* SubjectChain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

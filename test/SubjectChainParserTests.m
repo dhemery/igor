@@ -1,17 +1,17 @@
-#import "ChainParser.h"
+#import "SubjectChainParser.h"
 #import "FakeSubjectParser.h"
 #import "UniversalMatcher.h"
 #import "FakeCombinatorParser.h"
 #import "DescendantCombinator.h"
 #import "CombinatorMatcher.h"
 
-@interface ChainParserTests : SenTestCase
+@interface SubjectChainParserTests : SenTestCase
 @end
 
-@implementation ChainParserTests {
+@implementation SubjectChainParserTests {
     NSMutableArray *combinatorParsers;
     NSMutableArray *subjectParsers;
-    ChainParser *parser;
+    SubjectChainParser *parser;
 }
 
 - (void)setUp {
@@ -21,21 +21,21 @@
 
 - (void)testParseOneYieldsNoMatcherIfParsersYieldNoMatcher {
     [subjectParsers addObject:[FakeSubjectParser parserThatYieldsNoSubjectMatchers]];
-    parser = [ChainParser parserWithSubjectParsers:subjectParsers combinatorParsers:combinatorParsers];
+    parser = [SubjectChainParser parserWithSubjectParsers:subjectParsers combinatorParsers:combinatorParsers];
 
-    ChainParserState *parsed = [parser parseOne];
+    SubjectChain *chain = [parser parseOneSubject];
 
-    assertThat(parsed.matcher, nilValue());
+    assertThat(chain.matcher, nilValue());
 }
 
 - (void)testParseOneYieldsMatcherIfParsersYieldMatcherButNoCombinator {
     id <SubjectMatcher> subjectMatcher = [UniversalMatcher new];
     [subjectParsers addObject:[FakeSubjectParser parserThatYieldsSubjectMatcher:subjectMatcher]];
-    parser = [ChainParser parserWithSubjectParsers:subjectParsers combinatorParsers:combinatorParsers];
+    parser = [SubjectChainParser parserWithSubjectParsers:subjectParsers combinatorParsers:combinatorParsers];
 
-    ChainParserState *parsed = [parser parseOne];
+    SubjectChain *chain = [parser parseOneSubject];
 
-    assertThat(parsed.matcher, sameInstance(subjectMatcher));
+    assertThat(chain.matcher, sameInstance(subjectMatcher));
 }
 
 - (void)testParseOneYieldsMatcherAndCombinatorIfParsersYieldMatcherAndCombinator {
@@ -43,31 +43,31 @@
     [subjectParsers addObject:[FakeSubjectParser parserThatYieldsSubjectMatcher:subjectMatcher]];
     id <Combinator> combinator = [DescendantCombinator new];
     [combinatorParsers addObject:[FakeCombinatorParser parserThatYieldsCombinator:combinator]];
-    parser = [ChainParser parserWithSubjectParsers:subjectParsers combinatorParsers:combinatorParsers];
+    parser = [SubjectChainParser parserWithSubjectParsers:subjectParsers combinatorParsers:combinatorParsers];
 
-    ChainParserState *parsed = [parser parseOne];
+    SubjectChain *chain = [parser parseOneSubject];
 
-    assertThat(parsed.matcher, sameInstance(subjectMatcher));
-    assertThat(parsed.combinator, sameInstance(combinator));
+    assertThat(chain.matcher, sameInstance(subjectMatcher));
+    assertThat(chain.combinator, sameInstance(combinator));
 }
 
 - (void)testParseChainYieldsNoMatcherIfParsersYieldNoMatcher {
     [subjectParsers addObject:[FakeSubjectParser parserThatYieldsNoSubjectMatchers]];
-    parser = [ChainParser parserWithSubjectParsers:subjectParsers combinatorParsers:combinatorParsers];
+    parser = [SubjectChainParser parserWithSubjectParsers:subjectParsers combinatorParsers:combinatorParsers];
 
-    ChainParserState *parsed = [parser parseChain];
+    SubjectChain *chain = [parser parseSubjectChain];
 
-    assertThat(parsed.matcher, nilValue());
+    assertThat(chain.matcher, nilValue());
 }
 
 - (void)testParseChainYieldsMatcherIfParsersYieldMatcherButNoCombinator {
     id <SubjectMatcher> subjectMatcher = [UniversalMatcher new];
     [subjectParsers addObject:[FakeSubjectParser parserThatYieldsSubjectMatcher:subjectMatcher]];
-    parser = [ChainParser parserWithSubjectParsers:subjectParsers combinatorParsers:combinatorParsers];
+    parser = [SubjectChainParser parserWithSubjectParsers:subjectParsers combinatorParsers:combinatorParsers];
 
-    ChainParserState *parsed = [parser parseChain];
+    SubjectChain *chain = [parser parseSubjectChain];
 
-    assertThat(parsed.matcher, sameInstance(subjectMatcher));
+    assertThat(chain.matcher, sameInstance(subjectMatcher));
 }
 
 - (void)testParseChainYieldsMatcherAndCombinatorIfParsersYieldMatcherAndCombinator {
@@ -75,9 +75,9 @@
     [subjectParsers addObject:[FakeSubjectParser parserThatYieldsSubjectMatcher:subjectMatcher]];
     id <Combinator> combinator = [DescendantCombinator new];
     [combinatorParsers addObject:[FakeCombinatorParser parserThatYieldsCombinator:combinator]];
-    parser = [ChainParser parserWithSubjectParsers:subjectParsers combinatorParsers:combinatorParsers];
+    parser = [SubjectChainParser parserWithSubjectParsers:subjectParsers combinatorParsers:combinatorParsers];
 
-    ChainParserState *parsed = [parser parseChain];
+    SubjectChain *parsed = [parser parseSubjectChain];
 
     assertThat(parsed.matcher, sameInstance(subjectMatcher));
     assertThat(parsed.combinator, sameInstance(combinator));
@@ -90,14 +90,14 @@
     [subjectParsers addObject:[FakeSubjectParser parserThatYieldsSubjectMatchers:subjectMatchers]];
     id <Combinator> combinator = [DescendantCombinator new];
     [combinatorParsers addObject:[FakeCombinatorParser parserThatYieldsCombinator:combinator]];
-    parser = [ChainParser parserWithSubjectParsers:subjectParsers combinatorParsers:combinatorParsers];
+    parser = [SubjectChainParser parserWithSubjectParsers:subjectParsers combinatorParsers:combinatorParsers];
 
-    ChainParserState *parsed = [parser parseChain];
+    SubjectChain *chain = [parser parseSubjectChain];
 
-    assertThat(parsed.matcher, instanceOf([CombinatorMatcher class]));
-    assertThat(parsed.combinator, nilValue());
+    assertThat(chain.matcher, instanceOf([CombinatorMatcher class]));
+    assertThat(chain.combinator, nilValue());
 
-    CombinatorMatcher *matcher = (CombinatorMatcher *)parsed.matcher;
+    CombinatorMatcher *matcher = (CombinatorMatcher *) chain.matcher;
     assertThat(matcher.subjectMatcher, sameInstance(matcher2));
     assertThat(matcher.combinator, sameInstance(combinator));
     assertThat(matcher.relativeMatcher, sameInstance(matcher1));

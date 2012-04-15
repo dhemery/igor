@@ -1,19 +1,27 @@
 #import "InstanceParser.h"
-#import "ChainParser.h"
+#import "SubjectChainParser.h"
 #import "IgorQueryStringScanner.h"
 #import "DescendantCombinator.h"
 #import "SubjectMatcher.h"
 #import "CombinatorMatcher.h"
 #import "CombinatorParser.h"
 
-@implementation ChainParser {
+@implementation SubjectChainParser {
     id <IgorQueryScanner> scanner;
     NSArray *combinatorParsers;
 }
 
 @synthesize subjectParsers;
 
-- (ChainParser *)initWithSubjectParsers:(NSArray *)theSubjectParsers combinatorParsers:(NSArray *)theCombinatorParsers {
++ (SubjectChainParser *)parserWithSubjectParsers:(NSArray *)subjectParsers combinatorParsers:(NSArray *)combinatorParsers {
+    return [[self alloc] initWithSubjectParsers:subjectParsers combinatorParsers:combinatorParsers];
+}
+
++ (SubjectChainParser *)parserWithCombinatorParsers:(NSArray *)combinatorParsers {
+    return [self parserWithSubjectParsers:[NSArray array] combinatorParsers:combinatorParsers];
+}
+
+- (SubjectChainParser *)initWithSubjectParsers:(NSArray *)theSubjectParsers combinatorParsers:(NSArray *)theCombinatorParsers {
     if (self = [super init]) {
         subjectParsers = theSubjectParsers;
         combinatorParsers = theCombinatorParsers;
@@ -37,32 +45,25 @@
     return nil;
 }
 
-- (ChainParserState *)parseOne {
+- (SubjectChain *)parseOneSubject {
     id <SubjectMatcher> matcher = [self parseSubjectMatcher];
     id <Combinator> combinator = nil;
     if (matcher) {
         combinator = [self parseCombinator];
     }
-    return [ChainParserState stateWithMatcher:matcher combinator:combinator];
+    return [SubjectChain stateWithMatcher:matcher combinator:combinator];
 }
 
-- (ChainParserState *)parseChain {
-    ChainParserState *collected = [self parseOne];
-    ChainParserState *step = [self parseOne];
+- (SubjectChain *)parseSubjectChain {
+    SubjectChain *collected = [self parseOneSubject];
+    SubjectChain *step = [self parseOneSubject];
     while(step.started) {
         id <SubjectMatcher> matcher = [CombinatorMatcher matcherWithSubjectMatcher:step.matcher combinator:collected.combinator relativeMatcher:collected.matcher];
-        collected = [ChainParserState stateWithMatcher:matcher combinator:step.combinator];
+        collected = [SubjectChain stateWithMatcher:matcher combinator:step.combinator];
         if (step.done) return collected;
-        step = [self parseOne];
+        step = [self parseOneSubject];
     }
     return collected;
 }
 
-+ (ChainParser *)parserWithCombinatorParsers:(NSArray *)combinatorParsers {
-    return [self parserWithSubjectParsers:[NSArray array] combinatorParsers:combinatorParsers];
-}
-
-+ (ChainParser *)parserWithSubjectParsers:(NSArray *)subjectParsers combinatorParsers:(NSArray *)combinatorParsers {
-    return [[self alloc] initWithSubjectParsers:subjectParsers combinatorParsers:combinatorParsers];
-}
 @end

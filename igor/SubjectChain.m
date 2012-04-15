@@ -1,7 +1,7 @@
-#import "ChainParserState.h"
+#import "SubjectChain.h"
 #import "SubjectMatcher.h"
 
-@implementation ChainParserState
+@implementation SubjectChain
 
 @synthesize matcher, combinator;
 
@@ -9,7 +9,7 @@
     return [NSString stringWithFormat:@"{%@} {%@}", matcher, combinator];
 }
 
-- (ChainParserState *)initWithMatcher:(id <SubjectMatcher>)theMatcher combinator:(id <Combinator>)theCombinator {
+- (SubjectChain *)initWithMatcher:(id <SubjectMatcher>)theMatcher combinator:(id <Combinator>)theCombinator {
     self = [super init];
     if (self) {
         matcher = theMatcher;
@@ -26,7 +26,7 @@
     return self.matcher != nil;
 }
 
-+ (ChainParserState *)stateWithMatcher:(id <SubjectMatcher>)matcher combinator:(id <Combinator>)combinator {
++ (SubjectChain *)stateWithMatcher:(id <SubjectMatcher>)matcher combinator:(id <Combinator>)combinator {
     return [[self alloc] initWithMatcher:matcher combinator:combinator];
 }
 @end

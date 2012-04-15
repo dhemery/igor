@@ -4,7 +4,7 @@
 #import "IsKindOfClassMatcher.h"
 #import "IsMemberOfClassMatcher.h"
 #import "UniversalMatcher.h"
-#import "ChainParser.h"
+#import "SubjectChainParser.h"
 #import "InstanceParser.h"
 #import "PredicateParser.h"
 #import "ClassParser.h"
@@ -25,12 +25,12 @@
     NSArray *simplePatternParsers = [NSArray arrayWithObjects:classParser, predicateParser, nil];
 
     id <SubjectPatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simplePatternParsers];
-    ChainParser *chainParser = [ChainParser parserWithCombinatorParsers:nil];
-    id <SubjectPatternParser> branchParser = [BranchParser parserWithScanner:scanner chainParser:chainParser];
+    SubjectChainParser *subjectChainParser = [SubjectChainParser parserWithCombinatorParsers:nil];
+    id <SubjectPatternParser> branchParser = [BranchParser parserWithScanner:scanner subjectChainParser:subjectChainParser];
     NSArray *subjectPatternParsers = [NSArray arrayWithObjects:instanceParser, branchParser, nil];
-    chainParser.subjectParsers = subjectPatternParsers;
+    subjectChainParser.subjectParsers = subjectPatternParsers;
 
-    parser = [ScanningIgorQueryParser parserWithScanner:scanner relationshipParser:chainParser];
+    parser = [ScanningIgorQueryParser parserWithScanner:scanner subjectChainParser:subjectChainParser];
 }
 
 - (void)testParsesAsteriskAsUniversalMatcher {

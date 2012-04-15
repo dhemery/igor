@@ -1,30 +1,30 @@
 #import "BranchParser.h"
 #import "BranchMatcher.h"
 #import "IgorQueryScanner.h"
-#import "ChainParser.h"
+#import "SubjectChainParser.h"
 
 @implementation BranchParser {
     id <IgorQueryScanner> scanner;
-    ChainParser *chainParser;
+    SubjectChainParser *subjectChainParser;
 }
 
-- (id <SubjectPatternParser>)initWithScanner:(id <IgorQueryScanner>)aScanner relationshipParser:(ChainParser *)theChainParser {
+- (id <SubjectPatternParser>)initWithScanner:(id <IgorQueryScanner>)aScanner subjectChainParser:(SubjectChainParser *)theSubjectChainParser {
     self = [super init];
     if (self) {
         scanner = aScanner;
-        chainParser = theChainParser;
+        subjectChainParser = theSubjectChainParser;
     }
     return self;
 }
 
 - (id <SubjectMatcher>)parseBranchMatcher {
-    ChainParserState *subject = [chainParser parseOne];
+    SubjectChain *subject = [subjectChainParser parseOneSubject];
 
     if (!subject.started) [scanner failBecause:@"Expected a relationship pattern"];
 
     if (subject.done) return subject.matcher;
 
-    ChainParserState* relative = [chainParser parseChain];
+    SubjectChain * relative = [subjectChainParser parseSubjectChain];
     if (!relative.done) [scanner failBecause:@"Expected a subject pattern"];
     return [BranchMatcher matcherWithSubjectMatcher:subject.matcher combinator:subject.combinator relativeMatcher:relative.matcher];
 }
@@ -38,8 +38,8 @@
     return matcher;
 }
 
-+ (id <SubjectPatternParser>)parserWithScanner:(id <IgorQueryScanner>)scanner chainParser:(ChainParser *)relationshipParser {
-    return [[self alloc] initWithScanner:scanner relationshipParser:relationshipParser];
++ (id <SubjectPatternParser>)parserWithScanner:(id <IgorQueryScanner>)scanner subjectChainParser:(SubjectChainParser *)subjectChainParser {
+    return [[self alloc] initWithScanner:scanner subjectChainParser:subjectChainParser];
 }
 
 @end

@@ -1,23 +1,23 @@
 #import "ScanningIgorQueryParser.h"
 #import "IgorQueryScanner.h"
 #import "BranchMatcher.h"
-#import "ChainParser.h"
+#import "SubjectChainParser.h"
 #import "CombinatorMatcher.h"
 
 // TODO Extract common branch parsing stuff
 @implementation ScanningIgorQueryParser {
     id <IgorQueryScanner> scanner;
-    ChainParser *chainParser;
+    SubjectChainParser *subjectChainParser;
 }
 
-+ (id <IgorQueryParser>)parserWithScanner:(id <IgorQueryScanner>)scanner relationshipParser:(ChainParser *)relationshipParser {
-    return [[self alloc] initWithQueryScanner:scanner chainParser:relationshipParser];
++ (id <IgorQueryParser>)parserWithScanner:(id <IgorQueryScanner>)scanner subjectChainParser:(SubjectChainParser *)subjectChainParser {
+    return [[self alloc] initWithQueryScanner:scanner subjectChainParser:subjectChainParser];
 }
 
-- (id <IgorQueryParser>)initWithQueryScanner:(id <IgorQueryScanner>)theScanner chainParser:(ChainParser *)theChainParser {
+- (id <IgorQueryParser>)initWithQueryScanner:(id <IgorQueryScanner>)theScanner subjectChainParser:(SubjectChainParser *)theSubjectChainParser {
     if (self = [super init]) {
         scanner = theScanner;
-        chainParser = theChainParser;
+        subjectChainParser = theSubjectChainParser;
     }
     return self;
 }
@@ -25,31 +25,31 @@
 - (id <SubjectMatcher>)parseMatcherFromQuery:(NSString *)queryString {
     [scanner setQuery:queryString];
 
-    ChainParserState *query = [self parseSubject];
+    SubjectChain *query = [self parseSubject];
     if (!query.done) query = [self parseBranchMatcherWithSubject:query];
     if (!query.done) [scanner failBecause:@"Expected a subject pattern"];
     [scanner failIfNotAtEnd];
     return query.matcher;
 }
 
-- (ChainParserState *)parseSubject {
-    ChainParserState *subject = [chainParser parseChain];
+- (SubjectChain *)parseSubject {
+    SubjectChain *subject = [subjectChainParser parseSubjectChain];
     if (subject.done) return subject;
     if (![scanner skipString:@"$"]) [scanner failBecause:@"Expected a subject marker"];
     if (subject.started) return [self parseSubjectWithPrefix:subject];
-    return [chainParser parseOne];
+    return [subjectChainParser parseOneSubject];
 }
 
-- (ChainParserState *)parseSubjectWithPrefix:(ChainParserState *)prefix {
-    ChainParserState *subject = [chainParser parseOne];
+- (SubjectChain *)parseSubjectWithPrefix:(SubjectChain *)prefix {
+    SubjectChain *subject = [subjectChainParser parseOneSubject];
     id <SubjectMatcher> left = [CombinatorMatcher matcherWithSubjectMatcher:subject.matcher combinator:prefix.combinator relativeMatcher:prefix.matcher];
-    return [ChainParserState stateWithMatcher:left combinator:subject.combinator];
+    return [SubjectChain stateWithMatcher:left combinator:subject.combinator];
 }
 
-- (ChainParserState *)parseBranchMatcherWithSubject:(ChainParserState *)subject {
-    ChainParserState *relative = [chainParser parseChain];
+- (SubjectChain *)parseBranchMatcherWithSubject:(SubjectChain *)subject {
+    SubjectChain *relative = [subjectChainParser parseSubjectChain];
     id <SubjectMatcher> branch = [BranchMatcher matcherWithSubjectMatcher:subject.matcher combinator:subject.combinator relativeMatcher:relative.matcher];
-    return [ChainParserState stateWithMatcher:branch combinator:relative.combinator];
+    return [SubjectChain stateWithMatcher:branch combinator:relative.combinator];
 }
 
 @end
