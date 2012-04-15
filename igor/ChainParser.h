@@ -1,10 +1,8 @@
-#import "CombinatorParser.h"
-#import "SubjectPatternParser.h"
 #import "ChainParserState.h"
 
 @protocol IgorQueryScanner;
 
-@interface ChainParser : NSObject <SubjectPatternParser, CombinatorParser>
+@interface ChainParser : NSObject
 
 @property (strong) NSArray *subjectParsers;
 

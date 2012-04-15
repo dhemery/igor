@@ -4,6 +4,7 @@
 #import "DescendantCombinator.h"
 #import "SubjectMatcher.h"
 #import "CombinatorMatcher.h"
+#import "CombinatorParser.h"
 
 @implementation ChainParser {
     id <IgorQueryScanner> scanner;

@@ -103,33 +103,4 @@
     assertThat(matcher.relativeMatcher, sameInstance(matcher1));
 }
 
-
-
-
-
-
-
-
-
-- (void)testYieldsNilIfSubjectParsersYieldNoMatchers {
-    [subjectParsers addObject:[FakeSubjectParser parserThatYieldsNoSubjectMatchers]];
-    parser = [ChainParser parserWithSubjectParsers:subjectParsers combinatorParsers:combinatorParsers];
-
-    assertThat([parser parseSubjectMatcher], nilValue());
-}
-
-- (void)testYieldsSubjectMatcherFromSubjectParser {
-    id <SubjectMatcher> subjectMatcher = [UniversalMatcher new];
-    [subjectParsers addObject:[FakeSubjectParser parserThatYieldsSubjectMatcher:subjectMatcher]];
-    parser = [ChainParser parserWithSubjectParsers:subjectParsers combinatorParsers:combinatorParsers];
-
-    assertThat([parser parseSubjectMatcher], sameInstance(subjectMatcher));
-}
-
-- (void)testYieldsNilIfCombinatorParsersYieldNoCombinators {
-    [combinatorParsers addObject:[FakeCombinatorParser parserThatYieldsNoCombinators]];
-    parser = [ChainParser parserWithCombinatorParsers:combinatorParsers];
-
-    assertThat([parser parseCombinator], nilValue());
-}
 @end
