@@ -110,6 +110,8 @@
 		E621659DB794A5D612DCD4D2 /* SubjectChain.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4D1 /* SubjectChain.m */; };
 		E621659DB794A5D612DCD4D4 /* SubjectChain.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4D3 /* SubjectChain.h */; };
 		E621659DB794A5D612DCD4D6 /* SubjectChainTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4D5 /* SubjectChainTests.m */; };
+		E621659DB794A5D612DCD4D8 /* EmptySetCombinator.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4D7 /* EmptySetCombinator.m */; };
+		E621659DB794A5D612DCD4DA /* EmptySetCombinator.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4D9 /* EmptySetCombinator.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -248,6 +250,8 @@
 		E621659DB794A5D612DCD4D1 /* SubjectChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectChain.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4D3 /* SubjectChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubjectChain.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4D5 /* SubjectChainTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectChainTests.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD4D7 /* EmptySetCombinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptySetCombinator.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD4D9 /* EmptySetCombinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptySetCombinator.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -298,6 +302,8 @@
 		2D436E241518FF2B00071950 /* fixtures */ = {
 			isa = PBXGroup;
 			children = (
+				E621659DB794A5D612DCD4D9 /* EmptySetCombinator.h */,
+				E621659DB794A5D612DCD4D7 /* EmptySetCombinator.m */,
 				E621659DB794A5D612DCD4BF /* FakeCombinatorParser.h */,
 				E621659DB794A5D612DCD4BD /* FakeCombinatorParser.m */,
 				E621659DB794A5D612DCD4BB /* FakeSubjectParser.h */,
@@ -575,6 +581,7 @@
 				E621659DB794A5D612DCD4A0 /* FakeSimpleParser.h in Headers */,
 				E621659DB794A5D612DCD4BC /* FakeSubjectParser.h in Headers */,
 				E621659DB794A5D612DCD4C0 /* FakeCombinatorParser.h in Headers */,
+				E621659DB794A5D612DCD4DA /* EmptySetCombinator.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -752,6 +759,7 @@
 				E621659DB794A5D612DCD4BA /* FakeSubjectParser.m in Sources */,
 				E621659DB794A5D612DCD4BE /* FakeCombinatorParser.m in Sources */,
 				E621659DB794A5D612DCD4D6 /* SubjectChainTests.m in Sources */,
+				E621659DB794A5D612DCD4D8 /* EmptySetCombinator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,7 +9,7 @@
 @synthesize subjectMatcher, combinator, relativeMatcher;
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"%@$$ %@ %@", self.subjectMatcher, self.combinator, self.relativeMatcher];
+    return [NSString stringWithFormat:@"%@$$%@%@", self.subjectMatcher, self.combinator, self.relativeMatcher];
 }
 
 - (BranchMatcher *)initWithSubjectMatcher:(id <SubjectMatcher>)theSubjectMatcher

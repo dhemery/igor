@@ -1,104 +1,65 @@
-//#import "ComplexMatcher.h"
-//#import "InstanceMatcher.h"
-//#import "ViewFactory.h"
-//#import "MatchesView.h"
-//#import "IdentityMatcher.h"
-//#import "FalseMatcher.h"
-//#import "UniversalMatcher.h"
+#import "SubjectMatcher.h"
+#import "IdentityMatcher.h"
+#import "ViewFactory.h"
+#import "BranchMatcher.h"
+#import "FalseMatcher.h"
+#import "DescendantCombinator.h"
+#import "UniversalMatcher.h"
+#import "MatchesView.h"
+#import "EmptySetCombinator.h"
 
 @interface BranchMatcherTests : SenTestCase
 @end
 
 // todo Write these tests
-@implementation BranchMatcherTests // {
-//    UIButton *root;
-//    UIButton *middle;
-//    UIButton *leaf;
-//    id <SubjectMatcher> matchesRoot;
-//    id <SubjectMatcher> matchesMiddle;
-//    id <SubjectMatcher> matchesLeaf;
-//}
-//
-//- (void)setUp {
-//    root = [ViewFactory buttonWithAccessibilityHint:@"root"];
-//    middle = [ViewFactory buttonWithAccessibilityHint:@"middle"];
-//    leaf = [ViewFactory buttonWithAccessibilityHint:@"leaf"];
-//    [root addSubview:middle];
-//    [middle addSubview:leaf];
-//    matchesRoot = [IdentityMatcher forView:root];
-//    matchesMiddle = [IdentityMatcher forView:middle];
-//    matchesLeaf = [IdentityMatcher forView:leaf];
-//}
-//
-//- (void)testSubjectMatchesView {
-//    id <SubjectMatcher> middleAnywhere = [ComplexMatcher matcherWithSubject:matchesMiddle];
-//
-//    assertThat(middleAnywhere, [MatchesView view:middle inTree:root]);
-//}
-//
-//- (void)testSubjectMismatchesView {
-//    id <SubjectMatcher> middleAnywhere = [ComplexMatcher matcherWithSubject:matchesMiddle];
-//
-//    assertThat(middleAnywhere, isNot([MatchesView view:leaf inTree:root]));
-//}
-//
-//- (void)testSubjectMatchesViewHeadMatchesParent {
-//    id <SubjectMatcher> middleInRoot = [ComplexMatcher matcherWithHead:matchesRoot subject:matchesMiddle];
-//
-//    assertThat(middleInRoot, [MatchesView view:middle inTree:root]);
-//}
-//
-//- (void)testSubjectMatchesViewHeadMatchesAncestor {
-//    id <SubjectMatcher> leafInRoot = [ComplexMatcher matcherWithHead:matchesRoot subject:matchesLeaf];
-//
-//    assertThat(leafInRoot, [MatchesView view:leaf inTree:root]);
-//}
-//
-//- (void)testSubjectMatchesViewHeadMismatchesAllAncestors {
-//    id <SubjectMatcher> neverMatches = [FalseMatcher new];
-//    id <SubjectMatcher> middleInNonExistent = [ComplexMatcher matcherWithHead:neverMatches subject:matchesMiddle];
-//
-//    assertThat(middleInNonExistent, isNot([MatchesView view:middle inTree:root]));
-//}
-//
-//- (void)testComparesHeadToViewsUpToGivenRoot {
-//    id <SubjectMatcher> leafInMiddle = [ComplexMatcher matcherWithHead:matchesMiddle subject:matchesLeaf];
-//
-//    assertThat(leafInMiddle, [MatchesView view:leaf inTree:middle]);
-//}
-//
-//- (void)testDoesNotCompareHeadToViewsAboveGivenRoot {
-//    id <SubjectMatcher> leafInRoot = [ComplexMatcher matcherWithHead:matchesRoot subject:matchesLeaf];
-//
-//    assertThat(leafInRoot, isNot([MatchesView view:leaf inTree:middle]));
-//}
-//
-//- (void)testMatchesAcrossUniversalMatcher {
-//    id <SubjectMatcher> universalMatcher = [UniversalMatcher new];
-//    id <SubjectMatcher> matchesAnyViewInRoot = [ComplexMatcher matcherWithHead:matchesRoot subject:universalMatcher];
-//    id <SubjectMatcher> leafInAnyViewInRoot = [ComplexMatcher matcherWithHead:matchesAnyViewInRoot subject:matchesLeaf];
-//
-//    assertThat(leafInAnyViewInRoot, [MatchesView view:leaf inTree:root]);
-//}
-//
-//
-//
-//
-//
-//- (void)testMatchesIfViewMatchesSubjectMatcherAndSubviewMatchesSubtreeMatcher {
-//    id <SubjectMatcher> rootWithInnerLeaf = [ComplexMatcher matcherWithSubject:matchesRoot tail:matchesLeaf];
-//
-//    assertThat(rootWithInnerLeaf, [MatchesView view:root inTree:root]);
-//    assertThat(rootWithInnerLeaf, isNot([MatchesView view:middle inTree:root]));
-//    assertThat(rootWithInnerLeaf, isNot([MatchesView view:leaf inTree:root]));
-//}
-//
-//- (void)testSubtreeMatcherExaminesOnlySubviewsOfTheSubject {
-//    id <SubjectMatcher> leafInMiddle = [ComplexMatcher matcherWithHead:matchesMiddle subject:matchesLeaf];
-//    id <SubjectMatcher> middleWithLeafInsideMiddleDescendant = [ComplexMatcher matcherWithSubject:matchesMiddle tail:leafInMiddle];
-//
-//    assertThat(middleWithLeafInsideMiddleDescendant, isNot([MatchesView view:middle inTree:root]));
-//}
-//
-//
+@implementation BranchMatcherTests {
+    UIButton *root;
+    UIButton *middle;
+    UIButton *leaf;
+}
+
+- (void)setUp {
+    root = [ViewFactory buttonWithAccessibilityHint:@"root"];
+    middle = [ViewFactory buttonWithAccessibilityHint:@"middle"];
+    leaf = [ViewFactory buttonWithAccessibilityHint:@"leaf"];
+    [root addSubview:middle];
+    [middle addSubview:leaf];
+}
+
+- (void)testMatchesIfSubjectMatchesAndRelativesMatch {
+    id <SubjectMatcher> matchEverySubjectMatchEveryRelative =
+            [BranchMatcher matcherWithSubjectMatcher:[UniversalMatcher new]
+                                          combinator:[DescendantCombinator new]
+                                     relativeMatcher:[UniversalMatcher new]];
+
+    assertThat(matchEverySubjectMatchEveryRelative, [MatchesView view:middle inTree:root]);
+}
+
+- (void)testMismatchesIfSubjectMismatches {
+    id <SubjectMatcher> mismatchEverySubjectMatchEveryRelative =
+            [BranchMatcher matcherWithSubjectMatcher:[FalseMatcher new]
+                                          combinator:[DescendantCombinator new]
+                                     relativeMatcher:[UniversalMatcher new]];
+
+    assertThat(mismatchEverySubjectMatchEveryRelative, isNot([MatchesView view:leaf inTree:root]));
+}
+
+- (void)testMismatchesIfRelativesMismatch {
+    id <SubjectMatcher> matchEverySubjectMismatchEveryRelative =
+            [BranchMatcher matcherWithSubjectMatcher:[UniversalMatcher new]
+                                          combinator:[DescendantCombinator new]
+                                     relativeMatcher:[FalseMatcher new]];
+
+    assertThat(matchEverySubjectMismatchEveryRelative, isNot([MatchesView view:middle inTree:root]));
+}
+
+- (void)testMismatchesIfCombinatorYieldsNoRelatives {
+    id <SubjectMatcher> combinatorYieldsNoRelatives =
+            [BranchMatcher matcherWithSubjectMatcher:[UniversalMatcher new]
+                                          combinator:[EmptySetCombinator new]
+                                     relativeMatcher:[UniversalMatcher new]];
+
+    assertThat(combinatorYieldsNoRelatives, isNot([MatchesView view:middle inTree:root]));
+}
+
 @end
