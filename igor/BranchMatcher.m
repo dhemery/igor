@@ -1,32 +1,34 @@
 #import "BranchMatcher.h"
 #import "Combinator.h"
-#import "CombinatorMatcher.h"
 #import "IdentityMatcher.h"
+#import "CombinatorMatcher.h"
 
 // TODO Test
 @implementation BranchMatcher
 
-@synthesize subjectMatcher, subjectCombinator, relativeMatcher, subjectIdentityMatcher;
+@synthesize subjectMatcher = _subjectMatcher;
+@synthesize subjectCombinator = _subjectCombinator;
+@synthesize relativeMatcher = _relativeMatcher;
+@synthesize subjectIdentityMatcher = _subjectIdentityMatcher;
 
-+ (BranchMatcher *)matcherWithSubjectMatcher:(id <SubjectMatcher>)subjectMatcher {
++ (BranchMatcher *)matcherWithSubjectMatcher:(id <Matcher>)subjectMatcher {
     return [[self alloc]  initWithSubjectMatcher:subjectMatcher];
 }
 
-- (BranchMatcher *)initWithSubjectMatcher:(id <SubjectMatcher>)theSubjectMatcher {
+- (BranchMatcher *)initWithSubjectMatcher:(id <Matcher>)subjectMatcher {
     self = [super init];
     if (self) {
-        subjectMatcher = theSubjectMatcher;
-        subjectCombinator = nil;
-        subjectIdentityMatcher = [IdentityMatcher matcherWithView:nil description:@"$$"];
-        relativeMatcher = subjectIdentityMatcher;
+        _subjectMatcher = subjectMatcher;
+        _subjectCombinator = nil;
+        _subjectIdentityMatcher = [IdentityMatcher matcherWithView:nil description:@"$$"];
+        _relativeMatcher = [CombinatorMatcher matcherWithSubjectMatcher:_subjectIdentityMatcher];
     }
     return self;
 }
 
-- (BranchMatcher *)appendCombinator:(id <Combinator>)newCombinator matcher:(id <SubjectMatcher>)newSubjectMatcher {
-    relativeMatcher = [CombinatorMatcher matcherWithRelativeMatcher:self.relativeMatcher combinator:newCombinator subjectMatcher:newSubjectMatcher];
-    if (!self.subjectCombinator) subjectCombinator = newCombinator;
-    return self;
+- (void)appendCombinator:(id <Combinator>)combinator matcher:(id <Matcher>)matcher {
+    [self.relativeMatcher appendCombinator:combinator matcher:matcher];
+    if (!self.subjectCombinator) self.subjectCombinator = combinator;
 }
 
 - (NSString *)description {

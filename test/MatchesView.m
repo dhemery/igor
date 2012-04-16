@@ -1,6 +1,6 @@
 #import <OCHamcrestIOS/HCDescription.h>
-#import "SimpleMatcher.h"
 #import "MatchesView.h"
+#import "Matcher.h"
 
 @implementation MatchesView {
     UIView *targetView;
@@ -19,7 +19,7 @@
 }
 
 - (BOOL)matches:(id)matcher {
-    return [(id <SimpleMatcher>) matcher matchesView:targetView];
+    return [(id <Matcher>) matcher matchesView:targetView];
 }
 
 + (MatchesView *)view:(UIView *)view {

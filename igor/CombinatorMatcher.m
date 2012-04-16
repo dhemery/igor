@@ -1,29 +1,40 @@
-#import "CombinatorMatcher.h"
 #import "Combinator.h"
+#import "CombinatorMatcher.h"
 
 // TODO Test
 @implementation CombinatorMatcher
 
-@synthesize subjectMatcher, combinator, relativeMatcher;
+@synthesize subjectMatcher = _subjectMatcher;
+@synthesize combinator = _combinator;
+@synthesize relativeMatcher = _relativeMatcher;
 
-- (NSString *)description {
-    return [NSString stringWithFormat:@"%@%@%@", self.relativeMatcher, self.combinator, self.subjectMatcher];
++ (id <ChainMatcher>)matcherWithSubjectMatcher:(id <Matcher>)matcher {
+    return [self matcherWithRelativeMatcher:nil combinator:nil subjectMatcher:matcher];
 }
 
-- (id)initWithSubjectMatcher:(id <SubjectMatcher>)theSubjectMatcher combinator:(id <Combinator>)theCombinator relativeMatcher:(id <SubjectMatcher>)theRelativeMatcher {
++ (id <ChainMatcher>)matcherWithRelativeMatcher:(id <Matcher>)relativeMatcher combinator:(id <Combinator>)combinator subjectMatcher:(id <Matcher>)subjectMatcher {
+    return [[self alloc] initWithRelativeMatcher:relativeMatcher combinator:combinator subjectMatcher:subjectMatcher];
+}
+
+- (id <ChainMatcher>)initWithRelativeMatcher:(id <Matcher>)relativeMatcher combinator:(id <Combinator>)combinator subjectMatcher:(id <Matcher>)subjectMatcher {
     self = [super init];
     if (self) {
-        subjectMatcher = theSubjectMatcher;
-        combinator = theCombinator;
-        relativeMatcher = theRelativeMatcher;
+        _relativeMatcher = relativeMatcher;
+        _combinator = combinator;
+        _subjectMatcher = subjectMatcher;
     }
     return self;
 }
 
-+ (id <SubjectMatcher>)matcherWithRelativeMatcher:(id <SubjectMatcher>)relativeMatcher combinator:(id <Combinator>)combinator subjectMatcher:(id <SubjectMatcher>)subjectMatcher {
-    return [[self alloc] initWithSubjectMatcher:subjectMatcher combinator:combinator relativeMatcher:relativeMatcher];
+- (void)appendCombinator:(id <Combinator>)combinator matcher:(id <Matcher>)matcher {
+    self.relativeMatcher = [CombinatorMatcher matcherWithRelativeMatcher:self.relativeMatcher combinator:self.combinator subjectMatcher:self.subjectMatcher];
+    self.combinator = combinator;
+    self.subjectMatcher = matcher;
 }
 
+- (NSString *)description {
+    return [NSString stringWithFormat:@"%@%@%@", self.relativeMatcher, self.combinator, self.subjectMatcher];
+}
 
 - (BOOL)subjectMatcherMatchesView:(UIView *)subject {
     NSLog(@"CM %@ checking %@", self, subject);
@@ -57,4 +68,5 @@
     return [self subjectMatcherMatchesView:subject]
             && [self relativeMatcherMatchesAnInverseRelativeOfView:subject];
 }
+
 @end

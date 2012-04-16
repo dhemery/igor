@@ -1,6 +1,6 @@
-#import "SimpleMatcher.h"
+#import "Matcher.h"
 
-@interface MemberOfClassMatcher : NSObject <SimpleMatcher>
+@interface MemberOfClassMatcher : NSObject <Matcher>
 
 @property(strong, readonly) Class matchClass;
 

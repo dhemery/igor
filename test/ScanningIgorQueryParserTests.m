@@ -4,7 +4,7 @@
 #import "IsKindOfClassMatcher.h"
 #import "IsMemberOfClassMatcher.h"
 #import "UniversalMatcher.h"
-#import "SubjectChainParser.h"
+#import "ChainParser.h"
 #import "InstanceParser.h"
 #import "PredicateParser.h"
 #import "ClassParser.h"
@@ -26,7 +26,7 @@
     NSArray *simplePatternParsers = [NSArray arrayWithObjects:classParser, predicateParser, nil];
 
     id <SubjectPatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simplePatternParsers];
-    SubjectChainParser *subjectChainParser = [SubjectChainParser parserWithCombinatorParsers:nil];
+    ChainParser *subjectChainParser = [ChainParser parserWithCombinatorParsers:nil];
     id <SubjectPatternParser> branchParser = [BranchParser parserWithScanner:scanner subjectChainParser:subjectChainParser];
     NSArray *subjectPatternParsers = [NSArray arrayWithObjects:instanceParser, branchParser, nil];
     subjectChainParser.subjectParsers = subjectPatternParsers;
@@ -35,7 +35,7 @@
 }
 
 - (void)testParsesAsteriskAsUniversalMatcher {
-    id <SubjectMatcher> matcher = [parser parseMatcherFromQuery:@"*"];
+    id <Matcher> matcher = [parser parseMatcherFromQuery:@"*"];
 
     assertThat(matcher, instanceOf([InstanceMatcher class]));
     InstanceMatcher *instanceMatcher = (InstanceMatcher *)matcher;
@@ -43,7 +43,7 @@
 }
 
 - (void)testParsesNameAsMemberOfClassMatcher {
-    id <SubjectMatcher> matcher = [parser parseMatcherFromQuery:@"UIButton"];
+    id <Matcher> matcher = [parser parseMatcherFromQuery:@"UIButton"];
     InstanceMatcher *instanceMatcher = (InstanceMatcher *)matcher;
 
     assertThat(instanceMatcher.simpleMatchers, hasItem([IsMemberOfClassMatcher forExactClass:[UIButton class]]));
@@ -51,7 +51,7 @@
 }
 
 - (void)testParsesNameAsteriskAsKindOfClassMatcher {
-    id <SubjectMatcher> matcher = [parser parseMatcherFromQuery:@"UILabel*"];
+    id <Matcher> matcher = [parser parseMatcherFromQuery:@"UILabel*"];
     InstanceMatcher *instanceMatcher = (InstanceMatcher *) matcher;
 
     assertThat(instanceMatcher.simpleMatchers, hasItem([IsKindOfClassMatcher forClass:[UILabel class]]));

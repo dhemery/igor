@@ -1,4 +1,4 @@
-@protocol SimpleMatcher <NSObject>
+@protocol Matcher <NSObject>
 
 - (BOOL)matchesView:(UIView *)view;
 

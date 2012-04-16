@@ -1,14 +1,14 @@
 #import "BranchParser.h"
 #import "BranchMatcher.h"
 #import "IgorQueryScanner.h"
-#import "SubjectChainParser.h"
+#import "ChainParser.h"
 
 @implementation BranchParser {
     id <IgorQueryScanner> scanner;
-    SubjectChainParser *subjectChainParser;
+    ChainParser *subjectChainParser;
 }
 
-- (id <SubjectPatternParser>)initWithScanner:(id <IgorQueryScanner>)aScanner subjectChainParser:(SubjectChainParser *)theSubjectChainParser {
+- (id <SubjectPatternParser>)initWithScanner:(id <IgorQueryScanner>)aScanner subjectChainParser:(ChainParser *)theSubjectChainParser {
     self = [super init];
     if (self) {
         scanner = aScanner;
@@ -17,28 +17,24 @@
     return self;
 }
 
-- (id <SubjectMatcher>)parseBranchMatcher {
-    SubjectChain *subject = [subjectChainParser parseOneSubject];
-
-    if (!subject.started) [scanner failBecause:@"Expected a relationship pattern"];
-
-    if (subject.done) return subject.matcher;
-
-    SubjectChain * relative = [subjectChainParser parseSubjectChain];
-    if (!relative.done) [scanner failBecause:@"Expected a subject pattern"];
-    return [[BranchMatcher matcherWithSubjectMatcher:subject.matcher] appendCombinator:subject.combinator matcher:relative.matcher];
+- (id <Matcher>)parseBranchMatcher {
+    id <Matcher>subject = [subjectChainParser parseSubjectMatcher];
+    if (!subject) [scanner failBecause:@"Expected a relationship pattern"];
+    id <ChainMatcher> matcher = [BranchMatcher matcherWithSubjectMatcher:subject];
+    [subjectChainParser parseSubjectChainIntoMatcher:matcher];
+    return matcher;
 }
 
-- (id <SubjectMatcher>)parseSubjectMatcher {
+- (id <Matcher>)parseSubjectMatcher {
     if (![scanner skipString:@"("]) return nil;
-    id <SubjectMatcher> matcher = [self parseBranchMatcher];
+    id <Matcher> matcher = [self parseBranchMatcher];
     if (![scanner skipString:@")"]) {
         [scanner failBecause:@"Expected ')'"];
     }
     return matcher;
 }
 
-+ (id <SubjectPatternParser>)parserWithScanner:(id <IgorQueryScanner>)scanner subjectChainParser:(SubjectChainParser *)subjectChainParser {
++ (id <SubjectPatternParser>)parserWithScanner:(id <IgorQueryScanner>)scanner subjectChainParser:(ChainParser *)subjectChainParser {
     return [[self alloc] initWithScanner:scanner subjectChainParser:subjectChainParser];
 }
 

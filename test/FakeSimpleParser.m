@@ -26,7 +26,7 @@
     return [self parserThatYieldsSimpleMatchers:[NSArray array]];
 }
 
-+ (FakeSimpleParser *)parserThatYieldsSimpleMatcher:(id <SimpleMatcher>)matcher {
++ (FakeSimpleParser *)parserThatYieldsSimpleMatcher:(id <Matcher>)matcher {
     return [self parserThatYieldsSimpleMatchers:[NSArray arrayWithObject:matcher]];
 }
 

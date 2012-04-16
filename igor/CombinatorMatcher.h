@@ -1,15 +1,13 @@
-#import "SubjectMatcher.h"
+#import "ChainMatcher.h"
 
 @protocol Combinator;
 
-@interface CombinatorMatcher : NSObject <SubjectMatcher>
+@interface CombinatorMatcher : NSObject <ChainMatcher>
 
-@property (strong) id <SubjectMatcher> subjectMatcher;
+@property (strong) id <Matcher> subjectMatcher;
 @property (strong) id <Combinator> combinator;
-@property (strong) id <SubjectMatcher> relativeMatcher;
+@property (strong) id <Matcher> relativeMatcher;
 
-+ (id <SubjectMatcher>)matcherWithRelativeMatcher:(id <SubjectMatcher>)relativeMatcher
-                                combinator:(id <Combinator>)combinator
-                            subjectMatcher:(id <SubjectMatcher>)subjectMatcher;
++ (id <ChainMatcher>)matcherWithSubjectMatcher:(id <Matcher>)matcher;
 
 @end

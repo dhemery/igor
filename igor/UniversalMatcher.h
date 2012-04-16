@@ -1,5 +1,4 @@
-#import "SimpleMatcher.h"
-#import "SubjectMatcher.h"
+#import "Matcher.h"
 
-@interface UniversalMatcher : NSObject <SimpleMatcher, SubjectMatcher>
+@interface UniversalMatcher : NSObject <Matcher>
 @end

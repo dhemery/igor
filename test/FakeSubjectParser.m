@@ -1,4 +1,5 @@
 #import "FakeSubjectParser.h"
+#import "Matcher.h"
 
 @implementation FakeSubjectParser {
     NSUInteger index;
@@ -18,7 +19,7 @@
     return [self parserThatYieldsSubjectMatchers:[NSArray array]];
 }
 
-+ (FakeSubjectParser *)parserThatYieldsSubjectMatcher:(id <SubjectMatcher>)subjectMatcher {
++ (FakeSubjectParser *)parserThatYieldsSubjectMatcher:(id <Matcher>)subjectMatcher {
     return [self parserThatYieldsSubjectMatchers:[NSArray arrayWithObject:subjectMatcher]];
 }
 
@@ -26,7 +27,7 @@
     return [[self alloc] initWithSubjectMatchers:subjectMatchers];
 }
 
-- (id <SubjectMatcher>)parseSubjectMatcher {
+- (id <Matcher>)parseSubjectMatcher {
     if (index < [subjectMatchers count]) {
         return [subjectMatchers objectAtIndex:index++];
     }

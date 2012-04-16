@@ -1,18 +1,18 @@
-#import "SubjectMatcher.h"
-#import "SimpleMatcher.h"
+#import "ChainMatcher.h"
+#import "Matcher.h"
 
 @protocol Combinator;
 @class IdentityMatcher;
 
-@interface BranchMatcher : NSObject <SubjectMatcher, SimpleMatcher>
+@interface BranchMatcher : NSObject <ChainMatcher>
 
-@property (strong, readonly) id <SubjectMatcher> subjectMatcher;
-@property (strong, readonly) id <SubjectMatcher> relativeMatcher;
-@property (strong, readonly) id <Combinator> subjectCombinator;
+@property (strong, readonly) id <Matcher> subjectMatcher;
+@property (strong, readonly) id <ChainMatcher> relativeMatcher;
+@property (strong, readwrite) id <Combinator> subjectCombinator;
 @property (strong, readonly) IdentityMatcher *subjectIdentityMatcher;
 
-+ (BranchMatcher *)matcherWithSubjectMatcher:(id <SubjectMatcher>)subjectMatcher;
++ (BranchMatcher *)matcherWithSubjectMatcher:(id <Matcher>)subjectMatcher;
 
-- (BranchMatcher *)appendCombinator:(id <Combinator>)combinator matcher:(id <SubjectMatcher>)relativeSubjectMatcher;
+- (void)appendCombinator:(id <Combinator>)combinator matcher:(id <Matcher>)matcher;
 
 @end

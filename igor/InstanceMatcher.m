@@ -18,14 +18,10 @@
 }
 
 - (BOOL)matchesView:(UIView *)view {
-    for (id <SimpleMatcher> matcher in self.simpleMatchers) {
+    for (id <Matcher> matcher in self.simpleMatchers) {
         if (![matcher matchesView:view]) return false;
     }
     return true;
-}
-
-- (BOOL)matchesView:(UIView *)view inTree:(UIView *)tree {
-    return [self matchesView:view];
 }
 
 + (InstanceMatcher *)matcherWithSimpleMatchers:(NSArray *)simpleMatchers {

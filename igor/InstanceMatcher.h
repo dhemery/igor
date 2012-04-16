@@ -1,7 +1,6 @@
-#import "SimpleMatcher.h"
-#import "SubjectMatcher.h"
+#import "Matcher.h"
 
-@interface InstanceMatcher : NSObject <SimpleMatcher, SubjectMatcher>
+@interface InstanceMatcher : NSObject <Matcher>
 
 @property(strong) NSArray *simpleMatchers;
 

@@ -1,7 +1,7 @@
 #import "SimplePatternParser.h"
 #import "FakeSimpleParser.h"
 #import "InstanceParser.h"
-#import "SimpleMatcher.h"
+#import "Matcher.h"
 #import "InstanceMatcher.h"
 #import "UniversalMatcher.h"
 
@@ -24,7 +24,7 @@
 }
 
 - (void)testYieldsInstanceMatcherWithSimpleMatcherFromSimpleParser {
-    id <SimpleMatcher> simpleMatcher = [UniversalMatcher new];
+    id <Matcher> simpleMatcher = [UniversalMatcher new];
     [simpleParsers addObject:[FakeSimpleParser parserThatYieldsSimpleMatcher:simpleMatcher]];
     id <SubjectPatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simpleParsers];
 
@@ -34,16 +34,16 @@
 }
 
 - (void)testYieldsInstanceMatcherWithAllSimpleMatchersFromAllSimpleParsers {
-    id <SimpleMatcher> matcher1 = [UniversalMatcher new];
+    id <Matcher> matcher1 = [UniversalMatcher new];
     [simpleParsers addObject:[FakeSimpleParser parserThatYieldsSimpleMatcher:matcher1]];
 
-    id <SimpleMatcher> matcher21 = [UniversalMatcher new];
-    id <SimpleMatcher> matcher22 = [UniversalMatcher new];
+    id <Matcher> matcher21 = [UniversalMatcher new];
+    id <Matcher> matcher22 = [UniversalMatcher new];
     [simpleParsers addObject:[FakeSimpleParser parserThatYieldsSimpleMatchers:[NSArray arrayWithObjects:matcher21, matcher22, nil]]];
 
-    id <SimpleMatcher> matcher31 = [UniversalMatcher new];
-    id <SimpleMatcher> matcher32 = [UniversalMatcher new];
-    id <SimpleMatcher> matcher33 = [UniversalMatcher new];
+    id <Matcher> matcher31 = [UniversalMatcher new];
+    id <Matcher> matcher32 = [UniversalMatcher new];
+    id <Matcher> matcher33 = [UniversalMatcher new];
     [simpleParsers addObject:[FakeSimpleParser parserThatYieldsSimpleMatchers:[NSArray arrayWithObjects:matcher31, matcher32, matcher33, nil]]];
 
     id <SubjectPatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simpleParsers];

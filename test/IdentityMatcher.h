@@ -1,6 +1,6 @@
 #import "InstanceMatcher.h"
 
-@interface IdentityMatcher : NSObject <SimpleMatcher, SubjectMatcher>
+@interface IdentityMatcher : NSObject <Matcher>
 
 @property(strong) UIView *targetView;
 

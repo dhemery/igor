@@ -1,10 +1,9 @@
 #import "Igor.h"
 #import "ScanningIgorQueryParser.h"
-#import "SubjectMatcher.h"
 #import "TreeWalker.h"
 #import "IgorQueryScanner.h"
 #import "IgorQueryStringScanner.h"
-#import "SubjectChainParser.h"
+#import "ChainParser.h"
 #import "InstanceParser.h"
 #import "ClassParser.h"
 #import "PredicateParser.h"
@@ -16,7 +15,7 @@
 @synthesize parser;
 
 
-- (NSArray *)findViewsThatMatchMatcher:(id <SubjectMatcher>)matcher inTree:(UIView *)tree {
+- (NSArray *)findViewsThatMatchMatcher:(id <Matcher>)matcher inTree:(UIView *)tree {
     NSMutableSet *matchingViews = [NSMutableSet set];
     void (^collectMatches)(UIView *) = ^(UIView *view) {
         if ([matcher matchesView:view]) {
@@ -29,7 +28,7 @@
 }
 
 - (NSArray *)findViewsThatMatchQuery:(NSString *)query inTree:(UIView *)tree {
-    id <SubjectMatcher> matcher = [parser parseMatcherFromQuery:query];
+    id <Matcher> matcher = [parser parseMatcherFromQuery:query];
     return [self findViewsThatMatchMatcher:matcher inTree:tree];
 }
 
@@ -42,7 +41,7 @@
     id <SubjectPatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simplePatternParsers];
 
     NSArray *combinatorParsers = [NSArray arrayWithObject:[DescendantCombinatorParser parserWithScanner:scanner]];
-    SubjectChainParser *subjectChainParser = [SubjectChainParser parserWithCombinatorParsers:combinatorParsers];
+    ChainParser *subjectChainParser = [ChainParser parserWithCombinatorParsers:combinatorParsers];
     id <SubjectPatternParser> branchParser = [BranchParser parserWithScanner:scanner subjectChainParser:subjectChainParser];
     NSArray *subjectParsers = [NSArray arrayWithObjects:instanceParser, branchParser, nil];
     subjectChainParser.subjectParsers = subjectParsers;

@@ -1,5 +1,4 @@
-#import "SubjectMatcher.h"
-#import "SimpleMatcher.h"
+#import "Matcher.h"
 
-@interface FalseMatcher : NSObject <SubjectMatcher, SimpleMatcher>
+@interface FalseMatcher : NSObject <Matcher>
 @end

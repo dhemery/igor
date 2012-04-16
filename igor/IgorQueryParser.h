@@ -1,7 +1,7 @@
-@protocol SubjectMatcher;
+@protocol Matcher;
 
 @protocol IgorQueryParser <NSObject>
 
-- (id <SubjectMatcher>)parseMatcherFromQuery:(NSString *)query;
+- (id <Matcher>)parseMatcherFromQuery:(NSString *)query;
 
 @end

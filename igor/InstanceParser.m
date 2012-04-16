@@ -23,7 +23,7 @@
     return NO;
 }
 
-- (id <SubjectMatcher>)parseSubjectMatcher {
+- (id <Matcher>)parseSubjectMatcher {
     NSMutableArray *simpleMatchers = [NSMutableArray array];
     while([self parseSimpleMatcherIntoArray:simpleMatchers]);
     if ([simpleMatchers count] == 0) return nil;
