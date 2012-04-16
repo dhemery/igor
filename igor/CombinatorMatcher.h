@@ -8,10 +8,8 @@
 @property (strong) id <Combinator> combinator;
 @property (strong) id <SubjectMatcher> relativeMatcher;
 
-- (id)initWithSubjectMatcher:(id <SubjectMatcher>)theSubjectMatcher combinator:(id <Combinator>)theCombinator relativeMatcher:(id <SubjectMatcher>)theRelativeMatcher;
++ (id <SubjectMatcher>)matcherWithRelativeMatcher:(id <SubjectMatcher>)relativeMatcher
+                                combinator:(id <Combinator>)combinator
+                            subjectMatcher:(id <SubjectMatcher>)subjectMatcher;
 
-
-+ (id <SubjectMatcher>)matcherWithSubjectMatcher:(id <SubjectMatcher>)subjectMatcher
-                                      combinator:(id <Combinator>)combinator
-                                 relativeMatcher:(id <SubjectMatcher>)relativeMatcher;
 @end

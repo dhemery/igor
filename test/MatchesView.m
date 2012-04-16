@@ -26,8 +26,4 @@
     return [[self alloc] initWithView:view];
 }
 
-+ (MatchesViewInTree *)view:(UIView *)view inTree:(UIView *)tree {
-    return [MatchesViewInTree view:view inTree:tree];
-}
-
 @end

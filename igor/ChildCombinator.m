@@ -2,6 +2,10 @@
 
 @implementation ChildCombinator
 
+- (NSString *)description {
+    return @" > ";
+}
+
 - (NSArray *)inverseRelativesOfView:(UIView *)subject {
     UIView *parent = [subject superview];
     if (parent) {

@@ -26,7 +26,7 @@
 
     SubjectChain * relative = [subjectChainParser parseSubjectChain];
     if (!relative.done) [scanner failBecause:@"Expected a subject pattern"];
-    return [BranchMatcher matcherWithSubjectMatcher:subject.matcher combinator:subject.combinator relativeMatcher:relative.matcher];
+    return [[BranchMatcher matcherWithSubjectMatcher:subject.matcher] appendCombinator:subject.combinator matcher:relative.matcher];
 }
 
 - (id <SubjectMatcher>)parseSubjectMatcher {

@@ -7,7 +7,7 @@
 @synthesize subjectMatcher, combinator, relativeMatcher;
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"%@ %@ %@", self.subjectMatcher, self.combinator, self.relativeMatcher];
+    return [NSString stringWithFormat:@"%@%@%@", self.relativeMatcher, self.combinator, self.subjectMatcher];
 }
 
 - (id)initWithSubjectMatcher:(id <SubjectMatcher>)theSubjectMatcher combinator:(id <Combinator>)theCombinator relativeMatcher:(id <SubjectMatcher>)theRelativeMatcher {
@@ -20,23 +20,41 @@
     return self;
 }
 
-+ (id <SubjectMatcher>)matcherWithSubjectMatcher:(id <SubjectMatcher>)subjectMatcher
-                                      combinator:(id <Combinator>)combinator
-                                 relativeMatcher:(id <SubjectMatcher>)relativeMatcher {
++ (id <SubjectMatcher>)matcherWithRelativeMatcher:(id <SubjectMatcher>)relativeMatcher combinator:(id <Combinator>)combinator subjectMatcher:(id <SubjectMatcher>)subjectMatcher {
     return [[self alloc] initWithSubjectMatcher:subjectMatcher combinator:combinator relativeMatcher:relativeMatcher];
 }
 
 
-- (BOOL)matchesView:(UIView *)subject inTree:(UIView *)tree {
-    if (![self.subjectMatcher matchesView:subject inTree:tree]) {
+- (BOOL)subjectMatcherMatchesView:(UIView *)subject {
+    NSLog(@"CM %@ checking %@", self, subject);
+    NSLog(@"CM %@ checking %@ against subject matcher %@", self, subject, self.subjectMatcher);
+    if (![self.subjectMatcher matchesView:subject]) {
+        NSLog(@"CM %@ Subject %@ mismatches subject matcher %@", self, subject, self.subjectMatcher);
         return NO;
     }
-    for(id relative in [self.combinator inverseRelativesOfView:subject inTree:tree]) {
-        if([self.relativeMatcher matchesView:relative inTree:tree]) {
+    NSLog(@"CM %@ Subject %@ matches subject matcher %@", self, subject, self.subjectMatcher);
+    return YES;
+}
+
+- (BOOL)relativeMatcherMatchesAnInverseRelativeOfView:(UIView *)subject {
+    NSLog(@"CM %@ Checking inverse relatives of %@ against relative matcher %@", self, subject, self.relativeMatcher);
+    NSArray *inverseRelatives = [self.combinator inverseRelativesOfView:subject];
+    NSLog(@"CM %@ Inverse relatives are %@", self, inverseRelatives);
+    for(id relative in inverseRelatives) {
+        NSLog(@"CM %@ Checking inverse relative %@ against relative matcher %@", self, relative, self.relativeMatcher);
+        if([self.relativeMatcher matchesView:relative]) {
+            NSLog(@"CM %@ Relative %@ matches relative matcher %@", self, relative, self.relativeMatcher);
+            NSLog(@"CM %@ So subject %@ matches whole combinator matcher", self, subject);
             return YES;
         }
+        NSLog(@"CM %@ Relative %@ mismatches relative matcher %@", self, relative, self.relativeMatcher);
     }
+    NSLog(@"CM %@ No relatives match, so %@ mismatches whole combinator matcher", self, subject);
     return NO;
 }
 
+- (BOOL)matchesView:(UIView *)subject {
+    return [self subjectMatcherMatchesView:subject]
+            && [self relativeMatcherMatchesAnInverseRelativeOfView:subject];
+}
 @end

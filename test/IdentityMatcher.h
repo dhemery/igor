@@ -2,6 +2,10 @@
 
 @interface IdentityMatcher : NSObject <SimpleMatcher, SubjectMatcher>
 
-+ (IdentityMatcher *)forView:(UIView *)view;
+@property(strong) UIView *targetView;
+
++ (IdentityMatcher *)matcherWithView:(UIView *)view description:(NSString *)description;
+
++ (IdentityMatcher *)matcherWithView:(UIView *)view;
 
 @end

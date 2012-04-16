@@ -55,7 +55,7 @@
     SubjectChain *collected = [self parseOneSubject];
     SubjectChain *step = [self parseOneSubject];
     while(step.started) {
-        id <SubjectMatcher> matcher = [CombinatorMatcher matcherWithSubjectMatcher:step.matcher combinator:collected.combinator relativeMatcher:collected.matcher];
+        id <SubjectMatcher> matcher = [CombinatorMatcher matcherWithRelativeMatcher:collected.matcher combinator:collected.combinator subjectMatcher:step.matcher];
         collected = [SubjectChain stateWithMatcher:matcher combinator:step.combinator];
         if (step.done) return collected;
         step = [self parseOneSubject];

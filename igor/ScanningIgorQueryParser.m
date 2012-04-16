@@ -27,6 +27,7 @@
     [scanner setQuery:queryString];
 
     SubjectChain *query = [self parseSubject];
+    NSLog(@"Parser after parsing subject, query is %@", query);
     if (!query.done) query = [self parseBranchMatcherWithSubject:query];
     if (!query.done) [scanner failBecause:@"Expected a subject pattern"];
     [scanner failIfNotAtEnd];
@@ -43,13 +44,13 @@
 
 - (SubjectChain *)parseSubjectWithPrefix:(SubjectChain *)prefix {
     SubjectChain *subject = [subjectChainParser parseOneSubject];
-    id <SubjectMatcher> left = [CombinatorMatcher matcherWithSubjectMatcher:subject.matcher combinator:prefix.combinator relativeMatcher:prefix.matcher];
+    id <SubjectMatcher> left = [CombinatorMatcher matcherWithRelativeMatcher:prefix.matcher combinator:prefix.combinator subjectMatcher:subject.matcher];
     return [SubjectChain stateWithMatcher:left combinator:subject.combinator];
 }
 
 - (SubjectChain *)parseBranchMatcherWithSubject:(SubjectChain *)subject {
     SubjectChain *relative = [subjectChainParser parseSubjectChain];
-    id <SubjectMatcher> branch = [BranchMatcher matcherWithSubjectMatcher:subject.matcher combinator:subject.combinator relativeMatcher:relative.matcher];
+    id <SubjectMatcher> branch = [[BranchMatcher matcherWithSubjectMatcher:subject.matcher] appendCombinator:subject.combinator matcher:relative.matcher];
     return [SubjectChain stateWithMatcher:branch combinator:relative.combinator];
 }
 

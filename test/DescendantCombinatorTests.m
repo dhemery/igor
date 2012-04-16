@@ -124,7 +124,7 @@
     assertThat(relatives, hasItem(sameInstance(grandparent)));
 }
 
-- (void)testAncestorsAreRelativesInTreesRootedAboveThem {        ˚
+- (void)testAncestorsAreRelativesInTreesRootedAboveThem {
     UIView *parent = [ViewFactory buttonWithAccessibilityHint:@"parent"];
     UIView *grandparent = [ViewFactory buttonWithAccessibilityHint:@"grandparent"];
     UIView *greatGrandparent = [ViewFactory buttonWithAccessibilityHint:@"great grandparent"];

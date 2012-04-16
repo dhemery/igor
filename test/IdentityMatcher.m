@@ -1,29 +1,37 @@
 #import "IdentityMatcher.h"
 
 @implementation IdentityMatcher {
-    UIView *matchView;
+    NSString *descriptionString;
+}
+
+@synthesize targetView;
+
+
++ (IdentityMatcher *)matcherWithView:(UIView *)view description:(NSString *)description {
+     return [[self alloc] initWithView:view description:description];
+}
+
++ (IdentityMatcher *)matcherWithView:(UIView *)view {
+    NSString *description = [NSString stringWithFormat:@"{%@}", [view description]];
+    return [self matcherWithView:view description:description];
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"[Identity:%@]", matchView];
+    return descriptionString;
 }
 
-+ (IdentityMatcher *)forView:(UIView *)view {
-    return [[IdentityMatcher alloc] initForView:view];
-}
-
-- (IdentityMatcher *)initForView:(UIView *)view {
-    if ((self = [super init])) {
-        matchView = view;
+- (IdentityMatcher *)initWithView:(UIView *)view description:(NSString *)description {
+    self = [super init];
+    if (self) {
+        descriptionString = description;
+        targetView = view;
     }
     return self;
 }
 
+
 - (BOOL)matchesView:(UIView *)view {
-    return matchView == view;
+    return self.targetView == view;
 }
 
-- (BOOL)matchesView:(UIView *)view inTree:(UIView *)root {
-    return matchView == view;
-}
 @end

@@ -1,5 +1,4 @@
-@protocol SubjectMatcher <NSObject>
+#import "SimpleMatcher.h"
 
-- (BOOL)matchesView:(UIView *)view inTree:(UIView *)root;
-
+@protocol SubjectMatcher <SimpleMatcher>
 @end

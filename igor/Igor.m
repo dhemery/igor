@@ -19,7 +19,7 @@
 - (NSArray *)findViewsThatMatchMatcher:(id <SubjectMatcher>)matcher inTree:(UIView *)tree {
     NSMutableSet *matchingViews = [NSMutableSet set];
     void (^collectMatches)(UIView *) = ^(UIView *view) {
-        if ([matcher matchesView:view inTree:tree]) {
+        if ([matcher matchesView:view]) {
             [matchingViews addObject:view];
         }
     };
