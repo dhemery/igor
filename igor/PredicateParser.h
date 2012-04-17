@@ -1,10 +1,10 @@
-#import "SimplePatternParser.h"
+#import "PatternParser.h"
 
 @class PredicateMatcher;
-@protocol IgorQueryScanner;
+@protocol QueryScanner;
 
-@interface PredicateParser : NSObject <SimplePatternParser>
+@interface PredicateParser : NSObject <PatternParser>
 
-+ (id <SimplePatternParser>)parserWithScanner:(id <IgorQueryScanner>)scanner;
++ (id <PatternParser>)parserWithScanner:(id <QueryScanner>)scanner;
 
 @end

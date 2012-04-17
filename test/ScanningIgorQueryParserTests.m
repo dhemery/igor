@@ -1,6 +1,6 @@
-#import "ScanningIgorQueryParser.h"
+#import "QueryParser.h"
 #import "InstanceMatcher.h"
-#import "IgorQueryStringScanner.h"
+#import "StringQueryScanner.h"
 #import "IsKindOfClassMatcher.h"
 #import "IsMemberOfClassMatcher.h"
 #import "UniversalMatcher.h"
@@ -20,18 +20,18 @@
 }
 
 - (void)setUp {
-    id <IgorQueryScanner> scanner = [IgorQueryStringScanner new];
-    id <SimplePatternParser> classParser = [ClassParser parserWithScanner:scanner];
-    id <SimplePatternParser> predicateParser = [PredicateParser parserWithScanner:scanner];
+    id <QueryScanner> scanner = [StringQueryScanner new];
+    id <PatternParser> classParser = [ClassParser parserWithScanner:scanner];
+    id <PatternParser> predicateParser = [PredicateParser parserWithScanner:scanner];
     NSArray *simplePatternParsers = [NSArray arrayWithObjects:classParser, predicateParser, nil];
 
-    id <SubjectPatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simplePatternParsers];
+    id <PatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simplePatternParsers];
     ChainParser *subjectChainParser = [ChainParser parserWithCombinatorParsers:nil];
-    id <SubjectPatternParser> branchParser = [BranchParser parserWithScanner:scanner subjectChainParser:subjectChainParser];
+    id <PatternParser> branchParser = [BranchParser parserWithScanner:scanner subjectChainParser:subjectChainParser];
     NSArray *subjectPatternParsers = [NSArray arrayWithObjects:instanceParser, branchParser, nil];
     subjectChainParser.subjectParsers = subjectPatternParsers;
 
-    parser = [ScanningIgorQueryParser parserWithScanner:scanner subjectChainParser:subjectChainParser];
+    parser = [QueryParser parserWithScanner:scanner subjectChainParser:subjectChainParser];
 }
 
 - (void)testParsesAsteriskAsUniversalMatcher {

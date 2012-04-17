@@ -1,19 +1,19 @@
-#import "ScanningIgorQueryParser.h"
-#import "IgorQueryScanner.h"
+#import "QueryParser.h"
+#import "QueryScanner.h"
 #import "BranchMatcher.h"
 #import "CombinatorMatcher.h"
 #import "ChainParser.h"
 
-@implementation ScanningIgorQueryParser {
-    id <IgorQueryScanner> scanner;
+@implementation QueryParser {
+    id <QueryScanner> scanner;
     ChainParser *subjectChainParser;
 }
 
-+ (id <IgorQueryParser>)parserWithScanner:(id <IgorQueryScanner>)scanner subjectChainParser:(ChainParser *)subjectChainParser {
++ (id <IgorQueryParser>)parserWithScanner:(id <QueryScanner>)scanner subjectChainParser:(ChainParser *)subjectChainParser {
     return [[self alloc] initWithScanner:scanner subjectChainParser:subjectChainParser];
 }
 
-- (id <IgorQueryParser>)initWithScanner:(id <IgorQueryScanner>)theScanner subjectChainParser:(ChainParser *)theSubjectChainParser {
+- (id <IgorQueryParser>)initWithScanner:(id <QueryScanner>)theScanner subjectChainParser:(ChainParser *)theSubjectChainParser {
     self = [super init];
     if (self) {
         scanner = theScanner;

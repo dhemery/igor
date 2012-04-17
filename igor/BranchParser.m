@@ -1,14 +1,14 @@
 #import "BranchParser.h"
 #import "BranchMatcher.h"
-#import "IgorQueryScanner.h"
+#import "QueryScanner.h"
 #import "ChainParser.h"
 
 @implementation BranchParser {
-    id <IgorQueryScanner> scanner;
+    id <QueryScanner> scanner;
     ChainParser *subjectChainParser;
 }
 
-- (id <SubjectPatternParser>)initWithScanner:(id <IgorQueryScanner>)aScanner subjectChainParser:(ChainParser *)theSubjectChainParser {
+- (id <PatternParser>)initWithScanner:(id <QueryScanner>)aScanner subjectChainParser:(ChainParser *)theSubjectChainParser {
     self = [super init];
     if (self) {
         scanner = aScanner;
@@ -35,7 +35,7 @@
     return matcher;
 }
 
-+ (id <SubjectPatternParser>)parserWithScanner:(id <IgorQueryScanner>)scanner subjectChainParser:(ChainParser *)subjectChainParser {
++ (id <PatternParser>)parserWithScanner:(id <QueryScanner>)scanner subjectChainParser:(ChainParser *)subjectChainParser {
     return [[self alloc] initWithScanner:scanner subjectChainParser:subjectChainParser];
 }
 

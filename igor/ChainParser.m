@@ -48,7 +48,7 @@
 }
 
 - (id <Matcher>)parseSubject {
-    for (id <SubjectPatternParser> parser in self.subjectParsers) {
+    for (id <PatternParser> parser in self.subjectParsers) {
         id <Matcher> matcher = [parser parseMatcher];
         if (matcher) return matcher;
     }

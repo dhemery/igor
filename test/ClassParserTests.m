@@ -1,4 +1,4 @@
-#import "IgorQueryStringScanner.h"
+#import "StringQueryScanner.h"
 #import "ClassParser.h"
 #import "UniversalMatcher.h"
 #import "IsKindOfClassMatcher.h"
@@ -8,12 +8,12 @@
 @end
 
 @implementation ClassParserTests {
-    id <IgorQueryScanner> scanner;
-    id <SimplePatternParser> parser;
+    id <QueryScanner> scanner;
+    id <PatternParser> parser;
 }
 
 - (void)setUp {
-    scanner = [IgorQueryStringScanner scanner];
+    scanner = [StringQueryScanner scanner];
     parser = [ClassParser parserWithScanner:scanner];
 }
 

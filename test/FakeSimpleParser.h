@@ -1,8 +1,8 @@
-#import "SimplePatternParser.h"
+#import "PatternParser.h"
 
 @protocol Matcher;
 
-@interface FakeSimpleParser : NSObject <SimplePatternParser>
+@interface FakeSimpleParser : NSObject <PatternParser>
 
 + (FakeSimpleParser *)parserThatYieldsNoSimpleMatchers;
 

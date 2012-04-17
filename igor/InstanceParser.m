@@ -6,7 +6,7 @@
     NSArray *simplePatternParsers;
 }
 
-- (id <SubjectPatternParser>)initWithSimplePatternParsers:(NSArray *)theSimplePatternParsers {
+- (id <PatternParser>)initWithSimplePatternParsers:(NSArray *)theSimplePatternParsers {
     self = [super init];
     if (self) {
         simplePatternParsers = [NSArray arrayWithArray:theSimplePatternParsers];
@@ -15,7 +15,7 @@
 }
 
 - (id <Matcher>)parseSimpleMatcher {
-    for (id <SimplePatternParser> parser in simplePatternParsers) {
+    for (id <PatternParser> parser in simplePatternParsers) {
         id <Matcher> matcher = [parser parseMatcher];
         if (matcher) return matcher;
     }
@@ -35,7 +35,7 @@
     return [InstanceMatcher matcherWithSimpleMatchers:simpleMatchers];
 }
 
-+ (id <SubjectPatternParser>)parserWithSimplePatternParsers:(NSArray *)simplePatternParsers {
++ (id <PatternParser>)parserWithSimplePatternParsers:(NSArray *)simplePatternParsers {
     return [[self alloc] initWithSimplePatternParsers:simplePatternParsers];
 }
 

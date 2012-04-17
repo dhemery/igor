@@ -1,6 +1,6 @@
 #import "SelectorEngineRegistry.h"
 
-@protocol IgorQueryScanner;
+@protocol QueryScanner;
 @protocol IgorQueryParser;
 
 @interface Igor : NSObject <SelectorEngine>

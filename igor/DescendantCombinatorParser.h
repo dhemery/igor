@@ -1,9 +1,9 @@
 #import "CombinatorParser.h"
 
-@protocol IgorQueryScanner;
+@protocol QueryScanner;
 
 @interface DescendantCombinatorParser : NSObject <CombinatorParser>
 
-+ (id <CombinatorParser>)parserWithScanner:(id <IgorQueryScanner>)theScanner;
++ (id <CombinatorParser>)parserWithScanner:(id <QueryScanner>)theScanner;
 
 @end

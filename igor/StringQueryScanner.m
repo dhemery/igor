@@ -1,8 +1,8 @@
-#import "IgorQueryStringScanner.h"
+#import "StringQueryScanner.h"
 #import "IgorParserException.h"
 
 // todo  Test
-@implementation IgorQueryStringScanner {
+@implementation StringQueryScanner {
     NSScanner *scanner;
 }
 
@@ -20,20 +20,11 @@
     }
 }
 
-- (BOOL)nextStringIs:(NSString *)string {
-    NSUInteger originalLocation = [scanner scanLocation];
-    if ([scanner scanString:string intoString:nil]) {
-        [scanner setScanLocation:originalLocation];
-        return YES;
-    }
-    return NO;
-}
-
 - (BOOL)scanNameIntoString:(NSString **)destination {
     return [scanner scanCharactersFromSet:[NSCharacterSet letterCharacterSet] intoString:destination];
 }
 
-+ (id <IgorQueryScanner>)scanner {
++ (id <QueryScanner>)scanner {
     return [self alloc];
 }
 

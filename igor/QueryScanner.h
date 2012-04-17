@@ -1,10 +1,8 @@
-@protocol IgorQueryScanner <NSObject>
+@protocol QueryScanner <NSObject>
 
 - (void)failBecause:(NSString *)string;
 
 - (void)failIfNotAtEnd;
-
-- (BOOL)nextStringIs:(NSString *)string;
 
 - (BOOL)scanNameIntoString:(NSString **)destination;
 

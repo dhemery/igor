@@ -1,15 +1,15 @@
 #import "ClassParser.h"
 #import "KindOfClassMatcher.h"
 #import "MemberOfClassMatcher.h"
-#import "IgorQueryScanner.h"
+#import "QueryScanner.h"
 #import "UniversalMatcher.h"
 
 
 @implementation ClassParser {
-    id <IgorQueryScanner> scanner;
+    id <QueryScanner> scanner;
 }
 
-- (id <SimplePatternParser>)initWithScanner:(id <IgorQueryScanner>)theScanner {
+- (id <PatternParser>)initWithScanner:(id <QueryScanner>)theScanner {
     self = [super init];
     if (self) {
         scanner = theScanner;
@@ -31,7 +31,7 @@
     return [MemberOfClassMatcher matcherForExactClass:targetClass];
 }
 
-+ (id <SimplePatternParser>)parserWithScanner:(id <IgorQueryScanner>)scanner {
++ (id <PatternParser>)parserWithScanner:(id <QueryScanner>)scanner {
     return [[self alloc] initWithScanner:scanner];
 }
 @end

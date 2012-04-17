@@ -1,8 +1,8 @@
 #import "Igor.h"
-#import "ScanningIgorQueryParser.h"
+#import "QueryParser.h"
 #import "TreeWalker.h"
-#import "IgorQueryScanner.h"
-#import "IgorQueryStringScanner.h"
+#import "QueryScanner.h"
+#import "StringQueryScanner.h"
 #import "ChainParser.h"
 #import "InstanceParser.h"
 #import "ClassParser.h"
@@ -33,20 +33,20 @@
 }
 
 + (Igor *)igor {
-    id <IgorQueryScanner> scanner = [IgorQueryStringScanner new];
-    id <SimplePatternParser> classParser = [ClassParser parserWithScanner:scanner];
-    id <SimplePatternParser> predicateParser = [PredicateParser parserWithScanner:scanner];
+    id <QueryScanner> scanner = [StringQueryScanner new];
+    id <PatternParser> classParser = [ClassParser parserWithScanner:scanner];
+    id <PatternParser> predicateParser = [PredicateParser parserWithScanner:scanner];
 
     NSArray *simplePatternParsers = [NSArray arrayWithObjects:classParser, predicateParser, nil];
-    id <SubjectPatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simplePatternParsers];
+    id <PatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simplePatternParsers];
 
     NSArray *combinatorParsers = [NSArray arrayWithObject:[DescendantCombinatorParser parserWithScanner:scanner]];
     ChainParser *subjectChainParser = [ChainParser parserWithCombinatorParsers:combinatorParsers];
-    id <SubjectPatternParser> branchParser = [BranchParser parserWithScanner:scanner subjectChainParser:subjectChainParser];
+    id <PatternParser> branchParser = [BranchParser parserWithScanner:scanner subjectChainParser:subjectChainParser];
     NSArray *subjectParsers = [NSArray arrayWithObjects:instanceParser, branchParser, nil];
     subjectChainParser.subjectParsers = subjectParsers;
 
-    id <IgorQueryParser> parser = [ScanningIgorQueryParser parserWithScanner:scanner subjectChainParser:subjectChainParser];
+    id <IgorQueryParser> parser = [QueryParser parserWithScanner:scanner subjectChainParser:subjectChainParser];
 
     return [self igorWithParser:parser];
 }

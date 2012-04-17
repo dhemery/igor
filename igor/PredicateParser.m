@@ -1,12 +1,12 @@
 #import "PredicateParser.h"
 #import "PredicateMatcher.h"
-#import "IgorQueryScanner.h"
+#import "QueryScanner.h"
 
 @implementation PredicateParser {
-    id <IgorQueryScanner> scanner;
+    id <QueryScanner> scanner;
 }
 
-- (id <SimplePatternParser>)initWithScanner:(id <IgorQueryScanner>)theScanner {
+- (id <PatternParser>)initWithScanner:(id <QueryScanner>)theScanner {
     self = [super init];
     if (self) {
         scanner = theScanner;
@@ -44,7 +44,7 @@
     return [PredicateMatcher matcherForPredicateExpression:expression];
 }
 
-+ (id <SimplePatternParser>)parserWithScanner:(id <IgorQueryScanner>)scanner {
++ (id <PatternParser>)parserWithScanner:(id <QueryScanner>)scanner {
     return [[self alloc] initWithScanner:scanner];
 }
 

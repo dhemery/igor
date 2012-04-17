@@ -1,4 +1,4 @@
-#import "SimplePatternParser.h"
+#import "PatternParser.h"
 #import "FakeSimpleParser.h"
 #import "InstanceParser.h"
 #import "Matcher.h"
@@ -18,7 +18,7 @@
 
 - (void)testYieldsNilIfSimpleParsersYieldNoMatchers {
     [simpleParsers addObject:[FakeSimpleParser parserThatYieldsNoSimpleMatchers]];
-    id <SubjectPatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simpleParsers];
+    id <PatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simpleParsers];
 
     assertThat([instanceParser parseMatcher], nilValue());
 }
@@ -26,7 +26,7 @@
 - (void)testYieldsInstanceMatcherWithSimpleMatcherFromSimpleParser {
     id <Matcher> simpleMatcher = [UniversalMatcher new];
     [simpleParsers addObject:[FakeSimpleParser parserThatYieldsSimpleMatcher:simpleMatcher]];
-    id <SubjectPatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simpleParsers];
+    id <PatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simpleParsers];
 
     InstanceMatcher *subjectMatcher = (InstanceMatcher *)[instanceParser parseMatcher];
 
@@ -46,7 +46,7 @@
     id <Matcher> matcher33 = [UniversalMatcher new];
     [simpleParsers addObject:[FakeSimpleParser parserThatYieldsSimpleMatchers:[NSArray arrayWithObjects:matcher31, matcher32, matcher33, nil]]];
 
-    id <SubjectPatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simpleParsers];
+    id <PatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simpleParsers];
 
     InstanceMatcher *subjectMatcher = (InstanceMatcher *)[instanceParser parseMatcher];
 

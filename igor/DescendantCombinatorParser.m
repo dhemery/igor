@@ -1,14 +1,14 @@
 #import "CombinatorParser.h"
 #import "DescendantCombinatorParser.h"
-#import "IgorQueryScanner.h"
+#import "QueryScanner.h"
 #import "DescendantCombinator.h"
 
 // TODO Test
 @implementation DescendantCombinatorParser {
-    id <IgorQueryScanner> scanner;
+    id <QueryScanner> scanner;
 }
 
-- (id <CombinatorParser>)initWithScanner:(id <IgorQueryScanner>)theScanner {
+- (id <CombinatorParser>)initWithScanner:(id <QueryScanner>)theScanner {
     self = [super init];
     if (self) {
         scanner = theScanner;
@@ -22,7 +22,7 @@
     return nil;
 }
 
-+ (id <CombinatorParser>)parserWithScanner:(id <IgorQueryScanner>)scanner {
++ (id <CombinatorParser>)parserWithScanner:(id <QueryScanner>)scanner {
     return [[self alloc] initWithScanner:scanner];
 }
 

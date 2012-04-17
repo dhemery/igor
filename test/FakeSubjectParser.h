@@ -1,8 +1,8 @@
-#import "SubjectPatternParser.h"
+#import "PatternParser.h"
 
 @protocol Matcher;
 
-@interface FakeSubjectParser : NSObject <SubjectPatternParser>
+@interface FakeSubjectParser : NSObject <PatternParser>
 
 + (FakeSubjectParser *)parserThatYieldsNoSubjectMatchers;
 

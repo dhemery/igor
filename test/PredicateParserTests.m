@@ -1,17 +1,17 @@
 #import "PredicateParser.h"
-#import "IgorQueryStringScanner.h"
+#import "StringQueryScanner.h"
 #import "IsPredicateMatcher.h"
 
 @interface PredicateParserTests : SenTestCase
 @end
 
 @implementation PredicateParserTests {
-    id <IgorQueryScanner> scanner;
-    id <SimplePatternParser> parser;
+    id <QueryScanner> scanner;
+    id <PatternParser> parser;
 }
 
 - (void)setUp {
-    scanner = [IgorQueryStringScanner scanner];
+    scanner = [StringQueryScanner scanner];
     parser = [PredicateParser parserWithScanner:scanner];
 }
 
