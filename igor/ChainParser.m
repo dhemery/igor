@@ -3,6 +3,7 @@
 #import "DescendantCombinator.h"
 #import "ChainMatcher.h"
 #import "CombinatorParser.h"
+#import "QueryScanner.h"
 
 @implementation ChainParser
 
@@ -38,35 +39,35 @@
     return self;
 }
 
-- (id <Matcher>)parseStep {
+- (id <Matcher>)parseStepFromScanner:(id <QueryScanner>)scanner {
     self.combinator = nil;
-    self.matcher = [self parseSubject];
+    self.matcher = [self parseSubjectFromScanner:scanner];
     if (self.matcher) {
-        self.combinator = [self parseCombinator];
+        self.combinator = [self parseCombinatorFromScanner:scanner];
     }
     return self.matcher;
 }
 
-- (id <Matcher>)parseSubject {
+- (id <Matcher>)parseSubjectFromScanner:(id <QueryScanner>)scanner {
     for (id <PatternParser> parser in self.subjectParsers) {
-        id <Matcher> matcher = [parser parseMatcher];
+        id <Matcher> matcher = [parser parseMatcherFromScanner:scanner];
         if (matcher) return matcher;
     }
     return nil;
 }
 
-- (id <Combinator>)parseCombinator {
+- (id <Combinator>)parseCombinatorFromScanner:(id <QueryScanner>)scanner {
     for (id <CombinatorParser>parser in self.combinatorParsers) {
-        id <Combinator> combinator = [parser parseCombinator];
+        id <Combinator> combinator = [parser parseCombinatorFromScanner:scanner];
         if (combinator) return combinator;
     }
     return nil;
 }
 
-- (void)parseSubjectChainIntoMatcher:(id <ChainMatcher>)destination {
+- (void)parseSubjectChainFromScanner:(id <QueryScanner>)scanner intoMatcher:(id <ChainMatcher>)destination {
     while (self.combinator) {
         id <Combinator> previousCombinator = self.combinator;
-        [self parseStep];
+        [self parseStepFromScanner:scanner];
         if (self.matcher) [destination appendCombinator:previousCombinator matcher:self.matcher];
     };
 }

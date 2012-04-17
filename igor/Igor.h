@@ -1,16 +1,16 @@
 #import "SelectorEngineRegistry.h"
 
 @protocol QueryScanner;
-@protocol IgorQueryParser;
+@protocol PatternParser;
 
 @interface Igor : NSObject <SelectorEngine>
 
-@property(strong) id <IgorQueryParser> parser;
+@property(strong) id <PatternParser> parser;
 
 - (NSArray *)findViewsThatMatchQuery:(NSString *)query inTree:(UIView *)tree;
 
 + (Igor *)igor;
 
-+ (Igor *)igorWithParser:(id <IgorQueryParser>)parser;
++ (Igor *)igorWithParser:(id <PatternParser>)parser;
 
 @end

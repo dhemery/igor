@@ -2,19 +2,9 @@
 #import "PredicateMatcher.h"
 #import "QueryScanner.h"
 
-@implementation PredicateParser {
-    id <QueryScanner> scanner;
-}
+@implementation PredicateParser
 
-- (id <PatternParser>)initWithScanner:(id <QueryScanner>)theScanner {
-    self = [super init];
-    if (self) {
-        scanner = theScanner;
-    }
-    return self;
-}
-
-- (NSString *)parseExpression {
+- (NSString *)parseExpressionFromScanner:(id <QueryScanner>)scanner {
     NSString *expression = @"";
     NSString *chunk;
     while ([scanner scanUpToString:@"]" intoString:&chunk]) {
@@ -33,19 +23,15 @@
     return nil;
 }
 
-- (id <Matcher>)parseMatcher {
+- (id <Matcher>)parseMatcherFromScanner:(id <QueryScanner>)scanner {
     if (![scanner skipString:@"["]) {
         return nil;
     }
-    NSString *expression = [self parseExpression];
+    NSString *expression = [self parseExpressionFromScanner:scanner];
     if (![scanner skipString:@"]"]) {
         [scanner failBecause:@"Expected ]"];
     }
     return [PredicateMatcher matcherForPredicateExpression:expression];
-}
-
-+ (id <PatternParser>)parserWithScanner:(id <QueryScanner>)scanner {
-    return [[self alloc] initWithScanner:scanner];
 }
 
 @end

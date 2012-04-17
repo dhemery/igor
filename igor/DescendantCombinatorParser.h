@@ -3,7 +3,4 @@
 @protocol QueryScanner;
 
 @interface DescendantCombinatorParser : NSObject <CombinatorParser>
-
-+ (id <CombinatorParser>)parserWithScanner:(id <QueryScanner>)theScanner;
-
 @end

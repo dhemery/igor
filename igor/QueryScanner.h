@@ -8,8 +8,6 @@
 
 - (BOOL)scanUpToString:(NSString *)string intoString:(NSString **)destination;
 
-- (void)setQuery:(NSString *)query;
-
 - (BOOL)skipString:(NSString *)string;
 
 - (BOOL)skipWhiteSpace;

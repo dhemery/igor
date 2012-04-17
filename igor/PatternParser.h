@@ -1,7 +1,8 @@
 @protocol Matcher;
+@protocol QueryScanner;
 
 @protocol PatternParser <NSObject>
 
-- (id <Matcher>)parseMatcher;
+- (id <Matcher>)parseMatcherFromScanner:(id <QueryScanner>)scanner;
 
 @end

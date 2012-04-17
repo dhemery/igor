@@ -11,47 +11,46 @@
 }
 
 - (void)setUp {
-    scanner = [StringQueryScanner scanner];
-    parser = [PredicateParser parserWithScanner:scanner];
+    parser = [PredicateParser new];
 }
 
 - (void)testParsesAPredicateBetweenBrackets {
     NSString *expression = @"pearlBailey='opreylady'";
-    [scanner setQuery:[NSString stringWithFormat:@"[%@]", expression]];
+    scanner = [StringQueryScanner scannerWithString:[NSString stringWithFormat:@"[%@]", expression]];
 
-    assertThat([parser parseMatcher], [IsPredicateMatcher forExpression:expression]);
+    assertThat([parser parseMatcherFromScanner:scanner], [IsPredicateMatcher forExpression:expression]);
 }
 
 - (void)testIgnoresBracketWithinStringsInPredicate {
     NSString *expression = @"myProperty='bracket: ]'";
-    [scanner setQuery:[NSString stringWithFormat:@"[%@]", expression]];
+    scanner = [StringQueryScanner scannerWithString:[NSString stringWithFormat:@"[%@]", expression]];
 
-    assertThat([parser parseMatcher], [IsPredicateMatcher forExpression:expression]);
+    assertThat([parser parseMatcherFromScanner:scanner], [IsPredicateMatcher forExpression:expression]);
 }
 
 - (void)testIgnoresConsecutiveBracketsWithinStringsInPredicate {
     NSString *expression = @"myProperty='brackets: ]]]]]'";
-    [scanner setQuery:[NSString stringWithFormat:@"[%@]", expression]];
+    scanner = [StringQueryScanner scannerWithString:[NSString stringWithFormat:@"[%@]", expression]];
 
-    assertThat([parser parseMatcher], [IsPredicateMatcher forExpression:expression]);
+    assertThat([parser parseMatcherFromScanner:scanner], [IsPredicateMatcher forExpression:expression]);
 }
 
 - (void)testDeliversNoMatcherIfNoLeftBracket {
-    [scanner setQuery:@"no left bracket"];
+    scanner = [StringQueryScanner scannerWithString:@"no left bracket"];
 
-    assertThat([parser parseMatcher], is(nilValue()));
+    assertThat([parser parseMatcherFromScanner:scanner], is(nilValue()));
 }
 
 - (void)testThrowsIfNoPredicateBetweenBrackets {
-    [scanner setQuery:@"[]"];
+    scanner = [StringQueryScanner scannerWithString:@"[]"];
 
-    STAssertThrowsSpecificNamed([parser parseMatcher], NSException, @"IgorParserException", @"Expected IgorParserException");
+    STAssertThrowsSpecificNamed([parser parseMatcherFromScanner:scanner], NSException, @"IgorParserException", @"Expected IgorParserException");
 }
 
 - (void)testThrowsIfNoRightBracket {
-    [scanner setQuery:@"[royClark='pickin'"];
+    scanner = [StringQueryScanner scannerWithString:@"[royClark='pickin'"];
 
-    STAssertThrowsSpecificNamed([parser parseMatcher], NSException, @"IgorParserException", @"Expected IgorParserException");
+    STAssertThrowsSpecificNamed([parser parseMatcherFromScanner:scanner], NSException, @"IgorParserException", @"Expected IgorParserException");
 }
 
 @end

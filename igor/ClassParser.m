@@ -4,20 +4,9 @@
 #import "QueryScanner.h"
 #import "UniversalMatcher.h"
 
+@implementation ClassParser
 
-@implementation ClassParser {
-    id <QueryScanner> scanner;
-}
-
-- (id <PatternParser>)initWithScanner:(id <QueryScanner>)theScanner {
-    self = [super init];
-    if (self) {
-        scanner = theScanner;
-    }
-    return self;
-}
-
-- (id <Matcher>)parseMatcher {
+- (id <Matcher>)parseMatcherFromScanner:(id <QueryScanner>)scanner {
     NSString *className;
 
     if ([scanner skipString:@"*"]) return [UniversalMatcher new];
@@ -31,7 +20,4 @@
     return [MemberOfClassMatcher matcherForExactClass:targetClass];
 }
 
-+ (id <PatternParser>)parserWithScanner:(id <QueryScanner>)scanner {
-    return [[self alloc] initWithScanner:scanner];
-}
 @end

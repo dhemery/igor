@@ -13,31 +13,30 @@
 }
 
 - (void)setUp {
-    scanner = [StringQueryScanner scanner];
-    parser = [ClassParser parserWithScanner:scanner];
+    parser = [ClassParser new];
 }
 
 - (void)testParsesAsteriskAsUniversalMatcher {
-    [scanner setQuery:@"*"];
+    scanner = [StringQueryScanner scannerWithString:@"*"];
 
-    assertThat([parser parseMatcher], instanceOf([UniversalMatcher class]));
+    assertThat([parser parseMatcherFromScanner:scanner], instanceOf([UniversalMatcher class]));
 }
 
 - (void)testParsesNameAsMemberOfClassMatcher {
-    [scanner setQuery:@"UIButton"];
+    scanner = [StringQueryScanner scannerWithString:@"UIButton"];
 
-    assertThat([parser parseMatcher], [IsMemberOfClassMatcher forExactClass:[UIButton class]]);
+    assertThat([parser parseMatcherFromScanner:scanner], [IsMemberOfClassMatcher forExactClass:[UIButton class]]);
 }
 
 - (void)testParsesNameAsteriskAsKindOfClassMatcher {
-    [scanner setQuery:@"UILabel*"];
+    scanner = [StringQueryScanner scannerWithString:@"UILabel*"];
 
-    assertThat([parser parseMatcher], [IsKindOfClassMatcher forClass:[UILabel class]]);
+    assertThat([parser parseMatcherFromScanner:scanner], [IsKindOfClassMatcher forClass:[UILabel class]]);
 }
 
 - (void)testDeliversNoMatcherIfQueryDoesNotStartWithAClassPattern {
-    [scanner setQuery:@"[property='value']"];
+    scanner = [StringQueryScanner scannerWithString:@"[property='value']"];
 
-    assertThat([parser parseMatcher], is(nilValue()));
+    assertThat([parser parseMatcherFromScanner:scanner], is(nilValue()));
 }
 @end

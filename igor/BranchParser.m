@@ -4,39 +4,37 @@
 #import "ChainParser.h"
 
 @implementation BranchParser {
-    id <QueryScanner> scanner;
     ChainParser *subjectChainParser;
 }
 
-- (id <PatternParser>)initWithScanner:(id <QueryScanner>)aScanner subjectChainParser:(ChainParser *)theSubjectChainParser {
+- (id <PatternParser>)initWithChainParser:(ChainParser *)theSubjectChainParser {
     self = [super init];
     if (self) {
-        scanner = aScanner;
         subjectChainParser = theSubjectChainParser;
     }
     return self;
 }
 
-- (id <Matcher>)parseBranchMatcher {
-    id <Matcher> subject = [subjectChainParser parseStep];
+- (id <Matcher>)parseBranchMatcherFromScanner:(id <QueryScanner>)scanner {
+    id <Matcher> subject = [subjectChainParser parseStepFromScanner:scanner];
     if (!subject) [scanner failBecause:@"Expected a relationship pattern"];
     if (subjectChainParser.done) return subject;
     id <ChainMatcher> matcher = [BranchMatcher matcherWithSubjectMatcher:subject];
-    [subjectChainParser parseSubjectChainIntoMatcher:matcher];
+    [subjectChainParser parseSubjectChainFromScanner:scanner intoMatcher:matcher];
     return matcher;
 }
 
-- (id <Matcher>)parseMatcher {
+- (id <Matcher>)parseMatcherFromScanner:(id <QueryScanner>)scanner {
     if (![scanner skipString:@"("]) return nil;
-    id <Matcher> matcher = [self parseBranchMatcher];
+    id <Matcher> matcher = [self parseBranchMatcherFromScanner:scanner];
     if (![scanner skipString:@")"]) {
         [scanner failBecause:@"Expected ')'"];
     }
     return matcher;
 }
 
-+ (id <PatternParser>)parserWithScanner:(id <QueryScanner>)scanner subjectChainParser:(ChainParser *)subjectChainParser {
-    return [[self alloc] initWithScanner:scanner subjectChainParser:subjectChainParser];
++ (id <PatternParser>)parserWithChainParser:(ChainParser *)chainParser {
+    return [[self alloc] initWithChainParser:chainParser];
 }
 
 @end

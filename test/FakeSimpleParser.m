@@ -14,7 +14,7 @@
     return self;
 }
 
-- (id <Matcher>)parseMatcher {
+- (id <Matcher>)parseMatcherFromScanner:(id <QueryScanner>)ignored {
     if (index < [simpleMatchers count]) {
         return [simpleMatchers objectAtIndex:index++];
     }

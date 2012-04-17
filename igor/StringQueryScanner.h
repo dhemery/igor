@@ -2,6 +2,6 @@
 
 @interface StringQueryScanner : NSObject <QueryScanner>
 
-+ (id <QueryScanner>)scanner;
++ (id <QueryScanner>)scannerWithString:(NSString *)queryString;
 
 @end

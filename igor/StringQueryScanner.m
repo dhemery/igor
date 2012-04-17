@@ -6,6 +6,15 @@
     NSScanner *scanner;
 }
 
+- (id <QueryScanner>)initWithString:(NSString *)queryString {
+    self = [super init];
+    if (self) {
+        NSString *stripped = [queryString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        scanner = [NSScanner scannerWithString:stripped];
+        [scanner setCharactersToBeSkipped:nil];
+    }
+    return self;
+}
 - (NSString *)description {
     return [scanner string];
 }
@@ -24,18 +33,12 @@
     return [scanner scanCharactersFromSet:[NSCharacterSet letterCharacterSet] intoString:destination];
 }
 
-+ (id <QueryScanner>)scanner {
-    return [self alloc];
++ (id <QueryScanner>)scannerWithString:(NSString *)queryString {
+    return [[self alloc] initWithString:queryString];
 }
 
 - (BOOL)scanUpToString:(NSString *)string intoString:(NSString **)destination {
     return [scanner scanUpToString:string intoString:destination];
-}
-
-- (void)setQuery:(NSString *)query {
-    NSString *stripped = [query stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-    scanner = [NSScanner scannerWithString:stripped];
-    [scanner setCharactersToBeSkipped:nil];
 }
 
 - (BOOL)skipString:(NSString *)string {

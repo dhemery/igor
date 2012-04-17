@@ -1,12 +1,9 @@
-@protocol QueryScanner;
-@protocol PatternParser;
+#import "PatternParser.h"
+
 @class ChainParser;
 
-#import "IgorQueryParser.h"
+@interface QueryParser : NSObject <PatternParser>
 
-
-@interface QueryParser : NSObject <IgorQueryParser>
-
-+ (id <IgorQueryParser>)parserWithScanner:(id <QueryScanner>)scanner subjectChainParser:(ChainParser *)subjectChainParser;
++ (id <PatternParser>)parserWithChainParser:(ChainParser *)chainParser;
 
 @end

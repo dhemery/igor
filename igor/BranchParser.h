@@ -6,7 +6,6 @@
 // TODO Test
 @interface BranchParser : NSObject <PatternParser>
 
-+ (id <PatternParser>)parserWithScanner:(id <QueryScanner>)scanner subjectChainParser:(ChainParser *)subjectChainParser;
-
++ (id <PatternParser>)parserWithChainParser:(ChainParser *)chainParser;
 
 @end

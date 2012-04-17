@@ -14,7 +14,6 @@
 
 @synthesize parser;
 
-
 - (NSArray *)findViewsThatMatchMatcher:(id <Matcher>)matcher inTree:(UIView *)tree {
     NSMutableSet *matchingViews = [NSMutableSet set];
     void (^collectMatches)(UIView *) = ^(UIView *view) {
@@ -24,38 +23,37 @@
     };
     [TreeWalker walkTree:tree withVisitor:collectMatches];
     return [matchingViews allObjects];
-
 }
 
 - (NSArray *)findViewsThatMatchQuery:(NSString *)query inTree:(UIView *)tree {
-    id <Matcher> matcher = [parser parseMatcherFromQuery:query];
+    id <QueryScanner> scanner = [StringQueryScanner scannerWithString:query];
+    id <Matcher> matcher = [parser parseMatcherFromScanner:scanner];
     return [self findViewsThatMatchMatcher:matcher inTree:tree];
 }
 
 + (Igor *)igor {
-    id <QueryScanner> scanner = [StringQueryScanner new];
-    id <PatternParser> classParser = [ClassParser parserWithScanner:scanner];
-    id <PatternParser> predicateParser = [PredicateParser parserWithScanner:scanner];
-
+    id <PatternParser> classParser = [ClassParser new];
+    id <PatternParser> predicateParser = [PredicateParser new];
     NSArray *simplePatternParsers = [NSArray arrayWithObjects:classParser, predicateParser, nil];
+
     id <PatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simplePatternParsers];
 
-    NSArray *combinatorParsers = [NSArray arrayWithObject:[DescendantCombinatorParser parserWithScanner:scanner]];
-    ChainParser *subjectChainParser = [ChainParser parserWithCombinatorParsers:combinatorParsers];
-    id <PatternParser> branchParser = [BranchParser parserWithScanner:scanner subjectChainParser:subjectChainParser];
+    NSArray *combinatorParsers = [NSArray arrayWithObject:[DescendantCombinatorParser new]];
+    ChainParser *chainParser = [ChainParser parserWithCombinatorParsers:combinatorParsers];
+    id <PatternParser> branchParser = [BranchParser parserWithChainParser:chainParser];
     NSArray *subjectParsers = [NSArray arrayWithObjects:instanceParser, branchParser, nil];
-    subjectChainParser.subjectParsers = subjectParsers;
+    chainParser.subjectParsers = subjectParsers;
 
-    id <IgorQueryParser> parser = [QueryParser parserWithScanner:scanner subjectChainParser:subjectChainParser];
+    id <PatternParser> parser = [QueryParser parserWithChainParser:chainParser];
 
     return [self igorWithParser:parser];
 }
 
-+ (Igor *)igorWithParser:(id <IgorQueryParser>)parser {
++ (Igor *)igorWithParser:(id <PatternParser>)parser {
     return [[self alloc] initWithParser:parser];
 }
 
-- (Igor *)initWithParser:(id <IgorQueryParser>)theParser {
+- (Igor *)initWithParser:(id <PatternParser>)theParser {
     self = [super init];
     if (self) {
         parser = theParser;

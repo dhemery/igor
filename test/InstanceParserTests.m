@@ -20,7 +20,7 @@
     [simpleParsers addObject:[FakeSimpleParser parserThatYieldsNoSimpleMatchers]];
     id <PatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simpleParsers];
 
-    assertThat([instanceParser parseMatcher], nilValue());
+    assertThat([instanceParser parseMatcherFromScanner:nil], nilValue());
 }
 
 - (void)testYieldsInstanceMatcherWithSimpleMatcherFromSimpleParser {
@@ -28,7 +28,7 @@
     [simpleParsers addObject:[FakeSimpleParser parserThatYieldsSimpleMatcher:simpleMatcher]];
     id <PatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simpleParsers];
 
-    InstanceMatcher *subjectMatcher = (InstanceMatcher *)[instanceParser parseMatcher];
+    InstanceMatcher *subjectMatcher = (InstanceMatcher *)[instanceParser parseMatcherFromScanner:nil];
 
     assertThat(subjectMatcher.simpleMatchers, contains(sameInstance(simpleMatcher), nil));
 }
@@ -48,7 +48,7 @@
 
     id <PatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simpleParsers];
 
-    InstanceMatcher *subjectMatcher = (InstanceMatcher *)[instanceParser parseMatcher];
+    InstanceMatcher *subjectMatcher = (InstanceMatcher *)[instanceParser parseMatcherFromScanner:nil];
 
     assertThat(subjectMatcher.simpleMatchers,
         containsInAnyOrder(

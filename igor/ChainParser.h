@@ -1,6 +1,7 @@
 @protocol ChainMatcher;
 @protocol Combinator;
 @protocol Matcher;
+@protocol QueryScanner;
 
 @interface ChainParser : NSObject
 
@@ -17,8 +18,8 @@
 
 + (ChainParser *)parserWithSubjectParsers:(NSArray *)subjectParsers combinatorParsers:(NSArray *)combinatorParsers;
 
-- (id <Matcher>)parseStep;
+- (id <Matcher>)parseStepFromScanner:(id <QueryScanner>)scanner;
 
-- (void)parseSubjectChainIntoMatcher:(id <ChainMatcher>)matcher;
+- (void)parseSubjectChainFromScanner:(id <QueryScanner>)scanner intoMatcher:(id <ChainMatcher>)matcher;
 
 @end

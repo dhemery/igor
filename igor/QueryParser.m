@@ -5,56 +5,52 @@
 #import "ChainParser.h"
 
 @implementation QueryParser {
-    id <QueryScanner> scanner;
-    ChainParser *subjectChainParser;
+    ChainParser *chainParser;
 }
 
-+ (id <IgorQueryParser>)parserWithScanner:(id <QueryScanner>)scanner subjectChainParser:(ChainParser *)subjectChainParser {
-    return [[self alloc] initWithScanner:scanner subjectChainParser:subjectChainParser];
++ (id <PatternParser>)parserWithChainParser:(ChainParser *)chainParser {
+    return [[self alloc] initWithChainParser:chainParser];
 }
 
-- (id <IgorQueryParser>)initWithScanner:(id <QueryScanner>)theScanner subjectChainParser:(ChainParser *)theSubjectChainParser {
+- (id <PatternParser>)initWithChainParser:(ChainParser *)theChainParser {
     self = [super init];
     if (self) {
-        scanner = theScanner;
-        subjectChainParser = theSubjectChainParser;
+        chainParser = theChainParser;
     }
     return self;
 }
 
-- (id <Matcher>)parseMatcherFromQuery:(NSString *)queryString {
-    [scanner setQuery:queryString];
-
-    id <Matcher> matcher = [self parseSubject];
-    if (!subjectChainParser.done) matcher = [self parseBranchMatcherWithSubject:matcher];
-    if (!subjectChainParser.done) [scanner failBecause:@"Expected a subject pattern"];
+- (id <Matcher>)parseMatcherFromScanner:(id <QueryScanner>)scanner {
+    id <Matcher> matcher = [self parseSubjectFromScanner:scanner];
+    if (!chainParser.done) matcher = [self parseBranchMatcherWithSubject:matcher fromScanner:scanner];
+    if (!chainParser.done) [scanner failBecause:@"Expected a subject pattern"];
     [scanner failIfNotAtEnd];
     return matcher;
 }
 
-- (id <Matcher>)parseSubject {
-    id <Matcher> subject = [subjectChainParser parseStep];
-    if (subjectChainParser.done) return subject;
+- (id <Matcher>)parseSubjectFromScanner:(id <QueryScanner>)scanner {
+    id <Matcher> subject = [chainParser parseStepFromScanner:scanner];
+    if (chainParser.done) return subject;
     id <ChainMatcher> compoundSubject = [CombinatorMatcher matcherWithSubjectMatcher:subject];
-    [subjectChainParser parseSubjectChainIntoMatcher:compoundSubject];
-    if (subjectChainParser.done) return compoundSubject;
+    [chainParser parseSubjectChainFromScanner:scanner intoMatcher:compoundSubject];
+    if (chainParser.done) return compoundSubject;
     if (![scanner skipString:@"$"]) [scanner failBecause:@"Expected a subject marker"];
-    if (subjectChainParser.started) {
-        [self parseStepIntoMatcher:compoundSubject];
+    if (chainParser.started) {
+        [self parseStepFromScanner:scanner intoMatcher:compoundSubject];
         return compoundSubject;
     }
-    return [subjectChainParser parseStep];
+    return [chainParser parseStepFromScanner:scanner];
 }
 
-- (void)parseStepIntoMatcher:(id <ChainMatcher>)subject {
-    id <Combinator> combinator = subjectChainParser.combinator;
-    id <Matcher> matcher = [subjectChainParser parseStep];
+- (void)parseStepFromScanner:(id <QueryScanner>)scanner intoMatcher:(id <ChainMatcher>)subject {
+    id <Combinator> combinator = chainParser.combinator;
+    id <Matcher> matcher = [chainParser parseStepFromScanner:scanner];
     [subject appendCombinator:combinator matcher:matcher];
 }
 
-- (id <Matcher>)parseBranchMatcherWithSubject:(id <Matcher>)subject {
+- (id <Matcher>)parseBranchMatcherWithSubject:(id <Matcher>)subject fromScanner:(id <QueryScanner>)scanner {
     id <ChainMatcher> branch = [BranchMatcher matcherWithSubjectMatcher:subject];
-    [subjectChainParser parseSubjectChainIntoMatcher:branch];
+    [chainParser parseSubjectChainFromScanner:scanner intoMatcher:branch];
     return branch;
 }
 

@@ -3,7 +3,6 @@
 #import "IdentityMatcher.h"
 #import "CombinatorMatcher.h"
 
-// TODO Test
 @implementation BranchMatcher
 
 @synthesize subjectMatcher = _subjectMatcher;

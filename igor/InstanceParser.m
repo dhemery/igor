@@ -14,23 +14,23 @@
     return self;
 }
 
-- (id <Matcher>)parseSimpleMatcher {
+- (id <Matcher>)parseSimpleMatcherFromScanner:(id <QueryScanner>)scanner {
     for (id <PatternParser> parser in simplePatternParsers) {
-        id <Matcher> matcher = [parser parseMatcher];
+        id <Matcher> matcher = [parser parseMatcherFromScanner:scanner];
         if (matcher) return matcher;
     }
     return nil;
 }
 
-- (id <Matcher>)parseMatcher {
-    id <Matcher> matcher = [self parseSimpleMatcher];
+- (id <Matcher>)parseMatcherFromScanner:(id <QueryScanner>)scanner {
+    id <Matcher> matcher = [self parseSimpleMatcherFromScanner:scanner];
 
     if (!matcher) return nil;
 
     NSMutableArray *simpleMatchers = [NSMutableArray array];
     while(matcher) {
         [simpleMatchers addObject:matcher];
-        matcher = [self parseSimpleMatcher];
+        matcher = [self parseSimpleMatcherFromScanner:scanner];
     }
     return [InstanceMatcher matcherWithSimpleMatchers:simpleMatchers];
 }

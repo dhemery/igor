@@ -15,27 +15,26 @@
 
 // todo Use mocks to focus the test.
 @implementation ScanningIgorQueryParserTests {
-    id <IgorQueryParser> parser;
+    id <PatternParser> parser;
 
 }
 
 - (void)setUp {
-    id <QueryScanner> scanner = [StringQueryScanner new];
-    id <PatternParser> classParser = [ClassParser parserWithScanner:scanner];
-    id <PatternParser> predicateParser = [PredicateParser parserWithScanner:scanner];
+    id <PatternParser> classParser = [ClassParser new];
+    id <PatternParser> predicateParser = [PredicateParser new];
     NSArray *simplePatternParsers = [NSArray arrayWithObjects:classParser, predicateParser, nil];
 
     id <PatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simplePatternParsers];
-    ChainParser *subjectChainParser = [ChainParser parserWithCombinatorParsers:nil];
-    id <PatternParser> branchParser = [BranchParser parserWithScanner:scanner subjectChainParser:subjectChainParser];
+    ChainParser *chainParser = [ChainParser parserWithCombinatorParsers:nil];
+    id <PatternParser> branchParser = [BranchParser parserWithChainParser:chainParser];
     NSArray *subjectPatternParsers = [NSArray arrayWithObjects:instanceParser, branchParser, nil];
-    subjectChainParser.subjectParsers = subjectPatternParsers;
+    chainParser.subjectParsers = subjectPatternParsers;
 
-    parser = [QueryParser parserWithScanner:scanner subjectChainParser:subjectChainParser];
+    parser = [QueryParser parserWithChainParser:chainParser];
 }
 
 - (void)testParsesAsteriskAsUniversalMatcher {
-    id <Matcher> matcher = [parser parseMatcherFromQuery:@"*"];
+    id <Matcher> matcher = [parser parseMatcherFromScanner:[StringQueryScanner scannerWithString:@"*"]];
 
     assertThat(matcher, instanceOf([InstanceMatcher class]));
     InstanceMatcher *instanceMatcher = (InstanceMatcher *)matcher;
@@ -43,7 +42,7 @@
 }
 
 - (void)testParsesNameAsMemberOfClassMatcher {
-    id <Matcher> matcher = [parser parseMatcherFromQuery:@"UIButton"];
+    id <Matcher> matcher = [parser parseMatcherFromScanner:[StringQueryScanner scannerWithString:@"UIButton"]];
     InstanceMatcher *instanceMatcher = (InstanceMatcher *)matcher;
 
     assertThat(instanceMatcher.simpleMatchers, hasItem([IsMemberOfClassMatcher forExactClass:[UIButton class]]));
@@ -51,7 +50,7 @@
 }
 
 - (void)testParsesNameAsteriskAsKindOfClassMatcher {
-    id <Matcher> matcher = [parser parseMatcherFromQuery:@"UILabel*"];
+    id <Matcher> matcher = [parser parseMatcherFromScanner:[StringQueryScanner scannerWithString:@"UILabel*"]];
     InstanceMatcher *instanceMatcher = (InstanceMatcher *) matcher;
 
     assertThat(instanceMatcher.simpleMatchers, hasItem([IsKindOfClassMatcher forClass:[UILabel class]]));

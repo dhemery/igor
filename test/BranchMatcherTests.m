@@ -11,7 +11,6 @@
 @interface BranchMatcherTests : SenTestCase
 @end
 
-// todo Write these tests
 @implementation BranchMatcherTests {
     UIButton *root;
     UIButton *middle;
@@ -52,11 +51,6 @@
     [combinatorYieldsNoRelatives appendCombinator:[EmptySetCombinator new] matcher:[UniversalMatcher new]];
 
     assertThat(combinatorYieldsNoRelatives, isNot([MatchesView view:middle]));
-}
-
-// TODO Write this test.
-- (void)testRelativeMatcherMatchesOnlyWithinRelativesOfSubject {
-//    assert(false);
 }
 
 - (void)testMatchesIfSubjectMatchesAndNoRelativeMatcher {

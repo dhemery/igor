@@ -4,26 +4,11 @@
 #import "DescendantCombinator.h"
 
 // TODO Test
-@implementation DescendantCombinatorParser {
-    id <QueryScanner> scanner;
-}
+@implementation DescendantCombinatorParser
 
-- (id <CombinatorParser>)initWithScanner:(id <QueryScanner>)theScanner {
-    self = [super init];
-    if (self) {
-        scanner = theScanner;
-    }
-    return self;
-}
-
-
-- (id <Combinator>)parseCombinator {
+- (id <Combinator>)parseCombinatorFromScanner:(id <QueryScanner>)scanner {
     if ([scanner skipWhiteSpace]) return [DescendantCombinator new];
     return nil;
-}
-
-+ (id <CombinatorParser>)parserWithScanner:(id <QueryScanner>)scanner {
-    return [[self alloc] initWithScanner:scanner];
 }
 
 @end

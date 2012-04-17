@@ -22,7 +22,7 @@
     return [[self alloc] initWithCombinators:[NSArray arrayWithObject:combinator]];
 }
 
-- (id <Combinator>)parseCombinator {
+- (id <Combinator>)parseCombinatorFromScanner:(id <QueryScanner>)ignored {
     if (index < [combinators count]) {
         return [combinators objectAtIndex:index++];
     }
