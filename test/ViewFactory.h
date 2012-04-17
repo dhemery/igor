@@ -2,11 +2,11 @@
 
 + (UIButton *)button;
 
-+ (UIButton *)buttonWithAccessibilityHint:(NSString *)hint;
-
 + (UIControl *)control;
 
 + (UIView *)view;
+
++ (UIView *)viewWithName:(NSString *)name;
 
 + (UIWindow *)window;
 

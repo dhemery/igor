@@ -17,13 +17,13 @@
 
 - (void)setUp {
     igor = [Igor igor];
-    root = [ViewFactory buttonWithAccessibilityHint:@"root"];
-    middle1 = [ViewFactory buttonWithAccessibilityHint:@"middle 1"];
-    middle1leaf1 = [ViewFactory buttonWithAccessibilityHint:@"middle 1 leaf 1"];
-    middle1leaf2 = [ViewFactory buttonWithAccessibilityHint:@"middle 1 leaf 2"];
-    middle2 = [ViewFactory buttonWithAccessibilityHint:@"middle 2"];
-    middle2leaf1 = [ViewFactory buttonWithAccessibilityHint:@"middle 2 leaf 1"];
-    middle2leaf2 = [ViewFactory buttonWithAccessibilityHint:@"middle 2 leaf 2"];
+    root = [ViewFactory viewWithName:@"root"];
+    middle1 = [ViewFactory viewWithName:@"middle1"];
+    middle1leaf1 = [ViewFactory viewWithName:@"middle1leaf1"];
+    middle1leaf2 = [ViewFactory viewWithName:@"middle1leaf2"];
+    middle2 = [ViewFactory viewWithName:@"middle2"];
+    middle2leaf1 = [ViewFactory viewWithName:@"middle2leaf1"];
+    middle2leaf2 = [ViewFactory viewWithName:@"middle2leaf2"];
     [root addSubview:middle1];
     [middle1 addSubview:middle1leaf1];
     [middle1 addSubview:middle1leaf2];
@@ -33,58 +33,58 @@
 }
 
 - (void)testBranchAroundOnlySubjectPattern {
-    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"([accessibilityHint='middle 1'])" inTree:root];
+    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"(#middle1)" inTree:root];
     assertThat(matchingViews, hasItem(middle1));
     assertThat(matchingViews, hasCountOf(1));
 }
 
 - (void)testSubjectMatchesViewTailMatchesDescendant {
-    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"([accessibilityHint='middle 1'] [accessibilityHint='middle 1 leaf 1'])" inTree:root];
+    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"(#middle1 #middle1leaf1)" inTree:root];
     assertThat(matchingViews, hasItem(middle1));
     assertThat(matchingViews, hasCountOf(1));
 }
 
 - (void)testSubjectMatchesViewTailMismatchesDescendants {
-    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"([accessibilityHint='middle 1'] [accessibilityHint='does not exist'])" inTree:root];
+    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"(#middle1 #nosuch)" inTree:root];
     assertThat(matchingViews, is(empty()));
 }
 
 - (void)testSubjectMatchesViewHeadBranchMatchesSubjectAndDescendants {
-    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"([accessibilityHint='root'] [accessibilityHint='middle 1 leaf 1']) [accessibilityHint='middle 2 leaf 1']" inTree:root];
+    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"(#root #middle1leaf1) #middle2leaf1" inTree:root];
     assertThat(matchingViews, hasItem(middle2leaf1));
     assertThat(matchingViews, hasCountOf(1));
 }
 
 - (void)testTailHasAChainOfMatchers {
-    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"([accessibilityHint='root'] [accessibilityHint='middle 1'] [accessibilityHint='middle 1 leaf 1'])" inTree:root];
+    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"(#root #middle1 #middle1leaf1)" inTree:root];
     assertThat(matchingViews, hasItem(root));
     assertThat(matchingViews, hasCountOf(1));
 }
 
 - (void)testSubjectMatchesViewHeadBranchMatchesSubjectMismatchesDescendants {
-    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"([accessibilityHint='root'] [accessibilityHint='does not exist']) [accessibilityHint='middle 2 leaf 1']" inTree:root];
+    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"(#root #nosuch) #middle2 leaf1" inTree:root];
     assertThat(matchingViews, is(empty()));
 }
 
 - (void)testSubjectMatchesViewWithinAncestorBranchSubjects {
-    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"[accessibilityHint='root'] ([accessibilityHint='middle 1'] [accessibilityHint='middle 1 leaf 1']) [accessibilityHint='middle 1 leaf 2']" inTree:root];
+    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"#root (#middle1 #middle1leaf1) #middle1leaf2" inTree:root];
     assertThat(matchingViews, hasItem(middle1leaf2));
     assertThat(matchingViews, hasCountOf(1));
 }
 
 - (void)testBranchMatchesViewsButQueryMatchesNoSubjectsInsideBranchSubjects {
-    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"[accessibilityHint='root'] ([accessibilityHint='middle 1'] [accessibilityHint='middle 1 leaf 1']) [accessibilityHint='middle 2 leaf 2']" inTree:root];
+    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"#root (#middle1 #middle1leaf1) #middle2leaf2" inTree:root];
     assertThat(matchingViews, is(empty()));
 }
 
 - (void)testSiblingBranchesInQuery {
-    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"([accessibilityHint='root'] [accessibilityHint='middle 1 leaf 1']) ([accessibilityHint='middle 2'] [accessibilityHint='middle 2 leaf 1'])" inTree:root];
+    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"(#root #middle1leaf1) (#middle2 #middle2leaf1)" inTree:root];
     assertThat(matchingViews, hasItem(middle2));
     assertThat(matchingViews, hasCountOf(1));
 }
 
 - (void)testNestedBranchesInQuery {
-    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"([accessibilityHint='root'] ([accessibilityHint='middle 1'] [accessibilityHint='middle 1 leaf 1'])) [accessibilityHint='middle 2']" inTree:root];
+    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"(#root (#middle1 #middle1leaf1)) #middle2" inTree:root];
     assertThat(matchingViews, hasItem(middle2));
     assertThat(matchingViews, hasCountOf(1));
 }

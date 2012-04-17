@@ -11,7 +11,8 @@
 
 - (void)setUp {
     igor = [Igor igor];
-    view = [ViewFactory buttonWithAccessibilityHint:@"the right accessibility hint"];
+    view = [ViewFactory button];
+    view.accessibilityHint = @"the right accessibility hint";
 }
 
 - (void)testMatchesSubjectThatSatisfiesPredicate {

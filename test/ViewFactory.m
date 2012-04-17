@@ -4,17 +4,11 @@
 @implementation ViewFactory
 
 + (UIButton *)button {
-    return [[UIButton alloc] initWithFrame:[self frame]];
-}
-
-+ (UIButton *)buttonWithAccessibilityHint:(NSString *)hint {
-    UIButton *button = [ViewFactory button];
-    button.accessibilityHint = hint;
-    return button;
+    return [self viewWithClass:[UIButton class]];
 }
 
 + (UIControl *)control {
-    return [[UIControl alloc] initWithFrame:[self frame]];
+    return [self viewWithClass:[UIControl class]];
 }
 
 + (CGRect)frame {
@@ -22,8 +16,23 @@
 }
 
 + (UIView *)view {
-    return [[UIView alloc] initWithFrame:[self frame]];
+    return [self viewWithName:@"anonymous"];
 }
+
++ (id)viewWithClass:(Class)theClass {
+    return [self viewWithClass:theClass name:@"anonymous"];
+}
+
++ (UIView *)viewWithName:(NSString *)name {
+    return [self viewWithClass:[UIView class] name:name];
+}
+
++ (id)viewWithClass:(Class)theClass name:(NSString *)name {
+    UIView *view = [[theClass alloc] initWithFrame:[self frame]];
+    view.accessibilityIdentifier = name;
+    return view;
+}
+
 
 + (UIWindow *)window {
     return [[UIWindow alloc] initWithFrame:[self frame]];
@@ -38,6 +47,6 @@
 @implementation UIView (ViewFactory)
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"[%@(%@)]", [self class], [self accessibilityHint]];
+    return [NSString stringWithFormat:@"[%@(%@)]", [self class], [self accessibilityIdentifier]];
 }
 @end

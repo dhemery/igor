@@ -9,6 +9,7 @@
 #import "PredicateParser.h"
 #import "BranchParser.h"
 #import "DescendantCombinatorParser.h"
+#import "IdentifierParser.h"
 
 @implementation Igor
 
@@ -34,7 +35,8 @@
 + (Igor *)igor {
     id <PatternParser> classParser = [ClassParser new];
     id <PatternParser> predicateParser = [PredicateParser new];
-    NSArray *simplePatternParsers = [NSArray arrayWithObjects:classParser, predicateParser, nil];
+    id <PatternParser> identifierParser = [IdentifierParser new];
+    NSArray *simplePatternParsers = [NSArray arrayWithObjects:classParser, identifierParser, predicateParser, nil];
 
     id <PatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simplePatternParsers];
 

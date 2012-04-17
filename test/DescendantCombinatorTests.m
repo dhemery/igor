@@ -11,7 +11,7 @@
 
 - (void)setUp {
     descendantCombinator = [DescendantCombinator new];
-    subject = [ViewFactory buttonWithAccessibilityHint:@"subject"];
+    subject = [ViewFactory viewWithName:@"subject"];
 }
 
 - (void)testNoRelativesIfNoDescendants {
@@ -21,7 +21,7 @@
 }
 
 - (void)testChildIsRelativeIfOneChild {
-    UIView *child = [ViewFactory buttonWithAccessibilityHint:@"child"];
+    UIView *child = [ViewFactory viewWithName:@"child"];
     [subject addSubview:child];
 
     NSArray *relatives = [descendantCombinator relativesOfView:subject];
@@ -30,11 +30,11 @@
 }
 
 - (void)testAllChildrenAreRelatives {
-    UIView *child1 = [ViewFactory buttonWithAccessibilityHint:@"child 1"];
-    UIView *child2 = [ViewFactory buttonWithAccessibilityHint:@"child 2"];
-    UIView *child3 = [ViewFactory buttonWithAccessibilityHint:@"child 3"];
-    UIView *child4 = [ViewFactory buttonWithAccessibilityHint:@"child 4"];
-    UIView *child5 = [ViewFactory buttonWithAccessibilityHint:@"child 5"];
+    UIView *child1 = [ViewFactory viewWithName:@"child 1"];
+    UIView *child2 = [ViewFactory viewWithName:@"child 2"];
+    UIView *child3 = [ViewFactory viewWithName:@"child 3"];
+    UIView *child4 = [ViewFactory viewWithName:@"child 4"];
+    UIView *child5 = [ViewFactory viewWithName:@"child 5"];
     [subject addSubview:child1];
     [subject addSubview:child2];
     [subject addSubview:child3];
@@ -53,8 +53,8 @@
 }
 
 - (void)testGrandchildrenAreRelatives {
-    UIView *child = [ViewFactory buttonWithAccessibilityHint:@"child"];
-    UIView *grandchild = [ViewFactory buttonWithAccessibilityHint:@"grandchild"];
+    UIView *child = [ViewFactory viewWithName:@"child"];
+    UIView *grandchild = [ViewFactory viewWithName:@"grandchild"];
     [subject addSubview:child];
     [child addSubview:grandchild];
 
@@ -70,7 +70,7 @@
 }
 
 - (void)testParentIsInverseRelative {
-    UIView *parent = [ViewFactory buttonWithAccessibilityHint:@"parent"];
+    UIView *parent = [ViewFactory viewWithName:@"parent"];
     [parent addSubview:subject];
 
     NSArray *relatives = [descendantCombinator inverseRelativesOfView:subject];
@@ -79,8 +79,8 @@
 }
 
 - (void)testGrandParentIsInverseRelative {
-    UIView *parent = [ViewFactory buttonWithAccessibilityHint:@"parent"];
-    UIView *grandparent = [ViewFactory buttonWithAccessibilityHint:@"grandparent"];
+    UIView *parent = [ViewFactory viewWithName:@"parent"];
+    UIView *grandparent = [ViewFactory viewWithName:@"grandparent"];
     [grandparent addSubview:parent];
     [parent addSubview:subject];
 
@@ -90,11 +90,11 @@
 }
 
 - (void)testAllAncestorsAreInverseRelatives {
-    UIView *parent = [ViewFactory buttonWithAccessibilityHint:@"parent"];
-    UIView *grandparent = [ViewFactory buttonWithAccessibilityHint:@"grandparent"];
-    UIView *greatGrandparent = [ViewFactory buttonWithAccessibilityHint:@"great grandparent"];
-    UIView *greatGreatGrandparent = [ViewFactory buttonWithAccessibilityHint:@"great great grandparent"];
-    UIView *greatGreatGreatGrandparent = [ViewFactory buttonWithAccessibilityHint:@"great great great grandparent"];
+    UIView *parent = [ViewFactory viewWithName:@"parent"];
+    UIView *grandparent = [ViewFactory viewWithName:@"grandparent"];
+    UIView *greatGrandparent = [ViewFactory viewWithName:@"great grandparent"];
+    UIView *greatGreatGrandparent = [ViewFactory viewWithName:@"great great grandparent"];
+    UIView *greatGreatGreatGrandparent = [ViewFactory viewWithName:@"great great great grandparent"];
     [greatGreatGreatGrandparent addSubview:greatGreatGrandparent];
     [greatGreatGrandparent addSubview:greatGrandparent];
     [greatGrandparent addSubview:grandparent];
@@ -113,8 +113,8 @@
 }
 
 - (void)testAnAncestorIsARelativeInATreeRootedAtThatAncestor {
-    UIView *parent = [ViewFactory buttonWithAccessibilityHint:@"parent"];
-    UIView *grandparent = [ViewFactory buttonWithAccessibilityHint:@"grandparent"];
+    UIView *parent = [ViewFactory viewWithName:@"parent"];
+    UIView *grandparent = [ViewFactory viewWithName:@"grandparent"];
     [grandparent addSubview:parent];
     [parent addSubview:subject];
 
@@ -125,9 +125,9 @@
 }
 
 - (void)testAncestorsAreRelativesInTreesRootedAboveThem {
-    UIView *parent = [ViewFactory buttonWithAccessibilityHint:@"parent"];
-    UIView *grandparent = [ViewFactory buttonWithAccessibilityHint:@"grandparent"];
-    UIView *greatGrandparent = [ViewFactory buttonWithAccessibilityHint:@"great grandparent"];
+    UIView *parent = [ViewFactory viewWithName:@"parent"];
+    UIView *grandparent = [ViewFactory viewWithName:@"grandparent"];
+    UIView *greatGrandparent = [ViewFactory viewWithName:@"great grandparent"];
     [greatGrandparent addSubview:grandparent];
     [grandparent addSubview:parent];
     [parent addSubview:subject];
@@ -140,8 +140,8 @@
 }
 
 - (void)testAncestorsAreNotRelativesInTreesRootedBelowThem {
-    UIView *parent = [ViewFactory buttonWithAccessibilityHint:@"parent"];
-    UIView *grandparent = [ViewFactory buttonWithAccessibilityHint:@"grandparent"];
+    UIView *parent = [ViewFactory viewWithName:@"parent"];
+    UIView *grandparent = [ViewFactory viewWithName:@"grandparent"];
     [grandparent addSubview:parent];
     [parent addSubview:subject];
 

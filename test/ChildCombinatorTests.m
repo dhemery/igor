@@ -12,7 +12,7 @@
 
 - (void)setUp {
     childCombinator = [ChildCombinator new];
-    subject = [ViewFactory buttonWithAccessibilityHint:@"subject"];
+    subject = [ViewFactory viewWithName:@"subject"];
 }
 
 - (void)testNoRelativesIfNoChildren {
@@ -22,7 +22,7 @@
 }
 
 - (void)testChildIsRelativeIfOneChild {
-    UIView *onlyChild = [ViewFactory buttonWithAccessibilityHint:@"child"];
+    UIView *onlyChild = [ViewFactory viewWithName:@"child"];
     [subject addSubview:onlyChild];
 
     NSArray *relatives = [childCombinator relativesOfView:subject];
@@ -31,11 +31,11 @@
 }
 
 - (void)testAllChildrenAreRelatives {
-    UIView *child1 = [ViewFactory buttonWithAccessibilityHint:@"child 1"];
-    UIView *child2 = [ViewFactory buttonWithAccessibilityHint:@"child 2"];
-    UIView *child3 = [ViewFactory buttonWithAccessibilityHint:@"child 3"];
-    UIView *child4 = [ViewFactory buttonWithAccessibilityHint:@"child 4"];
-    UIView *child5 = [ViewFactory buttonWithAccessibilityHint:@"child 5"];
+    UIView *child1 = [ViewFactory viewWithName:@"child 1"];
+    UIView *child2 = [ViewFactory viewWithName:@"child 2"];
+    UIView *child3 = [ViewFactory viewWithName:@"child 3"];
+    UIView *child4 = [ViewFactory viewWithName:@"child 4"];
+    UIView *child5 = [ViewFactory viewWithName:@"child 5"];
     [subject addSubview:child1];
     [subject addSubview:child2];
     [subject addSubview:child3];
@@ -54,8 +54,8 @@
 }
 
 - (void)testGrandchildrenAreNotRelatives {
-    UIView *child = [ViewFactory buttonWithAccessibilityHint:@"child"];
-    UIView *grandchild = [ViewFactory buttonWithAccessibilityHint:@"grandchild"];
+    UIView *child = [ViewFactory viewWithName:@"child"];
+    UIView *grandchild = [ViewFactory viewWithName:@"grandchild"];
     [subject addSubview:child];
     [child addSubview:grandchild];
 
@@ -71,7 +71,7 @@
 }
 
 - (void)testParentIsInverseRelative {
-    UIView *parent = [ViewFactory buttonWithAccessibilityHint:@"parent"];
+    UIView *parent = [ViewFactory viewWithName:@"parent"];
     [parent addSubview:subject];
 
     NSArray *relatives = [childCombinator inverseRelativesOfView:subject];
@@ -80,8 +80,8 @@
 }
 
 - (void)testGrandParentIsNotInverseRelative {
-    UIView *parent = [ViewFactory buttonWithAccessibilityHint:@"parent"];
-    UIView *grandparent = [ViewFactory buttonWithAccessibilityHint:@"grandparent"];
+    UIView *parent = [ViewFactory viewWithName:@"parent"];
+    UIView *grandparent = [ViewFactory viewWithName:@"grandparent"];
     [grandparent addSubview:parent];
     [parent addSubview:subject];
 
@@ -91,7 +91,7 @@
 }
 
 - (void)testParentIsInverseRelativeInTreeRootedAtParent {
-    UIView *parent = [ViewFactory buttonWithAccessibilityHint:@"parent"];
+    UIView *parent = [ViewFactory viewWithName:@"parent"];
     [parent addSubview:subject];
 
     NSArray *relatives = [childCombinator inverseRelativesOfView:subject inTree:parent];
@@ -100,8 +100,8 @@
 }
 
 - (void)testParentIsInverseRelativeInTreeRootedAboveParent {
-    UIView *parent = [ViewFactory buttonWithAccessibilityHint:@"parent"];
-    UIView *grandparent = [ViewFactory buttonWithAccessibilityHint:@"grandparent"];
+    UIView *parent = [ViewFactory viewWithName:@"parent"];
+    UIView *grandparent = [ViewFactory viewWithName:@"grandparent"];
     [grandparent addSubview:parent];
     [parent addSubview:subject];
 
@@ -111,8 +111,8 @@
 }
 
 - (void)testParentIsNotInverseRelativeInTreeRootedBelowParent {
-    UIView *parent = [ViewFactory buttonWithAccessibilityHint:@"parent"];
-    UIView *grandparent = [ViewFactory buttonWithAccessibilityHint:@"grandparent"];
+    UIView *parent = [ViewFactory viewWithName:@"parent"];
+    UIView *grandparent = [ViewFactory viewWithName:@"grandparent"];
     [grandparent addSubview:parent];
     [parent addSubview:subject];
 

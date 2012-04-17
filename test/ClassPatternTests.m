@@ -16,17 +16,17 @@
 - (void)testAnyClassPattern {
     NSString *query = @"*";
 
-    UIView *root = [ViewFactory buttonWithAccessibilityHint:@"root"];
-    UIView *view1 = [ViewFactory buttonWithAccessibilityHint:@"view1"];
-    UIView *view11 = [ViewFactory buttonWithAccessibilityHint:@"view11"];
-    UIView *view12 = [ViewFactory buttonWithAccessibilityHint:@"view12"];
-    UIView *view2 = [ViewFactory buttonWithAccessibilityHint:@"view2"];
-    UIView *view21 = [ViewFactory buttonWithAccessibilityHint:@"view21"];
-    UIView *view211 = [ViewFactory buttonWithAccessibilityHint:@"view211"];
-    UIView *view212 = [ViewFactory buttonWithAccessibilityHint:@"view212"];
-    UIView *view213 = [ViewFactory buttonWithAccessibilityHint:@"view213"];
-    UIView *view22 = [ViewFactory buttonWithAccessibilityHint:@"view22"];
-    UIView *view23 = [ViewFactory buttonWithAccessibilityHint:@"view23"];
+    UIView *root = [ViewFactory viewWithName:@"root"];
+    UIView *view1 = [ViewFactory viewWithName:@"view1"];
+    UIView *view11 = [ViewFactory viewWithName:@"view11"];
+    UIView *view12 = [ViewFactory viewWithName:@"view12"];
+    UIView *view2 = [ViewFactory viewWithName:@"view2"];
+    UIView *view21 = [ViewFactory viewWithName:@"view21"];
+    UIView *view211 = [ViewFactory viewWithName:@"view211"];
+    UIView *view212 = [ViewFactory viewWithName:@"view212"];
+    UIView *view213 = [ViewFactory viewWithName:@"view213"];
+    UIView *view22 = [ViewFactory viewWithName:@"view22"];
+    UIView *view23 = [ViewFactory viewWithName:@"view23"];
 
     [root addSubview:view1];
     [view1 addSubview:view11];

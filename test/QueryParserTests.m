@@ -10,11 +10,11 @@
 #import "ClassParser.h"
 #import "BranchParser.h"
 
-@interface ScanningIgorQueryParserTests : SenTestCase
+@interface QueryParserTests : SenTestCase
 @end
 
 // todo Use mocks to focus the test.
-@implementation ScanningIgorQueryParserTests {
+@implementation QueryParserTests {
     id <PatternParser> parser;
 
 }

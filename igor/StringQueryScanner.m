@@ -30,7 +30,7 @@
 }
 
 - (BOOL)scanNameIntoString:(NSString **)destination {
-    return [scanner scanCharactersFromSet:[NSCharacterSet letterCharacterSet] intoString:destination];
+    return [scanner scanCharactersFromSet:[NSCharacterSet alphanumericCharacterSet] intoString:destination];
 }
 
 + (id <QueryScanner>)scannerWithString:(NSString *)queryString {

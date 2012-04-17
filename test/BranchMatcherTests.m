@@ -12,17 +12,23 @@
 @end
 
 @implementation BranchMatcherTests {
-    UIButton *root;
-    UIButton *middle;
-    UIButton *leaf;
+    UIView *root;
+    UIView *middle;
+    UIView *leaf;
 }
 
 - (void)setUp {
-    root = [ViewFactory buttonWithAccessibilityHint:@"root"];
-    middle = [ViewFactory buttonWithAccessibilityHint:@"middle"];
-    leaf = [ViewFactory buttonWithAccessibilityHint:@"leaf"];
+    root = [ViewFactory viewWithName:@"root"];
+    middle = [ViewFactory viewWithName:@"middle"];
+    leaf = [ViewFactory viewWithName:@"leaf"];
     [root addSubview:middle];
     [middle addSubview:leaf];
+}
+
+- (void)testMismatchesIfSubjectMismatchesAndThereAreNoRelativeMatchers {
+    BranchMatcher *branchMatcher = [BranchMatcher matcherWithSubjectMatcher:[IdentityMatcher matcherWithView:middle]];
+
+    assertThat(branchMatcher, isNot([MatchesView view:root]));
 }
 
 - (void)testMatchesIfSubjectMatchesAndRelativesMatch {
@@ -58,12 +64,6 @@
     NSLog(@"Branch matcher is %@", branchMatcher);
 
     assertThat(branchMatcher, [MatchesView view:middle]);
-}
-
-- (void)testMismatchesIfSubjectMismatchesAndNoRelativeMatcher {
-    BranchMatcher *branchMatcher = [BranchMatcher matcherWithSubjectMatcher:[IdentityMatcher matcherWithView:middle]];
-
-    assertThat(branchMatcher, isNot([MatchesView view:root]));
 }
 
 - (void)testMatchesIfSubjectMatchesAndRelativeMatches {
