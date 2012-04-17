@@ -103,8 +103,6 @@
 		E621659DB794A5D612DCD4CC /* DescendantCombinatorParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4CB /* DescendantCombinatorParser.h */; };
 		E621659DB794A5D612DCD4CE /* ChildCombinator.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4CD /* ChildCombinator.m */; };
 		E621659DB794A5D612DCD4D0 /* ChildCombinator.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4CF /* ChildCombinator.h */; };
-		E621659DB794A5D612DCD4D2 /* ChainStep.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4D1 /* ChainStep.m */; };
-		E621659DB794A5D612DCD4D4 /* ChainStep.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4D3 /* ChainStep.h */; };
 		E621659DB794A5D612DCD4DE /* ChildCombinatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4DD /* ChildCombinatorTests.m */; };
 		E621659DB794A5D612DCD4E3 /* IdentityMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D436E1F1518F9C300071950 /* IdentityMatcher.h */; };
 		E621659DB794A5D612DCD4E4 /* IdentityMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D436E201518F9C300071950 /* IdentityMatcher.m */; };
@@ -243,8 +241,6 @@
 		E621659DB794A5D612DCD4CB /* DescendantCombinatorParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescendantCombinatorParser.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4CD /* ChildCombinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildCombinator.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4CF /* ChildCombinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildCombinator.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4D1 /* ChainStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainStep.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4D3 /* ChainStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainStep.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4D7 /* EmptySetCombinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EmptySetCombinator.m; path = ../test/EmptySetCombinator.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4D9 /* EmptySetCombinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmptySetCombinator.h; path = ../test/EmptySetCombinator.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4DD /* ChildCombinatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildCombinatorTests.m; sourceTree = "<group>"; };
@@ -388,8 +384,6 @@
 		2D695CE2147CD27100AF4115 /* parser */ = {
 			isa = PBXGroup;
 			children = (
-				E621659DB794A5D612DCD4D3 /* ChainStep.h */,
-				E621659DB794A5D612DCD4D1 /* ChainStep.m */,
 				E621659DB794A5D612DCD4CB /* DescendantCombinatorParser.h */,
 				E621659DB794A5D612DCD4C9 /* DescendantCombinatorParser.m */,
 				E621659DB794A5D612DCD4C1 /* CombinatorParser.h */,
@@ -601,7 +595,6 @@
 				E621659DB794A5D612DCD4C8 /* DescendantCombinator.h in Headers */,
 				E621659DB794A5D612DCD4CC /* DescendantCombinatorParser.h in Headers */,
 				E621659DB794A5D612DCD4D0 /* ChildCombinator.h in Headers */,
-				E621659DB794A5D612DCD4D4 /* ChainStep.h in Headers */,
 				E621659DB794A5D612DCD4E3 /* IdentityMatcher.h in Headers */,
 				E621659DB794A5D612DCD4E5 /* EmptySetCombinator.h in Headers */,
 			);
@@ -789,7 +782,6 @@
 				E621659DB794A5D612DCD4C6 /* DescendantCombinator.m in Sources */,
 				E621659DB794A5D612DCD4CA /* DescendantCombinatorParser.m in Sources */,
 				E621659DB794A5D612DCD4CE /* ChildCombinator.m in Sources */,
-				E621659DB794A5D612DCD4D2 /* ChainStep.m in Sources */,
 				E621659DB794A5D612DCD4E4 /* IdentityMatcher.m in Sources */,
 				E621659DB794A5D612DCD4E6 /* EmptySetCombinator.m in Sources */,
 			);

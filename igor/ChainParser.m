@@ -11,6 +11,13 @@
 @synthesize combinator = _combinator;
 @synthesize matcher = _matcher;
 
+- (BOOL)started {
+    return self.matcher != nil;
+}
+
+- (BOOL) done {
+    return self.started && (self.combinator == nil);
+}
 
 + (ChainParser *)parserWithSubjectParsers:(NSArray *)subjectParsers combinatorParsers:(NSArray *)combinatorParsers {
     return [[self alloc] initWithSubjectParsers:subjectParsers combinatorParsers:combinatorParsers];
@@ -31,7 +38,8 @@
     return self;
 }
 
-- (id <Matcher>)parseSubjectMatcher {
+- (id <Matcher>)parseStep {
+    self.combinator = nil;
     self.matcher = [self parseSubject];
     if (self.matcher) {
         self.combinator = [self parseCombinator];
@@ -40,7 +48,7 @@
 }
 
 - (id <Matcher>)parseSubject {
-    for (id <SubjectPatternParser>parser in self.subjectParsers) {
+    for (id <SubjectPatternParser> parser in self.subjectParsers) {
         id <Matcher> matcher = [parser parseSubjectMatcher];
         if (matcher) return matcher;
     }
@@ -50,16 +58,16 @@
 - (id <Combinator>)parseCombinator {
     for (id <CombinatorParser>parser in self.combinatorParsers) {
         id <Combinator> combinator = [parser parseCombinator];
-        if (combinator) break;
+        if (combinator) return combinator;
     }
     return nil;
 }
 
-- (void)parseSubjectChainIntoMatcher:(id <ChainMatcher>)matcher {
+- (void)parseSubjectChainIntoMatcher:(id <ChainMatcher>)destination {
     while (self.combinator) {
-        id <Combinator> combinator = self.combinator;
-        [self parseSubjectMatcher];
-        [matcher appendCombinator:combinator matcher:self.matcher];
-    }
+        id <Combinator> previousCombinator = self.combinator;
+        [self parseStep];
+        if (self.matcher) [destination appendCombinator:previousCombinator matcher:self.matcher];
+    };
 }
 @end

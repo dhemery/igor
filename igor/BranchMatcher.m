@@ -12,7 +12,7 @@
 @synthesize subjectIdentityMatcher = _subjectIdentityMatcher;
 
 + (BranchMatcher *)matcherWithSubjectMatcher:(id <Matcher>)subjectMatcher {
-    return [[self alloc]  initWithSubjectMatcher:subjectMatcher];
+    return [[self alloc] initWithSubjectMatcher:subjectMatcher];
 }
 
 - (BranchMatcher *)initWithSubjectMatcher:(id <Matcher>)subjectMatcher {

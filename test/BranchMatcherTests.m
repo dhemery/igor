@@ -74,7 +74,9 @@
 
 - (void)testMatchesIfSubjectMatchesAndRelativeMatches {
     BranchMatcher *branchMatcher= [BranchMatcher matcherWithSubjectMatcher:[IdentityMatcher matcherWithView:middle]];
+    NSLog(@"Initial branch with just subject %@", branchMatcher);
     [branchMatcher appendCombinator:[ChildCombinator new] matcher:[IdentityMatcher matcherWithView:leaf]];
+    NSLog(@"Branch after appending %@", branchMatcher);
 
     assertThat(branchMatcher, [MatchesView view:middle]);
 }

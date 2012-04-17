@@ -18,8 +18,9 @@
 }
 
 - (id <Matcher>)parseBranchMatcher {
-    id <Matcher>subject = [subjectChainParser parseSubjectMatcher];
+    id <Matcher> subject = [subjectChainParser parseStep];
     if (!subject) [scanner failBecause:@"Expected a relationship pattern"];
+    if (subjectChainParser.done) return subject;
     id <ChainMatcher> matcher = [BranchMatcher matcherWithSubjectMatcher:subject];
     [subjectChainParser parseSubjectChainIntoMatcher:matcher];
     return matcher;

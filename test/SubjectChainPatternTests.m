@@ -20,17 +20,12 @@
     [middle addSubview:leaf];
 }
 
-- (void)testMatchesMatchingSubjectsWithMatchingParent {
+- (void)testMatchesMatchingSubjectWithMatchingRelative {
     NSArray *matchingViews = [igor findViewsThatMatchQuery:@"[accessibilityHint='root'] [accessibilityHint='middle']" inTree:root];
     assertThat(matchingViews, hasItem(middle));
 }
 
-- (void)testMatchesMatchingSubjectsWithMatchingAncestors {
-    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"[accessibilityHint='root'] [accessibilityHint='leaf']" inTree:root];
-    assertThat(matchingViews, hasItem(leaf));
-}
-
-- (void)testRequiresMatchingAncestor {
+- (void)testRequiresMatchingRelative {
     NSArray *matchingViews = [igor findViewsThatMatchQuery:@"[accessibilityHint='no such ancestor'] [accessibilityHint='leaf']" inTree:root];
     assertThat(matchingViews, isNot(hasItem(leaf)));
 }
@@ -40,12 +35,12 @@
     assertThat(matchingViews, isNot(hasItem(leaf)));
 }
 
-- (void)testMatchesAcrossUniversalClassMatcher {
+- (void)testMatchesAcrossChain {
     NSArray *matchingViews = [igor findViewsThatMatchQuery:@"[accessibilityHint='root'] * [accessibilityHint='leaf']" inTree:root];
     assertThat(matchingViews, hasItem(leaf));
 }
 
-- (void)testRequiresMatchForEachUniversalClassMatcher {
+- (void)testRequiresMatchForEachMatcher {
     NSArray *matchingViews = [igor findViewsThatMatchQuery:@"[accessibilityHint='root'] * * [accessibilityHint='leaf']" inTree:root];
     assertThat(matchingViews, is(empty()));
 }
