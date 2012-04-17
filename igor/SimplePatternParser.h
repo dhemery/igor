@@ -1,7 +1,8 @@
 @protocol IgorQueryScanner;
+@protocol Matcher;
 
 @protocol SimplePatternParser <NSObject>
 
-- (BOOL)parseSimpleMatcherIntoArray:(NSMutableArray *)array;
+- (id <Matcher>)parseMatcher;
 
 @end

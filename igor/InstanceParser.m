@@ -14,19 +14,24 @@
     return self;
 }
 
-- (BOOL)parseSimpleMatcherIntoArray:(NSMutableArray *)array {
+- (id <Matcher>)parseSimpleMatcher {
     for (id <SimplePatternParser> parser in simplePatternParsers) {
-        if ([parser parseSimpleMatcherIntoArray:array]) {
-            return YES;
-        }
+        id <Matcher> matcher = [parser parseMatcher];
+        if (matcher) return matcher;
     }
-    return NO;
+    return nil;
 }
 
-- (id <Matcher>)parseSubjectMatcher {
+- (id <Matcher>)parseMatcher {
+    id <Matcher> matcher = [self parseSimpleMatcher];
+
+    if (!matcher) return nil;
+
     NSMutableArray *simpleMatchers = [NSMutableArray array];
-    while([self parseSimpleMatcherIntoArray:simpleMatchers]);
-    if ([simpleMatchers count] == 0) return nil;
+    while(matcher) {
+        [simpleMatchers addObject:matcher];
+        matcher = [self parseSimpleMatcher];
+    }
     return [InstanceMatcher matcherWithSimpleMatchers:simpleMatchers];
 }
 

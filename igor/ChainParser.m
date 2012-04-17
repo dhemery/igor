@@ -49,7 +49,7 @@
 
 - (id <Matcher>)parseSubject {
     for (id <SubjectPatternParser> parser in self.subjectParsers) {
-        id <Matcher> matcher = [parser parseSubjectMatcher];
+        id <Matcher> matcher = [parser parseMatcher];
         if (matcher) return matcher;
     }
     return nil;

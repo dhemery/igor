@@ -2,6 +2,6 @@
 
 @protocol SubjectPatternParser <NSObject>
 
-- (id <Matcher>)parseSubjectMatcher;
+- (id <Matcher>)parseMatcher;
 
 @end

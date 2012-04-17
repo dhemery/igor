@@ -26,7 +26,7 @@
     return matcher;
 }
 
-- (id <Matcher>)parseSubjectMatcher {
+- (id <Matcher>)parseMatcher {
     if (![scanner skipString:@"("]) return nil;
     id <Matcher> matcher = [self parseBranchMatcher];
     if (![scanner skipString:@")"]) {

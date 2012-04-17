@@ -17,22 +17,18 @@
     return self;
 }
 
-- (BOOL)parseSimpleMatcherIntoArray:(NSMutableArray *)simpleMatchers {
-    if ([scanner skipString:@"*"]) {
-        [simpleMatchers addObject:[UniversalMatcher new]];
-        return YES;
-    }
-
+- (id <Matcher>)parseMatcher {
     NSString *className;
-    if (![scanner scanNameIntoString:&className]) return NO;
+
+    if ([scanner skipString:@"*"]) return [UniversalMatcher new];
+
+    if (![scanner scanNameIntoString:&className]) return nil;
 
     Class targetClass = NSClassFromString(className);
-    if ([scanner skipString:@"*"]) {
-        [simpleMatchers addObject:[KindOfClassMatcher matcherForBaseClass:targetClass]];
-    } else {
-        [simpleMatchers addObject:[MemberOfClassMatcher matcherForExactClass:targetClass]];
-    }
-    return YES;
+
+    if ([scanner skipString:@"*"]) return [KindOfClassMatcher matcherForBaseClass:targetClass];
+
+    return [MemberOfClassMatcher matcherForExactClass:targetClass];
 }
 
 + (id <SimplePatternParser>)parserWithScanner:(id <IgorQueryScanner>)scanner {

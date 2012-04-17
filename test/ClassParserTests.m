@@ -8,44 +8,36 @@
 @end
 
 @implementation ClassParserTests {
-    NSMutableArray *simpleMatchers;
     id <IgorQueryScanner> scanner;
     id <SimplePatternParser> parser;
 }
 
 - (void)setUp {
-    simpleMatchers = [NSMutableArray array];
     scanner = [IgorQueryStringScanner scanner];
     parser = [ClassParser parserWithScanner:scanner];
 }
 
 - (void)testParsesAsteriskAsUniversalMatcher {
     [scanner setQuery:@"*"];
-    [parser parseSimpleMatcherIntoArray:simpleMatchers];
 
-    assertThat(simpleMatchers, hasItem(instanceOf([UniversalMatcher class])));
-    assertThat(simpleMatchers, hasCountOf(1));
+    assertThat([parser parseMatcher], instanceOf([UniversalMatcher class]));
 }
 
 - (void)testParsesNameAsMemberOfClassMatcher {
     [scanner setQuery:@"UIButton"];
-    [parser parseSimpleMatcherIntoArray:simpleMatchers];
 
-    assertThat(simpleMatchers, hasItem([IsMemberOfClassMatcher forExactClass:[UIButton class]]));
+    assertThat([parser parseMatcher], [IsMemberOfClassMatcher forExactClass:[UIButton class]]);
 }
 
 - (void)testParsesNameAsteriskAsKindOfClassMatcher {
     [scanner setQuery:@"UILabel*"];
-    [parser parseSimpleMatcherIntoArray:simpleMatchers];
 
-    assertThat(simpleMatchers, hasItem([IsKindOfClassMatcher forClass:[UILabel class]]));
-    assertThat(simpleMatchers, hasCountOf(1));
+    assertThat([parser parseMatcher], [IsKindOfClassMatcher forClass:[UILabel class]]);
 }
 
 - (void)testDeliversNoMatcherIfQueryDoesNotStartWithAClassPattern {
     [scanner setQuery:@"[property='value']"];
-    [parser parseSimpleMatcherIntoArray:simpleMatchers];
 
-    assertThat(simpleMatchers, is(empty()));
+    assertThat([parser parseMatcher], is(nilValue()));
 }
 @end

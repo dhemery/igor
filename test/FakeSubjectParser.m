@@ -27,7 +27,7 @@
     return [[self alloc] initWithSubjectMatchers:subjectMatchers];
 }
 
-- (id <Matcher>)parseSubjectMatcher {
+- (id <Matcher>)parseMatcher {
     if (index < [subjectMatchers count]) {
         return [subjectMatchers objectAtIndex:index++];
     }

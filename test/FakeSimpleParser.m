@@ -14,12 +14,11 @@
     return self;
 }
 
-- (BOOL)parseSimpleMatcherIntoArray:(NSMutableArray *)array {
+- (id <Matcher>)parseMatcher {
     if (index < [simpleMatchers count]) {
-        [array addObject:[simpleMatchers objectAtIndex:index++]];
-        return YES;
+        return [simpleMatchers objectAtIndex:index++];
     }
-    return NO;
+    return nil;
 }
 
 + (FakeSimpleParser *)parserThatYieldsNoSimpleMatchers {

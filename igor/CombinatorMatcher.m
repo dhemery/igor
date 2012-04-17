@@ -34,8 +34,8 @@
 
 - (NSString *)description {
     return [NSString stringWithFormat:@"%@%@%@",
-                    self.relativeMatcher ? self.relativeMatcher : @"",
-                    self.combinator ? self.combinator : @"",
+                    self.relativeMatcher ? [self.relativeMatcher description]: @"",
+                    self.combinator ? [self.combinator description] : @"",
                     self.subjectMatcher];
 }
 
