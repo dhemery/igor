@@ -44,28 +44,15 @@
 //================ NEW ==================
 
 - (BOOL)matchesView:(UIView *)subject {
-    NSLog(@"Checking subject %@ against branch matcher %@", subject, self);
-    if (![self.subjectMatcher matchesView:subject]) {
-        NSLog(@"Subject %@ mismatched %@", subject, self.subjectMatcher);
-        return NO;
-    }
-    NSLog(@"Subject %@ matched subject matcher %@", subject, self.subjectMatcher);
-    if (!self.subjectCombinator) {
-        NSLog(@"No relative matcher. Subject match suffices.");
-        return YES;
-    }
-    NSLog(@"Scope of relative matchers is %@%@*", subject, self.subjectCombinator);
+    if (![self.subjectMatcher matchesView:subject]) return NO;
+
+    if (!self.subjectCombinator) return YES;
+
     NSArray *relatives = [self.subjectCombinator relativesOfView:subject];
-    NSLog(@"Checking relatives %@", relatives);
     for (UIView *relative in relatives) {
         self.subjectIdentityMatcher.targetView = subject;
-        if ([self.relativeMatcher matchesView:relative]) {
-            NSLog(@"Relative %@ matched %@", relative, self.relativeMatcher);
-            return YES;
-        }
-        NSLog(@"Relative %@ mismatched %@", relative, self.relativeMatcher);
+        if ([self.relativeMatcher matchesView:relative]) return YES;
     }
-    NSLog(@"No relatives matched %@", self.relativeMatcher);
     return NO;
 }
 

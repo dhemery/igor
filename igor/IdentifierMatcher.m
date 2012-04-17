@@ -5,7 +5,7 @@
 @synthesize targetAccessibilityIdentifier;
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"\"#%@\"", self.targetAccessibilityIdentifier];
+    return [NSString stringWithFormat:@"#%@", self.targetAccessibilityIdentifier];
 }
 
 
