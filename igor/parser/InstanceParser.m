@@ -2,9 +2,10 @@
 #import "InstanceMatcher.h"
 #import "InstanceParser.h"
 
-@implementation InstanceParser {
-    NSArray *simplePatternParsers;
-}
+@implementation InstanceParser
+
+@synthesize simplePatternParsers;
+
 
 - (id <PatternParser>)initWithSimplePatternParsers:(NSArray *)theSimplePatternParsers {
     self = [super init];

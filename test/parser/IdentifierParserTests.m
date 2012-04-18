@@ -2,8 +2,6 @@
 #import "IdentifierMatcher.h"
 #import "IdentifierParser.h"
 #import "QueryScanner.h"
-#import "StringQueryScanner.h"
-
 @interface IdentifierParserTests : SenTestCase
 @end
 
@@ -17,7 +15,7 @@
 }
 
 - (void)testNoMatcherIfNextCharacterIsNotPound {
-    scanner = [StringQueryScanner scannerWithString:@"notpound"];
+    scanner = [QueryScanner scannerWithString:@"notpound"];
 
     assertThat([parser parseMatcherFromScanner:scanner], is(nilValue()));
 }
@@ -25,7 +23,7 @@
 - (void)testParsesLettersAsName {
     NSString *allLetters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     NSString *allLettersIdentifier = [NSString stringWithFormat:@"#%@", allLetters];
-    scanner = [StringQueryScanner scannerWithString:allLettersIdentifier];
+    scanner = [QueryScanner scannerWithString:allLettersIdentifier];
 
     IdentifierMatcher *matcher = (IdentifierMatcher *)[parser parseMatcherFromScanner:scanner];
 
@@ -36,7 +34,7 @@
 - (void)testNamesMayIncludeDigits {
     NSString *withDigits = @"a01234567890";
     NSString *identifierWithDigits = [NSString stringWithFormat:@"#%@", withDigits];
-    scanner = [StringQueryScanner scannerWithString:identifierWithDigits];
+    scanner = [QueryScanner scannerWithString:identifierWithDigits];
 
     IdentifierMatcher *matcher = (IdentifierMatcher *)[parser parseMatcherFromScanner:scanner];
 

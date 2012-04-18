@@ -1,4 +1,4 @@
-#import "StringQueryScanner.h"
+#import "QueryScanner.h"
 #import "ClassParser.h"
 #import "UniversalMatcher.h"
 #import "IsKindOfClassMatcher.h"
@@ -17,25 +17,25 @@
 }
 
 - (void)testParsesAsteriskAsUniversalMatcher {
-    scanner = [StringQueryScanner scannerWithString:@"*"];
+    scanner = [QueryScanner scannerWithString:@"*"];
 
     assertThat([parser parseMatcherFromScanner:scanner], instanceOf([UniversalMatcher class]));
 }
 
 - (void)testParsesNameAsMemberOfClassMatcher {
-    scanner = [StringQueryScanner scannerWithString:@"UIButton"];
+    scanner = [QueryScanner scannerWithString:@"UIButton"];
 
     assertThat([parser parseMatcherFromScanner:scanner], [IsMemberOfClassMatcher forExactClass:[UIButton class]]);
 }
 
 - (void)testParsesNameAsteriskAsKindOfClassMatcher {
-    scanner = [StringQueryScanner scannerWithString:@"UILabel*"];
+    scanner = [QueryScanner scannerWithString:@"UILabel*"];
 
     assertThat([parser parseMatcherFromScanner:scanner], [IsKindOfClassMatcher forClass:[UILabel class]]);
 }
 
 - (void)testDeliversNoMatcherIfQueryDoesNotStartWithAClassPattern {
-    scanner = [StringQueryScanner scannerWithString:@"[property='value']"];
+    scanner = [QueryScanner scannerWithString:@"[property='value']"];
 
     assertThat([parser parseMatcherFromScanner:scanner], is(nilValue()));
 }

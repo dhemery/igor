@@ -1,6 +1,6 @@
 #import "QueryParser.h"
 #import "InstanceMatcher.h"
-#import "StringQueryScanner.h"
+#import "QueryScanner.h"
 #import "IsKindOfClassMatcher.h"
 #import "IsMemberOfClassMatcher.h"
 #import "UniversalMatcher.h"
@@ -34,7 +34,7 @@
 }
 
 - (void)testParsesAsteriskAsUniversalMatcher {
-    id <Matcher> matcher = [parser parseMatcherFromScanner:[StringQueryScanner scannerWithString:@"*"]];
+    id <Matcher> matcher = [parser parseMatcherFromScanner:[QueryScanner scannerWithString:@"*"]];
 
     assertThat(matcher, instanceOf([InstanceMatcher class]));
     InstanceMatcher *instanceMatcher = (InstanceMatcher *)matcher;
@@ -42,7 +42,7 @@
 }
 
 - (void)testParsesNameAsMemberOfClassMatcher {
-    id <Matcher> matcher = [parser parseMatcherFromScanner:[StringQueryScanner scannerWithString:@"UIButton"]];
+    id <Matcher> matcher = [parser parseMatcherFromScanner:[QueryScanner scannerWithString:@"UIButton"]];
     InstanceMatcher *instanceMatcher = (InstanceMatcher *)matcher;
 
     assertThat(instanceMatcher.simpleMatchers, hasItem([IsMemberOfClassMatcher forExactClass:[UIButton class]]));
@@ -50,7 +50,7 @@
 }
 
 - (void)testParsesNameAsteriskAsKindOfClassMatcher {
-    id <Matcher> matcher = [parser parseMatcherFromScanner:[StringQueryScanner scannerWithString:@"UILabel*"]];
+    id <Matcher> matcher = [parser parseMatcherFromScanner:[QueryScanner scannerWithString:@"UILabel*"]];
     InstanceMatcher *instanceMatcher = (InstanceMatcher *) matcher;
 
     assertThat(instanceMatcher.simpleMatchers, hasItem([IsKindOfClassMatcher forClass:[UILabel class]]));

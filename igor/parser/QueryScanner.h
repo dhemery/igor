@@ -13,3 +13,11 @@
 - (BOOL)skipWhiteSpace;
 
 @end
+
+@interface QueryScanner : NSObject <QueryScanner>
+
+@property (strong) NSScanner *scanner;
+
++ (id <QueryScanner>)scannerWithString:(NSString *)queryString;
+
+@end

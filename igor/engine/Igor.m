@@ -2,7 +2,6 @@
 #import "QueryParser.h"
 #import "TreeWalker.h"
 #import "QueryScanner.h"
-#import "StringQueryScanner.h"
 #import "ChainParser.h"
 #import "InstanceParser.h"
 #import "ClassParser.h"
@@ -28,7 +27,7 @@
 
 - (NSArray *)findViewsThatMatchQuery:(NSString *)query inTree:(UIView *)tree {
     NSString *stripped = [query stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-    id <QueryScanner> scanner = [StringQueryScanner scannerWithString:stripped];
+    id <QueryScanner> scanner = [QueryScanner scannerWithString:stripped];
     id <Matcher> matcher = [parser parseMatcherFromScanner:scanner];
     return [self findViewsThatMatchMatcher:matcher inTree:tree];
 }

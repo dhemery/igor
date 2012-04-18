@@ -4,9 +4,9 @@
 #import "CombinatorMatcher.h"
 #import "ChainParser.h"
 
-@implementation QueryParser {
-    id <ChainParser>chainParser;
-}
+@implementation QueryParser
+
+@synthesize chainParser;
 
 + (id <PatternParser>)parserWithChainParser:(id <ChainParser>)chainParser {
     return [[self alloc] initWithChainParser:chainParser];

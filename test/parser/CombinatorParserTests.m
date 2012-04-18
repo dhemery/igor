@@ -2,8 +2,6 @@
 #import "DescendantCombinator.h"
 #import "CombinatorParser.h"
 #import "QueryScanner.h"
-#import "StringQueryScanner.h"
-
 @interface CombinatorParserTests : SenTestCase
 @end
 
@@ -13,7 +11,7 @@
 
 - (void)testParsesWhitespaceAsDescendantCombinator {
     id <CombinatorParser> parser = [CombinatorParser new];
-    id <QueryScanner> scanner = [StringQueryScanner scannerWithString:@"                 "];
+    id <QueryScanner> scanner = [QueryScanner scannerWithString:@"                 "];
 
     id <Combinator> combinator = [parser parseCombinatorFromScanner:scanner];
 
@@ -22,7 +20,7 @@
 
 - (void)testParsesGreaterThanSignAsChildCombinator {
     id <CombinatorParser> parser = [CombinatorParser new];
-    id <QueryScanner> scanner = [StringQueryScanner scannerWithString:@">"];
+    id <QueryScanner> scanner = [QueryScanner scannerWithString:@">"];
 
     id <Combinator> combinator = [parser parseCombinatorFromScanner:scanner];
 
@@ -31,7 +29,7 @@
 
 - (void)testAllowsWhitespaceBeforeChildCombinator{
     id <CombinatorParser> parser = [CombinatorParser new];
-    id <QueryScanner> scanner = [StringQueryScanner scannerWithString:@"           >"];
+    id <QueryScanner> scanner = [QueryScanner scannerWithString:@"           >"];
 
     id <Combinator> combinator = [parser parseCombinatorFromScanner:scanner];
 
@@ -40,7 +38,7 @@
 
 - (void)testConsumesWhitespaceAfterCombinator {
     id <CombinatorParser> parser = [CombinatorParser new];
-    id <QueryScanner> scanner = [StringQueryScanner scannerWithString:@">                   !"];
+    id <QueryScanner> scanner = [QueryScanner scannerWithString:@">                   !"];
 
     [parser parseCombinatorFromScanner:scanner];
 

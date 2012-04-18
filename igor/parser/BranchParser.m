@@ -3,9 +3,10 @@
 #import "QueryScanner.h"
 #import "ChainParser.h"
 
-@implementation BranchParser {
-    id <ChainParser>subjectChainParser;
-}
+@implementation BranchParser
+
+@synthesize subjectChainParser;
+
 
 - (id <PatternParser>)initWithChainParser:(id <ChainParser>)theSubjectChainParser {
     self = [super init];
