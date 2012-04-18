@@ -34,66 +34,68 @@
 
 - (void)testBranchAroundOnlySubjectPattern {
     NSArray *matchingViews = [igor findViewsThatMatchQuery:@"(#middle1)" inTree:root];
-    assertThat(matchingViews, hasItem(middle1));
-    assertThat(matchingViews, hasCountOf(1));
+
+    assertThat(matchingViews, contains(sameInstance(middle1), nil));
 }
 
 - (void)testSubjectMatchesViewTailMatchesRelative {
     NSArray *matchingViews = [igor findViewsThatMatchQuery:@"(#middle1 #middle1leaf1)" inTree:root];
-    assertThat(matchingViews, hasItem(middle1));
-    assertThat(matchingViews, hasCountOf(1));
+
+    assertThat(matchingViews, contains(sameInstance(middle1), nil));
 }
 
 - (void)testSubjectMatchesViewTailMismatchesRelatives {
     NSArray *matchingViews = [igor findViewsThatMatchQuery:@"(#middle1 #nosuch)" inTree:root];
+
     assertThat(matchingViews, is(empty()));
 }
 
 - (void)testSubjectMatchesViewBranchMatchesSubjectAndRelatives {
     NSArray *matchingViews = [igor findViewsThatMatchQuery:@"(#root #middle1leaf1) #middle2leaf1" inTree:root];
-    assertThat(matchingViews, hasItem(middle2leaf1));
-    assertThat(matchingViews, hasCountOf(1));
+
+    assertThat(matchingViews, contains(sameInstance(middle2leaf1), nil));
 }
 
 - (void)testTailHasAChainOfDescendantMatchers {
     NSArray *matchingViews = [igor findViewsThatMatchQuery:@"(#root #middle1 #middle1leaf1)" inTree:root];
-    assertThat(matchingViews, hasItem(root));
-    assertThat(matchingViews, hasCountOf(1));
+
+    assertThat(matchingViews, contains(sameInstance(root), nil));
 }
 
-// TODO This one will force me to add scoping to the branch matcher.
-//- (void)testTailHasAChainOfChildMatchers {
-//    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"(#root > #middle1 > #middle1leaf1)" inTree:root];
-//    assertThat(matchingViews, hasItem(root));
-//    assertThat(matchingViews, hasCountOf(1));
-//}
+- (void)testTailHasAChainOfChildMatchers {
+    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"(#root > #middle1 > #middle1leaf1)" inTree:root];
+
+    assertThat(matchingViews, contains(sameInstance(root), nil));
+}
 
 - (void)testSubjectMatchesViewHeadBranchMatchesSubjectMismatchesDescendants {
     NSArray *matchingViews = [igor findViewsThatMatchQuery:@"(#root #nosuch) #middle2 leaf1" inTree:root];
+
     assertThat(matchingViews, is(empty()));
 }
 
 - (void)testSubjectMatchesViewWithinAncestorBranchSubjects {
     NSArray *matchingViews = [igor findViewsThatMatchQuery:@"#root (#middle1 #middle1leaf1) #middle1leaf2" inTree:root];
-    assertThat(matchingViews, hasItem(middle1leaf2));
-    assertThat(matchingViews, hasCountOf(1));
+
+    assertThat(matchingViews, contains(sameInstance(middle1leaf2), nil));
 }
 
 - (void)testBranchMatchesViewsButQueryMatchesNoSubjectsInsideBranchSubjects {
     NSArray *matchingViews = [igor findViewsThatMatchQuery:@"#root (#middle1 #middle1leaf1) #middle2leaf2" inTree:root];
+
     assertThat(matchingViews, is(empty()));
 }
 
 - (void)testSiblingBranchesInQuery {
     NSArray *matchingViews = [igor findViewsThatMatchQuery:@"(#root #middle1leaf1) (#middle2 #middle2leaf1)" inTree:root];
-    assertThat(matchingViews, hasItem(middle2));
-    assertThat(matchingViews, hasCountOf(1));
+
+    assertThat(matchingViews, contains(sameInstance(middle2), nil));
 }
 
 - (void)testNestedBranchesInQuery {
     NSArray *matchingViews = [igor findViewsThatMatchQuery:@"(#root (#middle1 #middle1leaf1)) #middle2" inTree:root];
-    assertThat(matchingViews, hasItem(middle2));
-    assertThat(matchingViews, hasCountOf(1));
+
+    assertThat(matchingViews, contains(sameInstance(middle2), nil));
 }
 
 @end

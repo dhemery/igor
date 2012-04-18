@@ -6,7 +6,7 @@
 @implementation BranchMatcher
 
 @synthesize subjectMatcher = _subjectMatcher;
-@synthesize subjectCombinator = _subjectCombinator;
+@synthesize combinators = _combinators;
 @synthesize relativeMatcher = _relativeMatcher;
 @synthesize subjectIdentityMatcher = _subjectIdentityMatcher;
 
@@ -18,7 +18,7 @@
     self = [super init];
     if (self) {
         _subjectMatcher = subjectMatcher;
-        _subjectCombinator = nil;
+        _combinators = [NSMutableArray array];
         _subjectIdentityMatcher = [IdentityMatcher matcherWithView:nil description:@"$$"];
         _relativeMatcher = [CombinatorMatcher matcherWithSubjectMatcher:_subjectIdentityMatcher];
     }
@@ -26,30 +26,31 @@
 }
 
 - (void)appendCombinator:(id <Combinator>)combinator matcher:(id <Matcher>)matcher {
+    [self.combinators addObject:combinator];
     [self.relativeMatcher appendCombinator:combinator matcher:matcher];
-    if (!self.subjectCombinator) self.subjectCombinator = combinator;
 }
 
 - (NSString *)description {
     return [NSString stringWithFormat:@"(%@%@)", self.subjectMatcher, self.relativeMatcher];
 }
 
-
-
-
-
-
-
-
-//================ NEW ==================
-
 - (BOOL)matchesView:(UIView *)subject {
     if (![self.subjectMatcher matchesView:subject]) return NO;
 
-    if (!self.subjectCombinator) return YES;
+    if ([self.combinators count] == 0) return YES;
 
-    NSArray *relatives = [self.subjectCombinator relativesOfView:subject];
-    for (UIView *relative in relatives) {
+    NSMutableArray *scope = [NSMutableArray arrayWithObject:subject];
+
+    for (id<Combinator> combinator in self.combinators) {
+        NSMutableArray *previousScope = scope;
+        scope = [NSMutableArray array];
+        for (UIView *view in previousScope) {
+            NSArray *newRelatives = [combinator relativesOfView:view];
+            [scope addObjectsFromArray:newRelatives];
+        }
+    }
+
+    for (UIView *relative in scope) {
         self.subjectIdentityMatcher.targetView = subject;
         if ([self.relativeMatcher matchesView:relative]) return YES;
     }

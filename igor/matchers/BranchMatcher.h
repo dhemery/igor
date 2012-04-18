@@ -8,7 +8,7 @@
 
 @property (strong, readonly) id <Matcher> subjectMatcher;
 @property (strong, readonly) id <ChainMatcher> relativeMatcher;
-@property (strong, readwrite) id <Combinator> subjectCombinator;
+@property (strong, readwrite) NSMutableArray *combinators;
 @property (strong, readonly) IdentityMatcher *subjectIdentityMatcher;
 
 + (BranchMatcher *)matcherWithSubjectMatcher:(id <Matcher>)subjectMatcher;

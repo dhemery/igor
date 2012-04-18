@@ -26,6 +26,6 @@
 }
 
 - (void)testThrowsIfPatternIsIllegal {
-    STAssertThrows([igor findViewsThatMatchQuery:@"[this is not a valid predicate]" inTree:nil], @"Expected predicate parsing exception");
+    STAssertThrows([igor findViewsThatMatchQuery:@"[this is not a valid predicate]" inTree:nil], nil);
 }
 @end

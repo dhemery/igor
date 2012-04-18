@@ -1,5 +1,4 @@
 #import "ChainMatcher.h"
-#import "IdentityMatcher.h"
 #import "ViewFactory.h"
 #import "BranchMatcher.h"
 #import "FalseMatcher.h"
@@ -25,31 +24,37 @@
     [middle addSubview:leaf];
 }
 
-- (void)testMismatchesIfSubjectMismatchesAndThereAreNoRelativeMatchers {
-    BranchMatcher *branchMatcher = [BranchMatcher matcherWithSubjectMatcher:[IdentityMatcher matcherWithView:middle]];
+- (void)testMatchesIfSubjectMatchesAndBranchHasNoRelativeMatchers {
+    id <ChainMatcher> matchAnySubject = [BranchMatcher matcherWithSubjectMatcher:[UniversalMatcher new]];
 
-    assertThat(branchMatcher, isNot([MatchesView view:root]));
+    assertThat(matchAnySubject, [MatchesView view:middle]);
 }
 
-- (void)testMatchesIfSubjectMatchesAndRelativesMatch {
-    id <ChainMatcher> matchEverySubjectMatchEveryRelative = [BranchMatcher matcherWithSubjectMatcher:[UniversalMatcher new]];
-    [matchEverySubjectMatchEveryRelative appendCombinator:[DescendantCombinator new] matcher:[UniversalMatcher new]];
+- (void)testMismatchesIfSubjectMismatchesAndBranchHasNoRelativeMatchers {
+    id <ChainMatcher> mismatchEverySubject = [BranchMatcher matcherWithSubjectMatcher:[FalseMatcher new]];
 
-    assertThat(matchEverySubjectMatchEveryRelative, [MatchesView view:middle]);
+    assertThat(mismatchEverySubject, isNot([MatchesView view:root]));
+}
+
+- (void)testMatchesIfSubjectMatchesAndRelativeMatches {
+    id <ChainMatcher> matchAnySubjectThatHasAnyChild = [BranchMatcher matcherWithSubjectMatcher:[UniversalMatcher new]];
+    [matchAnySubjectThatHasAnyChild appendCombinator:[ChildCombinator new] matcher:[UniversalMatcher new]];
+
+    assertThat(matchAnySubjectThatHasAnyChild, [MatchesView view:middle]);
 }
 
 - (void)testMismatchesIfSubjectMismatches {
     id <ChainMatcher> mismatchEverySubjectMatchEveryRelative = [BranchMatcher matcherWithSubjectMatcher:[FalseMatcher new]];
     [mismatchEverySubjectMatchEveryRelative appendCombinator:[DescendantCombinator new] matcher:[UniversalMatcher new]];
 
-    assertThat(mismatchEverySubjectMatchEveryRelative, isNot([MatchesView view:leaf]));
+    assertThat(mismatchEverySubjectMatchEveryRelative, isNot([MatchesView view:root]));
 }
 
 - (void)testMismatchesIfRelativesMismatch {
-    id <ChainMatcher> matchEverySubjectMismatchEveryRelative = [BranchMatcher matcherWithSubjectMatcher:[UniversalMatcher new]];
-    [matchEverySubjectMismatchEveryRelative appendCombinator:[DescendantCombinator new] matcher:[FalseMatcher new]];
+    id <ChainMatcher> matchAnySubjectMismatchEveryRelative = [BranchMatcher matcherWithSubjectMatcher:[UniversalMatcher new]];
+    [matchAnySubjectMismatchEveryRelative appendCombinator:[DescendantCombinator new] matcher:[FalseMatcher new]];
 
-    assertThat(matchEverySubjectMismatchEveryRelative, isNot([MatchesView view:middle]));
+    assertThat(matchAnySubjectMismatchEveryRelative, isNot([MatchesView view:middle]));
 }
 
 - (void)testMismatchesIfCombinatorYieldsNoRelatives {
@@ -59,24 +64,11 @@
     assertThat(combinatorYieldsNoRelatives, isNot([MatchesView view:middle]));
 }
 
-- (void)testMatchesIfSubjectMatchesAndNoRelativeMatcher {
-    BranchMatcher *branchMatcher = [BranchMatcher matcherWithSubjectMatcher:[IdentityMatcher matcherWithView:middle]];
-
-    assertThat(branchMatcher, [MatchesView view:middle]);
-}
-
-- (void)testMatchesIfSubjectMatchesAndRelativeMatches {
-    BranchMatcher *branchMatcher= [BranchMatcher matcherWithSubjectMatcher:[IdentityMatcher matcherWithView:middle]];
-    [branchMatcher appendCombinator:[ChildCombinator new] matcher:[IdentityMatcher matcherWithView:leaf]];
-
-    assertThat(branchMatcher, [MatchesView view:middle]);
-}
-
-- (void)testMismatchesIfSubjectMismatchesAndRelativeMatches {
-    BranchMatcher *branchMatcher = [BranchMatcher matcherWithSubjectMatcher:[IdentityMatcher matcherWithView:middle]];
-    [branchMatcher appendCombinator:[ChildCombinator new] matcher:[FalseMatcher new]];
-
-    assertThat(branchMatcher, isNot([MatchesView view:middle]));
+- (void)testChainOfRelatives {
+    id <ChainMatcher> hasGrandchildren = [BranchMatcher matcherWithSubjectMatcher:[UniversalMatcher new]];
+    [hasGrandchildren appendCombinator:[ChildCombinator new] matcher:[UniversalMatcher new]];
+    [hasGrandchildren appendCombinator:[ChildCombinator new] matcher:[UniversalMatcher new]];
+    assertThat(hasGrandchildren, [MatchesView view:root]);
 }
 
 @end
