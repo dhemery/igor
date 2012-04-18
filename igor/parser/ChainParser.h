@@ -1,3 +1,5 @@
+#import "CombinatorParser.h"
+
 @protocol ChainMatcher;
 @protocol Combinator;
 @protocol Matcher;
@@ -6,7 +8,7 @@
 @protocol ChainParser <NSObject>
 
 @property (strong) NSArray *subjectParsers;
-@property (strong, readonly) NSArray *combinatorParsers;
+@property (strong, readonly) id <CombinatorParser> combinatorParser;
 @property (strong) id <Combinator> combinator;
 @property (strong) id <Matcher> matcher;
 
@@ -22,8 +24,8 @@
 
 @interface ChainParser : NSObject <ChainParser>
 
-+ (id <ChainParser>)parserWithCombinatorParsers:(NSArray *)combinatorParsers;
++ (id <ChainParser>)parserWithCombinatorParser:(id <CombinatorParser>)combinatorParser;
 
-+ (id <ChainParser>)parserWithSubjectParsers:(NSArray *)subjectParsers combinatorParsers:(NSArray *)combinatorParsers;
++ (id <ChainParser>)parserWithSubjectParsers:(NSArray *)subjectParsers combinatorParser:(id <CombinatorParser>)combinatorParser;
 
 @end

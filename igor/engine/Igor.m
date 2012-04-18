@@ -6,7 +6,6 @@
 #import "ClassParser.h"
 #import "PredicateParser.h"
 #import "BranchParser.h"
-#import "CombinatorParser.h"
 #import "IdentifierParser.h"
 #import "DescendantCombinator.h"
 #import "Matcher.h"
@@ -40,8 +39,8 @@
 
     id <PatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simplePatternParsers];
 
-    NSArray *combinatorParsers = [NSArray arrayWithObject:[CombinatorParser new]];
-    id <ChainParser> chainParser = [ChainParser parserWithCombinatorParsers:combinatorParsers];
+    id <CombinatorParser> combinatorParser = [CombinatorParser new];
+    id <ChainParser> chainParser = [ChainParser parserWithCombinatorParser:combinatorParser];
     id <PatternParser> branchParser = [BranchParser parserWithChainParser:chainParser];
     NSArray *subjectParsers = [NSArray arrayWithObjects:instanceParser, branchParser, nil];
     chainParser.subjectParsers = subjectParsers;

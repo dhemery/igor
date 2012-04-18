@@ -9,19 +9,17 @@
 
 // TODO Uncomment and fix tests.
 @implementation ChainParserTests {
-    NSMutableArray *combinatorParsers;
     NSMutableArray *subjectParsers;
     id <ChainParser> parser;
 }
 
 - (void)setUp {
-    combinatorParsers = [NSMutableArray array];
     subjectParsers = [NSMutableArray array];
 }
 
 - (void)testParseStepYieldsNoMatcherIfParsersYieldNoMatcher {
     [subjectParsers addObject:[FakeSubjectParser parserThatYieldsNoSubjectMatchers]];
-    parser = [ChainParser parserWithSubjectParsers:subjectParsers combinatorParsers:combinatorParsers];
+    parser = [ChainParser parserWithSubjectParsers:subjectParsers combinatorParser:[CombinatorParser new]];
 
     id <Matcher> matcher = [parser parseStepFromScanner:nil];
 
@@ -31,7 +29,7 @@
 - (void)testParseStepYieldsMatcherIfParsersYieldMatcherButNoCombinator {
     id <Matcher> subjectMatcher = [UniversalMatcher new];
     [subjectParsers addObject:[FakeSubjectParser parserThatYieldsSubjectMatcher:subjectMatcher]];
-    parser = [ChainParser parserWithSubjectParsers:subjectParsers combinatorParsers:combinatorParsers];
+    parser = [ChainParser parserWithSubjectParsers:subjectParsers combinatorParser:[CombinatorParser new]];
 
     id <Matcher> matcher =  [parser parseStepFromScanner:nil];
 
@@ -42,8 +40,8 @@
     id <Matcher> subjectMatcher = [UniversalMatcher new];
     [subjectParsers addObject:[FakeSubjectParser parserThatYieldsSubjectMatcher:subjectMatcher]];
     id <Combinator> combinator = [DescendantCombinator new];
-    [combinatorParsers addObject:[FakeCombinatorParser parserThatYieldsCombinator:combinator]];
-    parser = [ChainParser parserWithSubjectParsers:subjectParsers combinatorParsers:combinatorParsers];
+    id <CombinatorParser> combinatorParser = [FakeCombinatorParser parserThatYieldsCombinator:combinator];
+    parser = [ChainParser parserWithSubjectParsers:subjectParsers combinatorParser:combinatorParser];
 
     id <Matcher> matcher = [parser parseStepFromScanner:nil];
 

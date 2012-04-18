@@ -1,14 +1,12 @@
 #import "InstanceParser.h"
 #import "ChainParser.h"
-#import "DescendantCombinator.h"
 #import "ChainMatcher.h"
-#import "CombinatorParser.h"
 #import "QueryScanner.h"
 
 @implementation ChainParser
 
 @synthesize subjectParsers = _subjectParsers;
-@synthesize combinatorParsers = _combinatorParsers;
+@synthesize combinatorParser = _combinatorParser;
 @synthesize combinator = _combinator;
 @synthesize matcher = _matcher;
 
@@ -20,19 +18,19 @@
     return self.started && (self.combinator == nil);
 }
 
-+ (id <ChainParser>)parserWithSubjectParsers:(NSArray *)subjectParsers combinatorParsers:(NSArray *)combinatorParsers {
-    return [[self alloc] initWithSubjectParsers:subjectParsers combinatorParsers:combinatorParsers];
++ (id <ChainParser>)parserWithSubjectParsers:(NSArray *)subjectParsers combinatorParser:(id <CombinatorParser>)combinatorParser {
+    return [[self alloc] initWithSubjectParsers:subjectParsers combinatorParser:combinatorParser];
 }
 
-+ (id <ChainParser>)parserWithCombinatorParsers:(NSArray *)combinatorParsers {
-    return [self parserWithSubjectParsers:[NSArray array] combinatorParsers:combinatorParsers];
++ (id <ChainParser>)parserWithCombinatorParser:(id <CombinatorParser>)combinatorParser {
+    return [self parserWithSubjectParsers:[NSArray array] combinatorParser:combinatorParser];
 }
 
-- (id <ChainParser>)initWithSubjectParsers:(NSArray *)subjectParsers combinatorParsers:(NSArray *)combinatorParsers {
+- (id <ChainParser>)initWithSubjectParsers:(NSArray *)subjectParsers combinatorParser:(id <CombinatorParser>)combinatorParser {
     self = [super init];
     if (self) {
         _subjectParsers = subjectParsers;
-        _combinatorParsers = combinatorParsers;
+        _combinatorParser = combinatorParser;
         _combinator = nil;
         _matcher = nil;
     }
@@ -57,11 +55,7 @@
 }
 
 - (id <Combinator>)parseCombinatorFromScanner:(id <QueryScanner>)scanner {
-    for (id <CombinatorParser>parser in self.combinatorParsers) {
-        id <Combinator> combinator = [parser parseCombinatorFromScanner:scanner];
-        if (combinator) return combinator;
-    }
-    return nil;
+    return [self.combinatorParser parseCombinatorFromScanner:scanner];
 }
 
 - (void)parseSubjectChainFromScanner:(id <QueryScanner>)scanner intoMatcher:(id <ChainMatcher>)destination {
