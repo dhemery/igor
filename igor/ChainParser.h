@@ -3,7 +3,7 @@
 @protocol Matcher;
 @protocol QueryScanner;
 
-@interface ChainParser : NSObject
+@protocol ChainParser <NSObject>
 
 @property (strong) NSArray *subjectParsers;
 @property (strong, readonly) NSArray *combinatorParsers;
@@ -14,12 +14,16 @@
 
 @property (readonly, getter=started) BOOL started;
 
-+ (ChainParser *)parserWithCombinatorParsers:(NSArray *)combinatorParsers;
-
-+ (ChainParser *)parserWithSubjectParsers:(NSArray *)subjectParsers combinatorParsers:(NSArray *)combinatorParsers;
-
 - (id <Matcher>)parseStepFromScanner:(id <QueryScanner>)scanner;
 
 - (void)parseSubjectChainFromScanner:(id <QueryScanner>)scanner intoMatcher:(id <ChainMatcher>)matcher;
+
+@end
+
+@interface ChainParser : NSObject <ChainParser>
+
++ (id <ChainParser>)parserWithCombinatorParsers:(NSArray *)combinatorParsers;
+
++ (id <ChainParser>)parserWithSubjectParsers:(NSArray *)subjectParsers combinatorParsers:(NSArray *)combinatorParsers;
 
 @end

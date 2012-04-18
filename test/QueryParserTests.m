@@ -25,7 +25,7 @@
     NSArray *simplePatternParsers = [NSArray arrayWithObjects:classParser, predicateParser, nil];
 
     id <PatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simplePatternParsers];
-    ChainParser *chainParser = [ChainParser parserWithCombinatorParsers:nil];
+    id <ChainParser> chainParser = [ChainParser parserWithCombinatorParsers:nil];
     id <PatternParser> branchParser = [BranchParser parserWithChainParser:chainParser];
     NSArray *subjectPatternParsers = [NSArray arrayWithObjects:instanceParser, branchParser, nil];
     chainParser.subjectParsers = subjectPatternParsers;

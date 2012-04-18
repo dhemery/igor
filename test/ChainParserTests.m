@@ -11,7 +11,7 @@
 @implementation ChainParserTests {
     NSMutableArray *combinatorParsers;
     NSMutableArray *subjectParsers;
-    ChainParser *parser;
+    id <ChainParser> parser;
 }
 
 - (void)setUp {

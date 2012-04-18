@@ -5,14 +5,14 @@
 #import "ChainParser.h"
 
 @implementation QueryParser {
-    ChainParser *chainParser;
+    id <ChainParser>chainParser;
 }
 
-+ (id <PatternParser>)parserWithChainParser:(ChainParser *)chainParser {
++ (id <PatternParser>)parserWithChainParser:(id <ChainParser>)chainParser {
     return [[self alloc] initWithChainParser:chainParser];
 }
 
-- (id <PatternParser>)initWithChainParser:(ChainParser *)theChainParser {
+- (id <PatternParser>)initWithChainParser:(id <ChainParser>)theChainParser {
     self = [super init];
     if (self) {
         chainParser = theChainParser;

@@ -8,7 +8,7 @@
 #import "ClassParser.h"
 #import "PredicateParser.h"
 #import "BranchParser.h"
-#import "DescendantCombinatorParser.h"
+#import "CombinatorParser.h"
 #import "IdentifierParser.h"
 
 @implementation Igor
@@ -27,7 +27,8 @@
 }
 
 - (NSArray *)findViewsThatMatchQuery:(NSString *)query inTree:(UIView *)tree {
-    id <QueryScanner> scanner = [StringQueryScanner scannerWithString:query];
+    NSString *stripped = [query stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    id <QueryScanner> scanner = [StringQueryScanner scannerWithString:stripped];
     id <Matcher> matcher = [parser parseMatcherFromScanner:scanner];
     return [self findViewsThatMatchMatcher:matcher inTree:tree];
 }
@@ -40,8 +41,8 @@
 
     id <PatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simplePatternParsers];
 
-    NSArray *combinatorParsers = [NSArray arrayWithObject:[DescendantCombinatorParser new]];
-    ChainParser *chainParser = [ChainParser parserWithCombinatorParsers:combinatorParsers];
+    NSArray *combinatorParsers = [NSArray arrayWithObject:[CombinatorParser new]];
+    id <ChainParser> chainParser = [ChainParser parserWithCombinatorParsers:combinatorParsers];
     id <PatternParser> branchParser = [BranchParser parserWithChainParser:chainParser];
     NSArray *subjectParsers = [NSArray arrayWithObjects:instanceParser, branchParser, nil];
     chainParser.subjectParsers = subjectParsers;

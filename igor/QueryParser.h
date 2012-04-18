@@ -1,9 +1,9 @@
 #import "PatternParser.h"
 
-@class ChainParser;
+@protocol ChainParser;
 
 @interface QueryParser : NSObject <PatternParser>
 
-+ (id <PatternParser>)parserWithChainParser:(ChainParser *)chainParser;
++ (id <PatternParser>)parserWithChainParser:(id <ChainParser>)chainParser;
 
 @end

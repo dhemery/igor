@@ -2,35 +2,34 @@
 #import "IgorParserException.h"
 
 // todo  Test
-@implementation StringQueryScanner {
-    NSScanner *scanner;
-}
+@implementation StringQueryScanner
+
+@synthesize scanner;
 
 - (id <QueryScanner>)initWithString:(NSString *)queryString {
     self = [super init];
     if (self) {
-        NSString *stripped = [queryString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-        scanner = [NSScanner scannerWithString:stripped];
+        scanner = [NSScanner scannerWithString:queryString];
         [scanner setCharactersToBeSkipped:nil];
     }
     return self;
 }
 - (NSString *)description {
-    return [scanner string];
+    return [self.scanner string];
 }
 
 - (void)failBecause:(NSString *)reason {
-    @throw [IgorParserException exceptionWithReason:reason scanner:scanner];
+    @throw [IgorParserException exceptionWithReason:reason scanner:self.scanner];
 }
 
 - (void)failIfNotAtEnd {
-    if (![scanner isAtEnd]) {
+    if (![self.scanner isAtEnd]) {
         [self failBecause:@"Unexpected characters"];
     }
 }
 
 - (BOOL)scanNameIntoString:(NSString **)destination {
-    return [scanner scanCharactersFromSet:[NSCharacterSet alphanumericCharacterSet] intoString:destination];
+    return [self.scanner scanCharactersFromSet:[NSCharacterSet alphanumericCharacterSet] intoString:destination];
 }
 
 + (id <QueryScanner>)scannerWithString:(NSString *)queryString {
@@ -38,15 +37,15 @@
 }
 
 - (BOOL)scanUpToString:(NSString *)string intoString:(NSString **)destination {
-    return [scanner scanUpToString:string intoString:destination];
+    return [self.scanner scanUpToString:string intoString:destination];
 }
 
 - (BOOL)skipString:(NSString *)string {
-    return [scanner scanString:string intoString:nil];
+    return [self.scanner scanString:string intoString:nil];
 }
 
 - (BOOL)skipWhiteSpace {
-    return [scanner scanCharactersFromSet:[NSCharacterSet whitespaceCharacterSet] intoString:nil];
+    return [self.scanner scanCharactersFromSet:[NSCharacterSet whitespaceCharacterSet] intoString:nil];
 }
 
 @end

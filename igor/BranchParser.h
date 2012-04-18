@@ -1,11 +1,11 @@
 #import "PatternParser.h"
 
 @protocol QueryScanner;
-@class ChainParser;
+@protocol ChainParser;
 
 // TODO Test
 @interface BranchParser : NSObject <PatternParser>
 
-+ (id <PatternParser>)parserWithChainParser:(ChainParser *)chainParser;
++ (id <PatternParser>)parserWithChainParser:(id <ChainParser>)chainParser;
 
 @end

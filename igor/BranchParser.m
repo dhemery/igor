@@ -4,10 +4,10 @@
 #import "ChainParser.h"
 
 @implementation BranchParser {
-    ChainParser *subjectChainParser;
+    id <ChainParser>subjectChainParser;
 }
 
-- (id <PatternParser>)initWithChainParser:(ChainParser *)theSubjectChainParser {
+- (id <PatternParser>)initWithChainParser:(id <ChainParser>)theSubjectChainParser {
     self = [super init];
     if (self) {
         subjectChainParser = theSubjectChainParser;
@@ -33,7 +33,7 @@
     return matcher;
 }
 
-+ (id <PatternParser>)parserWithChainParser:(ChainParser *)chainParser {
++ (id <PatternParser>)parserWithChainParser:(id <ChainParser>)chainParser {
     return [[self alloc] initWithChainParser:chainParser];
 }
 

@@ -20,15 +20,15 @@
     return self.started && (self.combinator == nil);
 }
 
-+ (ChainParser *)parserWithSubjectParsers:(NSArray *)subjectParsers combinatorParsers:(NSArray *)combinatorParsers {
++ (id <ChainParser>)parserWithSubjectParsers:(NSArray *)subjectParsers combinatorParsers:(NSArray *)combinatorParsers {
     return [[self alloc] initWithSubjectParsers:subjectParsers combinatorParsers:combinatorParsers];
 }
 
-+ (ChainParser *)parserWithCombinatorParsers:(NSArray *)combinatorParsers {
++ (id <ChainParser>)parserWithCombinatorParsers:(NSArray *)combinatorParsers {
     return [self parserWithSubjectParsers:[NSArray array] combinatorParsers:combinatorParsers];
 }
 
-- (ChainParser *)initWithSubjectParsers:(NSArray *)subjectParsers combinatorParsers:(NSArray *)combinatorParsers {
+- (id <ChainParser>)initWithSubjectParsers:(NSArray *)subjectParsers combinatorParsers:(NSArray *)combinatorParsers {
     self = [super init];
     if (self) {
         _subjectParsers = subjectParsers;
