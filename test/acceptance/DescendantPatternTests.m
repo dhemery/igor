@@ -40,7 +40,7 @@
     assertThat(matchingViews, hasItem(leaf));
 }
 
-- (void)testRequiresMatchForEachMatcher {
+- (void)testRequiresMatchForEachInstancePattern {
     NSArray *matchingViews = [igor findViewsThatMatchQuery:@"#root * * #leaf" inTree:root];
     assertThat(matchingViews, is(empty()));
 }
