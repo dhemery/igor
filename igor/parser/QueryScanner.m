@@ -1,8 +1,8 @@
-#import "StringQueryScanner.h"
+#import "QueryScanner.h"
 #import "IgorParserException.h"
 
 // todo  Test
-@implementation StringQueryScanner
+@implementation QueryScanner
 
 @synthesize scanner;
 
