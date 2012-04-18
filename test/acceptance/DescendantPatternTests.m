@@ -20,27 +20,27 @@
     [middle addSubview:leaf];
 }
 
-- (void)testMatchesMatchingSubjectWithMatchingRelative {
+- (void)testDescendantCombinatorMatchesMatchingSubjectWithMatchingAncestor {
     NSArray *matchingViews = [igor findViewsThatMatchQuery:@"#root #middle" inTree:root];
     assertThat(matchingViews, hasItem(middle));
 }
 
-- (void)testRequiresMatchingRelative {
-    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"#nosuch #leaf" inTree:root];
-    assertThat(matchingViews, isNot(hasItem(leaf)));
-}
-
-- (void)testRequiresMatchingSubject {
+- (void)testDescendantCombinatorRequiresMatchingSubject {
     NSArray *matchingViews = [igor findViewsThatMatchQuery:@"#root #nosuch" inTree:root];
     assertThat(matchingViews, isNot(hasItem(leaf)));
 }
 
-- (void)testMatchesAcrossChain {
+- (void)testDescendantCombinatorRequiresMatchingAncestor {
+    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"#nosuch #leaf" inTree:root];
+    assertThat(matchingViews, isNot(hasItem(leaf)));
+}
+
+- (void)testDescendantCombinatorChainSatisfiedIfEachAncestorPatternMatchesAHigherAncestor {
     NSArray *matchingViews = [igor findViewsThatMatchQuery:@"#root #middle #leaf" inTree:root];
     assertThat(matchingViews, hasItem(leaf));
 }
 
-- (void)testRequiresMatchForEachInstancePattern {
+- (void)testDescendantCombinatorChainRequiresAMatchForEachAncestorPattern {
     NSArray *matchingViews = [igor findViewsThatMatchQuery:@"#root * * #leaf" inTree:root];
     assertThat(matchingViews, is(empty()));
 }
