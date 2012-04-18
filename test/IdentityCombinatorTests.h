@@ -1,3 +1,0 @@
-@interface IdentityCombinatorTests : NSObject
-
-@end

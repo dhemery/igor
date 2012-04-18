@@ -39,8 +39,6 @@
 		2D9649E0147DA1A700C40219 /* igor-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C8E147CD1BA00AF4115 /* igor-Prefix.pch */; };
 		2D9649E2147DA21400C40219 /* igor-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C8E147CD1BA00AF4115 /* igor-Prefix.pch */; };
 		2D99DB351517E9C900244226 /* SubjectMarkerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D99DB321517E94B00244226 /* SubjectMarkerTests.m */; };
-		2D9CC80B15185B6500B51A8D /* TreeWalker.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D9CC80915185B6500B51A8D /* TreeWalker.h */; };
-		2D9CC80C15185B6500B51A8D /* TreeWalker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D9CC80A15185B6500B51A8D /* TreeWalker.m */; };
 		2DCE893615193E8900B975EE /* ChainParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DCE893415193E8900B975EE /* ChainParser.h */; };
 		2DCE893715193E8900B975EE /* ChainParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE893515193E8900B975EE /* ChainParser.m */; };
 		2DCE893B15193F6100B975EE /* InstanceParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DCE893915193F6100B975EE /* InstanceParser.h */; };
@@ -184,8 +182,6 @@
 		2D695CD3147CD1D200AF4115 /* PredicateParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredicateParserTests.m; sourceTree = "<group>"; };
 		2D695CD4147CD1D200AF4115 /* PredicatePatternTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredicatePatternTests.m; sourceTree = "<group>"; };
 		2D99DB321517E94B00244226 /* SubjectMarkerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectMarkerTests.m; sourceTree = "<group>"; };
-		2D9CC80915185B6500B51A8D /* TreeWalker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeWalker.h; sourceTree = "<group>"; };
-		2D9CC80A15185B6500B51A8D /* TreeWalker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreeWalker.m; sourceTree = "<group>"; };
 		2DCE893415193E8900B975EE /* ChainParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainParser.h; sourceTree = "<group>"; };
 		2DCE893515193E8900B975EE /* ChainParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainParser.m; sourceTree = "<group>"; };
 		2DCE893915193F6100B975EE /* InstanceParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstanceParser.h; sourceTree = "<group>"; };
@@ -513,8 +509,6 @@
 			children = (
 				E621659DB794A5D612DCD45E /* UniversalMatcher.m */,
 				E621659DB794A5D612DCD45C /* UniversalMatcher.h */,
-				2D9CC80A15185B6500B51A8D /* TreeWalker.m */,
-				2D9CC80915185B6500B51A8D /* TreeWalker.h */,
 				2D496EA41486A513007E1FDE /* PredicateMatcher.m */,
 				2D496EA31486A513007E1FDE /* PredicateMatcher.h */,
 				2D695C9A147CD1BA00AF4115 /* MemberOfClassMatcher.m */,
@@ -599,7 +593,6 @@
 				2D9649E2147DA21400C40219 /* igor-Prefix.pch in Headers */,
 				2D080CFC147DAC36002A09E2 /* SelectorEngineRegistry.h in Headers */,
 				2D496EA51486A513007E1FDE /* PredicateMatcher.h in Headers */,
-				2D9CC80B15185B6500B51A8D /* TreeWalker.h in Headers */,
 				2DCE893615193E8900B975EE /* ChainParser.h in Headers */,
 				2DCE893B15193F6100B975EE /* InstanceParser.h in Headers */,
 				E621659DB794A5D612DCD445 /* QueryScanner.h in Headers */,
@@ -804,7 +797,6 @@
 				2D695CC4147CD1BA00AF4115 /* PredicateParser.m in Sources */,
 				2D9649DA147D9E0B00C40219 /* IgorLoader.m in Sources */,
 				2D496EA61486A513007E1FDE /* PredicateMatcher.m in Sources */,
-				2D9CC80C15185B6500B51A8D /* TreeWalker.m in Sources */,
 				2DCE893715193E8900B975EE /* ChainParser.m in Sources */,
 				2DCE893C15193F6100B975EE /* InstanceParser.m in Sources */,
 				E621659DB794A5D612DCD443 /* QueryScanner.m in Sources */,

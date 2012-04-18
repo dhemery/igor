@@ -1,6 +1,5 @@
 #import "Igor.h"
 #import "QueryParser.h"
-#import "TreeWalker.h"
 #import "QueryScanner.h"
 #import "ChainParser.h"
 #import "InstanceParser.h"
@@ -9,6 +8,8 @@
 #import "BranchParser.h"
 #import "CombinatorParser.h"
 #import "IdentifierParser.h"
+#import "DescendantCombinator.h"
+#import "Matcher.h"
 
 @implementation Igor
 
@@ -16,12 +17,11 @@
 
 - (NSArray *)findViewsThatMatchMatcher:(id <Matcher>)matcher inTree:(UIView *)tree {
     NSMutableSet *matchingViews = [NSMutableSet set];
-    void (^collectMatches)(UIView *) = ^(UIView *view) {
-        if ([matcher matchesView:view]) {
-            [matchingViews addObject:view];
-        }
-    };
-    [TreeWalker walkTree:tree withVisitor:collectMatches];
+    NSMutableArray *allViews = [NSMutableArray arrayWithObject:tree];
+    [allViews addObjectsFromArray:[[DescendantCombinator new] relativesOfView:tree]];
+    for (UIView *view in allViews) {
+        if ([matcher matchesView:view]) [matchingViews addObject:view];
+    }
     return [matchingViews allObjects];
 }
 

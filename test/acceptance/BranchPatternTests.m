@@ -38,28 +38,35 @@
     assertThat(matchingViews, hasCountOf(1));
 }
 
-- (void)testSubjectMatchesViewTailMatchesDescendant {
+- (void)testSubjectMatchesViewTailMatchesRelative {
     NSArray *matchingViews = [igor findViewsThatMatchQuery:@"(#middle1 #middle1leaf1)" inTree:root];
     assertThat(matchingViews, hasItem(middle1));
     assertThat(matchingViews, hasCountOf(1));
 }
 
-- (void)testSubjectMatchesViewTailMismatchesDescendants {
+- (void)testSubjectMatchesViewTailMismatchesRelatives {
     NSArray *matchingViews = [igor findViewsThatMatchQuery:@"(#middle1 #nosuch)" inTree:root];
     assertThat(matchingViews, is(empty()));
 }
 
-- (void)testSubjectMatchesViewHeadBranchMatchesSubjectAndDescendants {
+- (void)testSubjectMatchesViewBranchMatchesSubjectAndRelatives {
     NSArray *matchingViews = [igor findViewsThatMatchQuery:@"(#root #middle1leaf1) #middle2leaf1" inTree:root];
     assertThat(matchingViews, hasItem(middle2leaf1));
     assertThat(matchingViews, hasCountOf(1));
 }
 
-- (void)testTailHasAChainOfMatchers {
+- (void)testTailHasAChainOfDescendantMatchers {
     NSArray *matchingViews = [igor findViewsThatMatchQuery:@"(#root #middle1 #middle1leaf1)" inTree:root];
     assertThat(matchingViews, hasItem(root));
     assertThat(matchingViews, hasCountOf(1));
 }
+
+// TODO This one will force me to add scoping to the branch matcher.
+//- (void)testTailHasAChainOfChildMatchers {
+//    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"(#root > #middle1 > #middle1leaf1)" inTree:root];
+//    assertThat(matchingViews, hasItem(root));
+//    assertThat(matchingViews, hasCountOf(1));
+//}
 
 - (void)testSubjectMatchesViewHeadBranchMatchesSubjectMismatchesDescendants {
     NSArray *matchingViews = [igor findViewsThatMatchQuery:@"(#root #nosuch) #middle2 leaf1" inTree:root];
