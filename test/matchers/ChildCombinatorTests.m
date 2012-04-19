@@ -90,36 +90,5 @@
     assertThat(relatives, isNot(hasItem(grandparent)));
 }
 
-- (void)testParentIsInverseRelativeInTreeRootedAtParent {
-    UIView *parent = [ViewFactory viewWithName:@"parent"];
-    [parent addSubview:subject];
-
-    NSArray *relatives = [childCombinator inverseRelativesOfView:subject inTree:parent];
-
-    assertThat(relatives, hasItem(parent));
-}
-
-- (void)testParentIsInverseRelativeInTreeRootedAboveParent {
-    UIView *parent = [ViewFactory viewWithName:@"parent"];
-    UIView *grandparent = [ViewFactory viewWithName:@"grandparent"];
-    [grandparent addSubview:parent];
-    [parent addSubview:subject];
-
-    NSArray *relatives = [childCombinator inverseRelativesOfView:subject inTree:grandparent];
-
-    assertThat(relatives, hasItem(parent));
-}
-
-- (void)testParentIsNotInverseRelativeInTreeRootedBelowParent {
-    UIView *parent = [ViewFactory viewWithName:@"parent"];
-    UIView *grandparent = [ViewFactory viewWithName:@"grandparent"];
-    [grandparent addSubview:parent];
-    [parent addSubview:subject];
-
-    NSArray *relatives = [childCombinator inverseRelativesOfView:subject inTree:subject];
-
-    assertThat(relatives, isNot(hasItem(parent)));
-}
-
 @end
 

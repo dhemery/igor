@@ -3,6 +3,10 @@
 
 @implementation SiblingCombinator
 
+- (NSString *)description {
+    return @"~";
+}
+
 - (NSArray *)relativesOfView:(UIView *)subject {
     NSMutableArray *siblings = [NSMutableArray array];
     UIView *parent = [subject superview];
@@ -13,10 +17,6 @@
 }
 
 - (NSArray *)inverseRelativesOfView:(UIView *)subject {
-    return [self relativesOfView:subject];
-}
-
-- (NSArray *)inverseRelativesOfView:(UIView *)subject inTree:(UIView *)root {
     return [self relativesOfView:subject];
 }
 

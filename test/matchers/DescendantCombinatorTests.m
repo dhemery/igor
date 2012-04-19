@@ -112,43 +112,4 @@
                     nil));
 }
 
-- (void)testAnAncestorIsARelativeInATreeRootedAtThatAncestor {
-    UIView *parent = [ViewFactory viewWithName:@"parent"];
-    UIView *grandparent = [ViewFactory viewWithName:@"grandparent"];
-    [grandparent addSubview:parent];
-    [parent addSubview:subject];
-
-    NSArray *relatives = [descendantCombinator inverseRelativesOfView:subject
-                                                               inTree:grandparent];
-
-    assertThat(relatives, hasItem(sameInstance(grandparent)));
-}
-
-- (void)testAncestorsAreRelativesInTreesRootedAboveThem {
-    UIView *parent = [ViewFactory viewWithName:@"parent"];
-    UIView *grandparent = [ViewFactory viewWithName:@"grandparent"];
-    UIView *greatGrandparent = [ViewFactory viewWithName:@"great grandparent"];
-    [greatGrandparent addSubview:grandparent];
-    [grandparent addSubview:parent];
-    [parent addSubview:subject];
-
-    NSArray *relatives = [descendantCombinator inverseRelativesOfView:subject
-                                                               inTree:greatGrandparent];
-
-    assertThat(relatives, hasItem(sameInstance(parent)));
-    assertThat(relatives, hasItem(sameInstance(grandparent)));
-}
-
-- (void)testAncestorsAreNotRelativesInTreesRootedBelowThem {
-    UIView *parent = [ViewFactory viewWithName:@"parent"];
-    UIView *grandparent = [ViewFactory viewWithName:@"grandparent"];
-    [grandparent addSubview:parent];
-    [parent addSubview:subject];
-
-    NSArray *relatives = [descendantCombinator inverseRelativesOfView:subject
-                                                               inTree:parent];
-
-    assertThat(relatives, isNot(hasItem(grandparent)));
-}
-
 @end

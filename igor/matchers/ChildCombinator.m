@@ -3,7 +3,7 @@
 @implementation ChildCombinator
 
 - (NSString *)description {
-    return @" > ";
+    return @">";
 }
 
 - (NSArray *)inverseRelativesOfView:(UIView *)subject {
@@ -12,13 +12,6 @@
         return [NSArray arrayWithObject:parent];
     }
     return [NSArray array];
-}
-
-- (NSArray *)inverseRelativesOfView:(UIView *)subject inTree:(UIView *)root {
-    if (subject == root) {
-        return [NSArray array];
-    }
-    return [self inverseRelativesOfView:subject];
 }
 
 - (NSArray *)relativesOfView:(UIView *)subject {
