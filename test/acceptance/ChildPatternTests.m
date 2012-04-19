@@ -35,7 +35,7 @@
     assertThat(matchingViews, isNot(hasItem(leaf)));
 }
 
-- (void)testDescendantCombinatorChainSatisfiedIfEachParentPatternMatchesTheNextHigherParent {
+- (void)testChildCombinatorChainSatisfiedIfEachParentPatternMatchesTheNextHigherParent {
     NSArray *matchingViews = [igor findViewsThatMatchQuery:@"#root > #middle > #leaf" inTree:root];
     assertThat(matchingViews, hasItem(leaf));
 }

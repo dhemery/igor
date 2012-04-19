@@ -2,6 +2,7 @@
 #import "QueryScanner.h"
 #import "DescendantCombinator.h"
 #import "ChildCombinator.h"
+#import "SiblingCombinator.h"
 
 // TODO Test
 @implementation CombinatorParser
@@ -14,6 +15,8 @@
     }
     if ([scanner skipString:@">"]) {
         combinatorClass = [ChildCombinator class];
+    } else if ([scanner skipString:@"~"]) {
+        combinatorClass = [SiblingCombinator class];
     }
     [scanner skipWhiteSpace];
     return [combinatorClass new];
