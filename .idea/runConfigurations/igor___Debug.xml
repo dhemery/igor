@@ -1,8 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="igor - Debug" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="igor - Debug" PROJECT_NAME="igor" TARGET_NAME="igor" CONFIG_NAME="Debug" DESTINATION_ID="iphoneos_UNIVERSAL" DEBUGGER="LLDB" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
-    <envs />
-    <RunnerSettings RunnerId="AppRunner" />
-    <ConfigurationWrapper RunnerId="AppRunner" />
-    <method />
-  </configuration>
-</component>
