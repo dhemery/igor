@@ -22,9 +22,8 @@
 - (void)setUp {
     id <PatternParser> classParser = [ClassParser new];
     id <PatternParser> predicateParser = [PredicateParser new];
-    NSArray *simplePatternParsers = [NSArray arrayWithObjects:classParser, predicateParser, nil];
-
-    id <PatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simplePatternParsers];
+    NSArray *simplePatternParsers = [NSArray arrayWithObject:predicateParser];
+    id <PatternParser> instanceParser = [InstanceParser parserWithClassParser:classParser simpleParsers:simplePatternParsers];
     id <ChainParser> chainParser = [ChainParser parserWithCombinatorParser:nil];
     id <PatternParser> branchParser = [BranchParser parserWithChainParser:chainParser];
     NSArray *subjectPatternParsers = [NSArray arrayWithObjects:instanceParser, branchParser, nil];

@@ -18,5 +18,4 @@
     return [IdentifierMatcher matcherWithAccessibilityIdentifier:name];
 }
 
-
 @end

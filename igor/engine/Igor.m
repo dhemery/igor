@@ -35,9 +35,8 @@
     id <PatternParser> classParser = [ClassParser new];
     id <PatternParser> predicateParser = [PredicateParser new];
     id <PatternParser> identifierParser = [IdentifierParser new];
-    NSArray *simplePatternParsers = [NSArray arrayWithObjects:classParser, identifierParser, predicateParser, nil];
-
-    id <PatternParser> instanceParser = [InstanceParser parserWithSimplePatternParsers:simplePatternParsers];
+    NSArray *simpleParsers = [NSArray arrayWithObjects:identifierParser, predicateParser, nil];
+    id <PatternParser> instanceParser = [InstanceParser parserWithClassParser:classParser simpleParsers:simpleParsers];
 
     id <CombinatorParser> combinatorParser = [CombinatorParser new];
     id <ChainParser> chainParser = [ChainParser parserWithCombinatorParser:combinatorParser];

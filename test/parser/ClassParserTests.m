@@ -39,4 +39,5 @@
 
     assertThat([parser parseMatcherFromScanner:scanner], is(nilValue()));
 }
+
 @end

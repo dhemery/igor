@@ -2,8 +2,9 @@
 
 @interface InstanceParser : NSObject <PatternParser>
 
-@property(strong) NSArray *simplePatternParsers;
+@property(strong) id <PatternParser> classParser;
+@property(strong) NSArray *simpleParsers;
 
-+ (id <PatternParser>)parserWithSimplePatternParsers:(NSArray *)simplePatternParsers;
 
++ (id <PatternParser>)parserWithClassParser:(id <PatternParser>)classParser simpleParsers:(NSArray *)simplerParsers;
 @end

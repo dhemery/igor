@@ -4,19 +4,21 @@
 
 @implementation InstanceParser
 
-@synthesize simplePatternParsers;
+@synthesize simpleParsers;
+@synthesize classParser;
 
 
-- (id <PatternParser>)initWithSimplePatternParsers:(NSArray *)theSimplePatternParsers {
+- (id <PatternParser>)initWithClassParser:(id <PatternParser>)theClassParser simpleParsers:(NSArray *)theSimpleParsers {
     self = [super init];
     if (self) {
-        simplePatternParsers = [NSArray arrayWithArray:theSimplePatternParsers];
+        classParser = theClassParser;
+        simpleParsers = [NSArray arrayWithArray:theSimpleParsers];
     }
     return self;
 }
 
 - (id <Matcher>)parseSimpleMatcherFromScanner:(id <QueryScanner>)scanner {
-    for (id <PatternParser> parser in simplePatternParsers) {
+    for (id <PatternParser> parser in simpleParsers) {
         id <Matcher> matcher = [parser parseMatcherFromScanner:scanner];
         if (matcher) return matcher;
     }
@@ -24,20 +26,19 @@
 }
 
 - (id <Matcher>)parseMatcherFromScanner:(id <QueryScanner>)scanner {
-    id <Matcher> matcher = [self parseSimpleMatcherFromScanner:scanner];
-
-    if (!matcher) return nil;
-
     NSMutableArray *simpleMatchers = [NSMutableArray array];
-    while(matcher) {
+
+    id <Matcher> matcher = [classParser parseMatcherFromScanner:scanner];
+    if (matcher) [simpleMatchers addObject:matcher];
+
+    while((matcher = [self parseSimpleMatcherFromScanner:scanner])) {
         [simpleMatchers addObject:matcher];
-        matcher = [self parseSimpleMatcherFromScanner:scanner];
     }
+    if ([simpleMatchers count] == 0) return nil;
     return [InstanceMatcher matcherWithSimpleMatchers:simpleMatchers];
 }
 
-+ (id <PatternParser>)parserWithSimplePatternParsers:(NSArray *)simplePatternParsers {
-    return [[self alloc] initWithSimplePatternParsers:simplePatternParsers];
++ (id <PatternParser>)parserWithClassParser:(id <PatternParser>)classParser simpleParsers:(NSArray *)simpleParsers {
+    return [[self alloc] initWithClassParser:classParser simpleParsers:simpleParsers];
 }
-
 @end
