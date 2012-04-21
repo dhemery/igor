@@ -12,10 +12,7 @@
 		2D2D4D0B1478787F00FF3D88 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD437 /* SenTestingKit.framework */; };
 		2D2D4D0C1478787F00FF3D88 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD439 /* UIKit.framework */; };
 		2D2D4D0D1478787F00FF3D88 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD425 /* Foundation.framework */; };
-		2D3E1F391509B6C000D62300 /* frank_static_resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2D3E1F361509B6C000D62300 /* frank_static_resources.bundle */; };
 		2D3E1F3F1509B98200D62300 /* DescendantPatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3E1F3D1509B98200D62300 /* DescendantPatternTests.m */; };
-		2D3E1F4E1509DE8700D62300 /* libFrank.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D3E1F371509B6C000D62300 /* libFrank.a */; };
-		2D3E1F4F1509DE8700D62300 /* libShelley.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D3E1F381509B6C000D62300 /* libShelley.a */; };
 		2D436E271518FF6D00071950 /* ViewFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D436E251518FF6D00071950 /* ViewFactory.h */; };
 		2D436E281518FF6D00071950 /* ViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D436E261518FF6D00071950 /* ViewFactory.m */; };
 		2D496EA51486A513007E1FDE /* PredicateMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D496EA31486A513007E1FDE /* PredicateMatcher.h */; };
@@ -43,18 +40,6 @@
 		2DCE893715193E8900B975EE /* ChainParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE893515193E8900B975EE /* ChainParser.m */; };
 		2DCE893B15193F6100B975EE /* InstanceParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DCE893915193F6100B975EE /* InstanceParser.h */; };
 		2DCE893C15193F6100B975EE /* InstanceParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE893A15193F6100B975EE /* InstanceParser.m */; };
-		2DCF9764147ED3FD003B0F38 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD439 /* UIKit.framework */; };
-		2DCF9765147ED3FD003B0F38 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD425 /* Foundation.framework */; };
-		2DCF9767147ED3FD003B0F38 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCF9766147ED3FD003B0F38 /* CoreGraphics.framework */; };
-		2DCF976D147ED3FD003B0F38 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2DCF976B147ED3FD003B0F38 /* InfoPlist.strings */; };
-		2DCF976F147ED3FD003B0F38 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCF976E147ED3FD003B0F38 /* main.m */; };
-		2DCF9773147ED3FD003B0F38 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCF9772147ED3FD003B0F38 /* AppDelegate.m */; };
-		2DCF9776147ED3FD003B0F38 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DCF9774147ED3FD003B0F38 /* MainStoryboard_iPhone.storyboard */; };
-		2DCF9779147ED3FD003B0F38 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DCF9777147ED3FD003B0F38 /* MainStoryboard_iPad.storyboard */; };
-		2DCF977C147ED3FD003B0F38 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCF977B147ED3FD003B0F38 /* MasterViewController.m */; };
-		2DCF977F147ED3FD003B0F38 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCF977E147ED3FD003B0F38 /* DetailViewController.m */; };
-		2DCF978E147EDACA003B0F38 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCF978D147EDACA003B0F38 /* CFNetwork.framework */; };
-		2DE232041509EBAA00C0D74D /* libigor-0.4.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD41C /* libigor-0.4.0.a */; };
 		2DE232061509EBB700C0D74D /* libigor-0.4.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD41C /* libigor-0.4.0.a */; };
 		E621659DB794A5D612DCD443 /* QueryScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD442 /* QueryScanner.m */; };
 		E621659DB794A5D612DCD445 /* QueryScanner.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD444 /* QueryScanner.h */; };
@@ -126,13 +111,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2DCF9783147ED425003B0F38 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E621659DB794A5D612DCD416 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E621659DB794A5D612DCD41D;
-			remoteInfo = igor;
-		};
 		2DCF978A147ED52D003B0F38 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E621659DB794A5D612DCD416 /* Project object */;
@@ -143,20 +121,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2D080CFB147DAC36002A09E2 /* SelectorEngineRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectorEngineRegistry.h; sourceTree = "<group>"; };
+		2D080CFB147DAC36002A09E2 /* SelectorEngineRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectorEngineRegistry.h; path = ../../lib/Frank/Headers/SelectorEngineRegistry.h; sourceTree = "<group>"; };
 		2D0FABA7151FD242006E91F6 /* OCHamcrestIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCHamcrestIOS.framework; path = lib/OCHamcrestIOS.framework; sourceTree = "<group>"; };
 		2D2D4D0A1478787F00FF3D88 /* igorTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = igorTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D3E1F361509B6C000D62300 /* frank_static_resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = frank_static_resources.bundle; sourceTree = "<group>"; };
-		2D3E1F371509B6C000D62300 /* libFrank.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFrank.a; sourceTree = "<group>"; };
-		2D3E1F381509B6C000D62300 /* libShelley.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libShelley.a; sourceTree = "<group>"; };
 		2D3E1F3D1509B98200D62300 /* DescendantPatternTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescendantPatternTests.m; sourceTree = "<group>"; };
-		2D436E1F1518F9C300071950 /* IdentityMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IdentityMatcher.h; path = IdentityMatcher.h; sourceTree = "<group>"; };
-		2D436E201518F9C300071950 /* IdentityMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IdentityMatcher.m; path = IdentityMatcher.m; sourceTree = "<group>"; };
+		2D436E1F1518F9C300071950 /* IdentityMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdentityMatcher.h; sourceTree = "<group>"; };
+		2D436E201518F9C300071950 /* IdentityMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdentityMatcher.m; sourceTree = "<group>"; };
 		2D436E251518FF6D00071950 /* ViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewFactory.h; sourceTree = "<group>"; };
 		2D436E261518FF6D00071950 /* ViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewFactory.m; sourceTree = "<group>"; };
 		2D496EA31486A513007E1FDE /* PredicateMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PredicateMatcher.h; sourceTree = "<group>"; };
 		2D496EA41486A513007E1FDE /* PredicateMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredicateMatcher.m; sourceTree = "<group>"; };
-		2D674477151E58C600B9BC52 /* vigor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = vigor.entitlements; sourceTree = "<group>"; };
 		2D695C8A147CD1BA00AF4115 /* ClassParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassParser.h; sourceTree = "<group>"; };
 		2D695C8B147CD1BA00AF4115 /* ClassParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassParser.m; sourceTree = "<group>"; };
 		2D695C8C147CD1BA00AF4115 /* InstanceMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstanceMatcher.h; sourceTree = "<group>"; };
@@ -190,21 +164,7 @@
 		2DCE893515193E8900B975EE /* ChainParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainParser.m; sourceTree = "<group>"; };
 		2DCE893915193F6100B975EE /* InstanceParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstanceParser.h; sourceTree = "<group>"; };
 		2DCE893A15193F6100B975EE /* InstanceParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstanceParser.m; sourceTree = "<group>"; };
-		2DCF9762147ED3FD003B0F38 /* vigor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vigor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DCF9766147ED3FD003B0F38 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		2DCF976A147ED3FD003B0F38 /* vigor-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "vigor-Info.plist"; sourceTree = "<group>"; };
-		2DCF976C147ED3FD003B0F38 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2DCF976E147ED3FD003B0F38 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2DCF9770147ED3FD003B0F38 /* vigor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "vigor-Prefix.pch"; sourceTree = "<group>"; };
-		2DCF9771147ED3FD003B0F38 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		2DCF9772147ED3FD003B0F38 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2DCF9775147ED3FD003B0F38 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		2DCF9778147ED3FD003B0F38 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		2DCF977A147ED3FD003B0F38 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		2DCF977B147ED3FD003B0F38 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		2DCF977D147ED3FD003B0F38 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		2DCF977E147ED3FD003B0F38 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		2DCF978D147EDACA003B0F38 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		E621659DB794A5D612DCD41C /* libigor-0.4.0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libigor-0.4.0.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E621659DB794A5D612DCD425 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E621659DB794A5D612DCD437 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -250,8 +210,8 @@
 		E621659DB794A5D612DCD4CB /* CombinatorParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CombinatorParser.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4CD /* ChildCombinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildCombinator.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4CF /* ChildCombinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildCombinator.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4D7 /* EmptySetCombinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EmptySetCombinator.m; path = EmptySetCombinator.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4D9 /* EmptySetCombinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmptySetCombinator.h; path = EmptySetCombinator.h; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD4D7 /* EmptySetCombinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptySetCombinator.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD4D9 /* EmptySetCombinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptySetCombinator.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4DD /* ChildCombinatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildCombinatorTests.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4F0 /* IdentifierMatcherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdentifierMatcherTests.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4F4 /* IdentifierMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdentifierMatcher.m; sourceTree = "<group>"; };
@@ -260,7 +220,7 @@
 		E621659DB794A5D612DCD4FA /* IdentifierParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdentifierParser.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4FC /* IdentifierParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdentifierParserTests.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD500 /* ChildPatternTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildPatternTests.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD504 /* CombinatorParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CombinatorParserTests.m; path = CombinatorParserTests.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD504 /* CombinatorParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CombinatorParserTests.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD515 /* SiblingPatternTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiblingPatternTests.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD519 /* SiblingCombinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiblingCombinator.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD51B /* SiblingCombinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiblingCombinator.h; sourceTree = "<group>"; };
@@ -280,20 +240,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2DCF975F147ED3FD003B0F38 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2DE232041509EBAA00C0D74D /* libigor-0.4.0.a in Frameworks */,
-				2DCF978E147EDACA003B0F38 /* CFNetwork.framework in Frameworks */,
-				2DCF9764147ED3FD003B0F38 /* UIKit.framework in Frameworks */,
-				2DCF9765147ED3FD003B0F38 /* Foundation.framework in Frameworks */,
-				2DCF9767147ED3FD003B0F38 /* CoreGraphics.framework in Frameworks */,
-				2D3E1F4E1509DE8700D62300 /* libFrank.a in Frameworks */,
-				2D3E1F4F1509DE8700D62300 /* libShelley.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E621659DB794A5D612DCD423 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -304,14 +250,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2D080CFA147DAC36002A09E2 /* Headers */ = {
-			isa = PBXGroup;
-			children = (
-				2D080CFB147DAC36002A09E2 /* SelectorEngineRegistry.h */,
-			);
-			path = Headers;
-			sourceTree = "<group>";
-		};
 		2D695C88147CD1BA00AF4115 /* igor */ = {
 			isa = PBXGroup;
 			children = (
@@ -353,60 +291,11 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		2D9649F4147DA75600C40219 /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				2D9649F5147DA75600C40219 /* Frank */,
-			);
-			path = lib;
-			sourceTree = "<group>";
-		};
-		2D9649F5147DA75600C40219 /* Frank */ = {
-			isa = PBXGroup;
-			children = (
-				2D3E1F361509B6C000D62300 /* frank_static_resources.bundle */,
-				2D3E1F371509B6C000D62300 /* libFrank.a */,
-				2D3E1F381509B6C000D62300 /* libShelley.a */,
-				2D080CFA147DAC36002A09E2 /* Headers */,
-			);
-			path = Frank;
-			sourceTree = "<group>";
-		};
-		2DCF9768147ED3FD003B0F38 /* vigor */ = {
-			isa = PBXGroup;
-			children = (
-				2D674477151E58C600B9BC52 /* vigor.entitlements */,
-				2DCF9771147ED3FD003B0F38 /* AppDelegate.h */,
-				2DCF9772147ED3FD003B0F38 /* AppDelegate.m */,
-				2DCF9774147ED3FD003B0F38 /* MainStoryboard_iPhone.storyboard */,
-				2DCF9777147ED3FD003B0F38 /* MainStoryboard_iPad.storyboard */,
-				2DCF977A147ED3FD003B0F38 /* MasterViewController.h */,
-				2DCF977B147ED3FD003B0F38 /* MasterViewController.m */,
-				2DCF977D147ED3FD003B0F38 /* DetailViewController.h */,
-				2DCF977E147ED3FD003B0F38 /* DetailViewController.m */,
-				2DCF9769147ED3FD003B0F38 /* Supporting Files */,
-			);
-			path = vigor;
-			sourceTree = "<group>";
-		};
-		2DCF9769147ED3FD003B0F38 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				2DCF976A147ED3FD003B0F38 /* vigor-Info.plist */,
-				2DCF976B147ED3FD003B0F38 /* InfoPlist.strings */,
-				2DCF976E147ED3FD003B0F38 /* main.m */,
-				2DCF9770147ED3FD003B0F38 /* vigor-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		E621659DB794A5D612DCD418 = {
 			isa = PBXGroup;
 			children = (
 				2D695C88147CD1BA00AF4115 /* igor */,
 				2D695CC9147CD1D200AF4115 /* test */,
-				2DCF9768147ED3FD003B0F38 /* vigor */,
-				2D9649F4147DA75600C40219 /* lib */,
 				E621659DB794A5D612DCD419 /* Products */,
 				E621659DB794A5D612DCD424 /* Frameworks */,
 			);
@@ -417,7 +306,6 @@
 			children = (
 				E621659DB794A5D612DCD41C /* libigor-0.4.0.a */,
 				2D2D4D0A1478787F00FF3D88 /* igorTests.octest */,
-				2DCF9762147ED3FD003B0F38 /* vigor.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -426,7 +314,6 @@
 			isa = PBXGroup;
 			children = (
 				2D0FABA7151FD242006E91F6 /* OCHamcrestIOS.framework */,
-				2DCF978D147EDACA003B0F38 /* CFNetwork.framework */,
 				2DCF9766147ED3FD003B0F38 /* CoreGraphics.framework */,
 				E621659DB794A5D612DCD425 /* Foundation.framework */,
 				E621659DB794A5D612DCD437 /* SenTestingKit.framework */,
@@ -507,6 +394,7 @@
 		E621659DB794A5D612DCD512 /* engine */ = {
 			isa = PBXGroup;
 			children = (
+				2D080CFB147DAC36002A09E2 /* SelectorEngineRegistry.h */,
 				2D695C91147CD1BA00AF4115 /* IgorLoader.m */,
 				2D695C90147CD1BA00AF4115 /* Igor.m */,
 				2D695C8F147CD1BA00AF4115 /* Igor.h */,
@@ -656,24 +544,6 @@
 			productReference = 2D2D4D0A1478787F00FF3D88 /* igorTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
-		2DCF9761147ED3FD003B0F38 /* vigor */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2DCF9780147ED3FD003B0F38 /* Build configuration list for PBXNativeTarget "vigor" */;
-			buildPhases = (
-				2DCF975E147ED3FD003B0F38 /* Sources */,
-				2DCF975F147ED3FD003B0F38 /* Frameworks */,
-				2DCF9760147ED3FD003B0F38 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2DCF9784147ED425003B0F38 /* PBXTargetDependency */,
-			);
-			name = vigor;
-			productName = vigor;
-			productReference = 2DCF9762147ED3FD003B0F38 /* vigor.app */;
-			productType = "com.apple.product-type.application";
-		};
 		E621659DB794A5D612DCD41D /* igor */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E621659DB794A5D612DCD41E /* Build configuration list for PBXNativeTarget "igor" */;
@@ -713,24 +583,9 @@
 			targets = (
 				E621659DB794A5D612DCD41D /* igor */,
 				2D2D4D091478787F00FF3D88 /* igorTests */,
-				2DCF9761147ED3FD003B0F38 /* vigor */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		2DCF9760147ED3FD003B0F38 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2DCF976D147ED3FD003B0F38 /* InfoPlist.strings in Resources */,
-				2DCF9776147ED3FD003B0F38 /* MainStoryboard_iPhone.storyboard in Resources */,
-				2DCF9779147ED3FD003B0F38 /* MainStoryboard_iPad.storyboard in Resources */,
-				2D3E1F391509B6C000D62300 /* frank_static_resources.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		2D080CFF147DB8B4002A09E2 /* ShellScript */ = {
@@ -787,17 +642,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2DCF975E147ED3FD003B0F38 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2DCF976F147ED3FD003B0F38 /* main.m in Sources */,
-				2DCF9773147ED3FD003B0F38 /* AppDelegate.m in Sources */,
-				2DCF977C147ED3FD003B0F38 /* MasterViewController.m in Sources */,
-				2DCF977F147ED3FD003B0F38 /* DetailViewController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E621659DB794A5D612DCD422 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -832,11 +676,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2DCF9784147ED425003B0F38 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E621659DB794A5D612DCD41D /* igor */;
-			targetProxy = 2DCF9783147ED425003B0F38 /* PBXContainerItemProxy */;
-		};
 		2DCF978B147ED52D003B0F38 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E621659DB794A5D612DCD41D /* igor */;
@@ -851,30 +690,6 @@
 				2D695CCC147CD1D200AF4115 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		2DCF976B147ED3FD003B0F38 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2DCF976C147ED3FD003B0F38 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		2DCF9774147ED3FD003B0F38 /* MainStoryboard_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2DCF9775147ED3FD003B0F38 /* en */,
-			);
-			name = MainStoryboard_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		2DCF9777147ED3FD003B0F38 /* MainStoryboard_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2DCF9778147ED3FD003B0F38 /* en */,
-			);
-			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -929,50 +744,6 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				WARNING_CFLAGS = "";
 				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		2DCF9781147ED3FD003B0F38 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_C_LANGUAGE_STANDARD = "compiler-default";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "vigor/vigor-Prefix.pch";
-				INFOPLIST_FILE = "vigor/vigor-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"\"$(SRCROOT)/lib/Frank\"",
-					"$(inherited)",
-				);
-				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		2DCF9782147ED3FD003B0F38 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_ENTITLEMENTS = vigor/vigor.entitlements;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_C_LANGUAGE_STANDARD = "compiler-default";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "vigor/vigor-Prefix.pch";
-				INFOPLIST_FILE = "vigor/vigor-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"\"$(SRCROOT)/lib/Frank\"",
-					"$(inherited)",
-				);
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
@@ -1064,15 +835,6 @@
 			buildConfigurations = (
 				2D2D4D191478788000FF3D88 /* Release */,
 				2D2D4D1A1478788000FF3D88 /* Debug */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		2DCF9780147ED3FD003B0F38 /* Build configuration list for PBXNativeTarget "vigor" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2DCF9781147ED3FD003B0F38 /* Release */,
-				2DCF9782147ED3FD003B0F38 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
