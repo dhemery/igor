@@ -3,6 +3,7 @@
 #import "UniversalMatcher.h"
 #import "IsKindOfClassMatcher.h"
 #import "IsMemberOfClassMatcher.h"
+#import "_My_ClassName__WithUnder_Scores.h"
 
 @interface ClassParserTests : SenTestCase
 @end
@@ -40,4 +41,9 @@
     assertThat([parser parseMatcherFromScanner:scanner], is(nilValue()));
 }
 
+- (void)testClassNamesMayIncludeUnderscores {
+    scanner = [QueryScanner scannerWithString:@"_My_ClassName__WithUnder_Scores"];
+
+    assertThat([parser parseMatcherFromScanner:scanner], [IsMemberOfClassMatcher forExactClass:[_My_ClassName__WithUnder_Scores class]]);
+}
 @end

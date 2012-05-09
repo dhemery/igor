@@ -40,7 +40,7 @@
 		2DCE893715193E8900B975EE /* ChainParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE893515193E8900B975EE /* ChainParser.m */; };
 		2DCE893B15193F6100B975EE /* InstanceParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DCE893915193F6100B975EE /* InstanceParser.h */; };
 		2DCE893C15193F6100B975EE /* InstanceParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE893A15193F6100B975EE /* InstanceParser.m */; };
-		2DE232061509EBB700C0D74D /* libigor-0.4.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD41C /* libigor-0.4.0.a */; };
+		2DE232061509EBB700C0D74D /* libigor-0.5.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD41C /* libigor-0.5.0.a */; };
 		E621659DB794A5D612DCD443 /* QueryScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD442 /* QueryScanner.m */; };
 		E621659DB794A5D612DCD445 /* QueryScanner.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD444 /* QueryScanner.h */; };
 		E621659DB794A5D612DCD449 /* ChainMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD448 /* ChainMatcher.h */; };
@@ -108,6 +108,8 @@
 		E621659DB794A5D612DCD51A /* SiblingCombinator.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD519 /* SiblingCombinator.m */; };
 		E621659DB794A5D612DCD51C /* SiblingCombinator.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD51B /* SiblingCombinator.h */; };
 		E621659DB794A5D612DCD51E /* SiblingCombinatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD51D /* SiblingCombinatorTests.m */; };
+		E621659DB794A5D612DCD520 /* _My_ClassName__WithUnder_Scores.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD51F /* _My_ClassName__WithUnder_Scores.m */; };
+		E621659DB794A5D612DCD522 /* _My_ClassName__WithUnder_Scores.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD521 /* _My_ClassName__WithUnder_Scores.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,7 +167,7 @@
 		2DCE893915193F6100B975EE /* InstanceParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstanceParser.h; sourceTree = "<group>"; };
 		2DCE893A15193F6100B975EE /* InstanceParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstanceParser.m; sourceTree = "<group>"; };
 		2DCF9766147ED3FD003B0F38 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		E621659DB794A5D612DCD41C /* libigor-0.4.0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libigor-0.4.0.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E621659DB794A5D612DCD41C /* libigor-0.5.0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libigor-0.5.0.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E621659DB794A5D612DCD425 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E621659DB794A5D612DCD437 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		E621659DB794A5D612DCD439 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -225,6 +227,8 @@
 		E621659DB794A5D612DCD519 /* SiblingCombinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiblingCombinator.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD51B /* SiblingCombinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiblingCombinator.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD51D /* SiblingCombinatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiblingCombinatorTests.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD51F /* _My_ClassName__WithUnder_Scores.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _My_ClassName__WithUnder_Scores.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD521 /* _My_ClassName__WithUnder_Scores.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _My_ClassName__WithUnder_Scores.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,7 +236,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DE232061509EBB700C0D74D /* libigor-0.4.0.a in Frameworks */,
+				2DE232061509EBB700C0D74D /* libigor-0.5.0.a in Frameworks */,
 				2D2D4D0B1478787F00FF3D88 /* SenTestingKit.framework in Frameworks */,
 				2D2D4D0C1478787F00FF3D88 /* UIKit.framework in Frameworks */,
 				2D2D4D0D1478787F00FF3D88 /* Foundation.framework in Frameworks */,
@@ -304,7 +308,7 @@
 		E621659DB794A5D612DCD419 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E621659DB794A5D612DCD41C /* libigor-0.4.0.a */,
+				E621659DB794A5D612DCD41C /* libigor-0.5.0.a */,
 				2D2D4D0A1478787F00FF3D88 /* igorTests.octest */,
 			);
 			name = Products;
@@ -339,6 +343,8 @@
 		E621659DB794A5D612DCD50F /* fixtures */ = {
 			isa = PBXGroup;
 			children = (
+				E621659DB794A5D612DCD521 /* _My_ClassName__WithUnder_Scores.h */,
+				E621659DB794A5D612DCD51F /* _My_ClassName__WithUnder_Scores.m */,
 				2D436E261518FF6D00071950 /* ViewFactory.m */,
 				2D436E251518FF6D00071950 /* ViewFactory.h */,
 				E621659DB794A5D612DCD464 /* MatchesView.m */,
@@ -483,6 +489,7 @@
 				E621659DB794A5D612DCD4BC /* FakeSubjectParser.h in Headers */,
 				E621659DB794A5D612DCD4C0 /* FakeCombinatorParser.h in Headers */,
 				E621659DB794A5D612DCD50C /* EmptySetCombinator.h in Headers */,
+				E621659DB794A5D612DCD522 /* _My_ClassName__WithUnder_Scores.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,7 +565,7 @@
 			);
 			name = igor;
 			productName = igor;
-			productReference = E621659DB794A5D612DCD41C /* libigor-0.4.0.a */;
+			productReference = E621659DB794A5D612DCD41C /* libigor-0.5.0.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -639,6 +646,7 @@
 				E621659DB794A5D612DCD50D /* EmptySetCombinator.m in Sources */,
 				E621659DB794A5D612DCD516 /* SiblingPatternTests.m in Sources */,
 				E621659DB794A5D612DCD51E /* SiblingCombinatorTests.m in Sources */,
+				E621659DB794A5D612DCD520 /* _My_ClassName__WithUnder_Scores.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -798,7 +806,7 @@
 		E621659DB794A5D612DCD41F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 4.0;
+				CURRENT_PROJECT_VERSION = 5.0;
 				DSTROOT = /tmp/igor.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "igor/igor-Prefix.pch";
@@ -814,7 +822,7 @@
 		E621659DB794A5D612DCD420 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 4.0;
+				CURRENT_PROJECT_VERSION = 5.0;
 				DSTROOT = /tmp/igor.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "igor/igor-Prefix.pch";
