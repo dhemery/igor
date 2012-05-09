@@ -110,6 +110,8 @@
 		E621659DB794A5D612DCD51E /* SiblingCombinatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD51D /* SiblingCombinatorTests.m */; };
 		E621659DB794A5D612DCD520 /* _My_ClassName__WithUnder_Scores.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD51F /* _My_ClassName__WithUnder_Scores.m */; };
 		E621659DB794A5D612DCD522 /* _My_ClassName__WithUnder_Scores.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD521 /* _My_ClassName__WithUnder_Scores.h */; };
+		E621659DB794A5D612DCD524 /* My1ClassName2With3Digits.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD523 /* My1ClassName2With3Digits.m */; };
+		E621659DB794A5D612DCD526 /* My1ClassName2With3Digits.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD525 /* My1ClassName2With3Digits.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -229,6 +231,8 @@
 		E621659DB794A5D612DCD51D /* SiblingCombinatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiblingCombinatorTests.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD51F /* _My_ClassName__WithUnder_Scores.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _My_ClassName__WithUnder_Scores.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD521 /* _My_ClassName__WithUnder_Scores.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _My_ClassName__WithUnder_Scores.h; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD523 /* My1ClassName2With3Digits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = My1ClassName2With3Digits.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD525 /* My1ClassName2With3Digits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = My1ClassName2With3Digits.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -343,6 +347,8 @@
 		E621659DB794A5D612DCD50F /* fixtures */ = {
 			isa = PBXGroup;
 			children = (
+				E621659DB794A5D612DCD525 /* My1ClassName2With3Digits.h */,
+				E621659DB794A5D612DCD523 /* My1ClassName2With3Digits.m */,
 				E621659DB794A5D612DCD521 /* _My_ClassName__WithUnder_Scores.h */,
 				E621659DB794A5D612DCD51F /* _My_ClassName__WithUnder_Scores.m */,
 				2D436E261518FF6D00071950 /* ViewFactory.m */,
@@ -490,6 +496,7 @@
 				E621659DB794A5D612DCD4C0 /* FakeCombinatorParser.h in Headers */,
 				E621659DB794A5D612DCD50C /* EmptySetCombinator.h in Headers */,
 				E621659DB794A5D612DCD522 /* _My_ClassName__WithUnder_Scores.h in Headers */,
+				E621659DB794A5D612DCD526 /* My1ClassName2With3Digits.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -647,6 +654,7 @@
 				E621659DB794A5D612DCD516 /* SiblingPatternTests.m in Sources */,
 				E621659DB794A5D612DCD51E /* SiblingCombinatorTests.m in Sources */,
 				E621659DB794A5D612DCD520 /* _My_ClassName__WithUnder_Scores.m in Sources */,
+				E621659DB794A5D612DCD524 /* My1ClassName2With3Digits.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
