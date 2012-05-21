@@ -10,9 +10,9 @@
 #import "DescendantCombinator.h"
 #import "Matcher.h"
 
-@implementation Igor
-
-@synthesize parser;
+@implementation Igor {
+    id <PatternParser> _parser;
+}
 
 - (NSArray *)findViewsThatMatchMatcher:(id <Matcher>)matcher inTree:(UIView *)tree {
     NSMutableSet *matchingViews = [NSMutableSet set];
@@ -27,7 +27,7 @@
 - (NSArray *)findViewsThatMatchQuery:(NSString *)query inTree:(UIView *)tree {
     NSString *stripped = [query stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     id <QueryScanner> scanner = [QueryScanner scannerWithString:stripped];
-    id <Matcher> matcher = [parser parseMatcherFromScanner:scanner];
+    id <Matcher> matcher = [_parser parseMatcherFromScanner:scanner];
     return [self findViewsThatMatchMatcher:matcher inTree:tree];
 }
 
@@ -53,17 +53,12 @@
     return [[self alloc] initWithParser:parser];
 }
 
-- (Igor *)initWithParser:(id <PatternParser>)theParser {
+- (Igor *)initWithParser:(id <PatternParser>)parser {
     self = [super init];
     if (self) {
-        parser = theParser;
+        _parser = parser;
     }
     return self;
-}
-
-- (NSArray *)selectViewsWithSelector:(NSString *)query {
-    UIView *tree = [[UIApplication sharedApplication] keyWindow];
-    return [self findViewsThatMatchQuery:query inTree:tree];
 }
 
 @end

@@ -5,6 +5,8 @@
     </envs>
     <RunnerSettings RunnerId="AppRunner" />
     <ConfigurationWrapper RunnerId="AppRunner" />
-    <method />
+    <method>
+      <option name="com.jetbrains.cidr.execution.StopCurrentSessionBeforeRunTaskProvider$StopCurrentSessionBeforeRunTask" enabled="true" />
+    </method>
   </configuration>
 </component>
