@@ -7,7 +7,7 @@
 #import "DEPredicateParser.h"
 #import "DEBranchParser.h"
 #import "DEIdentifierParser.h"
-#import "DescendantCombinator.h"
+#import "DEDescendantCombinator.h"
 #import "DEMatcher.h"
 
 @implementation DEIgor {
@@ -17,7 +17,7 @@
 - (NSArray *)findViewsThatMatchMatcher:(id <DEMatcher>)matcher inTree:(UIView *)tree {
     NSMutableSet *matchingViews = [NSMutableSet set];
     NSMutableArray *allViews = [NSMutableArray arrayWithObject:tree];
-    [allViews addObjectsFromArray:[[DescendantCombinator new] relativesOfView:tree]];
+    [allViews addObjectsFromArray:[[DEDescendantCombinator new] relativesOfView:tree]];
     for (UIView *view in allViews) {
         if ([matcher matchesView:view]) [matchingViews addObject:view];
     }

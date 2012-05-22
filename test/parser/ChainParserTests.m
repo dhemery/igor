@@ -2,7 +2,7 @@
 #import "FakeSubjectParser.h"
 #import "DEUniversalMatcher.h"
 #import "FakeCombinatorParser.h"
-#import "DescendantCombinator.h"
+#import "DEDescendantCombinator.h"
 
 @interface ChainParserTests : SenTestCase
 @end
@@ -39,7 +39,7 @@
 - (void)testParseStepYieldsMatcherAndCombinatorIfParsersYieldMatcherAndCombinator {
     id <DEMatcher> subjectMatcher = [DEUniversalMatcher new];
     [subjectParsers addObject:[FakeSubjectParser parserThatYieldsSubjectMatcher:subjectMatcher]];
-    id <DECombinator> combinator = [DescendantCombinator new];
+    id <DECombinator> combinator = [DEDescendantCombinator new];
     id <DECombinatorParser> combinatorParser = [FakeCombinatorParser parserThatYieldsCombinator:combinator];
     parser = [DEChainParser parserWithSubjectParsers:subjectParsers combinatorParser:combinatorParser];
 

@@ -1,6 +1,6 @@
 #import "DECombinatorParser.h"
 #import "DEQueryScanner.h"
-#import "DescendantCombinator.h"
+#import "DEDescendantCombinator.h"
 #import "DEChildCombinator.h"
 #import "DESiblingCombinator.h"
 
@@ -11,7 +11,7 @@
     Class combinatorClass;
 
     if ([scanner skipWhiteSpace]) {
-        combinatorClass = [DescendantCombinator class];
+        combinatorClass = [DEDescendantCombinator class];
     }
     if ([scanner skipString:@">"]) {
         combinatorClass = [DEChildCombinator class];

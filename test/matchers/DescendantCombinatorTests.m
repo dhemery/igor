@@ -1,5 +1,5 @@
 #import "ViewFactory.h"
-#import "DescendantCombinator.h"
+#import "DEDescendantCombinator.h"
 
 @interface DescendantCombinatorTests : SenTestCase
 @end
@@ -10,7 +10,7 @@
 }
 
 - (void)setUp {
-    descendantCombinator = [DescendantCombinator new];
+    descendantCombinator = [DEDescendantCombinator new];
     subject = [ViewFactory viewWithName:@"subject"];
 }
 

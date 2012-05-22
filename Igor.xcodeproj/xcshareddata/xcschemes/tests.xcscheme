@@ -14,9 +14,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D2D4D091478787F00FF3D88"
-               BuildableName = "igorTests.octest"
-               BlueprintName = "igorTests"
-               ReferencedContainer = "container:igor.xcodeproj">
+               BuildableName = "IgorTests.octest"
+               BlueprintName = "IgorTests"
+               ReferencedContainer = "container:Igor.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,9 +32,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D2D4D091478787F00FF3D88"
-               BuildableName = "igorTests.octest"
-               BlueprintName = "igorTests"
-               ReferencedContainer = "container:igor.xcodeproj">
+               BuildableName = "IgorTests.octest"
+               BlueprintName = "IgorTests"
+               ReferencedContainer = "container:Igor.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>

@@ -1,5 +1,5 @@
 #import "ViewFactory.h"
-#import "DescendantCombinator.h"
+#import "DEDescendantCombinator.h"
 #import "DEChildCombinator.h"
 
 @interface ChildCombinatorTests : SenTestCase

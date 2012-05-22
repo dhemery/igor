@@ -1,5 +1,5 @@
 #import "DEChildCombinator.h"
-#import "DescendantCombinator.h"
+#import "DEDescendantCombinator.h"
 #import "DECombinatorParser.h"
 #import "DEQueryScanner.h"
 #import "DESiblingCombinator.h"
@@ -15,7 +15,7 @@
 
     id <DECombinator> combinator = [parser parseCombinatorFromScanner:scanner];
 
-    assertThat(combinator, instanceOf([DescendantCombinator class]));
+    assertThat(combinator, instanceOf([DEDescendantCombinator class]));
 }
 
 - (void)testParsesGreaterThanSignAsChildCombinator {

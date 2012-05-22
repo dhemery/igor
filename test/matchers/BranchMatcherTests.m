@@ -2,7 +2,7 @@
 #import "ViewFactory.h"
 #import "DEBranchMatcher.h"
 #import "FalseMatcher.h"
-#import "DescendantCombinator.h"
+#import "DEDescendantCombinator.h"
 #import "DEUniversalMatcher.h"
 #import "MatchesView.h"
 #import "EmptySetCombinator.h"
@@ -45,14 +45,14 @@
 
 - (void)testMismatchesIfSubjectMismatches {
     id <DEChainMatcher> mismatchEverySubjectMatchEveryRelative = [DEBranchMatcher matcherWithSubjectMatcher:[FalseMatcher new]];
-    [mismatchEverySubjectMatchEveryRelative appendCombinator:[DescendantCombinator new] matcher:[DEUniversalMatcher new]];
+    [mismatchEverySubjectMatchEveryRelative appendCombinator:[DEDescendantCombinator new] matcher:[DEUniversalMatcher new]];
 
     assertThat(mismatchEverySubjectMatchEveryRelative, isNot([MatchesView view:root]));
 }
 
 - (void)testMismatchesIfRelativesMismatch {
     id <DEChainMatcher> matchAnySubjectMismatchEveryRelative = [DEBranchMatcher matcherWithSubjectMatcher:[DEUniversalMatcher new]];
-    [matchAnySubjectMismatchEveryRelative appendCombinator:[DescendantCombinator new] matcher:[FalseMatcher new]];
+    [matchAnySubjectMismatchEveryRelative appendCombinator:[DEDescendantCombinator new] matcher:[FalseMatcher new]];
 
     assertThat(matchAnySubjectMismatchEveryRelative, isNot([MatchesView view:middle]));
 }

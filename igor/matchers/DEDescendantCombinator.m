@@ -1,6 +1,6 @@
-#import "DescendantCombinator.h"
+#import "DEDescendantCombinator.h"
 
-@implementation DescendantCombinator
+@implementation DEDescendantCombinator
 
 - (NSString *)description {
     return @" ";
