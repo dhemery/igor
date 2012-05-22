@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Igor" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Igor" PROJECT_NAME="Igor" TARGET_NAME="Igor" CONFIG_NAME="Release" DESTINATION_ID="iphonesimulator_5.1_1" RUN_TARGET_PROJECT_NAME="Igor" RUN_TARGET_NAME="vigor" DEBUGGER="LLDB" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+  <configuration default="false" name="Igor" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="Igor" PROJECT_NAME="Igor" TARGET_NAME="Igor" CONFIG_NAME="Debug" DESTINATION_ID="iphonesimulator_5.1_1" DEBUGGER="LLDB" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
     <envs />
     <method />
   </configuration>
