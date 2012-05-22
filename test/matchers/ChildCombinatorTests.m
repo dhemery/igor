@@ -1,17 +1,17 @@
 #import "ViewFactory.h"
 #import "DescendantCombinator.h"
-#import "ChildCombinator.h"
+#import "DEChildCombinator.h"
 
 @interface ChildCombinatorTests : SenTestCase
 @end
 
 @implementation ChildCombinatorTests {
-    id <Combinator> childCombinator;
+    id <DECombinator> childCombinator;
     UIView *subject;
 }
 
 - (void)setUp {
-    childCombinator = [ChildCombinator new];
+    childCombinator = [DEChildCombinator new];
     subject = [ViewFactory viewWithName:@"subject"];
 }
 

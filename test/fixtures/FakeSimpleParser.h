@@ -1,12 +1,12 @@
-#import "PatternParser.h"
+#import "DEPatternParser.h"
 
-@protocol Matcher;
+@protocol DEMatcher;
 
-@interface FakeSimpleParser : NSObject <PatternParser>
+@interface FakeSimpleParser : NSObject <DEPatternParser>
 
 + (FakeSimpleParser *)parserThatYieldsNoSimpleMatchers;
 
-+ (FakeSimpleParser *)parserThatYieldsSimpleMatcher:(id <Matcher>)simpleMatcher;
++ (FakeSimpleParser *)parserThatYieldsSimpleMatcher:(id <DEMatcher>)simpleMatcher;
 
 + (FakeSimpleParser *)parserThatYieldsSimpleMatchers:(NSArray *)simpleMatchers;
 

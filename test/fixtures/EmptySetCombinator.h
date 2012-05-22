@@ -1,4 +1,4 @@
-#import "Combinator.h"
+#import "DECombinator.h"
 
-@interface EmptySetCombinator : NSObject <Combinator>
+@interface EmptySetCombinator : NSObject <DECombinator>
 @end

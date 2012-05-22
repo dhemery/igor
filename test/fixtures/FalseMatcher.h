@@ -1,4 +1,4 @@
-#import "Matcher.h"
+#import "DEMatcher.h"
 
-@interface FalseMatcher : NSObject <Matcher>
+@interface FalseMatcher : NSObject <DEMatcher>
 @end

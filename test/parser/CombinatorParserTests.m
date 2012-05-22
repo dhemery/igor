@@ -1,8 +1,8 @@
-#import "ChildCombinator.h"
+#import "DEChildCombinator.h"
 #import "DescendantCombinator.h"
-#import "CombinatorParser.h"
-#import "QueryScanner.h"
-#import "SiblingCombinator.h"
+#import "DECombinatorParser.h"
+#import "DEQueryScanner.h"
+#import "DESiblingCombinator.h"
 
 @interface CombinatorParserTests : SenTestCase
 @end
@@ -10,44 +10,44 @@
 @implementation CombinatorParserTests
 
 - (void)testParsesWhitespaceAsDescendantCombinator {
-    id <CombinatorParser> parser = [CombinatorParser new];
-    id <QueryScanner> scanner = [QueryScanner scannerWithString:@"                 "];
+    id <DECombinatorParser> parser = [DECombinatorParser new];
+    id <DEQueryScanner> scanner = [DEQueryScanner scannerWithString:@"                 "];
 
-    id <Combinator> combinator = [parser parseCombinatorFromScanner:scanner];
+    id <DECombinator> combinator = [parser parseCombinatorFromScanner:scanner];
 
     assertThat(combinator, instanceOf([DescendantCombinator class]));
 }
 
 - (void)testParsesGreaterThanSignAsChildCombinator {
-    id <CombinatorParser> parser = [CombinatorParser new];
-    id <QueryScanner> scanner = [QueryScanner scannerWithString:@">"];
+    id <DECombinatorParser> parser = [DECombinatorParser new];
+    id <DEQueryScanner> scanner = [DEQueryScanner scannerWithString:@">"];
 
-    id <Combinator> combinator = [parser parseCombinatorFromScanner:scanner];
+    id <DECombinator> combinator = [parser parseCombinatorFromScanner:scanner];
 
-    assertThat(combinator, instanceOf([ChildCombinator class]));
+    assertThat(combinator, instanceOf([DEChildCombinator class]));
 }
 
 - (void)testParsesTildeAsSiblingCombinator {
-    id <CombinatorParser> parser = [CombinatorParser new];
-    id <QueryScanner> scanner = [QueryScanner scannerWithString:@"~"];
+    id <DECombinatorParser> parser = [DECombinatorParser new];
+    id <DEQueryScanner> scanner = [DEQueryScanner scannerWithString:@"~"];
 
-    id <Combinator> combinator = [parser parseCombinatorFromScanner:scanner];
+    id <DECombinator> combinator = [parser parseCombinatorFromScanner:scanner];
 
-    assertThat(combinator, instanceOf([SiblingCombinator class]));
+    assertThat(combinator, instanceOf([DESiblingCombinator class]));
 }
 
 - (void)testAllowsWhitespaceBeforeCombinator{
-    id <CombinatorParser> parser = [CombinatorParser new];
-    id <QueryScanner> scanner = [QueryScanner scannerWithString:@"           >"];
+    id <DECombinatorParser> parser = [DECombinatorParser new];
+    id <DEQueryScanner> scanner = [DEQueryScanner scannerWithString:@"           >"];
 
-    id <Combinator> combinator = [parser parseCombinatorFromScanner:scanner];
+    id <DECombinator> combinator = [parser parseCombinatorFromScanner:scanner];
 
-    assertThat(combinator, instanceOf([ChildCombinator class]));
+    assertThat(combinator, instanceOf([DEChildCombinator class]));
 }
 
 - (void)testConsumesWhitespaceAfterCombinator {
-    id <CombinatorParser> parser = [CombinatorParser new];
-    id <QueryScanner> scanner = [QueryScanner scannerWithString:@">                   !"];
+    id <DECombinatorParser> parser = [DECombinatorParser new];
+    id <DEQueryScanner> scanner = [DEQueryScanner scannerWithString:@">                   !"];
 
     [parser parseCombinatorFromScanner:scanner];
 

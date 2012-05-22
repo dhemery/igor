@@ -1,11 +1,11 @@
 #import "ViewFactory.h"
-#import "Igor.h"
+#import "DEIgor.h"
 
 @interface BranchPatternTests : SenTestCase
 @end
 
 @implementation BranchPatternTests {
-    Igor *igor;
+    DEIgor *igor;
     UIView *root;
     UIView *middle1;
     UIView *middle1leaf1;
@@ -16,7 +16,7 @@
 }
 
 - (void)setUp {
-    igor = [Igor igor];
+    igor = [DEIgor igor];
     root = [ViewFactory viewWithName:@"root"];
     middle1 = [ViewFactory viewWithName:@"middle1"];
     middle1leaf1 = [ViewFactory viewWithName:@"middle1leaf1"];

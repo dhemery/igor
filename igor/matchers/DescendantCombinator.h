@@ -1,5 +1,5 @@
-#import "Combinator.h"
+#import "DECombinator.h"
 
-@interface DescendantCombinator : NSObject <Combinator>
+@interface DescendantCombinator : NSObject <DECombinator>
 
 @end

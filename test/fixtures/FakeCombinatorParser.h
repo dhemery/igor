@@ -1,8 +1,8 @@
-#import "CombinatorParser.h"
+#import "DECombinatorParser.h"
 
-@interface FakeCombinatorParser : NSObject <CombinatorParser>
+@interface FakeCombinatorParser : NSObject <DECombinatorParser>
 
-+ (id)parserThatYieldsCombinator:(id <Combinator>)combinator;
++ (id)parserThatYieldsCombinator:(id <DECombinator>)combinator;
 
 + (id)parserThatYieldsNoCombinators;
 

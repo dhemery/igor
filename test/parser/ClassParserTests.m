@@ -1,6 +1,6 @@
-#import "QueryScanner.h"
-#import "ClassParser.h"
-#import "UniversalMatcher.h"
+#import "DEQueryScanner.h"
+#import "DEClassParser.h"
+#import "DEUniversalMatcher.h"
 #import "IsKindOfClassMatcher.h"
 #import "IsMemberOfClassMatcher.h"
 #import "_My_ClassName__WithUnder_Scores.h"
@@ -10,46 +10,46 @@
 @end
 
 @implementation ClassParserTests {
-    id <QueryScanner> scanner;
-    id <PatternParser> parser;
+    id <DEQueryScanner> scanner;
+    id <DEPatternParser> parser;
 }
 
 - (void)setUp {
-    parser = [ClassParser new];
+    parser = [DEClassParser new];
 }
 
 - (void)testParsesAsteriskAsUniversalMatcher {
-    scanner = [QueryScanner scannerWithString:@"*"];
+    scanner = [DEQueryScanner scannerWithString:@"*"];
 
-    assertThat([parser parseMatcherFromScanner:scanner], instanceOf([UniversalMatcher class]));
+    assertThat([parser parseMatcherFromScanner:scanner], instanceOf([DEUniversalMatcher class]));
 }
 
 - (void)testParsesNameAsMemberOfClassMatcher {
-    scanner = [QueryScanner scannerWithString:@"UIButton"];
+    scanner = [DEQueryScanner scannerWithString:@"UIButton"];
 
     assertThat([parser parseMatcherFromScanner:scanner], [IsMemberOfClassMatcher forExactClass:[UIButton class]]);
 }
 
 - (void)testParsesNameAsteriskAsKindOfClassMatcher {
-    scanner = [QueryScanner scannerWithString:@"UILabel*"];
+    scanner = [DEQueryScanner scannerWithString:@"UILabel*"];
 
     assertThat([parser parseMatcherFromScanner:scanner], [IsKindOfClassMatcher forClass:[UILabel class]]);
 }
 
 - (void)testDeliversNoMatcherIfQueryDoesNotStartWithAClassPattern {
-    scanner = [QueryScanner scannerWithString:@"[property='value']"];
+    scanner = [DEQueryScanner scannerWithString:@"[property='value']"];
 
     assertThat([parser parseMatcherFromScanner:scanner], is(nilValue()));
 }
 
 - (void)testClassNamesMayIncludeUnderscores {
-    scanner = [QueryScanner scannerWithString:@"_My_ClassName__WithUnder_Scores"];
+    scanner = [DEQueryScanner scannerWithString:@"_My_ClassName__WithUnder_Scores"];
 
     assertThat([parser parseMatcherFromScanner:scanner], [IsMemberOfClassMatcher forExactClass:[_My_ClassName__WithUnder_Scores class]]);
 }
 
 - (void)testClassNamesMayIncludeDigits {
-    scanner = [QueryScanner scannerWithString:@"My1ClassName2With3Digits"];
+    scanner = [DEQueryScanner scannerWithString:@"My1ClassName2With3Digits"];
 
     assertThat([parser parseMatcherFromScanner:scanner], [IsMemberOfClassMatcher forExactClass:[My1ClassName2With3Digits class]]);
 }

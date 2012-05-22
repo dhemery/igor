@@ -1,11 +1,11 @@
-#import "Igor.h"
+#import "DEIgor.h"
 #import "ViewFactory.h"
 
 @interface SiblingPatternTests : SenTestCase
 @end
 
 @implementation SiblingPatternTests {
-    Igor *igor;
+    DEIgor *igor;
     UIView *root;
     UIView *middle1;
     UIView *middle2;
@@ -15,7 +15,7 @@
 }
 
 - (void)setUp {
-    igor = [Igor igor];
+    igor = [DEIgor igor];
     root = [ViewFactory viewWithName:@"root"];
     middle1 = [ViewFactory viewWithName:@"middle1"];
     middle2 = [ViewFactory viewWithName:@"middle2"];

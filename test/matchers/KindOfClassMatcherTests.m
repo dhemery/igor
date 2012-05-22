@@ -1,4 +1,4 @@
-#import "KindOfClassMatcher.h"
+#import "DEKindOfClassMatcher.h"
 #import "ViewFactory.h"
 #import "MatchesView.h"
 
@@ -8,21 +8,21 @@
 @implementation KindOfClassMatcherTests
 
 - (void)testMatchesAViewOfTheTargetClass {
-    id <Matcher> kindOfButtonMatcher = [KindOfClassMatcher matcherForBaseClass:[UIButton class]];
+    id <DEMatcher> kindOfButtonMatcher = [DEKindOfClassMatcher matcherForBaseClass:[UIButton class]];
     UIButton *classIsExactlyButton = [ViewFactory button];
 
     assertThat(kindOfButtonMatcher, [MatchesView view:classIsExactlyButton]);
 }
 
 - (void)testMismatchesAViewOfANonTargetClass {
-    id <Matcher> kindOfButtonMatcher = [KindOfClassMatcher matcherForBaseClass:[UIButton class]];
+    id <DEMatcher> kindOfButtonMatcher = [DEKindOfClassMatcher matcherForBaseClass:[UIButton class]];
     UIView *classIsNotButtonOrSubclass = [ViewFactory view];
 
     assertThat(kindOfButtonMatcher, isNot([MatchesView view:classIsNotButtonOrSubclass]));
 }
 
 - (void)testMatchesAViewOfAClassThatInheritsFromTheTargetClass {
-    id <Matcher> kindOfViewMatcher = [KindOfClassMatcher matcherForBaseClass:[UIView class]];
+    id <DEMatcher> kindOfViewMatcher = [DEKindOfClassMatcher matcherForBaseClass:[UIView class]];
     UIButton *classIsSubclassOfView = [ViewFactory button];
 
     assertThat(kindOfViewMatcher, [MatchesView view:classIsSubclassOfView]);

@@ -1,5 +1,5 @@
 #import "IsMemberOfClassMatcher.h"
-#import "MemberOfClassMatcher.h"
+#import "DEMemberOfClassMatcher.h"
 
 #import <OCHamcrestIOS/HCDescription.h>
 
@@ -20,15 +20,15 @@
 }
 
 - (BOOL)matches:(id)item {
-    if (![item isMemberOfClass:[MemberOfClassMatcher class]]) {
+    if (![item isMemberOfClass:[DEMemberOfClassMatcher class]]) {
         return NO;
     }
-    MemberOfClassMatcher *matcher = item;
+    DEMemberOfClassMatcher *matcher = item;
     return targetClass == matcher.matchClass;
 }
 
 - (void)describeTo:(id <HCDescription>)description; {
-    [description appendDescriptionOf:[MemberOfClassMatcher matcherForExactClass:targetClass]];
+    [description appendDescriptionOf:[DEMemberOfClassMatcher matcherForExactClass:targetClass]];
 }
 
 @end

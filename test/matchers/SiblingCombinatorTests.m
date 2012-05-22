@@ -1,18 +1,18 @@
-#import "Combinator.h"
+#import "DECombinator.h"
 #import "ViewFactory.h"
-#import "SiblingCombinator.h"
+#import "DESiblingCombinator.h"
 
 @interface SiblingCombinatorTests : SenTestCase
 @end
 
 @implementation SiblingCombinatorTests {
-    id <Combinator> siblingCombinator;
+    id <DECombinator> siblingCombinator;
     UIView *subject;
     UIView *root;
 }
 
 - (void)setUp {
-    siblingCombinator = [SiblingCombinator new];
+    siblingCombinator = [DESiblingCombinator new];
     root = [ViewFactory viewWithName:@"root"];
     subject = [ViewFactory viewWithName:@"subject"];
     [root addSubview:subject];

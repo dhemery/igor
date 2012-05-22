@@ -1,4 +1,4 @@
-#import "Igor.h"
+#import "DEIgor.h"
 #import "ViewFactory.h"
 
 @interface ClassPatternTests : SenTestCase
@@ -6,11 +6,11 @@
 
 @implementation ClassPatternTests {
     CGRect frame;
-    Igor *igor;
+    DEIgor *igor;
 }
 
 - (void)setUp {
-    igor = [Igor igor];
+    igor = [DEIgor igor];
 }
 
 - (void)testAnyClassPattern {

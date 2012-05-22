@@ -1,6 +1,6 @@
-#import "ChainParser.h"
+#import "DEChainParser.h"
 #import "FakeSubjectParser.h"
-#import "UniversalMatcher.h"
+#import "DEUniversalMatcher.h"
 #import "FakeCombinatorParser.h"
 #import "DescendantCombinator.h"
 
@@ -10,7 +10,7 @@
 // TODO Uncomment and fix tests.
 @implementation ChainParserTests {
     NSMutableArray *subjectParsers;
-    id <ChainParser> parser;
+    id <DEChainParser> parser;
 }
 
 - (void)setUp {
@@ -19,31 +19,31 @@
 
 - (void)testParseStepYieldsNoMatcherIfParsersYieldNoMatcher {
     [subjectParsers addObject:[FakeSubjectParser parserThatYieldsNoSubjectMatchers]];
-    parser = [ChainParser parserWithSubjectParsers:subjectParsers combinatorParser:[CombinatorParser new]];
+    parser = [DEChainParser parserWithSubjectParsers:subjectParsers combinatorParser:[DECombinatorParser new]];
 
-    id <Matcher> matcher = [parser parseStepFromScanner:nil];
+    id <DEMatcher> matcher = [parser parseStepFromScanner:nil];
 
     assertThat(matcher, nilValue());
 }
 
 - (void)testParseStepYieldsMatcherIfParsersYieldMatcherButNoCombinator {
-    id <Matcher> subjectMatcher = [UniversalMatcher new];
+    id <DEMatcher> subjectMatcher = [DEUniversalMatcher new];
     [subjectParsers addObject:[FakeSubjectParser parserThatYieldsSubjectMatcher:subjectMatcher]];
-    parser = [ChainParser parserWithSubjectParsers:subjectParsers combinatorParser:[CombinatorParser new]];
+    parser = [DEChainParser parserWithSubjectParsers:subjectParsers combinatorParser:[DECombinatorParser new]];
 
-    id <Matcher> matcher =  [parser parseStepFromScanner:nil];
+    id <DEMatcher> matcher =  [parser parseStepFromScanner:nil];
 
     assertThat(matcher, sameInstance(subjectMatcher));
 }
 
 - (void)testParseStepYieldsMatcherAndCombinatorIfParsersYieldMatcherAndCombinator {
-    id <Matcher> subjectMatcher = [UniversalMatcher new];
+    id <DEMatcher> subjectMatcher = [DEUniversalMatcher new];
     [subjectParsers addObject:[FakeSubjectParser parserThatYieldsSubjectMatcher:subjectMatcher]];
-    id <Combinator> combinator = [DescendantCombinator new];
-    id <CombinatorParser> combinatorParser = [FakeCombinatorParser parserThatYieldsCombinator:combinator];
-    parser = [ChainParser parserWithSubjectParsers:subjectParsers combinatorParser:combinatorParser];
+    id <DECombinator> combinator = [DescendantCombinator new];
+    id <DECombinatorParser> combinatorParser = [FakeCombinatorParser parserThatYieldsCombinator:combinator];
+    parser = [DEChainParser parserWithSubjectParsers:subjectParsers combinatorParser:combinatorParser];
 
-    id <Matcher> matcher = [parser parseStepFromScanner:nil];
+    id <DEMatcher> matcher = [parser parseStepFromScanner:nil];
 
     assertThat(matcher, sameInstance(subjectMatcher));
     assertThat(parser.combinator, sameInstance(combinator));

@@ -18,11 +18,11 @@
     return [FakeCombinatorParser new];
 }
 
-+ (id)parserThatYieldsCombinator:(id <Combinator>)combinator {
++ (id)parserThatYieldsCombinator:(id <DECombinator>)combinator {
     return [[self alloc] initWithCombinators:[NSArray arrayWithObject:combinator]];
 }
 
-- (id <Combinator>)parseCombinatorFromScanner:(id <QueryScanner>)ignored {
+- (id <DECombinator>)parseCombinatorFromScanner:(id <DEQueryScanner>)ignored {
     if (index < [combinators count]) {
         return [combinators objectAtIndex:index++];
     }

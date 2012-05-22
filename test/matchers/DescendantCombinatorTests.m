@@ -5,7 +5,7 @@
 @end
 
 @implementation DescendantCombinatorTests {
-    id <Combinator> descendantCombinator;
+    id <DECombinator> descendantCombinator;
     UIView *subject;
 }
 

@@ -14,7 +14,7 @@
     return self;
 }
 
-- (id <Matcher>)parseMatcherFromScanner:(id <QueryScanner>)ignored {
+- (id <DEMatcher>)parseMatcherFromScanner:(id <DEQueryScanner>)ignored {
     if (index < [simpleMatchers count]) {
         return [simpleMatchers objectAtIndex:index++];
     }
@@ -25,7 +25,7 @@
     return [self parserThatYieldsSimpleMatchers:[NSArray array]];
 }
 
-+ (FakeSimpleParser *)parserThatYieldsSimpleMatcher:(id <Matcher>)matcher {
++ (FakeSimpleParser *)parserThatYieldsSimpleMatcher:(id <DEMatcher>)matcher {
     return [self parserThatYieldsSimpleMatchers:[NSArray arrayWithObject:matcher]];
 }
 

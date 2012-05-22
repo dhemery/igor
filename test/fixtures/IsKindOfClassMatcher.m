@@ -1,5 +1,5 @@
 #import "IsKindOfClassMatcher.h"
-#import "KindOfClassMatcher.h"
+#import "DEKindOfClassMatcher.h"
 
 #import <OCHamcrestIOS/HCDescription.h>
 
@@ -20,15 +20,15 @@
 }
 
 - (BOOL)matches:(id)item {
-    if (![item isMemberOfClass:[KindOfClassMatcher class]]) {
+    if (![item isMemberOfClass:[DEKindOfClassMatcher class]]) {
         return NO;
     }
-    KindOfClassMatcher *matcher = item;
+    DEKindOfClassMatcher *matcher = item;
     return targetClass == matcher.matchClass;
 }
 
 - (void)describeTo:(id <HCDescription>)description {
-    [description appendDescriptionOf:[KindOfClassMatcher matcherForBaseClass:targetClass]];
+    [description appendDescriptionOf:[DEKindOfClassMatcher matcherForBaseClass:targetClass]];
 }
 
 @end

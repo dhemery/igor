@@ -1,18 +1,18 @@
-#import "Igor.h"
+#import "DEIgor.h"
 #import "ViewFactory.h"
 
 @interface ChildPatternTests : SenTestCase
 @end
 
 @implementation ChildPatternTests {
-    Igor *igor;
+    DEIgor *igor;
     UIView *root;
     UIView *middle;
     UIView *leaf;
 }
 
 - (void)setUp {
-    igor = [Igor igor];
+    igor = [DEIgor igor];
     root = [ViewFactory viewWithName:@"root"];
     middle = [ViewFactory viewWithName:@"middle"];
     leaf = [ViewFactory viewWithName:@"leaf"];

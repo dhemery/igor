@@ -1,18 +1,18 @@
-#import "PatternParser.h"
+#import "DEPatternParser.h"
 #import "FakeSimpleParser.h"
-#import "InstanceParser.h"
-#import "Matcher.h"
-#import "InstanceMatcher.h"
-#import "UniversalMatcher.h"
-#import "KindOfClassMatcher.h"
+#import "DEInstanceParser.h"
+#import "DEMatcher.h"
+#import "DEInstanceMatcher.h"
+#import "DEUniversalMatcher.h"
+#import "DEKindOfClassMatcher.h"
 
 @interface InstanceParserTests : SenTestCase
 @end
 
 @implementation InstanceParserTests {
-    id <PatternParser> instanceParser;
+    id <DEPatternParser> instanceParser;
     NSMutableArray *simpleParsers;
-    id <PatternParser> classParser;
+    id <DEPatternParser> classParser;
 }
 
 - (void)setUp {
@@ -22,37 +22,37 @@
 
 - (void)testYieldsNilIfSimpleParsersYieldNoMatchers {
     [simpleParsers addObject:[FakeSimpleParser parserThatYieldsNoSimpleMatchers]];
-    instanceParser = [InstanceParser parserWithClassParser:classParser simpleParsers:simpleParsers];
+    instanceParser = [DEInstanceParser parserWithClassParser:classParser simpleParsers:simpleParsers];
 
     assertThat([instanceParser parseMatcherFromScanner:nil], nilValue());
 }
 
 - (void)testYieldsInstanceMatcherWithSimpleMatcherFromSimpleParser {
-    id <Matcher> simpleMatcher = [UniversalMatcher new];
+    id <DEMatcher> simpleMatcher = [DEUniversalMatcher new];
     [simpleParsers addObject:[FakeSimpleParser parserThatYieldsSimpleMatcher:simpleMatcher]];
-    instanceParser = [InstanceParser parserWithClassParser:classParser simpleParsers:simpleParsers];
+    instanceParser = [DEInstanceParser parserWithClassParser:classParser simpleParsers:simpleParsers];
 
-    InstanceMatcher *subjectMatcher = (InstanceMatcher *)[instanceParser parseMatcherFromScanner:nil];
+    DEInstanceMatcher *subjectMatcher = (DEInstanceMatcher *)[instanceParser parseMatcherFromScanner:nil];
 
     assertThat(subjectMatcher.simpleMatchers, contains(sameInstance(simpleMatcher), nil));
 }
 
 - (void)testYieldsInstanceMatcherWithAllSimpleMatchersFromAllSimpleParsers {
-    id <Matcher> matcher1 = [UniversalMatcher new];
+    id <DEMatcher> matcher1 = [DEUniversalMatcher new];
     [simpleParsers addObject:[FakeSimpleParser parserThatYieldsSimpleMatcher:matcher1]];
 
-    id <Matcher> matcher21 = [UniversalMatcher new];
-    id <Matcher> matcher22 = [UniversalMatcher new];
+    id <DEMatcher> matcher21 = [DEUniversalMatcher new];
+    id <DEMatcher> matcher22 = [DEUniversalMatcher new];
     [simpleParsers addObject:[FakeSimpleParser parserThatYieldsSimpleMatchers:[NSArray arrayWithObjects:matcher21, matcher22, nil]]];
 
-    id <Matcher> matcher31 = [UniversalMatcher new];
-    id <Matcher> matcher32 = [UniversalMatcher new];
-    id <Matcher> matcher33 = [UniversalMatcher new];
+    id <DEMatcher> matcher31 = [DEUniversalMatcher new];
+    id <DEMatcher> matcher32 = [DEUniversalMatcher new];
+    id <DEMatcher> matcher33 = [DEUniversalMatcher new];
     [simpleParsers addObject:[FakeSimpleParser parserThatYieldsSimpleMatchers:[NSArray arrayWithObjects:matcher31, matcher32, matcher33, nil]]];
 
-    instanceParser = [InstanceParser parserWithClassParser:classParser simpleParsers:simpleParsers];
+    instanceParser = [DEInstanceParser parserWithClassParser:classParser simpleParsers:simpleParsers];
 
-    InstanceMatcher *subjectMatcher = (InstanceMatcher *)[instanceParser parseMatcherFromScanner:nil];
+    DEInstanceMatcher *subjectMatcher = (DEInstanceMatcher *)[instanceParser parseMatcherFromScanner:nil];
 
     assertThat(subjectMatcher.simpleMatchers,
         containsInAnyOrder(
@@ -66,16 +66,16 @@
 }
 
 - (void)testRecognizesOnlyOneClassPatternPerInstancePattern {
-    id <Matcher> classMatcher1 = [UniversalMatcher new];
-    id <Matcher> classMatcher2 = [KindOfClassMatcher matcherForBaseClass:[UIButton class]];
+    id <DEMatcher> classMatcher1 = [DEUniversalMatcher new];
+    id <DEMatcher> classMatcher2 = [DEKindOfClassMatcher matcherForBaseClass:[UIButton class]];
     NSArray *classMatchers = [NSArray arrayWithObjects:classMatcher1, classMatcher2, nil];
     classParser = [FakeSimpleParser parserThatYieldsSimpleMatchers:classMatchers];
 
-    instanceParser = [InstanceParser parserWithClassParser:classParser simpleParsers:[NSArray array]];
+    instanceParser = [DEInstanceParser parserWithClassParser:classParser simpleParsers:[NSArray array]];
 
-    InstanceMatcher *matcher = (InstanceMatcher *)[instanceParser parseMatcherFromScanner:nil];
+    DEInstanceMatcher *matcher = (DEInstanceMatcher *)[instanceParser parseMatcherFromScanner:nil];
 
-    assertThat(matcher.simpleMatchers, hasItem(instanceOf([UniversalMatcher class])));
+    assertThat(matcher.simpleMatchers, hasItem(instanceOf([DEUniversalMatcher class])));
     assertThat(matcher.simpleMatchers, hasCountOf(1));
 }
 

@@ -2,6 +2,7 @@ require 'rake/clean'
 
 $version = '0.5.0'
 $libname = "libIgor-#{$version}.a"
+$debuglibname = "libIgorDebug-#{$version}.a"
 
 $dist_dir = 'dist'
 $build_dir = 'build'
@@ -11,21 +12,42 @@ directory $build_dir
 
 CLEAN.include $build_dir, $dist_dir
 
-desc "Build the universal library to dist, ready to release"
-task :release => [:clean, :universal_library]
-task :default => :release
+task :default => [:clean, :release]
 
-desc "Build the iPhone library"
-task :iphone_library do
-    sh "xcodebuild -scheme igor -sdk iphoneos -configuration Release BUILD_DIR=#{$build_dir} clean build"
+task :all => [:debug, :release]
+
+desc "Build the universal library debug version"
+task :debug => [:universal_debug]
+
+desc "Build the iPhone library debug version"
+task :iphone_debug do
+    sh "xcodebuild -sdk iphoneos -configuration Debug BUILD_DIR=#{$build_dir} clean build"
 end
 
-desc "Build the simulator library"
-task :simulator_library do
-    sh "xcodebuild -scheme igor -sdk iphonesimulator -configuration Release BUILD_DIR=#{$build_dir} clean build"
+desc "Build the iPhone library release version"
+task :iphone_release do
+    sh "xcodebuild -sdk iphoneos -configuration Release BUILD_DIR=#{$build_dir} clean build"
 end
 
-desc "Build the universal library"
-task :universal_library => [:iphone_library, :simulator_library, $dist_dir] do
+desc "Build the universal library release version"
+task :release => [:universal_release]
+
+desc "Build the simulator library debug version"
+task :simulator_debug do
+    sh "xcodebuild -sdk iphonesimulator -configuration Debug BUILD_DIR=#{$build_dir} clean build"
+end
+
+desc "Build the simulator library release version"
+task :simulator_release do
+    sh "xcodebuild -sdk iphonesimulator -configuration Release BUILD_DIR=#{$build_dir} clean build"
+end
+
+desc "Build the universal library debug version"
+task :universal_debug => [:iphone_debug, :simulator_debug, $dist_dir] do
+    `lipo -create -output "#{$dist_dir}/#{$debuglibname}" "#{$build_dir}/Debug-iphoneos/#{$libname}" "#{$build_dir}/Debug-iphonesimulator/#{$libname}"`
+end
+
+desc "Build the universal library release version"
+task :universal_release => [:iphone_release, :simulator_release, $dist_dir] do
     `lipo -create -output "#{$dist_dir}/#{$libname}" "#{$build_dir}/Release-iphoneos/#{$libname}" "#{$build_dir}/Release-iphonesimulator/#{$libname}"`
 end

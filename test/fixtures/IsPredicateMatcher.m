@@ -1,6 +1,6 @@
 #import <OCHamcrestIOS/HCDescription.h>
 #import "IsPredicateMatcher.h"
-#import "PredicateMatcher.h"
+#import "DEPredicateMatcher.h"
 
 @implementation IsPredicateMatcher {
     NSPredicate *predicate;
@@ -19,10 +19,10 @@
 }
 
 - (BOOL)matches:(id)item {
-    if (![item isMemberOfClass:[PredicateMatcher class]]) {
+    if (![item isMemberOfClass:[DEPredicateMatcher class]]) {
         return NO;
     }
-    PredicateMatcher *matcher = item;
+    DEPredicateMatcher *matcher = item;
     return [matcher.expression isEqualToString:[predicate predicateFormat]];
 }
 

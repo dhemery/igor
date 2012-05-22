@@ -1,16 +1,16 @@
-#import "Igor.h"
+#import "DEIgor.h"
 #import "ViewFactory.h"
 
 @interface PredicatePatternTests : SenTestCase
 @end
 
 @implementation PredicatePatternTests {
-    Igor *igor;
+    DEIgor *igor;
     UIView *view;
 }
 
 - (void)setUp {
-    igor = [Igor igor];
+    igor = [DEIgor igor];
     view = [ViewFactory button];
     view.accessibilityHint = @"the right accessibility hint";
 }

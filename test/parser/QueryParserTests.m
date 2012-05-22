@@ -1,56 +1,56 @@
-#import "QueryParser.h"
-#import "InstanceMatcher.h"
-#import "QueryScanner.h"
+#import "DEQueryParser.h"
+#import "DEInstanceMatcher.h"
+#import "DEQueryScanner.h"
 #import "IsKindOfClassMatcher.h"
 #import "IsMemberOfClassMatcher.h"
-#import "UniversalMatcher.h"
-#import "ChainParser.h"
-#import "InstanceParser.h"
-#import "PredicateParser.h"
-#import "ClassParser.h"
-#import "BranchParser.h"
+#import "DEUniversalMatcher.h"
+#import "DEChainParser.h"
+#import "DEInstanceParser.h"
+#import "DEPredicateParser.h"
+#import "DEClassParser.h"
+#import "DEBranchParser.h"
 
 @interface QueryParserTests : SenTestCase
 @end
 
 // todo Use mocks to focus the test.
 @implementation QueryParserTests {
-    id <PatternParser> parser;
+    id <DEPatternParser> parser;
 
 }
 
 - (void)setUp {
-    id <PatternParser> classParser = [ClassParser new];
-    id <PatternParser> predicateParser = [PredicateParser new];
+    id <DEPatternParser> classParser = [DEClassParser new];
+    id <DEPatternParser> predicateParser = [DEPredicateParser new];
     NSArray *simplePatternParsers = [NSArray arrayWithObject:predicateParser];
-    id <PatternParser> instanceParser = [InstanceParser parserWithClassParser:classParser simpleParsers:simplePatternParsers];
-    id <ChainParser> chainParser = [ChainParser parserWithCombinatorParser:nil];
-    id <PatternParser> branchParser = [BranchParser parserWithChainParser:chainParser];
+    id <DEPatternParser> instanceParser = [DEInstanceParser parserWithClassParser:classParser simpleParsers:simplePatternParsers];
+    id <DEChainParser> chainParser = [DEChainParser parserWithCombinatorParser:nil];
+    id <DEPatternParser> branchParser = [DEBranchParser parserWithChainParser:chainParser];
     NSArray *subjectPatternParsers = [NSArray arrayWithObjects:instanceParser, branchParser, nil];
     chainParser.subjectParsers = subjectPatternParsers;
 
-    parser = [QueryParser parserWithChainParser:chainParser];
+    parser = [DEQueryParser parserWithChainParser:chainParser];
 }
 
 - (void)testParsesAsteriskAsUniversalMatcher {
-    id <Matcher> matcher = [parser parseMatcherFromScanner:[QueryScanner scannerWithString:@"*"]];
+    id <DEMatcher> matcher = [parser parseMatcherFromScanner:[DEQueryScanner scannerWithString:@"*"]];
 
-    assertThat(matcher, instanceOf([InstanceMatcher class]));
-    InstanceMatcher *instanceMatcher = (InstanceMatcher *)matcher;
-    assertThat(instanceMatcher.simpleMatchers, contains(instanceOf([UniversalMatcher class]), nil));
+    assertThat(matcher, instanceOf([DEInstanceMatcher class]));
+    DEInstanceMatcher *instanceMatcher = (DEInstanceMatcher *)matcher;
+    assertThat(instanceMatcher.simpleMatchers, contains(instanceOf([DEUniversalMatcher class]), nil));
 }
 
 - (void)testParsesNameAsMemberOfClassMatcher {
-    id <Matcher> matcher = [parser parseMatcherFromScanner:[QueryScanner scannerWithString:@"UIButton"]];
-    InstanceMatcher *instanceMatcher = (InstanceMatcher *)matcher;
+    id <DEMatcher> matcher = [parser parseMatcherFromScanner:[DEQueryScanner scannerWithString:@"UIButton"]];
+    DEInstanceMatcher *instanceMatcher = (DEInstanceMatcher *)matcher;
 
     assertThat(instanceMatcher.simpleMatchers, hasItem([IsMemberOfClassMatcher forExactClass:[UIButton class]]));
     assertThat(instanceMatcher.simpleMatchers, hasCountOf(1));
 }
 
 - (void)testParsesNameAsteriskAsKindOfClassMatcher {
-    id <Matcher> matcher = [parser parseMatcherFromScanner:[QueryScanner scannerWithString:@"UILabel*"]];
-    InstanceMatcher *instanceMatcher = (InstanceMatcher *) matcher;
+    id <DEMatcher> matcher = [parser parseMatcherFromScanner:[DEQueryScanner scannerWithString:@"UILabel*"]];
+    DEInstanceMatcher *instanceMatcher = (DEInstanceMatcher *) matcher;
 
     assertThat(instanceMatcher.simpleMatchers, hasItem([IsKindOfClassMatcher forClass:[UILabel class]]));
     assertThat(instanceMatcher.simpleMatchers, hasCountOf(1));
