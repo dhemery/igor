@@ -1,6 +1,5 @@
 #import "DETagMatcher.h"
 
-
 @implementation DETagMatcher
 
 @synthesize targetTag;
