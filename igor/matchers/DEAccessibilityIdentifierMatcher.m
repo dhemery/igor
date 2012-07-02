@@ -1,8 +1,9 @@
-#import "DEIdentifierMatcher.h"
+#import "DEAccessibilityIdentifierMatcher.h"
 
-@implementation DEIdentifierMatcher
+@implementation DEAccessibilityIdentifierMatcher
 
 @synthesize targetAccessibilityIdentifier;
+
 
 - (NSString *)description {
     return [NSString stringWithFormat:@"#%@", self.targetAccessibilityIdentifier];

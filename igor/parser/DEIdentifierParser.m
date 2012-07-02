@@ -1,5 +1,5 @@
 #import "DEIdentifierParser.h"
-#import "DEIdentifierMatcher.h"
+#import "DEAccessibilityIdentifierMatcher.h"
 #import "DEQueryScanner.h"
 
 @implementation DEIdentifierParser
@@ -15,7 +15,7 @@
         return nil;
     }
     NSString *name = [self parseNameFrom:scanner];
-    return [DEIdentifierMatcher matcherWithAccessibilityIdentifier:name];
+    return [DEAccessibilityIdentifierMatcher matcherWithAccessibilityIdentifier:name];
 }
 
 @end

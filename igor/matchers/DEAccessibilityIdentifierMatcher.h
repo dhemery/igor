@@ -1,6 +1,6 @@
 #import "DEMatcher.h"
 
-@interface DEIdentifierMatcher : NSObject <DEMatcher>
+@interface DEAccessibilityIdentifierMatcher : NSObject <DEMatcher>
 
 @property(strong) NSString *targetAccessibilityIdentifier;
 

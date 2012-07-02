@@ -90,8 +90,8 @@
 		E621659DB794A5D612DCD4EE /* DEMemberOfClassMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C99147CD1BA00AF4115 /* DEMemberOfClassMatcher.h */; };
 		E621659DB794A5D612DCD4EF /* DEIgor.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C8F147CD1BA00AF4115 /* DEIgor.h */; };
 		E621659DB794A5D612DCD4F1 /* IdentifierMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4F0 /* IdentifierMatcherTests.m */; };
-		E621659DB794A5D612DCD4F5 /* DEIdentifierMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4F4 /* DEIdentifierMatcher.m */; };
-		E621659DB794A5D612DCD4F7 /* DEIdentifierMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4F6 /* DEIdentifierMatcher.h */; };
+		E621659DB794A5D612DCD4F5 /* DEAccessibilityIdentifierMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4F4 /* DEAccessibilityIdentifierMatcher.m */; };
+		E621659DB794A5D612DCD4F7 /* DEAccessibilityIdentifierMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4F6 /* DEAccessibilityIdentifierMatcher.h */; };
 		E621659DB794A5D612DCD4F9 /* DEIdentifierParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4F8 /* DEIdentifierParser.m */; };
 		E621659DB794A5D612DCD4FB /* DEIdentifierParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4FA /* DEIdentifierParser.h */; };
 		E621659DB794A5D612DCD4FD /* IdentifierParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4FC /* IdentifierParserTests.m */; };
@@ -108,7 +108,7 @@
 		E621659DB794A5D612DCD527 /* DEChildCombinator.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4CD /* DEChildCombinator.m */; };
 		E621659DB794A5D612DCD528 /* DECombinatorMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4AF /* DECombinatorMatcher.m */; };
 		E621659DB794A5D612DCD529 /* DEDescendantCombinator.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4C5 /* DEDescendantCombinator.m */; };
-		E621659DB794A5D612DCD52A /* DEIdentifierMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4F4 /* DEIdentifierMatcher.m */; };
+		E621659DB794A5D612DCD52A /* DEAccessibilityIdentifierMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4F4 /* DEAccessibilityIdentifierMatcher.m */; };
 		E621659DB794A5D612DCD52B /* DEIdentityMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D436E201518F9C300071950 /* DEIdentityMatcher.m */; };
 		E621659DB794A5D612DCD52C /* DEInstanceMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C8D147CD1BA00AF4115 /* DEInstanceMatcher.m */; };
 		E621659DB794A5D612DCD52D /* DEKindOfClassMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C97147CD1BA00AF4115 /* DEKindOfClassMatcher.m */; };
@@ -128,6 +128,9 @@
 		E621659DB794A5D612DCD53B /* DEIgor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C90147CD1BA00AF4115 /* DEIgor.m */; };
 		E621659DB794A5D612DCD53C /* DECombinatorParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4C9 /* DECombinatorParser.m */; };
 		E621659DB794A5D612DCD53E /* DEIgorSelfRegisteringSelectorEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD53D /* DEIgorSelfRegisteringSelectorEngine.m */; };
+		E621659DB794A5D612DCD540 /* DETagMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD53F /* DETagMatcher.m */; };
+		E621659DB794A5D612DCD542 /* DETagMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD541 /* DETagMatcher.h */; };
+		E621659DB794A5D612DCD544 /* DETagMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD53F /* DETagMatcher.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -246,8 +249,8 @@
 		E621659DB794A5D612DCD4D9 /* EmptySetCombinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptySetCombinator.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4DD /* ChildCombinatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildCombinatorTests.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4F0 /* IdentifierMatcherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdentifierMatcherTests.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4F4 /* DEIdentifierMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEIdentifierMatcher.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4F6 /* DEIdentifierMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEIdentifierMatcher.h; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD4F4 /* DEAccessibilityIdentifierMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEAccessibilityIdentifierMatcher.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD4F6 /* DEAccessibilityIdentifierMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEAccessibilityIdentifierMatcher.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4F8 /* DEIdentifierParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEIdentifierParser.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4FA /* DEIdentifierParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEIdentifierParser.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4FC /* IdentifierParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdentifierParserTests.m; sourceTree = "<group>"; };
@@ -262,6 +265,8 @@
 		E621659DB794A5D612DCD523 /* My1ClassName2With3Digits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = My1ClassName2With3Digits.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD525 /* My1ClassName2With3Digits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = My1ClassName2With3Digits.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD53D /* DEIgorSelfRegisteringSelectorEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEIgorSelfRegisteringSelectorEngine.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD53F /* DETagMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DETagMatcher.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD541 /* DETagMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DETagMatcher.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -475,6 +480,8 @@
 		E621659DB794A5D612DCD513 /* matchers */ = {
 			isa = PBXGroup;
 			children = (
+				E621659DB794A5D612DCD541 /* DETagMatcher.h */,
+				E621659DB794A5D612DCD53F /* DETagMatcher.m */,
 				E621659DB794A5D612DCD519 /* DESiblingCombinator.m */,
 				E621659DB794A5D612DCD51B /* DESiblingCombinator.h */,
 				E621659DB794A5D612DCD45E /* DEUniversalMatcher.m */,
@@ -490,8 +497,8 @@
 				2D695C8C147CD1BA00AF4115 /* DEInstanceMatcher.h */,
 				2D436E201518F9C300071950 /* DEIdentityMatcher.m */,
 				2D436E1F1518F9C300071950 /* DEIdentityMatcher.h */,
-				E621659DB794A5D612DCD4F4 /* DEIdentifierMatcher.m */,
-				E621659DB794A5D612DCD4F6 /* DEIdentifierMatcher.h */,
+				E621659DB794A5D612DCD4F4 /* DEAccessibilityIdentifierMatcher.m */,
+				E621659DB794A5D612DCD4F6 /* DEAccessibilityIdentifierMatcher.h */,
 				E621659DB794A5D612DCD4C5 /* DEDescendantCombinator.m */,
 				E621659DB794A5D612DCD4C7 /* DEDescendantCombinator.h */,
 				E621659DB794A5D612DCD4AF /* DECombinatorMatcher.m */,
@@ -575,9 +582,10 @@
 				E621659DB794A5D612DCD4ED /* DEMatcher.h in Headers */,
 				E621659DB794A5D612DCD4EE /* DEMemberOfClassMatcher.h in Headers */,
 				E621659DB794A5D612DCD4EF /* DEIgor.h in Headers */,
-				E621659DB794A5D612DCD4F7 /* DEIdentifierMatcher.h in Headers */,
+				E621659DB794A5D612DCD4F7 /* DEAccessibilityIdentifierMatcher.h in Headers */,
 				E621659DB794A5D612DCD4FB /* DEIdentifierParser.h in Headers */,
 				E621659DB794A5D612DCD51C /* DESiblingCombinator.h in Headers */,
+				E621659DB794A5D612DCD542 /* DETagMatcher.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -739,7 +747,7 @@
 				E621659DB794A5D612DCD527 /* DEChildCombinator.m in Sources */,
 				E621659DB794A5D612DCD528 /* DECombinatorMatcher.m in Sources */,
 				E621659DB794A5D612DCD529 /* DEDescendantCombinator.m in Sources */,
-				E621659DB794A5D612DCD52A /* DEIdentifierMatcher.m in Sources */,
+				E621659DB794A5D612DCD52A /* DEAccessibilityIdentifierMatcher.m in Sources */,
 				E621659DB794A5D612DCD52B /* DEIdentityMatcher.m in Sources */,
 				E621659DB794A5D612DCD52C /* DEInstanceMatcher.m in Sources */,
 				E621659DB794A5D612DCD52D /* DEKindOfClassMatcher.m in Sources */,
@@ -758,6 +766,7 @@
 				E621659DB794A5D612DCD53A /* DEQueryScanner.m in Sources */,
 				E621659DB794A5D612DCD53B /* DEIgor.m in Sources */,
 				E621659DB794A5D612DCD53C /* DECombinatorParser.m in Sources */,
+				E621659DB794A5D612DCD544 /* DETagMatcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -794,10 +803,11 @@
 				E621659DB794A5D612DCD4CA /* DECombinatorParser.m in Sources */,
 				E621659DB794A5D612DCD4CE /* DEChildCombinator.m in Sources */,
 				E621659DB794A5D612DCD4E4 /* DEIdentityMatcher.m in Sources */,
-				E621659DB794A5D612DCD4F5 /* DEIdentifierMatcher.m in Sources */,
+				E621659DB794A5D612DCD4F5 /* DEAccessibilityIdentifierMatcher.m in Sources */,
 				E621659DB794A5D612DCD4F9 /* DEIdentifierParser.m in Sources */,
 				E621659DB794A5D612DCD51A /* DESiblingCombinator.m in Sources */,
 				E621659DB794A5D612DCD53E /* DEIgorSelfRegisteringSelectorEngine.m in Sources */,
+				E621659DB794A5D612DCD540 /* DETagMatcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,8 +1,10 @@
 #import "DEPatternParser.h"
-#import "DEIdentifierMatcher.h"
+#import "DEAccessibilityIdentifierMatcher.h"
 #import "DEIdentifierParser.h"
 #import "DEQueryScanner.h"
-@interface IdentifierParserTests : XCTestCase
+#import "DETagMatcher.h"
+
+@interface IdentifierParserTests : SenTestCase
 @end
 
 @implementation IdentifierParserTests {
@@ -25,9 +27,9 @@
     NSString *allLettersIdentifier = [NSString stringWithFormat:@"#%@", allLetters];
     scanner = [DEQueryScanner scannerWithString:allLettersIdentifier];
 
-    DEIdentifierMatcher *matcher = (DEIdentifierMatcher *)[parser parseMatcherFromScanner:scanner];
+    DEAccessibilityIdentifierMatcher *matcher = (DEAccessibilityIdentifierMatcher *)[parser parseMatcherFromScanner:scanner];
 
-    assertThat(matcher, instanceOf([DEIdentifierMatcher class]));
+    assertThat(matcher, instanceOf([DEAccessibilityIdentifierMatcher class]));
     assertThat(matcher.targetAccessibilityIdentifier, equalTo(allLetters));
 }
 
@@ -36,10 +38,22 @@
     NSString *identifierWithDigits = [NSString stringWithFormat:@"#%@", withDigits];
     scanner = [DEQueryScanner scannerWithString:identifierWithDigits];
 
-    DEIdentifierMatcher *matcher = (DEIdentifierMatcher *)[parser parseMatcherFromScanner:scanner];
+    DEAccessibilityIdentifierMatcher *matcher = (DEAccessibilityIdentifierMatcher *)[parser parseMatcherFromScanner:scanner];
 
-    assertThat(matcher, instanceOf([DEIdentifierMatcher class]));
+    assertThat(matcher, instanceOf([DEAccessibilityIdentifierMatcher class]));
     assertThat(matcher.targetAccessibilityIdentifier, equalTo(withDigits));
+}
+
+- (void)testParsesDigitsAsTag {
+    NSInteger aNumber = 1234;
+    NSString *allDigitsIdentifier = [NSString stringWithFormat:@"#%d", aNumber];
+    scanner = [DEQueryScanner scannerWithString:allDigitsIdentifier];
+
+    DETagMatcher *matcher = (DETagMatcher *)[parser parseMatcherFromScanner:scanner];
+    assertThat(matcher, instanceOf([DETagMatcher class]));
+
+    equalToInt(aNumber);
+    assertThatInt(matcher.targetTag, equalToInt(aNumber));
 }
 
 @end

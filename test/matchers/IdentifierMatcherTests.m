@@ -1,7 +1,7 @@
 #import "ViewFactory.h"
 #import "MatchesView.h"
 #import "DEMatcher.h"
-#import "DEIdentifierMatcher.h"
+#import "DEAccessibilityIdentifierMatcher.h"
 
 @interface IdentifierMatcherTests : XCTestCase
 @end
@@ -10,14 +10,14 @@
 
 - (void)testMatchesAViewIfItsAccessibilityIdentifierEqualsTheDesignatedIdentifier {
     UIView *fred = [ViewFactory viewWithName:@"fred"];
-    id <DEMatcher> fredMatcher = [DEIdentifierMatcher matcherWithAccessibilityIdentifier:@"fred"];
+    id <DEMatcher> fredMatcher = [DEAccessibilityIdentifierMatcher matcherWithAccessibilityIdentifier:@"fred"];
 
     assertThat(fredMatcher, [MatchesView view:fred]);
 }
 
 - (void)testMismatchesAViewIfItsAccessibilityIdentifierDoesNotEqualTheDesignatedIdentifier {
     UIView *fred = [ViewFactory viewWithName:@"fred"];
-    id <DEMatcher> barneyMatcher = [DEIdentifierMatcher matcherWithAccessibilityIdentifier:@"barney"];
+    id <DEMatcher> barneyMatcher = [DEAccessibilityIdentifierMatcher matcherWithAccessibilityIdentifier:@"barney"];
 
     assertThat(barneyMatcher, isNot([MatchesView view:fred]));
 }
