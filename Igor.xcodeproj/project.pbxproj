@@ -272,7 +272,6 @@
 		E621659DB794A5D612DCD53F /* DETagMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DETagMatcher.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD541 /* DETagMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DETagMatcher.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD545 /* TagMatcherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagMatcherTests.m; sourceTree = "<group>"; };
-
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
