@@ -28,6 +28,7 @@
     if (name != nil) return [DEAccessibilityIdentifierMatcher matcherWithAccessibilityIdentifier:name];
 
     [scanner failBecause:@"Expected a name or integer after the #"];
+    return nil;
 }
 
 @end
