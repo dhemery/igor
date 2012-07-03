@@ -89,7 +89,7 @@
 		E621659DB794A5D612DCD4ED /* DEMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C98147CD1BA00AF4115 /* DEMatcher.h */; };
 		E621659DB794A5D612DCD4EE /* DEMemberOfClassMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C99147CD1BA00AF4115 /* DEMemberOfClassMatcher.h */; };
 		E621659DB794A5D612DCD4EF /* DEIgor.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C8F147CD1BA00AF4115 /* DEIgor.h */; };
-		E621659DB794A5D612DCD4F1 /* IdentifierMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4F0 /* IdentifierMatcherTests.m */; };
+		E621659DB794A5D612DCD4F1 /* AccessibilityIdentifierMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4F0 /* AccessibilityIdentifierMatcherTests.m */; };
 		E621659DB794A5D612DCD4F5 /* DEAccessibilityIdentifierMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4F4 /* DEAccessibilityIdentifierMatcher.m */; };
 		E621659DB794A5D612DCD4F7 /* DEAccessibilityIdentifierMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4F6 /* DEAccessibilityIdentifierMatcher.h */; };
 		E621659DB794A5D612DCD4F9 /* DEIdentifierParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4F8 /* DEIdentifierParser.m */; };
@@ -131,6 +131,7 @@
 		E621659DB794A5D612DCD540 /* DETagMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD53F /* DETagMatcher.m */; };
 		E621659DB794A5D612DCD542 /* DETagMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD541 /* DETagMatcher.h */; };
 		E621659DB794A5D612DCD544 /* DETagMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD53F /* DETagMatcher.m */; };
+		E621659DB794A5D612DCD546 /* TagMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD545 /* TagMatcherTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -248,7 +249,7 @@
 		E621659DB794A5D612DCD4D7 /* EmptySetCombinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptySetCombinator.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4D9 /* EmptySetCombinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptySetCombinator.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4DD /* ChildCombinatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildCombinatorTests.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4F0 /* IdentifierMatcherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdentifierMatcherTests.m; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD4F0 /* AccessibilityIdentifierMatcherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccessibilityIdentifierMatcherTests.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4F4 /* DEAccessibilityIdentifierMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEAccessibilityIdentifierMatcher.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4F6 /* DEAccessibilityIdentifierMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEAccessibilityIdentifierMatcher.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4F8 /* DEIdentifierParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEIdentifierParser.m; sourceTree = "<group>"; };
@@ -267,6 +268,7 @@
 		E621659DB794A5D612DCD53D /* DEIgorSelfRegisteringSelectorEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEIgorSelfRegisteringSelectorEngine.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD53F /* DETagMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DETagMatcher.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD541 /* DETagMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DETagMatcher.h; sourceTree = "<group>"; };
+		E621659DB794A5D612DCD545 /* TagMatcherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagMatcherTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -442,10 +444,11 @@
 		E621659DB794A5D612DCD510 /* matchers */ = {
 			isa = PBXGroup;
 			children = (
+				E621659DB794A5D612DCD545 /* TagMatcherTests.m */,
 				E621659DB794A5D612DCD51D /* SiblingCombinatorTests.m */,
 				2D695CD1147CD1D200AF4115 /* MemberOfClassMatcherTests.m */,
 				2D695CD0147CD1D200AF4115 /* KindOfClassMatcherTests.m */,
-				E621659DB794A5D612DCD4F0 /* IdentifierMatcherTests.m */,
+				E621659DB794A5D612DCD4F0 /* AccessibilityIdentifierMatcherTests.m */,
 				E621659DB794A5D612DCD4AB /* DescendantCombinatorTests.m */,
 				E621659DB794A5D612DCD4DD /* ChildCombinatorTests.m */,
 				E621659DB794A5D612DCD474 /* BranchMatcherTests.m */,
@@ -734,7 +737,7 @@
 				E621659DB794A5D612DCD4BA /* FakeSubjectParser.m in Sources */,
 				E621659DB794A5D612DCD4BE /* FakeCombinatorParser.m in Sources */,
 				E621659DB794A5D612DCD4DE /* ChildCombinatorTests.m in Sources */,
-				E621659DB794A5D612DCD4F1 /* IdentifierMatcherTests.m in Sources */,
+				E621659DB794A5D612DCD4F1 /* AccessibilityIdentifierMatcherTests.m in Sources */,
 				E621659DB794A5D612DCD4FD /* IdentifierParserTests.m in Sources */,
 				E621659DB794A5D612DCD501 /* ChildPatternTests.m in Sources */,
 				E621659DB794A5D612DCD505 /* CombinatorParserTests.m in Sources */,
@@ -767,6 +770,7 @@
 				E621659DB794A5D612DCD53B /* DEIgor.m in Sources */,
 				E621659DB794A5D612DCD53C /* DECombinatorParser.m in Sources */,
 				E621659DB794A5D612DCD544 /* DETagMatcher.m in Sources */,
+				E621659DB794A5D612DCD546 /* TagMatcherTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

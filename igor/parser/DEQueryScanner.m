@@ -28,6 +28,10 @@
     }
 }
 
+- (BOOL)scanDigitsIntoString:(NSString **)destination {
+    return [self.scanner scanCharactersFromSet:[NSCharacterSet decimalDigitCharacterSet] intoString:destination];
+}
+
 - (BOOL)scanNameIntoString:(NSString **)destination {
     NSMutableCharacterSet *nameCharacterSet = [NSMutableCharacterSet alphanumericCharacterSet];
     [nameCharacterSet addCharactersInString:@"_"];

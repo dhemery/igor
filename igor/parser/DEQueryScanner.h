@@ -4,6 +4,8 @@
 
 - (void)failIfNotAtEnd;
 
+- (BOOL)scanDigitsIntoString:(NSString **)destination;
+
 - (BOOL)scanNameIntoString:(NSString **)destination;
 
 - (BOOL)scanUpToString:(NSString *)string intoString:(NSString **)destination;

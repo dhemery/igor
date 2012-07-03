@@ -3,10 +3,10 @@
 #import "DEMatcher.h"
 #import "DEAccessibilityIdentifierMatcher.h"
 
-@interface IdentifierMatcherTests : XCTestCase
+@interface AccessibilityIdentifierMatcherTests : SenTestCase
 @end
 
-@implementation IdentifierMatcherTests
+@implementation AccessibilityIdentifierMatcherTests
 
 - (void)testMatchesAViewIfItsAccessibilityIdentifierEqualsTheDesignatedIdentifier {
     UIView *fred = [ViewFactory viewWithName:@"fred"];
