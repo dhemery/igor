@@ -154,6 +154,7 @@
 /* Begin PBXFileReference section */
 		2D0FABA7151FD242006E91F6 /* OCHamcrestIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCHamcrestIOS.framework; path = lib/OCHamcrestIOS.framework; sourceTree = "<group>"; };
 		2D2D4D0A1478787F00FF3D88 /* IgorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IgorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D0FABA7151FD242006E91F6 /* OCHamcrestIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCHamcrestIOS.framework; path = lib/OCHamcrestIOS.framework; sourceTree = "<group>"; };
 		2D3E1F3D1509B98200D62300 /* DescendantPatternTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescendantPatternTests.m; sourceTree = "<group>"; };
 		2D436E1F1518F9C300071950 /* DEIdentityMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEIdentityMatcher.h; sourceTree = "<group>"; };
 		2D436E201518F9C300071950 /* DEIdentityMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEIdentityMatcher.m; sourceTree = "<group>"; };
@@ -877,6 +878,9 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				WARNING_CFLAGS = "";
 				WRAPPER_EXTENSION = xctest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "apple-generic";
+				WARNING_CFLAGS = "";
 			};
 			name = Release;
 		};
@@ -993,7 +997,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 0.6;
+				CURRENT_PROJECT_VERSION = 1.0;
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
@@ -1017,7 +1021,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 0.6;
+				CURRENT_PROJECT_VERSION = 1.0;
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1046,6 +1050,8 @@
 				DSTROOT = /tmp/igor.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "igor/Igor-Prefix.pch";
+				LIBRARY_SEARCH_PATHS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)$(VERSION_INFO_PREFIX)$(CURRENT_PROJECT_VERSION)";
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = "-Wno-arc-performSelector-leaks";
@@ -1058,6 +1064,8 @@
 				DSTROOT = /tmp/igor.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "igor/Igor-Prefix.pch";
+				LIBRARY_SEARCH_PATHS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)$(VERSION_INFO_PREFIX)$(CURRENT_PROJECT_VERSION)";
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = "-Wno-arc-performSelector-leaks";

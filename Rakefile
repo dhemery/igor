@@ -6,6 +6,11 @@ BUILD = 'build'
 
 directory DIST
 directory BUILD
+$version = `agvtool vers -terse`.strip
+$libname = "libIgor#{$version}.a"
+$debuglibname = "libIgorDebug#{$version}.a"
+$dist_dir = 'dist'
+$build_dir = 'build'
 
 CLEAN.include BUILD, DIST
 
