@@ -1,9 +1,8 @@
 require 'rake/clean'
 
-$version = '0.5.0'
-$libname = "libIgor-#{$version}.a"
-$debuglibname = "libIgorDebug-#{$version}.a"
-
+$version = `agvtool vers -terse`.strip
+$libname = "libIgor#{$version}.a"
+$debuglibname = "libIgorDebug#{$version}.a"
 $dist_dir = 'dist'
 $build_dir = 'build'
 

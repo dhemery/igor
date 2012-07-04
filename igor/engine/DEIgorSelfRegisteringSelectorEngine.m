@@ -1,5 +1,7 @@
 #import "DEIgor.h"
 
+extern double IgorVersionNumber;
+
 @protocol SelectorEngine
 - (NSArray *)selectViewsWithSelector:(NSString *)query;
 @end
@@ -17,7 +19,7 @@
 
 + (void)applicationDidBecomeActive:(NSNotification *)notification {
     [SelectorEngineRegistry registerSelectorEngine:[[DEIgorSelfRegisteringSelectorEngine alloc] initWithIgor:[DEIgor igor]] WithName:@"igor"];
-    NSLog(@"Igor 0.5.0 registered with Frank as selector engine named 'igor'");
+    NSLog(@"Igor %f registered with Frank as selector engine named 'igor'", IgorVersionNumber);
 }
 
 - (id)initWithIgor:(DEIgor *)igor {
