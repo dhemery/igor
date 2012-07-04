@@ -957,7 +957,6 @@
 				DSTROOT = /tmp/igor.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "igor/Igor-Prefix.pch";
-				LIBRARY_SEARCH_PATHS = "";
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = "-Wno-arc-performSelector-leaks";
@@ -971,7 +970,6 @@
 				DSTROOT = /tmp/igor.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "igor/Igor-Prefix.pch";
-				LIBRARY_SEARCH_PATHS = "";
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "";
 				WARNING_CFLAGS = "-Wno-arc-performSelector-leaks";

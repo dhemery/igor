@@ -22,12 +22,12 @@ end
 
 desc "Build the iPhone library debug version for distribution"
 task :iphone_debug do
-    sh "xcodebuild -sdk iphoneos -configuration Debug PRODUCT_NAME=#{$product} BUILD_DIR=#{$build_dir} clean build"
+    sh "xcodebuild -sdk iphoneos -configuration Debug BUILD_DIR=#{$build_dir} clean build"
 end
 
 desc "Build the iPhone library release version"
 task :iphone_release do
-    sh "xcodebuild -sdk iphoneos -configuration Release PRODUCT_NAME=#{$product} BUILD_DIR=#{$build_dir} clean build"
+    sh "xcodebuild -sdk iphoneos -configuration Release BUILD_DIR=#{$build_dir} clean build"
 end
 
 desc "Build the universal library release version for distribution"
@@ -37,10 +37,10 @@ end
 
 desc "Build the simulator library debug version"
 task :simulator_debug do
-    sh "xcodebuild -sdk iphonesimulator -configuration Debug PRODUCT_NAME=#{$product} BUILD_DIR=#{$build_dir} clean build"
+    sh "xcodebuild -sdk iphonesimulator -configuration Debug BUILD_DIR=#{$build_dir} clean build"
 end
 
 desc "Build the simulator library release version"
 task :simulator_release do
-    sh "xcodebuild -sdk iphonesimulator -configuration Release PRODUCT_NAME=#{$product} BUILD_DIR=#{$build_dir} clean build"
+    sh "xcodebuild -sdk iphonesimulator -configuration Release BUILD_DIR=#{$build_dir} clean build"
 end
