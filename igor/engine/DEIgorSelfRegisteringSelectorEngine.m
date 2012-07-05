@@ -2,6 +2,7 @@
 
 extern double IgorVersionNumber;
 static NSString *const igorRegisteredName = @"igor";
+
 @protocol SelectorEngine
 - (NSArray *)selectViewsWithSelector:(NSString *)query;
 @end
