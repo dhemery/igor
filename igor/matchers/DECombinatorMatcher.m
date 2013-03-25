@@ -39,11 +39,11 @@
                     self.subjectMatcher];
 }
 
-- (BOOL)subjectMatcherMatchesView:(UIView *)subject {
+- (BOOL)subjectMatcherMatchesView:(id)subject {
     return [self.subjectMatcher matchesView:subject];
 }
 
-- (BOOL)relativeMatcherMatchesAnInverseRelativeOfView:(UIView *)subject {
+- (BOOL)relativeMatcherMatchesAnInverseRelativeOfView:(id)subject {
     if (!self.combinator) return YES;
 
     NSArray *inverseRelatives = [self.combinator inverseRelativesOfView:subject];
@@ -53,7 +53,7 @@
     return NO;
 }
 
-- (BOOL)matchesView:(UIView *)subject {
+- (BOOL)matchesView:(id)subject {
     return [self subjectMatcherMatchesView:subject]
             && [self relativeMatcherMatchesAnInverseRelativeOfView:subject];
 }

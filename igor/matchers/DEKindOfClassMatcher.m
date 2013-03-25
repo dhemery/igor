@@ -20,7 +20,7 @@
     return self;
 }
 
-- (BOOL)matchesView:(UIView *)view {
+- (BOOL)matchesView:(id)view {
     return [view isKindOfClass:self.matchClass];
 }
 

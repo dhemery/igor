@@ -36,7 +36,11 @@
 }
 
 - (NSArray *)selectViewsWithSelector:(NSString *)query {
-    UIView *tree = [[UIApplication sharedApplication] keyWindow];
+#if TARGET_OS_IPHONE
+  UIWindow *tree = [[UIApplication sharedApplication] keyWindow];
+#else
+  NSWindow *tree = [[NSApplication sharedApplication] keyWindow];
+#endif
     return [_igor findViewsThatMatchQuery:query inTree:tree];
 }
 

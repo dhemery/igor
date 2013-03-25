@@ -9,6 +9,7 @@
 #import "DEPredicateParser.h"
 #import "DEClassParser.h"
 #import "DEBranchParser.h"
+#import "ViewFactory.h"
 
 @interface QueryParserTests : SenTestCase
 @end
@@ -44,7 +45,7 @@
     id <DEMatcher> matcher = [parser parseMatcherFromScanner:[DEQueryScanner scannerWithString:@"UIButton"]];
     DEInstanceMatcher *instanceMatcher = (DEInstanceMatcher *)matcher;
 
-    assertThat(instanceMatcher.simpleMatchers, hasItem([IsMemberOfClassMatcher forExactClass:[UIButton class]]));
+    assertThat(instanceMatcher.simpleMatchers, hasItem([IsMemberOfClassMatcher forExactClass:[ViewFactory classForButton]]));
     assertThat(instanceMatcher.simpleMatchers, hasCountOf(1));
 }
 
@@ -52,7 +53,7 @@
     id <DEMatcher> matcher = [parser parseMatcherFromScanner:[DEQueryScanner scannerWithString:@"UILabel*"]];
     DEInstanceMatcher *instanceMatcher = (DEInstanceMatcher *) matcher;
 
-    assertThat(instanceMatcher.simpleMatchers, hasItem([IsKindOfClassMatcher forClass:[UILabel class]]));
+    assertThat(instanceMatcher.simpleMatchers, hasItem([IsKindOfClassMatcher forClass:[ViewFactory classForLabel]]));
     assertThat(instanceMatcher.simpleMatchers, hasCountOf(1));
 }
 

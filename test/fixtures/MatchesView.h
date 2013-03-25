@@ -2,6 +2,6 @@
 
 @interface MatchesView : HCBaseMatcher
 
-+ (MatchesView *)view:(UIView *)view;
++ (MatchesView *)view:(id)view;
 
 @end

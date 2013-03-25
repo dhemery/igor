@@ -6,7 +6,7 @@
 
 @implementation DescendantCombinatorTests {
     id <DECombinator> descendantCombinator;
-    UIView *subject;
+    id subject;
 }
 
 - (void)setUp {
@@ -21,7 +21,7 @@
 }
 
 - (void)testChildIsRelativeIfOneChild {
-    UIView *child = [ViewFactory viewWithName:@"child"];
+    id child = [ViewFactory viewWithName:@"child"];
     [subject addSubview:child];
 
     NSArray *relatives = [descendantCombinator relativesOfView:subject];
@@ -30,11 +30,11 @@
 }
 
 - (void)testAllChildrenAreRelatives {
-    UIView *child1 = [ViewFactory viewWithName:@"child 1"];
-    UIView *child2 = [ViewFactory viewWithName:@"child 2"];
-    UIView *child3 = [ViewFactory viewWithName:@"child 3"];
-    UIView *child4 = [ViewFactory viewWithName:@"child 4"];
-    UIView *child5 = [ViewFactory viewWithName:@"child 5"];
+    id child1 = [ViewFactory viewWithName:@"child 1"];
+    id child2 = [ViewFactory viewWithName:@"child 2"];
+    id child3 = [ViewFactory viewWithName:@"child 3"];
+    id child4 = [ViewFactory viewWithName:@"child 4"];
+    id child5 = [ViewFactory viewWithName:@"child 5"];
     [subject addSubview:child1];
     [subject addSubview:child2];
     [subject addSubview:child3];
@@ -53,8 +53,8 @@
 }
 
 - (void)testGrandchildrenAreRelatives {
-    UIView *child = [ViewFactory viewWithName:@"child"];
-    UIView *grandchild = [ViewFactory viewWithName:@"grandchild"];
+    id child = [ViewFactory viewWithName:@"child"];
+    id grandchild = [ViewFactory viewWithName:@"grandchild"];
     [subject addSubview:child];
     [child addSubview:grandchild];
 
@@ -70,7 +70,7 @@
 }
 
 - (void)testParentIsInverseRelative {
-    UIView *parent = [ViewFactory viewWithName:@"parent"];
+    id parent = [ViewFactory viewWithName:@"parent"];
     [parent addSubview:subject];
 
     NSArray *relatives = [descendantCombinator inverseRelativesOfView:subject];
@@ -79,8 +79,8 @@
 }
 
 - (void)testGrandParentIsInverseRelative {
-    UIView *parent = [ViewFactory viewWithName:@"parent"];
-    UIView *grandparent = [ViewFactory viewWithName:@"grandparent"];
+    id parent = [ViewFactory viewWithName:@"parent"];
+    id grandparent = [ViewFactory viewWithName:@"grandparent"];
     [grandparent addSubview:parent];
     [parent addSubview:subject];
 
@@ -90,11 +90,11 @@
 }
 
 - (void)testAllAncestorsAreInverseRelatives {
-    UIView *parent = [ViewFactory viewWithName:@"parent"];
-    UIView *grandparent = [ViewFactory viewWithName:@"grandparent"];
-    UIView *greatGrandparent = [ViewFactory viewWithName:@"great grandparent"];
-    UIView *greatGreatGrandparent = [ViewFactory viewWithName:@"great great grandparent"];
-    UIView *greatGreatGreatGrandparent = [ViewFactory viewWithName:@"great great great grandparent"];
+    id parent = [ViewFactory viewWithName:@"parent"];
+    id grandparent = [ViewFactory viewWithName:@"grandparent"];
+    id greatGrandparent = [ViewFactory viewWithName:@"great grandparent"];
+    id greatGreatGrandparent = [ViewFactory viewWithName:@"great great grandparent"];
+    id greatGreatGreatGrandparent = [ViewFactory viewWithName:@"great great great grandparent"];
     [greatGreatGreatGrandparent addSubview:greatGreatGrandparent];
     [greatGreatGrandparent addSubview:greatGrandparent];
     [greatGrandparent addSubview:grandparent];

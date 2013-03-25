@@ -7,16 +7,16 @@
     return @"~";
 }
 
-- (NSArray *)relativesOfView:(UIView *)subject {
+- (NSArray *)relativesOfView:(id)subject {
     NSMutableArray *siblings = [NSMutableArray array];
-    UIView *parent = [subject superview];
-    for (UIView *view in [parent subviews]) {
+    id parent = [subject superview];
+    for (id view in [parent subviews]) {
         if (view != subject) [siblings addObject:view];
     }
     return [NSArray arrayWithArray:siblings];
 }
 
-- (NSArray *)inverseRelativesOfView:(UIView *)subject {
+- (NSArray *)inverseRelativesOfView:(id)subject {
     return [self relativesOfView:subject];
 }
 

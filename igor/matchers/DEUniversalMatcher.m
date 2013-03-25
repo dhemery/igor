@@ -7,7 +7,7 @@
     return @"*";
 }
 
-- (BOOL)matchesView:(UIView *)ignoredView {
+- (BOOL)matchesView:(id)ignoredView {
     return YES;
 }
 

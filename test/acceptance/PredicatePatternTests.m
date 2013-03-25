@@ -6,13 +6,13 @@
 
 @implementation PredicatePatternTests {
     DEIgor *igor;
-    UIView *view;
+    id view;
 }
 
 - (void)setUp {
     igor = [DEIgor igor];
     view = [ViewFactory button];
-    view.accessibilityHint = @"the right accessibility hint";
+    [view performSelector:@selector(setAccessibilityHint:) withObject:@"the right accessibility hint"];
 }
 
 - (void)testMatchesSubjectThatSatisfiesPredicate {

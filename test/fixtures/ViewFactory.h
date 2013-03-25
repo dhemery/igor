@@ -1,14 +1,24 @@
 @interface ViewFactory : NSObject
 
-+ (UIButton *)button;
++ (Class)classForButton;
 
-+ (UIControl *)control;
++ (Class)classForControl;
 
-+ (UIView *)view;
++ (Class)classForLabel;
 
-+ (UIView *)viewWithName:(NSString *)name;
++ (Class)classForView;
 
-+ (UIWindow *)window;
++ (Class)classForWindow;
+
++ (id)button;
+
++ (id)control;
+
++ (id)view;
+
++ (id)viewWithName:(NSString *)name;
+
++ (id)window;
 
 @end
 

@@ -17,7 +17,7 @@
     return self;
 }
 
-- (BOOL)matchesView:(UIView *)view {
+- (BOOL)matchesView:(id)view {
     @try {
         return [self.predicate evaluateWithObject:view];
     }

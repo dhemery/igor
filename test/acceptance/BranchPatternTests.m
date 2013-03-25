@@ -6,13 +6,13 @@
 
 @implementation BranchPatternTests {
     DEIgor *igor;
-    UIView *root;
-    UIView *middle1;
-    UIView *middle1leaf1;
-    UIView *middle1leaf2;
-    UIView *middle2;
-    UIView *middle2leaf1;
-    UIView *middle2leaf2;
+    id root;
+    id middle1;
+    id middle1leaf1;
+    id middle1leaf2;
+    id middle2;
+    id middle2leaf1;
+    id middle2leaf2;
 }
 
 - (void)setUp {

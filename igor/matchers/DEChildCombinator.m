@@ -6,15 +6,15 @@
     return @">";
 }
 
-- (NSArray *)inverseRelativesOfView:(UIView *)subject {
-    UIView *parent = [subject superview];
+- (NSArray *)inverseRelativesOfView:(id)subject {
+    id parent = [subject superview];
     if (parent) {
         return [NSArray arrayWithObject:parent];
     }
     return [NSArray array];
 }
 
-- (NSArray *)relativesOfView:(UIView *)subject {
+- (NSArray *)relativesOfView:(id)subject {
     return [subject subviews];
 }
 

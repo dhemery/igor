@@ -5,6 +5,7 @@
 #import "IsMemberOfClassMatcher.h"
 #import "_My_ClassName__WithUnder_Scores.h"
 #import "My1ClassName2With3Digits.h"
+#import "ViewFactory.h"
 
 @interface ClassParserTests : SenTestCase
 @end
@@ -27,13 +28,13 @@
 - (void)testParsesNameAsMemberOfClassMatcher {
     scanner = [DEQueryScanner scannerWithString:@"UIButton"];
 
-    assertThat([parser parseMatcherFromScanner:scanner], [IsMemberOfClassMatcher forExactClass:[UIButton class]]);
+    assertThat([parser parseMatcherFromScanner:scanner], [IsMemberOfClassMatcher forExactClass:[ViewFactory classForButton]]);
 }
 
 - (void)testParsesNameAsteriskAsKindOfClassMatcher {
     scanner = [DEQueryScanner scannerWithString:@"UILabel*"];
 
-    assertThat([parser parseMatcherFromScanner:scanner], [IsKindOfClassMatcher forClass:[UILabel class]]);
+    assertThat([parser parseMatcherFromScanner:scanner], [IsKindOfClassMatcher forClass:[ViewFactory classForLabel]]);
 }
 
 - (void)testDeliversNoMatcherIfQueryDoesNotStartWithAClassPattern {

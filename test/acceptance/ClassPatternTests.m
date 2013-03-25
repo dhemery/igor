@@ -16,17 +16,17 @@
 - (void)testAnyClassPattern {
     NSString *query = @"*";
 
-    UIView *root = [ViewFactory viewWithName:@"root"];
-    UIView *view1 = [ViewFactory viewWithName:@"view1"];
-    UIView *view11 = [ViewFactory viewWithName:@"view11"];
-    UIView *view12 = [ViewFactory viewWithName:@"view12"];
-    UIView *view2 = [ViewFactory viewWithName:@"view2"];
-    UIView *view21 = [ViewFactory viewWithName:@"view21"];
-    UIView *view211 = [ViewFactory viewWithName:@"view211"];
-    UIView *view212 = [ViewFactory viewWithName:@"view212"];
-    UIView *view213 = [ViewFactory viewWithName:@"view213"];
-    UIView *view22 = [ViewFactory viewWithName:@"view22"];
-    UIView *view23 = [ViewFactory viewWithName:@"view23"];
+    id root = [ViewFactory viewWithName:@"root"];
+    id view1 = [ViewFactory viewWithName:@"view1"];
+    id view11 = [ViewFactory viewWithName:@"view11"];
+    id view12 = [ViewFactory viewWithName:@"view12"];
+    id view2 = [ViewFactory viewWithName:@"view2"];
+    id view21 = [ViewFactory viewWithName:@"view21"];
+    id view211 = [ViewFactory viewWithName:@"view211"];
+    id view212 = [ViewFactory viewWithName:@"view212"];
+    id view213 = [ViewFactory viewWithName:@"view213"];
+    id view22 = [ViewFactory viewWithName:@"view22"];
+    id view23 = [ViewFactory viewWithName:@"view23"];
 
     [root addSubview:view1];
     [view1 addSubview:view11];
@@ -47,10 +47,10 @@
 - (void)testMemberOfClassPattern {
     NSString *query = @"UIButton";
 
-    UIView *view = [ViewFactory view];
-    UIView *button = [ViewFactory button];
-    UIView *imageView = [ViewFactory view];
-    UIView *root = view;
+    id view = [ViewFactory view];
+    id button = [ViewFactory button];
+    id imageView = [ViewFactory view];
+    id root = view;
     [root addSubview:button];
     [button addSubview:imageView];
 
@@ -63,12 +63,12 @@
 - (void)testKindOfClassPattern {
     NSString *query = @"UIControl*";
 
-    UIView *viewOfBaseClassOfTargetClass = [ViewFactory view];
-    UIControl *viewOfTargetClass = [ViewFactory control];
-    UIView *viewOfClassDerivedFromTargetClass = [ViewFactory button];
-    UIView *viewOfUnrelatedClass = [ViewFactory window];
+    id viewOfBaseClassOfTargetClass = [ViewFactory view];
+    id viewOfTargetClass = [ViewFactory control];
+    id viewOfClassDerivedFromTargetClass = [ViewFactory button];
+    id viewOfUnrelatedClass = [ViewFactory window];
 
-    UIView *root = viewOfBaseClassOfTargetClass;
+    id root = viewOfBaseClassOfTargetClass;
     [root addSubview:viewOfTargetClass];
     [root addSubview:viewOfClassDerivedFromTargetClass];
     [root addSubview:viewOfUnrelatedClass];
