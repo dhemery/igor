@@ -707,12 +707,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 1.5;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/lib\"",
-				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "test/IgorTests-Prefix.pch";
@@ -723,6 +717,8 @@
 					"-lstdc++",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.7;
+				SUPPORTED_PLATFORMS = macosx;
 				VERSIONING_SYSTEM = "apple-generic";
 				WARNING_CFLAGS = "";
 				WRAPPER_EXTENSION = octest;
@@ -733,12 +729,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 1.5;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/lib\"",
-				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "test/IgorTests-Prefix.pch";
@@ -749,6 +739,8 @@
 					"-lstdc++",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.7;
+				SUPPORTED_PLATFORMS = macosx;
 				VERSIONING_SYSTEM = "apple-generic";
 				WARNING_CFLAGS = "";
 				WRAPPER_EXTENSION = octest;
@@ -775,8 +767,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OBJROOT = "$(SYMROOT)";
 				OTHER_CFLAGS = "-DTARGET_OS_IPHONE";
-				SDKROOT = iphoneos6.1;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SDKROOT = macosx10.7;
+				SUPPORTED_PLATFORMS = macosx;
 				SYMROOT = "$(PROJECT_DIR)/build";
 				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
@@ -810,8 +802,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OBJROOT = "$(SYMROOT)";
 				OTHER_CFLAGS = "-DTARGET_OS_IPHONE";
-				SDKROOT = iphoneos6.1;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SDKROOT = macosx10.7;
+				SUPPORTED_PLATFORMS = macosx;
 				SYMROOT = "$(PROJECT_DIR)/build";
 				USER_HEADER_SEARCH_PATHS = "";
 			};
@@ -828,6 +820,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)$(VERSION_INFO_PREFIX)$(CURRENT_PROJECT_VERSION)";
 				SDKROOT = macosx10.7;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = macosx;
 				USER_HEADER_SEARCH_PATHS = "";
 				VERSION_INFO_PREFIX = "-0.";
 				WARNING_CFLAGS = "-Wno-arc-performSelector-leaks";
@@ -845,6 +838,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)$(VERSION_INFO_PREFIX)$(CURRENT_PROJECT_VERSION)";
 				SDKROOT = macosx10.7;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = macosx;
 				USER_HEADER_SEARCH_PATHS = "";
 				VERSION_INFO_PREFIX = "-0.";
 				WARNING_CFLAGS = "-Wno-arc-performSelector-leaks";
