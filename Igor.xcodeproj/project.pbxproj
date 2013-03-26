@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D0FABA8151FD242006E91F6 /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D0FABA7151FD242006E91F6 /* OCHamcrestIOS.framework */; };
-		2D2D4D0B1478787F00FF3D88 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD437 /* SenTestingKit.framework */; };
 		2D2D4D0C1478787F00FF3D88 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD439 /* UIKit.framework */; };
 		2D2D4D0D1478787F00FF3D88 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD425 /* Foundation.framework */; };
 		2D3E1F3F1509B98200D62300 /* DescendantPatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3E1F3D1509B98200D62300 /* DescendantPatternTests.m */; };
@@ -37,6 +35,9 @@
 		2DCE893715193E8900B975EE /* DEChainParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE893515193E8900B975EE /* DEChainParser.m */; };
 		2DCE893B15193F6100B975EE /* DEInstanceParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DCE893915193F6100B975EE /* DEInstanceParser.h */; };
 		2DCE893C15193F6100B975EE /* DEInstanceParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE893A15193F6100B975EE /* DEInstanceParser.m */; };
+		C3DFBFAF17021B7000EF28B6 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3DFBFAE17021B7000EF28B6 /* SenTestingKit.framework */; };
+		C3DFBFB417021C5B00EF28B6 /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3DFBFB017021BBE00EF28B6 /* OCHamcrestIOS.framework */; };
+		C3DFBFB617021C6500EF28B6 /* OCHamcrestIOS.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C3DFBFB017021BBE00EF28B6 /* OCHamcrestIOS.framework */; };
 		E621659DB794A5D612DCD443 /* DEQueryScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD442 /* DEQueryScanner.m */; };
 		E621659DB794A5D612DCD445 /* DEQueryScanner.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD444 /* DEQueryScanner.h */; };
 		E621659DB794A5D612DCD449 /* DEChainMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD448 /* DEChainMatcher.h */; };
@@ -123,9 +124,21 @@
 		E621659DB794A5D612DCD53E /* DEIgorSelfRegisteringSelectorEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD53D /* DEIgorSelfRegisteringSelectorEngine.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C3DFBFB517021C5E00EF28B6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				C3DFBFB617021C6500EF28B6 /* OCHamcrestIOS.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		2D0FABA7151FD242006E91F6 /* OCHamcrestIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCHamcrestIOS.framework; path = lib/OCHamcrestIOS.framework; sourceTree = "<group>"; };
-		2D2D4D0A1478787F00FF3D88 /* IgorTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IgorTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D2D4D0A1478787F00FF3D88 /* libigorTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = libigorTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D3E1F3D1509B98200D62300 /* DescendantPatternTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescendantPatternTests.m; sourceTree = "<group>"; };
 		2D436E1F1518F9C300071950 /* DEIdentityMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEIdentityMatcher.h; sourceTree = "<group>"; };
 		2D436E201518F9C300071950 /* DEIdentityMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEIdentityMatcher.m; sourceTree = "<group>"; };
@@ -165,8 +178,14 @@
 		2DCE893915193F6100B975EE /* DEInstanceParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEInstanceParser.h; sourceTree = "<group>"; };
 		2DCE893A15193F6100B975EE /* DEInstanceParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEInstanceParser.m; sourceTree = "<group>"; };
 		2DCF9766147ED3FD003B0F38 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C3DFBFAE17021B7000EF28B6 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		C3DFBFB017021BBE00EF28B6 /* OCHamcrestIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCHamcrestIOS.framework; path = lib/UIKit/OCHamcrestIOS.framework; sourceTree = "<group>"; };
+		C3DFBFC017021DBE00EF28B6 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		C3DFBFC117021DBE00EF28B6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C3DFBFC217021DBE00EF28B6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C3DFBFE717021ECE00EF28B6 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		C3DFBFE917021ED300EF28B6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		E621659DB794A5D612DCD425 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		E621659DB794A5D612DCD437 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		E621659DB794A5D612DCD439 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E621659DB794A5D612DCD442 /* DEQueryScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEQueryScanner.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD444 /* DEQueryScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEQueryScanner.h; sourceTree = "<group>"; };
@@ -236,10 +255,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D2D4D0B1478787F00FF3D88 /* SenTestingKit.framework in Frameworks */,
+				C3DFBFAF17021B7000EF28B6 /* SenTestingKit.framework in Frameworks */,
 				2D2D4D0C1478787F00FF3D88 /* UIKit.framework in Frameworks */,
+				C3DFBFB417021C5B00EF28B6 /* OCHamcrestIOS.framework in Frameworks */,
 				2D2D4D0D1478787F00FF3D88 /* Foundation.framework in Frameworks */,
-				2D0FABA8151FD242006E91F6 /* OCHamcrestIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,9 +312,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C3DFBFBF17021DBE00EF28B6 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C3DFBFC017021DBE00EF28B6 /* AppKit.framework */,
+				C3DFBFC117021DBE00EF28B6 /* CoreData.framework */,
+				C3DFBFC217021DBE00EF28B6 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
 		E621659DB794A5D612DCD418 = {
 			isa = PBXGroup;
 			children = (
+				C3DFBFE917021ED300EF28B6 /* Foundation.framework */,
+				C3DFBFE717021ECE00EF28B6 /* Cocoa.framework */,
 				2D695C88147CD1BA00AF4115 /* igor */,
 				2D695CC9147CD1D200AF4115 /* test */,
 				E621659DB794A5D612DCD419 /* Products */,
@@ -306,7 +337,7 @@
 		E621659DB794A5D612DCD419 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2D2D4D0A1478787F00FF3D88 /* IgorTests.octest */,
+				2D2D4D0A1478787F00FF3D88 /* libigorTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -314,11 +345,12 @@
 		E621659DB794A5D612DCD424 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2D0FABA7151FD242006E91F6 /* OCHamcrestIOS.framework */,
+				C3DFBFAE17021B7000EF28B6 /* SenTestingKit.framework */,
+				C3DFBFB017021BBE00EF28B6 /* OCHamcrestIOS.framework */,
 				2DCF9766147ED3FD003B0F38 /* CoreGraphics.framework */,
 				E621659DB794A5D612DCD425 /* Foundation.framework */,
-				E621659DB794A5D612DCD437 /* SenTestingKit.framework */,
 				E621659DB794A5D612DCD439 /* UIKit.framework */,
+				C3DFBFBF17021DBE00EF28B6 /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -518,27 +550,28 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		2D2D4D091478787F00FF3D88 /* IgorTests */ = {
+		2D2D4D091478787F00FF3D88 /* libigorTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D2D4D181478788000FF3D88 /* Build configuration list for PBXNativeTarget "IgorTests" */;
+			buildConfigurationList = 2D2D4D181478788000FF3D88 /* Build configuration list for PBXNativeTarget "libigorTests" */;
 			buildPhases = (
 				2D9649DE147DA18400C40219 /* Headers */,
 				2D2D4D051478787F00FF3D88 /* Sources */,
 				2D2D4D061478787F00FF3D88 /* Frameworks */,
+				C3DFBFB517021C5E00EF28B6 /* CopyFiles */,
 				2D080CFF147DB8B4002A09E2 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = IgorTests;
+			name = libigorTests;
 			productName = igorTests;
-			productReference = 2D2D4D0A1478787F00FF3D88 /* IgorTests.octest */;
+			productReference = 2D2D4D0A1478787F00FF3D88 /* libigorTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
-		E621659DB794A5D612DCD41D /* Igor */ = {
+		E621659DB794A5D612DCD41D /* libigor */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E621659DB794A5D612DCD41E /* Build configuration list for PBXNativeTarget "Igor" */;
+			buildConfigurationList = E621659DB794A5D612DCD41E /* Build configuration list for PBXNativeTarget "libigor" */;
 			buildPhases = (
 				2D9649E1147DA20500C40219 /* Headers */,
 				E621659DB794A5D612DCD422 /* Sources */,
@@ -548,7 +581,7 @@
 			);
 			dependencies = (
 			);
-			name = Igor;
+			name = libigor;
 			productName = igor;
 			productType = "com.apple.product-type.library.static";
 		};
@@ -572,8 +605,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E621659DB794A5D612DCD41D /* Igor */,
-				2D2D4D091478787F00FF3D88 /* IgorTests */,
+				E621659DB794A5D612DCD41D /* libigor */,
+				2D2D4D091478787F00FF3D88 /* libigorTests */,
 			);
 		};
 /* End PBXProject section */
@@ -707,11 +740,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 1.5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks\n\n$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"\"$(SRCROOT)/lib/UIKit\"",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "test/IgorTests-Prefix.pch";
 				INFOPLIST_FILE = "test/IgorTests-Info.plist";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../OCHamcrest/Source/build/Release-iphonesimulator\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lstdc++",
@@ -727,11 +768,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 1.5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks\n\n$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"\"$(SRCROOT)/lib/UIKit\"",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "test/IgorTests-Prefix.pch";
 				INFOPLIST_FILE = "test/IgorTests-Info.plist";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../OCHamcrest/Source/build/Release-iphonesimulator\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lstdc++",
@@ -760,6 +809,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OBJROOT = "$(SYMROOT)";
 				OTHER_CFLAGS = "-DTARGET_OS_IPHONE";
 				SDKROOT = iphoneos6.1;
@@ -793,6 +843,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OBJROOT = "$(SYMROOT)";
 				OTHER_CFLAGS = "-DTARGET_OS_IPHONE";
 				SDKROOT = iphoneos6.1;
@@ -836,7 +887,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2D2D4D181478788000FF3D88 /* Build configuration list for PBXNativeTarget "IgorTests" */ = {
+		2D2D4D181478788000FF3D88 /* Build configuration list for PBXNativeTarget "libigorTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D2D4D191478788000FF3D88 /* Release */,
@@ -854,7 +905,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E621659DB794A5D612DCD41E /* Build configuration list for PBXNativeTarget "Igor" */ = {
+		E621659DB794A5D612DCD41E /* Build configuration list for PBXNativeTarget "libigor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E621659DB794A5D612DCD41F /* Release */,
