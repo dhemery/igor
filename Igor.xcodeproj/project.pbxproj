@@ -717,8 +717,6 @@
 					"-lstdc++",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.7;
-				SUPPORTED_PLATFORMS = macosx;
 				VERSIONING_SYSTEM = "apple-generic";
 				WARNING_CFLAGS = "";
 				WRAPPER_EXTENSION = octest;
@@ -739,8 +737,6 @@
 					"-lstdc++",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.7;
-				SUPPORTED_PLATFORMS = macosx;
 				VERSIONING_SYSTEM = "apple-generic";
 				WARNING_CFLAGS = "";
 				WRAPPER_EXTENSION = octest;
@@ -751,7 +747,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
@@ -767,8 +762,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OBJROOT = "$(SYMROOT)";
 				OTHER_CFLAGS = "-DTARGET_OS_IPHONE";
-				SDKROOT = macosx10.7;
-				SUPPORTED_PLATFORMS = macosx;
+				SDKROOT = iphoneos6.1;
 				SYMROOT = "$(PROJECT_DIR)/build";
 				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
@@ -779,7 +773,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
@@ -802,8 +795,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OBJROOT = "$(SYMROOT)";
 				OTHER_CFLAGS = "-DTARGET_OS_IPHONE";
-				SDKROOT = macosx10.7;
-				SUPPORTED_PLATFORMS = macosx;
+				SDKROOT = iphoneos6.1;
 				SYMROOT = "$(PROJECT_DIR)/build";
 				USER_HEADER_SEARCH_PATHS = "";
 			};
@@ -818,9 +810,7 @@
 				GCC_PREFIX_HEADER = "igor/Igor-Prefix.pch";
 				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)$(VERSION_INFO_PREFIX)$(CURRENT_PROJECT_VERSION)";
-				SDKROOT = macosx10.7;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = macosx;
 				USER_HEADER_SEARCH_PATHS = "";
 				VERSION_INFO_PREFIX = "-0.";
 				WARNING_CFLAGS = "-Wno-arc-performSelector-leaks";
@@ -836,9 +826,7 @@
 				GCC_PREFIX_HEADER = "igor/Igor-Prefix.pch";
 				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)$(VERSION_INFO_PREFIX)$(CURRENT_PROJECT_VERSION)";
-				SDKROOT = macosx10.7;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = macosx;
 				USER_HEADER_SEARCH_PATHS = "";
 				VERSION_INFO_PREFIX = "-0.";
 				WARNING_CFLAGS = "-Wno-arc-performSelector-leaks";
