@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2D2D4D0C1478787F00FF3D88 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD439 /* UIKit.framework */; };
-		2D2D4D0D1478787F00FF3D88 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD425 /* Foundation.framework */; };
 		2D3E1F3F1509B98200D62300 /* DescendantPatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3E1F3D1509B98200D62300 /* DescendantPatternTests.m */; };
 		2D436E281518FF6D00071950 /* ViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D436E261518FF6D00071950 /* ViewFactory.m */; };
 		2D496EA51486A513007E1FDE /* DEPredicateMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D496EA31486A513007E1FDE /* DEPredicateMatcher.h */; };
@@ -35,9 +34,124 @@
 		2DCE893715193E8900B975EE /* DEChainParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE893515193E8900B975EE /* DEChainParser.m */; };
 		2DCE893B15193F6100B975EE /* DEInstanceParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DCE893915193F6100B975EE /* DEInstanceParser.h */; };
 		2DCE893C15193F6100B975EE /* DEInstanceParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE893A15193F6100B975EE /* DEInstanceParser.m */; };
+		C3B017D5170231640052369E /* OCHamcrest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B017D31702315F0052369E /* OCHamcrest.framework */; };
 		C3DFBFAF17021B7000EF28B6 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3DFBFAE17021B7000EF28B6 /* SenTestingKit.framework */; };
 		C3DFBFB417021C5B00EF28B6 /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3DFBFB017021BBE00EF28B6 /* OCHamcrestIOS.framework */; };
 		C3DFBFB617021C6500EF28B6 /* OCHamcrestIOS.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C3DFBFB017021BBE00EF28B6 /* OCHamcrestIOS.framework */; };
+		C3DFC00317021FD400EF28B6 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3DFBFAE17021B7000EF28B6 /* SenTestingKit.framework */; };
+		C3DFC01E1702204300EF28B6 /* DEIgorSelfRegisteringSelectorEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD53D /* DEIgorSelfRegisteringSelectorEngine.m */; };
+		C3DFC01F1702204300EF28B6 /* DEIgor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C90147CD1BA00AF4115 /* DEIgor.m */; };
+		C3DFC0201702204300EF28B6 /* DEIgor.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C8F147CD1BA00AF4115 /* DEIgor.h */; };
+		C3DFC0211702204900EF28B6 /* DEIgor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C90147CD1BA00AF4115 /* DEIgor.m */; };
+		C3DFC0221702205900EF28B6 /* DESiblingCombinator.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD51B /* DESiblingCombinator.h */; };
+		C3DFC0231702206600EF28B6 /* DESiblingCombinator.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD519 /* DESiblingCombinator.m */; };
+		C3DFC0241702206600EF28B6 /* DEUniversalMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD45E /* DEUniversalMatcher.m */; };
+		C3DFC0251702206600EF28B6 /* DEUniversalMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD45C /* DEUniversalMatcher.h */; };
+		C3DFC0261702206600EF28B6 /* DEPredicateMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D496EA41486A513007E1FDE /* DEPredicateMatcher.m */; };
+		C3DFC0271702206600EF28B6 /* DEPredicateMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D496EA31486A513007E1FDE /* DEPredicateMatcher.h */; };
+		C3DFC0281702206600EF28B6 /* DEMemberOfClassMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C9A147CD1BA00AF4115 /* DEMemberOfClassMatcher.m */; };
+		C3DFC0291702206600EF28B6 /* DEMemberOfClassMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C99147CD1BA00AF4115 /* DEMemberOfClassMatcher.h */; };
+		C3DFC02A1702206600EF28B6 /* DEMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C98147CD1BA00AF4115 /* DEMatcher.h */; };
+		C3DFC02B1702206600EF28B6 /* DEKindOfClassMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C97147CD1BA00AF4115 /* DEKindOfClassMatcher.m */; };
+		C3DFC02C1702206600EF28B6 /* DEKindOfClassMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C96147CD1BA00AF4115 /* DEKindOfClassMatcher.h */; };
+		C3DFC02D1702206600EF28B6 /* DEInstanceMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C8D147CD1BA00AF4115 /* DEInstanceMatcher.m */; };
+		C3DFC02E1702206600EF28B6 /* DEInstanceMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C8C147CD1BA00AF4115 /* DEInstanceMatcher.h */; };
+		C3DFC02F1702206600EF28B6 /* DEIdentityMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D436E201518F9C300071950 /* DEIdentityMatcher.m */; };
+		C3DFC0301702206600EF28B6 /* DEIdentityMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D436E1F1518F9C300071950 /* DEIdentityMatcher.h */; };
+		C3DFC0311702206600EF28B6 /* DEIdentifierMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4F4 /* DEIdentifierMatcher.m */; };
+		C3DFC0321702206600EF28B6 /* DEIdentifierMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4F6 /* DEIdentifierMatcher.h */; };
+		C3DFC0331702206600EF28B6 /* DEDescendantCombinator.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4C5 /* DEDescendantCombinator.m */; };
+		C3DFC0341702206600EF28B6 /* DEDescendantCombinator.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4C7 /* DEDescendantCombinator.h */; };
+		C3DFC0351702206600EF28B6 /* DECombinatorMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4AF /* DECombinatorMatcher.m */; };
+		C3DFC0361702206600EF28B6 /* DECombinatorMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4B3 /* DECombinatorMatcher.h */; };
+		C3DFC0371702206600EF28B6 /* DECombinator.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4C3 /* DECombinator.h */; };
+		C3DFC0381702206600EF28B6 /* DEChildCombinator.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4CD /* DEChildCombinator.m */; };
+		C3DFC0391702206600EF28B6 /* DEChildCombinator.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4CF /* DEChildCombinator.h */; };
+		C3DFC03A1702206600EF28B6 /* DEChainMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD448 /* DEChainMatcher.h */; };
+		C3DFC03B1702206600EF28B6 /* DEBranchMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD478 /* DEBranchMatcher.m */; };
+		C3DFC03C1702206600EF28B6 /* DEBranchMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD47A /* DEBranchMatcher.h */; };
+		C3DFC03D1702206D00EF28B6 /* DEUniversalMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD45E /* DEUniversalMatcher.m */; };
+		C3DFC03E1702207E00EF28B6 /* DEPredicateMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D496EA41486A513007E1FDE /* DEPredicateMatcher.m */; };
+		C3DFC03F1702207E00EF28B6 /* DEMemberOfClassMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C9A147CD1BA00AF4115 /* DEMemberOfClassMatcher.m */; };
+		C3DFC0401702207E00EF28B6 /* DEKindOfClassMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C97147CD1BA00AF4115 /* DEKindOfClassMatcher.m */; };
+		C3DFC0411702207E00EF28B6 /* DEInstanceMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C8D147CD1BA00AF4115 /* DEInstanceMatcher.m */; };
+		C3DFC0421702207E00EF28B6 /* DEIdentityMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D436E201518F9C300071950 /* DEIdentityMatcher.m */; };
+		C3DFC0431702207E00EF28B6 /* DEIdentifierMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4F4 /* DEIdentifierMatcher.m */; };
+		C3DFC0441702207E00EF28B6 /* DEDescendantCombinator.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4C5 /* DEDescendantCombinator.m */; };
+		C3DFC0451702207E00EF28B6 /* DECombinatorMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4AF /* DECombinatorMatcher.m */; };
+		C3DFC0461702207E00EF28B6 /* DEChildCombinator.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4CD /* DEChildCombinator.m */; };
+		C3DFC0471702207E00EF28B6 /* DEBranchMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD478 /* DEBranchMatcher.m */; };
+		C3DFC0481702208D00EF28B6 /* DEQueryScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD442 /* DEQueryScanner.m */; };
+		C3DFC0491702208D00EF28B6 /* DEQueryParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C93147CD1BA00AF4115 /* DEQueryParser.m */; };
+		C3DFC04A1702208D00EF28B6 /* DEPredicateParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695CA4147CD1BA00AF4115 /* DEPredicateParser.m */; };
+		C3DFC04B1702208D00EF28B6 /* DEInstanceParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE893A15193F6100B975EE /* DEInstanceParser.m */; };
+		C3DFC04C1702208D00EF28B6 /* DEIgorParserException.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C95147CD1BA00AF4115 /* DEIgorParserException.m */; };
+		C3DFC04D1702208D00EF28B6 /* DEIdentifierParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4F8 /* DEIdentifierParser.m */; };
+		C3DFC04E1702208D00EF28B6 /* DECombinatorParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4C9 /* DECombinatorParser.m */; };
+		C3DFC04F1702208D00EF28B6 /* DEClassParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C8B147CD1BA00AF4115 /* DEClassParser.m */; };
+		C3DFC0501702208D00EF28B6 /* DEChainParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE893515193E8900B975EE /* DEChainParser.m */; };
+		C3DFC0511702208D00EF28B6 /* DEBranchParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD499 /* DEBranchParser.m */; };
+		C3DFC0521702209200EF28B6 /* DEQueryScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD442 /* DEQueryScanner.m */; };
+		C3DFC0531702209200EF28B6 /* DEQueryScanner.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD444 /* DEQueryScanner.h */; };
+		C3DFC0541702209200EF28B6 /* DEQueryParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C93147CD1BA00AF4115 /* DEQueryParser.m */; };
+		C3DFC0551702209200EF28B6 /* DEQueryParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C92147CD1BA00AF4115 /* DEQueryParser.h */; };
+		C3DFC0561702209200EF28B6 /* DEPredicateParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695CA4147CD1BA00AF4115 /* DEPredicateParser.m */; };
+		C3DFC0571702209200EF28B6 /* DEPredicateParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695CA3147CD1BA00AF4115 /* DEPredicateParser.h */; };
+		C3DFC0581702209200EF28B6 /* DEPatternParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD48A /* DEPatternParser.h */; };
+		C3DFC0591702209200EF28B6 /* DEInstanceParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE893A15193F6100B975EE /* DEInstanceParser.m */; };
+		C3DFC05A1702209200EF28B6 /* DEInstanceParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DCE893915193F6100B975EE /* DEInstanceParser.h */; };
+		C3DFC05B1702209200EF28B6 /* DEIgorParserException.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C95147CD1BA00AF4115 /* DEIgorParserException.m */; };
+		C3DFC05C1702209200EF28B6 /* DEIgorParserException.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C94147CD1BA00AF4115 /* DEIgorParserException.h */; };
+		C3DFC05D1702209200EF28B6 /* DEIdentifierParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4F8 /* DEIdentifierParser.m */; };
+		C3DFC05E1702209200EF28B6 /* DEIdentifierParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4FA /* DEIdentifierParser.h */; };
+		C3DFC05F1702209200EF28B6 /* DECombinatorParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4C9 /* DECombinatorParser.m */; };
+		C3DFC0601702209200EF28B6 /* DECombinatorParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4CB /* DECombinatorParser.h */; };
+		C3DFC0611702209200EF28B6 /* DEClassParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C8B147CD1BA00AF4115 /* DEClassParser.m */; };
+		C3DFC0621702209200EF28B6 /* DEClassParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C8A147CD1BA00AF4115 /* DEClassParser.h */; };
+		C3DFC0631702209200EF28B6 /* DEChainParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE893515193E8900B975EE /* DEChainParser.m */; };
+		C3DFC0641702209200EF28B6 /* DEChainParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DCE893415193E8900B975EE /* DEChainParser.h */; };
+		C3DFC0651702209200EF28B6 /* DEBranchParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD499 /* DEBranchParser.m */; };
+		C3DFC0661702209200EF28B6 /* DEBranchParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD49B /* DEBranchParser.h */; };
+		C3DFC067170220A300EF28B6 /* SiblingPatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD515 /* SiblingPatternTests.m */; };
+		C3DFC068170220A300EF28B6 /* SubjectMarkerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D99DB321517E94B00244226 /* SubjectMarkerTests.m */; };
+		C3DFC069170220A300EF28B6 /* PredicatePatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695CD4147CD1D200AF4115 /* PredicatePatternTests.m */; };
+		C3DFC06A170220A300EF28B6 /* DescendantPatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3E1F3D1509B98200D62300 /* DescendantPatternTests.m */; };
+		C3DFC06B170220A300EF28B6 /* ClassPatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695CCA147CD1D200AF4115 /* ClassPatternTests.m */; };
+		C3DFC06C170220A300EF28B6 /* ChildPatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD500 /* ChildPatternTests.m */; };
+		C3DFC06D170220A300EF28B6 /* BranchPatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD490 /* BranchPatternTests.m */; };
+		C3DFC06E170220B600EF28B6 /* My1ClassName2With3Digits.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD523 /* My1ClassName2With3Digits.m */; };
+		C3DFC06F170220B600EF28B6 /* _My_ClassName__WithUnder_Scores.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD51F /* _My_ClassName__WithUnder_Scores.m */; };
+		C3DFC070170220B600EF28B6 /* ViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D436E261518FF6D00071950 /* ViewFactory.m */; };
+		C3DFC071170220B600EF28B6 /* MatchesView.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD464 /* MatchesView.m */; };
+		C3DFC072170220B600EF28B6 /* IsPredicateMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD458 /* IsPredicateMatcher.m */; };
+		C3DFC073170220B600EF28B6 /* IsMemberOfClassMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD454 /* IsMemberOfClassMatcher.m */; };
+		C3DFC074170220B600EF28B6 /* IsKindOfClassMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD450 /* IsKindOfClassMatcher.m */; };
+		C3DFC075170220B600EF28B6 /* FalseMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD480 /* FalseMatcher.m */; };
+		C3DFC076170220B600EF28B6 /* FakeSubjectParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4B9 /* FakeSubjectParser.m */; };
+		C3DFC077170220B600EF28B6 /* FakeSimpleParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD49D /* FakeSimpleParser.m */; };
+		C3DFC078170220B600EF28B6 /* FakeCombinatorParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4BD /* FakeCombinatorParser.m */; };
+		C3DFC079170220B600EF28B6 /* EmptySetCombinator.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4D7 /* EmptySetCombinator.m */; };
+		C3DFC07A170220BE00EF28B6 /* SiblingCombinatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD51D /* SiblingCombinatorTests.m */; };
+		C3DFC07B170220BE00EF28B6 /* MemberOfClassMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695CD1147CD1D200AF4115 /* MemberOfClassMatcherTests.m */; };
+		C3DFC07C170220BE00EF28B6 /* KindOfClassMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695CD0147CD1D200AF4115 /* KindOfClassMatcherTests.m */; };
+		C3DFC07D170220BE00EF28B6 /* IdentifierMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4F0 /* IdentifierMatcherTests.m */; };
+		C3DFC07E170220BE00EF28B6 /* DescendantCombinatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4AB /* DescendantCombinatorTests.m */; };
+		C3DFC07F170220BE00EF28B6 /* ChildCombinatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4DD /* ChildCombinatorTests.m */; };
+		C3DFC080170220BE00EF28B6 /* BranchMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD474 /* BranchMatcherTests.m */; };
+		C3DFC081170220C300EF28B6 /* QueryParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695CCD147CD1D200AF4115 /* QueryParserTests.m */; };
+		C3DFC082170220C300EF28B6 /* PredicateParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695CD3147CD1D200AF4115 /* PredicateParserTests.m */; };
+		C3DFC083170220C300EF28B6 /* InstanceParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD494 /* InstanceParserTests.m */; };
+		C3DFC084170220C300EF28B6 /* IdentifierParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4FC /* IdentifierParserTests.m */; };
+		C3DFC085170220C300EF28B6 /* CombinatorParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD504 /* CombinatorParserTests.m */; };
+		C3DFC086170220C300EF28B6 /* ClassParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD46C /* ClassParserTests.m */; };
+		C3DFC087170220C300EF28B6 /* ChainParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4B5 /* ChainParserTests.m */; };
+		C3DFC0881702211C00EF28B6 /* Igor-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C8E147CD1BA00AF4115 /* Igor-Prefix.pch */; };
+		C3DFC0891702213B00EF28B6 /* DESiblingCombinator.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD519 /* DESiblingCombinator.m */; };
+		C3DFC08F1702236700EF28B6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3DFC08E1702236700EF28B6 /* Foundation.framework */; };
+		C3DFC0911702237000EF28B6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3DFC0901702237000EF28B6 /* Cocoa.framework */; };
+		C3DFC0931702247100EF28B6 /* DEIgorSelfRegisteringSelectorEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = C3DFC0921702247100EF28B6 /* DEIgorSelfRegisteringSelectorEngine.h */; };
+		C3DFC0941702247100EF28B6 /* DEIgorSelfRegisteringSelectorEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = C3DFC0921702247100EF28B6 /* DEIgorSelfRegisteringSelectorEngine.h */; };
+		C3DFC0991702294600EF28B6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3DFC0901702237000EF28B6 /* Cocoa.framework */; };
 		E621659DB794A5D612DCD443 /* DEQueryScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD442 /* DEQueryScanner.m */; };
 		E621659DB794A5D612DCD445 /* DEQueryScanner.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD444 /* DEQueryScanner.h */; };
 		E621659DB794A5D612DCD449 /* DEChainMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD448 /* DEChainMatcher.h */; };
@@ -124,6 +238,16 @@
 		E621659DB794A5D612DCD53E /* DEIgorSelfRegisteringSelectorEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD53D /* DEIgorSelfRegisteringSelectorEngine.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		C3DFC00517021FD400EF28B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E621659DB794A5D612DCD416 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C3DFBFEF17021FD400EF28B6;
+			remoteInfo = Igor;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		C3DFBFB517021C5E00EF28B6 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -177,15 +301,14 @@
 		2DCE893515193E8900B975EE /* DEChainParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEChainParser.m; sourceTree = "<group>"; };
 		2DCE893915193F6100B975EE /* DEInstanceParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEInstanceParser.h; sourceTree = "<group>"; };
 		2DCE893A15193F6100B975EE /* DEInstanceParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEInstanceParser.m; sourceTree = "<group>"; };
-		2DCF9766147ED3FD003B0F38 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C3B017D31702315F0052369E /* OCHamcrest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCHamcrest.framework; path = lib/Cocoa/OCHamcrest.framework; sourceTree = "<group>"; };
 		C3DFBFAE17021B7000EF28B6 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		C3DFBFB017021BBE00EF28B6 /* OCHamcrestIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCHamcrestIOS.framework; path = lib/UIKit/OCHamcrestIOS.framework; sourceTree = "<group>"; };
-		C3DFBFC017021DBE00EF28B6 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		C3DFBFC117021DBE00EF28B6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		C3DFBFC217021DBE00EF28B6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		C3DFBFE717021ECE00EF28B6 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
-		C3DFBFE917021ED300EF28B6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		E621659DB794A5D612DCD425 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C3DFBFF017021FD400EF28B6 /* Igor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Igor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3DFC00217021FD400EF28B6 /* IgorTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IgorTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3DFC08E1702236700EF28B6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		C3DFC0901702237000EF28B6 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		C3DFC0921702247100EF28B6 /* DEIgorSelfRegisteringSelectorEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEIgorSelfRegisteringSelectorEngine.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD439 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E621659DB794A5D612DCD442 /* DEQueryScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEQueryScanner.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD444 /* DEQueryScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEQueryScanner.h; sourceTree = "<group>"; };
@@ -258,7 +381,25 @@
 				C3DFBFAF17021B7000EF28B6 /* SenTestingKit.framework in Frameworks */,
 				2D2D4D0C1478787F00FF3D88 /* UIKit.framework in Frameworks */,
 				C3DFBFB417021C5B00EF28B6 /* OCHamcrestIOS.framework in Frameworks */,
-				2D2D4D0D1478787F00FF3D88 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3DFBFEC17021FD400EF28B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3DFC0911702237000EF28B6 /* Cocoa.framework in Frameworks */,
+				C3DFC08F1702236700EF28B6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3DFBFFE17021FD400EF28B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3DFC0991702294600EF28B6 /* Cocoa.framework in Frameworks */,
+				C3DFC00317021FD400EF28B6 /* SenTestingKit.framework in Frameworks */,
+				C3B017D5170231640052369E /* OCHamcrest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,9 +456,6 @@
 		C3DFBFBF17021DBE00EF28B6 /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C3DFBFC017021DBE00EF28B6 /* AppKit.framework */,
-				C3DFBFC117021DBE00EF28B6 /* CoreData.framework */,
-				C3DFBFC217021DBE00EF28B6 /* Foundation.framework */,
 			);
 			name = "Other Frameworks";
 			sourceTree = "<group>";
@@ -325,8 +463,6 @@
 		E621659DB794A5D612DCD418 = {
 			isa = PBXGroup;
 			children = (
-				C3DFBFE917021ED300EF28B6 /* Foundation.framework */,
-				C3DFBFE717021ECE00EF28B6 /* Cocoa.framework */,
 				2D695C88147CD1BA00AF4115 /* igor */,
 				2D695CC9147CD1D200AF4115 /* test */,
 				E621659DB794A5D612DCD419 /* Products */,
@@ -338,6 +474,8 @@
 			isa = PBXGroup;
 			children = (
 				2D2D4D0A1478787F00FF3D88 /* libigorTests.octest */,
+				C3DFBFF017021FD400EF28B6 /* Igor.framework */,
+				C3DFC00217021FD400EF28B6 /* IgorTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -345,10 +483,11 @@
 		E621659DB794A5D612DCD424 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C3DFC0901702237000EF28B6 /* Cocoa.framework */,
+				C3DFC08E1702236700EF28B6 /* Foundation.framework */,
 				C3DFBFAE17021B7000EF28B6 /* SenTestingKit.framework */,
+				C3B017D31702315F0052369E /* OCHamcrest.framework */,
 				C3DFBFB017021BBE00EF28B6 /* OCHamcrestIOS.framework */,
-				2DCF9766147ED3FD003B0F38 /* CoreGraphics.framework */,
-				E621659DB794A5D612DCD425 /* Foundation.framework */,
 				E621659DB794A5D612DCD439 /* UIKit.framework */,
 				C3DFBFBF17021DBE00EF28B6 /* Other Frameworks */,
 			);
@@ -431,6 +570,7 @@
 		E621659DB794A5D612DCD512 /* engine */ = {
 			isa = PBXGroup;
 			children = (
+				C3DFC0921702247100EF28B6 /* DEIgorSelfRegisteringSelectorEngine.h */,
 				E621659DB794A5D612DCD53D /* DEIgorSelfRegisteringSelectorEngine.m */,
 				2D695C90147CD1BA00AF4115 /* DEIgor.m */,
 				2D695C8F147CD1BA00AF4115 /* DEIgor.h */,
@@ -544,6 +684,43 @@
 				E621659DB794A5D612DCD4F7 /* DEIdentifierMatcher.h in Headers */,
 				E621659DB794A5D612DCD4FB /* DEIdentifierParser.h in Headers */,
 				E621659DB794A5D612DCD51C /* DESiblingCombinator.h in Headers */,
+				C3DFC0931702247100EF28B6 /* DEIgorSelfRegisteringSelectorEngine.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3DFBFED17021FD400EF28B6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3DFC0201702204300EF28B6 /* DEIgor.h in Headers */,
+				C3DFC0221702205900EF28B6 /* DESiblingCombinator.h in Headers */,
+				C3DFC0251702206600EF28B6 /* DEUniversalMatcher.h in Headers */,
+				C3DFC0271702206600EF28B6 /* DEPredicateMatcher.h in Headers */,
+				C3DFC0291702206600EF28B6 /* DEMemberOfClassMatcher.h in Headers */,
+				C3DFC02A1702206600EF28B6 /* DEMatcher.h in Headers */,
+				C3DFC02C1702206600EF28B6 /* DEKindOfClassMatcher.h in Headers */,
+				C3DFC02E1702206600EF28B6 /* DEInstanceMatcher.h in Headers */,
+				C3DFC0301702206600EF28B6 /* DEIdentityMatcher.h in Headers */,
+				C3DFC0321702206600EF28B6 /* DEIdentifierMatcher.h in Headers */,
+				C3DFC0341702206600EF28B6 /* DEDescendantCombinator.h in Headers */,
+				C3DFC0361702206600EF28B6 /* DECombinatorMatcher.h in Headers */,
+				C3DFC0371702206600EF28B6 /* DECombinator.h in Headers */,
+				C3DFC0391702206600EF28B6 /* DEChildCombinator.h in Headers */,
+				C3DFC03A1702206600EF28B6 /* DEChainMatcher.h in Headers */,
+				C3DFC03C1702206600EF28B6 /* DEBranchMatcher.h in Headers */,
+				C3DFC0531702209200EF28B6 /* DEQueryScanner.h in Headers */,
+				C3DFC0551702209200EF28B6 /* DEQueryParser.h in Headers */,
+				C3DFC0571702209200EF28B6 /* DEPredicateParser.h in Headers */,
+				C3DFC0581702209200EF28B6 /* DEPatternParser.h in Headers */,
+				C3DFC05A1702209200EF28B6 /* DEInstanceParser.h in Headers */,
+				C3DFC05C1702209200EF28B6 /* DEIgorParserException.h in Headers */,
+				C3DFC05E1702209200EF28B6 /* DEIdentifierParser.h in Headers */,
+				C3DFC0601702209200EF28B6 /* DECombinatorParser.h in Headers */,
+				C3DFC0621702209200EF28B6 /* DEClassParser.h in Headers */,
+				C3DFC0641702209200EF28B6 /* DEChainParser.h in Headers */,
+				C3DFC0661702209200EF28B6 /* DEBranchParser.h in Headers */,
+				C3DFC0881702211C00EF28B6 /* Igor-Prefix.pch in Headers */,
+				C3DFC0941702247100EF28B6 /* DEIgorSelfRegisteringSelectorEngine.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,6 +744,43 @@
 			name = libigorTests;
 			productName = igorTests;
 			productReference = 2D2D4D0A1478787F00FF3D88 /* libigorTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+		C3DFBFEF17021FD400EF28B6 /* Igor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3DFC01117021FD400EF28B6 /* Build configuration list for PBXNativeTarget "Igor" */;
+			buildPhases = (
+				C3DFBFEB17021FD400EF28B6 /* Sources */,
+				C3DFBFEC17021FD400EF28B6 /* Frameworks */,
+				C3DFBFED17021FD400EF28B6 /* Headers */,
+				C3DFBFEE17021FD400EF28B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Igor;
+			productName = Igor;
+			productReference = C3DFBFF017021FD400EF28B6 /* Igor.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C3DFC00117021FD400EF28B6 /* IgorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3DFC01417021FD400EF28B6 /* Build configuration list for PBXNativeTarget "IgorTests" */;
+			buildPhases = (
+				C3DFBFFD17021FD400EF28B6 /* Sources */,
+				C3DFBFFE17021FD400EF28B6 /* Frameworks */,
+				C3DFBFFF17021FD400EF28B6 /* Resources */,
+				C3DFC00017021FD400EF28B6 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C3DFC00617021FD400EF28B6 /* PBXTargetDependency */,
+			);
+			name = IgorTests;
+			productName = IgorTests;
+			productReference = C3DFC00217021FD400EF28B6 /* IgorTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 		E621659DB794A5D612DCD41D /* libigor */ = {
@@ -607,9 +821,28 @@
 			targets = (
 				E621659DB794A5D612DCD41D /* libigor */,
 				2D2D4D091478787F00FF3D88 /* libigorTests */,
+				C3DFBFEF17021FD400EF28B6 /* Igor */,
+				C3DFC00117021FD400EF28B6 /* IgorTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C3DFBFEE17021FD400EF28B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3DFBFFF17021FD400EF28B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		2D080CFF147DB8B4002A09E2 /* ShellScript */ = {
@@ -624,6 +857,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\\\n";
+		};
+		C3DFC00017021FD400EF28B6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -691,6 +937,100 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C3DFBFEB17021FD400EF28B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3DFC01E1702204300EF28B6 /* DEIgorSelfRegisteringSelectorEngine.m in Sources */,
+				C3DFC01F1702204300EF28B6 /* DEIgor.m in Sources */,
+				C3DFC0231702206600EF28B6 /* DESiblingCombinator.m in Sources */,
+				C3DFC0241702206600EF28B6 /* DEUniversalMatcher.m in Sources */,
+				C3DFC0261702206600EF28B6 /* DEPredicateMatcher.m in Sources */,
+				C3DFC0281702206600EF28B6 /* DEMemberOfClassMatcher.m in Sources */,
+				C3DFC02B1702206600EF28B6 /* DEKindOfClassMatcher.m in Sources */,
+				C3DFC02D1702206600EF28B6 /* DEInstanceMatcher.m in Sources */,
+				C3DFC02F1702206600EF28B6 /* DEIdentityMatcher.m in Sources */,
+				C3DFC0311702206600EF28B6 /* DEIdentifierMatcher.m in Sources */,
+				C3DFC0331702206600EF28B6 /* DEDescendantCombinator.m in Sources */,
+				C3DFC0351702206600EF28B6 /* DECombinatorMatcher.m in Sources */,
+				C3DFC0381702206600EF28B6 /* DEChildCombinator.m in Sources */,
+				C3DFC03B1702206600EF28B6 /* DEBranchMatcher.m in Sources */,
+				C3DFC0521702209200EF28B6 /* DEQueryScanner.m in Sources */,
+				C3DFC0541702209200EF28B6 /* DEQueryParser.m in Sources */,
+				C3DFC0561702209200EF28B6 /* DEPredicateParser.m in Sources */,
+				C3DFC0591702209200EF28B6 /* DEInstanceParser.m in Sources */,
+				C3DFC05B1702209200EF28B6 /* DEIgorParserException.m in Sources */,
+				C3DFC05D1702209200EF28B6 /* DEIdentifierParser.m in Sources */,
+				C3DFC05F1702209200EF28B6 /* DECombinatorParser.m in Sources */,
+				C3DFC0611702209200EF28B6 /* DEClassParser.m in Sources */,
+				C3DFC0631702209200EF28B6 /* DEChainParser.m in Sources */,
+				C3DFC0651702209200EF28B6 /* DEBranchParser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3DFBFFD17021FD400EF28B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3DFC0211702204900EF28B6 /* DEIgor.m in Sources */,
+				C3DFC03D1702206D00EF28B6 /* DEUniversalMatcher.m in Sources */,
+				C3DFC03E1702207E00EF28B6 /* DEPredicateMatcher.m in Sources */,
+				C3DFC03F1702207E00EF28B6 /* DEMemberOfClassMatcher.m in Sources */,
+				C3DFC0401702207E00EF28B6 /* DEKindOfClassMatcher.m in Sources */,
+				C3DFC0411702207E00EF28B6 /* DEInstanceMatcher.m in Sources */,
+				C3DFC0421702207E00EF28B6 /* DEIdentityMatcher.m in Sources */,
+				C3DFC0431702207E00EF28B6 /* DEIdentifierMatcher.m in Sources */,
+				C3DFC0441702207E00EF28B6 /* DEDescendantCombinator.m in Sources */,
+				C3DFC0451702207E00EF28B6 /* DECombinatorMatcher.m in Sources */,
+				C3DFC0461702207E00EF28B6 /* DEChildCombinator.m in Sources */,
+				C3DFC0471702207E00EF28B6 /* DEBranchMatcher.m in Sources */,
+				C3DFC0481702208D00EF28B6 /* DEQueryScanner.m in Sources */,
+				C3DFC0491702208D00EF28B6 /* DEQueryParser.m in Sources */,
+				C3DFC04A1702208D00EF28B6 /* DEPredicateParser.m in Sources */,
+				C3DFC04B1702208D00EF28B6 /* DEInstanceParser.m in Sources */,
+				C3DFC04C1702208D00EF28B6 /* DEIgorParserException.m in Sources */,
+				C3DFC04D1702208D00EF28B6 /* DEIdentifierParser.m in Sources */,
+				C3DFC04E1702208D00EF28B6 /* DECombinatorParser.m in Sources */,
+				C3DFC04F1702208D00EF28B6 /* DEClassParser.m in Sources */,
+				C3DFC0501702208D00EF28B6 /* DEChainParser.m in Sources */,
+				C3DFC0511702208D00EF28B6 /* DEBranchParser.m in Sources */,
+				C3DFC067170220A300EF28B6 /* SiblingPatternTests.m in Sources */,
+				C3DFC068170220A300EF28B6 /* SubjectMarkerTests.m in Sources */,
+				C3DFC069170220A300EF28B6 /* PredicatePatternTests.m in Sources */,
+				C3DFC06A170220A300EF28B6 /* DescendantPatternTests.m in Sources */,
+				C3DFC06B170220A300EF28B6 /* ClassPatternTests.m in Sources */,
+				C3DFC06C170220A300EF28B6 /* ChildPatternTests.m in Sources */,
+				C3DFC06D170220A300EF28B6 /* BranchPatternTests.m in Sources */,
+				C3DFC06E170220B600EF28B6 /* My1ClassName2With3Digits.m in Sources */,
+				C3DFC06F170220B600EF28B6 /* _My_ClassName__WithUnder_Scores.m in Sources */,
+				C3DFC070170220B600EF28B6 /* ViewFactory.m in Sources */,
+				C3DFC071170220B600EF28B6 /* MatchesView.m in Sources */,
+				C3DFC072170220B600EF28B6 /* IsPredicateMatcher.m in Sources */,
+				C3DFC073170220B600EF28B6 /* IsMemberOfClassMatcher.m in Sources */,
+				C3DFC074170220B600EF28B6 /* IsKindOfClassMatcher.m in Sources */,
+				C3DFC075170220B600EF28B6 /* FalseMatcher.m in Sources */,
+				C3DFC076170220B600EF28B6 /* FakeSubjectParser.m in Sources */,
+				C3DFC077170220B600EF28B6 /* FakeSimpleParser.m in Sources */,
+				C3DFC078170220B600EF28B6 /* FakeCombinatorParser.m in Sources */,
+				C3DFC079170220B600EF28B6 /* EmptySetCombinator.m in Sources */,
+				C3DFC07A170220BE00EF28B6 /* SiblingCombinatorTests.m in Sources */,
+				C3DFC07B170220BE00EF28B6 /* MemberOfClassMatcherTests.m in Sources */,
+				C3DFC07C170220BE00EF28B6 /* KindOfClassMatcherTests.m in Sources */,
+				C3DFC07D170220BE00EF28B6 /* IdentifierMatcherTests.m in Sources */,
+				C3DFC07E170220BE00EF28B6 /* DescendantCombinatorTests.m in Sources */,
+				C3DFC07F170220BE00EF28B6 /* ChildCombinatorTests.m in Sources */,
+				C3DFC080170220BE00EF28B6 /* BranchMatcherTests.m in Sources */,
+				C3DFC081170220C300EF28B6 /* QueryParserTests.m in Sources */,
+				C3DFC082170220C300EF28B6 /* PredicateParserTests.m in Sources */,
+				C3DFC083170220C300EF28B6 /* InstanceParserTests.m in Sources */,
+				C3DFC084170220C300EF28B6 /* IdentifierParserTests.m in Sources */,
+				C3DFC085170220C300EF28B6 /* CombinatorParserTests.m in Sources */,
+				C3DFC086170220C300EF28B6 /* ClassParserTests.m in Sources */,
+				C3DFC087170220C300EF28B6 /* ChainParserTests.m in Sources */,
+				C3DFC0891702213B00EF28B6 /* DESiblingCombinator.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E621659DB794A5D612DCD422 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -724,6 +1064,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		C3DFC00617021FD400EF28B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C3DFBFEF17021FD400EF28B6 /* Igor */;
+			targetProxy = C3DFC00517021FD400EF28B6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		2D695CCB147CD1D200AF4115 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
@@ -742,7 +1090,6 @@
 				CURRENT_PROJECT_VERSION = 1.5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks\n\n$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 					"\"$(SRCROOT)/lib/UIKit\"",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -770,7 +1117,6 @@
 				CURRENT_PROJECT_VERSION = 1.5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks\n\n$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 					"\"$(SRCROOT)/lib/UIKit\"",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -788,6 +1134,106 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VERSIONING_SYSTEM = "apple-generic";
 				WARNING_CFLAGS = "";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		C3DFC01217021FD400EF28B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "igor/Igor-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.7;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		C3DFC01317021FD400EF28B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "igor/Igor-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.7;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		C3DFC01517021FD400EF28B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)/lib/Cocoa\"",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "test/IgorTests-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "test/IgorTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.7;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		C3DFC01617021FD400EF28B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)/lib/Cocoa\"",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "test/IgorTests-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "test/IgorTests-Info.plist";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.7;
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -857,6 +1303,7 @@
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 5.0;
 				DSTROOT = /tmp/igor.dst;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "igor/Igor-Prefix.pch";
 				LIBRARY_SEARCH_PATHS = "";
@@ -873,6 +1320,7 @@
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 5.0;
 				DSTROOT = /tmp/igor.dst;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "igor/Igor-Prefix.pch";
 				LIBRARY_SEARCH_PATHS = "";
@@ -892,6 +1340,24 @@
 			buildConfigurations = (
 				2D2D4D191478788000FF3D88 /* Release */,
 				2D2D4D1A1478788000FF3D88 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3DFC01117021FD400EF28B6 /* Build configuration list for PBXNativeTarget "Igor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3DFC01217021FD400EF28B6 /* Release */,
+				C3DFC01317021FD400EF28B6 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3DFC01417021FD400EF28B6 /* Build configuration list for PBXNativeTarget "IgorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3DFC01517021FD400EF28B6 /* Release */,
+				C3DFC01617021FD400EF28B6 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -19,10 +19,6 @@
   return NSClassFromString([self classNameForView]);
 }
 
-+ (Class)classForWindow {
-  return NSClassFromString([self classNameForWindow]);
-}
-
 + (NSString *)classNameForButton {
 #if TARGET_OS_IPHONE
   return @"UIButton";
@@ -54,15 +50,6 @@
   return @"NSView";
 #endif
 }
-
-+ (NSString *)classNameForWindow {
-#if TARGET_OS_IPHONE
-  return @"UIWindow";
-#else
-  return @"NSWindow";
-#endif
-}
-
 
 + (id)button {
     return [self viewWithClass:[self classForButton]];
@@ -100,7 +87,11 @@
 
 
 + (id)window {
-    return [[[self classForWindow] alloc] initWithFrame:[self frame]];
+#if TARGET_OS_IPHONE
+  return [[UIWindow alloc] initWithFrame:[self frame]];
+#else
+  return [[NSWindow alloc] initWithContentRect:NSZeroRect styleMask:0 backing:NSBackingStoreNonretained defer:NO];
+#endif
 }
 
 @end

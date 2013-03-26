@@ -42,7 +42,7 @@
 }
 
 - (void)testParsesNameAsMemberOfClassMatcher {
-    id <DEMatcher> matcher = [parser parseMatcherFromScanner:[DEQueryScanner scannerWithString:@"UIButton"]];
+    id <DEMatcher> matcher = [parser parseMatcherFromScanner:[DEQueryScanner scannerWithString:[ViewFactory classNameForButton]]];
     DEInstanceMatcher *instanceMatcher = (DEInstanceMatcher *)matcher;
 
     assertThat(instanceMatcher.simpleMatchers, hasItem([IsMemberOfClassMatcher forExactClass:[ViewFactory classForButton]]));
@@ -50,7 +50,7 @@
 }
 
 - (void)testParsesNameAsteriskAsKindOfClassMatcher {
-    id <DEMatcher> matcher = [parser parseMatcherFromScanner:[DEQueryScanner scannerWithString:@"UILabel*"]];
+    id <DEMatcher> matcher = [parser parseMatcherFromScanner:[DEQueryScanner scannerWithString:[[ViewFactory classNameForLabel] stringByAppendingString:@"*"]]];
     DEInstanceMatcher *instanceMatcher = (DEInstanceMatcher *) matcher;
 
     assertThat(instanceMatcher.simpleMatchers, hasItem([IsKindOfClassMatcher forClass:[ViewFactory classForLabel]]));

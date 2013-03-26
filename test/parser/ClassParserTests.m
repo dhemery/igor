@@ -26,13 +26,13 @@
 }
 
 - (void)testParsesNameAsMemberOfClassMatcher {
-    scanner = [DEQueryScanner scannerWithString:@"UIButton"];
+    scanner = [DEQueryScanner scannerWithString:[ViewFactory classNameForButton]];
 
     assertThat([parser parseMatcherFromScanner:scanner], [IsMemberOfClassMatcher forExactClass:[ViewFactory classForButton]]);
 }
 
 - (void)testParsesNameAsteriskAsKindOfClassMatcher {
-    scanner = [DEQueryScanner scannerWithString:@"UILabel*"];
+  scanner = [DEQueryScanner scannerWithString:[[ViewFactory classNameForLabel] stringByAppendingString:@"*"]];
 
     assertThat([parser parseMatcherFromScanner:scanner], [IsKindOfClassMatcher forClass:[ViewFactory classForLabel]]);
 }

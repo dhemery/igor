@@ -45,7 +45,7 @@
 }
 
 - (void)testMemberOfClassPattern {
-    NSString *query = @"UIButton";
+    NSString *query = [ViewFactory classNameForButton];
 
     id view = [ViewFactory view];
     id button = [ViewFactory button];
@@ -61,12 +61,12 @@
 }
 
 - (void)testKindOfClassPattern {
-    NSString *query = @"UIControl*";
+    NSString *query = [[ViewFactory classNameForControl] stringByAppendingString:@"*"];
 
     id viewOfBaseClassOfTargetClass = [ViewFactory view];
     id viewOfTargetClass = [ViewFactory control];
     id viewOfClassDerivedFromTargetClass = [ViewFactory button];
-    id viewOfUnrelatedClass = [ViewFactory window];
+    id viewOfUnrelatedClass = [ViewFactory view];
 
     id root = viewOfBaseClassOfTargetClass;
     [root addSubview:viewOfTargetClass];

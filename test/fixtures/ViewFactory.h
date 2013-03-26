@@ -8,8 +8,6 @@
 
 + (Class)classForView;
 
-+ (Class)classForWindow;
-
 + (NSString *)classNameForButton;
 
 + (NSString *)classNameForControl;
@@ -17,8 +15,6 @@
 + (NSString *)classNameForLabel;
 
 + (NSString *)classNameForView;
-
-+ (NSString *)classNameForWindow;
 
 + (id)button;
 

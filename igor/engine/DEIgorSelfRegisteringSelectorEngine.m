@@ -1,23 +1,16 @@
-#import "DEIgor.h"
-
-@protocol SelectorEngine
-- (NSArray *)selectViewsWithSelector:(NSString *)query;
-@end
-
-@interface SelectorEngineRegistry
-+(void)registerSelectorEngine:(id <SelectorEngine>)engine WithName:(NSString *)name;
-@end
-
-@interface DEIgorSelfRegisteringSelectorEngine : NSObject <SelectorEngine>
-@end
+#import "DEIgorSelfRegisteringSelectorEngine.h"
 
 @implementation DEIgorSelfRegisteringSelectorEngine {
     DEIgor *_igor;
 }
 
 + (void)applicationDidBecomeActive:(NSNotification *)notification {
-    [SelectorEngineRegistry registerSelectorEngine:[[DEIgorSelfRegisteringSelectorEngine alloc] initWithIgor:[DEIgor igor]] WithName:@"igor"];
+  Class frankRegistry = NSClassFromString(@"SelectorEngineRegistry");
+  if (frankRegistry) {
+    DEIgorSelfRegisteringSelectorEngine *selectorEngine = [[DEIgorSelfRegisteringSelectorEngine alloc] initWithIgor:[DEIgor igor]];
+    [frankRegistry performSelector:@selector(registerSelectorEngine:WithName:) withObject:selectorEngine withObject:@"igor"];
     NSLog(@"Igor 0.5.0 registered with Frank as selector engine named 'igor'");
+  }
 }
 
 - (id)initWithIgor:(DEIgor *)igor {
