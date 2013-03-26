@@ -1,7 +1,7 @@
 @protocol DECombinator <NSObject>
 
-- (NSArray *)relativesOfView:(UIView *)view;
+- (NSArray *)relativesOfView:(id)view;
 
-- (NSArray *)inverseRelativesOfView:(UIView *)subject;
+- (NSArray *)inverseRelativesOfView:(id)subject;
 
 @end

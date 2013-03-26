@@ -5,7 +5,7 @@
 - (NSString *)description {
     return @"{false}";
 }
-- (BOOL)matchesView:(UIView *)view {
+- (BOOL)matchesView:(id)view {
     return NO;
 }
 

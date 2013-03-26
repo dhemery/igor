@@ -6,7 +6,7 @@
     return @" ";
 }
 
-- (NSArray *)inverseRelativesOfView:(UIView *)subject {
+- (NSArray *)inverseRelativesOfView:(id)subject {
     NSMutableArray *ancestors = [NSMutableArray array];
     id ancestor = [subject superview];
     while (ancestor) {
@@ -16,17 +16,17 @@
     return [NSArray arrayWithArray:ancestors];
 }
 
-- (NSArray *)inverseRelativesOfView:(UIView *)subject inTree:(UIView *)root {
+- (NSArray *)inverseRelativesOfView:(id)subject inTree:(id)root {
     NSMutableArray *ancestorsOfView = [NSMutableArray arrayWithArray:[self inverseRelativesOfView:subject]];
     NSArray *ancestorsOfRoot = [self inverseRelativesOfView:root];
     [ancestorsOfView removeObjectsInArray:ancestorsOfRoot];
     return [NSArray arrayWithArray:ancestorsOfView];
 }
 
-- (NSArray *)relativesOfView:(UIView *)subject {
+- (NSArray *)relativesOfView:(id)subject {
     NSArray *const subviews = [subject subviews];
     NSMutableArray* descendants = [NSMutableArray arrayWithArray:subviews];
-    for (UIView *subview in subviews) {
+    for (id subview in subviews) {
         [descendants addObjectsFromArray:[self relativesOfView:subview]];
     }
     return [NSArray arrayWithArray:descendants];

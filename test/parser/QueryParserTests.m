@@ -9,6 +9,7 @@
 #import "DEPredicateParser.h"
 #import "DEClassParser.h"
 #import "DEBranchParser.h"
+#import "ViewFactory.h"
 
 @interface QueryParserTests : SenTestCase
 @end
@@ -41,18 +42,18 @@
 }
 
 - (void)testParsesNameAsMemberOfClassMatcher {
-    id <DEMatcher> matcher = [parser parseMatcherFromScanner:[DEQueryScanner scannerWithString:@"UIButton"]];
+    id <DEMatcher> matcher = [parser parseMatcherFromScanner:[DEQueryScanner scannerWithString:[ViewFactory classNameForButton]]];
     DEInstanceMatcher *instanceMatcher = (DEInstanceMatcher *)matcher;
 
-    assertThat(instanceMatcher.simpleMatchers, hasItem([IsMemberOfClassMatcher forExactClass:[UIButton class]]));
+    assertThat(instanceMatcher.simpleMatchers, hasItem([IsMemberOfClassMatcher forExactClass:[ViewFactory classForButton]]));
     assertThat(instanceMatcher.simpleMatchers, hasCountOf(1));
 }
 
 - (void)testParsesNameAsteriskAsKindOfClassMatcher {
-    id <DEMatcher> matcher = [parser parseMatcherFromScanner:[DEQueryScanner scannerWithString:@"UILabel*"]];
+    id <DEMatcher> matcher = [parser parseMatcherFromScanner:[DEQueryScanner scannerWithString:[[ViewFactory classNameForLabel] stringByAppendingString:@"*"]]];
     DEInstanceMatcher *instanceMatcher = (DEInstanceMatcher *) matcher;
 
-    assertThat(instanceMatcher.simpleMatchers, hasItem([IsKindOfClassMatcher forClass:[UILabel class]]));
+    assertThat(instanceMatcher.simpleMatchers, hasItem([IsKindOfClassMatcher forClass:[ViewFactory classForLabel]]));
     assertThat(instanceMatcher.simpleMatchers, hasCountOf(1));
 }
 

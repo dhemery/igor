@@ -7,11 +7,11 @@
 @synthesize targetView;
 
 
-+ (DEIdentityMatcher *)matcherWithView:(UIView *)view description:(NSString *)description {
++ (DEIdentityMatcher *)matcherWithView:(id)view description:(NSString *)description {
      return [[self alloc] initWithView:view description:description];
 }
 
-+ (DEIdentityMatcher *)matcherWithView:(UIView *)view {
++ (DEIdentityMatcher *)matcherWithView:(id)view {
     NSString *description = [NSString stringWithFormat:@"{%@}", [view description]];
     return [self matcherWithView:view description:description];
 }
@@ -20,7 +20,7 @@
     return descriptionString;
 }
 
-- (DEIdentityMatcher *)initWithView:(UIView *)view description:(NSString *)description {
+- (DEIdentityMatcher *)initWithView:(id)view description:(NSString *)description {
     self = [super init];
     if (self) {
         descriptionString = description;
@@ -30,7 +30,7 @@
 }
 
 
-- (BOOL)matchesView:(UIView *)view {
+- (BOOL)matchesView:(id)view {
     return self.targetView == view;
 }
 

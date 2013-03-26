@@ -16,8 +16,12 @@
 }
 
 + (void)applicationDidBecomeActive:(NSNotification *)notification {
-    [SelectorEngineRegistry registerSelectorEngine:[[DEIgorSelfRegisteringSelectorEngine alloc] initWithIgor:[DEIgor igor]] WithName:@"igor"];
+  Class frankRegistry = NSClassFromString(@"SelectorEngineRegistry");
+  if (frankRegistry) {
+    DEIgorSelfRegisteringSelectorEngine *selectorEngine = [[DEIgorSelfRegisteringSelectorEngine alloc] initWithIgor:[DEIgor igor]];
+    [frankRegistry performSelector:@selector(registerSelectorEngine:WithName:) withObject:selectorEngine withObject:@"igor"];
     NSLog(@"Igor 0.5.0 registered with Frank as selector engine named 'igor'");
+  }
 }
 
 - (id)initWithIgor:(DEIgor *)igor {
@@ -31,12 +35,21 @@
 + (void)load {
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(applicationDidBecomeActive:)
+#if TARGET_OF_IPHONE
                                                  name:@"UIApplicationDidBecomeActiveNotification"
+#else
+                                                 name:@"NSApplicationDidBecomeActiveNotification"
+#endif
                                                object:nil];
 }
 
 - (NSArray *)selectViewsWithSelector:(NSString *)query {
-    UIView *tree = [[UIApplication sharedApplication] keyWindow];
+#if TARGET_OS_IPHONE
+  UIWindow *tree = [[UIApplication sharedApplication] keyWindow];
+#else
+  NSWindow *window = [[NSApplication sharedApplication] keyWindow];
+  NSView *tree = [window contentView];
+#endif
     return [_igor findViewsThatMatchQuery:query inTree:tree];
 }
 

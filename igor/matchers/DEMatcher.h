@@ -1,5 +1,5 @@
 @protocol DEMatcher <NSObject>
 
-- (BOOL)matchesView:(UIView *)view;
+- (BOOL)matchesView:(id)view;
 
 @end

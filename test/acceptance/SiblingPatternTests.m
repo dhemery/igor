@@ -6,12 +6,12 @@
 
 @implementation SiblingPatternTests {
     DEIgor *igor;
-    UIView *root;
-    UIView *middle1;
-    UIView *middle2;
-    UIView *middle3;
-    UIView *middle4;
-    UIView *middle5;
+    id root;
+    id middle1;
+    id middle2;
+    id middle3;
+    id middle4;
+    id middle5;
 }
 
 - (void)setUp {

@@ -1,4 +1,3 @@
-#import <OCHamcrestIOS/HCDescription.h>
 #import "IsPredicateMatcher.h"
 #import "DEPredicateMatcher.h"
 

@@ -17,7 +17,7 @@
     return self;
 }
 
-- (BOOL)matchesView:(UIView *)view {
+- (BOOL)matchesView:(id)view {
     for (id <DEMatcher> matcher in self.simpleMatchers) {
         if (![matcher matchesView:view]) return false;
     }

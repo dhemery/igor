@@ -9,14 +9,14 @@
 @implementation IdentifierMatcherTests
 
 - (void)testMatchesAViewIfItsAccessibilityIdentifierEqualsTheDesignatedIdentifier {
-    UIView *fred = [ViewFactory viewWithName:@"fred"];
+    id fred = [ViewFactory viewWithName:@"fred"];
     id <DEMatcher> fredMatcher = [DEIdentifierMatcher matcherWithAccessibilityIdentifier:@"fred"];
 
     assertThat(fredMatcher, [MatchesView view:fred]);
 }
 
 - (void)testMismatchesAViewIfItsAccessibilityIdentifierDoesNotEqualTheDesignatedIdentifier {
-    UIView *fred = [ViewFactory viewWithName:@"fred"];
+    id fred = [ViewFactory viewWithName:@"fred"];
     id <DEMatcher> barneyMatcher = [DEIdentifierMatcher matcherWithAccessibilityIdentifier:@"barney"];
 
     assertThat(barneyMatcher, isNot([MatchesView view:fred]));

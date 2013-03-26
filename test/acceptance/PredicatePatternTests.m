@@ -6,22 +6,34 @@
 
 @implementation PredicatePatternTests {
     DEIgor *igor;
-    UIView *view;
+    id view;
 }
 
 - (void)setUp {
     igor = [DEIgor igor];
     view = [ViewFactory button];
-    view.accessibilityHint = @"the right accessibility hint";
+# if TARGET_OS_IPHONE
+    [view setAccessibilityHint:@"the right accessibility hint"];
+#else
+    [view setTitle:@"the right title"];
+#endif
 }
 
 - (void)testMatchesSubjectThatSatisfiesPredicate {
+# if TARGET_OS_IPHONE
     NSArray *matchingViews = [igor findViewsThatMatchQuery:@"[accessibilityHint='the right accessibility hint']" inTree:view];
+#else
+    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"[title='the right title']" inTree:view];
+#endif
     assertThat(matchingViews, hasItem(view));
 }
 
 - (void)testMismatchesSubjectThatDoesNotSatisfyPredicate {
-    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"[accessibilityHint='wrong accessibility hint']" inTree:view];
+# if TARGET_OS_IPHONE
+    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"[accessibilityHint='wrong accesibility hint']" inTree:view];
+#else
+    NSArray *matchingViews = [igor findViewsThatMatchQuery:@"[title='the wrong title']" inTree:view];
+#endif
     assertThat(matchingViews, is(empty()));
 }
 

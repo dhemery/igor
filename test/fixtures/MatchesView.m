@@ -1,16 +1,15 @@
-#import <OCHamcrestIOS/HCDescription.h>
 #import "MatchesView.h"
 #import "DEMatcher.h"
 
 @implementation MatchesView {
-    UIView *targetView;
+    id targetView;
 }
 
 - (void)describeTo:(id <HCDescription>)description {
     [[description appendText:@"Matches view "] appendDescriptionOf:targetView];
 }
 
-- (MatchesView *)initWithView:(UIView *)view {
+- (id)initWithView:(id)view {
     self = [super init];
     if (self) {
         targetView = view;
@@ -22,7 +21,7 @@
     return [(id <DEMatcher>) matcher matchesView:targetView];
 }
 
-+ (MatchesView *)view:(UIView *)view {
++ (id)view:(id)view {
     return [[self alloc] initWithView:view];
 }
 

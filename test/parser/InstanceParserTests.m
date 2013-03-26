@@ -5,6 +5,7 @@
 #import "DEInstanceMatcher.h"
 #import "DEUniversalMatcher.h"
 #import "DEKindOfClassMatcher.h"
+#import "ViewFactory.h"
 
 @interface InstanceParserTests : SenTestCase
 @end
@@ -67,7 +68,7 @@
 
 - (void)testRecognizesOnlyOneClassPatternPerInstancePattern {
     id <DEMatcher> classMatcher1 = [DEUniversalMatcher new];
-    id <DEMatcher> classMatcher2 = [DEKindOfClassMatcher matcherForBaseClass:[UIButton class]];
+    id <DEMatcher> classMatcher2 = [DEKindOfClassMatcher matcherForBaseClass:[ViewFactory classForButton]];
     NSArray *classMatchers = [NSArray arrayWithObjects:classMatcher1, classMatcher2, nil];
     classParser = [FakeSimpleParser parserThatYieldsSimpleMatchers:classMatchers];
 

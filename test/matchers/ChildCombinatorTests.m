@@ -7,7 +7,7 @@
 
 @implementation ChildCombinatorTests {
     id <DECombinator> childCombinator;
-    UIView *subject;
+    id subject;
 }
 
 - (void)setUp {
@@ -22,7 +22,7 @@
 }
 
 - (void)testChildIsRelativeIfOneChild {
-    UIView *onlyChild = [ViewFactory viewWithName:@"child"];
+    id onlyChild = [ViewFactory viewWithName:@"child"];
     [subject addSubview:onlyChild];
 
     NSArray *relatives = [childCombinator relativesOfView:subject];
@@ -31,11 +31,11 @@
 }
 
 - (void)testAllChildrenAreRelatives {
-    UIView *child1 = [ViewFactory viewWithName:@"child 1"];
-    UIView *child2 = [ViewFactory viewWithName:@"child 2"];
-    UIView *child3 = [ViewFactory viewWithName:@"child 3"];
-    UIView *child4 = [ViewFactory viewWithName:@"child 4"];
-    UIView *child5 = [ViewFactory viewWithName:@"child 5"];
+    id child1 = [ViewFactory viewWithName:@"child 1"];
+    id child2 = [ViewFactory viewWithName:@"child 2"];
+    id child3 = [ViewFactory viewWithName:@"child 3"];
+    id child4 = [ViewFactory viewWithName:@"child 4"];
+    id child5 = [ViewFactory viewWithName:@"child 5"];
     [subject addSubview:child1];
     [subject addSubview:child2];
     [subject addSubview:child3];
@@ -54,8 +54,8 @@
 }
 
 - (void)testGrandchildrenAreNotRelatives {
-    UIView *child = [ViewFactory viewWithName:@"child"];
-    UIView *grandchild = [ViewFactory viewWithName:@"grandchild"];
+    id child = [ViewFactory viewWithName:@"child"];
+    id grandchild = [ViewFactory viewWithName:@"grandchild"];
     [subject addSubview:child];
     [child addSubview:grandchild];
 
@@ -71,7 +71,7 @@
 }
 
 - (void)testParentIsInverseRelative {
-    UIView *parent = [ViewFactory viewWithName:@"parent"];
+    id parent = [ViewFactory viewWithName:@"parent"];
     [parent addSubview:subject];
 
     NSArray *relatives = [childCombinator inverseRelativesOfView:subject];
@@ -80,8 +80,8 @@
 }
 
 - (void)testGrandParentIsNotInverseRelative {
-    UIView *parent = [ViewFactory viewWithName:@"parent"];
-    UIView *grandparent = [ViewFactory viewWithName:@"grandparent"];
+    id parent = [ViewFactory viewWithName:@"parent"];
+    id grandparent = [ViewFactory viewWithName:@"grandparent"];
     [grandparent addSubview:parent];
     [parent addSubview:subject];
 

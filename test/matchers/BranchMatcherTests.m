@@ -11,9 +11,9 @@
 @end
 
 @implementation BranchMatcherTests {
-    UIView *root;
-    UIView *middle;
-    UIView *leaf;
+    id root;
+    id middle;
+    id leaf;
 }
 
 - (void)setUp {

@@ -6,11 +6,11 @@
     return @"{empty.combinator}";
 }
 
-- (NSArray *)relativesOfView:(UIView *)view {
+- (NSArray *)relativesOfView:(id)view {
     return [NSArray array];
 }
 
-- (NSArray *)inverseRelativesOfView:(UIView *)subject {
+- (NSArray *)inverseRelativesOfView:(id)subject {
     return [NSArray array];
 }
 

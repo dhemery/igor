@@ -6,9 +6,9 @@
 
 @implementation DescendantPatternTests {
     DEIgor *igor;
-    UIView *root;
-    UIView *middle;
-    UIView *leaf;
+    id root;
+    id middle;
+    id leaf;
 }
 
 - (void)setUp {

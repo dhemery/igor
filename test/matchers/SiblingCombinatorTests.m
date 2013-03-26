@@ -7,8 +7,8 @@
 
 @implementation SiblingCombinatorTests {
     id <DECombinator> siblingCombinator;
-    UIView *subject;
-    UIView *root;
+    id subject;
+    id root;
 }
 
 - (void)setUp {
@@ -25,7 +25,7 @@
 }
 
 - (void)testSingleSiblingIsARelative {
-    UIView *onlySibling = [ViewFactory viewWithName:@"sibling"];
+    id onlySibling = [ViewFactory viewWithName:@"sibling"];
     [root addSubview:onlySibling];
 
     NSArray *relatives = [siblingCombinator relativesOfView:subject];
@@ -34,10 +34,10 @@
 }
 
 - (void)testAllSiblingsAreRelatives {
-    UIView *sibling1 = [ViewFactory viewWithName:@"sibling1"];
-    UIView *sibling2 = [ViewFactory viewWithName:@"sibling2"];
-    UIView *sibling3 = [ViewFactory viewWithName:@"sibling3"];
-    UIView *sibling4 = [ViewFactory viewWithName:@"sibling4"];
+    id sibling1 = [ViewFactory viewWithName:@"sibling1"];
+    id sibling2 = [ViewFactory viewWithName:@"sibling2"];
+    id sibling3 = [ViewFactory viewWithName:@"sibling3"];
+    id sibling4 = [ViewFactory viewWithName:@"sibling4"];
     [root addSubview:sibling1];
     [root addSubview:sibling2];
     [root addSubview:sibling3];
@@ -62,10 +62,10 @@
 }
 
 - (void)testAllSiblingsAreInverseRelatives {
-    UIView *sibling1 = [ViewFactory viewWithName:@"sibling1"];
-    UIView *sibling2 = [ViewFactory viewWithName:@"sibling2"];
-    UIView *sibling3 = [ViewFactory viewWithName:@"sibling3"];
-    UIView *sibling4 = [ViewFactory viewWithName:@"sibling4"];
+    id sibling1 = [ViewFactory viewWithName:@"sibling1"];
+    id sibling2 = [ViewFactory viewWithName:@"sibling2"];
+    id sibling3 = [ViewFactory viewWithName:@"sibling3"];
+    id sibling4 = [ViewFactory viewWithName:@"sibling4"];
     [root addSubview:sibling1];
     [root addSubview:sibling2];
     [root addSubview:sibling3];

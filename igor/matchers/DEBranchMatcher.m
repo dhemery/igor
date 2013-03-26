@@ -34,7 +34,7 @@
     return [NSString stringWithFormat:@"(%@%@)", self.subjectMatcher, self.relativeMatcher];
 }
 
-- (BOOL)matchesView:(UIView *)subject {
+- (BOOL)matchesView:(id)subject {
     if (![self.subjectMatcher matchesView:subject]) return NO;
 
     if ([self.combinators count] == 0) return YES;
@@ -44,13 +44,13 @@
     for (id<DECombinator> combinator in self.combinators) {
         NSMutableArray *previousScope = scope;
         scope = [NSMutableArray array];
-        for (UIView *view in previousScope) {
+        for (id view in previousScope) {
             NSArray *newRelatives = [combinator relativesOfView:view];
             [scope addObjectsFromArray:newRelatives];
         }
     }
 
-    for (UIView *relative in scope) {
+    for (id relative in scope) {
         self.subjectIdentityMatcher.targetView = subject;
         if ([self.relativeMatcher matchesView:relative]) return YES;
     }

@@ -2,10 +2,10 @@
 
 @interface DEIdentityMatcher : NSObject <DEMatcher>
 
-@property(strong) UIView *targetView;
+@property(strong) id targetView;
 
-+ (DEIdentityMatcher *)matcherWithView:(UIView *)view description:(NSString *)description;
++ (DEIdentityMatcher *)matcherWithView:(id)view description:(NSString *)description;
 
-+ (DEIdentityMatcher *)matcherWithView:(UIView *)view;
++ (DEIdentityMatcher *)matcherWithView:(id)view;
 
 @end

@@ -14,17 +14,17 @@
     id <DEPatternParser> _parser;
 }
 
-- (NSArray *)findViewsThatMatchMatcher:(id <DEMatcher>)matcher inTree:(UIView *)tree {
+- (NSArray *)findViewsThatMatchMatcher:(id <DEMatcher>)matcher inTree:(id)tree {
     NSMutableSet *matchingViews = [NSMutableSet set];
     NSMutableArray *allViews = [NSMutableArray arrayWithObject:tree];
     [allViews addObjectsFromArray:[[DEDescendantCombinator new] relativesOfView:tree]];
-    for (UIView *view in allViews) {
+    for (id view in allViews) {
         if ([matcher matchesView:view]) [matchingViews addObject:view];
     }
     return [matchingViews allObjects];
 }
 
-- (NSArray *)findViewsThatMatchQuery:(NSString *)query inTree:(UIView *)tree {
+- (NSArray *)findViewsThatMatchQuery:(NSString *)query inTree:(id)tree {
     NSString *stripped = [query stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     id <DEQueryScanner> scanner = [DEQueryScanner scannerWithString:stripped];
     id <DEMatcher> matcher = [_parser parseMatcherFromScanner:scanner];
