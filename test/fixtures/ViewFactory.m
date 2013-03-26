@@ -4,44 +4,65 @@
 @implementation ViewFactory
 
 + (Class)classForButton {
-#if TARGET_OS_IPHONE
-  return [UIButton class];
-#else
-  return [NSButton class];
-#endif
+  return NSClassFromString([self classNameForButton]);
 }
 
 + (Class)classForControl {
-#if TARGET_OS_IPHONE
-  return [UIControl class];
-#else
-  return [NSControl class];
-#endif
+  return NSClassFromString([self classNameForControl]);
 }
 
 + (Class)classForLabel {
-#if TARGET_OS_IPHONE
-  return [UILabel class];
-#else
-  return [NSTextField class];
-#endif
+  return NSClassFromString([self classNameForLabel]);
 }
 
 + (Class)classForView {
-#if TARGET_OS_IPHONE
-  return [UIView class];
-#else
-  return [NSView class];
-#endif
+  return NSClassFromString([self classNameForView]);
 }
 
 + (Class)classForWindow {
+  return NSClassFromString([self classNameForWindow]);
+}
+
++ (NSString *)classNameForButton {
 #if TARGET_OS_IPHONE
-  return [UIWindow class];
+  return @"UIButton";
 #else
-  return [NSWindow class];
+  return @"NSButton";
 #endif
 }
+
++ (NSString *)classNameForControl {
+#if TARGET_OS_IPHONE
+  return @"UIControl";
+#else
+  return @"NSControl";
+#endif
+}
+
++ (NSString *)classNameForLabel {
+#if TARGET_OS_IPHONE
+  return @"UILabel";
+#else
+  return @"NSTextField";
+#endif
+}
+
++ (NSString *)classNameForView {
+#if TARGET_OS_IPHONE
+  return @"UIView";
+#else
+  return @"NSView";
+#endif
+}
+
++ (NSString *)classNameForWindow {
+#if TARGET_OS_IPHONE
+  return @"UIWindow";
+#else
+  return @"NSWindow";
+#endif
+}
+
 
 + (id)button {
     return [self viewWithClass:[self classForButton]];
