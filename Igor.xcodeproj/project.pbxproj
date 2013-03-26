@@ -36,58 +36,57 @@
 		2DCE893C15193F6100B975EE /* DEInstanceParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE893A15193F6100B975EE /* DEInstanceParser.m */; };
 		C355FA6E170234DC00478EC6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3DFC0901702237000EF28B6 /* Cocoa.framework */; };
 		C355FA78170234F100478EC6 /* Igor-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C8E147CD1BA00AF4115 /* Igor-Prefix.pch */; };
-		C355FA79170234F700478EC6 /* DEIgorSelfRegisteringSelectorEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = C3DFC0921702247100EF28B6 /* DEIgorSelfRegisteringSelectorEngine.h */; };
 		C355FA7A170234F700478EC6 /* DEIgorSelfRegisteringSelectorEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD53D /* DEIgorSelfRegisteringSelectorEngine.m */; };
 		C355FA7B170234F700478EC6 /* DEIgor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C90147CD1BA00AF4115 /* DEIgor.m */; };
-		C355FA7C170234F700478EC6 /* DEIgor.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C8F147CD1BA00AF4115 /* DEIgor.h */; };
+		C355FA7C170234F700478EC6 /* DEIgor.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C8F147CD1BA00AF4115 /* DEIgor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C355FA7D170234FB00478EC6 /* DESiblingCombinator.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD519 /* DESiblingCombinator.m */; };
-		C355FA7E170234FB00478EC6 /* DESiblingCombinator.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD51B /* DESiblingCombinator.h */; };
+		C355FA7E170234FB00478EC6 /* DESiblingCombinator.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD51B /* DESiblingCombinator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C355FA7F170234FB00478EC6 /* DEUniversalMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD45E /* DEUniversalMatcher.m */; };
-		C355FA80170234FB00478EC6 /* DEUniversalMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD45C /* DEUniversalMatcher.h */; };
+		C355FA80170234FB00478EC6 /* DEUniversalMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD45C /* DEUniversalMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C355FA81170234FB00478EC6 /* DEPredicateMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D496EA41486A513007E1FDE /* DEPredicateMatcher.m */; };
-		C355FA82170234FB00478EC6 /* DEPredicateMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D496EA31486A513007E1FDE /* DEPredicateMatcher.h */; };
+		C355FA82170234FB00478EC6 /* DEPredicateMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D496EA31486A513007E1FDE /* DEPredicateMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C355FA83170234FB00478EC6 /* DEMemberOfClassMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C9A147CD1BA00AF4115 /* DEMemberOfClassMatcher.m */; };
-		C355FA84170234FB00478EC6 /* DEMemberOfClassMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C99147CD1BA00AF4115 /* DEMemberOfClassMatcher.h */; };
-		C355FA85170234FB00478EC6 /* DEMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C98147CD1BA00AF4115 /* DEMatcher.h */; };
+		C355FA84170234FB00478EC6 /* DEMemberOfClassMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C99147CD1BA00AF4115 /* DEMemberOfClassMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C355FA85170234FB00478EC6 /* DEMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C98147CD1BA00AF4115 /* DEMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C355FA86170234FB00478EC6 /* DEKindOfClassMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C97147CD1BA00AF4115 /* DEKindOfClassMatcher.m */; };
-		C355FA87170234FB00478EC6 /* DEKindOfClassMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C96147CD1BA00AF4115 /* DEKindOfClassMatcher.h */; };
+		C355FA87170234FB00478EC6 /* DEKindOfClassMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C96147CD1BA00AF4115 /* DEKindOfClassMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C355FA88170234FB00478EC6 /* DEInstanceMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C8D147CD1BA00AF4115 /* DEInstanceMatcher.m */; };
-		C355FA89170234FB00478EC6 /* DEInstanceMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C8C147CD1BA00AF4115 /* DEInstanceMatcher.h */; };
+		C355FA89170234FB00478EC6 /* DEInstanceMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C8C147CD1BA00AF4115 /* DEInstanceMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C355FA8A170234FB00478EC6 /* DEIdentityMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D436E201518F9C300071950 /* DEIdentityMatcher.m */; };
-		C355FA8B170234FB00478EC6 /* DEIdentityMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D436E1F1518F9C300071950 /* DEIdentityMatcher.h */; };
+		C355FA8B170234FB00478EC6 /* DEIdentityMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D436E1F1518F9C300071950 /* DEIdentityMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C355FA8C170234FB00478EC6 /* DEIdentifierMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4F4 /* DEIdentifierMatcher.m */; };
-		C355FA8D170234FB00478EC6 /* DEIdentifierMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4F6 /* DEIdentifierMatcher.h */; };
+		C355FA8D170234FB00478EC6 /* DEIdentifierMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4F6 /* DEIdentifierMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C355FA8E170234FB00478EC6 /* DEDescendantCombinator.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4C5 /* DEDescendantCombinator.m */; };
-		C355FA8F170234FB00478EC6 /* DEDescendantCombinator.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4C7 /* DEDescendantCombinator.h */; };
+		C355FA8F170234FB00478EC6 /* DEDescendantCombinator.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4C7 /* DEDescendantCombinator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C355FA90170234FB00478EC6 /* DECombinatorMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4AF /* DECombinatorMatcher.m */; };
-		C355FA91170234FB00478EC6 /* DECombinatorMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4B3 /* DECombinatorMatcher.h */; };
-		C355FA92170234FB00478EC6 /* DECombinator.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4C3 /* DECombinator.h */; };
+		C355FA91170234FB00478EC6 /* DECombinatorMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4B3 /* DECombinatorMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C355FA92170234FB00478EC6 /* DECombinator.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4C3 /* DECombinator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C355FA93170234FB00478EC6 /* DEChildCombinator.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4CD /* DEChildCombinator.m */; };
-		C355FA94170234FB00478EC6 /* DEChildCombinator.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4CF /* DEChildCombinator.h */; };
-		C355FA95170234FB00478EC6 /* DEChainMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD448 /* DEChainMatcher.h */; };
+		C355FA94170234FB00478EC6 /* DEChildCombinator.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4CF /* DEChildCombinator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C355FA95170234FB00478EC6 /* DEChainMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD448 /* DEChainMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C355FA96170234FB00478EC6 /* DEBranchMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD478 /* DEBranchMatcher.m */; };
-		C355FA97170234FB00478EC6 /* DEBranchMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD47A /* DEBranchMatcher.h */; };
+		C355FA97170234FB00478EC6 /* DEBranchMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD47A /* DEBranchMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C355FA98170234FF00478EC6 /* DEQueryScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD442 /* DEQueryScanner.m */; };
-		C355FA99170234FF00478EC6 /* DEQueryScanner.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD444 /* DEQueryScanner.h */; };
+		C355FA99170234FF00478EC6 /* DEQueryScanner.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD444 /* DEQueryScanner.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C355FA9A170234FF00478EC6 /* DEQueryParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C93147CD1BA00AF4115 /* DEQueryParser.m */; };
-		C355FA9B170234FF00478EC6 /* DEQueryParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C92147CD1BA00AF4115 /* DEQueryParser.h */; };
+		C355FA9B170234FF00478EC6 /* DEQueryParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C92147CD1BA00AF4115 /* DEQueryParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C355FA9C170234FF00478EC6 /* DEPredicateParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695CA4147CD1BA00AF4115 /* DEPredicateParser.m */; };
-		C355FA9D170234FF00478EC6 /* DEPredicateParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695CA3147CD1BA00AF4115 /* DEPredicateParser.h */; };
-		C355FA9E170234FF00478EC6 /* DEPatternParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD48A /* DEPatternParser.h */; };
+		C355FA9D170234FF00478EC6 /* DEPredicateParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695CA3147CD1BA00AF4115 /* DEPredicateParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C355FA9E170234FF00478EC6 /* DEPatternParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD48A /* DEPatternParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C355FA9F170234FF00478EC6 /* DEInstanceParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE893A15193F6100B975EE /* DEInstanceParser.m */; };
-		C355FAA0170234FF00478EC6 /* DEInstanceParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DCE893915193F6100B975EE /* DEInstanceParser.h */; };
+		C355FAA0170234FF00478EC6 /* DEInstanceParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DCE893915193F6100B975EE /* DEInstanceParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C355FAA1170234FF00478EC6 /* DEIgorParserException.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C95147CD1BA00AF4115 /* DEIgorParserException.m */; };
-		C355FAA2170234FF00478EC6 /* DEIgorParserException.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C94147CD1BA00AF4115 /* DEIgorParserException.h */; };
+		C355FAA2170234FF00478EC6 /* DEIgorParserException.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C94147CD1BA00AF4115 /* DEIgorParserException.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C355FAA3170234FF00478EC6 /* DEIdentifierParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4F8 /* DEIdentifierParser.m */; };
-		C355FAA4170234FF00478EC6 /* DEIdentifierParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4FA /* DEIdentifierParser.h */; };
+		C355FAA4170234FF00478EC6 /* DEIdentifierParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4FA /* DEIdentifierParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C355FAA5170234FF00478EC6 /* DECombinatorParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4C9 /* DECombinatorParser.m */; };
-		C355FAA6170234FF00478EC6 /* DECombinatorParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4CB /* DECombinatorParser.h */; };
+		C355FAA6170234FF00478EC6 /* DECombinatorParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4CB /* DECombinatorParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C355FAA7170234FF00478EC6 /* DEClassParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C8B147CD1BA00AF4115 /* DEClassParser.m */; };
-		C355FAA8170234FF00478EC6 /* DEClassParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C8A147CD1BA00AF4115 /* DEClassParser.h */; };
+		C355FAA8170234FF00478EC6 /* DEClassParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C8A147CD1BA00AF4115 /* DEClassParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C355FAA9170234FF00478EC6 /* DEChainParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE893515193E8900B975EE /* DEChainParser.m */; };
-		C355FAAA170234FF00478EC6 /* DEChainParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DCE893415193E8900B975EE /* DEChainParser.h */; };
+		C355FAAA170234FF00478EC6 /* DEChainParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DCE893415193E8900B975EE /* DEChainParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C355FAAB170234FF00478EC6 /* DEBranchParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD499 /* DEBranchParser.m */; };
-		C355FAAC170234FF00478EC6 /* DEBranchParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD49B /* DEBranchParser.h */; };
+		C355FAAC170234FF00478EC6 /* DEBranchParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD49B /* DEBranchParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C3B017D5170231640052369E /* OCHamcrest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B017D31702315F0052369E /* OCHamcrest.framework */; };
 		C3DFBFAF17021B7000EF28B6 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3DFBFAE17021B7000EF28B6 /* SenTestingKit.framework */; };
 		C3DFBFB417021C5B00EF28B6 /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3DFBFB017021BBE00EF28B6 /* OCHamcrestIOS.framework */; };
@@ -149,7 +148,6 @@
 		C3DFC086170220C300EF28B6 /* ClassParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD46C /* ClassParserTests.m */; };
 		C3DFC087170220C300EF28B6 /* ChainParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4B5 /* ChainParserTests.m */; };
 		C3DFC0891702213B00EF28B6 /* DESiblingCombinator.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD519 /* DESiblingCombinator.m */; };
-		C3DFC0931702247100EF28B6 /* DEIgorSelfRegisteringSelectorEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = C3DFC0921702247100EF28B6 /* DEIgorSelfRegisteringSelectorEngine.h */; };
 		C3DFC0991702294600EF28B6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3DFC0901702237000EF28B6 /* Cocoa.framework */; };
 		E621659DB794A5D612DCD443 /* DEQueryScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD442 /* DEQueryScanner.m */; };
 		E621659DB794A5D612DCD445 /* DEQueryScanner.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD444 /* DEQueryScanner.h */; };
@@ -300,7 +298,6 @@
 		C3DFC00217021FD400EF28B6 /* IgorTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IgorTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3DFC08E1702236700EF28B6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		C3DFC0901702237000EF28B6 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
-		C3DFC0921702247100EF28B6 /* DEIgorSelfRegisteringSelectorEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEIgorSelfRegisteringSelectorEngine.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD439 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E621659DB794A5D612DCD442 /* DEQueryScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEQueryScanner.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD444 /* DEQueryScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEQueryScanner.h; sourceTree = "<group>"; };
@@ -564,7 +561,6 @@
 		E621659DB794A5D612DCD512 /* engine */ = {
 			isa = PBXGroup;
 			children = (
-				C3DFC0921702247100EF28B6 /* DEIgorSelfRegisteringSelectorEngine.h */,
 				E621659DB794A5D612DCD53D /* DEIgorSelfRegisteringSelectorEngine.m */,
 				2D695C90147CD1BA00AF4115 /* DEIgor.m */,
 				2D695C8F147CD1BA00AF4115 /* DEIgor.h */,
@@ -678,7 +674,6 @@
 				E621659DB794A5D612DCD4F7 /* DEIdentifierMatcher.h in Headers */,
 				E621659DB794A5D612DCD4FB /* DEIdentifierParser.h in Headers */,
 				E621659DB794A5D612DCD51C /* DESiblingCombinator.h in Headers */,
-				C3DFC0931702247100EF28B6 /* DEIgorSelfRegisteringSelectorEngine.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -686,8 +681,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C355FA78170234F100478EC6 /* Igor-Prefix.pch in Headers */,
-				C355FA79170234F700478EC6 /* DEIgorSelfRegisteringSelectorEngine.h in Headers */,
 				C355FA7C170234F700478EC6 /* DEIgor.h in Headers */,
 				C355FA7E170234FB00478EC6 /* DESiblingCombinator.h in Headers */,
 				C355FA80170234FB00478EC6 /* DEUniversalMatcher.h in Headers */,
@@ -715,6 +708,7 @@
 				C355FAA8170234FF00478EC6 /* DEClassParser.h in Headers */,
 				C355FAAA170234FF00478EC6 /* DEChainParser.h in Headers */,
 				C355FAAC170234FF00478EC6 /* DEBranchParser.h in Headers */,
+				C355FA78170234F100478EC6 /* Igor-Prefix.pch in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -744,9 +738,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C355FA75170234DC00478EC6 /* Build configuration list for PBXNativeTarget "Igor" */;
 			buildPhases = (
+				C355FA6B170234DC00478EC6 /* Headers */,
 				C355FA69170234DC00478EC6 /* Sources */,
 				C355FA6A170234DC00478EC6 /* Frameworks */,
-				C355FA6B170234DC00478EC6 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -1120,21 +1114,21 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_EMPTY_BODY = YES;
+				CURRENT_PROJECT_VERSION = 5.1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk/System/Library/Frameworks\"",
 				);
-				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Igor/Igor-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "include/${PRODUCT_NAME}";
 				SDKROOT = macosx10.7;
+				VERSION_INFO_PREFIX = "-0.";
 			};
 			name = Release;
 		};
@@ -1143,20 +1137,20 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_EMPTY_BODY = YES;
+				CURRENT_PROJECT_VERSION = 5.1;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk/System/Library/Frameworks\"",
 				);
-				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Igor/Igor-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "include/${PRODUCT_NAME}";
 				SDKROOT = macosx10.7;
+				VERSION_INFO_PREFIX = "-0.";
 			};
 			name = Debug;
 		};
@@ -1274,7 +1268,7 @@
 		E621659DB794A5D612DCD41F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 5.0;
+				CURRENT_PROJECT_VERSION = 5.1;
 				DSTROOT = /tmp/igor.dst;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1291,7 +1285,7 @@
 		E621659DB794A5D612DCD420 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 5.0;
+				CURRENT_PROJECT_VERSION = 5.1;
 				DSTROOT = /tmp/igor.dst;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1324,6 +1318,7 @@
 				C355FA77170234DC00478EC6 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C3DFC01417021FD400EF28B6 /* Build configuration list for PBXNativeTarget "IgorTests" */ = {
 			isa = XCConfigurationList;

@@ -1,4 +1,15 @@
-#import "DEIgorSelfRegisteringSelectorEngine.h"
+#import "DEIgor.h"
+
+@protocol SelectorEngine
+- (NSArray *)selectViewsWithSelector:(NSString *)query;
+@end
+
+@interface SelectorEngineRegistry
++(void)registerSelectorEngine:(id <SelectorEngine>)engine WithName:(NSString *)name;
+@end
+
+@interface DEIgorSelfRegisteringSelectorEngine : NSObject <SelectorEngine>
+@end
 
 @implementation DEIgorSelfRegisteringSelectorEngine {
     DEIgor *_igor;
@@ -24,7 +35,11 @@
 + (void)load {
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(applicationDidBecomeActive:)
+#if TARGET_OF_IPHONE
                                                  name:@"UIApplicationDidBecomeActiveNotification"
+#else
+                                                 name:@"NSApplicationDidBecomeActiveNotification"
+#endif
                                                object:nil];
 }
 
@@ -32,7 +47,8 @@
 #if TARGET_OS_IPHONE
   UIWindow *tree = [[UIApplication sharedApplication] keyWindow];
 #else
-  NSWindow *tree = [[NSApplication sharedApplication] keyWindow];
+  NSWindow *window = [[NSApplication sharedApplication] keyWindow];
+  NSView *tree = [window contentView];
 #endif
     return [_igor findViewsThatMatchQuery:query inTree:tree];
 }
