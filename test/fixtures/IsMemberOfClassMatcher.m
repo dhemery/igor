@@ -1,8 +1,6 @@
 #import "IsMemberOfClassMatcher.h"
 #import "DEMemberOfClassMatcher.h"
 
-#import <OCHamcrestIOS/HCDescription.h>
-
 @implementation IsMemberOfClassMatcher {
     Class targetClass;
 }

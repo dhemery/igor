@@ -8,10 +8,19 @@
 #import <Cocoa/Cocoa.h>
 #endif
 
-#import <SenTestingKit/SenTestCase.h>
+#import <SenTestingKit/SenTestingKit.h>
+
 
 #define HC_SHORTHAND
 
+#if TARGET_OS_IPHONE
 #import <OCHamcrestIOS/OCHamcrestIOS.h>
+#import <OCHamcrestIOS/HCBaseMatcher.h>
+#import <OCHamcrestIOS/HCDescription.h>
+#else
+#import <OCHamcrest/OCHamcrest.h>
+#import <OCHamcrest/HCBaseMatcher.h>
+#import <OCHamcrest/HCDescription.h>
+#endif
 
 #endif

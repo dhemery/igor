@@ -1,4 +1,3 @@
-#import <OCHamcrestIOS/HCDescription.h>
 #import "MatchesView.h"
 #import "DEMatcher.h"
 

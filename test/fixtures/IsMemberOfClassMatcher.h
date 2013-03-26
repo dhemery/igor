@@ -1,4 +1,3 @@
-#import <OCHamcrestIOS/HCBaseMatcher.h>
 
 @interface IsMemberOfClassMatcher : HCBaseMatcher
 

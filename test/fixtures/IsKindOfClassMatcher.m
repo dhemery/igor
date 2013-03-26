@@ -1,8 +1,6 @@
 #import "IsKindOfClassMatcher.h"
 #import "DEKindOfClassMatcher.h"
 
-#import <OCHamcrestIOS/HCDescription.h>
-
 @implementation IsKindOfClassMatcher {
     Class targetClass;
 }
