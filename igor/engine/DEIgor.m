@@ -7,6 +7,7 @@
 #import "DEPredicateParser.h"
 #import "DEBranchParser.h"
 #import "DEIdentifierParser.h"
+#import "DEPositionParser.h"
 #import "DEDescendantCombinator.h"
 #import "DEMatcher.h"
 
@@ -15,13 +16,13 @@
 }
 
 - (NSArray *)findViewsThatMatchMatcher:(id <DEMatcher>)matcher inTree:(UIView *)tree {
-    NSMutableSet *matchingViews = [NSMutableSet set];
+    NSMutableArray *matchingViews = [NSMutableArray array];
     NSMutableArray *allViews = [NSMutableArray arrayWithObject:tree];
     [allViews addObjectsFromArray:[[DEDescendantCombinator new] relativesOfView:tree]];
     for (UIView *view in allViews) {
         if ([matcher matchesView:view]) [matchingViews addObject:view];
     }
-    return [matchingViews allObjects];
+    return [[NSOrderedSet orderedSetWithArray:matchingViews] array];
 }
 
 - (NSArray *)findViewsThatMatchQuery:(NSString *)query inTree:(UIView *)tree {
@@ -35,7 +36,8 @@
     id <DEPatternParser> classParser = [DEClassParser new];
     id <DEPatternParser> predicateParser = [DEPredicateParser new];
     id <DEPatternParser> identifierParser = [DEIdentifierParser new];
-    NSArray *simpleParsers = [NSArray arrayWithObjects:identifierParser, predicateParser, nil];
+    id <DEPatternParser> positionParser = [DEPositionParser new];
+    NSArray *simpleParsers = [NSArray arrayWithObjects:identifierParser, predicateParser, positionParser, nil];
     id <DEPatternParser> instanceParser = [DEInstanceParser parserWithClassParser:classParser simpleParsers:simpleParsers];
 
     id <DECombinatorParser> combinatorParser = [DECombinatorParser new];

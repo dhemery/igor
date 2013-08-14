@@ -6,6 +6,8 @@
 
 - (BOOL)scanNameIntoString:(NSString **)destination;
 
+- (BOOL)scanPositionPatternIntoString:(NSString **)destination;
+
 - (BOOL)scanUpToString:(NSString *)string intoString:(NSString **)destination;
 
 - (BOOL)skipString:(NSString *)string;

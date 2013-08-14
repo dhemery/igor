@@ -34,6 +34,12 @@
     return [self.scanner scanCharactersFromSet:nameCharacterSet intoString:destination];
 }
 
+- (BOOL)scanPositionPatternIntoString:(NSString **)destination {
+    NSMutableCharacterSet *positionCharacterSet = [NSMutableCharacterSet alphanumericCharacterSet];
+    [positionCharacterSet addCharactersInString:@"-"];
+    return [self.scanner scanCharactersFromSet:positionCharacterSet intoString:destination];
+}
+
 + (id <DEQueryScanner>)scannerWithString:(NSString *)queryString {
     return [[self alloc] initWithString:queryString];
 }
