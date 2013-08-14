@@ -70,6 +70,14 @@
 {
     NSArray *matchingViews = [igor findViewsThatMatchQuery:@"#root > :empty" inTree:view];
     assertThat(matchingViews, equalTo(@[button]));
+    
+    matchingViews = [igor findViewsThatMatchQuery:@"*:empty" inTree:view];
+    assertThat(matchingViews, containsInAnyOrder(header.subviews[0], header.subviews[1], header.subviews[2],
+                                                 form.subviews[0], form.subviews[1], form.subviews[2],
+                                                 footer.subviews[0], button, nil));
+
+    matchingViews = [igor findViewsThatMatchQuery:@"UIView > :first-child > UIView:empty" inTree:view];
+    assertThat(matchingViews, containsInAnyOrder(header.subviews[0], header.subviews[1], header.subviews[2], nil));
 }
 
 - (void)testOnlyChild
