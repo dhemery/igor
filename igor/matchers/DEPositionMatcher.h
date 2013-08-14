@@ -6,6 +6,7 @@
 @property (nonatomic, copy) NSString* position;
 
 - (instancetype)initWithPosition:(NSString *)position;
+
 - (BOOL)matchesView:(UIView *)view;
 
 + (DEPositionMatcher *)matcherForPosition:(NSString*)position;

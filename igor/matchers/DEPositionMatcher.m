@@ -25,10 +25,6 @@
     return self;
 }
 
-- (void)appendCombinator:(id <DECombinator>)combinator matcher:(id <DEMatcher>)matcher {
-    
-}
-
 - (BOOL)matchesView:(UIView *)view {
     if ([self.position isEqualToString:@"root"] && [self isRootView:view]) {
         return YES;
