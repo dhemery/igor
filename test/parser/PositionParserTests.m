@@ -19,8 +19,8 @@
 }
 
 - (void)testParsesPositionPatterns {
-    NSArray* patterns = @[@":root", @":empty", @":first-child", @":last-child", @":only-child"];
-    NSArray* position = @[@"root", @"empty", @"first-child", @"last-child", @"only-child"];
+    NSArray* patterns = @[@":empty", @":first-child", @":last-child", @":only-child"];
+    NSArray* position = @[@"empty", @"first-child", @"last-child", @"only-child"];
     [patterns enumerateObjectsUsingBlock:^(NSString *expression, NSUInteger idx, BOOL *stop) {
         scanner = [DEQueryScanner scannerWithString:expression];
         DEPositionMatcher* matcher = (DEPositionMatcher*) [parser parseMatcherFromScanner:scanner];

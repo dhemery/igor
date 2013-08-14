@@ -42,6 +42,7 @@
 		54AC483B17BB1FE1007B0BB4 /* DEPositionMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 54AC483917BB1FE1007B0BB4 /* DEPositionMatcher.h */; };
 		54AC483C17BB1FE1007B0BB4 /* DEPositionMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AC483A17BB1FE1007B0BB4 /* DEPositionMatcher.m */; };
 		54AC483E17BB32B9007B0BB4 /* PositionMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AC483D17BB32B9007B0BB4 /* PositionMatcherTests.m */; };
+		54AC484017BB37A4007B0BB4 /* PositionPatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AC483F17BB37A4007B0BB4 /* PositionPatternTests.m */; };
 		54C9DBFD17BB227E00902BF2 /* PositionParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C9DBFB17BB227E00902BF2 /* PositionParserTests.m */; };
 		54C9DBFE17BB239D00902BF2 /* DEPositionParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AC483617BB1E7B007B0BB4 /* DEPositionParser.m */; };
 		54C9DBFF17BB23A200902BF2 /* DEPositionMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AC483A17BB1FE1007B0BB4 /* DEPositionMatcher.m */; };
@@ -178,6 +179,7 @@
 		54AC483917BB1FE1007B0BB4 /* DEPositionMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEPositionMatcher.h; sourceTree = "<group>"; };
 		54AC483A17BB1FE1007B0BB4 /* DEPositionMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEPositionMatcher.m; sourceTree = "<group>"; };
 		54AC483D17BB32B9007B0BB4 /* PositionMatcherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PositionMatcherTests.m; sourceTree = "<group>"; };
+		54AC483F17BB37A4007B0BB4 /* PositionPatternTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PositionPatternTests.m; sourceTree = "<group>"; };
 		54C9DBFB17BB227E00902BF2 /* PositionParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PositionParserTests.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD425 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E621659DB794A5D612DCD437 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -347,6 +349,7 @@
 				2D695CCA147CD1D200AF4115 /* ClassPatternTests.m */,
 				E621659DB794A5D612DCD500 /* ChildPatternTests.m */,
 				E621659DB794A5D612DCD490 /* BranchPatternTests.m */,
+				54AC483F17BB37A4007B0BB4 /* PositionPatternTests.m */,
 			);
 			path = acceptance;
 			sourceTree = "<group>";
@@ -681,6 +684,7 @@
 				54C9DBFD17BB227E00902BF2 /* PositionParserTests.m in Sources */,
 				54C9DBFE17BB239D00902BF2 /* DEPositionParser.m in Sources */,
 				54C9DBFF17BB23A200902BF2 /* DEPositionMatcher.m in Sources */,
+				54AC484017BB37A4007B0BB4 /* PositionPatternTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

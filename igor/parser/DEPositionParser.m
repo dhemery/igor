@@ -25,7 +25,7 @@ static NSSet* _positionPatterns;
         [scanner failBecause:@"Expected a position pattern after the :"];
     
     if (![_positionPatterns containsObject:expression])
-        [scanner failBecause:[NSString stringWithFormat:@"Expected to be one of valid position pattern (%@)", _positionPatterns]];
+        [scanner failBecause:[NSString stringWithFormat:@"Expected to be one of valid position pattern %@, get: %@", [_positionPatterns allObjects], [scanner description]]];
 
     return [DEPositionMatcher matcherForPosition:expression];
 }
