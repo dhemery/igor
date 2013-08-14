@@ -37,6 +37,14 @@
 		2DCE893715193E8900B975EE /* DEChainParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE893515193E8900B975EE /* DEChainParser.m */; };
 		2DCE893B15193F6100B975EE /* DEInstanceParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DCE893915193F6100B975EE /* DEInstanceParser.h */; };
 		2DCE893C15193F6100B975EE /* DEInstanceParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE893A15193F6100B975EE /* DEInstanceParser.m */; };
+		54AC483717BB1E7B007B0BB4 /* DEPositionParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 54AC483517BB1E7B007B0BB4 /* DEPositionParser.h */; };
+		54AC483817BB1E7B007B0BB4 /* DEPositionParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AC483617BB1E7B007B0BB4 /* DEPositionParser.m */; };
+		54AC483B17BB1FE1007B0BB4 /* DEPositionMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 54AC483917BB1FE1007B0BB4 /* DEPositionMatcher.h */; };
+		54AC483C17BB1FE1007B0BB4 /* DEPositionMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AC483A17BB1FE1007B0BB4 /* DEPositionMatcher.m */; };
+		54AC483E17BB32B9007B0BB4 /* PositionMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AC483D17BB32B9007B0BB4 /* PositionMatcherTests.m */; };
+		54C9DBFD17BB227E00902BF2 /* PositionParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C9DBFB17BB227E00902BF2 /* PositionParserTests.m */; };
+		54C9DBFE17BB239D00902BF2 /* DEPositionParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AC483617BB1E7B007B0BB4 /* DEPositionParser.m */; };
+		54C9DBFF17BB23A200902BF2 /* DEPositionMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AC483A17BB1FE1007B0BB4 /* DEPositionMatcher.m */; };
 		E621659DB794A5D612DCD443 /* DEQueryScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD442 /* DEQueryScanner.m */; };
 		E621659DB794A5D612DCD445 /* DEQueryScanner.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD444 /* DEQueryScanner.h */; };
 		E621659DB794A5D612DCD449 /* DEChainMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD448 /* DEChainMatcher.h */; };
@@ -165,6 +173,12 @@
 		2DCE893915193F6100B975EE /* DEInstanceParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEInstanceParser.h; sourceTree = "<group>"; };
 		2DCE893A15193F6100B975EE /* DEInstanceParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEInstanceParser.m; sourceTree = "<group>"; };
 		2DCF9766147ED3FD003B0F38 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		54AC483517BB1E7B007B0BB4 /* DEPositionParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEPositionParser.h; sourceTree = "<group>"; };
+		54AC483617BB1E7B007B0BB4 /* DEPositionParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEPositionParser.m; sourceTree = "<group>"; };
+		54AC483917BB1FE1007B0BB4 /* DEPositionMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEPositionMatcher.h; sourceTree = "<group>"; };
+		54AC483A17BB1FE1007B0BB4 /* DEPositionMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEPositionMatcher.m; sourceTree = "<group>"; };
+		54AC483D17BB32B9007B0BB4 /* PositionMatcherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PositionMatcherTests.m; sourceTree = "<group>"; };
+		54C9DBFB17BB227E00902BF2 /* PositionParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PositionParserTests.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD425 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E621659DB794A5D612DCD437 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		E621659DB794A5D612DCD439 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -378,6 +392,7 @@
 				E621659DB794A5D612DCD4AB /* DescendantCombinatorTests.m */,
 				E621659DB794A5D612DCD4DD /* ChildCombinatorTests.m */,
 				E621659DB794A5D612DCD474 /* BranchMatcherTests.m */,
+				54AC483D17BB32B9007B0BB4 /* PositionMatcherTests.m */,
 			);
 			path = matchers;
 			sourceTree = "<group>";
@@ -392,6 +407,7 @@
 				E621659DB794A5D612DCD504 /* CombinatorParserTests.m */,
 				E621659DB794A5D612DCD46C /* ClassParserTests.m */,
 				E621659DB794A5D612DCD4B5 /* ChainParserTests.m */,
+				54C9DBFB17BB227E00902BF2 /* PositionParserTests.m */,
 			);
 			path = parser;
 			sourceTree = "<group>";
@@ -436,6 +452,8 @@
 				E621659DB794A5D612DCD448 /* DEChainMatcher.h */,
 				E621659DB794A5D612DCD478 /* DEBranchMatcher.m */,
 				E621659DB794A5D612DCD47A /* DEBranchMatcher.h */,
+				54AC483A17BB1FE1007B0BB4 /* DEPositionMatcher.m */,
+				54AC483917BB1FE1007B0BB4 /* DEPositionMatcher.h */,
 			);
 			path = matchers;
 			sourceTree = "<group>";
@@ -464,6 +482,8 @@
 				2DCE893415193E8900B975EE /* DEChainParser.h */,
 				E621659DB794A5D612DCD499 /* DEBranchParser.m */,
 				E621659DB794A5D612DCD49B /* DEBranchParser.h */,
+				54AC483617BB1E7B007B0BB4 /* DEPositionParser.m */,
+				54AC483517BB1E7B007B0BB4 /* DEPositionParser.h */,
 			);
 			path = parser;
 			sourceTree = "<group>";
@@ -484,6 +504,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54AC483717BB1E7B007B0BB4 /* DEPositionParser.h in Headers */,
 				2D9649E2147DA21400C40219 /* Igor-Prefix.pch in Headers */,
 				2D496EA51486A513007E1FDE /* DEPredicateMatcher.h in Headers */,
 				2DCE893615193E8900B975EE /* DEChainParser.h in Headers */,
@@ -508,6 +529,7 @@
 				E621659DB794A5D612DCD4EC /* DEKindOfClassMatcher.h in Headers */,
 				E621659DB794A5D612DCD4ED /* DEMatcher.h in Headers */,
 				E621659DB794A5D612DCD4EE /* DEMemberOfClassMatcher.h in Headers */,
+				54AC483B17BB1FE1007B0BB4 /* DEPositionMatcher.h in Headers */,
 				E621659DB794A5D612DCD4EF /* DEIgor.h in Headers */,
 				E621659DB794A5D612DCD4F7 /* DEIdentifierMatcher.h in Headers */,
 				E621659DB794A5D612DCD4FB /* DEIdentifierParser.h in Headers */,
@@ -604,6 +626,7 @@
 				2D695CDA147CD1D200AF4115 /* KindOfClassMatcherTests.m in Sources */,
 				2D695CDB147CD1D200AF4115 /* MemberOfClassMatcherTests.m in Sources */,
 				2D695CDD147CD1D200AF4115 /* PredicateParserTests.m in Sources */,
+				54AC483E17BB32B9007B0BB4 /* PositionMatcherTests.m in Sources */,
 				2D695CDE147CD1D200AF4115 /* PredicatePatternTests.m in Sources */,
 				2D3E1F3F1509B98200D62300 /* DescendantPatternTests.m in Sources */,
 				2D99DB351517E9C900244226 /* SubjectMarkerTests.m in Sources */,
@@ -655,6 +678,9 @@
 				E621659DB794A5D612DCD53A /* DEQueryScanner.m in Sources */,
 				E621659DB794A5D612DCD53B /* DEIgor.m in Sources */,
 				E621659DB794A5D612DCD53C /* DECombinatorParser.m in Sources */,
+				54C9DBFD17BB227E00902BF2 /* PositionParserTests.m in Sources */,
+				54C9DBFE17BB239D00902BF2 /* DEPositionParser.m in Sources */,
+				54C9DBFF17BB23A200902BF2 /* DEPositionMatcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -670,9 +696,11 @@
 				2D695CB7147CD1BA00AF4115 /* DEKindOfClassMatcher.m in Sources */,
 				2D695CBA147CD1BA00AF4115 /* DEMemberOfClassMatcher.m in Sources */,
 				2D695CC4147CD1BA00AF4115 /* DEPredicateParser.m in Sources */,
+				54AC483C17BB1FE1007B0BB4 /* DEPositionMatcher.m in Sources */,
 				2D496EA61486A513007E1FDE /* DEPredicateMatcher.m in Sources */,
 				2DCE893715193E8900B975EE /* DEChainParser.m in Sources */,
 				2DCE893C15193F6100B975EE /* DEInstanceParser.m in Sources */,
+				54AC483817BB1E7B007B0BB4 /* DEPositionParser.m in Sources */,
 				E621659DB794A5D612DCD443 /* DEQueryScanner.m in Sources */,
 				E621659DB794A5D612DCD45F /* DEUniversalMatcher.m in Sources */,
 				E621659DB794A5D612DCD479 /* DEBranchMatcher.m in Sources */,
