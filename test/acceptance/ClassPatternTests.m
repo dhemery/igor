@@ -81,4 +81,21 @@
     assertThat(matchingViews, isNot(hasItem(viewOfUnrelatedClass)));
 }
 
+- (void)testMatchedSubviewsOrder {
+    NSString *query = @"UIButton";
+    
+    UIView *root = [ViewFactory viewWithName:@"root"];
+    UIButton *b1 = [ViewFactory button];
+    UIButton *b2 = [ViewFactory button];
+    UIButton *b3 = [ViewFactory button];
+    
+    [root addSubview:b1];
+    [root addSubview:b2];
+    [root addSubview:b3];
+    
+    NSArray *matchingViews = [igor findViewsThatMatchQuery:query inTree:root];
+    assertThat(matchingViews, containsInAnyOrder(b1, b2, b3, nil));
+    assertThat(matchingViews, equalTo(@[b1, b2, b3]));
+}
+
 @end
