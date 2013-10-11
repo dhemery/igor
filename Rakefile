@@ -6,19 +6,18 @@ BUILD = 'build'
 
 directory DIST
 directory BUILD
-$version = `agvtool vers -terse`.strip
-$libname = "libIgor#{$version}.a"
-$debuglibname = "libIgorDebug#{$version}.a"
-$dist_dir = 'dist'
-$build_dir = 'build'
+
+VERSION = `agvtool vers -terse`.strip
+BUILD_LIBNAME = "libIgor#{VERSION}.a"
+DIST_LIBNAME = 'libIgor.a'
 
 CLEAN.include BUILD, DIST
 
-task :default => [:clean, :all]
+task :default => [:clean, :all, :dump]
 
 desc "Build the universal library release version for distribution"
 task :all => [:iphone, :simulator, DIST] do
-    `lipo -create -output "#{DIST}/#{LIBNAME}" "#{BUILD}/Release-iphoneos/#{LIBNAME}" "#{BUILD}/Release-iphonesimulator/#{LIBNAME}"`
+    `lipo -create -output "#{DIST}/#{DIST_LIBNAME}" "#{BUILD}/Release-iphoneos/#{BUILD_LIBNAME}" "#{BUILD}/Release-iphonesimulator/#{BUILD_LIBNAME}"`
 end
 
 desc "Build the iPhone library release version"
@@ -29,6 +28,13 @@ end
 desc "Build the simulator library release version"
 task :simulator do
     build_for("iphonesimulator")
+end
+
+desc "Dump the variables calculated by this Rakefile"
+task :dump do
+    puts 'Igor version  : ' + VERSION
+    puts 'Built lib name: ' + BUILD_LIBNAME
+    puts 'Dist lib name : ' + DIST_LIBNAME
 end
 
 def build_for(sdkname)
