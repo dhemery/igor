@@ -40,6 +40,9 @@
 		2D9649E0147DA1A700C40219 /* Igor-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C8E147CD1BA00AF4115 /* Igor-Prefix.pch */; };
 		2D9649E2147DA21400C40219 /* Igor-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C8E147CD1BA00AF4115 /* Igor-Prefix.pch */; };
 		2D99DB351517E9C900244226 /* SubjectMarkerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D99DB321517E94B00244226 /* SubjectMarkerTests.m */; };
+		2DC4F5AA18089625000A6E47 /* DEIgorSelfRegisteringSelectorEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD53D /* DEIgorSelfRegisteringSelectorEngine.m */; };
+		2DC4F5B2180896DB000A6E47 /* SelectorEngineRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC4F5B0180896DB000A6E47 /* SelectorEngineRegistry.m */; };
+		2DC4F5B518089924000A6E47 /* SelectorEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DC4F5B318089924000A6E47 /* SelectorEngine.h */; };
 		2DCE893615193E8900B975EE /* DEChainParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DCE893415193E8900B975EE /* DEChainParser.h */; };
 		2DCE893715193E8900B975EE /* DEChainParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE893515193E8900B975EE /* DEChainParser.m */; };
 		2DCE893B15193F6100B975EE /* DEInstanceParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DCE893915193F6100B975EE /* DEInstanceParser.h */; };
@@ -197,6 +200,8 @@
 		2D695CD3147CD1D200AF4115 /* PredicateParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredicateParserTests.m; sourceTree = "<group>"; };
 		2D695CD4147CD1D200AF4115 /* PredicatePatternTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredicatePatternTests.m; sourceTree = "<group>"; };
 		2D99DB321517E94B00244226 /* SubjectMarkerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectMarkerTests.m; sourceTree = "<group>"; };
+		2DC4F5B0180896DB000A6E47 /* SelectorEngineRegistry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectorEngineRegistry.m; sourceTree = "<group>"; };
+		2DC4F5B318089924000A6E47 /* SelectorEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectorEngine.h; sourceTree = "<group>"; };
 		2DCE893415193E8900B975EE /* DEChainParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEChainParser.h; sourceTree = "<group>"; };
 		2DCE893515193E8900B975EE /* DEChainParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEChainParser.m; sourceTree = "<group>"; };
 		2DCE893915193F6100B975EE /* DEInstanceParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEInstanceParser.h; sourceTree = "<group>"; };
@@ -437,6 +442,7 @@
 				E621659DB794A5D612DCD4BF /* FakeCombinatorParser.h */,
 				E621659DB794A5D612DCD4D7 /* EmptySetCombinator.m */,
 				E621659DB794A5D612DCD4D9 /* EmptySetCombinator.h */,
+				2DC4F5B0180896DB000A6E47 /* SelectorEngineRegistry.m */,
 			);
 			path = fixtures;
 			sourceTree = "<group>";
@@ -476,6 +482,7 @@
 				E621659DB794A5D612DCD53D /* DEIgorSelfRegisteringSelectorEngine.m */,
 				2D695C90147CD1BA00AF4115 /* DEIgor.m */,
 				2D695C8F147CD1BA00AF4115 /* DEIgor.h */,
+				2DC4F5B318089924000A6E47 /* SelectorEngine.h */,
 			);
 			path = engine;
 			sourceTree = "<group>";
@@ -573,6 +580,7 @@
 				E621659DB794A5D612DCD4B4 /* DECombinatorMatcher.h in Headers */,
 				E621659DB794A5D612DCD4C4 /* DECombinator.h in Headers */,
 				E621659DB794A5D612DCD4C8 /* DEDescendantCombinator.h in Headers */,
+				2DC4F5B518089924000A6E47 /* SelectorEngine.h in Headers */,
 				E621659DB794A5D612DCD4CC /* DECombinatorParser.h in Headers */,
 				E621659DB794A5D612DCD4D0 /* DEChildCombinator.h in Headers */,
 				E621659DB794A5D612DCD4E3 /* DEIdentityMatcher.h in Headers */,
@@ -728,6 +736,7 @@
 				E621659DB794A5D612DCD465 /* MatchesView.m in Sources */,
 				E621659DB794A5D612DCD46D /* ClassParserTests.m in Sources */,
 				E621659DB794A5D612DCD475 /* BranchMatcherTests.m in Sources */,
+				2DC4F5B2180896DB000A6E47 /* SelectorEngineRegistry.m in Sources */,
 				E621659DB794A5D612DCD481 /* FalseMatcher.m in Sources */,
 				E621659DB794A5D612DCD491 /* BranchPatternTests.m in Sources */,
 				E621659DB794A5D612DCD495 /* InstanceParserTests.m in Sources */,
@@ -770,6 +779,7 @@
 				E621659DB794A5D612DCD53A /* DEQueryScanner.m in Sources */,
 				E621659DB794A5D612DCD53B /* DEIgor.m in Sources */,
 				E621659DB794A5D612DCD53C /* DECombinatorParser.m in Sources */,
+				2DC4F5AA18089625000A6E47 /* DEIgorSelfRegisteringSelectorEngine.m in Sources */,
 				E621659DB794A5D612DCD546 /* TagMatcherTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -872,7 +882,6 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				VERSIONING_SYSTEM = "apple-generic";
 				WARNING_CFLAGS = "";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -900,7 +909,6 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				VERSIONING_SYSTEM = "apple-generic";
 				WARNING_CFLAGS = "";
 				WRAPPER_EXTENSION = xctest;
 			};
