@@ -44,6 +44,7 @@
 		2DCE893715193E8900B975EE /* DEChainParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE893515193E8900B975EE /* DEChainParser.m */; };
 		2DCE893B15193F6100B975EE /* DEInstanceParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DCE893915193F6100B975EE /* DEInstanceParser.h */; };
 		2DCE893C15193F6100B975EE /* DEInstanceParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE893A15193F6100B975EE /* DEInstanceParser.m */; };
+		2DD2A5851807BCDE0015922A /* DETagMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD53F /* DETagMatcher.m */; };
 		E621659DB794A5D612DCD443 /* DEQueryScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD442 /* DEQueryScanner.m */; };
 		E621659DB794A5D612DCD445 /* DEQueryScanner.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD444 /* DEQueryScanner.h */; };
 		E621659DB794A5D612DCD449 /* DEChainMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD448 /* DEChainMatcher.h */; };
@@ -128,9 +129,9 @@
 		E621659DB794A5D612DCD53B /* DEIgor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C90147CD1BA00AF4115 /* DEIgor.m */; };
 		E621659DB794A5D612DCD53C /* DECombinatorParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4C9 /* DECombinatorParser.m */; };
 		E621659DB794A5D612DCD53E /* DEIgorSelfRegisteringSelectorEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD53D /* DEIgorSelfRegisteringSelectorEngine.m */; };
-		E621659DB794A5D612DCD546 /* TagMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD545 /* TagMatcherTests.m */; };
 		E621659DB794A5D612DCD540 /* DETagMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD53F /* DETagMatcher.m */; };
 		E621659DB794A5D612DCD542 /* DETagMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD541 /* DETagMatcher.h */; };
+		E621659DB794A5D612DCD546 /* TagMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD545 /* TagMatcherTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,7 +152,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2D0FABA7151FD242006E91F6 /* OCHamcrestIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCHamcrestIOS.framework; path = lib/OCHamcrestIOS.framework; sourceTree = "<group>"; };
 		2D2D4D0A1478787F00FF3D88 /* IgorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IgorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D3E1F3D1509B98200D62300 /* DescendantPatternTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescendantPatternTests.m; sourceTree = "<group>"; };
 		2D436E1F1518F9C300071950 /* DEIdentityMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEIdentityMatcher.h; sourceTree = "<group>"; };
@@ -248,11 +248,9 @@
 		E621659DB794A5D612DCD4D7 /* EmptySetCombinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptySetCombinator.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4D9 /* EmptySetCombinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptySetCombinator.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4DD /* ChildCombinatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildCombinatorTests.m; sourceTree = "<group>"; };
-
 		E621659DB794A5D612DCD4F0 /* AccessibilityIdentifierMatcherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccessibilityIdentifierMatcherTests.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4F4 /* DEAccessibilityIdentifierMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEAccessibilityIdentifierMatcher.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4F6 /* DEAccessibilityIdentifierMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEAccessibilityIdentifierMatcher.h; sourceTree = "<group>"; };
-
 		E621659DB794A5D612DCD4F8 /* DEIdentifierParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEIdentifierParser.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4FA /* DEIdentifierParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEIdentifierParser.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD4FC /* IdentifierParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdentifierParserTests.m; sourceTree = "<group>"; };
@@ -267,7 +265,6 @@
 		E621659DB794A5D612DCD523 /* My1ClassName2With3Digits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = My1ClassName2With3Digits.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD525 /* My1ClassName2With3Digits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = My1ClassName2With3Digits.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD53D /* DEIgorSelfRegisteringSelectorEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEIgorSelfRegisteringSelectorEngine.m; sourceTree = "<group>"; };
-
 		E621659DB794A5D612DCD53F /* DETagMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DETagMatcher.m; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD541 /* DETagMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DETagMatcher.h; sourceTree = "<group>"; };
 		E621659DB794A5D612DCD545 /* TagMatcherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagMatcherTests.m; sourceTree = "<group>"; };
@@ -760,6 +757,7 @@
 				E621659DB794A5D612DCD52E /* DEMemberOfClassMatcher.m in Sources */,
 				E621659DB794A5D612DCD52F /* DEPredicateMatcher.m in Sources */,
 				E621659DB794A5D612DCD530 /* DESiblingCombinator.m in Sources */,
+				2DD2A5851807BCDE0015922A /* DETagMatcher.m in Sources */,
 				E621659DB794A5D612DCD531 /* DEUniversalMatcher.m in Sources */,
 				E621659DB794A5D612DCD532 /* DEBranchParser.m in Sources */,
 				E621659DB794A5D612DCD533 /* DEChainParser.m in Sources */,
@@ -772,7 +770,6 @@
 				E621659DB794A5D612DCD53A /* DEQueryScanner.m in Sources */,
 				E621659DB794A5D612DCD53B /* DEIgor.m in Sources */,
 				E621659DB794A5D612DCD53C /* DECombinatorParser.m in Sources */,
-				E621659DB794A5D612DCD544 /* DETagMatcher.m in Sources */,
 				E621659DB794A5D612DCD546 /* TagMatcherTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -856,8 +853,8 @@
 		2D2D4D191478788000FF3D88 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 1.5;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/IgorTestApp.app/IgorTestApp";
+				CURRENT_PROJECT_VERSION = 1.5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
@@ -885,8 +882,8 @@
 		2D2D4D1A1478788000FF3D88 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 1.5;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/IgorTestApp.app/IgorTestApp";
+				CURRENT_PROJECT_VERSION = 1.5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
@@ -982,7 +979,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
->>>>>>> Update to XCTest and OCHamcrest 3
 			};
 			name = Debug;
 		};
