@@ -5,9 +5,6 @@
 #import "DETagMatcher.h"
 
 @interface IdentifierParserTests : XCTestCase
-#import "DETagMatcher.h"
-
-@interface IdentifierParserTests : SenTestCase
 @end
 
 @implementation IdentifierParserTests {

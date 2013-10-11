@@ -3,7 +3,7 @@
 #import "DETagMatcher.h"
 #import "MatchesView.h"
 
-@interface TagMatcherTests : SenTestCase
+@interface TagMatcherTests : XCTestCase
 
 @end
 
