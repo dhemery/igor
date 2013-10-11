@@ -1,8 +1,10 @@
 //
 //  OCHamcrest - HCDescription.h
-//  Copyright 2012 hamcrest.org. See LICENSE.txt
+//  Copyright 2013 hamcrest.org. See LICENSE.txt
 //
-//  Created by: Jon Reid
+//  Created by: Jon Reid, http://qualitycoding.org/
+//  Docs: http://hamcrest.github.com/OCHamcrest/
+//  Source: https://github.com/hamcrest/OCHamcrest
 //
 
 #import <Foundation/Foundation.h>
@@ -15,7 +17,7 @@
 
     @ingroup core
  */
-@protocol HCDescription
+@protocol HCDescription <NSObject>
 
 /**
     Appends some plain text to the description.
@@ -33,23 +35,14 @@
  */
 - (id<HCDescription>)appendDescriptionOf:(id)value;
 
-/**
-    Appends an arbitary value to the description.
-    
-    @b Deprecated: Call @ref appendDescriptionOf: instead.
-
-    @return @c self, for chaining.
- */
-- (id<HCDescription>)appendValue:(id)value     __attribute__((deprecated));
-
 /** 
     Appends a list of objects to the description.
     
     @return @c self, for chaining.
  */
 - (id<HCDescription>)appendList:(NSArray *)values
-                           start:(NSString *)start
-                       separator:(NSString *)separator
-                             end:(NSString *)end;
+                          start:(NSString *)start
+                      separator:(NSString *)separator
+                            end:(NSString *)end;
 
 @end

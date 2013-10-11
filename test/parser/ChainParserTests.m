@@ -4,7 +4,7 @@
 #import "FakeCombinatorParser.h"
 #import "DEDescendantCombinator.h"
 
-@interface ChainParserTests : SenTestCase
+@interface ChainParserTests : XCTestCase
 @end
 
 // TODO Uncomment and fix tests.

@@ -1,7 +1,7 @@
 #import "DEIgor.h"
 #import "ViewFactory.h"
 
-@interface ClassPatternTests : SenTestCase
+@interface ClassPatternTests : XCTestCase
 @end
 
 @implementation ClassPatternTests {

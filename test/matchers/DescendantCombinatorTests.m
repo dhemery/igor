@@ -1,7 +1,7 @@
 #import "ViewFactory.h"
 #import "DEDescendantCombinator.h"
 
-@interface DescendantCombinatorTests : SenTestCase
+@interface DescendantCombinatorTests : XCTestCase
 @end
 
 @implementation DescendantCombinatorTests {
@@ -17,7 +17,7 @@
 - (void)testNoRelativesIfNoDescendants {
     NSArray *relatives = [descendantCombinator relativesOfView:subject];
 
-    assertThat(relatives, is(empty()));
+    assertThat(relatives, isEmpty());
 }
 
 - (void)testChildIsRelativeIfOneChild {
@@ -66,7 +66,7 @@
 - (void)testNoInverseRelativesIfNoParent {
     NSArray *relatives = [descendantCombinator inverseRelativesOfView:subject];
 
-    assertThat(relatives, is(empty()));
+    assertThat(relatives, isEmpty());
 }
 
 - (void)testParentIsInverseRelative {

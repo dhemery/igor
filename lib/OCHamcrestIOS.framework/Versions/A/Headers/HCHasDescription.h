@@ -1,8 +1,10 @@
 //
 //  OCHamcrest - HCHasDescription.h
-//  Copyright 2012 hamcrest.org. See LICENSE.txt
+//  Copyright 2013 hamcrest.org. See LICENSE.txt
 //
-//  Created by: Jon Reid
+//  Created by: Jon Reid, http://qualitycoding.org/
+//  Docs: http://hamcrest.github.com/OCHamcrest/
+//  Source: https://github.com/hamcrest/OCHamcrest
 //
 
 #import <OCHamcrestIOS/HCInvocationMatcher.h>
@@ -10,8 +12,8 @@
 
 @interface HCHasDescription : HCInvocationMatcher
 
-+ (id)hasDescription:(id<HCMatcher>)descriptionMatcher;
-- (id)initWithDescription:(id<HCMatcher>)descriptionMatcher;
++ (instancetype)hasDescription:(id<HCMatcher>)descriptionMatcher;
+- (instancetype)initWithDescription:(id<HCMatcher>)descriptionMatcher;
 
 @end
 

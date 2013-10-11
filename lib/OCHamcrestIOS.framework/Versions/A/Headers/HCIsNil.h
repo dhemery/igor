@@ -1,8 +1,10 @@
 //
 //  OCHamcrest - HCIsNil.h
-//  Copyright 2012 hamcrest.org. See LICENSE.txt
+//  Copyright 2013 hamcrest.org. See LICENSE.txt
 //
-//  Created by: Jon Reid
+//  Created by: Jon Reid, http://qualitycoding.org/
+//  Docs: http://hamcrest.github.com/OCHamcrest/
+//  Source: https://github.com/hamcrest/OCHamcrest
 //
 
 #import <OCHamcrestIOS/HCBaseMatcher.h>
@@ -15,7 +17,7 @@
 @end
 
 
-OBJC_EXPORT id<HCMatcher> HC_nilValue();
+OBJC_EXPORT id<HCMatcher> HC_nilValue(void);
 
 /**
     Matches if object is @c nil.
@@ -30,7 +32,7 @@ OBJC_EXPORT id<HCMatcher> HC_nilValue();
 #endif
 
 
-OBJC_EXPORT id<HCMatcher> HC_notNilValue();
+OBJC_EXPORT id<HCMatcher> HC_notNilValue(void);
 
 /**
     Matches if object is not @c nil.

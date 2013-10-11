@@ -1,8 +1,10 @@
 //
 //  OCHamcrest - HCOrderingComparison.h
-//  Copyright 2012 hamcrest.org. See LICENSE.txt
+//  Copyright 2013 hamcrest.org. See LICENSE.txt
 //
-//  Created by: Jon Reid
+//  Created by: Jon Reid, http://qualitycoding.org/
+//  Docs: http://hamcrest.github.com/OCHamcrest/
+//  Source: https://github.com/hamcrest/OCHamcrest
 //
 
 #import <OCHamcrestIOS/HCBaseMatcher.h>
@@ -16,15 +18,15 @@
     NSString *comparisonDescription;
 }
 
-+ (id)compare:(id)expectedValue
-   minCompare:(NSComparisonResult)min
-   maxCompare:(NSComparisonResult)max
-   comparisonDescription:(NSString *)comparisonDescription;
++ (instancetype)compare:(id)expectedValue
+             minCompare:(NSComparisonResult)min
+             maxCompare:(NSComparisonResult)max
+  comparisonDescription:(NSString *)comparisonDescription;
 
-- (id)initComparing:(id)expectedValue
-         minCompare:(NSComparisonResult)min
-         maxCompare:(NSComparisonResult)max
-         comparisonDescription:(NSString *)comparisonDescription;
+- (instancetype)initComparing:(id)expectedValue
+                   minCompare:(NSComparisonResult)min
+                   maxCompare:(NSComparisonResult)max
+        comparisonDescription:(NSString *)comparisonDescription;
 
 @end
 
@@ -38,7 +40,7 @@ OBJC_EXPORT id<HCMatcher> HC_greaterThan(id expected);
     @param aNumber  The @c NSNumber to compare against.
     
     Example:
-    @li @ref greaterThan([NSNumber numberWithInt:5])
+    @li @ref greaterThan(\@5)
 
     (In the event of a name clash, don't \#define @c HC_SHORTHAND and use the synonym
     @c HC_greaterThan instead.)
@@ -59,7 +61,7 @@ OBJC_EXPORT id<HCMatcher> HC_greaterThanOrEqualTo(id expected);
     @param aNumber  The @c NSNumber to compare against.
     
     Example:
-    @li @ref greaterThanOrEqualTo([NSNumber numberWithInt:5])
+    @li @ref greaterThanOrEqualTo(\@5)
 
     (In the event of a name clash, don't \#define @c HC_SHORTHAND and use the synonym
     @c HC_greaterThanOrEqualTo instead.)
@@ -80,7 +82,7 @@ OBJC_EXPORT id<HCMatcher> HC_lessThan(id expected);
     @param aNumber  The @c NSNumber to compare against.
     
     Example:
-    @li @ref lessThan([NSNumber numberWithInt:5])
+    @li @ref lessThan(\@5)
 
     (In the event of a name clash, don't \#define @c HC_SHORTHAND and use the synonym
     @c HC_lessThan instead.)
@@ -101,7 +103,7 @@ OBJC_EXPORT id<HCMatcher> HC_lessThanOrEqualTo(id expected);
     @param aNumber  The @c NSNumber to compare against.
     
     Example:
-    @li @ref lessThanOrEqualTo([NSNumber numberWithInt:5])
+    @li @ref lessThanOrEqualTo(\@5)
 
     (In the event of a name clash, don't \#define @c HC_SHORTHAND and use the synonym
     @c HC_lessThanOrEqualTo instead.)

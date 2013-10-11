@@ -2,7 +2,7 @@
 #import "ViewFactory.h"
 #import "DESiblingCombinator.h"
 
-@interface SiblingCombinatorTests : SenTestCase
+@interface SiblingCombinatorTests : XCTestCase
 @end
 
 @implementation SiblingCombinatorTests {
@@ -21,7 +21,7 @@
 - (void)testNoRelativesIfNoSiblings {
     NSArray *relatives = [siblingCombinator relativesOfView:subject];
 
-    assertThat(relatives, is(empty()));
+    assertThat(relatives, isEmpty());
 }
 
 - (void)testSingleSiblingIsARelative {

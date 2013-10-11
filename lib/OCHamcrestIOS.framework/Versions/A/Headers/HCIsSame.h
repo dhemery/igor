@@ -1,8 +1,10 @@
 //
 //  OCHamcrest - HCIsSame.h
-//  Copyright 2012 hamcrest.org. See LICENSE.txt
+//  Copyright 2013 hamcrest.org. See LICENSE.txt
 //
-//  Created by: Jon Reid
+//  Created by: Jon Reid, http://qualitycoding.org/
+//  Docs: http://hamcrest.github.com/OCHamcrest/
+//  Source: https://github.com/hamcrest/OCHamcrest
 //
 
 #import <OCHamcrestIOS/HCBaseMatcher.h>
@@ -13,8 +15,8 @@
     id object;
 }
 
-+ (id)isSameAs:(id)anObject;
-- (id)initSameAs:(id)anObject;
++ (instancetype)isSameAs:(id)anObject;
+- (instancetype)initSameAs:(id)anObject;
 
 @end
 

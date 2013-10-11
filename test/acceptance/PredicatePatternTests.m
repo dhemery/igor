@@ -1,7 +1,7 @@
 #import "DEIgor.h"
 #import "ViewFactory.h"
 
-@interface PredicatePatternTests : SenTestCase
+@interface PredicatePatternTests : XCTestCase
 @end
 
 @implementation PredicatePatternTests {
@@ -22,10 +22,10 @@
 
 - (void)testMismatchesSubjectThatDoesNotSatisfyPredicate {
     NSArray *matchingViews = [igor findViewsThatMatchQuery:@"[accessibilityHint='wrong accessibility hint']" inTree:view];
-    assertThat(matchingViews, is(empty()));
+    assertThat(matchingViews, isEmpty());
 }
 
 - (void)testThrowsIfPatternIsIllegal {
-    STAssertThrows([igor findViewsThatMatchQuery:@"[this is not a valid predicate]" inTree:nil], nil);
+    XCTAssertThrows([igor findViewsThatMatchQuery:@"[this is not a valid predicate]" inTree:nil], @"Some Monkey");
 }
 @end

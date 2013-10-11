@@ -1,8 +1,10 @@
 //
 //  OCHamcrest - HCStringDescription.h
-//  Copyright 2012 hamcrest.org. See LICENSE.txt
+//  Copyright 2013 hamcrest.org. See LICENSE.txt
 //
-//  Created by: Jon Reid
+//  Created by: Jon Reid, http://qualitycoding.org/
+//  Docs: http://hamcrest.github.com/OCHamcrest/
+//  Source: https://github.com/hamcrest/OCHamcrest
 //
 
 #import <OCHamcrestIOS/HCBaseDescription.h>
@@ -31,11 +33,11 @@
 /**
     Returns an empty description.
  */
-+ (HCStringDescription *)stringDescription;
++ (instancetype)stringDescription;
 
 /**
     Returns an initialized HCStringDescription object that is empty.
  */
-- (id)init;
+- (instancetype)init;
 
 @end

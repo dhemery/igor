@@ -1,7 +1,7 @@
 #import "DEIgor.h"
 #import "ViewFactory.h"
 
-@interface SiblingPatternTests : SenTestCase
+@interface SiblingPatternTests : XCTestCase
 @end
 
 @implementation SiblingPatternTests {
@@ -44,13 +44,13 @@
 - (void)testSiblingCombinatorRequiresMatchingSubject {
     NSArray *matchingViews = [igor findViewsThatMatchQuery:@"* ~ #nosuch" inTree:root];
 
-    assertThat(matchingViews, is(empty()));
+    assertThat(matchingViews, isEmpty());
 }
 
 - (void)testSiblingCombinatorRequiresMatchingSibling {
     NSArray *matchingViews = [igor findViewsThatMatchQuery:@"#nosuch ~ *" inTree:root];
 
-    assertThat(matchingViews, is(empty()));
+    assertThat(matchingViews, isEmpty());
 }
 
 - (void)testSiblingCombinatorChainMatchesEntireBrood {

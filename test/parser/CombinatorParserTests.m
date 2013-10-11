@@ -4,7 +4,7 @@
 #import "DEQueryScanner.h"
 #import "DESiblingCombinator.h"
 
-@interface CombinatorParserTests : SenTestCase
+@interface CombinatorParserTests : XCTestCase
 @end
 
 @implementation CombinatorParserTests

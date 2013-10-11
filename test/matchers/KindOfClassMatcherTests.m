@@ -2,7 +2,7 @@
 #import "ViewFactory.h"
 #import "MatchesView.h"
 
-@interface KindOfClassMatcherTests : SenTestCase
+@interface KindOfClassMatcherTests : XCTestCase
 @end
 
 @implementation KindOfClassMatcherTests

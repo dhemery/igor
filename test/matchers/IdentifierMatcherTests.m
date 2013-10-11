@@ -3,7 +3,7 @@
 #import "DEMatcher.h"
 #import "DEIdentifierMatcher.h"
 
-@interface IdentifierMatcherTests : SenTestCase
+@interface IdentifierMatcherTests : XCTestCase
 @end
 
 @implementation IdentifierMatcherTests

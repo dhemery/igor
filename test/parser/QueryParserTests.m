@@ -10,7 +10,7 @@
 #import "DEClassParser.h"
 #import "DEBranchParser.h"
 
-@interface QueryParserTests : SenTestCase
+@interface QueryParserTests : XCTestCase
 @end
 
 // todo Use mocks to focus the test.

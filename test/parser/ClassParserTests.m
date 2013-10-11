@@ -6,7 +6,7 @@
 #import "_My_ClassName__WithUnder_Scores.h"
 #import "My1ClassName2With3Digits.h"
 
-@interface ClassParserTests : SenTestCase
+@interface ClassParserTests : XCTestCase
 @end
 
 @implementation ClassParserTests {

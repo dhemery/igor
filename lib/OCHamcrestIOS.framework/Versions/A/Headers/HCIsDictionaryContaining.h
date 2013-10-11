@@ -1,8 +1,10 @@
 //
 //  OCHamcrest - HCIsDictionaryContaining.h
-//  Copyright 2012 hamcrest.org. See LICENSE.txt
+//  Copyright 2013 hamcrest.org. See LICENSE.txt
 //
-//  Created by: Jon Reid
+//  Created by: Jon Reid, http://qualitycoding.org/
+//  Docs: http://hamcrest.github.com/OCHamcrest/
+//  Source: https://github.com/hamcrest/OCHamcrest
 //
 
 #import <OCHamcrestIOS/HCBaseMatcher.h>
@@ -14,11 +16,11 @@
     id<HCMatcher> valueMatcher;
 }
 
-+ (id)isDictionaryContainingKey:(id<HCMatcher>)aKeyMatcher
-                          value:(id<HCMatcher>)aValueMatcher;
++ (instancetype)isDictionaryContainingKey:(id<HCMatcher>)aKeyMatcher
+                                    value:(id<HCMatcher>)aValueMatcher;
 
-- (id)initWithKeyMatcher:(id<HCMatcher>)aKeyMatcher
-            valueMatcher:(id<HCMatcher>)aValueMatcher;
+- (instancetype)initWithKeyMatcher:(id<HCMatcher>)aKeyMatcher
+                      valueMatcher:(id<HCMatcher>)aValueMatcher;
 
 @end
 

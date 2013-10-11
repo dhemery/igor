@@ -1,8 +1,10 @@
 //
 //  OCHamcrest - HCIsEqualToNumber.h
-//  Copyright 2012 hamcrest.org. See LICENSE.txt
+//  Copyright 2013 hamcrest.org. See LICENSE.txt
 //
-//  Created by: Jon Reid
+//  Created by: Jon Reid, http://qualitycoding.org/
+//  Docs: http://hamcrest.github.com/OCHamcrest/
+//  Source: https://github.com/hamcrest/OCHamcrest
 //
 
 #import <OCHamcrestIOS/HCBaseMatcher.h>
@@ -27,6 +29,12 @@ OBJC_EXPORT id<HCMatcher> HC_equalToBool(BOOL value);
 #ifdef HC_SHORTHAND
     #define equalToBool HC_equalToBool
 #endif
+
+@interface HCIsEqualToBool : HCBaseMatcher
+
+- (instancetype)initWithValue:(BOOL)value;
+
+@end
 
 
 OBJC_EXPORT id<HCMatcher> HC_equalToChar(char value);

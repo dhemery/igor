@@ -6,7 +6,7 @@
 #import "DEUniversalMatcher.h"
 #import "DEKindOfClassMatcher.h"
 
-@interface InstanceParserTests : SenTestCase
+@interface InstanceParserTests : XCTestCase
 @end
 
 @implementation InstanceParserTests {

@@ -2,7 +2,7 @@
 #import "DEIdentifierMatcher.h"
 #import "DEIdentifierParser.h"
 #import "DEQueryScanner.h"
-@interface IdentifierParserTests : SenTestCase
+@interface IdentifierParserTests : XCTestCase
 @end
 
 @implementation IdentifierParserTests {

@@ -7,7 +7,7 @@
 #import "MatchesView.h"
 #import "EmptySetCombinator.h"
 #import "DEChildCombinator.h"
-@interface BranchMatcherTests : SenTestCase
+@interface BranchMatcherTests : XCTestCase
 @end
 
 @implementation BranchMatcherTests {

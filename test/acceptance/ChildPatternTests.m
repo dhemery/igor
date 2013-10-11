@@ -1,7 +1,7 @@
 #import "DEIgor.h"
 #import "ViewFactory.h"
 
-@interface ChildPatternTests : SenTestCase
+@interface ChildPatternTests : XCTestCase
 @end
 
 @implementation ChildPatternTests {
@@ -42,7 +42,7 @@
 
 - (void)testChildCombinatorChainRequiresAMatchForEachAncestorPattern {
     NSArray *matchingViews = [igor findViewsThatMatchQuery:@"#root > * > * > #leaf" inTree:root];
-    assertThat(matchingViews, is(empty()));
+    assertThat(matchingViews, isEmpty());
 }
 
 @end

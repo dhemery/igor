@@ -1,7 +1,7 @@
 #import "DEIgor.h"
 #import "ViewFactory.h"
 
-@interface SubjectMarkerTests : SenTestCase
+@interface SubjectMarkerTests : XCTestCase
 @end
 
 @implementation SubjectMarkerTests {
@@ -37,7 +37,7 @@
 
 - (void)testSubtreeMatchesOnlyWithinSubjectSubviews {
     NSArray *middleWithLeafInsideMiddleDescendant = [igor findViewsThatMatchQuery:@"$#middle #middle #leaf" inTree:root];
-    assertThat(middleWithLeafInsideMiddleDescendant, is(empty()));
+    assertThat(middleWithLeafInsideMiddleDescendant, isEmpty());
 }
 
 @end

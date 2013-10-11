@@ -2,7 +2,7 @@
 #import "DEQueryScanner.h"
 #import "IsPredicateMatcher.h"
 
-@interface PredicateParserTests : SenTestCase
+@interface PredicateParserTests : XCTestCase
 @end
 
 @implementation PredicateParserTests {
@@ -44,13 +44,13 @@
 - (void)testThrowsIfNoPredicateBetweenBrackets {
     scanner = [DEQueryScanner scannerWithString:@"[]"];
 
-    STAssertThrowsSpecificNamed([parser parseMatcherFromScanner:scanner], NSException, @"IgorParserException", @"Expected IgorParserException");
+    XCTAssertThrowsSpecificNamed([parser parseMatcherFromScanner:scanner], NSException, @"IgorParserException", @"Expected IgorParserException");
 }
 
 - (void)testThrowsIfNoRightBracket {
     scanner = [DEQueryScanner scannerWithString:@"[royClark='pickin'"];
 
-    STAssertThrowsSpecificNamed([parser parseMatcherFromScanner:scanner], NSException, @"IgorParserException", @"Expected IgorParserException");
+    XCTAssertThrowsSpecificNamed([parser parseMatcherFromScanner:scanner], NSException, @"IgorParserException", @"Expected IgorParserException");
 }
 
 @end

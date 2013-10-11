@@ -1,7 +1,7 @@
 #import "ViewFactory.h"
 #import "DEIgor.h"
 
-@interface BranchPatternTests : SenTestCase
+@interface BranchPatternTests : XCTestCase
 @end
 
 @implementation BranchPatternTests {
@@ -47,7 +47,7 @@
 - (void)testSubjectMatchesViewTailMismatchesRelatives {
     NSArray *matchingViews = [igor findViewsThatMatchQuery:@"(#middle1 #nosuch)" inTree:root];
 
-    assertThat(matchingViews, is(empty()));
+    assertThat(matchingViews, isEmpty());
 }
 
 - (void)testSubjectMatchesViewBranchMatchesSubjectAndRelatives {
@@ -70,8 +70,7 @@
 
 - (void)testSubjectMatchesViewHeadBranchMatchesSubjectMismatchesDescendants {
     NSArray *matchingViews = [igor findViewsThatMatchQuery:@"(#root #nosuch) #middle2 leaf1" inTree:root];
-
-    assertThat(matchingViews, is(empty()));
+    assertThat(matchingViews, isEmpty());
 }
 
 - (void)testSubjectMatchesViewWithinAncestorBranchSubjects {
@@ -83,7 +82,7 @@
 - (void)testBranchMatchesViewsButQueryMatchesNoSubjectsInsideBranchSubjects {
     NSArray *matchingViews = [igor findViewsThatMatchQuery:@"#root (#middle1 #middle1leaf1) #middle2leaf2" inTree:root];
 
-    assertThat(matchingViews, is(empty()));
+    assertThat(matchingViews, isEmpty());
 }
 
 - (void)testSiblingBranchesInQuery {
