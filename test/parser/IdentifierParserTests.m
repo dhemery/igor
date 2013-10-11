@@ -2,9 +2,15 @@
 #import "DEAccessibilityIdentifierMatcher.h"
 #import "DEIdentifierParser.h"
 #import "DEQueryScanner.h"
+<<<<<<< HEAD
 #import "DETagMatcher.h"
 
 @interface IdentifierParserTests : SenTestCase
+||||||| merged common ancestors
+@interface IdentifierParserTests : SenTestCase
+=======
+@interface IdentifierParserTests : XCTestCase
+>>>>>>> Update to XCTest and OCHamcrest 3
 @end
 
 @implementation IdentifierParserTests {

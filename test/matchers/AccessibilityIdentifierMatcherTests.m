@@ -3,7 +3,13 @@
 #import "DEMatcher.h"
 #import "DEAccessibilityIdentifierMatcher.h"
 
+<<<<<<< HEAD:test/matchers/AccessibilityIdentifierMatcherTests.m
 @interface AccessibilityIdentifierMatcherTests : SenTestCase
+||||||| merged common ancestors
+@interface IdentifierMatcherTests : SenTestCase
+=======
+@interface IdentifierMatcherTests : XCTestCase
+>>>>>>> Update to XCTest and OCHamcrest 3:test/matchers/IdentifierMatcherTests.m
 @end
 
 @implementation AccessibilityIdentifierMatcherTests

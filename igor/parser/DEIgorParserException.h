@@ -1,4 +1,4 @@
-@interface DEIgorParserException : NSException
+@interface DEIgorParserException : NSObject
 
 + (NSException *)exceptionWithReason:(NSString *)reason scanner:(NSScanner *)scanner;
 
