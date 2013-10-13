@@ -7,852 +7,723 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D2D4D0C1478787F00FF3D88 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD439 /* UIKit.framework */; };
-		2D2D4D0D1478787F00FF3D88 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD425 /* Foundation.framework */; };
-		2D3E1F3F1509B98200D62300 /* DescendantPatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3E1F3D1509B98200D62300 /* DescendantPatternTests.m */; };
-		2D436E281518FF6D00071950 /* ViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D436E261518FF6D00071950 /* ViewFactory.m */; };
-		2D496EA51486A513007E1FDE /* DEPredicateMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D496EA31486A513007E1FDE /* DEPredicateMatcher.h */; };
-		2D496EA61486A513007E1FDE /* DEPredicateMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D496EA41486A513007E1FDE /* DEPredicateMatcher.m */; };
-		2D6184EA18076AE9006BE5BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD425 /* Foundation.framework */; };
-		2D6184EB18076AE9006BE5BA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCF9766147ED3FD003B0F38 /* CoreGraphics.framework */; };
-		2D6184EC18076AE9006BE5BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD439 /* UIKit.framework */; };
-		2D6184F218076AE9006BE5BA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D6184F018076AE9006BE5BA /* InfoPlist.strings */; };
-		2D6184F418076AE9006BE5BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6184F318076AE9006BE5BA /* main.m */; };
-		2D6184F818076AE9006BE5BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6184F718076AE9006BE5BA /* AppDelegate.m */; };
-		2D6184FA18076AE9006BE5BA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D6184F918076AE9006BE5BA /* Images.xcassets */; };
-		2D61851718076C40006BE5BA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D61851618076C40006BE5BA /* XCTest.framework */; };
-		2D61851918078FCA006BE5BA /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D61851818078FCA006BE5BA /* OCHamcrestIOS.framework */; };
-		2D695CAB147CD1BA00AF4115 /* DEClassParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C8B147CD1BA00AF4115 /* DEClassParser.m */; };
-		2D695CAD147CD1BA00AF4115 /* DEInstanceMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C8D147CD1BA00AF4115 /* DEInstanceMatcher.m */; };
-		2D695CB0147CD1BA00AF4115 /* DEIgor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C90147CD1BA00AF4115 /* DEIgor.m */; };
-		2D695CB3147CD1BA00AF4115 /* DEQueryParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C93147CD1BA00AF4115 /* DEQueryParser.m */; };
-		2D695CB5147CD1BA00AF4115 /* DEIgorParserException.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C95147CD1BA00AF4115 /* DEIgorParserException.m */; };
-		2D695CB7147CD1BA00AF4115 /* DEKindOfClassMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C97147CD1BA00AF4115 /* DEKindOfClassMatcher.m */; };
-		2D695CBA147CD1BA00AF4115 /* DEMemberOfClassMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C9A147CD1BA00AF4115 /* DEMemberOfClassMatcher.m */; };
-		2D695CC4147CD1BA00AF4115 /* DEPredicateParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695CA4147CD1BA00AF4115 /* DEPredicateParser.m */; };
-		2D695CD6147CD1D200AF4115 /* ClassPatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695CCA147CD1D200AF4115 /* ClassPatternTests.m */; };
-		2D695CD8147CD1D200AF4115 /* QueryParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695CCD147CD1D200AF4115 /* QueryParserTests.m */; };
-		2D695CDA147CD1D200AF4115 /* KindOfClassMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695CD0147CD1D200AF4115 /* KindOfClassMatcherTests.m */; };
-		2D695CDB147CD1D200AF4115 /* MemberOfClassMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695CD1147CD1D200AF4115 /* MemberOfClassMatcherTests.m */; };
-		2D695CDD147CD1D200AF4115 /* PredicateParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695CD3147CD1D200AF4115 /* PredicateParserTests.m */; };
-		2D695CDE147CD1D200AF4115 /* PredicatePatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695CD4147CD1D200AF4115 /* PredicatePatternTests.m */; };
-		2D9649DF147DA19C00C40219 /* IgorTests-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 2D695CCF147CD1D200AF4115 /* IgorTests-Prefix.pch */; };
-		2D9649E0147DA1A700C40219 /* Igor-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C8E147CD1BA00AF4115 /* Igor-Prefix.pch */; };
-		2D9649E2147DA21400C40219 /* Igor-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C8E147CD1BA00AF4115 /* Igor-Prefix.pch */; };
-		2D99DB351517E9C900244226 /* SubjectMarkerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D99DB321517E94B00244226 /* SubjectMarkerTests.m */; };
-		2DC4F5AA18089625000A6E47 /* DEIgorSelfRegisteringSelectorEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD53D /* DEIgorSelfRegisteringSelectorEngine.m */; };
-		2DC4F5B2180896DB000A6E47 /* SelectorEngineRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC4F5B0180896DB000A6E47 /* SelectorEngineRegistry.m */; };
-		2DC4F5B518089924000A6E47 /* SelectorEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DC4F5B318089924000A6E47 /* SelectorEngine.h */; };
-		2DCE893615193E8900B975EE /* DEChainParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DCE893415193E8900B975EE /* DEChainParser.h */; };
-		2DCE893715193E8900B975EE /* DEChainParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE893515193E8900B975EE /* DEChainParser.m */; };
-		2DCE893B15193F6100B975EE /* DEInstanceParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DCE893915193F6100B975EE /* DEInstanceParser.h */; };
-		2DCE893C15193F6100B975EE /* DEInstanceParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE893A15193F6100B975EE /* DEInstanceParser.m */; };
-		2DD2A5851807BCDE0015922A /* DETagMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD53F /* DETagMatcher.m */; };
-		E621659DB794A5D612DCD443 /* DEQueryScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD442 /* DEQueryScanner.m */; };
-		E621659DB794A5D612DCD445 /* DEQueryScanner.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD444 /* DEQueryScanner.h */; };
-		E621659DB794A5D612DCD449 /* DEChainMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD448 /* DEChainMatcher.h */; };
-		E621659DB794A5D612DCD451 /* IsKindOfClassMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD450 /* IsKindOfClassMatcher.m */; };
-		E621659DB794A5D612DCD455 /* IsMemberOfClassMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD454 /* IsMemberOfClassMatcher.m */; };
-		E621659DB794A5D612DCD459 /* IsPredicateMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD458 /* IsPredicateMatcher.m */; };
-		E621659DB794A5D612DCD45D /* DEUniversalMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD45C /* DEUniversalMatcher.h */; };
-		E621659DB794A5D612DCD45F /* DEUniversalMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD45E /* DEUniversalMatcher.m */; };
-		E621659DB794A5D612DCD465 /* MatchesView.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD464 /* MatchesView.m */; };
-		E621659DB794A5D612DCD46D /* ClassParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD46C /* ClassParserTests.m */; };
-		E621659DB794A5D612DCD475 /* BranchMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD474 /* BranchMatcherTests.m */; };
-		E621659DB794A5D612DCD479 /* DEBranchMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD478 /* DEBranchMatcher.m */; };
-		E621659DB794A5D612DCD47B /* DEBranchMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD47A /* DEBranchMatcher.h */; };
-		E621659DB794A5D612DCD481 /* FalseMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD480 /* FalseMatcher.m */; };
-		E621659DB794A5D612DCD48B /* DEPatternParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD48A /* DEPatternParser.h */; };
-		E621659DB794A5D612DCD491 /* BranchPatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD490 /* BranchPatternTests.m */; };
-		E621659DB794A5D612DCD495 /* InstanceParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD494 /* InstanceParserTests.m */; };
-		E621659DB794A5D612DCD49A /* DEBranchParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD499 /* DEBranchParser.m */; };
-		E621659DB794A5D612DCD49C /* DEBranchParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD49B /* DEBranchParser.h */; };
-		E621659DB794A5D612DCD49E /* FakeSimpleParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD49D /* FakeSimpleParser.m */; };
-		E621659DB794A5D612DCD4AC /* DescendantCombinatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4AB /* DescendantCombinatorTests.m */; };
-		E621659DB794A5D612DCD4B0 /* DECombinatorMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4AF /* DECombinatorMatcher.m */; };
-		E621659DB794A5D612DCD4B4 /* DECombinatorMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4B3 /* DECombinatorMatcher.h */; };
-		E621659DB794A5D612DCD4B6 /* ChainParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4B5 /* ChainParserTests.m */; };
-		E621659DB794A5D612DCD4BA /* FakeSubjectParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4B9 /* FakeSubjectParser.m */; };
-		E621659DB794A5D612DCD4BE /* FakeCombinatorParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4BD /* FakeCombinatorParser.m */; };
-		E621659DB794A5D612DCD4C4 /* DECombinator.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4C3 /* DECombinator.h */; };
-		E621659DB794A5D612DCD4C6 /* DEDescendantCombinator.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4C5 /* DEDescendantCombinator.m */; };
-		E621659DB794A5D612DCD4C8 /* DEDescendantCombinator.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4C7 /* DEDescendantCombinator.h */; };
-		E621659DB794A5D612DCD4CA /* DECombinatorParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4C9 /* DECombinatorParser.m */; };
-		E621659DB794A5D612DCD4CC /* DECombinatorParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4CB /* DECombinatorParser.h */; };
-		E621659DB794A5D612DCD4CE /* DEChildCombinator.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4CD /* DEChildCombinator.m */; };
-		E621659DB794A5D612DCD4D0 /* DEChildCombinator.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4CF /* DEChildCombinator.h */; };
-		E621659DB794A5D612DCD4DE /* ChildCombinatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4DD /* ChildCombinatorTests.m */; };
-		E621659DB794A5D612DCD4E3 /* DEIdentityMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D436E1F1518F9C300071950 /* DEIdentityMatcher.h */; };
-		E621659DB794A5D612DCD4E4 /* DEIdentityMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D436E201518F9C300071950 /* DEIdentityMatcher.m */; };
-		E621659DB794A5D612DCD4E7 /* DEQueryParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C92147CD1BA00AF4115 /* DEQueryParser.h */; };
-		E621659DB794A5D612DCD4E8 /* DEClassParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C8A147CD1BA00AF4115 /* DEClassParser.h */; };
-		E621659DB794A5D612DCD4E9 /* DEIgorParserException.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C94147CD1BA00AF4115 /* DEIgorParserException.h */; };
-		E621659DB794A5D612DCD4EA /* DEPredicateParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695CA3147CD1BA00AF4115 /* DEPredicateParser.h */; };
-		E621659DB794A5D612DCD4EB /* DEInstanceMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C8C147CD1BA00AF4115 /* DEInstanceMatcher.h */; };
-		E621659DB794A5D612DCD4EC /* DEKindOfClassMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C96147CD1BA00AF4115 /* DEKindOfClassMatcher.h */; };
-		E621659DB794A5D612DCD4ED /* DEMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C98147CD1BA00AF4115 /* DEMatcher.h */; };
-		E621659DB794A5D612DCD4EE /* DEMemberOfClassMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C99147CD1BA00AF4115 /* DEMemberOfClassMatcher.h */; };
-		E621659DB794A5D612DCD4EF /* DEIgor.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D695C8F147CD1BA00AF4115 /* DEIgor.h */; };
-		E621659DB794A5D612DCD4F1 /* AccessibilityIdentifierMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4F0 /* AccessibilityIdentifierMatcherTests.m */; };
-		E621659DB794A5D612DCD4F5 /* DEAccessibilityIdentifierMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4F4 /* DEAccessibilityIdentifierMatcher.m */; };
-		E621659DB794A5D612DCD4F7 /* DEAccessibilityIdentifierMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4F6 /* DEAccessibilityIdentifierMatcher.h */; };
-		E621659DB794A5D612DCD4F9 /* DEIdentifierParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4F8 /* DEIdentifierParser.m */; };
-		E621659DB794A5D612DCD4FB /* DEIdentifierParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4FA /* DEIdentifierParser.h */; };
-		E621659DB794A5D612DCD4FD /* IdentifierParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4FC /* IdentifierParserTests.m */; };
-		E621659DB794A5D612DCD501 /* ChildPatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD500 /* ChildPatternTests.m */; };
-		E621659DB794A5D612DCD505 /* CombinatorParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD504 /* CombinatorParserTests.m */; };
-		E621659DB794A5D612DCD50D /* EmptySetCombinator.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4D7 /* EmptySetCombinator.m */; };
-		E621659DB794A5D612DCD516 /* SiblingPatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD515 /* SiblingPatternTests.m */; };
-		E621659DB794A5D612DCD51A /* DESiblingCombinator.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD519 /* DESiblingCombinator.m */; };
-		E621659DB794A5D612DCD51C /* DESiblingCombinator.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD51B /* DESiblingCombinator.h */; };
-		E621659DB794A5D612DCD51E /* SiblingCombinatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD51D /* SiblingCombinatorTests.m */; };
-		E621659DB794A5D612DCD520 /* _My_ClassName__WithUnder_Scores.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD51F /* _My_ClassName__WithUnder_Scores.m */; };
-		E621659DB794A5D612DCD524 /* My1ClassName2With3Digits.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD523 /* My1ClassName2With3Digits.m */; };
-		E621659DB794A5D612DCD526 /* DEBranchMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD478 /* DEBranchMatcher.m */; };
-		E621659DB794A5D612DCD527 /* DEChildCombinator.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4CD /* DEChildCombinator.m */; };
-		E621659DB794A5D612DCD528 /* DECombinatorMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4AF /* DECombinatorMatcher.m */; };
-		E621659DB794A5D612DCD529 /* DEDescendantCombinator.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4C5 /* DEDescendantCombinator.m */; };
-		E621659DB794A5D612DCD52A /* DEAccessibilityIdentifierMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4F4 /* DEAccessibilityIdentifierMatcher.m */; };
-		E621659DB794A5D612DCD52B /* DEIdentityMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D436E201518F9C300071950 /* DEIdentityMatcher.m */; };
-		E621659DB794A5D612DCD52C /* DEInstanceMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C8D147CD1BA00AF4115 /* DEInstanceMatcher.m */; };
-		E621659DB794A5D612DCD52D /* DEKindOfClassMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C97147CD1BA00AF4115 /* DEKindOfClassMatcher.m */; };
-		E621659DB794A5D612DCD52E /* DEMemberOfClassMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C9A147CD1BA00AF4115 /* DEMemberOfClassMatcher.m */; };
-		E621659DB794A5D612DCD52F /* DEPredicateMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D496EA41486A513007E1FDE /* DEPredicateMatcher.m */; };
-		E621659DB794A5D612DCD530 /* DESiblingCombinator.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD519 /* DESiblingCombinator.m */; };
-		E621659DB794A5D612DCD531 /* DEUniversalMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD45E /* DEUniversalMatcher.m */; };
-		E621659DB794A5D612DCD532 /* DEBranchParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD499 /* DEBranchParser.m */; };
-		E621659DB794A5D612DCD533 /* DEChainParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE893515193E8900B975EE /* DEChainParser.m */; };
-		E621659DB794A5D612DCD534 /* DEClassParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C8B147CD1BA00AF4115 /* DEClassParser.m */; };
-		E621659DB794A5D612DCD535 /* DEIdentifierParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4F8 /* DEIdentifierParser.m */; };
-		E621659DB794A5D612DCD536 /* DEIgorParserException.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C95147CD1BA00AF4115 /* DEIgorParserException.m */; };
-		E621659DB794A5D612DCD537 /* DEInstanceParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE893A15193F6100B975EE /* DEInstanceParser.m */; };
-		E621659DB794A5D612DCD538 /* DEPredicateParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695CA4147CD1BA00AF4115 /* DEPredicateParser.m */; };
-		E621659DB794A5D612DCD539 /* DEQueryParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C93147CD1BA00AF4115 /* DEQueryParser.m */; };
-		E621659DB794A5D612DCD53A /* DEQueryScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD442 /* DEQueryScanner.m */; };
-		E621659DB794A5D612DCD53B /* DEIgor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D695C90147CD1BA00AF4115 /* DEIgor.m */; };
-		E621659DB794A5D612DCD53C /* DECombinatorParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD4C9 /* DECombinatorParser.m */; };
-		E621659DB794A5D612DCD53E /* DEIgorSelfRegisteringSelectorEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD53D /* DEIgorSelfRegisteringSelectorEngine.m */; };
-		E621659DB794A5D612DCD540 /* DETagMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD53F /* DETagMatcher.m */; };
-		E621659DB794A5D612DCD542 /* DETagMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD541 /* DETagMatcher.h */; };
-		E621659DB794A5D612DCD546 /* TagMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E621659DB794A5D612DCD545 /* TagMatcherTests.m */; };
+		2D663939180A1DEA0031C1B2 /* DEIgor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663902180A1DEA0031C1B2 /* DEIgor.m */; };
+		2D66393A180A1DEA0031C1B2 /* DEIgorSelfRegisteringSelectorEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663903180A1DEA0031C1B2 /* DEIgorSelfRegisteringSelectorEngine.m */; };
+		2D66393B180A1DEA0031C1B2 /* DEAccessibilityIdentifierMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663907180A1DEA0031C1B2 /* DEAccessibilityIdentifierMatcher.m */; };
+		2D66393C180A1DEA0031C1B2 /* DEBranchMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663909180A1DEA0031C1B2 /* DEBranchMatcher.m */; };
+		2D66393D180A1DEA0031C1B2 /* DEChildCombinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D66390C180A1DEA0031C1B2 /* DEChildCombinator.m */; };
+		2D66393E180A1DEA0031C1B2 /* DECombinatorMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D66390F180A1DEA0031C1B2 /* DECombinatorMatcher.m */; };
+		2D66393F180A1DEA0031C1B2 /* DEDescendantCombinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663911180A1DEA0031C1B2 /* DEDescendantCombinator.m */; };
+		2D663940180A1DEA0031C1B2 /* DEIdentityMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663913180A1DEA0031C1B2 /* DEIdentityMatcher.m */; };
+		2D663941180A1DEA0031C1B2 /* DEInstanceMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663915180A1DEA0031C1B2 /* DEInstanceMatcher.m */; };
+		2D663942180A1DEA0031C1B2 /* DEKindOfClassMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663917180A1DEA0031C1B2 /* DEKindOfClassMatcher.m */; };
+		2D663943180A1DEA0031C1B2 /* DEMemberOfClassMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D66391A180A1DEA0031C1B2 /* DEMemberOfClassMatcher.m */; };
+		2D663944180A1DEA0031C1B2 /* DEPredicateMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D66391C180A1DEA0031C1B2 /* DEPredicateMatcher.m */; };
+		2D663945180A1DEA0031C1B2 /* DESiblingCombinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D66391E180A1DEA0031C1B2 /* DESiblingCombinator.m */; };
+		2D663946180A1DEA0031C1B2 /* DETagMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663920180A1DEA0031C1B2 /* DETagMatcher.m */; };
+		2D663947180A1DEA0031C1B2 /* DEUniversalMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663922180A1DEA0031C1B2 /* DEUniversalMatcher.m */; };
+		2D663948180A1DEA0031C1B2 /* DEBranchParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663925180A1DEA0031C1B2 /* DEBranchParser.m */; };
+		2D663949180A1DEA0031C1B2 /* DEChainParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663927180A1DEA0031C1B2 /* DEChainParser.m */; };
+		2D66394A180A1DEA0031C1B2 /* DEClassParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663929180A1DEA0031C1B2 /* DEClassParser.m */; };
+		2D66394B180A1DEA0031C1B2 /* DECombinatorParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D66392B180A1DEA0031C1B2 /* DECombinatorParser.m */; };
+		2D66394C180A1DEA0031C1B2 /* DEIdentifierParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D66392D180A1DEA0031C1B2 /* DEIdentifierParser.m */; };
+		2D66394D180A1DEA0031C1B2 /* DEIgorParserException.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D66392F180A1DEA0031C1B2 /* DEIgorParserException.m */; };
+		2D66394E180A1DEA0031C1B2 /* DEInstanceParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663931180A1DEA0031C1B2 /* DEInstanceParser.m */; };
+		2D66394F180A1DEA0031C1B2 /* DEPredicateParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663934180A1DEA0031C1B2 /* DEPredicateParser.m */; };
+		2D663950180A1DEA0031C1B2 /* DEQueryParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663936180A1DEA0031C1B2 /* DEQueryParser.m */; };
+		2D663951180A1DEA0031C1B2 /* DEQueryScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663938180A1DEA0031C1B2 /* DEQueryScanner.m */; };
+		2D663988180A1E770031C1B2 /* BranchPatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663954180A1E770031C1B2 /* BranchPatternTests.m */; };
+		2D663989180A1E770031C1B2 /* ChildPatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663955180A1E770031C1B2 /* ChildPatternTests.m */; };
+		2D66398A180A1E770031C1B2 /* ClassPatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663956180A1E770031C1B2 /* ClassPatternTests.m */; };
+		2D66398B180A1E770031C1B2 /* DescendantPatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663957180A1E770031C1B2 /* DescendantPatternTests.m */; };
+		2D66398C180A1E770031C1B2 /* PredicatePatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663958180A1E770031C1B2 /* PredicatePatternTests.m */; };
+		2D66398D180A1E770031C1B2 /* SiblingPatternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663959180A1E770031C1B2 /* SiblingPatternTests.m */; };
+		2D66398E180A1E770031C1B2 /* SubjectMarkerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D66395A180A1E770031C1B2 /* SubjectMarkerTests.m */; };
+		2D663990180A1E770031C1B2 /* _My_ClassName__WithUnder_Scores.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D66395F180A1E770031C1B2 /* _My_ClassName__WithUnder_Scores.m */; };
+		2D663991180A1E770031C1B2 /* EmptySetCombinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663961180A1E770031C1B2 /* EmptySetCombinator.m */; };
+		2D663992180A1E770031C1B2 /* FakeCombinatorParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663963180A1E770031C1B2 /* FakeCombinatorParser.m */; };
+		2D663993180A1E770031C1B2 /* FakeSimpleParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663965180A1E770031C1B2 /* FakeSimpleParser.m */; };
+		2D663994180A1E770031C1B2 /* FakeSubjectParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663967180A1E770031C1B2 /* FakeSubjectParser.m */; };
+		2D663995180A1E770031C1B2 /* FalseMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663969180A1E770031C1B2 /* FalseMatcher.m */; };
+		2D663996180A1E770031C1B2 /* IsKindOfClassMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D66396B180A1E770031C1B2 /* IsKindOfClassMatcher.m */; };
+		2D663997180A1E770031C1B2 /* IsMemberOfClassMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D66396D180A1E770031C1B2 /* IsMemberOfClassMatcher.m */; };
+		2D663998180A1E770031C1B2 /* IsPredicateMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D66396F180A1E770031C1B2 /* IsPredicateMatcher.m */; };
+		2D663999180A1E770031C1B2 /* MatchesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663971180A1E770031C1B2 /* MatchesView.m */; };
+		2D66399A180A1E770031C1B2 /* My1ClassName2With3Digits.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663973180A1E770031C1B2 /* My1ClassName2With3Digits.m */; };
+		2D66399B180A1E770031C1B2 /* SelectorEngineRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663974180A1E770031C1B2 /* SelectorEngineRegistry.m */; };
+		2D66399C180A1E770031C1B2 /* ViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663976180A1E770031C1B2 /* ViewFactory.m */; };
+		2D66399D180A1E770031C1B2 /* AccessibilityIdentifierMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663978180A1E770031C1B2 /* AccessibilityIdentifierMatcherTests.m */; };
+		2D66399E180A1E770031C1B2 /* BranchMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663979180A1E770031C1B2 /* BranchMatcherTests.m */; };
+		2D66399F180A1E770031C1B2 /* ChildCombinatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D66397A180A1E770031C1B2 /* ChildCombinatorTests.m */; };
+		2D6639A0180A1E770031C1B2 /* DescendantCombinatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D66397B180A1E770031C1B2 /* DescendantCombinatorTests.m */; };
+		2D6639A1180A1E770031C1B2 /* KindOfClassMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D66397C180A1E770031C1B2 /* KindOfClassMatcherTests.m */; };
+		2D6639A2180A1E770031C1B2 /* MemberOfClassMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D66397D180A1E770031C1B2 /* MemberOfClassMatcherTests.m */; };
+		2D6639A3180A1E770031C1B2 /* SiblingCombinatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D66397E180A1E770031C1B2 /* SiblingCombinatorTests.m */; };
+		2D6639A4180A1E770031C1B2 /* TagMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D66397F180A1E770031C1B2 /* TagMatcherTests.m */; };
+		2D6639A5180A1E770031C1B2 /* ChainParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663981180A1E770031C1B2 /* ChainParserTests.m */; };
+		2D6639A6180A1E770031C1B2 /* ClassParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663982180A1E770031C1B2 /* ClassParserTests.m */; };
+		2D6639A7180A1E770031C1B2 /* CombinatorParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663983180A1E770031C1B2 /* CombinatorParserTests.m */; };
+		2D6639A8180A1E770031C1B2 /* IdentifierParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663984180A1E770031C1B2 /* IdentifierParserTests.m */; };
+		2D6639A9180A1E770031C1B2 /* InstanceParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663985180A1E770031C1B2 /* InstanceParserTests.m */; };
+		2D6639AA180A1E770031C1B2 /* PredicateParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663986180A1E770031C1B2 /* PredicateParserTests.m */; };
+		2D6639AB180A1E770031C1B2 /* QueryParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663987180A1E770031C1B2 /* QueryParserTests.m */; };
+		2D6639B0180A1F7A0031C1B2 /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D6639AF180A1F7A0031C1B2 /* OCHamcrestIOS.framework */; };
+		2DCD244D180A18BD00E9B9A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCD244C180A18BD00E9B9A0 /* Foundation.framework */; };
+		2DCD245B180A18BD00E9B9A0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCD245A180A18BD00E9B9A0 /* XCTest.framework */; };
+		2DCD245C180A18BD00E9B9A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCD244C180A18BD00E9B9A0 /* Foundation.framework */; };
+		2DCD245E180A18BD00E9B9A0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCD245D180A18BD00E9B9A0 /* UIKit.framework */; };
+		2DCD2461180A18BD00E9B9A0 /* libIgor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCD2449180A18BD00E9B9A0 /* libIgor.a */; };
+		2DCD2477180A190100E9B9A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCD244C180A18BD00E9B9A0 /* Foundation.framework */; };
+		2DCD2479180A190100E9B9A0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCD2478180A190100E9B9A0 /* CoreGraphics.framework */; };
+		2DCD247A180A190100E9B9A0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCD245D180A18BD00E9B9A0 /* UIKit.framework */; };
+		2DCD2480180A190100E9B9A0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2DCD247E180A190100E9B9A0 /* InfoPlist.strings */; };
+		2DCD2482180A190100E9B9A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCD2481180A190100E9B9A0 /* main.m */; };
+		2DCD2486180A190100E9B9A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCD2485180A190100E9B9A0 /* AppDelegate.m */; };
+		2DCD2488180A190100E9B9A0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DCD2487180A190100E9B9A0 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2D61851418076B52006BE5BA /* PBXContainerItemProxy */ = {
+		2DCD245F180A18BD00E9B9A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E621659DB794A5D612DCD416 /* Project object */;
+			containerPortal = 2DCD2441180A18BD00E9B9A0 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E621659DB794A5D612DCD41D;
+			remoteGlobalIDString = 2DCD2448180A18BD00E9B9A0;
 			remoteInfo = Igor;
 		};
-		2D61851A180793F8006BE5BA /* PBXContainerItemProxy */ = {
+		2DCD24A1180A1B2900E9B9A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E621659DB794A5D612DCD416 /* Project object */;
+			containerPortal = 2DCD2441180A18BD00E9B9A0 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 2D6184E818076AE9006BE5BA;
+			remoteGlobalIDString = 2DCD2475180A190000E9B9A0;
 			remoteInfo = IgorTestApp;
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2DCD2447180A18BD00E9B9A0 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		2D2D4D0A1478787F00FF3D88 /* IgorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IgorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D3E1F3D1509B98200D62300 /* DescendantPatternTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescendantPatternTests.m; sourceTree = "<group>"; };
-		2D436E1F1518F9C300071950 /* DEIdentityMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEIdentityMatcher.h; sourceTree = "<group>"; };
-		2D436E201518F9C300071950 /* DEIdentityMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEIdentityMatcher.m; sourceTree = "<group>"; };
-		2D436E251518FF6D00071950 /* ViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewFactory.h; sourceTree = "<group>"; };
-		2D436E261518FF6D00071950 /* ViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewFactory.m; sourceTree = "<group>"; };
-		2D496EA31486A513007E1FDE /* DEPredicateMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEPredicateMatcher.h; sourceTree = "<group>"; };
-		2D496EA41486A513007E1FDE /* DEPredicateMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEPredicateMatcher.m; sourceTree = "<group>"; };
-		2D6184E918076AE9006BE5BA /* IgorTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IgorTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D6184EF18076AE9006BE5BA /* IgorTestApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IgorTestApp-Info.plist"; sourceTree = "<group>"; };
-		2D6184F118076AE9006BE5BA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2D6184F318076AE9006BE5BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2D6184F518076AE9006BE5BA /* IgorTestApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IgorTestApp-Prefix.pch"; sourceTree = "<group>"; };
-		2D6184F618076AE9006BE5BA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		2D6184F718076AE9006BE5BA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2D6184F918076AE9006BE5BA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		2D61851618076C40006BE5BA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		2D61851818078FCA006BE5BA /* OCHamcrestIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCHamcrestIOS.framework; path = lib/OCHamcrestIOS.framework; sourceTree = "<group>"; };
-		2D695C8A147CD1BA00AF4115 /* DEClassParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEClassParser.h; sourceTree = "<group>"; };
-		2D695C8B147CD1BA00AF4115 /* DEClassParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEClassParser.m; sourceTree = "<group>"; };
-		2D695C8C147CD1BA00AF4115 /* DEInstanceMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEInstanceMatcher.h; sourceTree = "<group>"; };
-		2D695C8D147CD1BA00AF4115 /* DEInstanceMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEInstanceMatcher.m; sourceTree = "<group>"; };
-		2D695C8E147CD1BA00AF4115 /* Igor-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Igor-Prefix.pch"; sourceTree = "<group>"; };
-		2D695C8F147CD1BA00AF4115 /* DEIgor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEIgor.h; sourceTree = "<group>"; };
-		2D695C90147CD1BA00AF4115 /* DEIgor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEIgor.m; sourceTree = "<group>"; };
-		2D695C92147CD1BA00AF4115 /* DEQueryParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEQueryParser.h; sourceTree = "<group>"; };
-		2D695C93147CD1BA00AF4115 /* DEQueryParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEQueryParser.m; sourceTree = "<group>"; };
-		2D695C94147CD1BA00AF4115 /* DEIgorParserException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEIgorParserException.h; sourceTree = "<group>"; };
-		2D695C95147CD1BA00AF4115 /* DEIgorParserException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEIgorParserException.m; sourceTree = "<group>"; };
-		2D695C96147CD1BA00AF4115 /* DEKindOfClassMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEKindOfClassMatcher.h; sourceTree = "<group>"; };
-		2D695C97147CD1BA00AF4115 /* DEKindOfClassMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEKindOfClassMatcher.m; sourceTree = "<group>"; };
-		2D695C98147CD1BA00AF4115 /* DEMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMatcher.h; sourceTree = "<group>"; };
-		2D695C99147CD1BA00AF4115 /* DEMemberOfClassMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMemberOfClassMatcher.h; sourceTree = "<group>"; };
-		2D695C9A147CD1BA00AF4115 /* DEMemberOfClassMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMemberOfClassMatcher.m; sourceTree = "<group>"; };
-		2D695CA3147CD1BA00AF4115 /* DEPredicateParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEPredicateParser.h; sourceTree = "<group>"; };
-		2D695CA4147CD1BA00AF4115 /* DEPredicateParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEPredicateParser.m; sourceTree = "<group>"; };
-		2D695CCA147CD1D200AF4115 /* ClassPatternTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassPatternTests.m; sourceTree = "<group>"; };
-		2D695CCC147CD1D200AF4115 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2D695CCD147CD1D200AF4115 /* QueryParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueryParserTests.m; sourceTree = "<group>"; };
-		2D695CCF147CD1D200AF4115 /* IgorTests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IgorTests-Prefix.pch"; sourceTree = "<group>"; };
-		2D695CD0147CD1D200AF4115 /* KindOfClassMatcherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KindOfClassMatcherTests.m; sourceTree = "<group>"; };
-		2D695CD1147CD1D200AF4115 /* MemberOfClassMatcherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberOfClassMatcherTests.m; sourceTree = "<group>"; };
-		2D695CD3147CD1D200AF4115 /* PredicateParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredicateParserTests.m; sourceTree = "<group>"; };
-		2D695CD4147CD1D200AF4115 /* PredicatePatternTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredicatePatternTests.m; sourceTree = "<group>"; };
-		2D99DB321517E94B00244226 /* SubjectMarkerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectMarkerTests.m; sourceTree = "<group>"; };
-		2DC4F5B0180896DB000A6E47 /* SelectorEngineRegistry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectorEngineRegistry.m; sourceTree = "<group>"; };
-		2DC4F5B318089924000A6E47 /* SelectorEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectorEngine.h; sourceTree = "<group>"; };
-		2DCE893415193E8900B975EE /* DEChainParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEChainParser.h; sourceTree = "<group>"; };
-		2DCE893515193E8900B975EE /* DEChainParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEChainParser.m; sourceTree = "<group>"; };
-		2DCE893915193F6100B975EE /* DEInstanceParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEInstanceParser.h; sourceTree = "<group>"; };
-		2DCE893A15193F6100B975EE /* DEInstanceParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEInstanceParser.m; sourceTree = "<group>"; };
-		2DCF9766147ED3FD003B0F38 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		E621659DB794A5D612DCD425 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		E621659DB794A5D612DCD439 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		E621659DB794A5D612DCD442 /* DEQueryScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEQueryScanner.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD444 /* DEQueryScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEQueryScanner.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD448 /* DEChainMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEChainMatcher.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD450 /* IsKindOfClassMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IsKindOfClassMatcher.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD452 /* IsKindOfClassMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IsKindOfClassMatcher.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD454 /* IsMemberOfClassMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IsMemberOfClassMatcher.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD456 /* IsMemberOfClassMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IsMemberOfClassMatcher.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD458 /* IsPredicateMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IsPredicateMatcher.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD45A /* IsPredicateMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IsPredicateMatcher.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD45C /* DEUniversalMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEUniversalMatcher.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD45E /* DEUniversalMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEUniversalMatcher.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD464 /* MatchesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchesView.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD466 /* MatchesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchesView.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD46C /* ClassParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassParserTests.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD474 /* BranchMatcherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BranchMatcherTests.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD478 /* DEBranchMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEBranchMatcher.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD47A /* DEBranchMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEBranchMatcher.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD480 /* FalseMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FalseMatcher.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD482 /* FalseMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FalseMatcher.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD48A /* DEPatternParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEPatternParser.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD490 /* BranchPatternTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BranchPatternTests.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD494 /* InstanceParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstanceParserTests.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD499 /* DEBranchParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEBranchParser.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD49B /* DEBranchParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEBranchParser.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD49D /* FakeSimpleParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeSimpleParser.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD49F /* FakeSimpleParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSimpleParser.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4AB /* DescendantCombinatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescendantCombinatorTests.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4AF /* DECombinatorMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DECombinatorMatcher.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4B3 /* DECombinatorMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DECombinatorMatcher.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4B5 /* ChainParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainParserTests.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4B9 /* FakeSubjectParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeSubjectParser.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4BB /* FakeSubjectParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSubjectParser.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4BD /* FakeCombinatorParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeCombinatorParser.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4BF /* FakeCombinatorParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeCombinatorParser.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4C3 /* DECombinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DECombinator.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4C5 /* DEDescendantCombinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEDescendantCombinator.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4C7 /* DEDescendantCombinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEDescendantCombinator.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4C9 /* DECombinatorParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DECombinatorParser.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4CB /* DECombinatorParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DECombinatorParser.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4CD /* DEChildCombinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEChildCombinator.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4CF /* DEChildCombinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEChildCombinator.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4D7 /* EmptySetCombinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptySetCombinator.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4D9 /* EmptySetCombinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptySetCombinator.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4DD /* ChildCombinatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildCombinatorTests.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4F0 /* AccessibilityIdentifierMatcherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccessibilityIdentifierMatcherTests.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4F4 /* DEAccessibilityIdentifierMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEAccessibilityIdentifierMatcher.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4F6 /* DEAccessibilityIdentifierMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEAccessibilityIdentifierMatcher.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4F8 /* DEIdentifierParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEIdentifierParser.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4FA /* DEIdentifierParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEIdentifierParser.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD4FC /* IdentifierParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdentifierParserTests.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD500 /* ChildPatternTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildPatternTests.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD504 /* CombinatorParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CombinatorParserTests.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD515 /* SiblingPatternTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiblingPatternTests.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD519 /* DESiblingCombinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DESiblingCombinator.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD51B /* DESiblingCombinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DESiblingCombinator.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD51D /* SiblingCombinatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiblingCombinatorTests.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD51F /* _My_ClassName__WithUnder_Scores.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _My_ClassName__WithUnder_Scores.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD521 /* _My_ClassName__WithUnder_Scores.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _My_ClassName__WithUnder_Scores.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD523 /* My1ClassName2With3Digits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = My1ClassName2With3Digits.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD525 /* My1ClassName2With3Digits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = My1ClassName2With3Digits.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD53D /* DEIgorSelfRegisteringSelectorEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEIgorSelfRegisteringSelectorEngine.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD53F /* DETagMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DETagMatcher.m; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD541 /* DETagMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DETagMatcher.h; sourceTree = "<group>"; };
-		E621659DB794A5D612DCD545 /* TagMatcherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagMatcherTests.m; sourceTree = "<group>"; };
+		2D663901180A1DEA0031C1B2 /* DEIgor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEIgor.h; sourceTree = "<group>"; };
+		2D663902180A1DEA0031C1B2 /* DEIgor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEIgor.m; sourceTree = "<group>"; };
+		2D663903180A1DEA0031C1B2 /* DEIgorSelfRegisteringSelectorEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEIgorSelfRegisteringSelectorEngine.m; sourceTree = "<group>"; };
+		2D663904180A1DEA0031C1B2 /* SelectorEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectorEngine.h; sourceTree = "<group>"; };
+		2D663906180A1DEA0031C1B2 /* DEAccessibilityIdentifierMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEAccessibilityIdentifierMatcher.h; sourceTree = "<group>"; };
+		2D663907180A1DEA0031C1B2 /* DEAccessibilityIdentifierMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEAccessibilityIdentifierMatcher.m; sourceTree = "<group>"; };
+		2D663908180A1DEA0031C1B2 /* DEBranchMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEBranchMatcher.h; sourceTree = "<group>"; };
+		2D663909180A1DEA0031C1B2 /* DEBranchMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEBranchMatcher.m; sourceTree = "<group>"; };
+		2D66390A180A1DEA0031C1B2 /* DEChainMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEChainMatcher.h; sourceTree = "<group>"; };
+		2D66390B180A1DEA0031C1B2 /* DEChildCombinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEChildCombinator.h; sourceTree = "<group>"; };
+		2D66390C180A1DEA0031C1B2 /* DEChildCombinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEChildCombinator.m; sourceTree = "<group>"; };
+		2D66390D180A1DEA0031C1B2 /* DECombinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DECombinator.h; sourceTree = "<group>"; };
+		2D66390E180A1DEA0031C1B2 /* DECombinatorMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DECombinatorMatcher.h; sourceTree = "<group>"; };
+		2D66390F180A1DEA0031C1B2 /* DECombinatorMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DECombinatorMatcher.m; sourceTree = "<group>"; };
+		2D663910180A1DEA0031C1B2 /* DEDescendantCombinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEDescendantCombinator.h; sourceTree = "<group>"; };
+		2D663911180A1DEA0031C1B2 /* DEDescendantCombinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEDescendantCombinator.m; sourceTree = "<group>"; };
+		2D663912180A1DEA0031C1B2 /* DEIdentityMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEIdentityMatcher.h; sourceTree = "<group>"; };
+		2D663913180A1DEA0031C1B2 /* DEIdentityMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEIdentityMatcher.m; sourceTree = "<group>"; };
+		2D663914180A1DEA0031C1B2 /* DEInstanceMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEInstanceMatcher.h; sourceTree = "<group>"; };
+		2D663915180A1DEA0031C1B2 /* DEInstanceMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEInstanceMatcher.m; sourceTree = "<group>"; };
+		2D663916180A1DEA0031C1B2 /* DEKindOfClassMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEKindOfClassMatcher.h; sourceTree = "<group>"; };
+		2D663917180A1DEA0031C1B2 /* DEKindOfClassMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEKindOfClassMatcher.m; sourceTree = "<group>"; };
+		2D663918180A1DEA0031C1B2 /* DEMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMatcher.h; sourceTree = "<group>"; };
+		2D663919180A1DEA0031C1B2 /* DEMemberOfClassMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMemberOfClassMatcher.h; sourceTree = "<group>"; };
+		2D66391A180A1DEA0031C1B2 /* DEMemberOfClassMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMemberOfClassMatcher.m; sourceTree = "<group>"; };
+		2D66391B180A1DEA0031C1B2 /* DEPredicateMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEPredicateMatcher.h; sourceTree = "<group>"; };
+		2D66391C180A1DEA0031C1B2 /* DEPredicateMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEPredicateMatcher.m; sourceTree = "<group>"; };
+		2D66391D180A1DEA0031C1B2 /* DESiblingCombinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DESiblingCombinator.h; sourceTree = "<group>"; };
+		2D66391E180A1DEA0031C1B2 /* DESiblingCombinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DESiblingCombinator.m; sourceTree = "<group>"; };
+		2D66391F180A1DEA0031C1B2 /* DETagMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DETagMatcher.h; sourceTree = "<group>"; };
+		2D663920180A1DEA0031C1B2 /* DETagMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DETagMatcher.m; sourceTree = "<group>"; };
+		2D663921180A1DEA0031C1B2 /* DEUniversalMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEUniversalMatcher.h; sourceTree = "<group>"; };
+		2D663922180A1DEA0031C1B2 /* DEUniversalMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEUniversalMatcher.m; sourceTree = "<group>"; };
+		2D663924180A1DEA0031C1B2 /* DEBranchParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEBranchParser.h; sourceTree = "<group>"; };
+		2D663925180A1DEA0031C1B2 /* DEBranchParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEBranchParser.m; sourceTree = "<group>"; };
+		2D663926180A1DEA0031C1B2 /* DEChainParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEChainParser.h; sourceTree = "<group>"; };
+		2D663927180A1DEA0031C1B2 /* DEChainParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEChainParser.m; sourceTree = "<group>"; };
+		2D663928180A1DEA0031C1B2 /* DEClassParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEClassParser.h; sourceTree = "<group>"; };
+		2D663929180A1DEA0031C1B2 /* DEClassParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEClassParser.m; sourceTree = "<group>"; };
+		2D66392A180A1DEA0031C1B2 /* DECombinatorParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DECombinatorParser.h; sourceTree = "<group>"; };
+		2D66392B180A1DEA0031C1B2 /* DECombinatorParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DECombinatorParser.m; sourceTree = "<group>"; };
+		2D66392C180A1DEA0031C1B2 /* DEIdentifierParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEIdentifierParser.h; sourceTree = "<group>"; };
+		2D66392D180A1DEA0031C1B2 /* DEIdentifierParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEIdentifierParser.m; sourceTree = "<group>"; };
+		2D66392E180A1DEA0031C1B2 /* DEIgorParserException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEIgorParserException.h; sourceTree = "<group>"; };
+		2D66392F180A1DEA0031C1B2 /* DEIgorParserException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEIgorParserException.m; sourceTree = "<group>"; };
+		2D663930180A1DEA0031C1B2 /* DEInstanceParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEInstanceParser.h; sourceTree = "<group>"; };
+		2D663931180A1DEA0031C1B2 /* DEInstanceParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEInstanceParser.m; sourceTree = "<group>"; };
+		2D663932180A1DEA0031C1B2 /* DEPatternParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEPatternParser.h; sourceTree = "<group>"; };
+		2D663933180A1DEA0031C1B2 /* DEPredicateParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEPredicateParser.h; sourceTree = "<group>"; };
+		2D663934180A1DEA0031C1B2 /* DEPredicateParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEPredicateParser.m; sourceTree = "<group>"; };
+		2D663935180A1DEA0031C1B2 /* DEQueryParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEQueryParser.h; sourceTree = "<group>"; };
+		2D663936180A1DEA0031C1B2 /* DEQueryParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEQueryParser.m; sourceTree = "<group>"; };
+		2D663937180A1DEA0031C1B2 /* DEQueryScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEQueryScanner.h; sourceTree = "<group>"; };
+		2D663938180A1DEA0031C1B2 /* DEQueryScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEQueryScanner.m; sourceTree = "<group>"; };
+		2D663952180A1DFD0031C1B2 /* Igor-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Igor-Prefix.pch"; sourceTree = "<group>"; };
+		2D663954180A1E770031C1B2 /* BranchPatternTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BranchPatternTests.m; sourceTree = "<group>"; };
+		2D663955180A1E770031C1B2 /* ChildPatternTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildPatternTests.m; sourceTree = "<group>"; };
+		2D663956180A1E770031C1B2 /* ClassPatternTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassPatternTests.m; sourceTree = "<group>"; };
+		2D663957180A1E770031C1B2 /* DescendantPatternTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescendantPatternTests.m; sourceTree = "<group>"; };
+		2D663958180A1E770031C1B2 /* PredicatePatternTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredicatePatternTests.m; sourceTree = "<group>"; };
+		2D663959180A1E770031C1B2 /* SiblingPatternTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiblingPatternTests.m; sourceTree = "<group>"; };
+		2D66395A180A1E770031C1B2 /* SubjectMarkerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectMarkerTests.m; sourceTree = "<group>"; };
+		2D66395E180A1E770031C1B2 /* _My_ClassName__WithUnder_Scores.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _My_ClassName__WithUnder_Scores.h; sourceTree = "<group>"; };
+		2D66395F180A1E770031C1B2 /* _My_ClassName__WithUnder_Scores.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _My_ClassName__WithUnder_Scores.m; sourceTree = "<group>"; };
+		2D663960180A1E770031C1B2 /* EmptySetCombinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptySetCombinator.h; sourceTree = "<group>"; };
+		2D663961180A1E770031C1B2 /* EmptySetCombinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptySetCombinator.m; sourceTree = "<group>"; };
+		2D663962180A1E770031C1B2 /* FakeCombinatorParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeCombinatorParser.h; sourceTree = "<group>"; };
+		2D663963180A1E770031C1B2 /* FakeCombinatorParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeCombinatorParser.m; sourceTree = "<group>"; };
+		2D663964180A1E770031C1B2 /* FakeSimpleParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSimpleParser.h; sourceTree = "<group>"; };
+		2D663965180A1E770031C1B2 /* FakeSimpleParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeSimpleParser.m; sourceTree = "<group>"; };
+		2D663966180A1E770031C1B2 /* FakeSubjectParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSubjectParser.h; sourceTree = "<group>"; };
+		2D663967180A1E770031C1B2 /* FakeSubjectParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeSubjectParser.m; sourceTree = "<group>"; };
+		2D663968180A1E770031C1B2 /* FalseMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FalseMatcher.h; sourceTree = "<group>"; };
+		2D663969180A1E770031C1B2 /* FalseMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FalseMatcher.m; sourceTree = "<group>"; };
+		2D66396A180A1E770031C1B2 /* IsKindOfClassMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IsKindOfClassMatcher.h; sourceTree = "<group>"; };
+		2D66396B180A1E770031C1B2 /* IsKindOfClassMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IsKindOfClassMatcher.m; sourceTree = "<group>"; };
+		2D66396C180A1E770031C1B2 /* IsMemberOfClassMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IsMemberOfClassMatcher.h; sourceTree = "<group>"; };
+		2D66396D180A1E770031C1B2 /* IsMemberOfClassMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IsMemberOfClassMatcher.m; sourceTree = "<group>"; };
+		2D66396E180A1E770031C1B2 /* IsPredicateMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IsPredicateMatcher.h; sourceTree = "<group>"; };
+		2D66396F180A1E770031C1B2 /* IsPredicateMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IsPredicateMatcher.m; sourceTree = "<group>"; };
+		2D663970180A1E770031C1B2 /* MatchesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchesView.h; sourceTree = "<group>"; };
+		2D663971180A1E770031C1B2 /* MatchesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchesView.m; sourceTree = "<group>"; };
+		2D663972180A1E770031C1B2 /* My1ClassName2With3Digits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = My1ClassName2With3Digits.h; sourceTree = "<group>"; };
+		2D663973180A1E770031C1B2 /* My1ClassName2With3Digits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = My1ClassName2With3Digits.m; sourceTree = "<group>"; };
+		2D663974180A1E770031C1B2 /* SelectorEngineRegistry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectorEngineRegistry.m; sourceTree = "<group>"; };
+		2D663975180A1E770031C1B2 /* ViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewFactory.h; sourceTree = "<group>"; };
+		2D663976180A1E770031C1B2 /* ViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewFactory.m; sourceTree = "<group>"; };
+		2D663978180A1E770031C1B2 /* AccessibilityIdentifierMatcherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccessibilityIdentifierMatcherTests.m; sourceTree = "<group>"; };
+		2D663979180A1E770031C1B2 /* BranchMatcherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BranchMatcherTests.m; sourceTree = "<group>"; };
+		2D66397A180A1E770031C1B2 /* ChildCombinatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildCombinatorTests.m; sourceTree = "<group>"; };
+		2D66397B180A1E770031C1B2 /* DescendantCombinatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescendantCombinatorTests.m; sourceTree = "<group>"; };
+		2D66397C180A1E770031C1B2 /* KindOfClassMatcherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KindOfClassMatcherTests.m; sourceTree = "<group>"; };
+		2D66397D180A1E770031C1B2 /* MemberOfClassMatcherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberOfClassMatcherTests.m; sourceTree = "<group>"; };
+		2D66397E180A1E770031C1B2 /* SiblingCombinatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiblingCombinatorTests.m; sourceTree = "<group>"; };
+		2D66397F180A1E770031C1B2 /* TagMatcherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagMatcherTests.m; sourceTree = "<group>"; };
+		2D663981180A1E770031C1B2 /* ChainParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainParserTests.m; sourceTree = "<group>"; };
+		2D663982180A1E770031C1B2 /* ClassParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassParserTests.m; sourceTree = "<group>"; };
+		2D663983180A1E770031C1B2 /* CombinatorParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CombinatorParserTests.m; sourceTree = "<group>"; };
+		2D663984180A1E770031C1B2 /* IdentifierParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdentifierParserTests.m; sourceTree = "<group>"; };
+		2D663985180A1E770031C1B2 /* InstanceParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstanceParserTests.m; sourceTree = "<group>"; };
+		2D663986180A1E770031C1B2 /* PredicateParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredicateParserTests.m; sourceTree = "<group>"; };
+		2D663987180A1E770031C1B2 /* QueryParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueryParserTests.m; sourceTree = "<group>"; };
+		2D6639AC180A1E860031C1B2 /* IgorTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "IgorTests-Info.plist"; sourceTree = "<group>"; };
+		2D6639AD180A1E860031C1B2 /* IgorTests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IgorTests-Prefix.pch"; sourceTree = "<group>"; };
+		2D6639AF180A1F7A0031C1B2 /* OCHamcrestIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCHamcrestIOS.framework; path = lib/OCHamcrestIOS.framework; sourceTree = "<group>"; };
+		2DCD2449180A18BD00E9B9A0 /* libIgor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIgor.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DCD244C180A18BD00E9B9A0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2DCD2459180A18BD00E9B9A0 /* IgorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IgorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DCD245A180A18BD00E9B9A0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		2DCD245D180A18BD00E9B9A0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		2DCD2476180A190000E9B9A0 /* IgorTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IgorTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DCD2478180A190100E9B9A0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2DCD247D180A190100E9B9A0 /* IgorTestApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IgorTestApp-Info.plist"; sourceTree = "<group>"; };
+		2DCD247F180A190100E9B9A0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2DCD2481180A190100E9B9A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2DCD2483180A190100E9B9A0 /* IgorTestApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IgorTestApp-Prefix.pch"; sourceTree = "<group>"; };
+		2DCD2484180A190100E9B9A0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2DCD2485180A190100E9B9A0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2DCD2487180A190100E9B9A0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2D2D4D061478787F00FF3D88 /* Frameworks */ = {
+		2DCD2446180A18BD00E9B9A0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D61851718076C40006BE5BA /* XCTest.framework in Frameworks */,
-				2D2D4D0C1478787F00FF3D88 /* UIKit.framework in Frameworks */,
-				2D2D4D0D1478787F00FF3D88 /* Foundation.framework in Frameworks */,
-				2D61851918078FCA006BE5BA /* OCHamcrestIOS.framework in Frameworks */,
+				2DCD244D180A18BD00E9B9A0 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2D6184E618076AE9006BE5BA /* Frameworks */ = {
+		2DCD2456180A18BD00E9B9A0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D6184EB18076AE9006BE5BA /* CoreGraphics.framework in Frameworks */,
-				2D6184EC18076AE9006BE5BA /* UIKit.framework in Frameworks */,
-				2D6184EA18076AE9006BE5BA /* Foundation.framework in Frameworks */,
+				2D6639B0180A1F7A0031C1B2 /* OCHamcrestIOS.framework in Frameworks */,
+				2DCD2461180A18BD00E9B9A0 /* libIgor.a in Frameworks */,
+				2DCD245B180A18BD00E9B9A0 /* XCTest.framework in Frameworks */,
+				2DCD245E180A18BD00E9B9A0 /* UIKit.framework in Frameworks */,
+				2DCD245C180A18BD00E9B9A0 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E621659DB794A5D612DCD423 /* Frameworks */ = {
+		2DCD2473180A190000E9B9A0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DCD2479180A190100E9B9A0 /* CoreGraphics.framework in Frameworks */,
+				2DCD247A180A190100E9B9A0 /* UIKit.framework in Frameworks */,
+				2DCD2477180A190100E9B9A0 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2D6184ED18076AE9006BE5BA /* IgorTestApp */ = {
+		2D663900180A1DEA0031C1B2 /* engine */ = {
 			isa = PBXGroup;
 			children = (
-				2D6184F618076AE9006BE5BA /* AppDelegate.h */,
-				2D6184F718076AE9006BE5BA /* AppDelegate.m */,
-				2D6184F918076AE9006BE5BA /* Images.xcassets */,
-				2D6184EE18076AE9006BE5BA /* Supporting Files */,
-			);
-			path = IgorTestApp;
-			sourceTree = "<group>";
-		};
-		2D6184EE18076AE9006BE5BA /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				2D6184EF18076AE9006BE5BA /* IgorTestApp-Info.plist */,
-				2D6184F018076AE9006BE5BA /* InfoPlist.strings */,
-				2D6184F318076AE9006BE5BA /* main.m */,
-				2D6184F518076AE9006BE5BA /* IgorTestApp-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		2D695C88147CD1BA00AF4115 /* igor */ = {
-			isa = PBXGroup;
-			children = (
-				2D695CE0147CD23800AF4115 /* Supporting Files */,
-				E621659DB794A5D612DCD512 /* engine */,
-				E621659DB794A5D612DCD513 /* matchers */,
-				E621659DB794A5D612DCD514 /* parser */,
-			);
-			path = igor;
-			sourceTree = "<group>";
-		};
-		2D695CC9147CD1D200AF4115 /* test */ = {
-			isa = PBXGroup;
-			children = (
-				2D695CE5147CD31300AF4115 /* Supporting Files */,
-				E621659DB794A5D612DCD50E /* acceptance */,
-				E621659DB794A5D612DCD50F /* fixtures */,
-				E621659DB794A5D612DCD510 /* matchers */,
-				E621659DB794A5D612DCD511 /* parser */,
-			);
-			path = test;
-			sourceTree = "<group>";
-		};
-		2D695CE0147CD23800AF4115 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				2D695C8E147CD1BA00AF4115 /* Igor-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		2D695CE5147CD31300AF4115 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				2D695CCB147CD1D200AF4115 /* InfoPlist.strings */,
-				2D695CCF147CD1D200AF4115 /* IgorTests-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		E621659DB794A5D612DCD418 = {
-			isa = PBXGroup;
-			children = (
-				2D695C88147CD1BA00AF4115 /* igor */,
-				2D695CC9147CD1D200AF4115 /* test */,
-				2D6184ED18076AE9006BE5BA /* IgorTestApp */,
-				E621659DB794A5D612DCD419 /* Products */,
-				E621659DB794A5D612DCD424 /* Frameworks */,
-			);
-			sourceTree = "<group>";
-		};
-		E621659DB794A5D612DCD419 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				2D2D4D0A1478787F00FF3D88 /* IgorTests.xctest */,
-				2D6184E918076AE9006BE5BA /* IgorTestApp.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		E621659DB794A5D612DCD424 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				2D61851818078FCA006BE5BA /* OCHamcrestIOS.framework */,
-				2D61851618076C40006BE5BA /* XCTest.framework */,
-				2DCF9766147ED3FD003B0F38 /* CoreGraphics.framework */,
-				E621659DB794A5D612DCD425 /* Foundation.framework */,
-				E621659DB794A5D612DCD439 /* UIKit.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E621659DB794A5D612DCD50E /* acceptance */ = {
-			isa = PBXGroup;
-			children = (
-				E621659DB794A5D612DCD515 /* SiblingPatternTests.m */,
-				2D99DB321517E94B00244226 /* SubjectMarkerTests.m */,
-				2D695CD4147CD1D200AF4115 /* PredicatePatternTests.m */,
-				2D3E1F3D1509B98200D62300 /* DescendantPatternTests.m */,
-				2D695CCA147CD1D200AF4115 /* ClassPatternTests.m */,
-				E621659DB794A5D612DCD500 /* ChildPatternTests.m */,
-				E621659DB794A5D612DCD490 /* BranchPatternTests.m */,
-			);
-			path = acceptance;
-			sourceTree = "<group>";
-		};
-		E621659DB794A5D612DCD50F /* fixtures */ = {
-			isa = PBXGroup;
-			children = (
-				E621659DB794A5D612DCD525 /* My1ClassName2With3Digits.h */,
-				E621659DB794A5D612DCD523 /* My1ClassName2With3Digits.m */,
-				E621659DB794A5D612DCD521 /* _My_ClassName__WithUnder_Scores.h */,
-				E621659DB794A5D612DCD51F /* _My_ClassName__WithUnder_Scores.m */,
-				2D436E261518FF6D00071950 /* ViewFactory.m */,
-				2D436E251518FF6D00071950 /* ViewFactory.h */,
-				E621659DB794A5D612DCD464 /* MatchesView.m */,
-				E621659DB794A5D612DCD466 /* MatchesView.h */,
-				E621659DB794A5D612DCD458 /* IsPredicateMatcher.m */,
-				E621659DB794A5D612DCD45A /* IsPredicateMatcher.h */,
-				E621659DB794A5D612DCD454 /* IsMemberOfClassMatcher.m */,
-				E621659DB794A5D612DCD456 /* IsMemberOfClassMatcher.h */,
-				E621659DB794A5D612DCD450 /* IsKindOfClassMatcher.m */,
-				E621659DB794A5D612DCD452 /* IsKindOfClassMatcher.h */,
-				E621659DB794A5D612DCD480 /* FalseMatcher.m */,
-				E621659DB794A5D612DCD482 /* FalseMatcher.h */,
-				E621659DB794A5D612DCD4B9 /* FakeSubjectParser.m */,
-				E621659DB794A5D612DCD4BB /* FakeSubjectParser.h */,
-				E621659DB794A5D612DCD49D /* FakeSimpleParser.m */,
-				E621659DB794A5D612DCD49F /* FakeSimpleParser.h */,
-				E621659DB794A5D612DCD4BD /* FakeCombinatorParser.m */,
-				E621659DB794A5D612DCD4BF /* FakeCombinatorParser.h */,
-				E621659DB794A5D612DCD4D7 /* EmptySetCombinator.m */,
-				E621659DB794A5D612DCD4D9 /* EmptySetCombinator.h */,
-				2DC4F5B0180896DB000A6E47 /* SelectorEngineRegistry.m */,
-			);
-			path = fixtures;
-			sourceTree = "<group>";
-		};
-		E621659DB794A5D612DCD510 /* matchers */ = {
-			isa = PBXGroup;
-			children = (
-				E621659DB794A5D612DCD545 /* TagMatcherTests.m */,
-				E621659DB794A5D612DCD51D /* SiblingCombinatorTests.m */,
-				2D695CD1147CD1D200AF4115 /* MemberOfClassMatcherTests.m */,
-				2D695CD0147CD1D200AF4115 /* KindOfClassMatcherTests.m */,
-				E621659DB794A5D612DCD4F0 /* AccessibilityIdentifierMatcherTests.m */,
-				E621659DB794A5D612DCD4AB /* DescendantCombinatorTests.m */,
-				E621659DB794A5D612DCD4DD /* ChildCombinatorTests.m */,
-				E621659DB794A5D612DCD474 /* BranchMatcherTests.m */,
-			);
-			path = matchers;
-			sourceTree = "<group>";
-		};
-		E621659DB794A5D612DCD511 /* parser */ = {
-			isa = PBXGroup;
-			children = (
-				2D695CCD147CD1D200AF4115 /* QueryParserTests.m */,
-				2D695CD3147CD1D200AF4115 /* PredicateParserTests.m */,
-				E621659DB794A5D612DCD494 /* InstanceParserTests.m */,
-				E621659DB794A5D612DCD4FC /* IdentifierParserTests.m */,
-				E621659DB794A5D612DCD504 /* CombinatorParserTests.m */,
-				E621659DB794A5D612DCD46C /* ClassParserTests.m */,
-				E621659DB794A5D612DCD4B5 /* ChainParserTests.m */,
-			);
-			path = parser;
-			sourceTree = "<group>";
-		};
-		E621659DB794A5D612DCD512 /* engine */ = {
-			isa = PBXGroup;
-			children = (
-				E621659DB794A5D612DCD53D /* DEIgorSelfRegisteringSelectorEngine.m */,
-				2D695C90147CD1BA00AF4115 /* DEIgor.m */,
-				2D695C8F147CD1BA00AF4115 /* DEIgor.h */,
-				2DC4F5B318089924000A6E47 /* SelectorEngine.h */,
+				2D663901180A1DEA0031C1B2 /* DEIgor.h */,
+				2D663902180A1DEA0031C1B2 /* DEIgor.m */,
+				2D663903180A1DEA0031C1B2 /* DEIgorSelfRegisteringSelectorEngine.m */,
+				2D663904180A1DEA0031C1B2 /* SelectorEngine.h */,
 			);
 			path = engine;
 			sourceTree = "<group>";
 		};
-		E621659DB794A5D612DCD513 /* matchers */ = {
+		2D663905180A1DEA0031C1B2 /* matchers */ = {
 			isa = PBXGroup;
 			children = (
-				E621659DB794A5D612DCD541 /* DETagMatcher.h */,
-				E621659DB794A5D612DCD53F /* DETagMatcher.m */,
-				E621659DB794A5D612DCD519 /* DESiblingCombinator.m */,
-				E621659DB794A5D612DCD51B /* DESiblingCombinator.h */,
-				E621659DB794A5D612DCD45E /* DEUniversalMatcher.m */,
-				E621659DB794A5D612DCD45C /* DEUniversalMatcher.h */,
-				2D496EA41486A513007E1FDE /* DEPredicateMatcher.m */,
-				2D496EA31486A513007E1FDE /* DEPredicateMatcher.h */,
-				2D695C9A147CD1BA00AF4115 /* DEMemberOfClassMatcher.m */,
-				2D695C99147CD1BA00AF4115 /* DEMemberOfClassMatcher.h */,
-				2D695C98147CD1BA00AF4115 /* DEMatcher.h */,
-				2D695C97147CD1BA00AF4115 /* DEKindOfClassMatcher.m */,
-				2D695C96147CD1BA00AF4115 /* DEKindOfClassMatcher.h */,
-				2D695C8D147CD1BA00AF4115 /* DEInstanceMatcher.m */,
-				2D695C8C147CD1BA00AF4115 /* DEInstanceMatcher.h */,
-				2D436E201518F9C300071950 /* DEIdentityMatcher.m */,
-				2D436E1F1518F9C300071950 /* DEIdentityMatcher.h */,
-				E621659DB794A5D612DCD4F4 /* DEAccessibilityIdentifierMatcher.m */,
-				E621659DB794A5D612DCD4F6 /* DEAccessibilityIdentifierMatcher.h */,
-				E621659DB794A5D612DCD4C5 /* DEDescendantCombinator.m */,
-				E621659DB794A5D612DCD4C7 /* DEDescendantCombinator.h */,
-				E621659DB794A5D612DCD4AF /* DECombinatorMatcher.m */,
-				E621659DB794A5D612DCD4B3 /* DECombinatorMatcher.h */,
-				E621659DB794A5D612DCD4C3 /* DECombinator.h */,
-				E621659DB794A5D612DCD4CD /* DEChildCombinator.m */,
-				E621659DB794A5D612DCD4CF /* DEChildCombinator.h */,
-				E621659DB794A5D612DCD448 /* DEChainMatcher.h */,
-				E621659DB794A5D612DCD478 /* DEBranchMatcher.m */,
-				E621659DB794A5D612DCD47A /* DEBranchMatcher.h */,
+				2D663906180A1DEA0031C1B2 /* DEAccessibilityIdentifierMatcher.h */,
+				2D663907180A1DEA0031C1B2 /* DEAccessibilityIdentifierMatcher.m */,
+				2D663908180A1DEA0031C1B2 /* DEBranchMatcher.h */,
+				2D663909180A1DEA0031C1B2 /* DEBranchMatcher.m */,
+				2D66390A180A1DEA0031C1B2 /* DEChainMatcher.h */,
+				2D66390B180A1DEA0031C1B2 /* DEChildCombinator.h */,
+				2D66390C180A1DEA0031C1B2 /* DEChildCombinator.m */,
+				2D66390D180A1DEA0031C1B2 /* DECombinator.h */,
+				2D66390E180A1DEA0031C1B2 /* DECombinatorMatcher.h */,
+				2D66390F180A1DEA0031C1B2 /* DECombinatorMatcher.m */,
+				2D663910180A1DEA0031C1B2 /* DEDescendantCombinator.h */,
+				2D663911180A1DEA0031C1B2 /* DEDescendantCombinator.m */,
+				2D663912180A1DEA0031C1B2 /* DEIdentityMatcher.h */,
+				2D663913180A1DEA0031C1B2 /* DEIdentityMatcher.m */,
+				2D663914180A1DEA0031C1B2 /* DEInstanceMatcher.h */,
+				2D663915180A1DEA0031C1B2 /* DEInstanceMatcher.m */,
+				2D663916180A1DEA0031C1B2 /* DEKindOfClassMatcher.h */,
+				2D663917180A1DEA0031C1B2 /* DEKindOfClassMatcher.m */,
+				2D663918180A1DEA0031C1B2 /* DEMatcher.h */,
+				2D663919180A1DEA0031C1B2 /* DEMemberOfClassMatcher.h */,
+				2D66391A180A1DEA0031C1B2 /* DEMemberOfClassMatcher.m */,
+				2D66391B180A1DEA0031C1B2 /* DEPredicateMatcher.h */,
+				2D66391C180A1DEA0031C1B2 /* DEPredicateMatcher.m */,
+				2D66391D180A1DEA0031C1B2 /* DESiblingCombinator.h */,
+				2D66391E180A1DEA0031C1B2 /* DESiblingCombinator.m */,
+				2D66391F180A1DEA0031C1B2 /* DETagMatcher.h */,
+				2D663920180A1DEA0031C1B2 /* DETagMatcher.m */,
+				2D663921180A1DEA0031C1B2 /* DEUniversalMatcher.h */,
+				2D663922180A1DEA0031C1B2 /* DEUniversalMatcher.m */,
 			);
 			path = matchers;
 			sourceTree = "<group>";
 		};
-		E621659DB794A5D612DCD514 /* parser */ = {
+		2D663923180A1DEA0031C1B2 /* parser */ = {
 			isa = PBXGroup;
 			children = (
-				E621659DB794A5D612DCD442 /* DEQueryScanner.m */,
-				E621659DB794A5D612DCD444 /* DEQueryScanner.h */,
-				2D695C93147CD1BA00AF4115 /* DEQueryParser.m */,
-				2D695C92147CD1BA00AF4115 /* DEQueryParser.h */,
-				2D695CA4147CD1BA00AF4115 /* DEPredicateParser.m */,
-				2D695CA3147CD1BA00AF4115 /* DEPredicateParser.h */,
-				E621659DB794A5D612DCD48A /* DEPatternParser.h */,
-				2DCE893A15193F6100B975EE /* DEInstanceParser.m */,
-				2DCE893915193F6100B975EE /* DEInstanceParser.h */,
-				2D695C95147CD1BA00AF4115 /* DEIgorParserException.m */,
-				2D695C94147CD1BA00AF4115 /* DEIgorParserException.h */,
-				E621659DB794A5D612DCD4F8 /* DEIdentifierParser.m */,
-				E621659DB794A5D612DCD4FA /* DEIdentifierParser.h */,
-				E621659DB794A5D612DCD4C9 /* DECombinatorParser.m */,
-				E621659DB794A5D612DCD4CB /* DECombinatorParser.h */,
-				2D695C8B147CD1BA00AF4115 /* DEClassParser.m */,
-				2D695C8A147CD1BA00AF4115 /* DEClassParser.h */,
-				2DCE893515193E8900B975EE /* DEChainParser.m */,
-				2DCE893415193E8900B975EE /* DEChainParser.h */,
-				E621659DB794A5D612DCD499 /* DEBranchParser.m */,
-				E621659DB794A5D612DCD49B /* DEBranchParser.h */,
+				2D663924180A1DEA0031C1B2 /* DEBranchParser.h */,
+				2D663925180A1DEA0031C1B2 /* DEBranchParser.m */,
+				2D663926180A1DEA0031C1B2 /* DEChainParser.h */,
+				2D663927180A1DEA0031C1B2 /* DEChainParser.m */,
+				2D663928180A1DEA0031C1B2 /* DEClassParser.h */,
+				2D663929180A1DEA0031C1B2 /* DEClassParser.m */,
+				2D66392A180A1DEA0031C1B2 /* DECombinatorParser.h */,
+				2D66392B180A1DEA0031C1B2 /* DECombinatorParser.m */,
+				2D66392C180A1DEA0031C1B2 /* DEIdentifierParser.h */,
+				2D66392D180A1DEA0031C1B2 /* DEIdentifierParser.m */,
+				2D66392E180A1DEA0031C1B2 /* DEIgorParserException.h */,
+				2D66392F180A1DEA0031C1B2 /* DEIgorParserException.m */,
+				2D663930180A1DEA0031C1B2 /* DEInstanceParser.h */,
+				2D663931180A1DEA0031C1B2 /* DEInstanceParser.m */,
+				2D663932180A1DEA0031C1B2 /* DEPatternParser.h */,
+				2D663933180A1DEA0031C1B2 /* DEPredicateParser.h */,
+				2D663934180A1DEA0031C1B2 /* DEPredicateParser.m */,
+				2D663935180A1DEA0031C1B2 /* DEQueryParser.h */,
+				2D663936180A1DEA0031C1B2 /* DEQueryParser.m */,
+				2D663937180A1DEA0031C1B2 /* DEQueryScanner.h */,
+				2D663938180A1DEA0031C1B2 /* DEQueryScanner.m */,
 			);
 			path = parser;
 			sourceTree = "<group>";
 		};
+		2D663953180A1E770031C1B2 /* acceptance */ = {
+			isa = PBXGroup;
+			children = (
+				2D663954180A1E770031C1B2 /* BranchPatternTests.m */,
+				2D663955180A1E770031C1B2 /* ChildPatternTests.m */,
+				2D663956180A1E770031C1B2 /* ClassPatternTests.m */,
+				2D663957180A1E770031C1B2 /* DescendantPatternTests.m */,
+				2D663958180A1E770031C1B2 /* PredicatePatternTests.m */,
+				2D663959180A1E770031C1B2 /* SiblingPatternTests.m */,
+				2D66395A180A1E770031C1B2 /* SubjectMarkerTests.m */,
+			);
+			path = acceptance;
+			sourceTree = "<group>";
+		};
+		2D66395B180A1E770031C1B2 /* fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				2D66395E180A1E770031C1B2 /* _My_ClassName__WithUnder_Scores.h */,
+				2D66395F180A1E770031C1B2 /* _My_ClassName__WithUnder_Scores.m */,
+				2D663960180A1E770031C1B2 /* EmptySetCombinator.h */,
+				2D663961180A1E770031C1B2 /* EmptySetCombinator.m */,
+				2D663962180A1E770031C1B2 /* FakeCombinatorParser.h */,
+				2D663963180A1E770031C1B2 /* FakeCombinatorParser.m */,
+				2D663964180A1E770031C1B2 /* FakeSimpleParser.h */,
+				2D663965180A1E770031C1B2 /* FakeSimpleParser.m */,
+				2D663966180A1E770031C1B2 /* FakeSubjectParser.h */,
+				2D663967180A1E770031C1B2 /* FakeSubjectParser.m */,
+				2D663968180A1E770031C1B2 /* FalseMatcher.h */,
+				2D663969180A1E770031C1B2 /* FalseMatcher.m */,
+				2D66396A180A1E770031C1B2 /* IsKindOfClassMatcher.h */,
+				2D66396B180A1E770031C1B2 /* IsKindOfClassMatcher.m */,
+				2D66396C180A1E770031C1B2 /* IsMemberOfClassMatcher.h */,
+				2D66396D180A1E770031C1B2 /* IsMemberOfClassMatcher.m */,
+				2D66396E180A1E770031C1B2 /* IsPredicateMatcher.h */,
+				2D66396F180A1E770031C1B2 /* IsPredicateMatcher.m */,
+				2D663970180A1E770031C1B2 /* MatchesView.h */,
+				2D663971180A1E770031C1B2 /* MatchesView.m */,
+				2D663972180A1E770031C1B2 /* My1ClassName2With3Digits.h */,
+				2D663973180A1E770031C1B2 /* My1ClassName2With3Digits.m */,
+				2D663974180A1E770031C1B2 /* SelectorEngineRegistry.m */,
+				2D663975180A1E770031C1B2 /* ViewFactory.h */,
+				2D663976180A1E770031C1B2 /* ViewFactory.m */,
+			);
+			path = fixtures;
+			sourceTree = "<group>";
+		};
+		2D663977180A1E770031C1B2 /* matchers */ = {
+			isa = PBXGroup;
+			children = (
+				2D663978180A1E770031C1B2 /* AccessibilityIdentifierMatcherTests.m */,
+				2D663979180A1E770031C1B2 /* BranchMatcherTests.m */,
+				2D66397A180A1E770031C1B2 /* ChildCombinatorTests.m */,
+				2D66397B180A1E770031C1B2 /* DescendantCombinatorTests.m */,
+				2D66397C180A1E770031C1B2 /* KindOfClassMatcherTests.m */,
+				2D66397D180A1E770031C1B2 /* MemberOfClassMatcherTests.m */,
+				2D66397E180A1E770031C1B2 /* SiblingCombinatorTests.m */,
+				2D66397F180A1E770031C1B2 /* TagMatcherTests.m */,
+			);
+			path = matchers;
+			sourceTree = "<group>";
+		};
+		2D663980180A1E770031C1B2 /* parser */ = {
+			isa = PBXGroup;
+			children = (
+				2D663981180A1E770031C1B2 /* ChainParserTests.m */,
+				2D663982180A1E770031C1B2 /* ClassParserTests.m */,
+				2D663983180A1E770031C1B2 /* CombinatorParserTests.m */,
+				2D663984180A1E770031C1B2 /* IdentifierParserTests.m */,
+				2D663985180A1E770031C1B2 /* InstanceParserTests.m */,
+				2D663986180A1E770031C1B2 /* PredicateParserTests.m */,
+				2D663987180A1E770031C1B2 /* QueryParserTests.m */,
+			);
+			path = parser;
+			sourceTree = "<group>";
+		};
+		2DCD2440180A18BD00E9B9A0 = {
+			isa = PBXGroup;
+			children = (
+				2DCD244E180A18BD00E9B9A0 /* Igor */,
+				2DCD2462180A18BD00E9B9A0 /* IgorTests */,
+				2DCD247B180A190100E9B9A0 /* IgorTestApp */,
+				2DCD244B180A18BD00E9B9A0 /* Frameworks */,
+				2DCD244A180A18BD00E9B9A0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2DCD244A180A18BD00E9B9A0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2DCD2449180A18BD00E9B9A0 /* libIgor.a */,
+				2DCD2459180A18BD00E9B9A0 /* IgorTests.xctest */,
+				2DCD2476180A190000E9B9A0 /* IgorTestApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2DCD244B180A18BD00E9B9A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2D6639AF180A1F7A0031C1B2 /* OCHamcrestIOS.framework */,
+				2DCD244C180A18BD00E9B9A0 /* Foundation.framework */,
+				2DCD245A180A18BD00E9B9A0 /* XCTest.framework */,
+				2DCD245D180A18BD00E9B9A0 /* UIKit.framework */,
+				2DCD2478180A190100E9B9A0 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2DCD244E180A18BD00E9B9A0 /* Igor */ = {
+			isa = PBXGroup;
+			children = (
+				2D663900180A1DEA0031C1B2 /* engine */,
+				2D663905180A1DEA0031C1B2 /* matchers */,
+				2D663923180A1DEA0031C1B2 /* parser */,
+				2DCD244F180A18BD00E9B9A0 /* Supporting Files */,
+			);
+			path = Igor;
+			sourceTree = "<group>";
+		};
+		2DCD244F180A18BD00E9B9A0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2D663952180A1DFD0031C1B2 /* Igor-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2DCD2462180A18BD00E9B9A0 /* IgorTests */ = {
+			isa = PBXGroup;
+			children = (
+				2D663953180A1E770031C1B2 /* acceptance */,
+				2D66395B180A1E770031C1B2 /* fixtures */,
+				2D663977180A1E770031C1B2 /* matchers */,
+				2D663980180A1E770031C1B2 /* parser */,
+				2DCD2463180A18BD00E9B9A0 /* Supporting Files */,
+			);
+			path = IgorTests;
+			sourceTree = "<group>";
+		};
+		2DCD2463180A18BD00E9B9A0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2D6639AC180A1E860031C1B2 /* IgorTests-Info.plist */,
+				2D6639AD180A1E860031C1B2 /* IgorTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2DCD247B180A190100E9B9A0 /* IgorTestApp */ = {
+			isa = PBXGroup;
+			children = (
+				2DCD2484180A190100E9B9A0 /* AppDelegate.h */,
+				2DCD2485180A190100E9B9A0 /* AppDelegate.m */,
+				2DCD2487180A190100E9B9A0 /* Images.xcassets */,
+				2DCD247C180A190100E9B9A0 /* Supporting Files */,
+			);
+			path = IgorTestApp;
+			sourceTree = "<group>";
+		};
+		2DCD247C180A190100E9B9A0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2DCD247D180A190100E9B9A0 /* IgorTestApp-Info.plist */,
+				2DCD247E180A190100E9B9A0 /* InfoPlist.strings */,
+				2DCD2481180A190100E9B9A0 /* main.m */,
+				2DCD2483180A190100E9B9A0 /* IgorTestApp-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		2D9649DE147DA18400C40219 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2D9649E0147DA1A700C40219 /* Igor-Prefix.pch in Headers */,
-				2D9649DF147DA19C00C40219 /* IgorTests-Prefix.pch in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2D9649E1147DA20500C40219 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2D9649E2147DA21400C40219 /* Igor-Prefix.pch in Headers */,
-				2D496EA51486A513007E1FDE /* DEPredicateMatcher.h in Headers */,
-				2DCE893615193E8900B975EE /* DEChainParser.h in Headers */,
-				2DCE893B15193F6100B975EE /* DEInstanceParser.h in Headers */,
-				E621659DB794A5D612DCD445 /* DEQueryScanner.h in Headers */,
-				E621659DB794A5D612DCD449 /* DEChainMatcher.h in Headers */,
-				E621659DB794A5D612DCD45D /* DEUniversalMatcher.h in Headers */,
-				E621659DB794A5D612DCD47B /* DEBranchMatcher.h in Headers */,
-				E621659DB794A5D612DCD48B /* DEPatternParser.h in Headers */,
-				E621659DB794A5D612DCD49C /* DEBranchParser.h in Headers */,
-				E621659DB794A5D612DCD4B4 /* DECombinatorMatcher.h in Headers */,
-				E621659DB794A5D612DCD4C4 /* DECombinator.h in Headers */,
-				E621659DB794A5D612DCD4C8 /* DEDescendantCombinator.h in Headers */,
-				2DC4F5B518089924000A6E47 /* SelectorEngine.h in Headers */,
-				E621659DB794A5D612DCD4CC /* DECombinatorParser.h in Headers */,
-				E621659DB794A5D612DCD4D0 /* DEChildCombinator.h in Headers */,
-				E621659DB794A5D612DCD4E3 /* DEIdentityMatcher.h in Headers */,
-				E621659DB794A5D612DCD4E7 /* DEQueryParser.h in Headers */,
-				E621659DB794A5D612DCD4E8 /* DEClassParser.h in Headers */,
-				E621659DB794A5D612DCD4E9 /* DEIgorParserException.h in Headers */,
-				E621659DB794A5D612DCD4EA /* DEPredicateParser.h in Headers */,
-				E621659DB794A5D612DCD4EB /* DEInstanceMatcher.h in Headers */,
-				E621659DB794A5D612DCD4EC /* DEKindOfClassMatcher.h in Headers */,
-				E621659DB794A5D612DCD4ED /* DEMatcher.h in Headers */,
-				E621659DB794A5D612DCD4EE /* DEMemberOfClassMatcher.h in Headers */,
-				E621659DB794A5D612DCD4EF /* DEIgor.h in Headers */,
-				E621659DB794A5D612DCD4F7 /* DEAccessibilityIdentifierMatcher.h in Headers */,
-				E621659DB794A5D612DCD4FB /* DEIdentifierParser.h in Headers */,
-				E621659DB794A5D612DCD51C /* DESiblingCombinator.h in Headers */,
-				E621659DB794A5D612DCD542 /* DETagMatcher.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		2D2D4D091478787F00FF3D88 /* IgorTests */ = {
+		2DCD2448180A18BD00E9B9A0 /* Igor */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D2D4D181478788000FF3D88 /* Build configuration list for PBXNativeTarget "IgorTests" */;
+			buildConfigurationList = 2DCD246C180A18BD00E9B9A0 /* Build configuration list for PBXNativeTarget "Igor" */;
 			buildPhases = (
-				2D9649DE147DA18400C40219 /* Headers */,
-				2D2D4D051478787F00FF3D88 /* Sources */,
-				2D2D4D061478787F00FF3D88 /* Frameworks */,
-				2D080CFF147DB8B4002A09E2 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2D61851B180793F8006BE5BA /* PBXTargetDependency */,
-			);
-			name = IgorTests;
-			productName = igorTests;
-			productReference = 2D2D4D0A1478787F00FF3D88 /* IgorTests.xctest */;
-			productType = "com.apple.product-type.bundle";
-		};
-		2D6184E818076AE9006BE5BA /* IgorTestApp */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2D61851218076AE9006BE5BA /* Build configuration list for PBXNativeTarget "IgorTestApp" */;
-			buildPhases = (
-				2D6184E518076AE9006BE5BA /* Sources */,
-				2D6184E618076AE9006BE5BA /* Frameworks */,
-				2D6184E718076AE9006BE5BA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2D61851518076B52006BE5BA /* PBXTargetDependency */,
-			);
-			name = IgorTestApp;
-			productName = IgorTestApp;
-			productReference = 2D6184E918076AE9006BE5BA /* IgorTestApp.app */;
-			productType = "com.apple.product-type.application";
-		};
-		E621659DB794A5D612DCD41D /* Igor */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E621659DB794A5D612DCD41E /* Build configuration list for PBXNativeTarget "Igor" */;
-			buildPhases = (
-				2D9649E1147DA20500C40219 /* Headers */,
-				E621659DB794A5D612DCD422 /* Sources */,
-				E621659DB794A5D612DCD423 /* Frameworks */,
+				2DCD2445180A18BD00E9B9A0 /* Sources */,
+				2DCD2446180A18BD00E9B9A0 /* Frameworks */,
+				2DCD2447180A18BD00E9B9A0 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Igor;
-			productName = igor;
+			productName = Igor;
+			productReference = 2DCD2449180A18BD00E9B9A0 /* libIgor.a */;
 			productType = "com.apple.product-type.library.static";
+		};
+		2DCD2458180A18BD00E9B9A0 /* IgorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2DCD246F180A18BD00E9B9A0 /* Build configuration list for PBXNativeTarget "IgorTests" */;
+			buildPhases = (
+				2DCD2455180A18BD00E9B9A0 /* Sources */,
+				2DCD2456180A18BD00E9B9A0 /* Frameworks */,
+				2DCD2457180A18BD00E9B9A0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2DCD24A2180A1B2900E9B9A0 /* PBXTargetDependency */,
+				2DCD2460180A18BD00E9B9A0 /* PBXTargetDependency */,
+			);
+			name = IgorTests;
+			productName = IgorTests;
+			productReference = 2DCD2459180A18BD00E9B9A0 /* IgorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2DCD2475180A190000E9B9A0 /* IgorTestApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2DCD249B180A190100E9B9A0 /* Build configuration list for PBXNativeTarget "IgorTestApp" */;
+			buildPhases = (
+				2DCD2472180A190000E9B9A0 /* Sources */,
+				2DCD2473180A190000E9B9A0 /* Frameworks */,
+				2DCD2474180A190000E9B9A0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IgorTestApp;
+			productName = IgorTestApp;
+			productReference = 2DCD2476180A190000E9B9A0 /* IgorTestApp.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		E621659DB794A5D612DCD416 /* Project object */ = {
+		2DCD2441180A18BD00E9B9A0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Dale Emery";
 				TargetAttributes = {
-					2D2D4D091478787F00FF3D88 = {
-						TestTargetID = 2D6184E818076AE9006BE5BA;
+					2DCD2458180A18BD00E9B9A0 = {
+						TestTargetID = 2DCD2475180A190000E9B9A0;
 					};
 				};
 			};
-			buildConfigurationList = E621659DB794A5D612DCD417 /* Build configuration list for PBXProject "Igor" */;
+			buildConfigurationList = 2DCD2444180A18BD00E9B9A0 /* Build configuration list for PBXProject "Igor" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = E621659DB794A5D612DCD418;
-			productRefGroup = E621659DB794A5D612DCD419 /* Products */;
+			mainGroup = 2DCD2440180A18BD00E9B9A0;
+			productRefGroup = 2DCD244A180A18BD00E9B9A0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E621659DB794A5D612DCD41D /* Igor */,
-				2D2D4D091478787F00FF3D88 /* IgorTests */,
-				2D6184E818076AE9006BE5BA /* IgorTestApp */,
+				2DCD2448180A18BD00E9B9A0 /* Igor */,
+				2DCD2458180A18BD00E9B9A0 /* IgorTests */,
+				2DCD2475180A190000E9B9A0 /* IgorTestApp */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2D6184E718076AE9006BE5BA /* Resources */ = {
+		2DCD2457180A18BD00E9B9A0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D6184F218076AE9006BE5BA /* InfoPlist.strings in Resources */,
-				2D6184FA18076AE9006BE5BA /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DCD2474180A190000E9B9A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DCD2480180A190100E9B9A0 /* InfoPlist.strings in Resources */,
+				2DCD2488180A190100E9B9A0 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		2D080CFF147DB8B4002A09E2 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\\\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		2D2D4D051478787F00FF3D88 /* Sources */ = {
+		2DCD2445180A18BD00E9B9A0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D695CD6147CD1D200AF4115 /* ClassPatternTests.m in Sources */,
-				2D695CD8147CD1D200AF4115 /* QueryParserTests.m in Sources */,
-				2D695CDA147CD1D200AF4115 /* KindOfClassMatcherTests.m in Sources */,
-				2D695CDB147CD1D200AF4115 /* MemberOfClassMatcherTests.m in Sources */,
-				2D695CDD147CD1D200AF4115 /* PredicateParserTests.m in Sources */,
-				2D695CDE147CD1D200AF4115 /* PredicatePatternTests.m in Sources */,
-				2D3E1F3F1509B98200D62300 /* DescendantPatternTests.m in Sources */,
-				2D99DB351517E9C900244226 /* SubjectMarkerTests.m in Sources */,
-				2D436E281518FF6D00071950 /* ViewFactory.m in Sources */,
-				E621659DB794A5D612DCD451 /* IsKindOfClassMatcher.m in Sources */,
-				E621659DB794A5D612DCD455 /* IsMemberOfClassMatcher.m in Sources */,
-				E621659DB794A5D612DCD459 /* IsPredicateMatcher.m in Sources */,
-				E621659DB794A5D612DCD465 /* MatchesView.m in Sources */,
-				E621659DB794A5D612DCD46D /* ClassParserTests.m in Sources */,
-				E621659DB794A5D612DCD475 /* BranchMatcherTests.m in Sources */,
-				2DC4F5B2180896DB000A6E47 /* SelectorEngineRegistry.m in Sources */,
-				E621659DB794A5D612DCD481 /* FalseMatcher.m in Sources */,
-				E621659DB794A5D612DCD491 /* BranchPatternTests.m in Sources */,
-				E621659DB794A5D612DCD495 /* InstanceParserTests.m in Sources */,
-				E621659DB794A5D612DCD49E /* FakeSimpleParser.m in Sources */,
-				E621659DB794A5D612DCD4AC /* DescendantCombinatorTests.m in Sources */,
-				E621659DB794A5D612DCD4B6 /* ChainParserTests.m in Sources */,
-				E621659DB794A5D612DCD4BA /* FakeSubjectParser.m in Sources */,
-				E621659DB794A5D612DCD4BE /* FakeCombinatorParser.m in Sources */,
-				E621659DB794A5D612DCD4DE /* ChildCombinatorTests.m in Sources */,
-				E621659DB794A5D612DCD4F1 /* AccessibilityIdentifierMatcherTests.m in Sources */,
-				E621659DB794A5D612DCD4FD /* IdentifierParserTests.m in Sources */,
-				E621659DB794A5D612DCD501 /* ChildPatternTests.m in Sources */,
-				E621659DB794A5D612DCD505 /* CombinatorParserTests.m in Sources */,
-				E621659DB794A5D612DCD50D /* EmptySetCombinator.m in Sources */,
-				E621659DB794A5D612DCD516 /* SiblingPatternTests.m in Sources */,
-				E621659DB794A5D612DCD51E /* SiblingCombinatorTests.m in Sources */,
-				E621659DB794A5D612DCD520 /* _My_ClassName__WithUnder_Scores.m in Sources */,
-				E621659DB794A5D612DCD524 /* My1ClassName2With3Digits.m in Sources */,
-				E621659DB794A5D612DCD526 /* DEBranchMatcher.m in Sources */,
-				E621659DB794A5D612DCD527 /* DEChildCombinator.m in Sources */,
-				E621659DB794A5D612DCD528 /* DECombinatorMatcher.m in Sources */,
-				E621659DB794A5D612DCD529 /* DEDescendantCombinator.m in Sources */,
-				E621659DB794A5D612DCD52A /* DEAccessibilityIdentifierMatcher.m in Sources */,
-				E621659DB794A5D612DCD52B /* DEIdentityMatcher.m in Sources */,
-				E621659DB794A5D612DCD52C /* DEInstanceMatcher.m in Sources */,
-				E621659DB794A5D612DCD52D /* DEKindOfClassMatcher.m in Sources */,
-				E621659DB794A5D612DCD52E /* DEMemberOfClassMatcher.m in Sources */,
-				E621659DB794A5D612DCD52F /* DEPredicateMatcher.m in Sources */,
-				E621659DB794A5D612DCD530 /* DESiblingCombinator.m in Sources */,
-				2DD2A5851807BCDE0015922A /* DETagMatcher.m in Sources */,
-				E621659DB794A5D612DCD531 /* DEUniversalMatcher.m in Sources */,
-				E621659DB794A5D612DCD532 /* DEBranchParser.m in Sources */,
-				E621659DB794A5D612DCD533 /* DEChainParser.m in Sources */,
-				E621659DB794A5D612DCD534 /* DEClassParser.m in Sources */,
-				E621659DB794A5D612DCD535 /* DEIdentifierParser.m in Sources */,
-				E621659DB794A5D612DCD536 /* DEIgorParserException.m in Sources */,
-				E621659DB794A5D612DCD537 /* DEInstanceParser.m in Sources */,
-				E621659DB794A5D612DCD538 /* DEPredicateParser.m in Sources */,
-				E621659DB794A5D612DCD539 /* DEQueryParser.m in Sources */,
-				E621659DB794A5D612DCD53A /* DEQueryScanner.m in Sources */,
-				E621659DB794A5D612DCD53B /* DEIgor.m in Sources */,
-				E621659DB794A5D612DCD53C /* DECombinatorParser.m in Sources */,
-				2DC4F5AA18089625000A6E47 /* DEIgorSelfRegisteringSelectorEngine.m in Sources */,
-				E621659DB794A5D612DCD546 /* TagMatcherTests.m in Sources */,
+				2D66394C180A1DEA0031C1B2 /* DEIdentifierParser.m in Sources */,
+				2D66393A180A1DEA0031C1B2 /* DEIgorSelfRegisteringSelectorEngine.m in Sources */,
+				2D663942180A1DEA0031C1B2 /* DEKindOfClassMatcher.m in Sources */,
+				2D66394A180A1DEA0031C1B2 /* DEClassParser.m in Sources */,
+				2D66394E180A1DEA0031C1B2 /* DEInstanceParser.m in Sources */,
+				2D663941180A1DEA0031C1B2 /* DEInstanceMatcher.m in Sources */,
+				2D663950180A1DEA0031C1B2 /* DEQueryParser.m in Sources */,
+				2D66393B180A1DEA0031C1B2 /* DEAccessibilityIdentifierMatcher.m in Sources */,
+				2D663946180A1DEA0031C1B2 /* DETagMatcher.m in Sources */,
+				2D66393F180A1DEA0031C1B2 /* DEDescendantCombinator.m in Sources */,
+				2D663951180A1DEA0031C1B2 /* DEQueryScanner.m in Sources */,
+				2D663939180A1DEA0031C1B2 /* DEIgor.m in Sources */,
+				2D663943180A1DEA0031C1B2 /* DEMemberOfClassMatcher.m in Sources */,
+				2D66393C180A1DEA0031C1B2 /* DEBranchMatcher.m in Sources */,
+				2D663945180A1DEA0031C1B2 /* DESiblingCombinator.m in Sources */,
+				2D663940180A1DEA0031C1B2 /* DEIdentityMatcher.m in Sources */,
+				2D66394F180A1DEA0031C1B2 /* DEPredicateParser.m in Sources */,
+				2D663944180A1DEA0031C1B2 /* DEPredicateMatcher.m in Sources */,
+				2D66394D180A1DEA0031C1B2 /* DEIgorParserException.m in Sources */,
+				2D663947180A1DEA0031C1B2 /* DEUniversalMatcher.m in Sources */,
+				2D66393D180A1DEA0031C1B2 /* DEChildCombinator.m in Sources */,
+				2D66394B180A1DEA0031C1B2 /* DECombinatorParser.m in Sources */,
+				2D663949180A1DEA0031C1B2 /* DEChainParser.m in Sources */,
+				2D66393E180A1DEA0031C1B2 /* DECombinatorMatcher.m in Sources */,
+				2D663948180A1DEA0031C1B2 /* DEBranchParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2D6184E518076AE9006BE5BA /* Sources */ = {
+		2DCD2455180A18BD00E9B9A0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D6184F818076AE9006BE5BA /* AppDelegate.m in Sources */,
-				2D6184F418076AE9006BE5BA /* main.m in Sources */,
+				2D6639A7180A1E770031C1B2 /* CombinatorParserTests.m in Sources */,
+				2D6639AA180A1E770031C1B2 /* PredicateParserTests.m in Sources */,
+				2D663991180A1E770031C1B2 /* EmptySetCombinator.m in Sources */,
+				2D663996180A1E770031C1B2 /* IsKindOfClassMatcher.m in Sources */,
+				2D6639A8180A1E770031C1B2 /* IdentifierParserTests.m in Sources */,
+				2D66398C180A1E770031C1B2 /* PredicatePatternTests.m in Sources */,
+				2D6639A3180A1E770031C1B2 /* SiblingCombinatorTests.m in Sources */,
+				2D6639A9180A1E770031C1B2 /* InstanceParserTests.m in Sources */,
+				2D663999180A1E770031C1B2 /* MatchesView.m in Sources */,
+				2D663993180A1E770031C1B2 /* FakeSimpleParser.m in Sources */,
+				2D6639A1180A1E770031C1B2 /* KindOfClassMatcherTests.m in Sources */,
+				2D66398D180A1E770031C1B2 /* SiblingPatternTests.m in Sources */,
+				2D663997180A1E770031C1B2 /* IsMemberOfClassMatcher.m in Sources */,
+				2D6639A6180A1E770031C1B2 /* ClassParserTests.m in Sources */,
+				2D66398E180A1E770031C1B2 /* SubjectMarkerTests.m in Sources */,
+				2D663988180A1E770031C1B2 /* BranchPatternTests.m in Sources */,
+				2D6639A0180A1E770031C1B2 /* DescendantCombinatorTests.m in Sources */,
+				2D663992180A1E770031C1B2 /* FakeCombinatorParser.m in Sources */,
+				2D66399C180A1E770031C1B2 /* ViewFactory.m in Sources */,
+				2D66398B180A1E770031C1B2 /* DescendantPatternTests.m in Sources */,
+				2D66399E180A1E770031C1B2 /* BranchMatcherTests.m in Sources */,
+				2D66399F180A1E770031C1B2 /* ChildCombinatorTests.m in Sources */,
+				2D6639A5180A1E770031C1B2 /* ChainParserTests.m in Sources */,
+				2D663990180A1E770031C1B2 /* _My_ClassName__WithUnder_Scores.m in Sources */,
+				2D663994180A1E770031C1B2 /* FakeSubjectParser.m in Sources */,
+				2D663998180A1E770031C1B2 /* IsPredicateMatcher.m in Sources */,
+				2D66399D180A1E770031C1B2 /* AccessibilityIdentifierMatcherTests.m in Sources */,
+				2D66399B180A1E770031C1B2 /* SelectorEngineRegistry.m in Sources */,
+				2D66398A180A1E770031C1B2 /* ClassPatternTests.m in Sources */,
+				2D6639A4180A1E770031C1B2 /* TagMatcherTests.m in Sources */,
+				2D6639AB180A1E770031C1B2 /* QueryParserTests.m in Sources */,
+				2D66399A180A1E770031C1B2 /* My1ClassName2With3Digits.m in Sources */,
+				2D663995180A1E770031C1B2 /* FalseMatcher.m in Sources */,
+				2D6639A2180A1E770031C1B2 /* MemberOfClassMatcherTests.m in Sources */,
+				2D663989180A1E770031C1B2 /* ChildPatternTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E621659DB794A5D612DCD422 /* Sources */ = {
+		2DCD2472180A190000E9B9A0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D695CAB147CD1BA00AF4115 /* DEClassParser.m in Sources */,
-				2D695CAD147CD1BA00AF4115 /* DEInstanceMatcher.m in Sources */,
-				2D695CB0147CD1BA00AF4115 /* DEIgor.m in Sources */,
-				2D695CB3147CD1BA00AF4115 /* DEQueryParser.m in Sources */,
-				2D695CB5147CD1BA00AF4115 /* DEIgorParserException.m in Sources */,
-				2D695CB7147CD1BA00AF4115 /* DEKindOfClassMatcher.m in Sources */,
-				2D695CBA147CD1BA00AF4115 /* DEMemberOfClassMatcher.m in Sources */,
-				2D695CC4147CD1BA00AF4115 /* DEPredicateParser.m in Sources */,
-				2D496EA61486A513007E1FDE /* DEPredicateMatcher.m in Sources */,
-				2DCE893715193E8900B975EE /* DEChainParser.m in Sources */,
-				2DCE893C15193F6100B975EE /* DEInstanceParser.m in Sources */,
-				E621659DB794A5D612DCD443 /* DEQueryScanner.m in Sources */,
-				E621659DB794A5D612DCD45F /* DEUniversalMatcher.m in Sources */,
-				E621659DB794A5D612DCD479 /* DEBranchMatcher.m in Sources */,
-				E621659DB794A5D612DCD49A /* DEBranchParser.m in Sources */,
-				E621659DB794A5D612DCD4B0 /* DECombinatorMatcher.m in Sources */,
-				E621659DB794A5D612DCD4C6 /* DEDescendantCombinator.m in Sources */,
-				E621659DB794A5D612DCD4CA /* DECombinatorParser.m in Sources */,
-				E621659DB794A5D612DCD4CE /* DEChildCombinator.m in Sources */,
-				E621659DB794A5D612DCD4E4 /* DEIdentityMatcher.m in Sources */,
-				E621659DB794A5D612DCD4F5 /* DEAccessibilityIdentifierMatcher.m in Sources */,
-				E621659DB794A5D612DCD4F9 /* DEIdentifierParser.m in Sources */,
-				E621659DB794A5D612DCD51A /* DESiblingCombinator.m in Sources */,
-				E621659DB794A5D612DCD53E /* DEIgorSelfRegisteringSelectorEngine.m in Sources */,
-				E621659DB794A5D612DCD540 /* DETagMatcher.m in Sources */,
+				2DCD2486180A190100E9B9A0 /* AppDelegate.m in Sources */,
+				2DCD2482180A190100E9B9A0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2D61851518076B52006BE5BA /* PBXTargetDependency */ = {
+		2DCD2460180A18BD00E9B9A0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E621659DB794A5D612DCD41D /* Igor */;
-			targetProxy = 2D61851418076B52006BE5BA /* PBXContainerItemProxy */;
+			target = 2DCD2448180A18BD00E9B9A0 /* Igor */;
+			targetProxy = 2DCD245F180A18BD00E9B9A0 /* PBXContainerItemProxy */;
 		};
-		2D61851B180793F8006BE5BA /* PBXTargetDependency */ = {
+		2DCD24A2180A1B2900E9B9A0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2D6184E818076AE9006BE5BA /* IgorTestApp */;
-			targetProxy = 2D61851A180793F8006BE5BA /* PBXContainerItemProxy */;
+			target = 2DCD2475180A190000E9B9A0 /* IgorTestApp */;
+			targetProxy = 2DCD24A1180A1B2900E9B9A0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2D6184F018076AE9006BE5BA /* InfoPlist.strings */ = {
+		2DCD247E180A190100E9B9A0 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2D6184F118076AE9006BE5BA /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		2D695CCB147CD1D200AF4115 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2D695CCC147CD1D200AF4115 /* en */,
+				2DCD247F180A190100E9B9A0 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -860,69 +731,14 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		2D2D4D191478788000FF3D88 /* Release */ = {
+		2DCD246A180A18BD00E9B9A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/IgorTestApp.app/IgorTestApp";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-					"$(SRCROOT)",
-					"$(SRCROOT)/lib",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "test/IgorTests-Prefix.pch";
-				INFOPLIST_FILE = "test/IgorTests-Info.plist";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-lstdc++",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WARNING_CFLAGS = "";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
-		2D2D4D1A1478788000FF3D88 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/IgorTestApp.app/IgorTestApp";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-					"$(SRCROOT)",
-					"$(SRCROOT)/lib",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "test/IgorTests-Prefix.pch";
-				INFOPLIST_FILE = "test/IgorTests-Info.plist";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-lstdc++",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WARNING_CFLAGS = "";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		2D61850E18076AE9006BE5BA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -930,111 +746,10 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "IgorTestApp/IgorTestApp-Prefix.pch";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "IgorTestApp/IgorTestApp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		2D61850F18076AE9006BE5BA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "IgorTestApp/IgorTestApp-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "IgorTestApp/IgorTestApp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		E621659DB794A5D612DCD41A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 1.0;
-				GCC_C_LANGUAGE_STANDARD = "compiler-default";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				OBJROOT = "$(SYMROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SYMROOT = "$(PROJECT_DIR)/build";
-				USER_HEADER_SEARCH_PATHS = "";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-			};
-			name = Release;
-		};
-		E621659DB794A5D612DCD41B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1.0;
-				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1042,93 +757,204 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				OBJROOT = "$(SYMROOT)";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SYMROOT = "$(PROJECT_DIR)/build";
-				USER_HEADER_SEARCH_PATHS = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
-		E621659DB794A5D612DCD41F /* Release */ = {
+		2DCD246B180A18BD00E9B9A0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DSTROOT = /tmp/igor.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "igor/Igor-Prefix.pch";
-				LIBRARY_SEARCH_PATHS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)$(VERSION_INFO_PREFIX)$(CURRENT_PROJECT_VERSION)";
-				SKIP_INSTALL = YES;
-				USER_HEADER_SEARCH_PATHS = "";
-				WARNING_CFLAGS = "-Wno-arc-performSelector-leaks";
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 1.0;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
-		E621659DB794A5D612DCD420 /* Debug */ = {
+		2DCD246D180A18BD00E9B9A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DSTROOT = /tmp/igor.dst;
+				DSTROOT = /tmp/Igor.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "igor/Igor-Prefix.pch";
-				LIBRARY_SEARCH_PATHS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)$(VERSION_INFO_PREFIX)$(CURRENT_PROJECT_VERSION)";
+				GCC_PREFIX_HEADER = "Igor/Igor-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				USER_HEADER_SEARCH_PATHS = "";
-				WARNING_CFLAGS = "-Wno-arc-performSelector-leaks";
 			};
 			name = Debug;
+		};
+		2DCD246E180A18BD00E9B9A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/Igor.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Igor/Igor-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		2DCD2470180A18BD00E9B9A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/IgorTestApp.app/IgorTestApp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					/Users/Dale/Dropbox/Programming/Igor/lib,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IgorTests/IgorTests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "IgorTests/IgorTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		2DCD2471180A18BD00E9B9A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/IgorTestApp.app/IgorTestApp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					/Users/Dale/Dropbox/Programming/Igor/lib,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IgorTests/IgorTests-Prefix.pch";
+				INFOPLIST_FILE = "IgorTests/IgorTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		2DCD249C180A190100E9B9A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IgorTestApp/IgorTestApp-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "IgorTestApp/IgorTestApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2DCD249D180A190100E9B9A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IgorTestApp/IgorTestApp-Prefix.pch";
+				INFOPLIST_FILE = "IgorTestApp/IgorTestApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2D2D4D181478788000FF3D88 /* Build configuration list for PBXNativeTarget "IgorTests" */ = {
+		2DCD2444180A18BD00E9B9A0 /* Build configuration list for PBXProject "Igor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2D2D4D191478788000FF3D88 /* Release */,
-				2D2D4D1A1478788000FF3D88 /* Debug */,
+				2DCD246A180A18BD00E9B9A0 /* Debug */,
+				2DCD246B180A18BD00E9B9A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D61851218076AE9006BE5BA /* Build configuration list for PBXNativeTarget "IgorTestApp" */ = {
+		2DCD246C180A18BD00E9B9A0 /* Build configuration list for PBXNativeTarget "Igor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2D61850E18076AE9006BE5BA /* Release */,
-				2D61850F18076AE9006BE5BA /* Debug */,
+				2DCD246D180A18BD00E9B9A0 /* Debug */,
+				2DCD246E180A18BD00E9B9A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E621659DB794A5D612DCD417 /* Build configuration list for PBXProject "Igor" */ = {
+		2DCD246F180A18BD00E9B9A0 /* Build configuration list for PBXNativeTarget "IgorTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E621659DB794A5D612DCD41A /* Release */,
-				E621659DB794A5D612DCD41B /* Debug */,
+				2DCD2470180A18BD00E9B9A0 /* Debug */,
+				2DCD2471180A18BD00E9B9A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E621659DB794A5D612DCD41E /* Build configuration list for PBXNativeTarget "Igor" */ = {
+		2DCD249B180A190100E9B9A0 /* Build configuration list for PBXNativeTarget "IgorTestApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E621659DB794A5D612DCD41F /* Release */,
-				E621659DB794A5D612DCD420 /* Debug */,
+				2DCD249C180A190100E9B9A0 /* Debug */,
+				2DCD249D180A190100E9B9A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = E621659DB794A5D612DCD416 /* Project object */;
+	rootObject = 2DCD2441180A18BD00E9B9A0 /* Project object */;
 }

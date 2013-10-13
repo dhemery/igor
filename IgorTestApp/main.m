@@ -2,8 +2,8 @@
 //  main.m
 //  IgorTestApp
 //
-//  Created by Dale Emery on 10/10/13.
-//
+//  Created by Dale Emery on 10/12/13.
+//  Copyright (c) 2013 Dale Emery. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
