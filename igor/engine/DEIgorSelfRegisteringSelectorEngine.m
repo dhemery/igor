@@ -1,11 +1,11 @@
 #import "DEIgor.h"
 #import "SelectorEngine.h"
 
-#ifdef CURRENT_PRODUCT_VERSION
-NSString *version= CURRENT_PRODUCT_VERSION;
-#else
-NSString *version = @"Unknown";
-#endif
+#define STRINGIZE(x) #x
+#define STRINGIZE2(x) STRINGIZE(x)
+#define IGOR_VERSION_NUMBER_STRING @ STRINGIZE2(IGOR_VERSION_NUMBER)
+
+static NSString *const version = IGOR_VERSION_NUMBER_STRING;
 
 static NSString *const igorRegisteredName = @"igor";
 

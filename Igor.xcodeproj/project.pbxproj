@@ -83,13 +83,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2DCD245F180A18BD00E9B9A0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2DCD2441180A18BD00E9B9A0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2DCD2448180A18BD00E9B9A0;
-			remoteInfo = Igor;
-		};
 		2DCD24A1180A1B2900E9B9A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2DCD2441180A18BD00E9B9A0 /* Project object */;
@@ -544,7 +537,6 @@
 			);
 			dependencies = (
 				2DCD24A2180A1B2900E9B9A0 /* PBXTargetDependency */,
-				2DCD2460180A18BD00E9B9A0 /* PBXTargetDependency */,
 			);
 			name = IgorTests;
 			productName = IgorTests;
@@ -707,11 +699,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2DCD2460180A18BD00E9B9A0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2DCD2448180A18BD00E9B9A0 /* Igor */;
-			targetProxy = 2DCD245F180A18BD00E9B9A0 /* PBXContainerItemProxy */;
-		};
 		2DCD24A2180A1B2900E9B9A0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2DCD2475180A190000E9B9A0 /* IgorTestApp */;
@@ -752,10 +739,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -809,6 +793,7 @@
 				DSTROOT = /tmp/Igor.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Igor/Igor-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "IGOR_VERSION_NUMBER=${CURRENT_PROJECT_VERSION}";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -821,6 +806,7 @@
 				DSTROOT = /tmp/Igor.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Igor/Igor-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "IGOR_VERSION_NUMBER=${CURRENT_PROJECT_VERSION}";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -845,6 +831,12 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "IgorTests/IgorTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -865,6 +857,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IgorTests/IgorTests-Prefix.pch";
 				INFOPLIST_FILE = "IgorTests/IgorTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -889,6 +887,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "IgorTestApp/IgorTestApp-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -909,6 +908,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IgorTestApp/IgorTestApp-Prefix.pch";
 				INFOPLIST_FILE = "IgorTestApp/IgorTestApp-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
