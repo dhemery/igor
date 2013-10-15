@@ -573,7 +573,7 @@
 				ORGANIZATIONNAME = "Dale Emery";
 				TargetAttributes = {
 					2DCD2458180A18BD00E9B9A0 = {
-						TestTargetID = 2DCD2475180A190000E9B9A0;
+						TestTargetID = 2DCD2475180A190000E9B9A0 /* IgorTestApp */;
 					};
 				};
 			};

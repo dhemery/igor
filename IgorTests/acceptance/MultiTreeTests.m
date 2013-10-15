@@ -30,7 +30,7 @@
     UIView *child4 = [ViewFactory viewWithName:@"child 4"];
     [tree4 addSubview:child4];
 
-    NSArray *trees = [NSArray arrayWithObjects:tree1, tree2, tree3, tree4, nil];
+    NSArray *trees = @[tree1, tree2, tree3, tree4];
     NSArray *matchingViews = [igor findViewsThatMatchQuery:@"*[accessibilityIdentifier BEGINSWITH 'child']" inTrees:trees];
 
     assertThat(matchingViews, containsInAnyOrder(child1, child2, child3, child4, nil));

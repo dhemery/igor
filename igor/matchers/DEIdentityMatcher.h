@@ -1,4 +1,4 @@
-#import "DEInstanceMatcher.h"
+#import "DEMatcher.h"
 
 @interface DEIdentityMatcher : NSObject <DEMatcher>
 

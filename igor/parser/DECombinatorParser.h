@@ -1,6 +1,4 @@
-#import "DECombinator.h"
-#import "DECombinatorParser.h"
-
+@protocol DECombinator;
 @protocol DEQueryScanner;
 
 @protocol DECombinatorParser <NSObject>

@@ -1,6 +1,6 @@
 #import "DEChainMatcher.h"
-#import "DEMatcher.h"
 
+@protocol DEMatcher;
 @protocol DECombinator;
 @class DEIdentityMatcher;
 

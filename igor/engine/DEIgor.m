@@ -48,13 +48,13 @@
     id <DEPatternParser> classParser = [DEClassParser new];
     id <DEPatternParser> predicateParser = [DEPredicateParser new];
     id <DEPatternParser> identifierParser = [DEIdentifierParser new];
-    NSArray *simpleParsers = [NSArray arrayWithObjects:identifierParser, predicateParser, nil];
+    NSArray *simpleParsers = @[identifierParser, predicateParser];
     id <DEPatternParser> instanceParser = [DEInstanceParser parserWithClassParser:classParser simpleParsers:simpleParsers];
 
     id <DECombinatorParser> combinatorParser = [DECombinatorParser new];
     id <DEChainParser> chainParser = [DEChainParser parserWithCombinatorParser:combinatorParser];
     id <DEPatternParser> branchParser = [DEBranchParser parserWithChainParser:chainParser];
-    NSArray *subjectParsers = [NSArray arrayWithObjects:instanceParser, branchParser, nil];
+    NSArray *subjectParsers = @[instanceParser, branchParser];
     chainParser.subjectParsers = subjectParsers;
 
     id <DEPatternParser> parser = [DEQueryParser parserWithChainParser:chainParser];
