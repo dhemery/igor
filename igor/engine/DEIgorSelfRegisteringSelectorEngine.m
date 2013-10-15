@@ -45,4 +45,8 @@ static NSString *const igorRegisteredName = @"igor";
     return [_igor findViewsThatMatchQuery:query inTree:tree];
 }
 
+- (NSArray *) selectViewsWithSelector:(NSString *)query inWindows:(NSArray *)windows {
+    return [_igor findViewsThatMatchQuery:query inTrees:windows];
+}
+
 @end

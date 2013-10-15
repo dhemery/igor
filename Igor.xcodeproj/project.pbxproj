@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D27106D180CD8260092F5DD /* MultiTreeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D27106C180CD8260092F5DD /* MultiTreeTests.m */; };
 		2D663939180A1DEA0031C1B2 /* DEIgor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663902180A1DEA0031C1B2 /* DEIgor.m */; };
 		2D66393A180A1DEA0031C1B2 /* DEIgorSelfRegisteringSelectorEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663903180A1DEA0031C1B2 /* DEIgorSelfRegisteringSelectorEngine.m */; };
 		2D66393B180A1DEA0031C1B2 /* DEAccessibilityIdentifierMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D663907180A1DEA0031C1B2 /* DEAccessibilityIdentifierMatcher.m */; };
@@ -105,6 +106,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2D27106C180CD8260092F5DD /* MultiTreeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MultiTreeTests.m; path = IgorTests/acceptance/MultiTreeTests.m; sourceTree = SOURCE_ROOT; };
 		2D663901180A1DEA0031C1B2 /* DEIgor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEIgor.h; sourceTree = "<group>"; };
 		2D663902180A1DEA0031C1B2 /* DEIgor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEIgor.m; sourceTree = "<group>"; };
 		2D663903180A1DEA0031C1B2 /* DEIgorSelfRegisteringSelectorEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEIgorSelfRegisteringSelectorEngine.m; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 				2D663955180A1E770031C1B2 /* ChildPatternTests.m */,
 				2D663956180A1E770031C1B2 /* ClassPatternTests.m */,
 				2D663957180A1E770031C1B2 /* DescendantPatternTests.m */,
+				2D27106C180CD8260092F5DD /* MultiTreeTests.m */,
 				2D663958180A1E770031C1B2 /* PredicatePatternTests.m */,
 				2D663959180A1E770031C1B2 /* SiblingPatternTests.m */,
 				2D66395A180A1E770031C1B2 /* SubjectMarkerTests.m */,
@@ -655,6 +658,7 @@
 				2D663996180A1E770031C1B2 /* IsKindOfClassMatcher.m in Sources */,
 				2D6639A8180A1E770031C1B2 /* IdentifierParserTests.m in Sources */,
 				2D66398C180A1E770031C1B2 /* PredicatePatternTests.m in Sources */,
+				2D27106D180CD8260092F5DD /* MultiTreeTests.m in Sources */,
 				2D6639A3180A1E770031C1B2 /* SiblingCombinatorTests.m in Sources */,
 				2D6639A9180A1E770031C1B2 /* InstanceParserTests.m in Sources */,
 				2D663999180A1E770031C1B2 /* MatchesView.m in Sources */,

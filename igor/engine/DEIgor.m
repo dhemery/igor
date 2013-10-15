@@ -14,6 +14,12 @@
     id <DEPatternParser> _parser;
 }
 
+- (id <DEMatcher>) matcherFromQuery:(NSString *)query {
+    NSString *stripped = [query stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    id <DEQueryScanner> scanner = [DEQueryScanner scannerWithString:stripped];
+    return [_parser parseMatcherFromScanner:scanner];
+}
+
 - (NSArray *)findViewsThatMatchMatcher:(id <DEMatcher>)matcher inTree:(UIView *)tree {
     NSMutableSet *matchingViews = [NSMutableSet set];
     NSMutableArray *allViews = [NSMutableArray arrayWithObject:tree];
@@ -24,10 +30,17 @@
     return [matchingViews allObjects];
 }
 
+- (NSArray *)findViewsThatMatchQuery:(NSString *)query inTrees:(NSArray *)trees {
+    id <DEMatcher> matcher = [self matcherFromQuery:query];
+    NSMutableArray * matchingViews = [NSMutableArray array];
+    for(UIView *tree in trees) {
+        [matchingViews addObjectsFromArray:[self findViewsThatMatchMatcher:matcher inTree:tree]];
+    }
+    return matchingViews;
+}
+
 - (NSArray *)findViewsThatMatchQuery:(NSString *)query inTree:(UIView *)tree {
-    NSString *stripped = [query stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-    id <DEQueryScanner> scanner = [DEQueryScanner scannerWithString:stripped];
-    id <DEMatcher> matcher = [_parser parseMatcherFromScanner:scanner];
+    id <DEMatcher> matcher = [self matcherFromQuery:query];
     return [self findViewsThatMatchMatcher:matcher inTree:tree];
 }
 
